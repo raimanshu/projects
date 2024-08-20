@@ -1,0 +1,160 @@
+- difference between internal, external and inline
+- priorities of selectors
+- how many ways css color can be specified – rgb,rgba,hex,hsl,hsla,predefined color name
+- set image as background – background-image, background-repeat,
+ background-position,background-size, background-attachment, background
+- set border – borde-style,border-width,border-color,border-radius
+- margin collapse
+- link states - link,visited,hover,active
+- font fallback
+- css units – absolute (6), relative(4)
+- em vs rem, blur radius vs spread radius
+-- filte, image sprites, gradient – linear & radial, overflow,resizeable, css lists, css tables, css
+ function – calc() var(), box sizing, object-fit, pseudo class, position – static relative fixed
+ absolute, Layers, z-index, float, clear, overflow,
+- can u make variable in css ?
+- pseudo class vs pseudo state vs pseudo element
+- block vs inline vs inline-block
+- 2D transform – translate, rotate, scale, skew, matrix
+- 3D transform – prespective, rotate3d, translate3d,
+- transitions - transition-width, transition-duration, transition-delay,transition-timing-function,
+ Transition - Animation - @keyframes, animation-name, animation-duration,
+ animation-iteration-count, animation-direction,
+- Print style in css
+- responsiveness – viewport meta tag, media query, make images and video responsive
+-Advanced selectors – element,id,class,pseudo class,psedo
+ element,attribute,universal,descendent combinator, child combinator,adjecent
+ combinator,general sibling,add selector
+- Specificity (point rule)
+- multiple column – column-count,column-gap,colum-rule-style,column-span,column-width
+flexbox – make responsive web page without float and position, display : flex, flexdirection,
+ flex-wrap,justify-content,aligh-items,align-content,order,flex-grow,flex-shrink,flex-basis,align-self
+- css grid –
+ grid-template-columns,grid-template-rows,drid-column-gap,grid-row-gap,justify-content,align-c
+ontent,grid-area,grid-template-area
+-css validation - online cs validation checker
+
+
+Q. How to draw a circle inside Square using single DIV in css?
+Q. How to center align a div inside another div?
+Q. What are the css selectors?
+Q. What is the difference between Pseudo-classes and pseudo-elements?
+Q. What is Combinator selector?
+Q. What is the difference between class selectors and id selectors?
+Q. When to use css grid and flexbox?
+Q. What is CSS BEM?
+Q. What are the benefits of using CSS sprites?
+Q. What is the float property and what float do?
+Q. What is tweening in css?
+Q. Explain the difference between visibility: hidden; and display: none; ? What are the pros and 
+cons of using display:none ?
+Q. What is DOM reflow?
+Q. What is the purpose of the z-index and how is it used?
+Q. Exaplain CSS position Property?
+Q. The difference between block, inline and inline-block element?
+Q. What are counters in CSS3?
+Q. Are CSS rule names case sensitive?
+Q. Does margin-top or margin-bottom has effect on inline element?
+Q. Does padding-top or padding-bottom has effect on inline element?
+Q. Which one would you prefer among px, em % or pt and why?
+Q. Does padding-left or padding-right or margin-left or margin-right has effect on inline element?
+Q. In a HTML document the pseudo class :root always refers to the html element?
+Q. What is pseudo element? What is pseudo class?
+Q. The pseudo class :checked will select inputs with type radio or checkbox, but not <option>
+ elements?
+Q. Explain the CSS “box model” and the layout components that it consists of?
+Q. Explain the meaning of each of these CSS units for expressing length?
+Q. In CSS3, how would you select?
+Q. What is the purpose of the box-sizing property?
+Q. How to create a zebra striped table with CSS?
+Q. What is the difference between RGBa, HEX and HSLa?
+Q. What is CSS preprocessor?
+Q. What is the difference between "resetting" and "normalizing" CSS?
+Q. Describe clear Property in css?
+Q. Explain CSS Block Formatting Context?
+Q. Does overflow: hidden create a new block formatting context?
+Q. How would you approach fixing browser-specific styling issues?
+Q. How do you serve your pages for feature-constrained browsers? What techniques do you
+ use?
+Q. What are the different ways to visually hide content (and make it available only for screen 
+readers)?
+Q. What are media queries? How could you apply css rules specific to a media?
+Q. What is the use of @media only screen ?
+Q. Does the screen keyword apply to the device's physical screen or the browser's viewport?
+Q. How would you implement a web design comp that uses non-standard fonts?
+Q. How a browser determines what elements match a CSS selector?
+Q. How can you load css resources conditionally?
+Q. What does * { box-sizing: border-box; } do? What are its advantages?
+Q. List display property in CSS?
+Q. How is responsive design different from adaptive design?
+Q. What is retina graphics? What kind of techniques do you use to handle images for retina 
+screens?
+Q. Is there any reason you'd want to use translate() instead of absolute positioning, or 
+vice-versa?
+Q. The translate() function can move the position of an element on the z-axis?
+Q. Tell what each of these tags do, if there are alternatives, which are preferable, why?
+Q. What is At-Rule?
+Q. How can the gap under the image be removed?
+Q. What is progressive rendering?
+Q. What is mobile-first? Can you explain the difference between coding a website to be 
+responsive versus using a mobile-first strategy?
+Q. What is Accessibility (a11y) in a web application?
+Q. What is UI/UX?
+Q. Which property is used to change the face of a font?
+Q. Which property is used to make a font italic or oblique?
+Q. Which property is used to create a small-caps effect?
+Q. Which property is used to increase or decrease how bold or light a font appears?
+Q. Which property is used to add or subtract space
+between the letters that make up a word?
+Q. Which property is used to add or subtract space
+between the words of a sentence?
+Q. Which property is used to indent the text of a
+paragraph?
+Q. Which property is used to align the text of a
+document?
+Q. Which property is used to underline, overline, and
+strikethrough text?
+Q. Which property is used to capitalize text or convert
+text to uppercase or lowercase letters?
+Q. Which property allows you to control the shape or
+appearance of the marker of a list?
+Q. How do I restore the default value of a property?
+Q. What is specificity? How to calculate specificity?
+Q. What do you know about CSS Transitions?
+Q. What are the different css filters you can use?
+Q. Enlist the various fonts properties?
+Q. What is the difference between em and rem units?
+Q. What does !important mean in CSS?
+Q. Does style2.css have to be downloaded and parsed
+before Paragraph 1 is rendered on the page?
+<head>
+<link href="style1.css" rel="stylesheet">
+</head>
+<body>
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+<link href="style2.css" rel="stylesheet">
+</body>
+Q. Does style1.css have to be downloaded and parsed
+before style2.css can be fetched?
+<head>
+<link href="style1.css" rel="stylesheet">
+<link href="style2.css" rel="stylesheet">
+</head>
+Q. What are the CSS positioning?
+Q. What is the difference between padding and margin?
+Q. Explain new features in CSS3?
+Q. What are gradients in CSS?
+Q. What is CSS opacity?
+Q. What is contextual selector?
+Q. How is the concept of inheritance applied in CSS?
+Q. How do you handle browser differences in your user
+base?
+Q. What is Cascade?
+Q. How Do I Have A Fixed (non-scrolling) Background
+Image?
+Q. Describe the following common CSS units of length:
+cm, em, in, mm, pc, pt, and px?
+Q. What are CSS vendor prefixes?
+
+

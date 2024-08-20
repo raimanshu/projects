@@ -1,0 +1,118 @@
+SEO (Youtube, WsCube Tech)
+
+SEO
+Search Engine Optimization
+Search engine is a software system that is designed to carry out web searches
+Optimization is an action of making the best or most effective use of a situation or resource
+SEO is a process of making your websites/ web pages better for search engines,so that it can rank higher
+Search Engine
+Search engine is software system designed to search out the information from world wide web according to the user’s query
+If there  is not search engine then we have to remember every url respective of their information 
+Google,Yahoo,Bing,Yandex (Russia), Baidu(China), DuckDuckGo
+Working of Search Engine
+After typing Words > Google run Crawler/Spider > Saving relevant data to Google local server > Indexer > Run Ranking Algorithm > SERP
+SERP stands for Search Engine Result Page
+Techniques/Strategies of SEO - Black Hat SEO and White Hat SEO
+White Hat SEO/ Ethical SEO/ Organic SEO
+It includes optimizing your website following the restrictions imposed by search engines
+Optimize content
+Quality content
+Relevant internal links
+Relevant strong backlinks
+Sitemaps
+Technical Aspects
+Better UX
+Black Hat SEO / Unethical SEO / Inorganic SEO
+It includes unethical techniques which are disapproved by search engines
+Keywords stuffing
+Duplicate content / Paraphrasing
+Cloaking (using Html, js, client-server)
+Hidden Text ? Links
+Link spamming
+Link farming
+Types of SEO - On-page SEO & Off-page SEO
+On-page SEO
+It refers to optimizing the parts of your website you control like content, Html, title of the page, URL etc
+Optimized HTML file
+Content optimization
+Keyword rich content
+Optimized URLs
+Image optimization
+Technical Aspects of  website,etc
+Off-page SEO
+It focuses on the ranking factors that occur outside of your website like brand mentions and backlinks
+Backlinks
+Domain Authority
+Social links
+Forum submission, etc
+Technical SEO
+For better better crawler and better indexing
+Part of on-page SEO
+Web page speed/load time
+Structure of website
+Sitemap
+Redirect pages
+Mobile friendliness
+Robot.txt
+Google Ranking Algorithms
+Google algorithms are complex system that is used by google to deliver webpages ranked by relevance on its search engine results page (SERPs)
+Panda (Feb 2011) aimed to lower the rank of “low quality sites” or “thin sites” in particular “content farms” and return higher quality sites near the top of the search results
+Penguin (2012) penalty largely focuses on identifying poor quality websites based upon backlinks
+Hummingbird (2013) focuses on understanding the actual meaning behind a search query rather than the separate terms within it 
+Rankbrain (2015) is a machine learning (AI) algorithm that google uses to sort the search results
+Page Experience Update (2021) is a change made to Google’s search engine in order to improve the quality, relevance and overall user experience of it’s search results
+Page Rank Algorithm of Google
+In 1998 by Larry Page
+Page Rank Score
+More backlinks = High ranking
+PRA is still in ues but has been modified since then in 1998
+Dwell Time
+It is the actual length of time that a visitor spends on a page before returning to the SERP
+Bounce Rate
+It is calculated when someone visits a single page on your website and does nothing on the page before leaving
+How do you start a SEO project?
+Understanding of Business
+Current website performance analysis
+Keyword Research
+Competition site analysis
+On-page optimization,Technical SEO and Off-page analysis
+Maintain the position by Data Analysis
+Keywords
+These are the words or phrases that describe the content on your web page (Audience view)
+These are the words or phrases for which you want a specific page to rank (SEO view)
+Short tail keywords
+General query
+Long tail keywords
+More specific query
+Navigational Keywords
+These are used when user wants to find the specific brand, website or location
+Intent based keywords - Transactional & Commercial keywords
+Transactional Keywords
+These keywords shows strong intent of user to buy or take action on a product or service
+Commercial Keywords
+These keywords shows user’s interest to search for specific products and services
+Informational Keywords
+Search query that contains WH words
+Latent Semantic Indexing Keywords
+Latent = Hidden / Unclear
+Semantic = Meaning
+Indexing is something connected to Google indexer
+It includes synonyms, category and other related keywords
+These keywords can be seen as “Related words” google SERP lower down
+Tools may used line keywords.io, LSI Graph
+Singular and Plural keywords
+Google search engine treats both type of keywords differently
+Brainstorming for keywords
+What can our audience can think ?
+Taking ideas from google SERP LSI keywords
+Taking ideasfromGoogle search box and looking on suggestions
+Using _ between two or more major search keywords
+Basic points for Keyword Search
+https://lsigraph.com/ 
+https://answerthepublic.com/ 
+https://www.seoreviewtools.com/ 
+Google Ads keyword planner
+https://ads.google.com/ 
+SEMrush keyword tool
+https://www.semrush.com/ 
+

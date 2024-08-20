@@ -1,0 +1,1099 @@
+Section 1: Course Orientation
+
+1. Welcome to the course!
+- The best time to learn git is yesterday
+- The second best time to learn git is today
+
+2. Join our community
+- discord group https://discord.gg/NXZUVuFUjB
+- Youtube link https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw
+
+3. What the course covers
+
+
+4. A note on the exerccises
+
+
+5. Accessing the slides & diagrams
+
+------------------------------------------------------------------------------------------------
+
+Section 2: Introducing...Git
+
+6. What really matters in this section
+- https://www.canva.com/design/DAETQyFE6pM/mLt1oYF8gP_mqBS3ghb-BA/view?utm_content=DAETQyFE6pM&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton#1
+
+7. What exactly is git ?
+- Official github website https://git-scm.com/
+- Git is a Version Control System (VCS)
+- VCS is a software that tracks and manages changes to files over time
+- Other VCS like Subversion,Mercurial,etc
+
+8. Visualizing git
+- Tracks changes accross multiple files
+- Compare versions of a project
+- "Time travel" back to old versions
+- Revert to a previous version
+- Collaborate and share changes
+- Combine changes
+
+9. A quick history of Git
+- Linus torvalds developed Linux and Git
+- Earlier Torvalds uses VCS named Bitkeeper
+- On 3 April 2005 VCS officially used first time
+- In British English git means "Unpleasant Person". 
+Other names of git is "global information tracker", "goddam idiotic truckload of shit"
+
+10. Who uses Git ?
+- Engineers & Coders, Tech-Adjacent Roles, Government, Scientists, Writers
+- https://github.com/HoTT/book
+- https://government.github.com/community/
+- https://stackshare.io/git
+
+11. Git vs Github: What's the difference ? (IMPORTANT)
+
+
+------------------------------------------------------------------------------------------------
+
+Section 3: Installation & Setup
+
+12. What really matters in this section
+- https://www.canva.com/design/DAEXMu7dx04/x1kkoUK-g_j6UtObmUwbDA/view?utm_content=DAEXMu7dx04&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+13. Installing Git: Terminal vs GUI's (IMPORTANT)
+- List of Git GUI's https://git-scm.com/downloads/guis
+- Git was created as a command-line tool. To use it,we run various git commands in a Unix shell.
+- Eg of git GUI - Github Desktop, SourceTree, Tower, Git Kraken, Ungit, etc
+
+14. Windows Git installation
+- Wndows git download 
+https://git-scm.com/download/win
+- VS code download 
+https://code.visualstudio.com/
+- Bash is the default shell for Linux and Mac. Git was designed to run on a Unix-based interface (like Bash). Windows comes with a different command line interface called Command Prompt that is not Unix based. 
+Git bash emulates the unix-based git command line experience for Windows machines.
+- To check git version
+git --version
+
+15. Mac git installation
+- Mac git download 
+https://sourceforge.net/projects/git-osx-installer/
+
+
+16. Configuring your git name & email
+- git donot need to register for an account or anything but you need to provide nameand email.
+- To add name on git
+git config --global user.name "<name>"
+- To add email on git
+git config --global user.email "<email>"
+
+17. Installing GitKraken (Our GUI)
+- Git Kraken https://www.gitkraken.com/
+
+18. Terminal Crash Course: Introduction
+- ls
+- cd
+- touch 
+- mkdir
+- rm
+- pwd
+
+19. Terminal Crash Course: Navigation
+- ls
+- start .
+- ls <folder_name>
+- start <folder_name>
+- pwd
+- cd
+
+20. Terminal Crash Course: Creating files & folders
+- touch <file_name_1.ext> <file_name_2.ext> <file_name_3.ext>
+- touch path/to/file/<file_name_1.ext>
+- mkdir <folder_name_1.ext> <folder_name_2.ext> <folder_name_3.ext>
+- mkdir path/to/file/<folder_name_1.ext>
+
+21. Terminal Crash Course: Deleting files & folders
+- rm <file_name_1.ext> <file_name_2.ext> <file_name_3.ext>
+- rm path/to/file/<file_name_1.ext>
+- rm -rf <folder_name>
+
+------------------------------------------------------------------------------------------------
+
+Section 4: The Very Basics of Git: Adding & Committing
+
+22. What really matters in this section
+- https://www.canva.com/design/DAEPH_Lq4Wk/Wp_d5Rvk_OjVvgPH0xmzhg/view?utm_content=DAEPH_Lq4Wk&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton#1
+
+23. What is a Git Repo ?
+- Git repo is a workspace which tracks and manages files within a folder
+
+24. Our First Commands: Git Int and Git status
+- https://git-scm.com/docs/git-init
+- https://git-scm.com/docs/git-status
+- Gives information on the current status of a git repo and it's contents
+git status
+- Create a new git repo
+git init
+
+25. The Mysterious .Git Folder
+- .git stores all the history about the project
+
+26. A common early git mistake
+- git tracks a directory and all nested sub-directories
+- WARNING : Donot init a repo inside of a repo, use git status to confirm
+
+27. The committing workflow overview
+- saving and commit are different processes
+
+28. Staging changes with git add
+- https://git-scm.com/docs/git-add
+- Working directory, the directory on which user is working
+- to add files to the staging area
+git add <file_1> <file_2> <file_3>
+- Staging area
+- Repository
+
+29. Finally, The Git commit command!
+- https://git-scm.com/docs/git-commit
+- to actually commit changes from the staging area
+git commit -m "<message>"
+
+30. The git log command (and more committing)
+- http://gutenberg.net.au/ebooks02/0200041h.html
+- https://git-scm.com/docs/git-log
+- to show log of the commits
+git log
+- to stage all changes 
+git add .
+
+31. Committing exercise
+- https://www.notion.so/Committing-Basics-Exercise-3dc1ef1873ce45e68cedd2265710d7d8
+------------------------------------------------------------------------------------------------
+
+Section 5: Commits in Detail (And Related Topics)
+
+32. What really matters in this section
+- https://www.canva.com/design/DAEXMibkysc/4PgPWiQqZ5UwCxMruH6BmQ/view?utm_content=DAEXMibkysc&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+33. Navigating the git documentation
+- https://git-scm.com/docs
+-Git book is a step by step process
+
+34. Keeping your commits atomic
+- keep each commit focused on a single thing
+
+35. Commit Messages: Present or Past Tense
+- https://medium.com/@corrodedlotus/which-tense-should-be-used-on-a-git-commit-message-121cb641134b
+- https://www.danclarke.com/git-tense
+- https://www.quora.com/Which-tense-should-be-used-in-a-git-commit-message-past-present-and-why
+- https://stackoverflow.com/questions/3580013/should-i-use-past-or-present-tense-in-git-commit-messages
+- Present tense imperative style (According to official docs)
+- But some developers prefer past tense
+
+36. Escaping VIM & Configuring Git's default editor
+- https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config
+- git commit -m "<message>"
+- git commit (if user want commit message more than one line)
+- to set vs code as default editor
+git config --global core.editor "code --wait" 
+
+37. A closer look at the git log
+- https://git-scm.com/docs/git-log
+- git log --oneline
+- git log --abbrev-commit
+
+38. Commintting with a GUI
+- uses git kraken
+
+39. Fixing mistakes with amend
+- https://git-scm.com/docs/git-commit
+- to redo the previous commit (either edit commit message or forgot to add a file)
+- git commit --amend
+
+40. Ignoring Files w/ .gitignore
+- https://github.com/marak/Faker.js/
+- https://github.com/tensorflow/tensorflow
+- https://github.com/signalapp/Signal-Android
+- https://www.toptal.com/developers/gitignore
+- https://git-scm.com/docs/gitignore
+- https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+- .gitignore file is useful for files you know never want to commit like Secrets, API keys, credentials, Operating system files, log files, dependencies,packages, etc
+- .gitignore is created at the root of the repo folder
+- folder_name/ will ignore an entire directory
+- *.log ignore any files with the .log extension
+
+------------------------------------------------------------------------------------------------
+
+Section 6: Working with Branches
+
+41. What really matters in this section
+- https://www.canva.com/design/DAEPOwX2Zzs/90STrbMXNysYIkSsxUCu-g/view?utm_content=DAEPOwX2Zzs&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+42. Introducing branches
+- Using branches we can work on multiple ideas in parallel
+- If we make changes on one branch, they donot impact the other branches (unless we merge the changes)
+- parent_commit  <- next_commit
+
+43. The master branch (or is it main ?)
+- the default branch is master
+- In 2020, Github renamed the default branch frommaster to main.
+- The default Git branch name is master.
+
+44. What on earth is HEAD?
+- HEAD -> master
+-It is simply a pointer that refers the current "location" in your repo.
+- HEAD can move in different commits of different branches
+
+45. Viewing all branches with git branch
+- https://git-scm.com/docs/git-branch
+- to see all branches locally
+git branch
+
+46. Creating & Switching branches
+- https://git-scm.com/docs/git-switch
+- to create new branch
+git branch <branch_name>
+- to switch between branches
+git switch <branch_name>
+
+47. More practice with branching
+- to add and commit in one line
+git commit -a -m "<message>"
+
+48. Another Option: Git checkout vs Git switch
+- https://git-scm.com/docs/git-checkout
+- Historically, git checkout <branch_name> was used to switch branches. This still works.
+- But checkout command does a million additional things, so the decision was made to add a standalone switch command.
+- creating and switching branches
+git switch -c <branch_name>
+git checkout -b <branch_name>
+
+49. Switching branches with unstaged changes ?
+- It will give error, if git gets conflict (or changes in same file, already created file)
+- It will switch to other branch along with untracked changes, if it doesnot get conflict
+
+50. Deleting & renaming branches
+- to delete a branch
+git branch -d <branch_name>
+git branch --delete <branch_name>
+- to delete a branch by force
+git branch -D <branch_name>
+git branch --delete --force <branch_name>
+- to rename a branch
+git branch -m <branch_name>
+
+51. How git stores HEAD & branches
+- .git/HEAD file store reference to a branch as ref: refs/heads/<branch_name>
+
+
+52. Branching Exercise
+- https://www.notion.so/Branching-Exercise-b5460c881d56400cb046357d9a430bf8
+
+------------------------------------------------------------------------------------------------
+
+Section 7: Merging Branches, Oh Boy!
+
+53. What really matters in this section
+- https://www.canva.com/design/DAEUZEra8W0/b4I77uG1YJAu4q6UOTIG6Q/view?utm_content=DAEUZEra8W0&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+54. An introduction to merging
+- https://git-scm.com/docs/git-merge
+- We merge branches,not specific commits
+- We always merge to the current HEAD branch
+- to merge the branch2 into branch1
+git switch branch1
+git merge branch2
+- Lets when master simply caught up on the commits from other branch, it's called a Fast-Forward
+
+55. Performing a fast forward merge
+- to show all local branches along with their last commit
+git branch -v 
+
+56. Visualizing merges
+- using git kraken
+
+57. Generating merge commits
+- In a case, if master moves a few commits ahead and the other branch which needs to be merge. Git generate a merge commit.
+- a merge commit have multiple parent commit
+
+58. Oh No! Merge conflicts!
+- Git may not be able to automatically merge changes, this will results in merge conflicts.
+- During conflicts,git also changes the contents of your files to indicate the conflicts that it wants you to ressolve.
+- The upper portion of conflicts is of recieving/HEAD branch while the other/lower is of other branch that you want to merge.
+- The content from the branch you are trying to merge from is displayed between the ========== and >>>>>>>>>> symbols.
+
+59. Resolving merge conflicts
+- 
+
+60. Using VS code to resolve conflicts
+
+
+61. Merging exercise
+- https://www.notion.so/Git-Merging-Exercise-0236a17f04c847159a38f5efa978ce2c
+
+------------------------------------------------------------------------------------------------
+
+Section 8: Comparing Changes with Git diff 
+
+62. What really matters in this section
+- https://www.canva.com/design/DAEVUT6HslA/tbdbyITzamUidWfk-HcSug/view?utm_content=DAEVUT6HslA&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+63. Introduing the git diff command
+- https://git-scm.com/docs/git-diff
+- to view changes bewteen commits, branches, files, our working direcctory and more 
+git diff 
+- Without additional options, git diff lists all the changes in our working directory that are NOT staged for the next commit.
+
+64. A guide to Reading diffs (IMPORTANT)
+- 1st section (Comparing files) - For each comparision,git explans which fileit is comparing. Usually this is two versions of the same file.
+Git also declares one file as "A" and the other as "B"
+- 2nd section (File Metadata) - The first two umbers are the hashes of the two files being compared. The last number is an internal file made identifier.
+- 3rd section (Markers) - File A and File B are each assigned a symbol (A get ---, B gets +++).
+- 4th section (Chunks) - A diff won't show the entire contents of a file, but instead only shows portions or "chunks" that were modified.
+A chunk also includes some unchanged lines before and after a change to provide some context.
+- Chunk Header - Each chunk starts with a chunk header,found between @@ and @@.
+Eg @@ -3,4 +3,5 @@
+It means From file a, 4 lines are extracted started from line 3. From file b, 5 lines are extracted starting from line 3
+And, -3,4 means 4 lines changes from line number 3 and - shows this is from file A
+
+65. Viewing unstaged changes
+- to show all changes in the working tree since your last commit
+git diff HEAD
+- to list the changes between the staging area and our last commit
+git diff --staged
+git diff --cached
+- to view changes within a specific file
+git diff HEAD <file_name>
+git diff --staged <file_name>
+- to compare branches
+git diff branch_1 branch_2
+- to compare commits
+git diff commit_1 commit_2
+
+66. Viewing working directory changes
+- to show all changes in the working tree since your last commit
+git diff HEAD
+
+67. Viewing staged changes
+- to list the changes between the staging area and our last commit
+git diff --staged
+git diff --cached
+- to view changes within a specific file
+git diff HEAD <file_name>
+git diff --staged <file_name>
+
+68. Diffing specific files
+- to view changes within a specific file
+git diff HEAD <file_name>
+git diff --staged <file_name>
+
+69. Comparing changes accross branches
+- to compare branches
+git diff branch_1 branch_2
+
+70. Comparing changes accross commits
+- to compare commits
+git diff commit_1 commit_2
+
+71. Visualizing diffs with GUIs
+- Uses git kraken
+
+72. Diff exercise
+- https://www.notion.so/Git-Diff-Exercise-f7829bd2783940cea14239022a6c37a9
+
+------------------------------------------------------------------------------------------------
+
+Section 9: The Ins and Outs of Stashing
+
+73. What really matters in this section
+- https://www.canva.com/design/DAEPsQa6BFE/uNs08sHSGN1XziSUt1BLHQ/view?utm_content=DAEPsQa6BFE&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+74. Why we need git stash
+- Cases
+1) My changes come with me to the destination branch- If changes/conflicts are not done on same file
+2) Git won't let me switch if it detects potential conflicts - If changes/conflicts are done on same file
+
+75. Stashing basics: git stash & save
+- https://git-scm.com/docs/git-stash
+- Stashing saves us so that we can return on other branch,without having to make unnecessary commits
+- to save the changes temperary
+git stash
+git stash save
+- to apply stash changes
+git stash pop
+
+76. Practicing with git stash
+- Git stash save changes that you are not ready to commit. You can stash changes and then come back to them later.
+- Running git stash will take all uncommitted changes (staged and unstaged) and stash them, reverting the changes in your working copy.
+- Use git pop to remove the most recently stashed changes in your stash and re-apply them to your working copy
+
+77. Git stash apply
+- git stash apply is used to apply whatever is stashed away, without removing it from the stash.
+- This can be useful if you want to apply stashed changes to multiple branches.
+
+78. Working with multiple stashes
+- You can add multiple stashes onto the stack of stashes. They will all be stashed in the order you added them.
+- to view all stashes
+git stash list
+- git assumes you want to apply the most recent stash when you run git stash apply. But, you can also specify a particular stas like git stash apply stash@{2}
+
+79. Dropping & cleaning the stash
+- to delete a particular stash
+git stash drop stash@{2}
+- to clear all stashes
+git stash clear
+
+80. Stashing exercise
+- https://www.notion.so/Stashing-Exercise-b6b4ac460c0a4798845de177fc1eb86d
+
+------------------------------------------------------------------------------------------------
+
+Section 10 : Undoing Changes & Time Traveling (IMPORTANT)
+
+81. What really matters in this section
+- https://www.canva.com/design/DAEPZZHOafo/uagxrNdvbI_wDpjfNpK_4w/view?utm_content=DAEPZZHOafo&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+82. Checking out old commits
+- We can use checckout to create branches, switch to new branchs, restore files, and undo history.
+- to view previous commit
+git checkout <first_7_digits_of_commit_hash>
+- Currently, You are in "Detached HEAD" state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without impacting any branches back to the branch.
+
+83. Re-attaching our detached HEAD!
+- to reattach HEAD
+git switch <branch_name>
+
+84. Referencing commits relative to HEAD
+- to move HEAD on other commits
+git checkout HEAD~<number_at_which_commit_you_want_to_go>
+- HEAD~1 refers to the commit before HEAD (parent)
+- HEAD~2 refers to 2 commit before HEAD (grandparent)
+- to move on the last commit commit but don't remember the branch name
+git switch -
+
+85. Discarding changes with git checkout
+- to revert the file back to whatever it looked like when you last committed
+git checkout HEAD <file_name>
+git checkout -- <file_name>
+
+86. Un-modifying with git restore
+- https://git-scm.com/docs/git-restore
+- git restore was introduced alongside git switch as alternatives to some of the uses for checkout.
+- to restore the file to the contents in the HEAD
+git restore <file_name>
+- to restore the contents of home.html to it's state fromthe commit prior to HEAD
+git restore --source HEAD~1 home.html
+You can also use a particular commit hash as the source
+
+87. Un-staging changes with git restore
+- to remove it from staging
+git restore --staged <file_name>
+
+88. Undoing commits with git reset
+- https://git-scm.com/docs/git-reset
+- To undo all local commits and back to last remote commit
+git reset
+- reset the repo back to a specific commit
+git reset <commit_hash>
+- If you want to undo both the commits AND the actual changes in your files, you can use --hard option
+git reset --hard HEAD~1
+It will delete the last commit and associated changes.
+
+89. Reverting commits with ...git revert
+- https://git-scm.com/docs/git-revert
+- git revert and git reset both undo changes, but they accomplish it in different ways.
+- git reset actually moves the branch pointer backwards, eliminating commits.
+- git revert instead creates a brand new commit which reverses/undos the changes from a commit. Because it results in a new commit,you will be prompted to enter a commit message.
+- If you want to reverse some commits that other people already have on their machines,you should revert.
+- If you want to reverse commits that you have't shared with others, you should use reset.
+
+90. Undoing changes exercise
+- https://www.notion.so/Undoing-Things-Exercise-d2fc1825dcc047c291a9a960848fdf71
+
+------------------------------------------------------------------------------------------------
+
+Section 11: Github: The Basics
+
+91. What really matters in this section
+- https://www.canva.com/design/DAEPtdekgz0/L9rfbid7gCFMGEZBLJcmlw/view?utm_content=DAEPtdekgz0&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+92. What does Github do for us ? (IMPORTANT)
+- https://github.com/
+- Github is a hoisting platform for git repos.
+- Beyond hoisting repos,github also provides additional collaboration features that arenot native to Git. Basically, Github helps people share and collaborate on repos
+- Other websites like GitLab, Bitbucket, Gerrit etc
+
+93. Why you should use github!
+- https://github.com/facebook/react
+- collaboration, If you ever plan on working on a project with at least one other person.
+- Open source projects, Projects ranging from React to Swift are hosted on Github
+- Exposure, Your Github profile showcases your own projects and contributions to oyhers projects.
+- Stay up to date, Being active on Github is the best way to stay up to date with the projects and tools you rely on.
+
+94. Cloning github repos with git clone
+- https://git-scm.com/docs/git-clone
+- https://github.com/gabrielecirulli/2048
+- https://github.com/poteto/hiring-without-whiteboards
+- cloning means getting a local copy of an existing repository
+- to clone a repo
+git clone <url>
+
+95. Cloning Non-Github Repos
+- https://gitlab.com/gitlab-tests/sample-project
+- Anyone can clone a repo from Github, provided the repo in public. You donot need to be an owner or collaborator to clone repo locally to your machine. You just need the URL from Github.
+- Pushing up your own changes to the Github repo needs permission
+- git clone command is not only tied to Github. Others repo like Gitlab and others repo can also be clonned using git clone.
+
+96. Github Setup: SSH Config
+- https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+- SSH, secured shell
+- You generate and configure on SSh key! Once configured, you can connect to Github without having to supply your username/password.
+- to generate ssh
+ssh-keygen
+
+97. Creating our first github repo!
+- CASE 1: Existing repo
+1) Create a new repo on Github
+2) Connect your local repo (add a remote)
+3) Push up your changes to Github
+- CASE 2: Start from Scratch
+1) Create a brancd new repo on github
+2) Clone it down to your machine
+3) Do some work locally
+4) Push up your changes to Github
+
+98. A Crash course on git remotes
+- In git,we refer "destinations to push code" as remotes. Each remote is simply a URL where a hosted repo lives.
+- to view any existing remotes
+git remote
+git remote -v
+- to add a new remote
+git remote add <name> <url>
+- origin is a conventional git remote name.It's just a name for a URL.
+- When we clone a github repo repo, the default remote name setup for us is called origin. You can change it. Most people leave it.
+- to rename remote 
+git remote rename <old> <new>
+- to remove remote
+git remote remove <name>
+
+99. Introducing git push
+- https://git-scm.com/docs/git-push
+- to push some work to github
+git push <remote> <branch_name>
+
+100. Touring a github repo
+
+
+101. Practiice With Git Push 
+
+
+102. A Close Look At Git Push  
+- to push some work to github
+git push <remote> <branch_name>
+- to push a local branch up to a remote branch of different name
+git push <remote> <local_branch>:<remote_branch>
+
+103. What does "git push - u" mean   
+- -u option allows us to set the upstream of the branch we're pushing.
+- to push a new branch on github
+git push -u <remote> <branch_name>
+
+104. Another Github Workflow: Cloning First 
+
+105. Main & Master 
+-to rename the current branch
+git branch -m <new_name>
+
+106. github basics exercise 
+- https://www.notion.so/Github-Basics-Exercise-1c12200326db47d7890702017602d698
+
+------------------------------------------------------------------------------------------------
+
+Section 12: Fetching & Pulling
+
+107. What really matters in this section
+- https://www.canva.com/design/DAEPyYicrxQ/EaXIXD_WWryEq7Z7YUSVlg/view?utm_content=DAEPyYicrxQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+108. Remote traking branches: WTF are they ?
+- After taking clone from repo, we get heads master and origin/master
+- master is a regular branch reference. We can move this around.
+- origin/master is a "Remote Tracking Branch".It is a reference to the state of the master branch on the remote. We can't move this myself. It's like a bookmark pointing to the last known commit on the master branch on origin.
+- to view the remote branches 
+git branch -r
+
+109. Checking out remote tracking branches
+- to check the repo when it was on remote
+git checkout origin/<branch_name>
+
+110. Working with remote branches
+- https://github.com/Colt/remote-branches-demo
+- to create a new local branch from the remote branch of the same name
+git switch <branch_name>
+
+111. Git fetch: the basics
+- Fetching allows us to download changes from a remote repo.But,those changes will not be automatically integrated into our working filr.
+- to fetch branches and history from a repo
+git fetch <remote>
+- It only updates remote tracking branches.
+
+112. Demonstrating git fetch
+
+
+113. Git pull: the basics
+- Pulling means to go and download data from Github AND immidiately update my local repo with those changes
+- git pull = git fetch + git merge
+- git pull <remote> <branch>
+
+114. Git pull & merge conflicts
+- git pull can results into merge conflicts
+- ressolve them in VS code and put merge commit
+
+115. A shorter syntax for git pull ?
+- git pull
+- If we run git pull without specifying a particular remote or branch to pull from,git assumes :
+1) remote will default to origin
+2) branch will default to whatever tracking connection is configured for your current branch
+
+------------------------------------------------------------------------------------------------
+
+Section 13: Github Grab Bag: Odds & Ends
+
+116. What really matters in this section
+- https://www.canva.com/design/DAEVGSMC0ew/9f6udCe20KrYAfwoD0zqHA/view?utm_content=DAEVGSMC0ew&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+117. Github repo visibility: Public & Private
+- Public repos are accessible to everyone on the internet. Anyone can see the repo on git hub.
+- Public repos are only accessible to the owner and people who have been granted access.
+
+118. Adding github collaborators
+- Adding collaborators means give permissions toothers to push their code on the repo.But, they can't push their changes on the others branch.
+
+119. Github collaboration demo
+
+
+120. What are READMEs ?
+- https://github.com/jasontaylordev/CleanArchitecture
+- https://github.com/explosion/spaCy
+- https://github.com/facebook/react
+- A README fileis used to communicate important about a repo including:
+what the project does, how to run the project, why it's noteworthy, who maintains the project
+- If you put a README in the root of your project, Github will recognize it and automatically display it on the repo's home page.
+- README.md - mdstands for mark down
+
+121. A markdown crash course
+- https://daringfireball.net/projects/markdown/
+- https://markdown-it.github.io/
+- A README.md are markdown files,ending with the .md extension. Markdown is a convenient syntaxto generate formatted text.
+- to preview markdown page / README.md
+https://markdown-it.github.io/
+
+122. Adding a README to a project
+- create README.md and then commit,push the file
+
+123. Creating github gists
+- https://gist.github.com/discover
+- https://gist.github.com/oanhnn/80a89405ab9023894df7
+- github gists are a simple way to share code snippets and useful fragments with others. These are mush easier to create, but offer far fewer features than a typical github repo.
+- gists can be public or private
+
+124. Introducing github pages
+- https://pages.github.com/
+- https://github.com/marak/Faker.js/
+- https://marak.github.io/faker.js/
+- https://github.com/ovolve/2048-AI
+- http://ovolve.github.io/2048-AI/
+- Github pages are public webpages that are hosted and published via github. They allow you to create a website simply by pushing your code to Github.
+- Github pages is a hosting service for static webpages,so it does not support server-side code like python,ruby or Node. Jst HTML, css,js
+- types of github pages - user site & Project site
+- User site, You can get one user site per github account. This is where you could host a portfolio site or some form of personal website. The default url is based on your github username, following the pattern : username.github.io though you can change this!
+-You get unlimited project sites1 Each github repo can have a corresponding hosted website. It's as simple as telling github which specific branch contains the web content. The default urls follow this pattern : username.github.io/repo-name
+
+
+
+125. Github pages demo (IMPORTANT)
+- https://colt.github.io/chickens/
+
+------------------------------------------------------------------------------------------------
+
+Section 14: Git Collaboration Workflows
+
+126. What really matters in this section
+- https://www.canva.com/design/DAEP32iZwVc/4se77vKYGwT5_9NpxFbZoQ/view?utm_content=DAEP32iZwVc&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+127. The pitfalls of a centralized workflow
+- The simplest collaborative workflow is to have everyone on the master branch (or main, or any other single branch)
+- Always take pull before pushing
+- The drawback of the centralized workflow is that each developer has to talk with others before pushing code
+
+128. Centralized workflow demonstration
+
+
+129. The all-important feature branch workflow
+- Treat master/main branch as the official project history
+- Multiple teammates can collaborate on a single feature and share code back and forth without polluting the master/main branch
+- Master/main branch won't contain broken code
+
+130. Feature branch workflow demo
+
+
+131. Merging feature branches
+- Merge at will,without any sort of discussionwith teammates.
+- Send an email or chat message or something to your team to discuss if the changes should be merged in.
+- Pull Requests
+
+132. Introducing pull requests
+- https://github.com/facebook/react/pulls
+- Pull requests are a featurebuilt in to products like Github and Bitbucket. 
+- They are not native to Git itself
+- They allow developers to alert team-members to new work that needs to be reviewed. They provide a mechanism to approve or reject the work on a given branch.
+- They also help facilitate discussion and feedback on the specified commits
+- Workflow
+1) Do some work locally on a fetaure branch to github
+2) Push up the feature branch to Github
+3) Open a pull request using the feature branch just pushed up to Github
+4) Wait for the PR to be approved and merged. Start a discussion on the PR
+
+
+133. Making our first pull requests
+
+
+134. Mergng pull requests with conflicts (IMPORTANT)
+
+
+135. Configuring branch protection rules
+- Settings > Branches > Branch protection rules
+
+136. Introducing forking
+- Instead of just one centralized github repo, every developer has their own Github repo in addition to the "main" repo. Developers make changes and push to their own forks before making pull requests.
+- Settings > Manage access > 
+- github allows us to create personal copies of other people's repos. We call those copies a "fork" of the original.
+- when we fork a repo,we are basically asking Github "Make me my own copy of this repo please"
+- As with pull requests, forking is not a git feature. The ability to fork is implemented by Github.
+- repo link > click on Fork button top corner
+
+137. Forking demonstration
+- https://github.com/gabrielecirulli/2048
+- https://github.com/Colt/2048
+
+
+138. The forking & clone workflow
+- Developer can pull/push changes either to his forked repo or to it's original repo 
+- It allows a project maintainer to accept contributions from developers all around the world without having to add them as actual owners of the main project repo or worry about giving them all permission to push to the repo (which could be disastrous).
+
+139. Fork & clone working demonstration (IMPORTANT)
+
+------------------------------------------------------------------------------------------------
+
+Section 15: Rebasing: The Scariest Git Command ?
+
+140. What really matters in this section
+- https://www.canva.com/design/DAEVkyNcwWI/qt8pRN3JA1lP9ckYeImxeQ/view?utm_content=DAEVkyNcwWI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+141. Why is rebasing scary ? Is it ?
+- as an alternative to merging
+- as a cleanup tool
+
+142. Comparing merging & rebasing (IMPORTANT)
+- https://git-scm.com/docs/git-rebase
+- Instead of merging we can rebase feature branch into the master.
+- This moves the entire feature branch so that it begins at the tip of the master branch. All of the work is still there, but we have re-written historey.
+- Instead of using a merge commit, rebasing rewrites history by creating new commits for each of the original feature branch commits.
+- to rebase feature branch into master
+git switch feature
+git rebase master
+
+143. Rebase demo Pt 1: Setup & Merging
+
+
+144. Rebase demo Pt 1: Actually rebasing
+- In rebasing feature branch commits get added to master branch commit
+- If we make a commit to master after rebasing with feature,What will be done with master ??
+
+145. The golden rule: When NOT to Rebase
+- Never rebase commits that have been shared with others. If you have already pushed commits up to Github...DO NOT rebase them unless you are positive no one on the team is using those commits
+
+146. Handling conflicts & Rebasing
+- CASES
+can abort rebase
+can skip files
+- git rebase --continue
+to continue rebaseing
+
+------------------------------------------------------------------------------------------------
+
+Section 16: Cleaning Up History With Interactive Rebase
+
+147. What really matters in this section
+- https://www.canva.com/design/DAEVkyNcwWI/qt8pRN3JA1lP9ckYeImxeQ/view?utm_content=DAEVkyNcwWI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+148. Introducing interactive rebase
+- Rewriting history means to rewrite, delete, rename, or even reorder commits (before sharing them)
+- For all these use git rebase
+- git rebase -i HEAD~4
+-i flag will run rebase into interactive mode
+
+149. Rewording commits with interactive rebase
+- https://github.com/Colt/interactive-rebase-demo
+- HEAD~9 means going to commit 9 from top
+- OPTIONS with git rebase
+pick - use the commit
+reword - use the commit, but edit the commit message
+edit - use commit, but stop for amending
+fixup - use commit contents but meld it into previous commit and discard the commit message
+drop - remove commit
+- just add these options before the commit you want to alter
+
+150. Fixing up & Squashing commits with interactive rebase
+- fixup only mix two commits but using two consecutive fixup will mix more than two commits 
+
+151. Dropping commits with interactive rebase
+- drop <commit>
+- git commit --amend
+to reword the latest commit
+
+------------------------------------------------------------------------------------------------
+
+Section 17: Git Tags: Marking Important Moments in History
+
+152. What really matters in this section
+- https://www.canva.com/design/DAEV5aEpUOQ/lfUIjJz2atC6fGT9KOv2kg/view?utm_content=DAEV5aEpUOQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+153. The idea behind git tags
+- Tags are most often used to mark version releases in projects
+- types - lightweight and annotated
+- lightweight tags are just a name/label that points to a particular commit.
+- annotated tags store extra meta data including the author's name and email, the date and the tagging message
+
+154. A side note on semantic versioning
+- https://semver.org/
+- https://getbootstrap.com/docs/versions/
+- https://reactjs.org/versions/
+- The semantic versioning spec outlines a standardized versioning system for software releases. 
+- Versions consists of three numbers seprated by periods MAJOR.MINOR.PATCH
+- Patch releases normally donot contain new features or significant changes. They typically signify bug fixes and other changes that donot impact how the code is used.
+- Minor releases signify that new features or functionality have been added, but the project is still backwards compatible. No breaking changes. The new functionality is optional and not force users to rewrite their own code.
+- Major releases signify significant changes that is no longer backwards compatible. Features may be removed or changed substantially.
+
+
+155. Viewing & Searching Tags
+- https://git-scm.com/docs/git-tag
+- https://github.com/facebook/react
+- git tag
+show list of all tags in the current repo
+- git tag -l "*beta*"
+can search for tags that match a particular pattern by using git tag -l and then passing in a wildcard pattern.
+
+156. Comparing Tags with git diff
+- git checkout <tag_name>
+to switch to other tag
+- git diff <tag_name>
+get comparission between current tag and mentioned tag changes
+- git diff <tag_name_1> <tag_name_2>
+get comparission between tag_name_1 and tag_name_2
+
+157. Creating lightweight tags
+- git tag <tag_name>
+create lightweight tag
+
+158. Creating annotated tags
+- git tag -a <tag_name>
+create annotated tag and opens an editor to provide more info
+- git show <tag_name>
+for more info about that tag
+
+159. Tagging previous commits
+- git tag <tag_name> <commit>
+to make a commit with tag
+
+160. Replacing Tags with force
+- git tag -f <tag_name>
+Git will yell at us if we try to reuse a tag that is already referring to a commit.If we use -f option, we can FORCE our tag through
+
+161. Deleting Tags
+- git tag -d <tag_name>
+delete tag
+
+162. IMPORTANT; Pushing tags
+- By default, git push doesn't transfer tags to remote servers.
+- git push --tags
+to push tags to the remote server
+
+------------------------------------------------------------------------------------------------
+
+Section 18: Git Behind the Scenes - Hashing & Objects
+
+163. What really matters in this section
+- https://www.canva.com/design/DAEV-h9bSG4/R6FyldDe8CO8Wfn8z92yRA/view?utm_content=DAEV-h9bSG4&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+164. Working with the local config file
+- https://git-scm.com/docs/git-config
+- inside .git - objects, config, HEAD, index, refs, etc
+- config - The config file is for...configurations like name,email, color, etc. But, we can also configure things on a per-repo basis
+
+165. Inside git:The Refs Directory
+- Inside of refs, you wil find a heads directory.
+- refs,heads contains one file per branch in a repo. Each file is named after a branch and contains the hash of the commit at the tip of the branch.
+- refs also contains a refs/tags folder which contains one file for each tag in the repo.
+
+166. Inside git: The HEAD file
+- HEAD is just a text file that keeps track of where HEAD points
+- If it contains refs/heads/master, this means that HEAD is pointing to the master branch.
+- In detached HEAD, the HEAD file contains a commit hash instead of a branch reference.
+
+167. Inside git: The objects directory
+- The objects directory contains all the repo files. This is where git stores the backups of files, the commits in a repo and more.
+- The files are all compressed and encrypted so they won't look like much!
+- types of git objects - commit, tree, blob and annotated tag
+
+168. A crash course on hashing functions
+- https://linkgod.github.io/SHA-1/
+- Hashing functions are functions that map input data of some arbitrary size to fixed-size output values.
+- cryptographic hash functions - One way function which is infeasible to invert, small change in input yields large change in the output, Deterministic (same input yields same output), unlikely to find 2 outputs with same value
+- SHA-1 - git uses a hashing function called SHA-1 (through this is a set to change eventually), It always generates 40 digit hexadecimal numbers, the commit hashes we have seen a million times are the output of SHA-1
+http://hash-functions.online-domain-tools.com/
+
+169. Git as a key-value datastore
+- Git is a key-value data store.We can insert any kind of content into a git repo and git will hand us back a unique key we can later use to retrieve that content.These keys we get back are SHA-1 checksums
+- Git uses SHA-1 to refer our files, folders and commits
+
+170. Hashing with git hash-object
+- https://git-scm.com/docs/git-hash-object
+- echo "hello" | git hash-object --stdin
+- --stdin - tells git hash-object to use the content from stdin rather than a file. In our example, it will hash the word "hello"
+- echo - simply repeats whatever we tell it to repeat to the terminal. We pipe the output of echo to git hash-object
+- git hash-object <file>
+It takes some data stores in our .git/objects directory and gives us back the unique SHA-1 hash that refers to that data object.
+- echo "hello" | git hash-object --stdin -w
+-w  option to tell git to actually write the object to the database. After running this command, check out the contents of .git/objects
+
+171. Retrieving data with git cat-file (IMPORTANT)
+- https://git-scm.com/docs/git-cat-file
+- git cat-file -p <object-hash>
+- -p option tells git to pretty print the contents of the object based on it's type.
+
+172. Deep dive into git objects: Blobs
+- Git blobs (binary large object) are the object type Git uses to store the contents of files in a given repo.
+- Blobs don't even include the filenames of each file or any other data. They just store the contents of a file.
+
+173. Deep five into git objects: Trees (IMPORTANT)
+- Trees are git objects used to store the contents of a directory. Each tree contains pointers that can refer to blobs and to other trees.
+- Each entry in a tree contains the SHA-1 hash of a blob or tree as well as the mode, type and filename
+- git cat-file -p master^{tree}
+viewing tree
+
+174. Deep five into git objects: Commits (IMPORTANT)
+- Commit objects combine a tree object along with information about the context that led to the current tree. 
+- Commits store a reference to parent commits(s), the author, the commiter and of course the commit message!
+
+
+------------------------------------------------------------------------------------------------
+
+Section 19: The Power of Reflogs - Retrieving "Lost" Work
+
+175. What really matters in this section
+- https://www.canva.com/design/DAEWorNx5_Q/piCbRO6BWwv9_ae_mahECA/view?utm_content=DAEWorNx5_Q&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+176. Introducing reflogs
+- Git keeps a record of when the tips of branches and other references were updated in the repo.
+- We can view and update these reference logs using the git reflog command
+
+177. The limitations of reflogs
+- Git only keeps reflogs on your local activity. They are not shared with collaborators.
+- Reflogs also expire. Git cleans out old entries after around 90 days, through this can be configured.
+
+178. The git reflogs show command
+- https://git-scm.com/docs/git-reflog
+- git reflog show HEAD OR git reflog
+show the log of a specific reference (It defaults to HEAD) 
+- The git reflog command accepts subcommands show, expire, delete and exits. Show is commonly used variant and it is the default subcommand.
+- git reflog show <branch>
+show logs of branch
+
+179. Passing reflog references around
+- name@{qualifier}
+used to access specific ref pointers and can pass them to other commands including checkout, reset and merge
+- git checkout HEAD@{2}
+- git diff HEAD@{2} HEAD@{5}
+
+180. Time-based reflog qualifiers
+- Every entry in the ref logs has a timestamp associated with it. 
+- We can filter reflogs entries by time/date by using time quantifiers like 
+1.day.ago, 3.minutes.ago, yesterday, Fri, 12 Feb 2021 14:06:21 -0800 , etc
+- git reflog show master@{one.week.ago}
+- git checkout bugfix@{2.days.ago}
+- git diff main@{0} main@{yesterday}
+
+181. Rescuing lost commits with reflog (IMPORTANT)
+- we can sometimes use reflog entries to access commits that seem lost and are not appearing in git log.
+- git reset --hard <commit_hash>
+delete the commit
+- git reset --hard <master@{1}>   OR git reset --hard <commit_hash>
+to restore deleted commit
+
+182. Undoing a rebase w/ reflog - It's a miracle  (IMPORTANT)
+
+------------------------------------------------------------------------------------------------
+
+Section 20: Writing Custom Git Aliases
+
+183. What matters in this section
+- https://www.canva.com/design/DAEWcidQeSI/m6VuuSGBgvBNsRcxfweqDA/view?utm_content=DAEWcidQeSI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+184. The global git config file
+- Git looks for the global config file at either ~/.gitconfig or ~/.config/git/config
+- Any configuration variables that we change in the file will be applied accross all git repos.
+- We can also alter configuration variables from the command line if preferred
+
+185. Writing our first git alias
+- Eg "git ci" instead of "git commit", "git lg"instead of "git log"
+- Inside .gitconfig file
+[alias]
+	s = status
+
+186. Setting aliases from the command line
+- git config --global alias.<s> status
+"s" instead of "status"
+
+187. Aliases with arguments (IMPORTANT)
+- Git is automatically made to take args
+[alias]
+	cm = commit -m
+- inside terminal
+git cm "abc"
+
+188. Exploring existing useful aliases online
+- https://github.com/GitAlias/gitalias
+- https://www.durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+- https://gist.github.com/mwhite/6887990
+
+
+OBSERVATION
+-----------
+- Git book
+https://git-scm.com/book/en/v2
+- Fast-forward merging and Merge commit merging are diffrent types of merging
+- Merge made by "Recursive strategy"
+- Detached HEAD state
+- reset vs revert
+- git merging strategies 
+https://www.geeksforgeeks.org/merge-strategies-in-git/
+https://git-scm.com/docs/merge-strategies
+- Git vs Github
+- fetch vs clonning
+- to preview markdown page / README.md
+https://markdown-it.github.io/
+- clone vs fork
+- merge vs rebase
+- log vs reflog
+- git checkout HEAD~2 vs git checkout HEAD@{2}

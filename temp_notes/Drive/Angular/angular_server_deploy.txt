@@ -1,0 +1,77 @@
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLPbILKiFfUMyJQJiXiaGwyn+5qTfCzv0zUHvKa7yCfMMBQg5EkpRmNGdcIu6hU4VioOQZs5oeUxk9HRi0dHPwApoBWyHFuK7nGvYPNbhCdH+hcg2CT+Kkl/QDwBSDF3Prn7Hfi1fmUOMx3rSkJgFyJoIHxvYRNLwYWmvaf8C7kEyaqgBvDwwOOQUZAXvFt9w7+sk/7F0clzn0t7V0zW241Z/v7skhFdYBrGl74ZCKIAXNbmrj1YZ+3LuTOWx6KIRXDT14JIpcW69/7TI1Sj4gd4UFT2/b5d+sL43WWEfrQQkIyKA2d9qV414EHGBFlvvEuuqJoXJ0T0JbK+1/R3ZreXCcVtDnc0NwX4FVgwpSJ7XuntDRvtRTo4NRD6eeSnhze+Es1iDD3BScii7rcawd8NAknGOv2qwL/mqi0t6jhMNbthsMEcyzyjc4cGMu41yp2DEMOuEvyrQ8tqG/+H/x9D1lb39KorKSqC/HZBlasnUNatXQCpYaPvhVZ7KQjtM= anviam@anviam-laptop
+
+
+
+Steps to make build on Simplifies server
+
+1) cd
+2) cd Documents/kitchen_server
+3) ssh -i "Simplifize_App_Server.pem" ubuntu@ec2-18-216-73-30.us-east-2.compute.amazonaws.com
+
+// For production
+ssh -i "Simplifize_App_Server.pem" ubuntu@3.140.61.77
+
+“welcome to ubuntu” will be shown
+
+ubuntu@ip-172-31-15-93:~$
+
+4) cd projects/app/kitchen_frontend/
+
+5) sudo mv dist dist9
+
+6) exit
+
+
+Create a new tab
+
+1) cd
+2) cd Documents/kitchen_server
+3) sftp -i "Simplifize_App_Server.pem" ubuntu@ec2-18-216-73-30.us-east-2.compute.amazonaws.com
+4) cd projects/app/kitchen_frontend
+5) put dist_new.zip
+6) exit 
+
+Again login with ssh
+
+1) cd
+2) cd Documents/kitchenserver
+3) ssh -i "Simplifize_App_Server.pem" ubuntu@ec2-18-216-73-30.us-east-2.compute.amazonaws.com
+
+“welcome to ubuntu” will be shown
+
+ubuntu@ip-172-31-15-93:~$
+
+4) cd projects/app/kitchen_frontend/
+
+5) unzip dist_new.zip
+
+6) exit
+
+
+
+
+-----------------------------------------------------------------
+
+- Run command inside your project 
+ng build --prod --configuration=production --build-optimizer --vendor-chunk=true
+
+3) copy your dist file in kitchenserver folder
+cd Documents/kitchenserver
+
+- make a zip of your dist file
+dist.zip 
+- rename your zip dist file
+dist_new.zip
+
+-------------------------------------------------------------------
+delete zip with ssh then  sudo rm -R dist
+
+
+
+
+
+
+
+
+
+

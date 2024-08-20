@@ -1,0 +1,18 @@
+OBSERVATION
+
+JS methods
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array (Important)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math (Important)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String (Important)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object (Important)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number (Important)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray 
+
+https://www.w3schools.com/jsref/jsref_obj_array.asp (Recommended)
+

@@ -1,0 +1,186 @@
+Github
+Global Settings
+https://gist.github.com/hofmannsven/6814278 - Related Setup 
+https://ochronus.com/git-tips-from-the-trenches/ - Related Pro Tips
+http://try.github.io/ - Interactive Beginners Tutorial 
+https://services.github.com/on-demand/downloads/github-git-cheat-sheet/ - Git Cheatsheet by GitHub
+Press minus + shift + s and return to chop/fold long lines!
+Show folder content: ls -la
+
+Setup
+which git - See where Git is located 
+git --version - Get the version of Git 
+git config --global alias.st status - Create an alias (shortcut) for git status 
+git config –list - to see git setting of your local repo
+git config –global color.ui true  - Set color in command line
+cat .gitconfig  - Shows all the settings in the config file that just have been set
+git help - Help 
+
+General
+git init  - Initialize Git
+git init <folder_name> - Create a folder and initialize git into it
+git add .  - Get everything ready to commit 
+git add index.html - Get custom file ready to commit: 
+git commit -m "Message" - Commit changes 
+git commit -m "Title" -m "Description..." - Commit changes with title and description
+git commit -am "Message" - Add and commit in one step
+git rm index.html - Remove files from Git
+git add -u - Update all changes
+git rm --cached index.html - Remove file but do not track anymore
+git mv index.html dir/index_new.html - Move or rename files
+git checkout -- index.html - Undo modifications (restore files from latest commited version)
+git checkout 6eb715d -- index.html - Restore file from a custom commit (in current branch)
+
+Reset
+git revert 073791e7dd71b90daa853b2c5acc2c925f02dbc6 - Go back to commit
+git reset --soft 073791e7dd71b90daa853b2c5acc2c925f02dbc6 - Soft reset (move HEAD only; neither staging nor working dir is changed)
+git reset --soft HEAD~ - Undo latest commit
+git reset --mixed 073791e7dd71b90daa853b2c5acc2c925f02dbc6 - Mixed reset (move HEAD and change staging to match repo; does not affect working dir)
+git reset --hard 073791e7dd71b90daa853b2c5acc2c925f02dbc6 - Hard reset (move HEAD and change staging dir and working dir to match repo)
+git checkout @ -- index.html - Hard reset of a single file (@ is short for HEAD)
+
+Update & Delete
+git clean -n - Test-Delete untracked files
+git clean -f - Delete untracked files (not staging)
+git reset HEAD index.html - Unstage (undo adds)
+git commit --amend -m "New Message" - Update most recent commit (also update the commit message)
+
+Branch
+git branch - Show branches
+git branch branchname - Create branch
+git checkout branchname - Change to branch
+git checkout -b branchname - Create and change to new branch
+git branch --move branchname new_branchname - Rename branch: git branch -m branchname new_branchname or
+git branch --merged - Show all completely merged branches with current branch
+git branch --delete branchname - 
+Delete merged branch (only possible if not HEAD): git branch -d branchname or
+
+git branch -D branch_to_delete
+Delete not merged branch
+
+Merge
+git merge branchname - True merge (fast forward)
+git merge --ff-only branchname - Merge to master (only if fast forward)
+git merge --no-ff branchname - Merge to master (force a new commit)
+git merge --abort - Stop merge (in case of conflicts)
+git reset --merge // prior to v1.7.4 - Stop merge (in case of conflicts)
+git reset --hard origin/master - Undo local merge that hasn't been pushed yet
+git cherry-pick 073791e7 - Merge only one specific commit
+git merge master branchname - 
+Rebase: git checkout branchname » git rebase master or (The rebase moves all of the commits in master onto the tip of branchname.)
+git rebase --abort - Cancel rebase
+git rebase -i HEAD~3 - Squash multiple commits into one (source)
+git merge --squash branchname - Squash-merge a feature branch (as one commit) (commit afterwards)
+
+Stash
+git stash save "Message" - Put in stash with a message
+git stash list - Show stash
+git stash show stash@{0} - Show stash stats
+git stash show -p stash@{0} - Show stash changes
+git stash pop stash@{0} - Use custom stash item and drop it
+git stash apply stash@{0} - Use custom stash item and do not drop it
+git stash apply --index - Use custom stash item and index
+git stash branch new_branch - Create branch from stash
+git stash drop stash@{0} - Delete custom stash item
+git stash clear - Delete complete stash
+
+Gitignore & Gitkeep
+https://help.github.com/articles/ignoring-files - About
+https://github.com/github/gitignore - Useful templates
+nano .gitignore - Add or edit gitignore
+touch dir/.gitkeep - Track empty dir
+
+Patch
+Git format-patch <commit_id> - create a .patch file (contents same as git diff)
+git apply <patch_file_name.patch> - modifies the local files without creating commit
+git am<patch_file_name.patch> - modifies the file and creates commit as well
+
+Log
+git log - Show commits
+git log --oneline - Show oneline-summary of commits
+git log --format=oneline - Show oneline-summary of commits with full SHA-1
+git log --oneline -3 - Show oneline-summary of the last three commits
+git log --author="Sven" git log --grep="Message" git log --until=2013-01-01 git log --since=2013-01-01 - Show only custom commits
+
+git log --format=short git log --format=full git log --format=fuller git log --format=email git log --format=raw - Show only custom data of commit
+git log -p - Show changes
+git log 6eb715d.. Index.html - Show every commit since special commit for custom file only
+git log -p 6eb715d.. Index.html - Show changes of every commit since special commit for custom file only
+git log --stat --summary - Show stats and summary of commits
+git log --graph - Show history of commits as graph
+git log --oneline --graph --all --decorate - Show history of commits as graph-summary
+git show 6eb715d - show the changes of according to the files 
+
+Compare
+git diff - Compare modified files
+git diff --color-words index.html - Compare modified files and highlight changes only
+git diff --staged - Compare modified files within the staging area
+git diff master..branchname - Compare branches
+git diff --color-words master..branchname^ - Compare branches like above
+git diff 6eb715d git diff 6eb715d..HEAD git diff 6eb715d..537a09f
+Compare commits
+git diff 6eb715d index.html git diff 6eb715d..537a09f index.html
+Compare commits of file
+git diff -b 6eb715d..HEAD or: git diff --ignore-space-change 6eb715d..HEAD
+Compare without caring about spaces
+git diff --ignore-all-space 6eb715d..HEAD or git diff -w 6eb715d..HEAD
+Compare without caring about all spaces
+
+git diff --stat --summary 6eb715d..HEAD - Useful comparings
+git blame -L10,+1 index.html - Blame
+
+Releases & Version Tags
+git tag - Show all released versions
+git tag -l -n1 - Show all released versions with comments
+git tag v1.0.0 - Create release version
+git tag -a v1.0.0 -m 'Message' - Create tag with name release version (v1.0.0)  with comment
+git checkout v1.0.0 - Checkout a specific release version
+git tag -d <tag_name> - Delete a tag of name <tag_name>
+
+Collaborate
+git remote - Show remote
+git remote -v - Show remote details
+git remote add upstream https://github.com/user/project.git - Add remote upstream from GitHub project
+git remote add upstream ssh://root@123.123.123.123/path/to/repository/.git - Add remote upstream from existing empty project on server
+git fetch upstream - Fetch
+git fetch upstream branchname:local_branchname - Fetch a custom branch
+git merge upstream/master - Merge fetched commits
+git remote rm origin - Remove origin
+git branch -r - Show remote branches
+git branch -a - Show all branches (remote and local)
+git checkout -b local_branchname upstream/remote_branchname - Create and checkout branch from a remote branch
+git diff origin/master..master - Compare
+git push -u origin master - Push (set default with -u)
+git push origin master - Push
+git push origin master --force - Force-Push
+git pull - Pull
+git pull origin branchname - Pull specific branch
+git fetch upstream pull/ID/head:new-pr-branch - Fetch a pull request on GitHub by its ID and create a new branch
+git clone https://github.com/user/project.git or: git clone ssh://user@domain.com/~/dir/.git - Clone to localhost
+git clone https://github.com/user/project.git ~/dir/folder - Clone to localhost folder
+git clone -b branchname https://github.com/user/project.git - Clone specific branch to localhost
+git clone https://oauth2:<token>@gitlab.com/username/repo.git - Clone with token authentication (in CI environment)
+git push origin :branchname or: git push origin --delete branchname - Delete remote branch (push nothing)
+
+Archive
+git archive --format zip --output filename.zip master - Create a zip-archive
+git log --author=sven --all > log.txt - Export/write custom log to a file
+
+Troubleshooting
+http://stackoverflow.com/a/1139797/1815847
+Ignore files that have already been committed to a Git repository
+
+Security
+Hide Git on the web via .htaccess: RedirectMatch 404 /\.git (more info here: http://stackoverflow.com/a/17916515/1815847)
+
+Large File Storage
+Website: https://git-lfs.github.com/
+Install: brew install git-lfs
+Track *.psd files: git lfs track "*.psd" (init, add, commit and push as written above)
+
+Extra commands
+gitk - open git gui
+git gui - open git gui
+References :
+https://onlywei.github.io/explain-git-with-d3/
+

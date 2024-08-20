@@ -1,0 +1,129 @@
+Installation & Setup
+configuration
+GIT CLONE 
+---------
+
+
+GIT REMOTE 
+----------
+
+
+GIT PULL 
+--------
+
+git add
+git commit 
+git log 
+git branches 
+git merge 
+
+GIT DIFF 
+--------
+- to show all changes in the working tree since your last commit
+git diff HEAD
+- to list the changes between the staging area and our last commit
+git diff --staged
+git diff --cached
+- to view changes within a specific file
+git diff HEAD <file_name>
+git diff --staged <file_name>
+- to compare branches
+git diff branch_1 branch_2
+- to compare commits
+git diff commit_1 commit_2
+- to show all changes in the working tree since your last commit
+git diff HEAD
+- to list the changes between the staging area and our last commit
+git diff --staged
+git diff --cached
+- to view changes within a specific file
+git diff HEAD <file_name>
+git diff --staged <file_name>
+- to view changes within a specific file
+git diff HEAD <file_name>
+git diff --staged <file_name>
+- to compare branches
+git diff branch_1 branch_2
+- to compare commits
+git diff commit_1 commit_2
+- git diff <tag_name>
+get comparission between current tag and mentioned tag changes
+- git diff <tag_name_1> <tag_name_2>
+get comparission between tag_name_1 and tag_name_2
+
+
+GIT STASH 
+---------
+- to save the changes temperary
+git stash
+git stash save
+- to apply stash changes
+git stash pop
+- to view all stashes
+git stash list
+- to delete a particular stash
+git stash drop stash@{2}
+- to clear all stashes
+git stash clear
+
+GIT CHECKOUT
+------------
+- to check the repo when it was on remote
+git checkout origin/<branch_name>
+- git checkout <tag_name>
+to switch to other tag
+
+GIT SWITCH 
+----------
+
+GIT RESET  
+----------
+
+GIT RESTORE  
+-----------
+
+GIT FETCH 
+---------
+- to fetch branches and history from a repo
+git fetch <remote>
+
+GIT REBASE 
+----------
+
+GIT TAG 
+-------
+- git tag
+show list of all tags in the current repo
+- git tag -l "*beta*"
+can search for tags that match a particular pattern by using git tag -l and then passing in a wildcard pattern.
+- git tag <tag_name>
+create lightweight tag
+- git tag -a <tag_name>
+create annotated tag and opens an editor to provide more info
+- git show <tag_name>
+for more info about that tag
+- git tag <tag_name> <commit>
+to make a commit with tag
+- git tag -f <tag_name>
+Git will yell at us if we try to reuse a tag that is already referring to a commit.If we use -f option, we can FORCE our tag through
+- git tag -d <tag_name>
+delete tag
+- - git push --tags
+to push tags to the remote server (By default, git push doesn't transfer tags to remote servers.)
+
+GIT REFLOG 
+----------
+- git reflog show <branch>
+show logs of branch
+- name@{qualifier}
+used to access specific ref pointers and can pass them to other commands including checkout, reset and merge
+- git checkout HEAD@{2}
+- git diff HEAD@{2} HEAD@{5}
+- git reflog show master@{one.week.ago}
+- git checkout bugfix@{2.days.ago}
+- git diff main@{0} main@{yesterday}
+- git reset --hard <master@{1}>   OR git reset --hard <commit_hash>
+to restore deleted commit
+
+GIT ALIAS 
+---------

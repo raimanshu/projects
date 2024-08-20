@@ -1,0 +1,63 @@
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping
+the adjacent elements if they are in the wrong order. <br />
+In Bubble Sort algorithm, <br />
+> traverse from left and compare adjacent elements and the higher one is placed
+at right side. <br />
+> In this way, the largest element is moved to the rightmost end at first.
+<br />
+> This process is then continued to find the second largest and place it and so
+on until the data is sorted. <br />
+
+code step by step => https://www.youtube.com/watch?v=SjE7auKShjk
+
+<!-- Method 1 -->
+<script>
+  function bubbleSort(arr) {
+    var i, j, temp;
+    var swapped;
+    for (i = 0; i < arr.length - 1; i++) {
+      swapped = false;
+      for (j = 0; j < arr.length - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          // Swap arr[j] and arr[j+1]
+          temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+          swapped = true;
+        }
+      }
+
+      // IF no two elements were
+      // swapped by inner loop, then break
+      if (swapped == false) break;
+    }
+  }
+
+  let arr = [64, 34, 25, 12, 22, 11, 90];
+  console.log(arr);
+  bubbleSort(arr);
+  console.log(arr);
+</script>
+
+<!-- Method 2: Optimized -->
+<script>
+  function recursiveBubblesort(arr, arr_len) {
+    if (arr_len == 0) {
+      return;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i + 1]) {
+        let temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+      }
+    }
+    recursiveBubblesort(arr, arr_len - 1);
+  }
+
+  let arr2 = [64, 34, 25, 12, 22, 11, 90];
+  console.log(arr2);
+  recursiveBubblesort(arr2, arr2.length);
+  console.log(arr2);
+</script>

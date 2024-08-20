@@ -1,0 +1,17 @@
+https://www.spiceworks.com/tech/artificial-intelligence/articles/what-is-nosql/
+
+
+- Types of database
+SQL
+NoSQL
+
+- Types of NoSQL 
+Key-value pair based NoSQL - Dynamo, Redis, Riak, Tokyo Cabinet/Tyrant, Voldemort, Amazon SimpleDB, and Oracle BDB.
+Column-based NoSQL - Cassandra, HBase, and Hypertable.
+Document-oriented NoSQL - MongoDB, CouchDB, Riak, Amazon SimpleDB, and Lotus Notes.
+Graph-type NoSQL - Neo4J, Infinite Graph, and FlockDB.
+multi-model NoSQL - OrientDB, ArangoDB, and MarkLogic Server
+
+
+
+

@@ -1,0 +1,28 @@
+Udemy - Angular Complete Guide
+
+Section 1 - Getting Started
+ Course Introduction
+What is Angular? 
+Javascript framework to create single page application (SPA)
+Do not refreshes the page but all pages render within the same window
+Join our online learning community
+Academind Community
+Angular vs Angular 2 vs latest Angular
+CLI Deep dive and Troubleshooting
+Potential Project Creation Issues
+Project Setup and First App
+ng new project_name
+–no-strict
+Editing the First App
+package.json, dependencies, dev-dependencies 
+The Course Structure
+How to get most out from this course
+
+
+
+
+
+
+OBSERVATIONS :
+
+

@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+Containers	-	container, container-fluid
+
+Grid basic	-	row, col, col-sm|md|lg|xl
+
+typography	-	h1,h2,h3,h4,h5,h6, small, mark, abbr, blackquote, dl, code, kbd, pre
+
+div		-	blockquote, 
+
+text font size	-	display-1|2|3|4|5|6, 
+
+text colors	-	text-muted|primary|success|info|warning|danger|secondary|white|dark|body
+
+background	-	bg-primary|success|info|warning|danger|secondary|dark|light
+
+text alignment	-	
+
+text transformation	-	
+
+lists		-	
+
+tables		-	table, table-striped, table-bordered, table-hover, table-dark, table-borderless, thead-dark, thead-light, table-sm, table-responsive, table-				primary, table-success, table-info, table-warning, table-danger, table-secondary, table-dark, table-light, table-active
+
+images		-	img-fluid, rounded, rounded-circle, img-thumbnail, float-left, float-right, mx-auto, d-block
+
+borders		-	border, border-top, border-right, border-bottom, border-left, border-0, border-top-0, border-right-0, border-bottom-0, border-left-0, border-				primary, border-success, border-info, border-warning, border-danger, border-secondary, border-white, border-dark, border-light, rounded, 				rounded-top, rounded-bottom, rounded-right, rounded-left, rounded-circle, rounded-0
+
+buttons		-	btn, btn-primary, btn-secondary, btn-success, btn-info, btn-warning, btn-danger, btn-light, btn-dark, btn-link, btn-outline-primary, 					btn-outline-secondary, btn-outline-success, btn-outline-info, btn-outline-warning, btn-outline-danger, btn-outline-light, btn-outline-dark,
+			btn-lg, btn-sm, btn-block, active, disabled
+
+button groups	-	btn-group, btn-group-lg, btn-group-sm, btn-group-vertical, caret, 
+
+jumbotrons	-	jumbotron, jumbotron-fluid
+
+alerts		-	alert, alert-success, alert-info, alert-warning, alert-danger, alert-primary, alert-secondary, alert-light, alert-dark, alert-link, 
+			alert-dismissible, fade, show, close
+
+badges		-	badge, badge-primary, badge-success, badge-info, badge-warning, badge-danger, badge-secondary, badge-dark, badge-light, badge-pill
+
+progress bar	-	progress, progress-bar, progress-bar-striped, progress-bar-animated, bg-primary, bg-success, bg-info, bg-warning, bg-danger, bg-secondary, 
+			bg-dark, bg-light
+
+spinners	-	spinner-border, spinner-border-sm, text-muted, text-primary, text-success, text-info, text-warning, text-danger, text-secondary, text-white, 				text-dark, spinner-grow, spinner-grow-sm, 
+
+pagination	-	pagination, pagination-lg, pagination-sm, page-item, page-link, active, disabled, breadcrumb, breadcrumb-item, 
+
+list groups	-	list-group, list-group-item, active, list-group-item-action, disabled, list-group-flush, list-group-horizontal, list-group-item-success, 
+			list-group-item-secondary, list-group-item-info, list-group-item-warning, .list-group-item-danger, .list-group-item-primary, 
+			list-group-item-dark, list-group-item-light 
+
+cards		-	card, card-body, card-header, card-footer, bg-primary, bg-success, bg-info, bg-warning, bg-danger, bg-secondary, bg-dark, bg-light, 
+			card-img-top, card-img-bottom, card-body, stretched-link, card-img-overlay, card-columns, card-deck, card-group, 
+
+dropdowns	-	dropdown, dropdown-toggle, dropdown-menu, dropdown-item, dropdown-divider, dropdown-header, active, disabled, dropright, dropleft, 
+			dropdown-menu-right, dropup, dropdown-item-text, 
+
+collapse	-	collapse, show, 
+
+navs		-	nav, nav-item, nav-link, nav-tabs, active, nav-pills, nav-justified, tab-pane, fade, justify-content-center, justify-content-end, 
+
+navbar		-	navbar, navbar-expand-xl|lg|md|sm, navbar-nav, nav-item, nav-link, justify-content-center, bg-primary, bg-success, bg-info, bg-warning, bg-danger, bg-secondary, bg-dark, bg-light, active, disabled, navbar-brand, collapse, navbar-collapse, navbar-text, fixed-top, fixed-bottom, sticky-top, 
+
+forms		-	form-control, form-group, form-inline, row, col, form-row, was-validated, needs-validation, invalid-feedback, valid-feedback, 
+inputs		-	form-control, form-group, form-check-label, form-check-input, form-check, form-check-inline, form-control-sm, form-control-lg, form-control-plaintext, form-control-range, 
+input-groups	-	input-group, input-group-prepend, input-group-append, input-group-text, input-group-sm, input-group-lg, 
+custom forms	-	custom-control, custom-checkbox, custom-control-input, custom-control-label, custom-radio, custom-control-inline, custom-select, custom-select-sm, custom-select-lg, custom-range, custom-file, custom-file-input , custom-file-label, 
+Carousal	-	carousel, carousel-inner, carousel-item, carousel-control-prev, carousel-control-next, carousel-control-prev-icon, carousel-control-next-icon, slide, carousel-caption, 
+modal		-	modal, modal-dialog, modal-content, modal-header, modal-title, modal-body, modal-footer, fade, modal-sm, modal-lg, modal-xl, modal-dialog-centered, modal-dialog-scrollable, 
+tooltip		-	
+popover		-	
+toast		-	toast, toast-header, toast-body, 
+scrollspy	-	
+utilities	-	border, border-0, border-top|bottom|left|right-0, border-primary|secondary|success|danger|warning|info|light|dark|white, rounded, rounded-sm|lg|top|bottom|right|left|circle|0, float-right|left, clearfix, mx-auto, w-25|50|75|100, h-25|50|75|100, m|mt|mb|ml|mr|mx|my-0|1|2|3|4|5|n1|n2|n3|n4|n5, p|pt|pb|pl|pr|px|py-0|1|2|3|4|5|n1|n2|n3|n4|n5, shadow, shadow-none|sm|lg, align-baseline|top|bottom|middle|text-top|text-bottom, embed-responsive-item, embed-responsive, visible, invisible, fixed-top|bottom, sticky-top, close, sr-only, 
+
+flex		-	d-flex, d-inline-flex, flex-row, flex-row-reverse, flex-column, flex-column-reverse, justify-content-start|end|center|between|around, flex-fill, flex-grow-1, flex-shrink-1, order, mr-auto, ml-auto, flex-nowrap, flex-wrap, flex-wrap-reverse, align-content-start|end|center|between|around|stretch, align-items-start|end|center|baseline|stretch, align-self-start|end|center|baseline|stretch, 
+
+icons
+media		-	media, media-body, 
+filters		-	
+
+
+
+===============================================================
+According to deal document property type is dependent
+Dropdown in excel sheet in WFG page
+
+

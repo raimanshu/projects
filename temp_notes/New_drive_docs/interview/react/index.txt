@@ -1,0 +1,10 @@
+https://github.com/sudheerj/reactjs-interview-questions
+
+
+
+DOUBTS
+------
+React element vs component 
+state vs props
+synthetic event vs native event 
+Virtual DOM vs Shadow DOM

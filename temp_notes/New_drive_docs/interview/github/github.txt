@@ -1,0 +1,67 @@
+GENERAL TOPICS
+--------------
+Git vs Github
+Version Control System (VCS)
+Configuring git 
+git repo vs project folder 
+What is .git folder 
+Working Area vs Staging Area vs 
+modified file vs untracked file 
+
+staging command 
+branches - creating, switching, deleating, updating
+What is HEAD?
+types of merging in git 
+Comparing changes - between same files, between commits, staged and unstaged files, between branches, 
+Stashing - apply vs drop vs pop
+What is deattached HEAD in git ?
+
+reset vs revert vs restore
+https://www.geeksforgeeks.org/merge-strategies-in-git/
+https://git-scm.com/docs/merge-strategies
+
+What is SSH key ?
+Upstream vs Downstream
+
+main vs master 
+fetch vs pull
+fork vs clone
+
+github gists 
+github pages 
+
+rebase as merging
+rebase as cleaner 
+
+merge vs rebase
+tags - creating, replacing, deleating, updating 
+Git hash and objects 
+
+log vs reflog
+
+git aliases
+
+
+
+
+OBSERVATION
+-----------
+- Git book
+https://git-scm.com/book/en/v2
+- Fast-forward merging and Merge commit merging are diffrent types of merging
+- Merge made by "Recursive strategy"
+- Detached HEAD state
+- reset vs revert vs restore
+
+- git merging strategies 
+https://www.geeksforgeeks.org/merge-strategies-in-git/
+https://git-scm.com/docs/merge-strategies
+
+- Git vs Github
+- fetch vs clonning
+- to preview markdown page / README.md
+https://markdown-it.github.io/
+- clone vs fork
+- merge vs rebase
+- log vs reflog
+- git checkout HEAD~2 vs git checkout HEAD@{2}

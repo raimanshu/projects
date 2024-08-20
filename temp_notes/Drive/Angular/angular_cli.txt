@@ -1,0 +1,193 @@
+Angular_cli
+
+
+
+
+Angular 
+
+ng new <project-name>  #Creates a new Angular project. By default, the project is created under the current directory.
+
+ng new <project-name> --dry-run  #only output the files created and operations performed, do not actually create the project. Alias: 'd'.
+ ng new <project-name> --verbose #output more information. Alias: 'v'.
+ ng new <project-name> --skip-npm #do not run any npm command once the project is created.
+ ng new <project-name> --skip-git #do not create a git repository for the project.
+ ng new <project-name> --directory  #parent directory to create the new project into.
+
+
+ng init <project-name> #Creates a new Angular project in the current folder.
+
+ng init <project-name> --dry-run  #only output the files created and operations performed, do not actually create the project. Alias: 'd'.
+ ng init <project-name> --verbose #output more information. Alias: 'v'.
+ ng init <project-name> --skip-npm #do not run any npm command once the project is created.
+ng init <project-name> --name The #name of the project to create.
+
+ng completion #Adds autocomplete functionality to your shell for ng commands.
+ng e2e #Runs all end-to-end tests defined in your application, using protractor.
+ng format #Formats the code of this project using clang-format.
+ng doc <keyword> #Opens a browser window with the keyword as search in Angular documentation.
+ng generate <type> Generate new code inside your project.
+Alias: 'g'
+Valid types:
+ component <path/to/component-name> Generates a component.
+ directive <path/to/directive-name> Generates a directive.
+ route <route/to/route-component> Generates a route. The name should
+ be the route used in the RouteConfig.
+ pipe <path/to/pipe-name> Generates a pipe.
+ service <path/to/service-name> Generates a service.
+The generated component has its own directory, unless the --flat options
+is specified.
+ng doc
+ng e2e
+ng format
+ng generate
+ng get <path1=value1, path2=value2, ...pathN=valueN> [options]
+Set a value in the Angular CLI configuration. By default, sets the value
+in the project's configuration if ran inside a project, or fails if not
+inside a project. The pathN arguments is a valid JavaScript path like
+"users[1].userName". The value will be coerced to the proper type or will
+throw an error if the type cannot be coerced.
+Options:
+ --global Sets the global configuration value instead of a local
+ one. This also makes `ng set` works outside a project.
+ng github-pages:deploy [options]
+Options:
+ --flat Do not create the code in its own directory.
+ --route=<route> Specify the parent route. Only for generating components
+ and routes. Default to the path specified.
+ --skip-router-generation Skip generating the route config for the parent.
+ Only usable for routes.
+ --default Specify that the route should be a default route.
+ --lazy Specify that the route is lazy. Default to true.
+ng get <path1, path2, ...pathN> [options]
+Get a value from the Angular CLI configuration. The pathN arguments is a valid
+JavaScript path like "users[1].userName". If the value isn't set, "undefined"
+will be shown. This command by default only works inside a project directory.
+Options:
+ --global Returns the global configuration value instead of the local
+ one (if both are set). This option also makes the command
+ work outside of a project directory.
+ng get
+ng set
+ng github-pages:deploy
+Build the application for production, setup the GitHub repository,
+then publish the app.
+Options:
+ --message=<message> Commit message to include with the build.
+ Defaults to "new gh-pages version".
+ --environment=<env> The Angular environment to build.
+ Defaults to "production".
+ --branch=<branch-name> The git branch to push the pages to.
+ Defaults to "gh-branch".
+ --skip-build Skip building the project before publishing.
+ --gh-token=<token> API token to use to deploy. Required.
+ --gh-username=<username> The Github username to use. Required.
+
+
+ng lint #Run the codelyzer linter on your project.
+ng test #Run unittests, using karma.
+
+ng test --watch #Keep running the tests. Default to true.
+ng test --browsers, --colors, --reporters, --port, --log-level #Those arguments are passed directly to karma.
+ng version  #Outputs the version of angular-cli, node and the operating system.
+
+
+--------------------------------------------------------------------------------------------
+
+ng new <project name>  # To create a new project
+
+ng serve  # To host the project on 4200 port
+
+ng serve --port <port no> --host <host name> # To host application specific host/port
+
+ng s --p <port no> --h <hostname>
+
+ng lint # To lint and look for JavaScript errors
+
+ng lint --format stylish # Linting and formatting the output
+
+ng lint --fix # Lint and attempt to fix all the problems
+
+ng build # to build a project in the dist folder
+
+ng build ---target <target name> # Target for which we want to build
+
+ng build --prod # To build in production mode
+
+ng test # To run spec files
+
+ng e2e # To run e2e test cases
+
+ng doc # To look for angular documentation
+
+ng help # To get help on angular cli commands
+
+ng set # to change properties
+
+# For e.g. ng set default.styleExt scss
+# ng set default.styleExt scss -g -- To set in global angular-cli file
+
+ng generate component <component name> # To generate new component
+ng g c <component name> # Short notation to generate component
+
+ng g c <component name> --flat # Want to generate folder name as well?
+
+ng g c <component name> --inline-template # Want to generate HTML file?
+ng g c <component name> -it # Short notation
+
+ng g c <component name> --inline-style # Want to generate css file?
+ng g c <component name> -is # Short notation
+
+ng g c <component name> --spec # Want to generate spec file?
+
+ng g c <component name> --view-encapsulation # View encapsulation stratergy
+ng g c <component name> -ve # Short notation
+
+ng g c <component name> --change-detection # Change detection strategy
+ng g c <component name> -cd # Short notation
+
+ng g c <component name> --dry-run # To only report files and don't write them
+ng g c <component name> -d # Short notation
+
+
+ng g c <component name> -m <module name> -d 
+# Name of module where we need to add component as dependency
+
+ng generate directive <directive-name> # To generate directive
+ng g d <directive-name> # short notation
+
+ng g d <directive-name> -d # To only report files and don't write them
+
+ng generate service <service-name> # To generate service
+ng g s <service-name> # short notation
+
+ng g s <service-name> -d # To only report files and don't write them
+
+ng g s <service-name> -m <module name> 
+# Name of module where we need to add service as dependency
+
+ng generate class <class name> # To generate class
+ng g cl <class name> # short notation
+
+ng generate interface <interface name> # To generate interface
+ng g i <interface name> # short notation
+
+ng generate pipe <pipe name> # To generate pipe
+ng g p <pipe name> # short notation
+
+ng generate enum <enum name> # To generate enum
+ng g e <enum name> # short notation
+
+ng generate module <module name> # To generate module
+ng g m <module name> # To short notation
+
+ng g m <module name> --spec true -d # To generate spec file for the module
+
+ng g m <module name> --routing # To generate module with routing file
+
+ng g guard <guard name> # To generate guard to route
+
+npm install -g source-map-explorer
+
+ng build # To build the solution
+source-map-explorer dist/main.bundle.js # Open a treemap visualization
+

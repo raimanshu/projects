@@ -1,0 +1,116 @@
+https://refactoring.guru/design-patterns/typescript
+https://www.patterns.dev/posts
+
+https://www.youtube.com/watch?v=wElVjMlYVAw&list=PL1WVjBsN-_NK13Vf2UqdLZtukQ23TxeSx&index=11
+https://github.com/hnmpatel/design-patterns-python
+
+# patterns
+Creational Patterns
+Structural Patterns
+Behavioural Patterns
+
+# Creational Patterns
+- Factory Method -
+- Abstract Factory Method - 
+- Builder Method - It lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+- Prototype Pattern - It lets you copy existing objects without making your code dependent on their classes.
+- Singleton Pattern - 
+
+# Structural Patterns
+Adapter 
+Bridge 
+Composite 
+Decorator 
+Facade 
+Flyweight 
+Proxy 
+
+
+# Behavioural Patterns
+Chain of Responsibility 
+Command 
+Iterator 
+Mediator 
+Memento 
+Observer 
+State 
+Strategy 
+Template Method 
+Visitor 
+
+
+IMPORTANT LINKS ::
+https://refactoring.guru/design-patterns (Recommended)
+https://www.dofactory.com/javascript/design-patterns
+https://www.patterns.dev/posts/classic-design-patterns/ 
+https://sbcode.net/typescript/
+
+
+
+
+
+NOTES ::
+# Types of design patterns - Creational, Structural and Behavioural
+
+# Creational Design Pattern 
+- all about class instantiation or object creation
+- Class-creational patterns and Object-creational patterns
+- Eg - Factory Method, Abstract Factory, Builder, Singleton, Object Pool, Prototype
+- Use case -
+
+# Class-creational patterns
+- use inheritance effectively in the instantiation process
+- Use case -
+
+# Object-creational patterns
+- use delegation effectively to get the job done
+- Use case -
+
+# Structural Design Pattern
+- all about organizing different classes and objects to form larger structures and provide new functionality
+- Eg -Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Private Class Data, and Proxy
+- Use case -
+
+# Behavioural Design Pattern
+- all about identifying common communication patterns between objects and realizing these patterns
+- Eg - Chain of responsibility, Command, Interpreter, Iterator, Mediator, Memento, Null Object, Observer, State, Strategy, Template method, Visitor 
+- Use case -
+
+# Factory Design Pattern
+
+# Observer Design Pattern
+# Singleton Design Pattern
+# Decorator Design Pattern
+# Strategy Design Pattern
+# Adapter Design Pattern
+# Command Design Pattern
+# Iterator Design Pattern
+# Curiously recurring template pattern (CRTP)
+# Flyweight Design Pattern
+# Focade Design Pattern
+# Proxy Design Pattern
+# Composite Design Pattern
+# Prototype Design Pattern
+# Abstract Design Pattern / Abstract Factory Design Pattern
+- An Abstract Factory creates objects that are related by a common theme. In object-oriented programming a Factory is an object that creates other objects. An Abstract Factory has abstracted out a theme which is shared by the newly created objects.
+- https://www.dofactory.com/javascript/design-patterns/abstract-factory
+
+# Bridge Design Pattern
+# Template Method Design Pattern
+# Builder Design Pattern
+- The Builder pattern allows a client to construct a complex object by specifying the type and content only. Construction details are hidden from the client entirely.
+- https://www.dofactory.com/javascript/design-patterns/builder 
+# Chain of responsibility Design Pattern
+
+# Unified Modeling Language (UML, Class Diagram)  
+
+
+
+
+
+
+
+DOUBTS::
+Design patterns ?
+System Design Pattern vs Software Design Pattern ?
+

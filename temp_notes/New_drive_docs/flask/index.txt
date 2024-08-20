@@ -1,0 +1,3 @@
+Boilerplate
+------------
+https://medium.com/@appseed.us/flask-boilerplates-open-source-and-free-95a1e39c6a34

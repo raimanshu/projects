@@ -1,0 +1,4 @@
+Flask Specific
+Flask-WTF - working with forms
+tensorflow
+openpyxl

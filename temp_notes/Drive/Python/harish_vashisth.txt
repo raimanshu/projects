@@ -1,0 +1,35 @@
+Complete Python 3 course (Introduction)
+Python 2 vs Python 3
+Creator - Guido van Rossum
+Download and Install python, Vscode and Git
+Integrate Git bash with vscode
+Fix!!! Bash:python:command not found error
+
+CH 0: Command line tutorial with git bash
+pwd - print working directory
+ls - show list of flies and folders
+clear - clear the screen
+cd - goto
+mkdir “folder_name” - create new folder
+touch “file_name.extension” - create file
+cd .. - goto previous folder 
+rm “file_name.extention” - remove file
+rm -rf “folder_name” - remove folder name 
+mv “old_file_name.extension” “new_file_name.extension”
+cp “file_name.extension” .\folder_name - copy file_name.extension inside folder_name
+CH 0: Summary
+
+CH 1: Overview and How to follow tutorial
+
+ Print function - to print something on the screen ie print(“Hello”) or print(‘Hello’)
+Strings - collection of characters inside double or single quotes
+We can use single inside double quotes or double inside single quotes
+
+Escape sequences - used inside strings to print few special characters
+
+Comments 
+
+
+CONTD… 
+ 
+

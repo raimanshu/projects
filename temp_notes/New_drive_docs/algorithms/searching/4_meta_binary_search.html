@@ -1,0 +1,64 @@
+Points to remember <br /><br />
+Meta Binary Search, also known as One-Sided Binary Search <br />
+The basic idea behind Meta Binary Search is to start with an initial interval of
+size n that includes the entire array. The algorithm then computes a middle
+element, as in binary search, and compares it to the target element. If the
+target element is found, the search terminates. If the middle element is greater
+than the target element, the algorithm sets the new interval to the left half of
+the previous interval, and if the middle element is less than the target
+element, the new interval is set to the right half of the previous interval.
+<br />
+
+unlike binary search, Meta Binary Search does not perform a comparison for each
+iteration of the loop. Instead, the algorithm uses a heuristic to determine the
+size of the next interval. It computes the difference between the value of the
+middle element and the value of the target element, and divides the difference
+by a predetermined constant, usually 2. <br />
+
+Math.floor(4.5) = 4 <br />
+Implementation ways -- Itterative and Recurrsive <br />
+Binary search is divide an conquer approch <br />
+Condition before applying Binary search -- Array must be sorted <br /><br />
+
+Time Complexity (where 'n' is the size of the list.) <br /><br />
+Best Case - O(1) <br />
+Worst Case - O(log n) <br />
+Average Case - O(log n) <br />
+Space Complexity - O(log n) <br />
+<br />
+
+https://www.geeksforgeeks.org/meta-binary-search-one-sided-binary-search/
+
+<script>
+  // Method 1 : Iterative method
+
+  // Function to show the working of Meta binary search
+  function bsearch(arr_val, key_to_search) {
+    let n = arr_val.length;
+    // Set number of bits to represent largest array index
+    let lg = parseInt(Math.log(n - 1) / Math.log(2)) + 1;
+
+    //while ((1 << lg) < n - 1)
+    //lg += 1;
+
+    let pos = 0;
+    for (let i = lg; i >= 0; i--) {
+      if (arr_val[pos] == key_to_search) return pos;
+
+      // Incrementally construct the
+      // index of the target value
+      let new_pos = pos | (1 << i);
+
+      // find the element in one
+      // direction and update position
+      if (new_pos < n && arr_val[new_pos] <= key_to_search) pos = new_pos;
+    }
+
+    // if element found return pos otherwise -1
+    return arr_val[pos] == key_to_search ? pos : -1;
+  }
+
+  console.log(
+    "Element found at index " + bsearch([-2, 10, 100, 250, 32315], 250)
+  );
+</script>

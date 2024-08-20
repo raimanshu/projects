@@ -1,0 +1,36 @@
+Observations
+
+Important Links
+Photopea vs Figma - https://www.saashub.com/compare-figma-vs-photopea 
+Shortcut keys https://usethekeyboard.com/figma/ 
+For UI help http://www.uigoodies.com/ 
+For practice pen tool - https://bezier.method.ac/ 
+Find cheat sheet for short https://usethekeyboard.com/figma/ 
+
+Points To Remember
+Constrain proportions - Always use with frames and images or where you don’t want to change dimensions
+Always start designing before setting layout grid for the design
+Fill option to fill color in different ways
+Stroke is used for borders
+Effects is used for shadowing effect on element
+Height space between elements should always be same in template
+Always create styles for that site before start designing - color styles, text styles
+Variants are used for different types of buttons in whole site
+Already defined components include colors,shades,typography,spacing,icons,alerts,buttons,forms,radio button, checkbox, toggle etc
+
+
+Doubts
+Figma jam file vs figma design file
+Frames vs Groups
+Grid layout uses?
+Gutter vs offset vs column width
+No mirroring, Mirror length, Mirror angle with length
+Why and where masking is used ?
+How many ways can we insert an image inside a shape ? - place image, fill option in right side nav, copy image from file explorer then select the shape and paste the image, drop the image inside fill option in right side nav
+How to insert an image in bulk in figma ?
+How to insert a gif ?
+What is Flatten text and outline stroke property
+What is the Auto layout feature ?
+What is Hug contents
+Figma components vs Figma variants
+What are design systems

@@ -1,0 +1,2 @@
+Algorithms
+Types - Brute Force, Recursive, Backtracking, Searching, Sorting, Hashing, Divide & Conquer, Greedy, Dynamic Programming, Randomized

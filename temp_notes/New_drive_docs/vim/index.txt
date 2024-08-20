@@ -1,0 +1,2 @@
+https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/vim.txt
+https://github.com/ibhagwan/vim-cheatsheet

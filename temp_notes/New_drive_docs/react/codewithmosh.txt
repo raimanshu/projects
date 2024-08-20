@@ -1,0 +1,289 @@
+Introduction
+
+
+What is React
+- reactjs is a javascript library for building user interfaces
+- react element is a simple js object that maps to browser DOM representation ie virtual DOM
+- react reacts to state changes
+- Angular is is a framework but react is a library it only renders the view and main states so that each view are in sync 
+
+Setting Up the Development 
+- install node 
+- npm i -g create-react-app
+- vs code extension - simple react snippets
+
+Environment 
+
+Your First React App
+- to create new react app 
+create-react-app <project-name>
+- while it create app it creates a development server (for running in browser), webpack (for bundling the project), and babel (modern js compiler)
+- to run the project 
+npm start 
+- to make the build for production
+npm run build 
+- node_modules - contains all 3rd party libraries 
+- public - contains all assets, favicon, index.html  
+- src - contains all components
+- https://babeljs.io/docs/
+- Babel transpiles ES6+ into backwards compatible JS (ES5)
+- JSX 
+
+Hello World
+- Hot module reloading means as we make changes in code compiler tracks those changes and render it on browser
+import React from 'react';
+import ReactDOM from 'react-dom';
+const element = <h1> Hello World </h1>
+console.log(element);
+ReactDOM.render(element, document.getElementById('root'));
+
+Components
+- Components are reusable pieces of UI
+
+Setting Up the Project
+- install bootstrap 
+npm install bootstrap 
+- in index.js 
+import 'bootstrap/dist/css/bootstrap.css';
+
+Your First React Component
+- in componnets/counter.jsx
+import React, {Component} from 'react';
+class Counter extends Component{
+    render() {
+        return <h1> Hello World </h1>;
+    }
+}
+export default Counter;
+
+Specifying Children
+- to demove a div from html use ReactFragment tag
+- in componnets/counter.jsx
+import React, {Component} from 'react';
+class Counter extends Component{
+    render() {
+        return (<React.Fragment> <h1> Hello World </h1> <button> Increment </button> </React.Fragment>);
+    }
+}
+export default Counter;
+
+Embedding Expressions
+- to demove a div from html use ReactFragment tag
+- in componnets/counter.jsx
+import React, {Component} from 'react';
+class Counter extends Component{
+    state = {
+        count: 0
+    }
+    formatCount() {
+        return this.state.count === 0 ? 'Zero' : this.state.count
+    }
+    render() {
+        return (<React.Fragment> 
+        <span> {this.state.count} </span> 
+        <span> {2 + 2} </span>
+        <span> {this.formatCount()} </span>
+        <button> Increment </button> </React.Fragment>);
+    }
+}
+export default Counter;
+
+Setting Attributes
+- in componnets/counter.jsx
+import React, {Component} from 'react';
+class Counter extends Component{
+    state = {
+        count: 0,
+        imageUrl: ''
+    }
+    formatCount() {
+        return this.state.count === 0 ? 'Zero' : this.state.count
+    }
+    styles = {
+        fontSize: 10,
+        fontWeight: "bold"
+    }
+    render() {
+        return (<React.Fragment> 
+        <img src={this.state.imageUrl} alt=""/>
+        <span style={styles}> {this.state.count} </span> 
+        <span className="badge badge-primary m-2"> {2 + 2} </span>
+        <span style={{fontSize:30}}> {this.formatCount()} </span>
+        <button> Increment </button> </React.Fragment>);
+    }
+}
+export default Counter;
+
+Rendering Classes Dynamically
+- in componnets/counter.jsx
+import React, {Component} from 'react';
+class Counter extends Component{
+    state = {
+        count: 0,
+        imageUrl: ''
+    }
+    formatCount() {
+        return this.state.count === 0 ? 'Zero' : this.state.count
+    }
+    styles = {
+        fontSize: 10,
+        fontWeight: "bold"
+    }
+    render() {
+        let classes = "badge m-2 badge-"
+        classes += this.state.count === 0 ? "warning" : "primary"
+        return (<React.Fragment> 
+        <img src={this.state.imageUrl} alt=""/>
+        <span style={styles}> {this.state.count} </span> 
+        <span className={classes}> {2 + 2} </span>
+        <span style={{fontSize:30}}> {this.formatCount()} </span>
+        <button> Increment </button> </React.Fragment>);
+    }
+}
+export default Counter;
+
+Rendering Lists
+- in componnets/counter.jsx
+import React, {Component} from 'react';
+class Counter extends Component{
+    state = {
+        count: 0,
+        tags: ['tag1', 'tags2', 'tags3']
+    }
+    render() {
+        let classes = "badge m-2 badge-"
+        classes += this.state.count === 0 ? "warning" : "primary"
+        return (<React.Fragment> 
+        <span> {2 + 2} </span>
+        <ul>
+            {
+                this.state.tags.map(tag => <li key={tag}>{tag}</li)
+            }
+        </ul>
+        <button> Increment </button> </React.Fragment>);
+    }
+}
+export default Counter;
+
+Conditional Rendering
+- print(true && "Hi") -> Hi
+- print(true && "Hi" && 1) -> 1
+- in componnets/counter.jsx
+import React, {Component} from 'react';
+class Counter extends Component{
+    state = {
+        count: 0,
+        tags: ['tag1', 'tags2', 'tags3']
+    }
+    renderTags() {
+        if (this.state.tags.length === 0) return <p> There are no tags ! </p>
+        return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li)}</ul>
+    }
+    render() {
+        let classes = "badge m-2 badge-"
+        classes += this.state.count === 0 ? "warning" : "primary"
+        return (<React.Fragment>
+            {this.state.tags.length === 0 && "Please create a new tag !"} 
+            {this.renderTags()}
+            <React.Fragment>
+        )
+    }
+}
+export default Counter;
+
+Handling Events
+- in componnets/counter.jsx
+import React, {Component} from 'react';
+class Counter extends Component{
+    state = {
+        count: 0,
+        tags: ['tag1', 'tags2', 'tags3']
+    }
+//    constructor() {
+//      super();
+//    this.handleIncrement = this.handleIncrement.bind(this);
+// }
+// handleIncrement(){
+//   console.log("increment clicked", this);
+// }
+    handleIncrement = () => {
+    console.log("increment clicked", this);
+      this.setState({
+        count: this.state.count + 1
+      })
+    }
+    render() {
+        let classes = "badge m-2 badge-"
+        classes += this.state.count === 0 ? "warning" : "primary"
+        return (<React.Fragment>
+            <button onClick={this.handleIncrement}> Increment </button> 
+            </React.Fragment>
+        )
+    }
+}
+export default Counter;
+
+Binding Event Handlers
+
+Updating the State
+
+What Happens When State Changes 
+- when state changes it rerenders the JSX 
+
+Passing Event Arguments
+<button onClick={() => this.handleIncrement()}> Increment </button> 
+
+Composing Components
+
+Passing Data to Components
+
+Passing Children
+{
+    this.props.children
+}
+
+Debugging React Apps
+- chrome extension - react developer tools
+- $r can be used in consile to debug react code 
+
+Props vs State
+- we cannot change the values of props, it is read only
+
+Raising and Handling Events
+
+Updating the State
+
+Single Source of Truth
+
+Removing the Local State
+
+Multiple Components in Sync 
+
+Lifting the State Up
+
+Stateless Functional Components
+- when we donot uses state in a component and we only get data through props to show in browser we use stateless functional component
+
+Destructuring Arguments
+function test(props) {
+    console.log(this.props.showText)
+    console.log(this.props.othetStateName)
+}
+
+OR 
+
+function test(showText, othetStateName) {
+    console.log(showText)
+    console.log(othetStateName)
+}
+
+Lifecycle Hooks
+- Mount phase - constructor, render, componentDidMount 
+- Update phase - render, componentDidUpdate 
+- Unmount phase - componentWillUnmount 
+
+Mounting Phase 
+
+Updating Phase 
+
+Unmounting Phase

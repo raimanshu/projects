@@ -1,0 +1,33 @@
+List all the packages installed in system 
+pip freeze
+
+Creating python environment
+py -m virtualenv env_name
+
+
+Inportant modules to use
+from flask import Flask,redirect,url_for,render_template,request,session
+from datatime import timedelta
+
+
+from flask import Flask,redirect,url_for,render_template,request,session,flash
+import sqlalchemy
+
+
+Logging
+Import logging
+
+Types of logs - debug, info, waring, error, critical
+Attributes that can be used - https://docs.python.org/3/library/logging.html#logrecord-attributes 
+
+https://dev.to/paurakhsharma/flask-rest-api-part-5-password-reset-2f2e
+Techfrydry, youtube
+
+List of python inbuilt modules
+https://docs.python.org/3/py-modindex.html  
+
+For learning flask
+http://exploreflask.com/en/latest/organizing.html 
+
+Recommendations for learning flask
+Flask (Tech with Tim, youtube)

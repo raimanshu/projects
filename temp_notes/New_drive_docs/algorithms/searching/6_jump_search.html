@@ -1,0 +1,53 @@
+Points to remember <br /><br />
+
+The basic idea is to check fewer elements (than linear search) by jumping ahead
+by fixed steps or skipping some elements in place of searching all elements.
+<br />
+The increasing order of performance is: linear search < jump search < binary
+search <br />
+The steps are determined by the sqrt of the length of the array. <br />
+
+Time Complexity : O(?n) <br />
+Auxiliary Space : O(1) <br />
+
+https://www.geeksforgeeks.org/jump-search/
+
+<script>
+  // Javascript program to implement Jump Search
+
+  function iterativeJumpSearch(arr, x) {
+    let n = arr.length;
+    // Finding block size to be jumped
+    let step = Math.sqrt(n);
+
+    // Finding the block where element is
+    // present (if it is present)
+    let prev = 0;
+    while (arr[Math.min(step, n) - 1] < x) {
+      prev = step;
+      step += Math.sqrt(n);
+      if (prev >= n) return -1;
+    }
+
+    // Doing a linear search for x in block
+    // beginning with prev.
+    while (arr[prev] < x) {
+      prev++;
+
+      // If we reached next block or end of
+      // array, element is not present.
+      if (prev == Math.min(step, n)) return -1;
+    }
+    // If element is found
+    if (arr[prev] == x) return prev;
+
+    return -1;
+  }
+
+  console.log(
+    "Index of 5: " +
+    iterativeJumpSearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5)
+  ); // Output will be 5
+
+  // This code is contributed by _saurabh_jaiswal
+</script>

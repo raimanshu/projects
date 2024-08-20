@@ -1,0 +1,25 @@
+Learning References
+
+Angular - Lifecycle Hooks
+
+https://medium.com/bb-tutorials-and-thoughts/angular-understanding-angular-lifecycle-hooks-with-a-sample-project-375a61882478
+https://dzone.com/articles/angular-6-part-3-life-cycle-of-a-component
+https://itnext.io/understanding-angular-life-cycle-hooks-91616f8946e3
+
+
+
+Javascript - REGEX
+Learning + practice
+https://devdojo.com/devdojo/5-online-resources-for-learning-regex#_5-regex-101
+Regex chartsheet
+https://devhints.io/regexp
+https://www.debuggex.com/cheatsheet/regex/javascript
+
+https://dev.to/catherinecodes/a-regex-cheatsheet-for-all-those-regex-haters-and-lovers--2cj1
+https://flaviocopes.com/javascript-regular-expressions/#introduction-to-regular-expressions 
+Practice
+https://github.com/lydiahallie/javascript-questions 
+https://github.com/rohan-paul/Awesome-JavaScript-Interviews 
+
+-----------------------------------------------------------------------------------------------------------------------------
+

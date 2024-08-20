@@ -1,0 +1,72 @@
+LEARNING
+--------
+https://www.javatpoint.com/dbms-tutorial
+
+https://www.youtube.com/watch?v=dl00fOOYLOM (codehelp - love babbar)
+
+
+PRACTICE
+--------
+https://github.com/krishnasagrawal/SQL-and-DBMS-Study-Resources/blob/main/100%20DBMS%20Interview%20Questions%20.pdf
+
+
+GENERAL TOPICS
+--------------
+DBMS - characteristics, advantages, disadvantages
+Data vs Information
+Database
+Database vs DBMS 
+
+DBMS vs File System
+
+DBMS Architecture
+Three schema architecture - physical/internal level, logical/conceptual level, view/external level
+Instance of database 
+Data Models - ER model, Relational model, object oriented model, object-relational data model
+Database Languages - DDL, DML
+
+Database Administrator
+DBMS Application Architecture - Tier 1, Tier 2, Tier 3
+
+ER Model 
+Entity - strong entity, weak entity 
+Entity set 
+Attributes
+Types of attributes - simple, composite, single-valued, multi-valued, derived, NULL value
+
+Relationship - strong, weak
+Degree of relation - unary, binary, ternary
+Relationship constraints - Mapping cardainality / Cradinality ratio (1:1, 1:N, N:1, N:M), Participation constraints / Minimum Cradinality constraint (Partial participation, Total participation)
+ER Notations 
+
+Extended ER Model 
+Specialization
+Generalization
+Attribute inheritance
+Participation inheritance 
+Aggregation 
+Abstract Entity 
+
+Steps to create ER Diagrams - identify entity sets, identify it's attributes and types , identify relation and constraints (Cradinality ratio, Participation constraints)
+
+Relational Model - Degree of table, Cardinality, 
+RDBMS
+Relational Model keys - Super key, Candidate key, Primary key, Alternate Key, Foreign Key, composite key, Compound key, Surrogate key  
+Integrity Constraints - Domain constraint, Entity constraint, Refrential constraint (insert constraint, delete constraint, on delete cascade, on delete NULL), Key constraint (NOT NULL, Unique constraint, Default constraint, Check constraint, Primary key constraint, Foreign key constraint)
+Transform ER Diagram into Relational Diagram 
+
+Normalization - 1 NF, 2 NF, 3 NF
+Functional Dependency (Trivial, Non-trivial)
+Rules of Functional Dependency - Reflexive, Augmentation, Transitive
+Annomalies if Normalization not applied - insert, delete, modified/update   
+
+
+
+
+OBSERVATION
+-----------
+DDL vs DML
+Entity vs Entity set 
+simple attribute vs single-valued attribute 
+DBMS vs RDBMS
+ER Model vs Extended ER Model vs Relational Model 

@@ -1,0 +1,57 @@
+https://systemdesignprimer.com/netflix-system-design/
+
+# Pointers
+
+## Requirements
+- Functional Req
+- Non-Functional Req
+- Out of scope
+
+## Capacity Estimation
+- Assumptions
+- Storage Estimation
+
+## Detailed Component design - our focus should be on building a system which can retrieve videos quickly.
+- Users Service - responsible for user authentication and profiles, uses MySQL or PostgreSQL
+- Subscription Service - used to manage the subscription of the users.
+- Videos Service - responsible for surfacing videos to end users.This service will store videos metadata in a RDBMS like MySQL or PostgreSQL.This can be implemented using a in-memory cache like Redis or Memcached.
+- Transcoder Service - Checking the quality of uploaded videos (frame drops etc.), Compressing the video with different codecs, Creating different resolutions of the video, Kafka or RabbitMQ, CDN
+- Search service - enable end users to search for a video using metadata like title, summary etc, Elasticsearch or Solr
+
+## Database Schema
+
+## APIs
+- user signup - used while user signs-up on the platform
+- user signin - auth_token, JWT
+- user signout
+- subscribe
+- unsubscribe
+- get videos - used to render the home page of the application once user logs in, pagination, Denial of Service (DoS)
+- search videos
+- get video - used to play a particular video
+- upload video - upload a video from Netflix backend
+- Update watched till timestamp - used to update the timestamp till the user has watched a particular video
+
+# Performance
+- Caching -  uses in-memory caches like Redis and Memcached cache, write-around caching, Least Recently Used (LRU) eviction policy
+- CDN - Content Delivery Network is a geographically distributed network of servers which deliver content to users from geographically closest server, Open Connect, Open Connect Appliances (OCAs)
+
+
+Scalability
+- Horizontal Scaling - add more servers behind the load balancer to increase the capacity of each service.
+- Database Replication - using the relational database in Master-Slave configuration where writes will happen to Master and Reads from Slave
+- Database Sharding - We would be sharding the video metadata database using video_id. Our hash function will map each video_id to a random server where we can store the video metadata.
+- Cache Sharding - Similar to Database Sharding, we are distributing the cache to multiple servers., partitioning, consistent hashing
+- Search Database Sharding - Search Database, powering our full text search, can also be sharded across multiple servers
+
+Security
+- HTTPS - The traffic between client and server is encrypted over HTTPS.
+- Authentication - For each API request post log-in, we are doing authentication by checking the validity of auth_token in Authorization HTTP header.
+
+Resiliency
+- Replication - We would be replicating our database servers in Master-Slave configuration
+- Queuing - We would be using the queuing in our system for processing the uploaded videos. Hence if a worker dies, message in a queue won’t be acknowledged and other worker would pick up the task again.
+- Load Balancing - Load Balancer is continuously doing health check on servers behind it. If any server dies, load balancer stops forwarding the traffic to it and removes it from cluster.
+Geo-redundancy - We are deploying exact replica of our services in data-centers across multiple geographical locations.
+
+## References

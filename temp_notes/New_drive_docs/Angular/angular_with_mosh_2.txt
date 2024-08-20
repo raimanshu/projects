@@ -1,0 +1,1655 @@
+https://github.com/donnemartin/system-design-primer
+
+Angular(Mosh Hamedani - www.freecoursesonline.me)
+----------------------------------------
+
+1 Getting Started
+1.1 Introduction
+1.2 What is Angular ?
+- Angular is a framework for building client applications in HTML, CSS and JS/TS
+- Need of TS instead JS because it reduces complexity of code, easy to understand for beginners and application is easy to test
+- Benefits of Angular - gives our applications a clean structure, includes a lot of reusable code, makes our applications more testable
+1.3 Architecture of angular apps 
+- Angular is used to make UI/Frontend
+- API (Application Programming Interface) is used to make connections between frontend and backend
+- HTTP Services/APIs are end points that are accessible via the HTTP protocol
+1.4 Setting up the Development Environment
+- Install latest version of node from node.org (LTS version)
+- node -v (to check node version)
+- NPM is required to install other 3rd party packages
+- Angular CLI(Command Line Interface) used to create some boilerplate code and some important components of angular project
+- npm install -g @angular/cli (to install angular)
+- ng --version (to check angular version installed) 
+1.5 Your First Angular Application
+- ng new project-name (to create new project in angular)
+- code . (Write the command in cmd to open VS code)
+- ng serve (To run the angular project on http://localhost:4200)
+1.6 Structure of Angular project
+- e2e - uned for End to End testing of the project
+- node_modules - resides allthe third party packages upon which our project depends
+- src - resides actual sorce code of our project
+- app folder
+- assets folder
+- environments folder
+- favicon.ico
+- index.html
+- main.ts (starting point of our application)
+- polyfills.ts - fills the gap between features supported by js and and features supported by current browser
+- style.css
+- test.ts - used for setting up our testing environment 
+- angular-cli.json 
+- editor.config  
+- gitignore
+- karma.config.js - test runner in angular
+- package.json 
+- protactor.config.ts
+- tsconfig.json - includes compiles setting options
+- tslint.json - 
+1.6 Webpack
+- build automation tool that makes bundle and compile the code automatically
+- Hot Module Replacement (HMR)
+1.7 Angular Version History
+- AngularJS vs Angular
+- What happens with Angular 3 ? Because all other angular libraries are of version 2.x.x and @angular/router is of 3.x.x so to avoid confusion it has done.
+1.8 Course structure
+1.9 Making a promise
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# TypeScript and Orbject oriented Programming
+## Introduction
+- Type annotations,Arrow functions,Interfaces,Classes, Constructors, Access modifiers, Properties, Modules
+## What is TypeScript
+- TS is superset of JS
+- Features - Strong/strict typing, Object-orient features, compile time errors, greating tooling
+- TS is transpiled into JS so that web browsers can understand it
+## Your first TS Program
+- npm install -g typescript (To instakk TS)
+- tsc --version (check TS version)
+- tsc filename.ts (to run the ts file in cmd)
+- node filename.js (to run the js file in cmd)
+## Declaring variables
+- ES5 (ECMAScript 5,supported by all browsers), ES6 (2015), ES2016, ES2017 
+- var scope is for nearest function
+- var scope is for nearest block
+- TS help us to catch errors at compile time
+## Types
+- variable_name : type;
+- types - number,boolean,string,any,number[], any[]
+- enum variable_name {variable_1 = index}
+Eg enum Color {Red=0, Green=1,Blue=3}
+## Type Assertions
+- It is used to get method intellisense with an unassigned variable in ts
+let message;
+message = 'abc';
+let endsWithC = (<string>message).endsWith('c');
+let alternativeWay = (message as string).endsWith('c');
+## Arrow functions
+- In JS
+let log = function(message) {
+    console.log(message);
+}
+- In TS
+(Method 1)
+let doLog = (message) => console.log(message);
+(Method 2)
+let doLog = message => console.log(message);
+(Method 3)
+let doLog = (message) => {
+    console.log(message);
+}
+## Interfaces
+- Inline annotations
+let drawPoint = (point: {x:number,y:number}) => {
+    //...
+}
+drawPoint({
+    x:1,
+    y:2
+})
+- Drawbacks of using inline annotations are that the function defination doesnot look good,we have use that parenthesis pattern in every function + if anyone change key name in function calling or function defination code will give error
+- Using interface
+interface Point {
+    x:number,
+    y:number
+}
+let drawPoint = (point: Point) => {
+    //...
+}
+drawPoint({
+    x:1,
+    y:2
+})
+## Classes
+- cohesion means things are corelated should be part of one unit
+- class groups variables(properties) and functions (methods) that are highly related.
+class Point {
+    x: number;
+    y: number;
+    draw() {
+        //..
+    }
+    getDistance(another: Point) {
+        //..
+    }
+} 
+## Objects
+class Point {
+    x: number;
+    y: number;
+    draw() {
+        console.log('X: ' + this.x  + 'Y: ' + this.Y);
+    }
+} 
+let point = new Point();
+point.x = 1;
+point.y = 2;
+point.draw();
+## Constructors
+- If we want passing arguments in object is cumpulsary
+class Point {
+    x: number;
+    y: number;
+    constructor(x: number, y: number) {
+        this.x = x;
+        this.y = y;
+    }
+    draw() {
+        console.log('X: ' + this.x  + 'Y: ' + this.Y);
+    }
+} 
+let point = new Point(1, 2);
+point.draw();
+- If we want passing arguments in object is optional, ?(optional) operator makes params optional
+class Point {
+    x: number;
+    y: number;
+    constructor(x?: number, y?: number) {
+        this.x = x;
+        this.y = y;
+    }
+    draw() {
+        console.log('X: ' + this.x  + 'Y: ' + this.Y);
+    }
+} 
+let point = new Point();
+point.draw();
+## Access modifiers
+- Access modifier is basically a keyword which is used to control the accessability of the members (variables and methods) of the class.
+- Types - public, private, protected
+- By default all members are public
+class Point {
+    private x: number;
+    private y: number;
+    constructor(x?: number, y?: number) {
+        this.x = x;
+        this.y = y;
+    }
+    draw() {
+        console.log('X: ' + this.x  + 'Y: ' + this.Y);
+    }
+} 
+let point = new Point(1, 2);
+point.x = 3; // Error
+point.draw();
+## Access modifiers in Constructors
+class Point {
+    constructor(private x?: number, private y?: number) {
+    }
+    draw() {
+        console.log('X: ' + this.x  + 'Y: ' + this.Y);
+    }
+} 
+let point = new Point(1, 2);
+point.draw();
+## Properties
+- What are properties in TS ?
+- If we use methods 
+class Point {
+    constructor(private x?: number, private y?: number) {
+    }
+    draw() {
+        console.log('X: ' + this.x  + 'Y: ' + this.Y);
+    }
+    getX() {
+        return this.x;
+    }
+    setX(value) {
+        if(value < 0) {
+            throw new Error('Value cannot be less than 0.');
+        } else {
+            this.x = value;
+        }
+
+        return this.x;
+    }
+} 
+let point = new Point(1, 2);
+point.getX();
+point.setX(3);
+point.draw();
+- If we use properties
+class Point {
+    constructor(private _x?: number, private _y?: number) {
+    }
+    draw() {
+        console.log('X: ' + this._x  + 'Y: ' + this._y);
+    }
+    get x() {
+        return this._x;
+    }
+    set x(value) {
+        if(value < 0) {
+            throw new Error('Value cannot be less than 0.');
+        } else {
+            this._x = value;
+        }
+    }
+} 
+let point = new Point(1, 2);
+let x = point.x; // called getter not variable
+point.x = 10; // called setter not variable
+point.draw();
+- we have used _x to avoid naming collision with getter and setter
+## Modules
+- What are modules in TS ?
+- In point.ts file
+export class Point {
+    constructor(private x?: number, private y?: number) {
+    }
+    draw() {
+        console.log('X: ' + this.x  + 'Y: ' + this.Y);
+    }
+} 
+- In main.ts file
+import { Point } from './point';
+let point = new Point(1, 2);
+point.draw();
+## Solution
+
+# Angular Fundamentals
+## Introduction
+## Building blocks of Angular Apps
+- Components - encapsulates the data + Html template + logic, app.component
+- Modules - container or group of related components, app.module
+## Creating components
+- steps - create a component, register it in a module, add an element in an html markup
+- use - to seperate the names for multiword naming
+- <component_name>.component.ts
+- @Component() - decorator to make class refered as component
+- selector
+- template
+## Creating components using angular cli
+- Ctrl + ` (to open the vs code terminal)
+- ng g c <component_name> (to generate a component)
+- a component include html file,css file,spec.ts and ts file
+## Templates
+- {{ }} (string interpolation)
+{{<ts_variable>}}, {{"Static str: " + <ts_variable>}}, {{<function_name()>}}
+- Data is transferred from ts to html
+## Directives
+- Directives are used to manipulate DOM element like *ngFor
+## Services
+- <service_name>.service.ts
+## Dependency Injection
+- when we declare a service inside constructor param it means when the compiler makes an instance of the class through the constructor it checks it has a dependency on a given service class sot it will first create insance of the service class then of the component class
+- providers in NgModule requires service_name for working otherwise it shows error like No provider for..
+## Generating service using angular CLI
+- ng g s <service_name> (to generate a service class)
+- @Injectable() - it means it is an injectable class and can be refered inside a component constructor parameter to make it's instance
+## Exercise
+## Solution
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Displaying data and handling events
+## Introduction
+## Property Binding
+- Interpolation is a syntactic sugar of property binding ie it uses concept of property binding under the hood
+- <h2>{{title}}</h2> is same as <h2 [textContent]="title"></h2>
+- Change flow is from component to DOM in interpolation and property bindingnot vice versa
+- [property_name]="variable_name"
+## Attribute binding
+- DOM () is a model of objects that represents the structure of the document. It is essentially a tree of objects in memory
+- HTML is a markup language that is used to represent DOM in text
+- There is one to one mapping of almost all HTML tag with DOM properties but there are few which have not like colspan, html, textContent etc
+- [attr.colspan]="variable_name"
+- In interpolation, property binding or attribute binding we certainly bind variable_name with the DOM properties not HTML attributes
+## Adding Bootstrap
+- In git we dont upload node_modules folder because package.json keeps tract of all the packages used in the project. When we command npm install it automatically install all the packages that were mention in package.json
+- https://getbootstrap.com/
+- npm install bootstrap --save (to install bootstrap)
+- ^3.3.7 - major.minor.patch
+- ^(carat) means we can use most nearest major version like 3.4.0,3.9.2 etc but not 4.0.0
+- inside style.css
+@import "~bootstrap/dist/css/bootstrap.css"
+## Class Binding
+- [class.target_class]="variable_name"
+- variable_name is generally boolean type
+## Style Binding
+- [style.dom_style_property]="variable_name ? 'value' : 'value'"
+## Event Binding
+- (event)="method_name()"
+- To pass other details of the property we use $event
+ (event)="method_name($event)"
+- In event bubbling, an event bubbles upwards or from inner to outer tags in the DOM tree
+- To stop bubbling,just use $event.stopPropagation(); and write other code after that.
+## Event Filtering
+- <input (keyup)="onKeyUp($event)" />
+onKeyUp($event){ if($event.keyCode === 15) console.log("Enter was pressed");}
+- Instead we can use event filtering
+<input (keyup.enter)="onKeyUp()" />
+onKeyUp(){ console.log("Enter was pressed");}
+## Template variables
+- To get the value of DOM element, there are two ways using $event and Template reference variable
+- Using $event
+<input (keyup.enter)="onKeyUp($event)" />
+onKeyUp($event){ console.log($event.target.value);}
+- Using TRV
+<input #email (keyup.enter)="onKeyUp(email.value)" />
+onKeyUp(email){ console.log(email);}
+## Two way binding
+- [(ngModal)]=”ts_variable”
+- Another way of implementing 2 way binding
+<input [value]="email" (keyup.enter)="email = $event.target.value; onKeyUp()" />
+email = me@example.com;
+onKeyUp(){ console.log(this.email);}
+- Standard way, banana in the box method
+<input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+email = me@example.com;
+onKeyUp(){ console.log(this.email);}
+- ngModel is a builtin directive to enables two way binding
+- Always import FormsModule in parent module to use ngModal 
+- BrowserModule ?
+## Pipes
+- Pipes are used toformat data
+- Types - built-in and custom
+- Built-in pipes - Uppercase, Lowercase, Decimal, Currency, Percent
+- value | pipe_name
+- any_number | number:'number_of_letters_before_decumal.min_number_of_digits-max_number_of_digits'
+3.456 | number:'2.1-1' // 03.0
+- ammout_number | currency:'letters_of_currency':show_symbol:'number_of_letters_before_decumal.min_number_of_digits-max_number_of_digits'
+190.95 | currency:'AUD':true:'3.2-2' // A$190.95
+- date | date:'format'
+new Date(2016,3,1) | date:'shortDate'
+- CommonModule
+## Custom pipe
+- PipeTransform ?
+- @Pipe decorator takes name value which is same as pipename in html
+- Register pipe in declarations in NgModule
+## Exercise
+## Solution
+## Exercise
+## Solution
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Building Reusable components
+## Introduction
+## Component API ?
+- 
+## Input properties 
+- used to get data or statte of a variable
+- There are two ways to make a class member as input property ie using @Input decorator and using inputs parameter in @Component decorator 
+- @Input decorator is used to mark any class member as input property
+@Input property_name:type;
+- @Component({
+    //..
+    inputs:['property_name']
+})
+- 2nd approch has a drawback which is in future if we want to rename property_name fromthe component it will not be able to update
+## Aliasing Input Properties
+- Alias name is giveninside the @Input decorator
+Component A
+@Input('is-favorite') isFavorite:boolean;
+onClick(){ this.isFavorite = !this.isFavorite}
+<span class="glyphicon" [class.glyphicon-star]="isFavorite" [class.glyphicon-star-empty]="!isFavorite" (click)="onClick()"></span>
+Component B
+post = {isFavorite: false}
+<component-a ['is-favorite']="post.isFavorite"><component-a>
+- When using @Input decorator,its good to use alias names 
+## Output properties
+- used to raise achange using an event
+Component A
+@Input('is-favorite') isFavorite:boolean;
+@Output() change = new EventEmitter();
+onClick(){ this.isFavorite = !this.isFavorite; this.change.emit();}
+<span class="glyphicon" [class.glyphicon-star]="isFavorite" [class.glyphicon-star-empty]="!isFavorite" (click)="onClick()"></span>
+Component B
+post = {isFavorite: false}
+onFavoriteChanges(){
+    console.log("changed");
+}
+<component-a ['is-favorite']="post.isFavorite" (change)="onFavoriteChanges()"><component-a>
+## Passing Event Data
+Component A
+@Input('is-favorite') isFavorite:boolean;
+@Output() change = new EventEmitter();
+onClick(){ this.isFavorite = !this.isFavorite; this.change.emit({ newValue :this.isFavorite});}
+<span class="glyphicon" [class.glyphicon-star]="isFavorite" [class.glyphicon-star-empty]="!isFavorite" (click)="onClick()"></span>
+Component B
+post = {isFavorite: false}
+onFavoriteChanges(eventArgs){
+    console.log("changed" + eventArgs);
+}
+<component-a ['is-favorite']="post.isFavorite" (change)="onFavoriteChanges($event)"><component-a>
+- Always try to use interfaces
+## Aliasing Output Properties
+- - Alias name is giveninside the @Output decorator
+Component A
+@Input('is-favorite') isFavorite:boolean;
+@Output('change') click = new EventEmitter();
+onClick(){ this.isFavorite = !this.isFavorite; this.click.emit({ newValue :this.isFavorite});}
+<span class="glyphicon" [class.glyphicon-star]="isFavorite" [class.glyphicon-star-empty]="!isFavorite" (click)="onClick()"></span>
+Component B
+post = {isFavorite: false}
+onFavoriteChanges(eventArgs){
+    console.log("changed" + eventArgs);
+}
+<component-a ['is-favorite']="post.isFavorite" (change)="onFavoriteChanges($event)"><component-a>
+## Templates
+- Only can cab used in a @Component decorator either templateUrl or template
+- If the template lines are more than 5 LOC switch to templateUrl
+- The html code is bundled into main.bundle file after the build is made
+## styles
+- There are 3 ways to implement styles in component html
+- styleUrls - by providing .css file paths in an array
+- styles - by providing css inside styles parameter in @Component decorator 
+- <style></style>- by providing style inside style tag in component's html tag
+- styles and styleUrls can both be written inside @Component but it willtake priority which is written at last
+- using <style><style> tag inside html file have highest priority
+## View Encapsulation
+- Shadow DOM allows us to apply scoped styles to elements without bleeding out to outer world ie styles used in one component doesnot effect other components
+- Without shadow DOM in JS,it willeffect other h1 tags also
+var el = document.querySelector('favorite');
+el.innerHTML = `<style>{color:red}</style><h1>Hello</h1>`;
+- With shadow domin JS
+var el = document.querySelector('favorite');
+var root = el.createShadowRoot();
+root.innerHTML = `<style>{color:red}</style><h1>Hello</h1>`;
+- ViewEncapsulation types - Emulated, Native, None
+- Emulated is the default encapsulation mode
+- In Emulated mode, Angular create shadow DOM of the styles by creating a id named as _ngcontent-<id> on that DOMelement and then use it in styles (can be seen in browser)
+- In Native mode, Angular doesnot create that id,it create that style portion before that DOM element inside (natively) #shadow-root
+- In None mode, out styles will effect others 
+## ngContent
+- <ng-content>is used where we want to change or paste the dynamic template code ie use for dynamic template injection
+component a
+<div>
+<div class="panel-heading"> <ng-content select=".heading"></ng-content> </div>
+<div class="panel-body"> <ng-content select=".body"></ng-content> </div>
+</div>
+component b
+<component-a>
+<div> <div class="heading">Heading</div>
+<div class="body"><h2>Body</h2></div>    </div>        </component-a>
+- We don't need a selector if you have only one ng-content
+## ngContainer
+- If we want toput any content not inside any DOM element ie not restricted by HTMLtag ie render anything without any markup use <ng-container>
+component a
+<div>
+<div class="panel-heading"> <ng-contain select=".heading"></ng-contain> </div>
+<div class="panel-body"> <ng-content select=".body"></ng-content> </div>
+</div>
+component b
+<component-a>
+<div> <ng-container class="heading">Heading</ng-container>
+<div class="body"><h2>Body</h2></div>    </div>        </component-a>
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Directives
+## Introduction
+## ngIf
+- Directives are usedtomodify the DOM
+- Types Structural and Attribute
+- Structural directive modify the structure of the DOM
+- Attribute directive modify the attributes of the DOM elements
+- ngIf is used when we want to show or hide a certain part of code based on condition
+- If the ngIf condition is truthy element is added to the DOM otherwise removed from the DOM ie not disabled or hidden
+<div *ngIf="true_condition; then true_TRV else false_TRV">
+    Text 
+</div>
+<ng-template #true_TRV > Text </ng-template>
+<ng-template #false_TRV > Text </ng-template>
+## Hidden Property
+- hidden property is used to hide an element
+- If hidden property is added to the DOM element will jot be seen but it can be seen in inspect element not like ngIf
+- For small element trees use [hidden]
+- For large element trees use *ngIf
+[hidden]=”condition”
+## ngSwitchCase
+<ul class="nav nav-pills">
+    <li [class.active]="viewMode == 'map'" (click)="viewMode = 'map'">Map view</li>
+    <li [class.active]="viewMode == 'list'" (click)="viewMode = 'list'">List view</li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Text otherwise</div>
+</div>
+## ngFor
+- used to render a list of objects
+- index, even, odd, first, last, trackBy
+<ul >
+    <li *ngFor="let course of courses; index as i">
+        {{i}} - {{course.name}}
+    </li>
+</ul>
+## ngFor and change detection
+<button (click)="onAdd()"> Add </button>
+<ul >
+    <li *ngFor="let course of courses; index as i">
+        {{i}} - {{course.name}}
+    </li>
+</ul>
+- for any DOM event, AJAX requests, Timer function -> angular change detection mechanism works
+- Change detction means whenever the forloop list is updated DOM length is also changes accordingly
+## ngFor and TrackBy
+<button (click)="loadCourses()"> Add </button>
+<ul >
+    <li *ngFor="let course of courses; trackBy : trackCourse">
+        {{course.name}}
+    </li>
+</ul>
+trackCourse(index, course){
+    return course ? course.id :undefined;
+}
+- trackby prevents rerendering of same objects in the DOM
+- benefit of using it only if we have large list or with complex markup
+## The leading asterisk
+- By using *, angular rewrite the code with structural directive with ng-template
+<div *ngIf="true_condition; else false_TRV">
+    Text 
+</div>
+<ng-template #false_TRV > Text </ng-template>
+IS SAME AS
+<ng-template [ngIf]"condition" > 
+    <div> Text </div>
+</ng-template>
+<ng-template #false_TRV [ngIf]"!condition" > Text </ng-template>
+## ngClass
+- ngClass is a type of attribute binding which change the existing DOM element
+<span class="glyphicon" [class.glyphicon-star]="isFavorite" [class.glyphicon-star-empty]="!isFavorite" (click)="onClick()"></span>
+IS SAME AS
+<span class="glyphicon" [ngClass]="{'glyphicon-star': isFavorite,'glyphicon-star-empty': !isFavorite}" (click)="onClick()"></span>
+## ngStyle
+<button
+    [style.backgroundColor]="canSave ? 'blue' : 'gray'"
+    [style.color]="canSave ? 'white' : 'black'"
+    [style.fontWeight]="canSave ? 'bold' : 'normal'">  Save </button>
+IS SAME AS
+<button
+    [ngStyle]="{'backgroundColor': canSave ? 'blue' : 'gray',
+    'color': canSave ? 'white' : 'black',
+     'fontWeight': canSave ? 'bold' : 'normal'" >  Save </button>
+## Safe Traversal operator (?)
+- if the value may be null or undefined, Angular remove that text from the DOM not the whole element
+task = {
+    assignee:{
+        name: 'John Smith'
+    }
+}
+<span > {{task.assignee?.name}} <span>
+IS SAME AS 
+<span *ngIf="task.assignee"> {{task.assignee.name}} <span>
+## Custom Directives (IMPORTANT)
+- ng g d directive_name
+- directives are mentioned inside declarations in the parent module 
+- selector of directiiveare used in the htmlcode tomodify it's behaviour
+- @HostListener
+- ElementRef gives access to the properties of DOM element
+- nativeElement
+## Exercise
+## Solution
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Template Driven Forms
+## Introduction
+## Building on a basic bootstrap form
+- ng g c component_name
+- Zen Coding (Using Emmet)
+- Inside component by default app- is connected to selector. Use these short prefixes when identify it differently
+## Types of Forms
+- For each field in the form we have to create an instance of FormControl class in angular to detct it's properties like value, touched, untouched, dirty, pristine, valid, errors etc
+- FormGroup class represents the group of FormControl. All properties like value, touched, untouched, dirty, pristine, valid, errors etc alsohold by FormGroup
+- Ways / Types to create forms ie using directives (Template driven forms) and using code (Reactive forms or Model driven forms)
+- TDF - Good for simple forms, Simple validation, Easier to create, Less code
+- MDF - More control over validation logic, good for complex forms, unit testable
+## ngModel
+- If we use ngModel with a form control or a field we must have to put name attribute with it otherwise it will throw error
+<input ngModel name="firstName" #firstName="ngModel" (change)="method_name(firstName)" >
+// OR
+// <input [(ngModel)]="method_name(firstName)" name="firstName">
+## Adding Validation
+- putting required validation
+<input required ngModel name="firstName" #firstName="ngModel" (change)="method_name(firstName)" >
+<div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid"> First name is required </div>
+## Specific Validation
+<input required minlength="3" maxlength="10" pattern="example" ngModel name="firstName" #firstName="ngModel" (change)="method_name(firstName)" >
+<div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid"> 
+    <div *ngIf="firstName.errors.required"> First name is required </div>
+    <div *ngIf="firstName.errors.minlength"> First name should be minimum {{firstName.errors.minlength.requiredLength}} characters </div>
+    <div *ngIf="firstName.errors.pattern"> First name doen't match the pattern </div>
+</div>
+## Styling Invalid Input Fields
+- ng-touched, ng-invalid and ng-dirty automatically added with the respective formControl but it is only visible in browser
+.form-control.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+## Cleaner Templates
+<input
+    required
+    minlength="3"
+    maxlength="10" 
+    pattern="example" 
+    ngModel 
+    name="firstName" 
+    #firstName="ngModel" 
+    (change)="method_name(firstName)" >
+<div 
+    class="alert alert-danger" 
+    *ngIf="firstName.touched && !firstName.valid"> 
+    <div *ngIf="firstName.errors.required"> 
+        First name is required 
+    </div>
+    <div *ngIf="firstName.errors.minlength"> 
+        First name should be minimum {{firstName.errors.minlength.requiredLength}} characters 
+    </div>
+    <div *ngIf="firstName.errors.pattern"> 
+        First name doen't match the pattern 
+    </div>
+</div>
+## ngForm
+- Angular by default put an attribute with the form tag named as ngForm. it's properties like value, touched, untouched, dirty, pristine, valid, errors etc same as formConrol and formGroup.
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <input
+    required
+    minlength="3"
+    maxlength="10" 
+    pattern="example" 
+    ngModel 
+    name="firstName" 
+    #firstName="ngModel" 
+    (change)="method_name(firstName)" >
+</form>
+## ngModel Group
+- It a directive that groups others form controls into one group.
+<form #f="ngForm" (ngSubmit)="submit(f)">
+<div ngModelGroup="contact" #contact="ngModelGroup">
+<div *ngIf="contact.valid">...</div>
+    <div 
+    class="alert alert-danger" 
+    *ngIf="firstName.touched && !firstName.valid"> 
+    <div *ngIf="firstName.errors.required"> 
+        First name is required 
+    </div>
+    <div *ngIf="firstName.errors.minlength"> 
+        First name should be minimum {{firstName.errors.minlength.requiredLength}} characters 
+    </div>
+    <div *ngIf="firstName.errors.pattern"> 
+        First name doen't match the pattern 
+    </div>
+</div>
+<div>
+    <input
+    required
+    minlength="3"
+    maxlength="10" 
+    pattern="example" 
+    ngModel 
+    name="firstName" 
+    #firstName="ngModel" 
+    (change)="method_name(firstName)" >
+</form>
+## Control Classes and Directives
+- There are two classes to keep tracks of state and validity i.e. FormControl and FormGroup
+- ngModel directive is used with FormControl and ngForm & ngModelGroup is used with FormGroup class 
+- ngForm has an output property ie used to get values on ngSubmit. But ngModelGroup is not used as that it only holds state and validations
+## Disabling the Submit button
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <input
+    required
+    minlength="3"
+    maxlength="10" 
+    pattern="example" 
+    ngModel 
+    name="firstName" 
+    #firstName="ngModel" 
+    (change)="method_name(firstName)" >
+    <button class="btn btn-primary" [disabled]="!f.valid" > Submit </div>
+</form>
+## Working with Check Boxes
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ngModal name="isSubscribed"> Subscribe
+        </label>
+    </div> 
+    {{f.value | json}}
+    <button class="btn btn-primary" [disabled]="!f.valid" > Submit </div>
+</form>
+## Working with Drop-down Lists
+- value only sends single value but ngValue can send an object
+- multiple attribute enables userto select multiple options from dropdown
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+        <label for="contactMethod">  </label>
+        <select multiple id="contactMethod" class="form-control" mgModel name="contactMethod">
+            <option value="" > Select One </option>
+            <option *ngFor="let method of contactMethods" [ngValue]="method" > {{method.name}} </option>
+        </select>
+    </div> 
+    {{f.value | json}}
+    <button class="btn btn-primary" [disabled]="!f.valid" > Submit </div>
+</form>
+## Working with Radio Buttons
+<form #f="ngForm" (ngSubmit)="submit(f)">
+   <div class="radio">
+        <label>
+            <input type="radio" ngModal name="contactMethod" value="1"> Email
+        </label>
+    </div>
+      <div class="radio">
+        <label>
+            <input type="radio" ngModal name="contactMethod" value="2"> Phone
+        </label>
+    </div>
+    {{f.value | json}}
+    <button class="btn btn-primary" [disabled]="!f.valid" > Submit </div>
+</form>
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Reactive Forms
+## Introduction
+## Building a Bootstrap Form
+## Creating control programatically
+- In OOPs practice for inheritence two or classes that having a common behaviour or property instead of implementing this property in multiple places we define then in seperate common or parent class and have those property inherited inside those class from the parent class.
+Therefore,In angular AbstractControl is a parent classs for FormControl and FormGroup 
+- It is mandatory to import ReactiveFormsModule for creating reactive forms inside parent module 
+// inside signup-form.component.html
+<form [formGroup]="form" >
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input formControlName="username" id="username" type="text" class="form-control" >
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
+// inside signup-form.component.ts
+import { FormControl, FormGroup } from '@angular/forms';
+form = new FormGroup({
+username: new FormControl()
+});
+## Adding Validation
+- All the methods that can be accessed via Validators like Validators.min etc are static bydefault because they can be accessed via class name
+- getting access of field name
+_form.get(‘field_name’).touched
+// inside signup-form.component.html
+<form [formGroup]="form" >
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input formControlName="username" id="username" type="text" class="form-control" >
+        <div *ngIf="username.touched && username.invalid" class="alert alert-danger">Username is required.</div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
+// inside signup-form.component.ts
+import { FormControl, FormGroup } from '@angular/forms';
+form = new FormGroup({
+username: new FormControl()
+});
+  form = new FormGroup({
+    username: new FormControl('',Validators.required)
+  });
+  get username() {
+    return this.form.get('username');
+  }
+## Specific validation Errors
+// inside signup-form.component.html
+<form [formGroup]="form" >
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input formControlName="username" id="username" type="text" class="form-control" >
+        <div *ngIf="usernme.touched && usernme.invalid" class="alert alert-danger">
+            <div *ngIf="usernme.errors.required" >Username is required</div>
+            <div *ngIf="usernme.errors.minlength" >Username should have {{usernme.errors.minlength.requiredLength}} characters</div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
+// inside signup-form.component.ts
+import { FormControl, FormGroup } from '@angular/forms';
+form = new FormGroup({
+username: new FormControl()
+});
+  form = new FormGroup({
+    username: new FormControl('',Validators.required)
+  });
+  get username() {
+    return this.form.get('username');
+  }
+## Implementaing custom validatior
+- VaidatorFn is an interface bydefault
+- when creating custom validator it is necessary to return a key-value pair because of type ValidatioErrors
+// inside signup-form.component.ts
+  form = new FormGroup({
+    username: new FormControl('',UsernameValidators.cannotContainSpace)
+  });
+// validators.ts
+export class UsernameValidators{
+  static cannotContainSpace(control: AbstractControl): ValidationErrors | null {
+    if((control.value as string).indexOf(' ') >= 0) {
+      return {cannotContainSpace: true}
+    }
+    return null;
+  }
+}
+## Async Operations
+- async operation - call the server behind the scene and when we get response from the server it shows the value. Eg – setTimeout, Ajax
+- async means non-blocking
+  static shouldBeUnique(control: AbstractControl): ValidationErrors | null {
+    setTimeout(() => {
+      if(control.value === 'mosh') {
+        return {shouldBeUnique: true}
+      }
+      return null;      
+    }, 2000);
+    return null;
+  }
+## Async Validators
+- Async Validators returns promise or observables or null
+- A promise retuns resolve or reject object. resolve takes a value or another promise and returns void while reject takes an optional param reason and return void
+- Inside new new FormControl('', validator, async_validator)
+// inside signup-form.component.ts
+  form = new FormGroup({
+    username: new FormControl('',UsernameValidators.cannotContainSpace, UsernameValidators.shouldBeUnique)
+  });
+// validators.ts
+export class UsernameValidators{
+  static shouldBeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
+    return new Promise((resolve, reject) => {
+      // return true;
+      // resolve(true);
+      setTimeout(() => {
+        if(control.value === 'mosh') {
+          resolve({shouldBeUnique: true});
+        }
+        resolve(null);      
+      }, 2000);
+    });
+  }
+}
+## Displaying a Loader Image
+- We can use text or glyp-icons in place of loaders
+- pending property returns true till any of the async validators is active
+// using signup-form.component.html
+<form [formGroup]="form" >
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input formControlName="username" id="username" type="text" class="form-control" >
+        <div *ngIf="this.form.get('username').pending">Checking for uniqueness...</div>
+        <div *ngIf="usernme.touched && usernme.invalid" class="alert alert-danger">
+            <div *ngIf="usernme.errors.required" >Username is required</div>>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
+## Validating Upon Submitting the Form
+- can be validated using .invalid property
+// inside signup-form.component.ts
+  login(){
+      this.form.setErrors({
+        invalidLogin: true
+      });
+    }
+// inside signup-form.component.html
+<form [formGroup]="form" (ngSubmit)="login()">
+    <div *ngIf="form.errors" class="alert alert-danger">Form is invalid</div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input formControlName="username" id="username" type="text" class="form-control" >
+        <div *ngIf="this.form.get('username').pending">Checking for uniqueness...</div>
+        <div *ngIf="usernme.touched && usernme.invalid" class="alert alert-danger">
+            <div *ngIf="usernme.errors.required" >Username is required</div>>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
+## Nested FormGroups
+- In a large form certain formConrols are grouped using FormGroup
+// inside signup-form.component.ts
+  form = new FormGroup({
+    account: new FormGroup({
+      username: new FormControl(''),
+      password: new FormControl('')
+    })
+  });
+  get username() {
+    return this.form.get('account.username');
+  }
+// inside signup-form.component.html
+<form [formGroup]="form" >
+    <div formGroupName="account">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input formControlName="username" id="username" type="text" class="form-control" >
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
+## FormArray
+// inside signup-form.component.ts
+  form = new FormGroup({
+    topics: new FormArray([])
+  });
+  addTopic(topic: HTMLInputElement){
+    this.topics.push(new FormControl(topic.value));
+    topic.value = "";
+  }
+  removeTopic(topic: FormControl) {
+    let index = this.topics.controls.indexOf(topic);
+    this.topics.removeAt(index);
+  }
+  get topics() {
+    return this.form.get('topics') as FormArray;
+  }
+// inside signup-form.component.html
+<form>
+    <input type="text" class="form-control" (keyup.enter)="addTopic(topic)" #topic>
+    <ul class="list-group">
+        <li *ngFor="let topic of topics.controls" (click)="removeTopic(topic)" class="list-group-item">{{topic.value}}</li>
+    </ul>
+</form>
+## FormBuilder
+// inside signup-form.component.ts
+  form = new FormGroup({
+    name: new FormControl(),
+    topics: new FormArray([])
+  });
+ // can be written as 
+  constructor(fb: FormBuilder) {
+    form = fb.group({
+      name: ['',Validators.required],
+      topics: fb.array([])
+    });
+   }
+## Quick Recap
+## Exercise
+## Solution
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Consuming Http services
+## Introduction
+- CRUD - create, read, update, delete
+## JSONPlaceHolder
+- Important http://jsonplaceholder.typicode.com/
+- this linkto get temporary data
+## Getting Data
+- Before using http calls, make sure to add HttpModule in the respective module otherwise it throws error like No provider for http
+- Before using http calls, make sure to import HttpClient service in the respective service class otherwise it throws error
+- .subscribe(value, error, next_after_api_complete) is used to take capture the resonse send by the API
+## Creating Data
+- while declaring http import inside constructor param use private keyword
+- Different type of HTTP requests - GET (Get data) POST (Create data) PUT (Update data) DELETE (Delete data)
+- make sure to stringify the body passed in post request using JSON.stringify(body)
+## Updating Data
+- Use patch() method to update a few propertie in an object
+- Use patch() method to update whole object
+## Deleing data
+- Use delete() method to delete a property
+## OnInit Interface
+- In angular, constructor should be light weighted.
+- Create http calls inside ngOnInit() not inside constructor
+- Lifecyle hooks ??
+## Seperation of Concerns
+- A/q to this principle one class should have single responsibility
+- service class for http calls should be created in a seperate file
+## Extracting a Service
+- ng g s service_name creates a service
+- services are needed to be included in module providers section
+- service name must be in camelCase and in a seperate file
+## Handling Errors
+- Unexpected errors (Server is offline, Network is down, Network is down, Unhandeled exceptions)
+- Expected errors (404-Not Found errors, 400-Bad requests)
+## Handling Unexpected Errors
+- .subscribe(_, error => {
+    console.log(error);
+}, _);
+## Handling Expected Errors
+- .subscribe(_, (error: Response) => {
+    if(error.status === 404){
+        // Not found message
+    } else {
+        // Genericc message
+    }
+}, _);
+- show error message in a form using setErrors()
+ .subscribe(_, (error: Response) => {
+    if(error.status === 404){
+        this.form.setErrors(error.json());
+    } else {
+        // Genericc message
+    }
+}, _);
+## Throwing Application-specific Errors
+- catch ?? - used to send a different kind of Observable error
+// inside posts.component.ts
+ .subscribe(_, (error: AppError) => {
+    if(error.status instanceof NotFoundError){
+        this.form.setErrors(error.json());
+    } else {
+        // Genericc message
+    }
+}, _);
+// inside post.service.ts
+deletePost(id) {
+    return this.htttp.delete(this.url + '/' + id).catch(
+        (error: Response) => {
+            if(error.status === 404) {
+                return Observable.throw(new NotFoundError());
+            }
+           return Observable.throw(new AppError(error));
+        }
+    );
+}
+// inside app-error.ts
+export class AppError {
+    constructor(public originalRrror?: any) {}
+}
+// inside not-found-error.ts
+export class NotFoundError extends AppError {}
+## Code Review
+## Importing Observable Operators and Factory Methods
+- Obsservable.throw is not a function
+- import 'rxjs/add/observable/throw';
+## Global Error Handling
+- ErrorHandler class ??
+// inside posts.component.ts
+ .subscribe(_, (error: AppError) => {
+    if(error.status instanceof NotFoundError){
+        this.form.setErrors(error.json());
+    } else {
+        throw error;
+    }
+}, _);
+// inside app-error-handler.ts
+export class AppErrorHandler implements ErrorHandler {
+    handleError(error) {
+        // Genericc message
+    }
+}
+- include AppErrorHandler inside parent module providers 
+...
+providers: [...   {provide: ErrorHandler, useClass: AppErrorHandler} ...]
+## Extracting a Reusable Error Handling Method
+// inside post.service.ts
+deletePost(id) {
+    return this.htttp.delete(this.url + '/' + id).catch(this.handleError}
+private handleError(error: Response) {
+    if(error.status === 404) {
+        return Observable.throw(new NotFoundError());
+    }
+    return Observable.throw(new AppError(error));
+}
+## Extracting a Reusable Data Service
+// inside posts.service.ts
+exxport class PostService extends DataService {
+    constructor(http: Http){
+        super('base_url', http);
+    }
+}
+// inside data.service.ts
+exxport class DataService {
+    constructor( private url:string, private http: Http){}
+    // put all http calls of posts.service.ts
+}
+## The Map Operator
+- map operator transforms the observable data from API
+// inside data.service.ts
+getAll() {
+    return this.http.get(this.url).map(res => res.json()).catch(this.handleError);
+}
+// inside data.component.ts
+this.servie.getAll().subscribe(res => {this.posts = posts;});
+## Optimistic (Hopeful) vs Pessimistic (Hopeless) Updates
+- Opt
+- write code lines next to each other which are more related to each other. Otherwise, take one spacing 
+- try to change UI as soon as http calls
+## Observables and Promises
+- Observables are lazy (means nothing will happen until we subscribe them) But Promises are eager
+- .toPromise() used to convert an observable into a promise
+- Reactive Programming ?? Using RXJS operator we can implement operations on http calls in lesser code than usual
+- Using Observables we can chain many operators on single requests but not with promises
+## Exercise
+## Solution
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Routing and Navigation
+## Introduction
+## Routing in a Nutshell
+- route is a mapping of a pass to a component
+- router outlet is the space where we want to render that component
+- Steps to implement routing - configure the routers, Add a router outlet & Add links
+## Configuring Routes 
+- import RouterModule to implement routing in the module imports ... RouterModule.forRoot()
+- default route {path: ''}
+ - route with end point {path: 'test'}
+- query param route {path: 'test/:username'}
+- wildcard route {path: '**'}
+- sequce of routes default > query param route > route with end point > wildcard route
+## RouterOutlet
+- Cannot find primary outlet to load - if you don't add routter outlet tag 
+- In inspect we can see that the component donot render inside router outlet but after that tag
+## RouterLink
+- href="#" attribute is not used in angular
+- If we use href for routing all the bundles will be reloaded or it hard refreshes the entire application
+- Single Page Application (SPA) only the content area refreshes not entire application
+- In case of simple route
+routerLink="/followers"
+- In case of router link with route params use property binding
+[routerLink]=["/followers", follower.id]
+## RouterLinkActive
+- routerLinkActive = "class1 class2"
+-used to add the class according to the route
+## Accessing Route Parameters
+constructor(private route: ActivatedRoute){}
+ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+        console.log(params);
+    })
+}
+## Why Route Params are Observables
+- Observables are collection of async data that arrives over a time
+- Every time aroute params change we will get that inside subscribe even when we are on the same component
+- this.route.snapshot.paramMap.get('id')
+- if the component always destroyes to get current page use .screensor. Otherwise If we get different param without destrying the ccomponent use .paramMap.subscribe()
+## Routes with Multiple Parameters
+// inside app.module.ts
+path: 'followers/:id/:username'
+// inside component.ts
+[routerLink]="['/followers', follower.id, follower.login]"
+## Query Parameters
+// inside app.module.ts
+path: 'followers/:id/:username'
+// inside component.ts (while sending)
+[routerLink]="['/followers', follower.id, follower.login]" [queryParams]="{page: 1, order: 'newest'}"
+// inside component.ts (while recieving)
+constructor(private route: ActivatedRoute){}
+ngOnInit() {
+    this.route.queryParamMap.subscribe(params => {};
+    OR
+    this.route.snapshot.queryParamMap.get('page')
+}
+## Subscribing to Multiple Observables
+- observable/combineLatest is used to create a new observable
+constructor(private route: ActivatedRoute){}
+ngOnInit() {
+    let obs = Observable.combineLatest([
+        this.route.paramMap,
+        this.route.queryParamMap
+    ]).subscribe(combined =>{
+        let id = combined[0].get('id');
+        let page = combined[1].get('page');
+
+        this.service.getAll().subscribe();
+    });
+}
+## The SwitchMap Operator
+- SwitchMap vs map ??
+constructor(private route: ActivatedRoute){}
+ngOnInit() {
+    let obs = Observable.combineLatest([
+        this.route.paramMap,
+        this.route.queryParamMap
+    ])
+    .switchMap( combined =>{
+        let id = combined[0].get('id');
+        let page = combined[1].get('page');
+        
+        return this.service.getAll();
+    })
+    .subscribe(followers =>{
+        this.followers = followers;
+    });
+}
+## Programmatic Navigation
+constructor(private router: Router){}
+submit(){
+    this.router.navigate(['/followers'], {
+        queryParams: {page:1, order:'newest'}
+    });
+}
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Authentication and Authorizarion
+## Introduction
+## Application Overview
+## Architecture
+- Client sends user name and password to the Server and Server sends the JWT (JSON Web Token) to the client if the user was authenticated
+- Local storage is used to store JWT into the browser
+- JWT used to display current user's name, show/hide parts of a page, prevent access to certain routes
+- To check the authorization,  in backend we extract JWT from request header fom the request
+## JSON Web Tokens
+- https://jwt.io/
+- JWT has three parts : header, payload and digital signature
+[eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9].[eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ].[SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c]
+- JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object
+## The Starter Code (IMPORTANT)
+- Home page should be shown with or without login user
+- factory methods creates object
+- provide ?? useFactory ?? deps ??
+## Implementing the login
+// inside auth.service.ts
+  login(credentials) {
+    return this.http.post('/api/authentication', JSON.stringify(credentials))
+    .map(res => {
+      let response = res.json();
+      if(response && response.token) {
+        localStorage.setItem('token', response.token);
+        return true;
+      } 
+      return false;
+    });
+  }
+## Implement the logout
+// inside auth.service.ts
+   logout() {
+    localStorage.removeItem('token');
+  }
+## Showing or Hiding Elements
+- npm install angular2-jwt --save
+// inside auth.service.ts
+   isLoggedIn() {
+    let jwtHelper = new JwtHelper();
+    let token = localStorage.getItem('token');
+    if(!token){
+        return false;
+    }
+    return true;
+  }
+## Showing or Hiding Elements Based on the User's Role
+// inside auth.service.ts
+   userType() {
+    let token = localStorage.getItem('token');
+    if(!token) return false;
+
+    let jwtHelper = new JwtHelper();
+    return JwtHelper().decodeToken(token);
+  }
+// inside login.component.ts
+<li *ngIf="authService.isLoggedIn() && authService.userType.admin"> Admin </li>
+## Getting the Current User
+<p *ngIf="authService.isLoggedIn()"> Welcome {{authService.userType.name}} </p>
+## CanActive Interface
+- Route guard is used toprotet selected route
+- AuthGuard is aadded to parent module providers section
+// inside auth-guard.service.ts
+export class AuthGuard implements CanActivate {
+    constructor(private authService: AuthService, private router: Router ) {}
+    canActivate() {
+        if(this.authService.isLoggedIn()) return true;
+        this.router.navigate(['/login']);
+        return false;
+    }
+}
+// inside auth.routing.ts
+{path: 'admin', component: AdminComponent, canActivate: [AuthGuard]}
+## Redirecting the Users After Logging In (IMPORTANT)
+// inside auth-guard.service.ts
+export class AuthGuard implements CanActivate {
+    constructor(private authService: AuthService, private router: Router ) {}
+    canActivate(route, state: RouterStateSnapshot) {
+        if(this.authService.isLoggedIn()) return true;
+        this.router.navigate(['/login'], { queryParams: {returnUrl: state.url}});
+        return false;
+    }
+}
+// inside login.component.ts
+export class LoginComponent  {
+    constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute ) {}
+    login(credentials) {
+        this.authService.login(credentials).subscribe(res => {
+            if(result) {
+                let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+                this.router.navigate([returnUrl | '/']);
+            } else {
+                this.invalidLogin = true;
+            }
+        });
+    }
+}
+## Protecting Routes Based on the User's Role
+// inside admin-auth-guard.service.ts
+export class AdminAuthGuard implements CanActivate {
+    constructor(private authService: AuthService, private router: Router ) {}
+    canActivate(route, state: RouterStateSnapshot) {
+        if(this.authService.userType && this.authService.userType.admin) return true;
+        this.router.navigate(['/no-access']);
+        return false;
+    }
+}
+// inside auth.routing.ts
+{path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminAuthGuard]}
+## Accessing Protected API Resources
+- To protect api's hitting from frontend, always add api headers to the API like Authorizarion: Bearer token 
+## Quick Recap
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Deployment
+## introduction
+## Preparing for Deployment
+- copy-paste deployment - lots of files, large bundles
+- optimizing techniques - minification (removing all comments and white spaces), uglification (renaming long variables and function names in short cryptic names), bundling (each bundle is a combination of several js files), dead code elimination (removing code that is not the part of the project), Ahead-of-time (AOT) compilation (precompiling angular components and templates)
+- ng build --prod - to create build for production 
+
+## JIT vs AOT compilation 
+- 
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+# Unit Testing
+## Introduction
+## What is Automated Testing ?
+- Automated testing is the practice of writing code to test our code and then run those test in an automated fashion
+- It helps you to catch defects before releasing your software
+- If it's a startup project first write development code then focus on test code if you have time left
+- Be pragmatic
+## Types of Tests
+- Unit, Integrated and End-to-end
+- Unit tests - Test a component in isolation, without external resourses (eg file system, database, API endpoints, template file)
+- Unit tests are easiest to write, super fast and don't give us much confidence
+- Integration tests - Test a component with external resourses (eg file system, database, API endpoints, template file)
+- End-to-end tests - Test the entire application as a whole
+- End-to-end tests give more confidence, very slow & very fragile
+## Unit Testing Fundamentals
+- Clean coding practices - Small functions/methods only have 10 lines of code or less, Proper Naming and Single responsibility
+- Download the code > npm install > ng test. The result can be seen in running cmd or in browser dev tools
+- karma is angular test runner and Jasmine is angular testing framework
+- .spec.ts is a testing file 
+- describe() - used to define a suite which is a group of related tests 
+- it() -  used to define a spec or test
+// inside compute.ts 
+export function compute(number) {
+    if(number < 0){
+        return 0;
+    }
+    return number + 1;
+}
+// inside compute.spec.ts
+import {compute} from './compute';
+describe('compute', () => {
+    it('should return 0 if input is negative', () => {
+        const result = compute(-1);
+        expect(result).toBe(1);
+    })
+    it('should increment the input if it is positive', () => {
+    const result = compute(1);
+    expect(result).toBe(2);
+    })
+});
+## Working with Strings and Arrays
+// inside greet.ts 
+export function greet(name) {
+    return 'Welcome ' + name;
+}
+// inside greet.spec.ts
+import {greet} from './greet';
+describe('greet', () => {
+    it('should include name in the message', () => {
+        expect(greet('mosh')).toContain('mosh');
+    })
+});
+// inside getCurrencies.ts 
+export function getCurrencies() {
+    return ['USD', 'AUD', 'EUR'];
+}
+// inside greet.spec.ts
+import {getCurrencies} from './getCurrencies';
+describe('getCurrencies', () => {
+    it('should return the supported currencies', () => {
+        const result = getCurrencies();
+        expect(result).toContain('USD');
+        expect(result).toContain('AUD');
+        expect(result).toContain('AUR');
+    })
+});
+## Setup and Tear Down
+- AAA (Arrange Act Assert)
+- beforeEach() - this method is included inside suite and runs before each spec/test (setup)
+- afterEach() - this method is included inside suite and runs after each spec/test (tear down)
+- beforeAll() - this method is included inside suite and runs after a suits starts (setup)
+- afterAll() - this method is included inside suite and runs before a suite ends (tear down)
+//inside voteComponent.ts
+exxport class VoteComponent {
+    totalVotes = 0;
+    upVote() {
+        this.totalVotes++;
+    }
+    downVotes() {
+        this.totalVotes--;
+    }
+}
+// inside vote.component.spec.ts
+import {compute} from './vote';
+describe('vote', () => {
+    // Arrange
+    let component: VoteComponent;
+    beforeEach(() => {
+        component = new VoteComponent();
+    });
+    it('should increment totalVotes when upvoted', () => {
+        // Act
+        component.upVote();
+        // Assert
+        expect(component.totalVotes).toBe(1);
+    })
+    it('should decrement totalVotes when downVoted', () => {
+        // Act
+        component.upVote();
+        // Assert
+        expect(component.totalVotes).toBe(-1);
+    })
+});
+## Working with Forms
+// inside todo-form.component.ts
+export class TodoFormComponent{
+    form: FormGroup;
+    constructor(fb: formBuilder) {
+        this.form = fb.group({
+            name: ['', Validators.required],
+            email: ['']
+        });
+    }
+}
+// inside todo-form.component.spec.ts
+import {FormBuilder} from '@angular/forms';
+import {TodoFormComponent} from './todo-form.component.ts';
+describe('TodoFormComponent', () => {
+    // Arrange
+    let component: TodoFormComponent;
+    beforeEach(() => {
+        component = new TodoFormComponent(new FormBuilder());
+    });
+    it('should create aform with 2 controls', () => {
+        expect(component.form.contains('name')).toBeTruthy();
+        expect(component.form.contains('email')).toBeTruthy();
+    })
+    it('should make the name control required', () => {
+        let control = component.form.get('name');
+        control.setValue('');
+        expect(control.valid).toBeFalsy();
+    })
+});
+## Working on Event Emitters
+// inside vote.component.ts
+export class VoteComponent {
+    totalVotes = 0;
+    voteChanged = new EventEmitter();
+    upVote() {
+        this.totalVotes++;
+        this.voteChanged.emit(this.totalVotes);
+    }
+}
+// inside vote.component.spec.ts
+import {VoteComponent} from './vote.component';
+describe('VoteComponent', () => {
+    // Arrange
+    let component: VoteComponent;
+    beforeEach(() => {
+        component = new VoteComponent();
+    });
+    it('should raise voteChanged event when upvoted', () => {
+        let totalVotes = null;
+        component.voteChanged.subscribe(tv => totalVotes = tv);
+        component.upVote();
+        // expect(totalVotes).not.toBeNull();
+        expect(totalVotes).toBe(1);
+    })
+    it('should decrement totalVotes when downVoted', () => {
+      
+    })
+});
+## Working with Spies
+- A fake implementation is called a stub
+- spyOn() is a method of Jasmine to spy on class, method or a function
+// inside todo.component.spec.ts
+import {TodoComponent} from './todo.component.ts';
+describe('TodoComponent', () => {
+    // Arrange
+    let component: TodoComponent;
+    let service: TodoService;
+    beforeEach(() => {
+        service = new TodoService(null);
+        component = new TodoFormComponent(service);
+    });
+    it('should set todos property with the items returned from the server', () => {
+        let todos = [1,2,3];
+        spyOn(service, 'getTodos').and.callFake(() = {
+            return Observable.from([todos])
+        })
+        component.ngOnInit();
+        expect(component.todos.length).toBe(todos);
+    })
+});
+## Interaction Testing
+// inside todo.component.spec.ts
+import {TodoComponent} from './todo.component.ts';
+describe('TodoComponent', () => {
+    // Arrange
+    let component: TodoComponent;
+    let service: TodoService;
+    beforeEach(() => {
+        service = new TodoService(null);
+        component = new TodoFormComponent(service);
+    });
+    it('should call the server to save the changes when a new todo item is added', () => {
+        let spy = spyOn(service, 'add').and.callFake(t = {
+            return Observable.empty();
+        })
+        component.add();
+        expect(spy).toHaveBeenCalled();
+    })
+
+    let todo = {id : 1};
+    it('should add the new todo returned from the server', () => {
+    let spy = spyOn(service, 'add').and.callFake(t = {
+        return Observable.from([todo]);
+    })
+    // It can be written as 
+    // let spy = spyOn(service, 'add').and.returnValue(Observable.from([todo])));
+    component.add();
+    expect(ccomponent.todos.indexOf(todo)).toBeGreaterThan(-1);
+    })
+    it('should set the message property if server returns an error when adding a new todo', () => {
+    let error = 'Errorfromthe server';
+    let spy = spyOn(service, 'add').and.returnValue(Observable.throw(error));
+    component.add();
+    expect(ccomponent.message).toBe(error);
+    })
+});
+## Working with Confirmation Boxes
+// inside todo.component.spec.ts
+import {TodoComponent} from './todo.component.ts';
+describe('TodoComponent', () => {
+    // Arrange
+    let component: TodoComponent;
+    let service: TodoService;
+    beforeEach(() => {
+        service = new TodoService(null);
+        component = new TodoFormComponent(service);
+    });
+    it('should call the server to delete a todo item if the user confirms', () => {
+        spyOn(window, 'confirm').and.returnValue(true);
+        spyOn(service, 'delete').and.returnValue(Observable.empty());
+        component.delete(1);
+        expect(spy).toHaveBeenCalledWith(1);
+    })
+    it('should not call the server to delete a todo item if the user cancels', () => {
+        spyOn(window, 'confirm').and.returnValue(false);
+        spyOn(service, 'delete').and.returnValue(Observable.empty());
+        component.delete(1);
+        expect(spy).not.toHaveBeenCalledWith(1);
+    })
+});
+## Limitations of Unit Tests
+- Can be used for - State changes, Forms, Events (output properties), Services
+- Cannot be used for Routers, Template bindings
+## Code coverage
+- ng test --code-coverage creates anew folder named coverage which contain how much code is covered with written test cases 
+- statements/methods with name xdescribe() and xit() will not be covered under tests 
+-ideal code-coverage should be 75%
+
+--------------------------------------------------------------------------------------------------------------------------------
+# Integration Testing
+
+## Introduction
+## The Setup Code
+- TestBed - provides a number of utility functions for testing
+- ComponentFixture - It is a wrapper class around our testing classs so that it can access it's template
+// inside voter.component.spec.ts
+import { TestBed } from '@angular/core/testing';
+import {VoterComponent} from './voter.component';
+describe('VoterComponent', () => {
+    let component: VoterComponent;
+    let fixture: ComponentFixture<VoterComponent>;
+    beforeEach(() => {
+      TestBed.configureTestingModule({
+      declarations: [VoterComponent]
+    });
+    fixture = TestBed.createComponent(VoterComponent);
+    component = fixture.componentInstance;
+    // fixture.nativeElement
+    fixture.debugElement
+    });
+
+    it('', () => {
+      
+    })
+});
+
+## Generating the Setup Code
+- There are two beforeEach() if we create spec file using angular cli.One is for declaring module and later one for taking instance of the component
+- async is used in first before each theremay be a time variance in testing
+- .compileComponents - Compile components with a templateUrl for the test's NgModule. It is necessary to call this function as fetching urls is asynchronous.
+
+## Testing property and class bindings
+// inside voter.component.spec.ts
+it('should render total votes', () => {
+    component.othersVote = 20;
+    component.myVote = 1;
+})
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

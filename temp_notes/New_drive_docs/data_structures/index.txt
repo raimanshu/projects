@@ -1,0 +1,115 @@
+Important Links
+https://www.geeksforgeeks.org/data-structures/ (Recommended for JS code)
+https://github.com/trekhleb/javascript-algorithms
+https://www.quora.com/Do-data-structures-and-algorithms-for-C-C++-apply-to-javascript
+https://www.javatpoint.com/data-structure-tutorial (Recommended for theory)
+
+
+Channels
+Abdul sir DSA
+
+DSA TAGS
+--------
+Array
+String
+Hash Table
+Dynamic Programming
+Math
+Sorting
+Greedy
+Depth-First Search
+Database
+Binary Search
+Tree
+Breadth-First Search
+Matrix
+Bit Manipulation
+Two Pointers
+Binary Tree
+Heap (Priority Queue)
+Prefix Sum
+Stack
+Simulation
+Graph
+Design
+Counting
+Sliding Window
+Backtracking
+Union Find
+Linked List
+Enumeration
+Ordered Set
+Monotonic Stack
+Trie
+Number Theory
+Divide and Conquer
+Recursion
+Bitmask
+Queue
+Segment Tree
+Binary Search Tree
+Memoization
+Geometry
+Binary Indexed Tree
+Hash Function
+Topological Sort
+String Matching
+Combinatorics
+Rolling Hash
+Shortest Path
+Game Theory
+Interactive
+Data Stream
+Brainteaser
+Monotonic Queue
+Randomized
+Merge Sort
+Iterator
+Concurrency
+Doubly-Linked List
+Probability and Statistics
+Quickselect
+Bucket Sort
+Suffix Array
+Minimum Spanning Tree
+Counting Sort
+Shell
+Line Sweep
+Reservoir Sampling
+Strongly Connected Component
+Eulerian Circuit
+Radix Sort
+Rejection Sampling
+Biconnected Component
+
+
+DOUBTS
+-------
+Time/Space Complexity
+
+Recursion -  Head Recursion, Tail Recursion, recursive relation, recursion call stack, recursion tree,  I/O method, IBH (Induction Base Condition) method,
+(Love Babbar, Aditya Verma, https://www.youtube.com/watch?v=DICBCBZn_L4)
+
+Back tracking - 
+
+Arrays
+Linked Lists
+Stacks
+Queues
+Searching
+Sorting
+Hash Maps 
+Trees 
+Heaps
+Sliding Window
+Graphs 
+DP - Memoization, Tabulation (Love Babbar, Aditya Verma)
+Number Theory 
+Bit Manipulation 
+(Prepcoding)
+Tries
+Knapsack - 0/1 Knapsack, Factional Knapsack, Unbounded Knapsack
+
+
+
+

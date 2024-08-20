@@ -1,0 +1,464 @@
+ANGULAR INTERVIEW QUESTIONS
+
+
+subject behavour -
+
+What is Angular Framework? - TypeScript-based open-source front-end platform that makes it
+ easy to build applications with in web/mobile/desktop.
+What is the difference between AngularJS and Angular?
+What is TypeScript? - strongly typed superset of JavaScript created by Microsoft that adds 
+Optional types, classes, async/await, and many other features, and compiles to plain 
+JavaScript. 
+Write a pictorial diagram of Angular architecture?
+What are the key components of Angular? - components, templates, modules, services,
+ metadata
+What are directives? - add behaviour to an existing DOM element or an existing
+ component instance.
+What are components? - most basic UI building block of an Angular app which formed a
+tree of Angular components.
+What are the differences between Component and Directive?
+What is a template? - HTML view where you can display data by binding controls to
+properties of an Angular component.
+What is a module? - logical boundaries in your application and the application is divided into
+separate modules to separate the functionality of your application.
+entryComponents -
+ https://www.geeksforgeeks.org/what-is-entrycomponents-in-angular-ngmodule/#:~:text=What%
+20is%20entryComponents%20in%20angular%20ngModule%20%3F,-Last%20Updated%20%3
+A%2014&text=The%20entryComponent%20is%20the%20component,declared%20in%20the%
+20component%20template.
+What are lifecycle hooks available? - Angular application goes through an entire set of
+ processes or has a lifecycle right from its initiation to the end of the application.
+What is a data binding? - allows to define communication between a component and the
+ DOM, making it very easy to define interactive applications without worrying about pushing and
+ pulling data.
+What is metadata? - used to decorate a class so that it can configure the expected
+ behavior of the class.
+What is Angular CLI? - command line interface to scaffold and build angular apps using nodejs
+ style (commonJs) modules.
+What is the difference between constructor and ngOnInit? - TypeScript classes has a
+ default method called constructor which is normally used for the initialization purpose. Whereas
+ ngOnInit method is specific to Angular, especially used to define Angular bindings.
+What is a service - used when a common functionality needs to be provided to various
+modules.
+What is dependency injection in Angular? - application design pattern in which a class
+asks for dependencies from external sources rather than creating them itself.
+How is Dependency Hierarchy formed?
+What is the purpose of async pipe? - subscribes to an observable or promise and returns the
+ latest value it has emitted.
+What is the option to choose between inline and external template file? - template vs 
+templateUrl
+What is the purpose of *ngFor directive? - display each item in the list.
+
+What is the purpose of ngIf directive? - Sometimes an app needs to display a view or a portion
+ of a view only under specific circumstances
+What happens if you use script tag inside template? - Angular recognizes the value as unsafe
+ and automatically sanitizes it, which removes the <script> tag but keeps safe content such as
+ the text content of the <script> tag.
+What is interpolation? - Angular replaces that name with the string value of the corresponding
+ component property.
+What are template expressions? - produces a value similar to any Javascript expression.
+What are template statements? - responds to an event raised by a binding target such as
+ an element, component, or directive.
+How do you categorize data binding types?
+What are pipes? - A pipe takes in data as input and transforms it to a desired output.
+What is a parameterized pipe? - A pipe can accept any number of optional parameters to
+ fine-tune its output.
+How do you chain pipes? - pipe1 | pipe2 | pipe3
+What is a custom pipe?
+Give an example of custom pipe?
+What is the difference between pure and impure pipe? - A pure pipe is only called when
+ Angular detects a change in the value or the parameters passed to a pipe. An impure
+ pipe is called for every change detection cycle no matter whether the value or
+ parameters changes.
+What is a bootstrapping module? - Every application has at least one Angular module, the root
+ module that you bootstrap to launch the application is called as bootstrapping module
+What are observables? - declarative which provide support for passing messages between
+publishers and subscribers in your application.
+What is HttpClient and its benefits? - Angular provides a simplified client HTTP API known as
+ HttpClient which is based on top of XMLHttpRequest interface.
+Explain on how to use HttpClient with an example?
+How can you read full response? - observe option from HttpClient,
+How do you perform Error handling? - If the request fails on the server or failed to reach the
+ server due to network issues then HttpClient will return an error object instead of a successful
+ reponse.
+What is RxJS? - RxJS is a library for composing asynchronous and callback-based code
+ in a functional, reactive style using Observables.
+What is subscribing? - An Observable instance begins publishing values only when 
+someone subscribes to it. So you need to subscribe by calling the subscribe() method of
+ the instance, passing an observer object to receive the notifications.
+What is an observable? - unique Object similar to a Promise that can help manage async
+code.
+What is an observer? - interface for a consumer of push-based notifications delivered by an
+Observable.
+What is the difference between promise and observable?
+What is multicasting? - practice of broadcasting to a list of multiple subscribers in a single
+execution.
+How do you perform error handling in observables?
+What is the short hand notation for subscribe method?
+What are the utility functions provided by RxJS?
+What are observable creation functions? - RxJS provides creation functions for the process
+ of creating observables from things such as promises, events, timers and Ajax requests.
+What will happen if you do not supply handler for observer? - the observer just ignores
+notifications of that type.
+What are angular elements? - Angular Elements hosts an Angular component, providing a
+ bridge between the data and logic defined in the component and  Standard DOM APIs, thus,
+ providing a way to use Angular components in non-Angular environments .
+What is the browser support of Angular Elements?
+What are custom elements? - a Web Platform feature which extends HTML by
+allowing you to define a tag whose content is created and controlled by JavaScript code.
+Do I need to bootstrap custom elements? - No
+Explain how custom elements works internally? - 
+How to transfer components to custom elements?
+What are the mapping rules between Angular component and custom element?
+How do you define typings for custom elements? - NgElement and WithProperties types
+ exported from @angular/elements.
+What are dynamic components? - components in which components location in the
+ application is not defined at build time
+What are the various kinds of directives? - components, structural and attribute
+How do you create directives using CLI? - ng generate directive
+Give an example for attribute directives?
+What is Angular Router? - mechanism in which navigation happens from one view to the next
+ as users perform application tasks.
+What is the purpose of base href tag? - The routing application should add element to the
+ index.html as the first child in the tag in order to indicate how to compose navigation URLs.
+What are the router imports? - available in @angular/router instead @angular/core
+What is router outlet? - The RouterOutlet is a directive from the router library and it acts as a
+ placeholder that marks the spot in the template where the router should display the 
+components for that outlet.
+What are router links? - directive on the anchor tags give the router control over those
+ elements.
+What are active router links? - the Router will add CSS classes when this link is active and
+ and remove when the link is inactive.
+What is router state? - RouterState is a tree of activated routes. Every node in this tree
+ knows about the "consumed" URL segments, the extracted parameters, and the
+ resolved data.
+What are router events? - During each navigation, the Router emits navigation events through
+ the Router.events property allowing you to track the lifecycle of the route.
+What is activated route? - contains the information about a route associated with a component 
+loaded in an outlet.
+How do you define routes? - A router must be configured with a list of route definitions.
+What is the purpose of Wildcard route? - If the URL doesn't match any predefined routes 
+then it causes the router to throw an error and crash the app
+Do I need a Routing Module always? - No
+What is Angular Universal? - server-side rendering module for Angular applications in various
+ scenarios.
+What are different types of compilation in Angular?
+What is JIT? - compiles your app in the browser at runtime.
+What is AOT? - compiles your app at build time.
+Why do we need compilation process? - The Angular components and templates cannot be
+ understood by the browser directly.
+What are the advantages with AOT?
+What are the ways to control AOT compilation?
+What are the restrictions of metadata?
+What are the two phases of AOT? - code analysis, code generation, validation
+Can I use arrow functions in AOT? - No can’t be used to assign values to the decorator
+ properties
+What is the purpose of metadata json files? - The metadata.json file can be treated as a 
+diagram of the overall structure of a decorator's metadata, represented as an abstract syntax
+ tree(AST).
+Can I use any javascript feature for expression syntax in AOT? - No
+What is folding? - a process in which the collector evaluate an expression during collection
+ and record the result in the .metadata.json instead of the original expression.
+What are macros? - The AOT compiler supports macros in the form of functions or static
+ methods that return an expression in a single return expression
+Give an example of few metadata errors?
+What is metadata rewriting? - process in which the compiler converts the expression 
+initializing the fields such as useClass, useValue, useFactory, and data into an exported
+ variable, which replaces the expression.
+How do you provide configuration inheritance? - Angular Compiler supports configuration
+ inheritance through extends in the tsconfig.json on angularCompilerOptions.
+How do you specify angular template compiler options? - angularCompilerOptions
+object in the tsconfig.json file
+How do you enable binding expression validation? - fullTemplateTypeCheck in the 
+"angularCompilerOptions" of the project's tsconfig.json.
+What is the purpose of any type cast function? - can disable binding expression type checking
+ using $any() type cast function
+What is Non null type assertion operator? - to suppress the Object is possibly 'undefined'
+error.
+What is type narrowing?
+How do you describe various dependencies in angular application? - Angular packages, 
+Supported packages, polyfill packages
+What is zone? - A Zone is an execution context that persists across async tasks. Angular relies
+ on zone.js to run Angular's change detection processes when native JavaScript operations 
+raise events
+What is the purpose of common module? - commonly-needed services, pipes, and directives
+ provided by @angular/common module.
+What is codelyzer? - provides set of tslint rules for static code analysis of Angular TypeScript
+ projects.
+What is angular animation? - Angular's animation system is built on CSS functionality in order
+ to animate any property that the browser considers animatable. These properties includes 
+positions, sizes, transforms, colors, borders etc.
+What are the steps to use animation module?
+What is State function? - used to define different states to call at the end of each transition. 
+This function takes two arguments: a unique name like open or closed and a style() function.
+What is Style function? - used to define a set of styles to associate with a given state name.
+What is the purpose of animate function? - way to implement sophisticated and compelling 
+animations for your Angular single page web application.
+What is transition function? - used to specify the changes that occur between one state and
+another over a period of time. It accepts two arguments: the first argument accepts an 
+Expression that defines the direction between two transition states, and the second argument 
+accepts an animate() function.
+How to inject the dynamic script in angular? - DomSanitizer
+What is a service worker and its role in Angular? - script that runs in the web browser and
+ manages caching for an application.
+What are the design goals of service workers?
+What are the differences between AngularJS and Angular with respect to dependency
+ injection?
+What is Angular Ivy? - new rendering engine for Angular.
+What are the features included in ivy preview?
+Can I use AOT compilation with Ivy? - yes
+What is Angular Language Service? - way to get completions, errors, hints, and navigation
+ Inside your Angular templates whether they are external in an HTML file or embedded in
+annotations/decorators in a string.
+How do you install angular language service in the project?
+Is there any editor support for Angular Language Service? - VS code, webstorm
+Explain the features provided by Angular Language Service? -Autocompletion, error
+ Checking, navigation
+How do you add web workers in your application? -ng generate web-worker app
+What are the limitations with web workers?
+What is Angular CLI Builder? - CLI Builder API is stable and available to developers who want
+ to customize the Angular CLI by adding or modifying commands.
+What is a builder? - A builder function ia a function that uses the Architect API to perform a 
+complex process such as "build" or "test". The builder code is defined in an npm package.
+How do you invoke a builder? - ng run
+How do you create app shell in Angular? - App shell is a way to render a portion of your 
+application via a route at build time.
+What are the case types in Angular? - camelCase, upperCamelCase, dash-case,
+ Upper_underscore_case
+What are the class decorators in Angular? - A class decorator is a decorator that appears 
+immediately before a class definition, which declares the class to be of the given type, and 
+provides metadata suitable to the type
+What are class field decorators? - class field decorators are the statements declared 
+immediately before a field in a class definition that defines the type of that field.
+What is declarable in Angular? - Declarable is a class type that you can add to the 
+declarations list of an NgModule.
+What are the restrictions on declarable classes?
+What is a DI token? - A DI token is a lookup token associated with a dependency provider in 
+dependency injection system. The injector maintains an internal token-provider map that it
+ references when asked for a dependency and the DI token is the key to the map.
+What is Angular DSL? - A domain-specific language (DSL) is a computer language specialized 
+to a particular application domain. Angular has its own Domain Specific Language (DSL) which 
+allows us to write Angular specific html-like syntax on top of normal html
+What is an rxjs Subject? - An RxJS Subject is a special type of Observable that allows values 
+to be multicasted to many Observers. While plain Observables are unicast
+What is Bazel tool? - Bazel is a powerful build tool developed and massively used by Google 
+and it can keep track of the dependencies between different packages and build targets.
+What are the advantages of Bazel tool?
+How do you use Bazel with Angular CLI?
+How do you run Bazel directly?
+What is platform in Angular? - A platform is the context in which an Angular application runs.
+What happens if I import the same module twice? - angular evaluates it only once
+How do you select an element with in a component template? - use @ViewChild directive
+How do you detect route change in Angular?- subscribe to router to detect the changes. The 
+subscription for router events
+How do you pass headers for HTTP client?- can directly pass object map for http client or create 
+HttpHeaders class to supply the headers.
+What is the purpose of differential loading in CLI? - 
+Is Angular supports dynamic imports? - Yes, using loadChildren
+What is lazy loading? - It helps us to download the web pages in chunks instead of
+ downloading everything in a big bundle.
+What are workspace APIs? - Angular 8.0 release introduces Workspace APIs to make it easier 
+for developers to read and modify the angular.json file instead of manually modifying it.
+How do you upgrade angular version? - ng update @angular/cli @angular/core
+What is Angular Material? - collection of Material Design components for Angular framework 
+following the Material Design spec.
+How do you upgrade location service of angularjs? - LocationUpgradeModule
+What is NgUpgrade? - library put together by the Angular team, which you can use in your 
+applications to mix and match AngularJS and Angular components and bridge the AngularJS 
+and Angular dependency injection systems.
+How do you test Angular application using CLI? - ng test
+How to use polyfills in Angular application? - Mandatory & Optional polyfills
+What are the ways to trigger change detection in Angular? - ApplicationRef.tick(), 
+NgZone.run(callback), ChangeDetectorRef.detectChanges()
+What are the differences of various versions of Angular?
+What are the security principles in angular?
+What is the reason to deprecate Web Tracing Framework? - not well maintained and failed in
+ majority of the applications,
+What is the reason to deprecate web worker packages? - Angular team realized it's not good
+ practice to run the Angular application on Web worker
+How do you find angular CLI version? - ng version, ng v, ng --version, ng -v
+What is the browser support for Angular?
+What is schematic - It's a scaffolding library that defines how to generate or transform a 
+programming project by creating, modifying, refactoring, or moving files and code. It defines 
+rules that operate on a virtual file system called a tree.
+What is rule in Schematics? - function that operates on a file tree to create, delete, or modify
+ files in a specific manner.
+What is Schematics CLI? - I. It is used to install the schematics executable, which you can use
+ to create a new schematics collection with an  Initial named schematic.
+What are the best practices for security in angular?
+What is Angular security model for preventing XSS attacks? - Angular treats all values as
+ untrusted by default. i.e, Angular sanitizes and escapes untrusted values
+What is the role of template compiler for prevention of XSS attacks? - prevents vulnerabilities
+ caused by template injection, and greatly improves application performance.
+What are the various security contexts in Angular?- Html, styles, URL, Resource URL
+What is Sanitization? Is angular supports it? - inspection of an untrusted value, turning it into
+ a value that's safe to insert into the DOM.
+What is the purpose of innerHTML? - allows you to set it's html-content programmatically.
+What is the difference between interpolated content and innerHTML? - behavior of code
+ interpreted.
+How do you prevent automatic sanitization? - DomSanitizer:
+Is safe to use direct DOM API methods in terms of security?- No
+What is DOM sanitizer? - used to help preventing Cross Site Scripting Security bugs (XSS) by
+ Sanitizing values to be safe to use in the different DOM contexts.
+How do you support server side XSS protection in Angular application? - using a templating
+language that automatically escapes values to prevent XSS vulnerabilities on the server.
+Is angular prevents http level vulnerabilities? - HttpClientModule
+What are Http Interceptors? - part of @angular/common/http, which inspect and transform
+ HTTP requests from your application to the server and vice-versa on HTTP responses.
+What are the applications of HTTP interceptors? - Authentication, logging, caching, file
+ Backend, url transformation, modifying headers,
+Is multiple interceptors supported in Angular? - yes
+How can I use interceptor for an entire application? - by importing the HttpClientModule only in 
+your AppModule, and add the interceptors to the root application injector.
+How does Angular simplifies Internationalization?
+How do you manually register locale data? - registerLocaleData
+What are the four phases of template translation?
+What is the purpose of i18n attribute? - marks translatable content.
+What is the purpose of custom id? - When you change the translatable text, the Angular 
+extractor tool generates a new id for that translation unit. Because of this behavior, you must
+ then update the translation file with the new id every time.
+What happens if the custom id is not unique? - If you use the same id for two different text
+ Messages then only the first one is extracted.
+Can I translate text without creating an element?- Yes using <ng-container> attribute
+How can I translate attribute? - by attaching i18n-x
+List down the pluralization categories?
+What is select ICU expression? - ICU expression is is similar to the plural expressions except
+ that you choose among alternative translations based on a string value instead of a number.
+How do you report missing translations? - By default, When translation is missing, it
+ generates a warning
+How do you provide build configuration for multiple locales? -configuration settings of
+ Angular.json file.
+What is an angular library? - An Angular library is an Angular project that differs from an app
+ in that it cannot run on its own. It must be imported and used in an app
+What is AOT compiler? - part of a build process that produces a small, fast, ready-to-run
+ Application package, typically for production.
+How do you select an element in component template? - via ElementRef by injecting it into your
+ component's constructor.
+What is TestBed? - an api for writing unit tests for Angular applications and it's libraries.
+What is protractor? - an end-to-end test framework for Angular and AngularJS applications.
+What is collection? - a set of related schematics collected in an npm package.
+How do you create schematics for libraries?
+How do you use jquery in Angular?
+What is the reason for No provider for HTTP exception? -due to missing HttpClientModule in
+ your module
+What is router state? - an interface which represents the state of the router as a tree of
+ Activated routes.
+How can I use SASS in angular project?
+What is the purpose of hidden property? - used to show or hide the associated DOM element,
+ based on an expression.
+What is the difference between ngIf and hidden property?
+What is slice pipe? - used to create a new Array or String containing a subset (slice) of the
+ elements.
+What is index property in ngFor directive? - used to return the zero-based index of the item
+ in each iteration
+What is the purpose of ngFor trackBy? - performance optimization
+What is the purpose of ngSwitch directive? - displays one element from among several
+ possible elements, based on a switch condition.
+Is it possible to do aliasing for inputs and outputs? - Yes
+What is safe navigation operator? - used to guard against null and undefined values in
+ property paths when you are not aware whether a path exists or not. i
+Is any special configuration required for Angular9? - NO
+What are type safe TestBed API changes in Angular9? - Testbed.inject() instead Testbed.get()
+Is mandatory to pass static flag for ViewChild? - No need in Angular 9 onwards
+What are the list of template expression operators?
+What is the precedence between pipe and ternary operators? - pipe has higher
+
+What is an entry component? - An entry component is any component that Angular loads
+ imperatively(i.e, not referencing it in the template) by type.
+What is a bootstrapped component? - A bootstrapped component is an entry component that
+ Angular loads into the DOM during the bootstrap process or application launch time.
+How do you manually bootstrap an application? - use ngDoBootstrap hook for a manual
+ bootstrapping of the application instead of using bootstrap array in @NgModule annotation
+Is it necessary for bootstrapped component to be entry component? - yes
+What is a routed entry component? - The components referenced in router configuration
+Why is not necessary to use entryComponents array every time?
+Do I still need to use entryComponents array in Angular9? - No
+Is it all components generated in production build? - No, only the entry components and
+ template components appears in production builds.
+What is Angular compiler? - convert the application code into JavaScript code.
+What is the role of ngModule metadata in compilation process? - used to tell the Angular
+ compiler what components to be compiled for this module and how to link this module with 
+other modules.
+How does angular finds components, directives and pipes?
+Give few examples for NgModules?
+What are feature modules? - are NgModules, which are used for the purpose of organizing
+ code.
+What are the imported modules in CLI generated feature modules? - NgModule, Common
+ module
+What are the differences between ngmodule and javascript module?
+What are the possible errors with declarations?
+What are the steps to use declaration elements?
+What happens if browserModule used in feature module? - error telling you to use
+ CommonModule instead.
+What are the types of feature modules? - Domain, Routed, Routing, Service, Widget
+What is a provider? - an instruction to the Dependency Injection system on how to obtain a
+ value for a dependency(aka services created).
+What is the recommendation for provider scope? - root injector
+How do you restrict provider scope to a module?
+How do you provide a singleton service?
+What are the different ways to remove duplicate service registration?
+How does forRoot method helpful to avoid duplicate router instances? - If the
+ RouterModule module didn’t have forRoot() static method then each feature module would
+instantiate a new Router instance, which leads to broken application due to duplicate instances.
+What is a shared module? - module in which you put commonly used directives, pipes, and
+components into one module that is shared(import it) throughout the application.
+Can I share services using modules? - No
+How do you get current direction for locales?? - getLocaleDirection
+What is ngcc? - The ngcc(Angular Compatibility Compiler) is a tool which upgrades
+ node_module compiled with non-ivy ngc into ivy compliant format. The postinstall script from
+ package.json will make sure your node_modules will be compatible with the Ivy renderer.
+What classes should not be added to declarations?
+Wat is ngzone? - which creates a zone named angular to automatically trigger change
+ detection when the following conditions are satisfied.
+What is NoopZone?
+How do you create displayBlock components?
+What are the possible data change scenarios for change detection?
+What is a zone context? - Execution Context is an abstract concept that holds information 
+about the environment within the current code being executed. A zone provides an execution 
+context that persists across asynchronous operations is called as zone context.
+What are the lifecycle hooks of a zone? - onScheduleTask, onInvokeTask, onHasTask, 
+onInvoke
+Which are the methods of NgZone used to control change detection? - run()
+How do you change the settings of zonejs?
+How do you trigger an animation? - trigger()
+How do you configure injectors with providers at different levels?
+Is it mandatory to use injectable on every service class? - No
+What is an optional dependency? - is a parameter decorator to be used on constructor 
+parameters, which marks the parameter as being an optional dependency
+What are the types of injector hierarchies? - ModuleInjector, ElementInjector
+What are reactive forms? - model-driven approach for creating forms in a reactive style(form
+ Inputs changes over time).
+What are dynamic forms? - is a pattern in which we build a form dynamically based on 
+metadata that describes a business object model.
+What are template driven forms? - model-driven forms where you write the logic, validations,
+ controls etc, in the template part of the code using directives.
+What are the differences between reactive forms and template driven forms?
+What are the different ways to group form controls? - formgroup, formarray
+How do you update specific properties of a form model? - patchValue()
+What is the purpose of FormBuilder? - FormBuilder is used as syntactic sugar for easily
+ creating instances of a FormControl, FormGroup, or FormArray.
+How do you verify the model changes in forms?
+What are the state CSS classes provided by ngModel? - visited, valid, value changed
+How do you reset the form? - this.form.reset()
+What are the types of validator functions? - Sync, Async
+Can you give an example of built-in validators?
+How do you optimize the performance of async validators?
+How to set ngFor and ngIf on the same element?
+What is host property in css? - used to target styles in the element that hosts the component.
+How do you get the current route?
+What is Component Test harness? - esting API around an Angular directive or component to
+ make tests simpler by hiding implementation details from test suites.
+What is the benifit of Automatic inling of fonts ?
+
+
+
+
+
+
+
+
+
+
+
+
+

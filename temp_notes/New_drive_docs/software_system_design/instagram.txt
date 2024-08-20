@@ -1,0 +1,14 @@
+https://www.educative.io/courses/grokking-the-system-design-interview/m2yDVZnQ8lG
+https://www.enjoyalgorithms.com/blog/design-instagram
+https://www.codercrunch.com/design/634265/designing-instagram
+
+
+
+
+
+https://get.interviewready.io/blog/video_streaming_system
+https://www.mindbowser.com/how-to-build-a-scalable-video-streaming-app-architecture/ (Recommended)
+https://medium.com/@narengowda/cricinfo-cricbuzz-system-design-c596e8506669
+
+
+https://liuzhenglaichn.gitbook.io/system-design/news-feed/design-a-news-feed-system

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Css Projects</title>
+    </head>
+    <body>
+        <div>
+            <button onclick="attachfile('table_assignment.html')">Table Assignment</button>
+            <button onclick="attachfile('comming_soon_assignment/comming_soon.html')">Comming Soon</button>
+            <button onclick="attachfile('band/band.html')">Band</button>
+            <button onclick="attachfile('table_assignment/table_assignment.html')">table</button>
+            <button onclick="attachfile('table_assignment_vikas_sir/invoice_table.html')">Invoice</button>
+            <button onclick="attachfile('catering/catering.html')">Catering</button>
+            <button onclick="attachfile('architect_temp/arch.html')">Architect</button>
+            <button onclick="attachfile('google_maps/google_maps_index.html')">Google Map</button>
+        </div>
+        <iframe id="iframe" src="project-intro/index-intro.html" height="100%" width="100%" title="Iframe Example"></iframe>
+    </body>
+</html>
+
+<script>
+    function attachfile(fileName){
+        document.getElementById('iframe').src = fileName;
+    }
+
+</script>

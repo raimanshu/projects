@@ -1,0 +1,21 @@
+Angular Progressive Web App (PWA)
+
+References
+PWA Introduction
+https://www.coredna.com/blogs/progressive-web-app
+Ngsw-config.json Configuration
+https://srashtisj.medium.com/how-to-configure-ngsw-config-json-4f2a026d8374
+Creating PWA using angular cli
+https://medium.com/ngconf/angular-pwa-install-and-configure-858dd8e9fb07
+Learning about service workers
+https://blog.angular-university.io/angular-service-worker/
+https://blog.ng-book.com/service-workers-and-angular/ 
+https://morioh.com/p/984afc91af1c 
+
+https://blog.angular-university.io/service-workers/ 
+
+App Shell
+https://blog.angular-university.io/angular-app-shell/ 
+Lifecycle of service worker
+https://www.educative.io/courses/zero-to-hero-with-progressive-web-apps/B8W148zLJrk 
+

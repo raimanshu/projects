@@ -1,0 +1,100 @@
+Points to remember <br /><br />
+
+
+Math.floor(4.5) = 4 <br />
+Implementation ways -- Itterative and Recurrsive <br />
+Binary search is divide an conquer approch <br />
+Condition before applying Binary search -- Array must be sorted <br /><br />
+
+
+Time Complexity (where 'n' is the size of the list.) <br /><br />
+Best Case - O(1) <br />
+Worst Case - O(log n) <br />
+Average Case - O(log n) <br />
+Space Complexity - O(log n) <br />
+<br />
+
+
+https://www.geeksforgeeks.org/binary-search/
+https://www.tutorialspoint.com/data_structures_algorithms/binary_search_algorithm.htm
+Implement using while loop
+
+<script>
+  // Method 1 : Iterative method
+  function binarySearchIterative(arr_var, required_value) {
+    let array_begin_index = 0;
+    let array_end_index = arr_var.length - 1;
+    let mid;
+    while (array_end_index >= array_begin_index) {
+      mid =
+        array_begin_index +
+        Math.floor((array_end_index - array_begin_index) / 2);
+
+      // If the element is present at the middle
+      // itself
+      if (arr[mid] == required_value) {
+        return mid;
+      }
+
+      // If element is smaller than mid, then
+      // it can only be present in left subarray
+      if (arr[mid] > required_value) {
+        array_end_index = mid - 1;
+      }
+      // Else the element can only be present
+      // in right subarray
+      else {
+        array_begin_index = mid + 1;
+      }
+    }
+
+    // We reach here when element is not
+    // present in array
+    return -1;
+  }
+
+  console.log(
+    "Element found at index " + binarySearchIterative([3, 5, 6, 8, 9, 10], 9)
+  );
+</script>
+
+<script>
+  // Method 2: Recursive method
+  function recursiveBinarySearch(
+    arr_val,
+    array_begin_index,
+    array_end_index,
+    required_value
+  ) {
+    if (array_begin_index <= array_end_index) {
+      const mid = Math.floor((array_end_index + array_begin_index) / 2);
+
+      //  If element is present at the middle
+      if (arr_val[mid] == required_value) return mid;
+      //  If element is smaller than mid, then it can only be present in left subarray
+      else if (arr_val[mid] > required_value)
+        return recursiveSearch(
+          arr_val,
+          array_begin_index,
+          mid - 1,
+          required_value
+        );
+      // Else the element can only  be present in right subarray
+      else
+        return recursiveSearch(
+          arr_val,
+          mid + 1,
+          array_end_index,
+          required_value
+        );
+    }
+
+    //  We reach here when element is not present in array
+    return -1;
+  }
+
+  console.log(
+    "Element found at index " +
+      recursiveBinarySearch([3, 5, 6, 8, 9, 10], 0, 5, 6)
+  );
+</script>

@@ -1,0 +1,29 @@
+Angular Topics
+
+
+- Angular guide
+- Google login, Facebook login, Amazon Link
+- Interaction between components
+
+- Forms
+- Reactive Forms -
+- RF using Formbuilder
+- RF using Formgroup
+- RF using Form Array
+- RF validations -
+- Template driven Forms
+- TDF Validations
+
+
+#Angular - angular, advantages, architecture, 
+#first project - node, npm, ng new <project-name>, ng serve, 
+# angular file structure - e2e, node_modules, src, app, assets,environments, favicon.ico,
+ index.html, main.ts, polyfills.ts, style.css, test.ts, tsconfig.app.json, tsconfig.spec.json,
+ angular-cli.json, editorconfig, gitignore, karma.config.js, package.json, protactor.conf.js,
+ README.md, tsconfig.json, tslint.json, 
+# webpack - Hot module Replacement/Reloading
+#angularjs vs angular
+# typescript vs javascript
+# 
+
+

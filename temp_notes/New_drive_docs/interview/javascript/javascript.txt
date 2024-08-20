@@ -1,0 +1,48 @@
+https://github.com/sudheerj/javascript-interview-questions
+https://github.com/Aakashdeveloper/JavaScript-Interview-Question
+https://github.com/learning-zone/javascript-basics
+https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Questions
+https://github.com/rohan-paul/Awesome-JavaScript-Interviews
+https://github.com/Devinterview-io/javascript-interview-questions
+
+https://objectcomputing.com/resources/publications/sett/december-2020-comparing-python-and-javascript
+
+GENERAL TOPICS
+--------------
+Objects - 
+ways to create objects - Object constructor, Object's create method, Object literal syntax, Function constructor, Function constructor with prototype, ES6 Class syntax, Singleton pattern
+
+Prototype chain
+
+Call, Apply and Bind
+
+JSON
+JSON methods - JSON.parse(text);, JSON.stringify(object);
+
+Object vs json in JS
+
+splice() vs slice()
+
+object vs map
+
+=== vs ==
+
+lambda or arrow Function
+
+first class function
+first order function 
+higher order function 
+unary function 
+
+currying function / currying 
+
+pure vs impure function 
+
+let, var and const 
+
+Temporal Dead Zone 
+IIFE 
+encodeURI(url) vs decodeURI(encodedUrl)
+Memoization 
+Hoisting
+Class in JS 

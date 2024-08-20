@@ -1,0 +1,74 @@
+https://github.com/learning-zone/html-interview-questions 
+
+What is difference between HTML and XHTML?
+What are the building blocks of HTML5?
+What are the semantic tags available in html5? - article, aside, nav, figure, figcaption, header, footer, section, time, summary, mark, main, details 
+Why you would like to use semantic tag?
+What does a <DOCTYPE html> do? - datalist, meter, output, progress
+What happens when DOCTYPE is not given?
+What are the new form elements in HTML5?
+How many new form elements are introduced in html5?
+What is difference between span tag and div tag?
+What are optional closing tag?
+What is a self closing tag?
+Explain the difference between block elements and inline elements?
+What are semantic and non-semantic elements?
+What is the purpose of main element?
+Define semantic markup. What are the semantic meanings for <section>, <article>, <aside>, <nav>, <header>, <footer> and when/how should each be used in structuring html markup?
+When should you use section, div or article?
+Can a web page contain multiple <header> elements? What about <footer> elements?
+What is Character Encoding?
+What is the purpose of meta tags?
+What does async and defer refer in script tag? Describe the difference between <script>, <script async> and <script defer>
+Describe the difference between a cookie, sessionStorage and localStorage?
+Does localStorage throw error after reaches maximum limits?
+Why to use IndexedDB instead of WebSQL in HTML5?
+Explain Application Cache in HTML5. OR What is a manifest file in HTML?
+What is the purpose of cache busting and how can you achieve it?
+What ARIA and screenreaders are, and how to make a website accessible?
+What is the purpose of the alt attribute on images?
+What does enctype='multipart/form-data' mean?
+What is difference between Select and Datalist?
+Explain some of the pros and cons for CSS animations versus JavaScript animations?
+What does CORS stand for and what issue does it address?
+Can you describe the difference between progressive enhancement and graceful degradation?
+What is the DOM? How does the DOM work?
+How does the browser rendering engine work?
+What is the difference between standards mode and quirks mode?
+What is Critical Rendering Path?
+What are the Benefits of Server Side Rendering (SSR) Over Client Side Rendering (CSR)?
+Name 3 ways to decrease page load?
+Ways to improve website performance
+Comparison of browsers engines like Chrome, Firefox, Internet explorer, Safari?
+What does the lang attribute in html do?
+What is desktop first and mobile first design approach?
+What are data- attributes good for?
+Explain the difference between layout, painting and compositing?
+Explain about HTML Layout Engines used by browsers?
+How to make page responsive?
+Does the following trigger http request at the time of page load?
+List the API available in HTML5?
+How geolocation api works in html5?
+What is the use of WebSocket API?
+Explain about HTML Canvas?
+What is difference between SVG and Canvas?
+Explain Drag and Drop in HTML5?
+Explain Microdata in HTML5?
+What are the HTML tags which deprecated in HTML5?
+How you can Use Modernizr in HTML5?
+What is progressive rendering?
+What is an iframe and how it works?
+Explain the use of rel="nofollow", rel="noreferrer", rel="noopener" attribute?
+How can you highlight text in HTML?
+How can I get indexed better by search engines?
+What is the difference between an "attribute" and a "property" in HTML?
+How do you set IE compatibility mode?
+What is an optional tag?
+What is an HTML preprocessor? Have you used different HTML templating languages before?
+How do you change the direction of html text?
+When is it appropriate to use the small element?
+How do you serve a page with content in multiple languages?
+What is the difference between <section> and <div>?
+Discuss the differences between an HTML specification and a browser's implementation thereof.
+Why you would use a srcset attribute in an image tag? Explain the process the browser used when evaluating the content of this attribute.
+What is accessibility & ARIA role means in a web application?

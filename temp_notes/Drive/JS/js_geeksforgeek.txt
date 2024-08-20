@@ -1,0 +1,1165 @@
+Topics :
+
+Basics
+Objects–
+Functions
+Array–
+TypedArray
+Strings–
+Mathematics–
+Date–
+WeakSet
+WeakMap
+Boolean
+Dataview
+Number
+Atomics
+Form
+Implementation of Data Structures
+ES2015
+p5.js
+Underscore.js
+Misc
+Quick Links
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Basics:
+JavaScript | The Awesome Script
+Variables and Datatypes
+Understanding variable scopes in Javascript
+Understanding basic JavaScript codes
+If-else Statement
+Switch-Case
+Loops
+Functions
+JavaScript | Modules
+Importing and Exporting Modules
+JavaScript | Hoisting
+JavaScript | Callbacks
+JavaScript | Type Conversion
+Javascript | Error and Exceptional Handling With Examples
+Strict mode in JavaScript
+Introduction to OOPs in JavaScript
+Objects in Javascript
+Creating objects in JavaScript (3 Different Ways)
+JavaScript Backend basics
+Advanced JavaScript Backend Basics
+JavaScript | Polyfilling & Transpiling
+JavaScript | this Identifier
+this in JavaScript
+Difference between var and let in JavaScript
+Window innerWidth and innerHeight Properties
+JavaScript | Location protocol Property
+Change an element class JavaScript
+JavaScript | encodeURI(), decodeURI() and its components functions
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+ 
+
+Objects:
+Object.entries(objName) -  creates a nested array of the key/value pairs of an object.
+
+Object.create(objName ) -  create a new object and link it to the prototype of an existing object.
+
+Object.seal(objName ) - prevents new properties from being added to an object, but allows the modification of existing properties. 
+
+Object.isSealed( )
+
+Object.keys(objName ) - creates an array containing the keys of an object.
+
+History object
+
+Object.values(objName ) - creates an array containing the values of an object.
+
+Object.freeze( ) -  prevents modification to properties and values of an object, and prevents properties from being added or removed from
+an object.
+
+Object.isFrozen( )
+
+Object.assign(objName1, objName2 ) -  copy values from one object to another.
+
+Object.is( )
+
+Proxy() Object
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Functions:
+
+Arrow functions
+
+escape() - The escape() function was deprecated in JavaScript version 1.5. Use encodeURI() or encodeURIComponent() instead.The escape() function encodes a string.This function makes a string portable, so it can be transmitted across any network to any computer that supports ASCII characters.This function encodes special characters, with the exception of: * @ - _ + . /
+
+unescape() - The unescape() function was deprecated in JavaScript version 1.5. Use decodeURI() or decodeURIComponent() instead.The unescape() function decodes an encoded string.
+
+Window.print() - The print() method prints the contents of the current window.The print() method opens the Print Dialog Box, which lets the user to select preferred printing options.
+
+Window.blur() - The blur() method removes focus from the current window.This method makes a request to bring the current window to the background. It may not work as you expect in all browsers, due to different user settings.
+Tip: Use the focus() method to set focus to the current window.
+
+Window.focus() - The focus() method sets focus to the current window.This method makes a request to bring the current window to the foreground. It may not work as you expect in all browsers, due to different user settings.
+Tip: Use the blur() method to remove focus from the current window.
+
+console.log() - The console.log() method writes a message to the console.The console is useful for testing purposes.When testing this method, be sure to have the console view visible (press F12 to view the console).
+
+parseFloat() - parses a string and returns a floating point number. If the first character cannot be converted to a number, parseFloat() returns NaN.Only the first number in the string is returned!Leading and trailing spaces are allowed.
+
+uneval()
+
+parseInt() -  parses a string and returns an integer.The radix parameter is used to specify which numeral system to be used.Only the first number in the string is returned! Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseInt() returns NaN.If the radix parameter is omitted, JavaScript assumes the following:
+If the string begins with "0x", the radix is 16 (hexadecimal)
+If the string begins with "0", the radix is 8 (octal). This feature is deprecated
+If the string begins with any other value, the radix is 10 (decimal)
+
+str.match() - The match() method searches a string for a match against a regular expression, and returns the matches, as an Array object.
+Note: If the regular expression does not include the g modifier (to perform a global search), the match() method will return only the first match in the string.This method returns null if no match is found.
+
+Date.parse(date) - The parse() method parses a date string and returns the number of milliseconds between the date string and midnight of January 1, 1970.
+
+str.replace() - The replace() method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
+Note: If you are replacing a value (and not a regular expression), only the first instance of the value will be replaced. To replace all occurrences of a specified value, use the global (g) modifier (see "More Examples" below).This method does not change the original string.
+
+Map.get(key) - Returns the value associated to the key, or undefined if there is none.
+Map.entries( ) - Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order.
+
+Map.clear( ) - Removes all key/value pairs from the Map object.
+
+Map.delete(key) - Returns true if an element in the Map object existed and has been removed, or false if the element does not exist. 
+
+Map.prototype.has(key) will return false afterwards.
+
+Map.has( ) - Returns a boolean asserting whether a value has been associated to the key in the Map object or not.
+
+map.size - Returns the number of key/value pairs in the Map object.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Operators:
+Operators
+
+typeof operator - The typeof operator returns the type of a variable, object, function or expression.
+
+Rest Operator
+Rest Operator
+Bitwise Operators
+‘===’ vs ‘==’Comparision Operator
+Spread Operator - (...)
+Arrow operator in ES6 of JavaScript
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Array:
+Arrays
+Basic Array Methods
+
+Array.prototype.map() - The map() method creates a new array with the results of calling a function for every array element.The map() method calls the provided function once for each element in an array, in order.map() does not execute the function for array elements without values.this method does not change the original array.
+
+Array.findIndex() - The findIndex() method returns the index of the first element in an array that pass a test (provided as a function).The findIndex() method executes the function once for each element present in the array:
+If it finds an array element where the function returns a true value, findIndex() returns the index of that array element (and does not check the remaining values)
+Otherwise it returns -1
+Note: findIndex() does not execute the function for array elements without values.
+Note: findIndex() does not change the original array.
+
+array.entries() - The entries() method returns an Array Iterator object with key/value pairs.For each item in the original array, the new iteration object will contain an array with the index as the key,this method does not change the original array.
+
+Array every() - The every() method checks if all elements in an array pass a test (provided as a function).The every() method executes the function once for each element present in the array:
+If it finds an array element where the function returns a false value, every() returns false (and does not check the remaining values)
+If no false occur, every() returns true
+Note: every() does not execute the function for array elements without values.
+Note: every() does not change the original array
+
+Array copyWithin(target, start, end) - The copyWithin() method copies array elements to another position in the array, overwriting the existing values.This method will never add more items to the array.
+Note: this method overwrites the original array.
+
+array.values()
+
+array.toLocaleString() - Returns a localized string representing the array and its elements. Overrides the Object.prototype.toLocaleString() method.
+
+Array.of() - Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments.
+
+Array some() - Returns true if at least one element in this array satisfies the provided testing function.
+
+Array join()
+
+Array fill()
+
+Array find()
+
+Array concat() - Returns a new array that is this array joined with other array(s) and/or value(s).
+
+Array filter()
+
+Array.from() - Creates a new Array instance from an array-like or iterable object.
+
+Array.find()
+
+arrayBuffer.slice()
+
+Array shift() - Removes the first element from an array and returns that element.
+
+array.reduceRight() - Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.
+
+arrayBuffer.byteLength
+
+ArrayBuffer.isView()
+
+Array unshift() - Adds one or more elements to the front of an array and returns the new length of the array.
+
+Array.isArray() - Returns true if a variable is an array, if not false.
+
+Array toString()
+
+Array reverse()
+
+Array sort() - Sorts the elements of an array in place and returns the array.
+
+Sort() method
+
+Array pop() - Removes the last element from an array and returns that element.
+
+Array push() - Adds one or more elements to the end of an array and returns the new length of the array.
+
+Array forEach() - Calls a function for each element in the array.
+
+Array lastIndexOf()
+
+Array slice() - Extracts a section of an array and returns a new array.
+
+Array indexOf()
+
+ArrayBuffer Object
+
+length of string and array objects
+
+Ways of iterating over a array in JavaScript
+
+ArrayBuffer.byteLength property
+
+Array.splice() - Adds and/or removes elements from an array.
+
+Extract unique objects by attribute from array of objects.
+
+Must use JavaScript Array Functions – Part 1
+
+Must use JavaScript Array Functions – Part 2
+
+Must use JavaScript Array Functions – Part 3
+
+
+===============================================================================
+
+Array.length - The Array constructor's length property whose value is 1.
+
+get Array[@@species] - The constructor function that is used to create derived objects.
+
+Array.prototype - Allows the addition of properties to all array objects.
+
+Array.from() - Creates a new Array instance from an array-like or iterable object.
+
+Array.isArray() - Returns true if a variable is an array, if not false.
+
+Array.of() - Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments.
+
+Array.copyWithin() - Copies a sequence of array elements within the array.
+
+Array.prototype.fill() - Fills all the elements of an array from a start index to an end index with a static value.
+
+
+Array.pop() - Removes the last element from an array and returns that element.
+
+Array.push() - Adds one or more elements to the end of an array and returns the new length of the array.
+
+Array.reverse() - Reverses the order of the elements of an array in place — the first becomes the last, and the last becomes the first.
+
+Array.shift() - Removes the first element from an array and returns that element.
+
+Array.sort() - Sorts the elements of an array in place and returns the array.
+
+Array.splice() - Adds and/or removes elements from an array.
+
+Array.unshift() - Adds one or more elements to the front of an array and returns the new length of the array.
+
+Array.concat() - Returns a new array that is this array joined with other array(s) and/or value(s).
+
+Array.includes() - Determines whether an array contains a certain element, returning true or false as appropriate.
+
+Array.indexOf() - Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is 
+found.
+
+Array.join() - Joins all elements of an array into a string.
+
+Array.lastIndexOf() - Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.
+
+Array.slice() - Extracts a section of an array and returns a new array.
+
+Array.toString() - Returns a string representing the array and its elements. Overrides the Object.prototype.toString() method.
+
+Array.toLocaleString() - Returns a localized string representing the array and its elements. Overrides the Object.prototype.toLocaleString() method.
+
+Array.entries() - Returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+
+Array.every() - Returns true if every element in this array satisfies the provided testing function.
+
+Array.filter() - Creates a new array with all of the elements of this array for which the provided filtering function returns true.
+
+Array.find() - Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found.
+
+Array.findIndex() - Returns the found index in the array, if an element in the array satisfies the provided testing function or -1 if not found.
+
+Array.forEach() - Calls a function for each element in the array.
+
+Array.keys() - Returns a new Array Iterator that contains the keys for each index in the array.
+
+Array.map() - Creates a new array with the results of calling a provided function on every element in this array.
+
+Array.reduce() - Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.
+
+Array.reduceRight() - Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.
+
+Array.some() - Returns true if at least one element in this array satisfies the provided testing function.
+
+Array.values() - Returns a new Array Iterator object that contains the values for each index in the array.
+
+Array.prototype[@@iterator]() - Returns a new Array Iterator object that contains the values for each index in the array.
+
+
+  
+--------------------------------------------------------------------------------------------------------------------------------------- 
+ 
+TypedArray:
+
+typedArray.buffer()F
+
+typedArray.byteLength()
+
+typedArray.BYTES_PER_ELEMENT
+
+typedArray.from()
+
+typedArray.name 
+
+typedArray.of()
+
+typedArray.reverse() - Reverses the order of the elements of an array in place — the first becomes the last, and the last becomes the first.
+
+typedArray.indexOf() - Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found.
+
+typedArray.some()
+
+typedArray.every() - Returns true if every element in this array satisfies the provided testing function.
+
+typedArray.copyWithin() - Copies a sequence of array elements within the array.
+
+typedArray.entries() - Returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+
+typedArray.length()
+
+typedArray.map() - Creates a new array with the results of calling a provided function on every element in this array.
+
+typedArray.reduce() - Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single 
+value.fromChar
+
+
+typedArray.subarray()
+
+typedArray.slice()
+
+typedArray.keys() - Returns a new Array Iterator that contains the keys for each index in the array.
+
+typedArray.sort() 
+
+typedArray.@@species
+
+typedArray.@@iterator
+
+typedArray.byteOffset 
+
+typedArray.forEach()
+
+typedArray.lastIndexOf() - Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.
+
+typedArray.reduceRight()
+
+typedArray.toString() - Returns a string representing the array and its elements. Overrides the Object.prototype.toString() method.
+
+typedArray.values()
+
+typedArray.fill() - Fills all the elements of an array from a start index to an end index with a static value.
+
+typedArray.filter() - Creates a new array with all of the elements of this array for which the provided filtering function returns true.
+
+typedArray.findIndex() - Returns the found index in the array, if an element in the array satisfies the provided testing function or -1 if not found.
+
+typedArray.set()
+
+typedArray.includes() - determines whether a string contains the characters of a specified string.This method returns true if the string contains the characters, and false if not.The includes() method is case sensitive.
+
+typedArray.join() - Joins all elements of an array into a string.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Strings:
+
+
+String substr()
+
+String trim()
+
+String.prototype.charCodeAt() - Returns a number that is the UTF-16 code unit value at the given index.
+
+String.fromCharCode() - Returns a string created by using the specified sequence of Unicode values.
+
+String startsWith()
+
+String lastIndexOf()
+
+String toUpperCase()
+
+String toLowerCase()
+
+String split()
+
+string.normalize()
+
+string.replace()
+
+string.search()
+
+string.toString()
+
+string.slice()
+
+string.substring()
+
+string.length
+
+String.fromCodePoint() - Returns a string created by using the specified sequence of code points.
+
+string.localeCompare()
+
+string.repeat()
+
+string.valueOf()
+
+String indexOf()
+
+String endsWith()
+
+String concat() - Combines the text of two strings and returns a new string.
+
+String charAt() - Returns the character (exactly one UTF-16 code unit) at the specified index.
+
+String includes()
+
+=================================================================================================
+
+String.prototype - Allows the addition of properties to a String object.
+
+String.fromCharCode() - Returns a string created by using the specified sequence of Unicode values.
+
+String.fromCodePoint() - Returns a string created by using the specified sequence of code points.
+
+String.charAt() - Returns the character (exactly one UTF-16 code unit) at the specified index.
+
+String.charCodeAt() - Returns a number that is the UTF-16 code unit value at the given index.
+
+String.codePointAt() - Returns a nonnegative integer Number that is the code point value of the UTF-16 encoded code point starting 
+at the specified index.
+
+String.concat() - Combines the text of two strings and returns a new string.
+
+String.includes() - Determines whether one string may be found within another string.
+
+String.endsWith() - Determines whether a string ends with the characters of another string.
+
+String.indexOf() - Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.
+
+String.lastIndexOf() - Returns the index within the calling String object of the last occurrence of the specified value, or -1 if not found.
+
+String.localeCompare() - Returns a number indicating whether a reference string comes before or after or is the same as the given 
+string in sort order.
+
+String.match() - Used to match a regular expression against a string.
+
+String.matchAll() - Returns an iterator of all matches.
+
+String.normalize() - Returns the Unicode Normalization Form of the calling string value.
+
+String.padEnd() - Pads the current string from the end with a given string to create a new string from a given length.
+
+String.padStart() - Pads the current string from the start with a given string to create a new string from a given length.
+
+String.repeat() - Returns a string consisting of the elements of the object repeated the given times.
+
+String.replace() - Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring.
+
+String.search() - Executes the search for a match between a regular expression and a specified string.
+
+String.slice() - Extracts a section of a string and returns a new string.
+
+String.split() - Splits a String object into an array of strings by separating the string into substrings.
+
+String.startsWith() - Determines whether a string begins with the characters of another string.
+
+String.substring() - Returns the characters in a string between two indexes into the string.
+
+String.toLocaleLowerCase() - The characters within a string are converted to lower case while respecting the current locale. For most languages, this will return the same as toLowerCase().
+
+String.toLocaleUpperCase() - The characters within a string are converted to upper case while respecting the current locale. For most languages, this will return the same as toUpperCase().
+
+String.toLowerCase() - Returns the calling string value converted to lower case.
+
+String.toString() - Returns a string representing the specified object. Overrides the Object.toString() method.
+
+String.toUpperCase() - Returns the calling string value converted to uppercase.
+
+String.trim() - Trims whitespace from the beginning and end of the string. Part of the ECMAScript 5 standard.
+
+String.trimStart()
+String.trimLeft() - Trims whitespace from the beginning of the string.
+
+String.trimEnd()
+String.trimRight() - Trims whitespace from the end of the string.
+
+String.valueOf() - Returns the primitive value of the specified object. Overrides the Object.valueOf() method.
+
+String.prototype[@@iterator]() - Returns a new Iterator object that iterates over the code points of a String value, returning each code point as a String value.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Mathematics:
+
+Math.expm1()
+
+Math.clz32()
+
+Math.cbrt()
+
+Math.cosh()
+
+Math.acosh()
+
+Math.sinh()
+
+Math.asinh()
+
+Math.tanh()
+
+Math.atanh()
+
+Math.atan()
+
+Math.exp()
+
+Math.round()
+
+Math.ceil()
+
+Math.floor()
+
+Math.abs()
+
+Math.atan2()
+
+Math.imul()
+
+Math.LN2
+
+Math.PI
+
+Math.sqrt( )
+
+Math.SQRT1_2
+
+Math.SQRT2
+
+Math.log2()
+
+Math.LOG10E
+
+Math.log10()
+
+Math.E()
+
+Math.log1p()
+
+Math.LN10
+
+Math.LOG2E
+
+Math.asin()
+
+Math.acos()
+
+Math.cos()
+
+Math.tan()
+
+Math.sin()
+
+Math.min()
+
+Math.max()
+
+Math.sign( )
+
+Math.pow()
+
+Math.round( )
+
+Math.fround()
+
+Math.trunc()
+
+Math.hypot()
+
+Math.log()
+
+Math.random()
+
+======================================================================================
+
+Math.E - Euler's constant and the base of natural logarithms, approximately 2.718.
+
+Math.LN2 - Natural logarithm of 2, approximately 0.693.
+
+Math.LN10 - Natural logarithm of 10, approximately 2.303.
+
+Math.LOG2E - Base 2 logarithm of E, approximately 1.443.
+
+Math.LOG10E - Base 10 logarithm of E, approximately 0.434.
+
+Math.PI - Ratio of the circumference of a circle to its diameter, approximately 3.14159.
+
+Math.SQRT1_2 - Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.
+
+Math.SQRT2 - Square root of 2, approximately 1.414.
+
+Math.abs(x) - Returns the absolute value of a number.
+
+Math.acos(x) - Returns the arccosine of a number.
+
+Math.acosh(x) - Returns the hyperbolic arccosine of a number.
+
+Math.asin(x) - Returns the arcsine of a number.
+
+Math.asinh(x) - Returns the hyperbolic arcsine of a number.
+
+Math.atan(x) - Returns the arctangent of a number.
+
+Math.atanh(x) - Returns the hyperbolic arctangent of a number.
+
+Math.atan2(y, x) - Returns the arctangent of the quotient of its arguments.
+
+Math.cbrt(x) - Returns the cube root of a number.
+
+Math.ceil(x) - Returns the smallest integer greater than or equal to a number.
+
+Math.clz32(x) - Returns the number of leading zeroes of a 32-bit integer.
+
+Math.cos(x) - Returns the cosine of a number.
+
+Math.cosh(x) - Returns the hyperbolic cosine of a number.
+
+Math.exp(x) - Returns Ex, where x is the argument, and E is Euler's constant (2.718…), the base of the natural logarithm.
+
+Math.expm1(x) - Returns subtracting 1 from exp(x).
+
+Math.floor(x) - Returns the largest integer less than or equal to a number.
+
+Math.fround(x) - Returns the nearest single precision float representation of a number.
+
+Math.hypot([x[, y[, …]]]) - Returns the square root of the sum of squares of its arguments.
+
+Math.imul(x, y) - Returns the result of a 32-bit integer multiplication.
+
+Math.log(x) - Returns the natural logarithm (loge, also ln) of a number.
+
+Math.log1p(x) - Returns the natural logarithm (loge, also ln) of 1 + x for a number x.
+
+Math.log10(x) - Returns the base 10 logarithm of a number.
+
+Math.log2(x) - Returns the base 2 logarithm of a number.
+
+Math.max([x[, y[, …]]]) - Returns the largest of zero or more numbers.
+
+Math.min([x[, y[, …]]]) - Returns the smallest of zero or more numbers.
+
+Math.pow(x, y) - Returns base to the exponent power, that is, baseexponent.
+
+Math.random() - Returns a pseudo-random number between 0 and 1.
+
+Math.round(x) - Returns the value of a number rounded to the nearest integer.
+
+Math.sign(x) - Returns the sign of the x, indicating whether x is positive, negative or zero.
+
+Math.sin(x) - Returns the sine of a number.
+
+Math.sinh(x) - Returns the hyperbolic sine of a number.
+
+Math.sqrt(x) - Returns the positive square root of a number.
+
+Math.tan(x) - Returns the tangent of a number.
+
+Math.tanh(x) - Returns the hyperbolic tangent of a number.
+
+Math.trunc(x) - Returns the integer part of the number x, removing any fractional digits.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Date:
+
+Date.prototype property
+
+date.toLocaleDateString()
+
+Date.now()
+
+Date
+
+date.toLocaleString()
+
+Date.UTC( )
+
+date.setUTCMonth()
+
+date.toJSON() function
+
+date.valueOf() function
+
+date.toISOString() function
+
+date.toTimeString() function
+
+date.toString() function
+
+date.toDateString() function
+
+
+date.setMilliseconds() function
+
+date.getMilliseconds() Function
+
+date.setMonth() function
+
+date.getMonth() method
+
+date.toUTCString() function
+
+date.toLocaleTimeString()
+
+date.setUTCDate() function
+
+date.getUTCDate() Function
+
+date.getUTCFullYear() Function
+
+date.getUTCDay() Function
+
+date.setUTCFullYear() function
+
+date.setUTCHours() function
+
+clearTimeout() & clearInterval() Method
+
+date.setUTCMilliseconds() function
+
+date.getUTCMilliseconds() Function
+
+date.setUTCSeconds() function
+
+date.getUTCSeconds() Function
+
+date.setUTCMinutes() function
+
+date.getUTCMinutes() Function
+
+date.getUTCMonth() Function
+
+date.setMinutes() Function
+
+date.getMinutes() Method
+
+date.setSeconds() Function
+
+date.getSeconds() method
+
+date.setHours() Function
+
+date.getHours() Function
+
+date.setFullYear() Function
+
+date.getFullYear() Function
+
+date.setDate() function
+
+date.getDate() Function
+
+date.getDay() method
+
+Date.parse()
+
+=======================================================================
+
+
+Date.now() - Returns the numeric value corresponding to the current time - the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC, with leap seconds ignored.
+
+Date.parse() - Parses a string representation of a date and returns the number of milliseconds since 1 January, 1970, 00:00:00, UTC, with leap seconds ignored.
+Note: Parsing of strings with Date.parse is strongly discouraged due to browser differences and inconsistencies.
+
+Date.UTC() - Accepts the same parameters as the longest form of the constructor (i.e. 2 to 7) and returns the number of milliseconds since January 1, 1970, 00:00:00 UTC, with leap seconds ignored.
+
+Date.prototype.getDate() - Returns the day of the month (1-31) for the specified date according to local time.
+
+Date.prototype.getDay() - Returns the day of the week (0-6) for the specified date according to local time.
+
+Date.prototype.getFullYear() - Returns the year (4 digits for 4-digit years) of the specified date according to local time.
+
+Date.prototype.getHours() - Returns the hour (0-23) in the specified date according to local time.
+
+Date.prototype.getMilliseconds() - Returns the milliseconds (0-999) in the specified date according to local time.
+
+Date.prototype.getMinutes() - Returns the minutes (0-59) in the specified date according to local time.
+
+Date.prototype.getMonth() - Returns the month (0-11) in the specified date according to local time.
+
+Date.prototype.getSeconds() - Returns the seconds (0-59) in the specified date according to local time.
+
+Date.prototype.getTime() - Returns the numeric value of the specified date as the number of milliseconds since January 1, 1970, 00:00:00 UTC (negative for prior times).
+
+Date.prototype.getTimezoneOffset() - Returns the time-zone offset in minutes for the current locale.
+
+Date.prototype.getUTCDate() - Returns the day (date) of the month (1-31) in the specified date according to universal time.
+
+Date.prototype.getUTCDay() - Returns the day of the week (0-6) in the specified date according to universal time.
+
+Date.prototype.getUTCFullYear() - Returns the year (4 digits for 4-digit years) in the specified date according to universal time.
+
+Date.prototype.getUTCHours() - Returns the hours (0-23) in the specified date according to universal time.
+
+Date.prototype.getUTCMilliseconds() - Returns the milliseconds (0-999) in the specified date according to universal time.
+
+Date.prototype.getUTCMinutes() - Returns the minutes (0-59) in the specified date according to universal time.
+
+Date.prototype.getUTCMonth() - Returns the month (0-11) in the specified date according to universal time.
+
+Date.prototype.getUTCSeconds() - Returns the seconds (0-59) in the specified date according to universal time.
+
+
+Date.prototype.setDate() - Sets the day of the month for a specified date according to local time.
+
+Date.prototype.setFullYear() - Sets the full year (e.g. 4 digits for 4-digit years) for a specified date according to local time.
+
+Date.prototype.setHours() - Sets the hours for a specified date according to local time.
+
+Date.prototype.setMilliseconds() - Sets the milliseconds for a specified date according to local time.
+
+Date.prototype.setMinutes() - Sets the minutes for a specified date according to local time.
+
+Date.prototype.setMonth() - Sets the month for a specified date according to local time.
+
+Date.prototype.setSeconds() - Sets the seconds for a specified date according to local time.
+
+Date.prototype.setTime() - Sets the Date object to the time represented by a number of milliseconds since January 1, 1970, 00:00:00 UTC, 
+allowing for negative numbers for times prior.
+
+Date.prototype.setUTCDate() - Sets the day of the month for a specified date according to universal time.
+
+Date.prototype.setUTCFullYear() - Sets the full year (e.g. 4 digits for 4-digit years) for a specified date according to universal time.
+
+Date.prototype.setUTCHours() - Sets the hour for a specified date according to universal time.
+
+Date.prototype.setUTCMilliseconds() - Sets the milliseconds for a specified date according to universal time.
+
+Date.prototype.setUTCMinutes() - Sets the minutes for a specified date according to universal time.
+
+Date.prototype.setUTCMonth() - Sets the month for a specified date according to universal time.
+
+Date.prototype.setUTCSeconds() - Sets the seconds for a specified date according to universal time.
+
+
+Date.prototype.toDateString() - Returns the "date" portion of the Date as a human-readable string like 'Thu Apr 12 2018'
+
+Date.prototype.toISOString() - Converts a date to a string following the ISO 8601 Extended Format.
+
+Date.prototype.toJSON() - Returns a string representing the Date using toISOString(). Intended for use by JSON.stringify().
+
+Date.prototype.toLocaleDateString() - Returns a string with a locality sensitive representation of the date portion of this date based on system settings.
+
+Date.prototype.toLocaleString() - Returns a string with a locality sensitive representation of this date. Overrides the Object.prototype.toLocaleString() method.
+
+Date.prototype.toLocaleTimeString() - Returns a string with a locality sensitive representation of the time portion of this date based on system settings.
+
+Date.prototype.toString() - Returns a string representing the specified Date object. Overrides the Object.prototype.toString() method.
+
+Date.prototype.toTimeString() - Returns the "time" portion of the Date as a human-readable string.
+
+Date.prototype.toUTCString() - Converts a date to a string using the UTC timezone.
+
+Date.prototype.valueOf() - Returns the primitive value of a Date object. Overrides the Object.prototype.valueOf() method.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Dataview:
+
+dataView.getInt8()
+
+dataView.getInt16()
+
+dataView.getInt32()
+
+dataView.getUint8()
+
+dataView.getUint16()
+
+dataView.getUint32()
+
+dataView.getFloat32()
+
+dataView.getFloat64()
+
+dataView.setInt8()
+
+dataView.setUint8()
+
+dataView.setInt16()
+
+dataView.setInt32()
+
+dataView.setUint16()
+
+dataView.setUint32()
+
+dataView.setFloat32()
+
+dataView.setFloat64()
+
+==================================================================================
+
+DataView.prototype.constructor - Specifies the function that creates an object's prototype. The initial value is the standard built-in DataView constructor.
+
+DataView.prototype.buffer - The ArrayBuffer referenced by this view. Fixed at construction time and thus read only.
+
+DataView.prototype.byteLength - The length (in bytes) of this view from the start of its ArrayBuffer. Fixed at construction time and thus read only.
+
+DataView.prototype.byteOffset - The offset (in bytes) of this view from the start of its ArrayBuffer. Fixed at construction time and thus read only.
+
+DataView.prototype.getInt8() - Gets a signed 8-bit integer (byte) at the specified byte offset from the start of the view.
+
+DataView.prototype.getUint8() - Gets an unsigned 8-bit integer (unsigned byte) at the specified byte offset from the start of the view.
+
+DataView.prototype.getInt16() - Gets a signed 16-bit integer (short) at the specified byte offset from the start of the view.
+
+DataView.prototype.getUint16() - Gets an unsigned 16-bit integer (unsigned short) at the specified byte offset from the start of the view.
+
+DataView.prototype.getInt32() - Gets a signed 32-bit integer (long) at the specified byte offset from the start of the view.
+
+DataView.prototype.getUint32() - Gets an unsigned 32-bit integer (unsigned long) at the specified byte offset from the start of the view.
+
+DataView.prototype.getFloat32() -Gets a signed 32-bit float (float) at the specified byte offset from the start of the view.
+
+DataView.prototype.getFloat64() - Gets a signed 64-bit float (double) at the specified byte offset from the start of the view.
+
+DataView.prototype.getBigInt64() - Gets a signed 64-bit integer (long long) at the specified byte offset from the start of the view.
+
+DataView.prototype.getBigUint64() - Gets an unsigned 64-bit integer (unsigned long long) at the specified byte offset from the start of the view.
+
+DataView.prototype.setInt8() - Stores a signed 8-bit integer (byte) value at the specified byte offset from the start of the view.
+
+DataView.prototype.setUint8() - Stores an unsigned 8-bit integer (unsigned byte) value at the specified byte offset from the start of the view.
+
+DataView.prototype.setInt16() - Stores a signed 16-bit integer (short) value at the specified byte offset from the start of the view.
+
+DataView.prototype.setUint16() - Stores an unsigned 16-bit integer (unsigned short) value at the specified byte offset from the start of the view.
+
+DataView.prototype.setInt32() - Stores a signed 32-bit integer (long) value at the specified byte offset from the start of the view.
+
+DataView.prototype.setUint32() - Stores an unsigned 32-bit integer (unsigned long) value at the specified byte offset from the start of the view.
+
+DataView.prototype.setFloat32() - Stores a signed 32-bit float (float) value at the specified byte offset from the start of the view.
+
+DataView.prototype.setFloat64() - Stores a signed 64-bit float (double) value at the specified byte offset from the start of the view.
+
+DataView.prototype.setBigInt64() - Stores a signed 64-bit integer (long long) value at the specified byte offset from the start of the view.
+
+DataView.prototype.setBigUint64() - Stores an unsigned 64-bit integer (unsigned long long) value at the specified byte offset from the start of the view.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Number:
+
+Number.EPSILON - The smallest interval between two representable numbers.
+
+Number.MAX_SAFE_INTEGER - The maximum safe integer in JavaScript (253 - 1).
+
+Number.MAX_VALUE - The largest positive representable number.
+
+Number.MIN_SAFE_INTEGER - The minimum safe integer in JavaScript (-(253 - 1)).
+
+Number.MIN_VALUE - The smallest positive representable number - that is, the positive number closest to zero (without actually being zero).
+
+Number.NaN - Special "not a number" value.
+
+Number.NEGATIVE_INFINITY - Special value representing negative infinity; returned on overflow.
+
+Number.POSITIVE_INFINITY - Special value representing infinity; returned on overflow.
+
+Number.prototype - Allows the addition of properties to a Number object.
+ 
+Number()
+
+Number.isNaN() - Determine whether the passed value is NaN.
+
+Number.isFinite() - Determine whether the passed value is a finite number.
+
+Number.isInteger() - Determine whether the passed value is an integer.
+
+Number.isSafeInteger() - Determine whether the passed value is a safe integer (number between -(253 - 1) and 253 - 1).
+
+Number.toInteger() - Used to evaluate the passed value and convert it to an integer (or Infinity), but has been removed.
+
+Number.parseFloat() - The value is the same as parseFloat() of the global object.
+
+Number.parseInt() - The value is the same as parseInt() of the global object.
+
+Number.toExponential() - Returns a string representing the number in exponential notation.
+
+Number.toFixed() - Returns a string representing the number in fixed-point notation.
+
+Number.toLocaleString() - Returns a string with a language sensitive representation of this number. Overrides the Object.toLocaleString() method.
+
+Number.toPrecision() - Returns a string representing the number to a specified precision in fixed-point or exponential notation.
+
+Number.toString() - Returns a string representing the specified object in the specified radix (base). Overrides the Object.toString() method.
+
+Number.valueOf() - Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf() method.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Atomics:
+
+Atomics.add() - Adds the provided value to the existing value at the specified index of the array. Returns the old value at that index.
+
+Atomics.xor() - Computes a bitwise XOR on the value at the specified index of the array with the provided value. Returns the old value at that index.
+
+Atomics.and() - Computes a bitwise AND on the value at the specified index of the array with the provided value. Returns the old value at that index.
+
+Atomics.isLockFree(size) - An optimization primitive that can be used to determine whether to use locks or atomic operations. Returns true, if an atomic operation on arrays of the given element size will be implemented using a hardware atomic operation (as opposed to a lock). Experts only.
+
+Atomics.compareExchange( ) - Stores a value at the specified index of the array, if it equals a value. Returns the old value.
+
+
+Atomics.or() - Computes a bitwise OR on the value at the specified index of the array with the provided value. Returns the old value at that index.
+
+Atomics.store( ) - Stores a value at the specified index of the array. Returns the value.
+
+Atomics.load( ) - Returns the value at the specified index of the array.
+
+Atomics.sub( ) - Subtracts a value at the specified index of the array. Returns the old value at that index.
+
+Atomics.exchange( ) - Stores a value at the specified index of the array. Returns the old value.
+
+Atomics.wait()
+Verifies that the specified index of the array still contains a value and sleeps awaiting or times out. Returns either "ok", "not-equal", or "timed-out". If waiting is not allowed in the calling agent then it throws an Error exception (most browsers will not allow wait() on the browser's main thread).
+
+Atomics.notify()
+Notifies agents that are waiting on the specified index of the array. Returns the number of agents that were notified.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Form:
+Form validation using HTML and JavaScript
+How to create a responsive Modal Sign-Up form for a Website?
+Javascript | Auto-filling one field same as other
+Javascript | Dialogue Boxes
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Implementation of Data Structures:
+Implementation of LinkedList in Javascript
+Implementation of Queue in Javascript
+Implementation of Stack in JavaScript
+Implementation of Priority Queue in Javascript
+Implementation of Binary Search Tree in Javascript
+Implementation of Graph in JavaScript
+Merge Sort for Linked Lists in JavaScript
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+ES2015:
+ES2015: Latest version of JavaScript
+New features of JavaScript Arrays with ES2015
+Closure
+Map
+Sets
+Block Scoping
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Boolean:
+Boolean.length - Length property whose value is 1.
+
+Boolean.prototype - Represents the prototype for the Boolean constructor.
+
+boolean.toString() - Returns a string of either "true" or "false" depending upon the value of the object. Overrides the Object.prototype.toString() method.
+
+boolean.valueOf() - Returns the primitive value of the Boolean object. Overrides the Object.prototype.valueOf() method.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+WeakSet:
+WeakSet.length - The value of the length property is 0.
+WeakSet.prototype - Represents the prototype for the WeakSet constructor. Allows the addition of properties to all WeakSet objects.
+weakSet.add(value) - Appends a new object with the given value to the WeakSet object.
+weakSet.has(value) - Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.
+weakSet.delete(value) - Removes the element associated to the value. WeakSet.prototype.has(value) will return false afterwards.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+WeakMap:
+
+WeakMap.length - The value of the length property is 0.
+WeakMap.prototype - Represents the prototype for the WeakMap constructor. Allows the addition of properties to all WeakMap objects.
+weakMap.set() - Sets the value for the key in the WeakMap object. Returns the WeakMap object.
+weakMap.get() - Returns the value associated to the key, or undefined if there is none.
+weakMap.has() - Returns a Boolean asserting whether a value has been associated to the key in the WeakMap object or not.
+weakMap.delete() - Removes any value associated to the key. WeakMap.prototype.has(key) will return false afterwards.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+p5:
+Introduction
+triangle() Function
+ellipse() Function
+arc() Function
+noStroke() Function
+box() Function
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Underscore.js:
+_.last()
+_.filter() 
+_.compact()
+_.flatten()
+_.initial()
+_.rest()
+countBy()
+shuffle()
+each() 
+_.without()
+_.size()
+_.zip()
+_.unzip()
+_.intersection()
+_.uniq()
+_.union()
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Extras : 
+readLine()
+

@@ -1,0 +1,410 @@
+Angular Queries
+https://www.mygreatlearning.com/blog/ajax-interview-questions/ 
+https://www.code-sample.com/2018/02/ajax-interview-questions-and-answers.html 
+
+
+What are auth guards an it’s types ? - 
+https://www.tektutorialshub.com/angular/angular-route-guards/ 
+https://codecraft.tv/courses/angular/routing/router-guards/ 
+--------------------------------------------------------------------------------------------------------------------------
+What are entryComponents ?  - https://www.geeksforgeeks.org/what-is-entrycomponents-in-angular-ngmodule/#:~:text=What%20is%20entryComponents%20in%20angular%20ngModule%20%3F,-Last%20Updated%20%3A%2014&text=The%20entryComponent%20is%20the%20component,declared%20in%20the%20component%20template.
+---------------------------------------------------------------------------------------------------------------------------
+angular and angularjs - 
+https://jelvix.com/blog/angularjs-vs-angular 
+https://www.monocubed.com/difference-between-angular-and-angularjs/ 
+https://stackify.com/angular-vs-angularjs-differences-between-angular-and-angularjs/#:~:text=We%20can%20see%20the%20difference,based%20while%20AngularJS%20uses%20directives. 
+-----------------------------------------------------------------------------------------------------------------------------
+Observables vs Promises - 
+https://www.stackchief.com/blog/Difference%20between%20Observable%20and%20Promise%20%7C%20with%20examples%20 
+https://www.syncfusion.com/blogs/post/angular-promises-versus-observables.aspx 
+https://medium.com/javascript-everyday/javascript-theory-promise-vs-observable-d3087bc1239a 
+-------------------------------------------------------------------------------------------------------------------------------
+Why promises are used ?
+https://www.w3schools.com/js/js_callback.asp 
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261 
+---------------------------------------------------------------------------------------------------------------------------
+javascript vs typescript vs ecmascript - 
+------------------------------------------------------------------------------------------------------------------------
+Why use * previous to structural directive -
+https://v2.angular.io/docs/ts/latest/guide/structural-directives.html 
+https://www.pluralsight.com/guides/understanding-the-difference-between-structuraltemplate-and-regular-directives-in-angular 
+---------------------------------------------------------------------------------------------------------------------------
+Property binding vs string interpolation - 
+https://dzone.com/articles/data-binding-in-angular 
+--------------------------------------------------------------------------------------------------------------------------
+Template statements vs template expressions -
+https://www.w3resource.com/angular/templete-syntax.php 
+------------------------------------------------------------------------------------------------------------------------
+Pure and impure pipes - 
+https://indepth.dev/posts/1061/the-essential-difference-between-pure-and-impure-pipes-in-angular-and-why-that-matters 
+https://dev.to/ng_suhas/angular-pure-vs-impure-pipe-3lm 
+------------------------------------------------------------------------------------------------------------------------------
+Bootstrapping module and it’s work flow -
+Project build process step by step -
+Bootstrapping module in angular step by step - 
+Versions of angular and it’s changes -
+----------------------------------------------------------------------------------------------------------------------------
+Files in angular
+https://www.c-sharpcorner.com/blogs/folder-structure-of-angular-5-project 
+https://angular-folder-structure.readthedocs.io/en/latest/ 
+----------------------------------------------------------------------------------------------------------------------------
+What are directives? - add behaviour to an existing DOM element or an existing
+ component instance.
+https://blogpedia.org/blogs/28/angular-directive-vs-components 
+https://www.educba.com/angular-directives-vs-components/ 
+-----------------------------------------------------------------------------------------------------------------------------
+What are lifecycle hooks available? - Angular application goes through an entire set of
+ processes or has a lifecycle right from its initiation to the end of the application.
+https://blog.logrocket.com/angular-lifecycle-hooks/ 
+https://www.tektutorialshub.com/angular/angular-component-life-cycle-hooks/ 
+------------------------------------------------------------------------------------------------------------------------------
+What is dependency injection in Angular? - application design pattern in which a class
+asks for dependencies from external sources rather than creating them itself.
+https://www.tektutorialshub.com/angular/angular-dependency-injection/#benefits-of-dependency
+-injection
+https://www.freecodecamp.org/news/angular-dependency-injection/ 
+How is Dependency Hierarchy formed?
+We have to use new operator then use it’s instance
+-----------------------------------------------------------------------------------------------------------------------------------
+Attribute vs property 
+https://www.geeksforgeeks.org/what-is-the-difference-between-properties-and-attributes-in-html/ 
+-------------------------------------------------------------------------------------------------------------------------------
+How do you categorize data binding types?
+
+What is a bootstrapping module?
+What are observables? - declarative which provide support for passing messages between
+publishers and subscribers in your application.
+What is HttpClient and its benefits? - Angular provides a
+simplified client HTTP API known as HttpClient which is based on top of
+XMLHttpRequest interface.
+How can you read full response?
+What is RxJS?
+ngIf vs display none vs visibility hidden
+What is an observable? - unique Object similar to a Promise that can help manage async
+code.
+What is an observer? - interface for a consumer of push-based notifications delivered by an
+Observable.
+What is the difference between promise and observable?
+What are angular elements?
+What are custom elements?
+How to transfer components to custom elements?
+How do you define typings for custom elements?
+What are dynamic components?
+What is the purpose of base href tag?
+What is router state?
+------------------------------------------------------------------------------------------------------------------------------
+What is Angular Universal?
+https://blog.angular-university.io/angular-universal/ 
+https://mdbootstrap.com/docs/angular/getting-started/angular-universal/ 
+https://www.digitalocean.com/community/tutorials/angular-angular-universal 
+----------------------------------------------------------------------------------------------------------------------------
+What are the advantages with AOT?
+What are the ways to control AOT compilation?
+What are the restrictions of metadata?
+What are the two phases of AOT?
+What is the purpose of metadata json files?
+What is folding?
+What are macros?
+Give an example of few metadata errors?
+What is metadata rewriting?
+How do you provide configuration inheritance?
+What is Non null type assertion operator?
+What is type narrowing?
+-----------------------------------------------------------------------------------------------------------------------------
+What is zone?
+https://indepth.dev/posts/1059/do-you-still-think-that-ngzone-zone-js-is-required-for-cha
+nge-detection-in-angular 
+https://angular-training-guide.rangle.io/zones 
+---------------------------------------------------------------------------------------------------------------------------
+What is the purpose of common module?
+What is codelyzer?
+What is angular animation?
+What is State function?
+What is Style function?
+What is transition function?
+What is a service worker and its role in Angular?
+What are the differences between AngularJS and Angular with respect to dependency
+ injection?
+What is Angular Language Service?
+Service workers vs web workers
+What is Angular CLI Builder?
+What is app shell
+What is a DI token ?
+Differential loading
+Lazy loaing
+Work space api
+NgUpgrade
+Jasmine test framework
+Polyfills
+DOM API’s
+Schematics
+Sanetization
+DOM Sanetizer
+Interceptors
+How does Angular simplifies Internationalization?
+Internationalization, What are the four phases of template translation?
+What is the purpose of custom id?
+Pluralization
+ICU expressions
+Testbed
+Protractor,
+Collection
+How do you create schematics for libraries?
+router state
+Non-null assertion operator
+entryComponent
+Bootstrap component
+Angular Compiler
+What are the types of feature modules?
+What is a provider?
+Singleton service
+
+Renderer vs Renderer2
+
+Ngrx
+
+----------------------------------------------------------------------------------------------------------------------
+forRoot(), forChild()
+https://www.pluralsight.com/guides/forroot-and-forchild-static-methods-on-the-angular-
+router 
+---------------------------------------------------------------------------------------------------------------------
+Ngcc
+https://dev.to/ajitsinghkaler/series/6736 
+-------------------------------------------------------------------------------------------------------------------------------
+What is a zone context?
+What are the lifecycle hooks of a zone?
+Is it mandatory to use injectable on every service class?
+What is an optional dependency?
+What are the types of injector hierarchies?
+-----------------------------------------------------------------------------------------------------------------------------
+What are dynamic forms?
+https://www.bitovi.com/blog/managing-nested-and-dynamic-forms-in-angular 
+-------------------------------------------------------------------------------------------------------------------------
+What are the types of validator functions?
+What is host property in css?
+What is Component Test harness?
+
+
+
+
+Steps of bootstrapping module in angular
+https://www.tektutorialshub.com/angular/angular-bootstrapping-application/ 
+https://www.pluralsight.com/guides/bootstrapping-an-application-in-angular 
+(Recommended)
+-------------------------------------------------------------------------------------------------------------------------------
+Bazel, Ivy and webpacker
+Why bazel is used instead of regular compiler ?
+https://blog.bitsrc.io/angular-8-bazel-walkthrough-f7585bcaf282 
+https://javascript-conference.com/blog/angular-bazel-a-new-star-is-born/ 
+https://dev.to/bazel/angular-bazel-leaving-angular-labs-51ja 
+
+https://browserperson.medium.com/from-view-engine-to-ivy-rendering-in-angular-a81d9e
+b8199b 
+https://medium.com/angular-in-depth/all-you-need-to-know-about-ivy-the-new-angular-en
+gine-9cde471f42cf
+https://www.angularminds.com/blog/article/what-is-angular-ivy.html 
+
+https://v2.angular.io/docs/ts/latest/guide/webpack.html#:~:text=Webpack%20is%20a%20
+popular%20module,a%20server%20into%20a%20browser.&text=This%20guide%20offer
+s%20a%20taste,use%20it%20with%20Angular%20applications.
+https://www.freecodecamp.org/news/how-to-configure-webpack-4-with-angular-7-a-compl
+ete-guide-9a23c879f471/
+https://www.tektutorialshub.com/angular/angular-webpack-tutorial/ 
+--------------------------------------------------------------------------------------------------------------------
+Rxjs terms
+https://yakovfain.com/2017/08/28/rxjs-essentials-part-1/ (recommended)
+https://tanpure-anjali.medium.com/basic-understanding-of-rxjs-7406b56bf976 
+https://fireship.io/lessons/rxjs-basic-pro-tips/ 
+
+
+----------------------------------------------------------------------------------------------------------------------
+What are different types of compilation in Angular?
+https://www.geeksforgeeks.org/what-is-aot-and-jit-compiler-in-angular/ 
+https://medium.com/@jitubutwal144/basic-overview-of-just-in-time-jit-vs-ahead-of-time-aot-comp
+Ilation-in-angular-applications-d24f04d8f7ca (Recommended)
+
+---------------------------------------------------------------------------------------------------------------------------
+Difference between dependencies vs devDependencies
+
+https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependenci
+es-devdependencies-and-peerdependencies
+https://medium.com/@dylanavery720/npmmmm-1-dev-dependencies-dependencies-8931
+c2583b0c
+
+------------------------------------------------------------------------------------------------------------------------
+Folder structure in angular
+https://www.c-sharpcorner.com/blogs/folder-structure-of-angular-5-project 
+-----------------------------------------------------------------------------------------------------------------------
+Difference between js, typescript and ecmascript
+https://hackr.io/blog/typescript-vs-javascript 
+---------------------------------------------------------------------------------------------------------------------------
+Versions of Angular
+https://medium.com/@lifenshades/difference-among-angular-8-7-6-5-4-3-2-breakdown-new-features-and-changes-811fb5f8e6f0 
+https://medium.com/swlh/revisit-all-10-angular-versions-in-a-glance-f7f778498160 
+
+Angular 2
+Released in 2016
+Complete rewrite of Angular 1
+Written entirely in typescript
+Component-based instead of Controller
+ES6 and typescript supported
+More testable as component-based
+Support for Mobile/Low-end devices
+Up to typescript 1.8 is supported
+Angular 3:
+Why we don’t have Angular 3?
+— Angular is being developed in a MonoRepo it means a single repo for everything. @angular/core, @angular/compiler, @angular/router etc are in the same repo and may have their own versions.
+— The angular router was already in v3 and releasing angular 3 with router 4 will create confusion
+— To avoid this confusion they decided to skip the version 3 and release with version 4.0.0 so that every major dependency in the MonoRepo are on the right track.
+Angular 4
+Released in 2017
+Changes in core library
+Angular 4 is simply the next version of angular 2, the underlying concept is the same & is an inheritance from Angular 2
+Lot of performance improvement is made to reduce size of AOT compiler generated code
+Typescript 2.1 & 2.2 compatible — all feature of ts 2.1 & 2.2 are supported in Angular 4 application
+Included new router life cycle events for Guards and Resolvers.
+Animation features are separated from @angular/core to @angular/animation
+— don’t import @animation packages into the application to reduce bundle size and it gives the performance improvement.
+Else block in *ngIf introduced:
+— Instead of writing 2 ngIf for else , simply add below code in component template:
+*ngIf=”yourCondition; else myFalsyTemplate”
+“<ng-template #myFalsyTemplate>Else Html</ng-template>”
+Angular 5
+Released 1st November 2017
+Build optimizer: It helps to removed unnecessary code from your application
+Angular Universal State Transfer API and DOM Support — By using this feature, we can now share the state of the application between the server side and client side very easily.
+Compiler Improvements: This is one of the very nice features of Angular 5, which improved the support of incremental compilation of an application.
+Preserve White space: To remove unnecessary new lines, tabs and white spaces we can add below code(decrease bundle size)
+You can use -aot flagng serve-aot now during the build.
+// in component decorator you can now add:
+“preserveWhitespaces: false”
+// or in tsconfig.json:
+“angularCompilerOptions”: { “preserveWhitespaces”: false}`
+Increased the standardization across all browsers: For internationalization we were depending on `i18n` , but in ng 5 provides a new date, number, and currency pipes which increases the internationalization across all the browsers and eliminates the need of i18n polyfills.
+exportAs: In Angular 5, multiple names support for both directives and components
+HttpClient: until Angualar 4.3 @angular/HTTP was been used which is now depreciated and in Angular 5 a new module called HttpClientModule is introduced which comes under @angular/common/http package.
+Few new Router Life-cycle Events being added in Angular 5: In Angular 5 few new life cycle events being added to the router and those are: ActivationStart, ActivationEnd, ChildActivationStart, ChildActivationEnd, GuardsCheckStart, GuardsCheckEnd, ResolveStart and ResolveEnd.
+Angular 5 supports TypeScript 2.3 version.
+Improved in faster Compiler support:
+A huge improvement made in an Angular compiler to make the development build faster. We can now take advantage of by running the below command in our development terminal window to make the build faster.
+ng serve/s — aot
+Angular 6
+Released on April 2018
+This release is focused less on the underlying framework, and more on tool-chain and on making it easier to move quickly with angular in the future
+No major breaking changes
+Dependency on RxJS 6 (this upgrade have breaking changes but CLI command helps in migrating from older version of RxJS)
+Added a new command to manage npm dependencies — ng update
+Added another handy command to add more capabilities to your project such as ng add @angular/pwa, ng add @angular/material
+Synchronizes major version number of the:
+— Angular framework
+— Angular CLI
+— Angular Material + CDK
+Remove support for <template> tag and “<ng-template>” should be used.
+Registering provider: To register new service/provider, we import Service into module and then inject in provider array. E.g:
+// app.module.ts
+import {MyService} from './my-service';
+…
+providers: [...MyService]
+...
+But after this upgrade you will be able to add providedIn property in injectable decorator. E.g:
+// MyService.ts
+@Injectable({ providedIn: 'root'})
+export class MyService{}
+The way ngModelChange event works:
+Let’s understand this with output produced by older and this version:
+// Angular 5:
+<input [(ngModel)]=’name’ (ngModelChange)=’onChange($event)’ />
+onChange(value){ console.log(value); } // Would log updated value
+<input #modelDir=’ngModel’ [(ngModel)]=’name’ (ngModelChange)=’onChange(modelDir)’ />
+onChange(ngModel: NgModel){ console.log(ngModel.value); } // Would log old value, not updated
+// Angular 6:
+onChange(ngModel: NgModel){ console.log(ngModel.value); } // Would log updated value
+CLI Changes: Two new commands have been introduced
+— ng update <package>
+* Analyse package.json and recommend updates to your application
+* 3rd parties can provide update scripts using schematics
+* automatically update code for breaking changes
+* staying update and low maintenance
+— ng add
+* add new capablities to your applicaiton
+* e.g ng add @angular/material : behind the scene it add bit of necessary code and changes project where needed to add it the thing we just told it to add.
+* Now adding things like angular material, progressive web app, service workers & angular elements to your existing ng application will be easy.
+CLI + Material starter templates: Let angular create code snippet for your basic components. e.g:
+— Material Sidenav
+* ng generate @angular/material:material-nav — name=my-nav
+Generate a starter template including a toolbar with app name and then the side navigation & it's also responsive
+— Dashboard
+* ng generate @angular/material:material-dashboard — name=my-dashboard
+Generates Dynamic list of cards
+— Datatable
+* ng generate @angular/material:material-table — name=my-table
+Generates Data Table with sorting, filtering & pagination
+It uses angular.json instead of .angular-cli.json
+Support for multiple projects: Now in angular.json we can add multiple projects
+initial release of Angular Elements which gives us ability to use our angular components in other environments like a Vue.js application. Its potential is truly amazing but unfortunately this release only works for angular application, we need to wait for next release to wrap out angular component into custom element and use it with framework like Vue.js
+Angular 7
+Released on October 2018
+This is a major release and expanding to the entire platform including-
+— Core framework,
+— Angular Material,
+— CLI
+CLI Prompts: The CLI will now prompt users as when running common commands like ng new or ng add @angular/material with the intend of getting aid for building a new project using SCSS.
+Added a new interface — UrlSegment[] to CanLoad interface
+Added a new interface — DoBootstrap interface
+Angular 7 added a new compiler — Compatibility Compiler (ngcc)
+Introduce a new Pipe called — KeyValuePipe
+Angular 7 now supporting to TypeScript 2.9.
+Added a new elements features — enable Shadow DOM v1 and slots
+Added a new router features — warn if navigation triggered outside Angular zone
+Added a new mapping for ngfactory and ngsummary files to their module names in AOT summary resolver.
+Added a new “original” placeholder value on extracted XMB
+Added a new ability to recover from malformed URLs
+Added a new compiler support dot (.) in import statements and also avoid a crash in ngc-wrapped
+Update compiler to flatten nested template fns
+Drag & Drop API has been added.
+Supported Virtual Scrolling.
+Angular 8
+Releasing March/April 2019
+Being smaller, faster and easier to use and it will be making Angular developers life easier.
+Added Support for TypeScript 3.2
+Added a Navigation Type Available during Navigation in the Router
+Added pathParamsOrQueryParamsChange mode for runGuardsAndResolvers in the Router
+Allow passing state to routerLink Directives in the Router
+Allow passing state to NavigationExtras in the Router
+Restore the whole object when navigating back to a page managed by Angular Router
+Added support for SASS
+Resolve generated Sass/Less files to .css inputs
+Added Predicate function mode for runGuardsAndResolvers:-
+This option means guards and resolvers will ignore changes when a provided predicate function returns `false`. This supports use cases where an application needs to ignore some param updates but not others. For example, changing a sort param in the URL might need to be ignored, whereas changing the `project` param might require a re-run of guards and resolvers.
+Added functionality to mark a control and its descendant controls as touched: — add markAllAsTouched () to AbstractControl
+Added an ng-new command that builds the project with Bazel
+Use image based cache for windows BuildKite
+Export NumberValueAccessor & RangeValueAccessor directives
+Use shared DomElementSchemaRegistry instance for improve performance of platform-server(@angular/platform-server):-
+Right now the ServerRendererFactory2 creates a new instance of the DomElementSchemaRegistry for each and every request, which is quite costly (for the Tour of Heroes SSR example this takes around **15%** of the overall execution time)
+Now the Performance Improvements on the core, more consistent about “typeof checks”: -
+When testing whether `value` is an object, use the ideal sequence of strictly not equal to `null` followed by `typeof value === ‘object’` consistently. Specifically, there’s no point in using double equal with `null` since `undefined` is ruled out by the `typeof` check. Also avoid the unnecessary ToBoolean check on `value.ngOnDestroy` in `hasOnDestroy()`, since the `typeof value.ngOnDestroy === ‘function’` will only let closures pass and all closures are truish (with the notable exception of `document.all`, but that shouldn’t be relevant for the `ngOnDestroy` hook)
+In the Compiler-CLI, expose ngtsc as a TscPlugin
+Restore whole object when navigating back to a page managed by Angular Router:-
+This feature adds a few capabilities. First, when a `popstate` event fires the value of `history.state` will be read and passed into `NavigationStart`. In the past, only the `navigationId` would be passed here.
+Additionally, `NavigationExtras` has a new public API called `state` which is any object that will be stored as a value in `history.state` on navigation. For example, the object `{foo: ‘bar’}` will be written to `history.state` here: -`router.navigateByUrl(‘/simple’, {state: {foo: ‘bar’}});`
+
+Added Differential Loading by Default.
+Route Configurations use Dynamic Imports using loadChildren.
+Added Web Worker Support.
+Angular 9
+Released on February 6, 2020.
+Added the Ivy compiler and runtime by default.
+Smaller Bundle Size.
+Faster Testing.
+Improved Debugging.
+Improved CSS class and style binding with improved type checking and build errors.
+
+
+Angular 10
+New date range picker.
+Warnings about CommonJS imports that can slow down large applications.
+Optional stricter settings that can improve maintainability, help catch bugs, and enable advanced optimizations.
+New versions supported of TypeScript 3.9, TSLib 2.0, TSLint 6.
+
+ 

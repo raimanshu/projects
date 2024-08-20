@@ -1,0 +1,54 @@
+Points to remember <br /><br />
+
+Linear search is also called sequential search algorithm. <br /><br />
+Linear Search is defined as a sequential search algorithm that starts at one end
+and goes through each element of a list until the desired element is found,
+otherwise the search continues till the end of the data set. <br /><br />
+
+Time Complexity (where 'n' is the size of the list.) <br /><br />
+Best Case - O(1) <br />
+Worst Case - O(n) <br />
+Average Case - O(n) <br />
+Space Complexity - O(n) <br />
+<br />
+
+Implementation - Itterative approch, Recurssive approch <br />
+
+Improving Linerar search using transposition, Move to front an dhash tables
+method - https://www.geeksforgeeks.org/improving-linear-search-technique/
+<br /><br />
+
+https://www.geeksforgeeks.org/linear-search/
+https://www.youtube.com/watch?v=4RSUYXQm8Fc
+
+<script>
+  // Method 1 : Itterative
+  function linearSearchIterative(array_var, required_value) {
+    let n = array_var.length;
+    for (let i = 0; i < n; i++) {
+      if (array_var[i] == required_value) return i;
+    }
+    return -1;
+  }
+  console.log(
+    "Element found at index " + linearSearchIterative([2, 3, 4, 10, 40], 10)
+  );
+</script>
+
+<script>
+  // Method 2 : Recursive
+  function linearSearchRecursive(array_var, required_value, index) {
+    // Base case: If the array is empty or we have reached the end of the array and haven't found x
+    if (array_var.length == 0 || (index >= array_var.length && !array_var[index])) {
+      return -1;
+    } else if (array_var[index] === required_value) {
+      return index; // Element found
+    }
+    // Recursively check the next element
+    return linearSearchRecursive(array_var, required_value, index + 1);
+  }
+  console.log(
+    "Is element present in array ? " +
+      linearSearchRecursive([2, 3, 4, 10, 40], 10, 0)
+  );
+</script>

@@ -1,0 +1,54 @@
+- alternative of NPM is YARN
+- In function component all html code must be wrapped inside a single div, otherwise it will throw error
+-  In export default App; default is mandatory, otherwise it will throw error 
+Method 1
+function FunctionName() {
+    return (
+        <div>
+            ...
+        </div>
+    )
+} 
+export default FunctionName;
+Method 2
+export function FunctionName() {
+    return (
+        <div>
+            ...
+        </div>
+    )
+} 
+- we can even create a function component inside another function component and use them using FunctioName
+export function FunctionName1() {
+    function FunctionName2() {
+        return (
+            <div>
+                ...
+            </div>
+        )
+    } 
+
+    return (
+        <div>
+            ...
+
+            <FunctionName2><FunctionName2/>
+        </div>
+    )
+} 
+- we can use react inside angular because angular is a library and angular is a framework
+- we can use .jsx instead .js for files in react
+- variable in react donot update but state update because while using variable the component donot rerenders
+- By default state is public
+- we can't use one state into another component even they are in same file
+- we can't use useState inside class component
+- we can't update props value in the recieving component, it can only be update in parent component 
+- we can pass html content also in props using this.props.children ?? 
+- constructor comes in a lifecycle method of react  
+- we call super() befor any other statement in constructor or other class to call it's parent class like React.Component 
+- Donot call API in constructor, It should be called in componentDidMount 
+- If you have used componentDidUpdate, donot update your state or props in render it may go into infinite loop
+- cannot put class in fragment div but can take key value
+- controlled and uncontrolled components both can be used with functional and class component
+- Hot module reloading means as we make changes in code compiler tracks those changes and render it on browser
+

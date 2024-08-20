@@ -1,0 +1,140 @@
+Javascript (javascript.info)
+
+Green - understand
+Yellow - not understand yet
+Bold - important
+
+An Introduction 
+1.1 An introduction to javascript - Why it is called javascript, javascript Engines (JavaScript virtual machine), Limitations of js, 
+1.2 Manuals and Specifications -  
+1.3 Code Editors - 
+1.4 Developer Console - F12, Ctrl + Shift +J, 
+
+Javascript Fundamentals
+2.1 Hello World ! - script tag, type attribute, language attribute, External scripts using src attribute, 
+2.2 Code Structure - statements, semi-colons,  automatic semicolon insertion,  sible line comment ( //, Ctrl + / ), multi-line comment (/**     **/,  Ctrl + Shift + /)
+2.3 The modern mode, “use strict” - use strict, 
+2.4 Variables - variables, constants
+2.5 Data types - Dynamically typed language, (Number, BigInt, String, Boolean, Null, Undefined, Object, Symbol), Number(Infinity, -Infinity, NaN), BigInt, String(Duble quotes, Single quotes, Backticks), Boolean, Null, Undefined, typeof (operator or function)
+2.6 Interaction: alert, prompt, confirm
+2.7 Type Conversions - String Conversion (String()), Number Conversion (Number()), Boolean Conversion (Boolean())
+2.8 Basic operators maths - unary, binary, operand, Maths(=,-,*,/,%,**), String concatenation with +, Numeric conversion unary +, Order precedence, Assignment, Chaining assignment, Modify-in-plae (Short-hand operator), Increment/Decrement operator (prefix and postfix), Bitwise operators (&,|,^,~,<<,>>,>>>), Comma
+2.10 Conditional branching: if , ‘?’ - if statement, else if, Conditional operator, ……………………
+2.11 Logical operators - || (OR),  && (AND), ! (NOT), ?? (Nullish Coalescing), Short-circuit evaluation, 
+2.12 Nullish Coalescing - 
+2.13 Loops: while and for -  while loop, do while loop, for loop, break, continue, Labels for continue/break
+2.14 Switch statement - 
+2.15 Functions - function declaration, local variables, outer variables, parameters, default parameters,  alternative default parameter, returning a value, naming a function, 
+2.16 Function Expressions - functon expression, callback function,  function expression vs function declaration
+2.17 Arrow functions - 
+2.18 Javascriptspecials - 
+
+Code quality
+3.1 Debugging in the browser - Sources panel, console, breakpoints, debugger command, pause and look, tracing and execution, logging
+3.2 Coding style - Syntax, function placement, style guides, automated linters
+3.3 Comments - Bad comment, Good comment
+3.4 Ninja code -
+3.5 Automated testing with Mocha - 
+3.6 Polyfils and transpilers - transpilers, polyfils
+
+Objects: the basics
+4.1 Objects -  object literal syntax, object constructor syntax, literal and properties, square brackets, property value shorthand, property name limitations, in operator, for..in loop, 
+4.2 Object reference and copying - cloning, merging, Object .assign(),  Nested cloning
+4.3 Garbage collection - reachability, …………………………………………………………………………………………………………
+
+4.4 Object method, this - this in methods, this is not bound,  Arrow functions have no this,
+4.5 Constructor, operator new - constructor function, Constructor mode test : new.target, return the constructors, methods in constructors
+4.6 Optional chaining ? - optional chaining, short-circuiting, other variants .(),  .[]
+4.7 Symbols - symbols, hidden properties, global symbols, system symbols
+4.8 Object to primitive conversion - Conversion rules, Symbol.toPrimitive, toString/valueOf, furher conversion
+
+Data Types
+5.1 methods of primitives -  primitive as an object
+5.2 Numbers - more ways to write a number, toString(base), two dots on number , rounding, imprecise calculation, isFinite and isNaN, Object.is(), parseInt() and parseFloat(), other math functions
+5.3 Strings - quotes(single, double, backticks), special characters, String.length, accessing characters, strings are immutable, changing the case, searching for a substring, getting a substring, comparing strings, internals, unicode, 
+5.4 Array - declaration, push/pop, shift/unshift, internals, performance, loops, a word about length, new Array(), multidimensional array, toString(), Don’t compare arrays with ==
+5.5 Array methods - add/remove items, iterate: forEach, searching in an array, transform an array, Array.isArray(), thisArg
+5.6 Iterables - Symbol.iterator, String is iterable, calling an iterator explicitly, iterables and array-likes, Array.from, 
+5.7 Map and Set - map, iteration over map, Object.entries:map from object, Object.entries:object from map, set, iteration over set
+5.8 WeakMap and WeakSet - weakmap, usecase : additional data, usecase: caching, weakset
+5.9 Object.keys, values, entries - object keys, values, entries, transforming objects
+5.10 Destructuring assignment - array destructuring, object destructuring, The rest ‘...’, object destructuring, nested restructuring, smart functions parameters
+5.11 Date and time - creation, access date components, setting date components, autocorrection, Date to number, date diff, Date.now(), benchmarking, Date.parse from a string 
+5.12 JSON methods, toJSON, - JSON.stringify(), excluding and transforming: replacer, Formatting Space, Covert “toJSON”, JSON.parse, using reviver,  
+
+Advanced working with functions
+6.1 - Recursion and stack - Two ways of thinking, the execution context and stack, recursive traversals, recursive structures  
+6.2 Rest parameters and spread syntax - Rest parameters, the “arguments” variable, spread syntax, copy an array/object, 
+6.3 variable scope, closure - code blocks, nested functions, lexical environment, garbage collection,
+6.4 The old var - var has no block scope, var tolerates redeclarations, var variables can be declared below their use, IIFE 
+6.5 Global object - global object, using for polyfills,
+6.6 Function object, NFE - the name property, the length property, custom properties, nested function expression 
+6.7 The “new Function” syntax - syntax, closure,
+6.8 Scheduling: setTimeout and setInterval - setTimeout(), clearTimeout(), setInterval(), clearInterval(), nested setTimeout(), Zero delay setTimeout(),
+6.9 Decorators and forwarding, call/apply - transparent caching, using “func.call” for the context, going multi-argument func.apply, borrowing a method, decorators and function properties 
+6.10 Function Binding - losing “this”, solution 1: wrapper, solution 2: bind, partial functions, going partial without context
+6.11 Arrow functions revisited - Arrow functions donot have “this”, Arrow have no “arguments”
+ 
+Object properties configuration
+7.1 Property flags and descriptors - property flags, Non-writable,  non-enumerable, non-configurable, Object.defineProperties(), Object.getOwnPropertyDescripters(), Sealing an object globally, 
+7.2 Property getters and setters - getters and setters, accessor descriptors, smarter getter/setter, using for compatibility
+
+Prototypes, Inheritence
+8.1 Protypal inheritence - [[Prototype]], writing doesn’t use prototype, The value of “this”, for..in loop,
+8.2 F.prototype - F.prototype, Default F.prototype, constructor property, 
+8.3 Native prototypes - Object.prototype, Other built-in prototypes, primitives, changing native prototypes, changing native prototype, borrowing from prototypes, 
+8.4 Prototype methods, objects without __proto__ - brief history, very plain objects, 
+
+let clone = Object.create(Object.getPrototypeOf(obj), Object.getOwnPropertyDescriptors(obj));
+Classes
+9.1 Class basic syntax - the “class” syntax, What is a class, Not just a  syntactic sugar, [[IsClassConstructor]], class expression, getters/setters, computed names[...], class fields, 
+9.2 Class inheritance - the “extends” keyword, overriding a method, overriding constructor, [[ConstructorKind]],super:internals[[HomeObject]]
+9.3 Static properties and methods - static properties, inheritance of static properties and methods
+9.4 Private and protected properties and methods - a real life example, internal and external interface, protecting “waterAmount”, read only power, private “#waterLimiit”
+9.5 Extending built-in classes - extending built-in classes, no static inheritance in builtin-ins
+9.6 Class checking: “instanceof” - the indexof operator, Symbol.hasInstance, Object.prototype.toString for the type
+9.7 Mixins - a mixin example, EventMixin
+
+Error Handling
+10.1 Error Handling, “try..catch” - the try...catch syntax, Error object, optional “catch” binding, Using “try..catch”, throwing our own errors, rethrowing, try...catch...finally, global catch 
+10.2 Custom errors, extending Error - extending error, further inheritance, wrapping exceptions 
+
+Promises, async/await
+11.1 Introduction: callbacks - 
+
+
+Frames and Windows
+1.1 Frames and windows - frames and windows, popup blocking, window.open, Example: a minimalistic window, accessing popup from window, accessing window from popup, closing a popup, moving and resizing, scrolling a window, focus/blur on a window, 
+1.2 Cross-window communication - cross-window communication, same origin, windows on subdomains: document domain, iframe: wrong document pitfall, collection: window.frames, the sandbox iframe attribute, cross-window messaging
+1.3 The clickjacking attack - the idea, the demo, old school defences, X-frame options, samesite cookie attribute
+
+Binary data, files
+2.1 ArrayBuffer, binary arrays - 
+
+Storing data in the browser
+4.1 Cookies, document.cookie - cookies, document.cookie, reading from document.cookie, writing to document.cookie, path, domain, expires, max-age, secure, samesite, httpOnly, XSRF attack, , Appendix:Cookie function, Appendix: third-party cookies, Appendix: GDPR
+4.2 LocalStorage, sessionStorage - localStorage, sessionStorage, localStorage Demo, Object-like access, looping over keys, strings only, sessionStorage, storage event,  
+4.3 IndexedDB - indexedDB, open database, object store, transactions, Error handling, searching, deleting from store, cursors, promise wrapper
+
+   
+-----------------------------------------------------------------------------------------
+
+REGULAR EXPRESSIONS
+7.1 Patterens and flags - regular expression, flags(i,g,m,s,u,y), searching:str,match, replacing: str.replace, testing: regexp.test,  
+7.2 Character classes - character classes (\d, \s, \w), inverse classes (\D, \S, \W), A dot is “any character”, 
+7.3 Unicode: flag u“ and class \p{...} - 
+7.4 Anchors: string start ^ and end $ - 
+7.4 Multiline mode of anchors ^$, flag”m” - 
+7.5 Word boundary: \b - 
+7.6 Escaping, special characters - escaping, slash, new RegExp
+7.7 Sets and ranges[...] - sets, ranges, excluding ranges, escaping in [...], ranges and flag “u”
+7.8 Quantifiers - +,*,?,{n} - quantity{n}, shorthand (+, *, ?)
+7.9 Greedy and lazy identifier - greedy search, lazy mode, alternative approach 
+7.10 Capturing groups - capturing groups, parenthesis content in the match, nested groups, optional groups, matchAll, Nested objects, capturing groups in replacement, Non-capturing groups with ?:, 
+7.11 Backreferences in pattern \N and \k<name> - \N, \k<name>
+7.12 Alternation (OR) | - alternation, example
+7.13 Lookahead and lookbehind - lookahead, negative lookahead, lookbehind, capturing groups
+7.14 Catastrophic backtracking - catastrophic backtracking, simplified example, bact to words and strings, how to fix ?, preventing backtracking
+7.16 Sticky flag ‘y’, searching at position - ………………………
+7.17 Methods of RegExp and String - str.match(regex), str.matchAll(regexp), str.split(regex | substr, limit), str.search(regexp), str.replace(str|regex, str|func), str.replaceAll(str|regex, str|func), regex.exec(str), regex.test(str), 
+

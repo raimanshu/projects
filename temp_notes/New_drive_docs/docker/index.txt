@@ -1,0 +1,13 @@
+https://www.freecodecamp.org/news/a-beginners-guide-to-docker-how-to-create-your-first-docker-application-cc03de9b639f/
+
+
+https://www.youtube.com/watch?v=0SS6bJczlgs
+https://www.youtube.com/watch?v=Qn08jgrsRY4
+
+CHEATSHEET
+https://dockerlabs.collabnix.com/docker/cheatsheet/
+https://spacelift.io/blog/docker-commands-cheat-sheet
+https://github.com/wsargent/docker-cheat-sheet?tab=readme-ov-file (Recommended)
+
+
+

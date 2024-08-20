@@ -1,0 +1,39 @@
+GENERAL TOPICS
+---------------
+
+HTTP methods - GET, POST, HEAD, PUT, DELETE
+
+Programming Paradigm - object oriented programming, structural programming, procedural oriented programming
+
+OOPs Concept - language supported, advantages, disadvantages, limitations, real life examples, pure & impure OOP language
+
+Class - constructor, constructor vs method, constructor chaining, abstract class, interface class, 
+
+Object - ways of creating objects
+
+Abstraction - 
+
+Encapsulation - 
+
+Inheritance - limitations, inheritance vs polymorphism vs encapsulation, super class, base class, sub class, composition vs inheritance, 
+
+Polymorphism - compile time polymorphism, runtime polymorphism 
+
+Overloading & Overriding
+
+Access Specifiers - public, private, protected, default
+
+Manipulators
+
+Errors & Exceptions
+
+Coupling & Cohesion 
+
+Data abstraction -
+
+Variables - instance variables, static variables, local variables, reference variables
+
+
+IMPORTANT LINKS
+----------------
+

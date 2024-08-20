@@ -1,0 +1,28 @@
+https://www.youtube.com/watch?v=lGmRnu--iU8
+
+https://www.youtube.com/watch?v=chx9Rs41W6g&t=112s
+
+PRACTICE
+--------
+https://learnjavascript.online/app.html?id=1437
+
+youtube
+sheriyans
+
+
+DOCUMENTATION
+-------------
+https://javascript.info/
+
+REGEX CHEATSHEET
+----------------
+https://quickref.me/regex.html
+
+REGEX PRACTICE
+--------------
+https://regexlearn.com/
+
+CHEATSHEET
+----------
+https://zerotomastery.io/cheatsheets/javascript-cheatsheet-the-advanced-concepts/
+https://morioh.com/a/aeb5112c99f4/vanilla-javascript-cheat-sheet-everything-you-need-to-know-about-vani#google_vignette

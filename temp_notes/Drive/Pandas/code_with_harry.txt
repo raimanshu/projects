@@ -1,0 +1,127 @@
+Pip install pandas
+Pip install –upgrade package_name
+Pip install jupyter
+
+Jupyter notebook
+https://stackoverflow.com/questions/52287117/jupyter-is-not-recognized-as-an-internal-or-external-command 
+
+
+df = pd.DataFrame(dictionary_variable)
+df - to show data as table
+df.to_csv(‘file_name.csv’) - to import data into file
+df.to_csv(‘file_name.csv’, index=False ) - to import data into file
+df.head(5) -  to show only first five rows ;Default value is 5
+df.tail(5) -  to show last five rows ;Default value is 5
+df.describe() -  show details  like count, mean, standard deviation, min, max, 25%, 50%, 75% etc from given data
+
+
+user_data = pd.read_csv(‘file_name.csv’) - to read data from csv file
+user_data - to show data as table
+User_data[‘column_name’] -  outputted table will only show index and that column, header name and data type
+User_data.index =['first', 'second', 'third', 'forth'] - we can change the default sequence  ie 1,2,3… to another one
+
+
+=============
+What is Pandas ? 
+Open source data analysis library written in python
+Provides rich and highly robust data operations
+
+Pandas data structure - Series and Dataframe
+Series - 1D array with indexes, store single column or row of data in a Dataframe
+Dataframe - tabular spreadsheet like structure representing rows each of which contains one or multiple columns
+
+What is jupyter notebook ?
+Open source web application that allows you to create and share documents that contain code, equations, visualizations and narrative text
+Can produce rich, interactive output
+
+type(variable_name) - return it’s type either pandas.core.frame.DataFrame or  pandas.core.series.Series
+Variable_name.dtypes - returns the data type of each row in row wise manner
+Variable_name.index - returns all index values inside an array
+Variable_name.columns - returns the start, stop and step value
+variable_name.to_numpy() -  convert the data into numpy array
+variable_name.T - make transposed of dataframe ie make rows into columns and columns into rows
+variable_name.sort_index(axis=0, ascending=False) - sort data with respect to rows
+variable_name.sort_index(axis=1) - sort data with respect to columns in ascending order with respect to columns
+
+# Copying data
+Variable_name_2 = variable_name_1  	# data will not be copied in second variable, 2nd variable only have the reference of variable 1
+
+Variable_name_2 = variable_name_1.copy()  	# data will be copied in second variable
+Variable_name_2 = variable_name_1[:]  	# data will be copied in second variable
+
+#For assigning data
+Variable_name[column][row] = ‘new_data’ 	# It may throw error sometime but data will be updated
+Variable_name.loc[column][row] = ‘new_data’ 	# It will not throw error, correct way
+
+
+Variable_name.columns = list(‘ABCDE’)	#To make columns names like ABCDE
+
+# Deleting a column or row
+variable_name.drop(column_name, axis=1) 	#To delete a column of name column_name
+variable_name.drop(row_name, axis=0)  	#To delete a row of name row_name
+
+# To get a set of data / specific set of rows and column
+Variable_name.loc[[row_1, row_2], [column_1, column_2]]
+
+#To get all set of rows
+Variable_name.loc[ : , [column_1, column_2]]
+
+#To get all set of column
+Variable_name.loc[[row_1, row_2], :]
+
+ #To get data based on condition
+Variable_name.loc[ variable_name[column_name] < 0.3 ] 	#return all rows having value less than 0.3
+Variable_name.loc[ (variable_name[column_name] < 0.3) & variable_name[column_name] > 0.1 ] 	#return all rows having value less than 0.3 and greater than 0.1
+
+# If want to retrieve data based on index of rows and columns not it’s name
+Variable_name.iloc[row_index, column_index]
+Variable_name.iloc[row_index_1, column_index]
+# Delete a row 
+variable_name.drop(row_name) 	# will not modify the original data
+variable_name.drop(row_name, implace=True) 	# will modify the original data
+variable_name.drop(row_name, axis=0)
+variable_name.drop([row_name_1, row_name_2])
+
+# Delete a column
+variable_name.drop(column_name,  axis=1) 	# will not modify the original data
+variable_name.drop(column_name, implace=True) 	# will modify the original data
+variable_name.drop([column_name_1, column_name_2],  axis=1)
+
+# Reset the index count of row
+variable_name.reset_index()
+variable_name.reset_index(drop=True, implace=True) 		# will delete the previous index column
+
+# returns rows in which the data is null in that mentioned column
+variable_name[column_name].isnull()
+
+# make all data NONE in mentioned column
+Variable_name[column_name] = NONE
+Variable_name.loc[ : , [column_name]] = NONE
+
+# Delete all NA values from dataframe
+variable_name.dropna()
+
+# Delete all duplicate values from dataframe
+variable_name.drop_duplicates(subset=[column_name], keep=True)
+
+# Show number of rows and columns
+Variable _name.shape()
+
+# Show details about that dataframe
+Variable_name.info()
+
+#Show unique counts of specific column
+variable_name[column_name].value_counts(dropna=False) 	#Donot count NA values
+variable_name[column_name].value_counts(dropna=True) 	#count NA values
+
+# check null values
+variable_name.notnull() 	# Show values which are not null
+variable_name.isnull() 	# Show values which are null 
+
+# to read excel sheets
+Pip install xlrd
+pd.read_excel(‘file_name.xlsx’, sheet_name=’sheet_name’)
+
+# to download data as excel file
+Pip install openpyxl
+variable_name.to_excel(‘file_name.xlsx’,  sheet_name=’sheet_name’)

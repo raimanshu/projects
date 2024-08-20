@@ -1,0 +1,152 @@
+
+can we use accept attribute with form ?
+It was supported on the <form> element, but was removed in favor of file.
+
+why cite attribute is used ?
+what is the use if data-* attribute ?
+what is the use of datetime attribute ?
+diff enctype vs charset vs accept-charset vs accept 
+significance of high attribute in meter tag
+use of kind attribute
+
+_self vs _blank vs _parent vs _top
+significance of href attribute in base tag
+use of bdi tag 
+bdi vs bdo 
+tag for blockquote or q ?
+can we have multiple body tag 
+what is canvas 
+use difference between cite, dfn, em, i and address tag 
+usee of data tag ?
+data vs datalist
+use of details tag
+dir tag vs dir attribute
+difference between div and section, div, main and article
+what are ol, ul and dl tags
+why use embed tag
+use of figure and figcation
+what is frame, noframes, iframe and frameset ?
+why use head tag ?
+can there be multiple headers and footers ?
+can a header be used inside an article ?
+what is the use of hgroup tag ?
+any attribute use with html tag ?
+tag which is not contained by html tag ? 
+can we use image or pdf inside an iframe tag ?
+can embed tag render all types of file like .bat file ?
+why use kbd tag when we have code, sample, var and pre tag ?
+why use embed tag when we have img, iframe, audio and video tag ?
+difference between embed tag and object tag ?
+is it mandatory to use label tag ?
+what is legend tag ?
+li tag can only be used with ol, ul and menu but not with dl tag
+difference between link and a tag ?
+can we use multiple main tag ?
+what is map tag ?
+difference between menu and ul tag ?
+attributes of meta, link, base and title tags
+write some html 5 tags and semantic tags ?
+difference between meter tag and progress tag ?
+inside nav should li be inside a tag or a tag inside li tag
+what is script and noscript tag ?
+difference between embed and object tag ?
+is optgroup tag text selectable ?
+can option tag can be used with select, optgroup and datalist tag ?
+what is input and output tag ?
+use of param tag ?
+difference between img and picture tag ?
+difference between pre, code, samp, kbd and var?
+difference between progress, meter and input with progress attribute ?
+difference between q and blockquote tag ?
+what are ruby, rt and rp tags ?
+difference between s, strike and del tag ?
+can we use script and no script tag inside body tag ?
+attributes of script and no script ?
+difference between html and xhtml 
+use of search tag ?
+difference between section, article, div tag ?
+what happens when we omit name attribute from select tag ?
+ource tag is used with audio, video and picture tag ?
+difference between strong and b tag
+attributes used with style tag ?
+what is summary and legend tag ?
+differene between svg and canvas ?
+can a table have multiple tbody ?
+use of template tag ?
+use of time tag ?
+use of track tag ?
+difference between u and ins tag ?
+tags which are used but do not render on the browser ?
+does text between audio and video render on the browser ?
+list tags when some tags are written inside does show all other stuff fails like iframe, audio, video etc
+what is wbr
+
+
+This is repetation of the questions
+
+
+
+----------------------------
+
+Doubts
+value attr use can be used with button
+target attr can be used with form
+tabindex ?
+srcset attr with img ?
+rel attribute  ?
+difference between rowspan, colsapan and span ?
+difference between popover, popovertarget, and popovertargetaction ?
+use optium attr with meter ?
+multiple attribute can be used with input when type is file 
+difference between maxlength and max ?
+lang attribute ?
+ismap attribute ?
+inputmode attribute ?
+inert attribute usage ?
+hreflang attribute ?
+http-equiv attribute ?
+useage headers attribute ?
+difference between formaction and action ?
+enctype ?
+difference between data and data-* attribute ?
+difference between cite tag and cite attribute ?
+charset and accept-charset ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

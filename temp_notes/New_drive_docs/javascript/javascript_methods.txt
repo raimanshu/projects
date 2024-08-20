@@ -1,0 +1,345 @@
+ARRAY METHODS :::	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+-----------------
+CREATION ::
+const array_name = [item1, item2, ...]; 
+const array_name = new Array(item1, item2, ...);
+ACCESSING ITEM ::
+const item = array_name[index_number]
+METHODS ::
+array_name.length	-	 returns the number of elements in an array
+array_name.toString()	-	Converts an array to a string, and returns the result
+array_name.at(index_number)	-	Returns an indexed element of an array
+array_name.join()	-	Joins all elements of an array into a string  separated by commas or other specified separator
+array_name.pop()	-	Removes the last element of an array, and returns that element
+array_name.push(...items)	-	Adds new elements to the end of an array, and returns the new length
+array_name.shift()	-	Removes the first element of an array, and returns that element
+array_name.unshift(...items)	-	Adds new elements to the beginning of an array, and returns the new length
+delete array_name[index_number]
+array_name.concat(arr1, arr2)	-	Joins arrays and returns an array with the joined arrays
+array_name.copyWithin(index_where_to_set, start_index, end_index)
+array_name.flat(depth)	-	Concatenates sub-array elements into one single flat array
+array_name.splice(pos, delete_count, ...items_to_add)	-	Adds/Removes elements from an array
+array_name.toSpliced()
+array_name.slice(start, end)	-	Selects a part of an array, and returns the new array
+SORTING ::
+----------
+array_name.sort()	-	Sorts the elements of an array
+array_name.reverse()	-	Reverses the order of the elements in an array
+array_name.toSorted()
+array_name.toReversed()
+Sorting Objects
+(Numeric Sort) array_name.sort(function(a, b){return a - b})
+(Random Sort)  array_name.sort(function(a, b){return 0.5 - Math.random()})
+(Random Sort)  array_name.sort(function(a, b){return a.key_name - b.key_name})
+Math.min.apply(null, arr_name) || Math.min(...arr_name)
+Math.max.apply(null, arr_name) || Math.max(...arr_name)
+ITERATING ::
+------------
+array_name.forEach((value, index, array) => {})	-	Calls a function for each array element
+array_name.map((value, index, array) => {})	-	Creates a new array with the result of calling a function for each array element
+array_name.flatMap((value, index, array) => {})	-	Maps all array elements and creates a new flat array
+array_name.filter((value, index, array) => {})	-	Creates a new array with every element in an array that pass a test
+array_name.reduce((total, value, index, array) => {})	-	Reduce the values of an array to a single value (going left-to-right)
+array_name.reduceRight((total, value, index, array) => {})	-	Reduce the values of an array to a single value (going right-to-left)
+array_name.every((value, index, array) => {})	-	Checks if every element in an array pass a test
+array_name.some((value, index, array) => {})	-	Checks if any of the elements in an array pass a test
+Array.from(any_iterable_object)	-	Creates a new array from an object
+array_name.keys(object_name)	-	Returns a Array Iteration Object, containing the keys of the original array
+array_name.entries(object_name)	-	Returns a key/value pair Array Iteration Object
+array_name.with(index, new_value)	-	Returns a new array with updated elements
+array_name.Spread (...any_iterable_object)
+SEARCHING ::
+------------
+array_name.indexOf(item_name)	-	Search the array for an element and returns its position
+array_name.lastIndexOf(item_name)	-	Search the array for an element, starting at the end, and returns its position
+array_name.includes(item_name)	-	Check if an array contains the specified element
+array_name.find((value, index, array) => {})	-	Returns the value of the first element in an array that pass a test
+array_name.findIndex((value, index, array) => {})	-	Returns the index of the first element in an array that pass a test
+array_name.findLast((value, index, array) => {})	-	Returns the value of the last element in an array that pass a test
+array_name.findLastIndex((value, index, array) => {})	-	Returns the index of the last element in an array that pass a test
+SPECIAL ::
+----------
+arr_name.fill(value, start, end)	-	Fill the elements in an array with a static value
+Array.isArray(arr)	-	Checks whether an object is an array
+Array.of(tem_1, item_2...)	-	Creates an array from a number of arguments
+array_name.valueOf()	-	Returns the primitive value of an array
+array_name.flatMap((item) => {...})	-	Maps all array elements and creates a new flat array
+
+
+array_name.toLocaleString()	-	Returns a localized string representing the calling array and its elements.
+.values()
+.observe()
+.toSource()
+.tounobser
+
+========================================================================================================================================
+
+MATH METHODS :::	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+----------------
+METHODS :: 
+----------
+Math.expm1(), Math.clz32(), Math.cbrt(), Math.cosh(), Math.acosh(), Math.sinh(), Math.asinh(), Math.tanh(), Math.atanh(), Math.atan(), Math.exp(), Math.round(), Math.ceil(), Math.floor(), Math.abs(), Math.atan2(), Math.imul(), Math.LN2, Math.PI, Math.sqrt( ), Math.SQRT1_2, Math.SQRT2, Math.log2(), Math.LOG10E, Math.log10(), Math.E(), Math.log1p(), Math.LN10, Math.LOG2E, Math.asin(), Math.acos(), Math.cos(), Math.tan(), Math.sin(), Math.min(), Math.max(), Math.sign( ), Math.pow(), Math.round( ), Math.fround(), Math.trunc(), Math.hypot(), Math.log(), Math.random()
+CONSTANTS ::
+------------
+Math.E, Math.PI, Math.SQRT2, Math.SQRT1_2, Math.LN2, Math.LN10, Math.LOG2E, Math.LOG10E 
+
+OBJECT METHODS :::	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+------------------
+CREATION ::
+const aobj_name = {key_1:value_1, key_2:value_2, ...};
+ACCESSING ITEM ::
+const item = obj_name[key_name]
+METHODS ::
+array_name.length
+array_name.toString()
+array_name.at(index_number)
+array_name.join()
+array_name.pop()
+array_name.push(...items)
+array_name.shift()
+array_name.unshift(...items)
+delete array_name[index_number]
+array_name.concat(arr1, arr2)
+array_name.copyWithin(index_where_to_set, start_index, end_index)
+array_name.flat()
+array_name.splice(pos, delete_count, ...items_to_add)
+array_name.toSpliced()
+array_name.slice(start, end)
+SORTING ::
+----------
+array_name.sort()
+array_name.reverse()
+array_name.toSorted()
+array_name.toReversed()
+Sorting Objects
+(Numeric Sort) array_name.sort(function(a, b){return a - b})
+(Random Sort)  array_name.sort(function(a, b){return 0.5 - Math.random()})
+(Random Sort)  array_name.sort(function(a, b){return a.key_name - b.key_name})
+Math.min.apply(null, arr_name) || Math.min(...arr_name)
+Math.max.apply(null, arr_name) || Math.max(...arr_name)
+ITERATING ::
+------------
+array_name.forEach((value, index, array) => {})
+array_name.map((value, index, array) => {})
+array_name.flatMap((value, index, array) => {})
+array_name.filter((value, index, array) => {})
+array_name.reduce((total, value, index, array) => {})
+array_name.reduceRight((total, value, index, array) => {})
+array_name.every((value, index, array) => {})
+array_name.some((value, index, array) => {})
+Array.from(any_iterable_object)
+array_name.keys(object_name)
+array_name.entries(object_name)
+array_name.with(index, new_value)
+array_name.Spread (...any_iterable_object)
+SEARCHING ::
+------------
+array_name.indexOf(item_name)
+array_name.lastIndexOf(item_name)
+array_name.includes(item_name)
+array_name.find((value, index, array) => {})
+array_name.findIndex((value, index, array) => {})
+array_name.findLast((value, index, array) => {})
+array_name.findLastIndex((value, index, array) => {})
+SPECIAL ::
+----------
+arr_name.fill(value, start, end)
+Array.isArray(arr)
+Array.of(tem_1, item_2...);
+array_name.valueOf()
+array_name.flatMap((item) => {...});
+array_name.flat(depth)
+arr_name.at(index)
+
+.toLocaleString()
+.values()
+.observe()
+.toSource()
+.tounobser
+
+
+
+
+
+
+
+
+
+
+
+
+
+Object related properties/methods : - Properties:
+					Object.prototype
+					Object.prototype.__prototype__
+					Object.prototype.constructor
+
+				      Methods :
+					Object related methods :-
+					Object.entries( )
+					Object.getPrototypeOf( )
+					Object.create( )
+					Object.seal( )
+					Object.isSealed( )
+					Object.keys( )
+					Object.values( )
+					Object.freeze( )
+					Object.isFrozen( )
+					Object.assign( )
+					Object.is( )
+					Object.defineProperties( )
+					Object.defineProperty()
+					Object.fromEntries()
+					Object.getOwnPropertyDescriptor()
+					Object.getOwnPropertyDescriptors()
+					Object.getOwnPropertySymbols()
+					Object.getPrototypeOf()
+					Object.isExtensible()
+					Object.preventExtensions()
+					Object.prototype.__defineGetter__()
+					Object.prototype.__defineSetter__()
+					Object.prototype.__lookupGetter__()
+					Object.prototype.__lookupSetter__()
+					Object.prototype.hasOwnProperty()
+					Object.prototype.isPrototypeOf()
+					Object.prototype.property.isEnumerable()
+					Object.prototype.toLocaleString()
+					Object.prototype.toSource()
+					Object.prototype.toString()
+					Object.prototype.valueOf()
+					Object.setPrototypeOf()
+					Object.values()
+
+//Object.prototype
+// Proxy() Object
+
+========================================================================================================================================
+
+STRING METHODS :::	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+------------------
+CREATION ::
+let string_name = "value";
+METHODS ::
+string_name.length
+string_name.charAt(index)
+string_name.charCodeAt(index)
+string_name.at(index)
+string_name[index]
+string_name.slice(start, end)
+string_name.substring(start, end)
+string_name.substr(start, length)
+string_name.toUpperCase()
+string_name.toLowerCase()
+string_name.concat(" ",  another_string)
+string_name.trim()
+string_name.trimStart()
+string_name.trimEnd()
+string_name.padStart(length, "str_want_to_add")
+string_name.padEnd(length, "str_want_to_add")
+string_name.repeat(count)
+string_name.replace(str or regex, new_value)
+string_name.replaceAll(str or regex, new_value)
+string_name.split(separator)
+SEARCHING ::
+------------
+String indexOf(str)
+String lastIndexOf(str)
+String search(str or regex)
+String match(str or regex)
+String matchAll(str or regex)
+String includes(str)
+String startsWith(str)
+String endsWith(str)
+ITTERATION ::
+-------------
+METHOD 1 :: For...of loop
+for (const char of str) {
+  console.log(char);
+}
+METHOD 2 :: For loop
+for (let i = 0; i < str.length; i++) {
+  console.log(str[i]);
+}
+METHOD 3 :: While loop
+let i = 0;
+while (i < str.length) {
+  console.log(str[i]);
+  i++;
+}
+METHOD 4 :: forEach() method
+str.forEach(char => console.log(char));
+METHOD 5 :: charAt() method
+for (let i = 0; i < str.length; i++) {
+  const char = str.charAt(i);
+  console.log(char);
+}
+SPECIAL ::
+----------
+arr_name.fill(value, start, end)
+Array.isArray(arr)
+Array.of(tem_1, item_2...);
+array_name.valueOf()
+array_name.flatMap((item) => {...});
+array_name.flat(depth)
+arr_name.at(index)
+
+.toLocaleString()
+.values()
+.observe()
+.toSource()
+.tounobser
+
+String related properties/methods :- 
+
+					String.prototype.constructor
+					String.length
+					String.charAt()
+					String.charCodeAt()
+					String.codePointAt()
+					String.concat()
+					String.includes()
+					String.endsWith()
+					String.indexOf()
+					String.lastIndexOf()
+					String.localeCompare()
+					String.match()
+					String.matchAll()
+					String.normalize()
+					String.padEnd()
+					String.padStart()
+					String.quote() 
+					String.repeat()
+					String.replace()
+					String.search()
+					String.slice()
+					String.split()
+					String.startsWith()
+					String.substr() 
+					String.substring()
+					String.toLocaleLowerCase()
+					String.toLocaleUpperCase()
+					String.toLowerCase()
+					String.toSource() 
+					String.toString()
+					String.toUpperCase()
+					String.trim()
+					String.trimStart()
+					String.trimLeft()
+					String.trimEnd()
+					String.trimRight()
+					String.valueOf()
+					String.anchor()
+					String.big() 
+					String.blink() 
+					String.bold() 
+					String.fixed() 
+					String.fontcolor() 
+					String.fontsize() 
+					String.italics() 
+					String.link() 
+					String.small() 
+					String.strike() 
+					String.sub()
+					String.sup()
+
+

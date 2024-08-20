@@ -1,0 +1,195 @@
+Math operations : - 
+					Math.expm1()
+					Math.clz32()
+					Math.cbrt()
+					Math.cosh()
+					Math.acosh()
+					Math.sinh()
+					Math.asinh()
+					Math.tanh()
+					Math.atanh()
+					Math.atan()
+					Math.exp()
+					Math.round()
+					Math.ceil()
+					Math.floor()
+					Math.abs()
+					Math.atan2()
+					Math.imul()
+					Math.LN2
+					Math.PI
+					Math.sqrt( )
+					Math.SQRT1_2
+					Math.SQRT2
+					Math.log2()
+					Math.LOG10E
+					Math.log10()
+					Math.E()
+					Math.log1p()
+					Math.LN10
+					Math.LOG2E
+					Math.asin()
+					Math.acos()
+					Math.cos()
+					Math.tan()
+					Math.sin()
+					Math.min()
+					Math.max()
+					Math.sign( )
+					Math.pow()
+					Math.round( )
+					Math.fround()
+					Math.trunc()
+					Math.hypot()
+					Math.log()
+					Math.random()
+
+Array related properties/methods : - Properties :
+					Array.length
+					Array.prototype
+
+				     Methods :
+					.push(...items)
+					.pop()
+					.shift()
+					.unshift(...items)
+					.splice(pos, deleteCount, ...items)
+					.slice(start, end)
+					.concat(...items)
+
+					.indexOf(item, pos)
+					.lastIndexOf(item, pos)
+					.includes(value)
+					.find(func)
+					.filter(func)
+					.findIndex(func)
+
+					.forEach(func)
+
+					.map(func)
+					.sort(func)
+					.reverse()
+					.split
+					.join
+					.reduce(func, initial)
+
+					Array.isArray(arr)
+					.some(func)
+					.every(func)
+					.fill(value, start, end)
+					.copyWithin(target, start, end)
+					.of()
+					.from()
+					.toString()
+					.toLocaleString()
+					.entries()
+					.findIndex()
+					.keys()
+					.reduceRight()
+					.some()
+					.values()
+					.flat()
+					.flatMap()
+					.observe()
+					.toSource()
+					.tounobserve()
+
+
+Object related properties/methods : - Properties:
+					Object.prototype
+					Object.prototype.__prototype__
+					Object.prototype.constructor
+
+				      Methods :
+					Object related methods :-
+					Object.entries( )
+					Object.getPrototypeOf( )
+					Object.create( )
+					Object.seal( )
+					Object.isSealed( )
+					Object.keys( )
+					Object.values( )
+					Object.freeze( )
+					Object.isFrozen( )
+					Object.assign( )
+					Object.is( )
+					Object.defineProperties( )
+					Object.defineProperty()
+					Object.fromEntries()
+					Object.getOwnPropertyDescriptor()
+					Object.getOwnPropertyDescriptors()
+					Object.getOwnPropertySymbols()
+					Object.getPrototypeOf()
+					Object.isExtensible()
+					Object.preventExtensions()
+					Object.prototype.__defineGetter__()
+					Object.prototype.__defineSetter__()
+					Object.prototype.__lookupGetter__()
+					Object.prototype.__lookupSetter__()
+					Object.prototype.hasOwnProperty()
+					Object.prototype.isPrototypeOf()
+					Object.prototype.property.isEnumerable()
+					Object.prototype.toLocaleString()
+					Object.prototype.toSource()
+					Object.prototype.toString()
+					Object.prototype.valueOf()
+					Object.setPrototypeOf()
+					Object.values()
+
+//Object.prototype
+// Proxy() Object
+
+String related properties/methods :- 
+
+					String.prototype.constructor
+					String.length
+					String.charAt()
+					String.charCodeAt()
+					String.codePointAt()
+					String.concat()
+					String.includes()
+					String.endsWith()
+					String.indexOf()
+					String.lastIndexOf()
+					String.localeCompare()
+					String.match()
+					String.matchAll()
+					String.normalize()
+					String.padEnd()
+					String.padStart()
+					String.quote() 
+					String.repeat()
+					String.replace()
+					String.search()
+					String.slice()
+					String.split()
+					String.startsWith()
+					String.substr() 
+					String.substring()
+					String.toLocaleLowerCase()
+					String.toLocaleUpperCase()
+					String.toLowerCase()
+					String.toSource() 
+					String.toString()
+					String.toUpperCase()
+					String.trim()
+					String.trimStart()
+					String.trimLeft()
+					String.trimEnd()
+					String.trimRight()
+					String.valueOf()
+					String.anchor()
+					String.big() 
+					String.blink() 
+					String.bold() 
+					String.fixed() 
+					String.fontcolor() 
+					String.fontsize() 
+					String.italics() 
+					String.link() 
+					String.small() 
+					String.strike() 
+					String.sub()
+					String.sup()
+
+

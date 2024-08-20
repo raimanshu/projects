@@ -1,0 +1,64 @@
+# Analysis of Algorithms
+https://www.bigocheatsheet.com/
+codewith harry, youtube - not well
+Gate smashers, youtube - good for understanding types of complexity only
+Mycodeschool - 3rd video was good only
+Neso academy (RECOMMENDED)
+Uncode
+Unacademy
+Luv
+Lecture 41 love babbar
+
+# Searching and Sorting
+Recursion (By Faraz)
+Gate smashers
+
+Greedy Algorithms
+
+Selection Sort
+
+Knap sack Problem
+
+Minimum Spannig tree
+
+Single source shortest path problem
+
+Job Scheduling Problem
+
+Prim’s Minimal Spanning Tree
+
+Dijkastra’s Minimal Spanning Tree
+
+Kruskal’s Minimal Spanning Tree
+
+Huffmann Coding
+
+Ford-Fulkerson Algorithm
+
+Dynamic Programming (By faraz)
+
+Pattern Searching
+
+String Algorithms
+
+Backtracking Algorithms
+
+Divide and Conquer Algorithms
+
+Geometric Algorithms
+
+Mathematical Algorithms
+
+Bit Algorithms
+
+Graph Algorithms
+
+Randomized Algorithms
+
+Branch and Bound Algorithms
+
+DFS
+
+BFS
+
+All pair shortest path

@@ -1,0 +1,75 @@
+Folder structure 
+https://medium.com/@kumarvinoth/finally-a-better-react-js-folder-structure-821a2210835
+
+
+code with harry
+
+coder dost (advanced, for concepts in functional components only)
+
+2 codevolution Recommended
+
+1 code with mosh
+
+3 code step by step  (for concepts )
+
+net ninja
+
+Dave gray
+
+freecodecamp
+
+WsCube Tech (Good for concepts)
+
+Javascript Mastery (last video)
+
+Coder Dost ( for concepts )
+
+Simplilearn
+
+Thapa technical
+
+PRACTICE
+--------
+https://playcode.io/react
+https://react-tutorial.app/app.html?id=328
+
+
+
+TOPICS
+-------
+virtual DOM
+CDN
+NPM
+NPX vs NPM vs NVM
+package-lock.json vs package.json
+why use JSX 
+variable vs state
+useState
+props vs parameters
+jquery toggle vs react toggle
+phases vs life cycle
+componentDidMount
+componentDidUpdate 
+previousProps vs previousState vs snapshot
+previous state and previous props in the functional component and class component
+useEffect
+Fragments
+Pure component 
+useHook
+useMemo vs componentDidUpdate
+Ref
+UseRef 
+forward ref
+controlled vs uncontrolled components
+inside inputbox value vs defaultvalue ??
+High order component (HOC)
+Routing -  Browserrouter, Link, Route, Switch ??
+POST vs PATCH vs PUT
+Stateless Functional Components
+Destructuring Arguments
+useReducers
+useContext
+create custom hooks
+memory leak in react
+axios
+useMemo vs useCallback

@@ -1,0 +1,185 @@
+Javascript Queries
+
+ collection types in js,
+ Create component that uses and operations on oops concepts and Data structures, Understand implementation of auth/gues Guards,
+-entryComponents - https://www.geeksforgeeks.org/what-is-entrycomponents-in-angular-ngmodule/#:~:text=What%20is%20entryComponents%20in%20angular%20ngModule%20%3F,-Last%20Updated%20%3A%2014&text=The%20entryComponent%20is%20the%20component,declared%20in%20the%20component%20template. 
+-Difference between - slice and splice, require and import, shallow cloning and deep cloning, angular and angularjs, Ob
+
+Map vs Object
+https://www.geeksforgeeks.org/map-vs-object-in-javascript/ 
+https://dandkim.com/js-map-vs-object/ (Recommended)
+https://codeburst.io/array-vs-set-vs-map-vs-object-real-time-use-cases-in-javascript-es6-47ee3295329b 
+-------------------------------------------------------------------------------------------------------------------------
+Let, const and var
+https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/#:~:text=var%20declarations%20are%20globally%20scoped%20or%20function%20scoped%20while%20let,the%20top%20of%20their%20scope. 
+-------------------------------------------------------------------------------------------------------------------------
+Curry function
+https://blog.bitsrc.io/understanding-currying-in-javascript-ceb2188c339 
+https://medium.com/javascript-scene/curry-and-function-composition-2c208d774983 
+-------------------------------------------------------------------------------------------------------------------------
+Pure / Accessor  and impure / Mutator functions
+https://dev.to/sanspanic/pure-vs-impure-functions-50aj 
+-----------------------------------------------------------------------------------------------------------------------
+High order functions and low order functions
+https://medium.com/functional-javascript/higher-order-functions-78084829fff4 
+
+Prototype chaining
+----------------------------------------------------------------------------------------------------------------------
+Call, apply vs bind
+https://www.hacksparrow.com/javascript/bind-vs-apply-vs-call.html 
+https://dev.to/hebashakeel/difference-between-call-apply-and-bind-4p98 
+----------------------------------------------------------------------------------------------------------------------
+Javascript vs Ecmascript vs typescript
+https://www.guru99.com/typescript-vs-javascript.html 
+https://www.javatpoint.com/javascript-vs-typescript 
+https://hackr.io/blog/typescript-vs-javascript  (Recommended)
+-----------------------------------------------------------------------------------------------------------------------
+Slice vs splice
+https://www.tothenew.com/blog/javascript-splice-vs-slice/ 
+https://www.geeksforgeeks.org/what-is-the-difference-between-array-slice-and-array-splice-in-javascript/ 
+https://www.freecodecamp.org/news/lets-clear-up-the-confusion-around-the-slice-splice-split-methods-in-javascript-8ba3266c29ae/ 
+https://www.freecodecamp.org/news/javascript-array-slice-vs-splice-whats-the-difference/ 
+-----------------------------------------------------------------------------------------------------------------------------
+=== vs ==
+https://www.guru99.com/difference-equality-strict-operator-javascript.html 
+
+https://javascript.info/types (Recommended)
+https://javascript.info/comparison (Recommended)
+--------------------------------------------------------------------------------------------------------------------------
+Lamda arrow functions
+https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html#:~:text=JavaScript%20arrow%20functions%20are%20roughly,code%20where%20they%20are%20defined. 
+-------------------------------------------------------------------------------------------------------------------------
+Currying
+--------------------------------------------------------------------------------------------------------------------------
+IIFE
+https://www.tutorialsteacher.com/javascript/immediately-invoked-function-expression-iife 
+https://www.geeksforgeeks.org/javascript-immediately-invoked-function-expressions-iife/ 
+-----------------------------------------------------------------------------------------------------------------------------
+Hoisting
+https://www.digitalocean.com/community/tutorials/understanding-hoisting-in-javascript 
+https://www.programiz.com/javascript/hoisting 
+--------------------------------------------------------------------------------------------------------------------------
+Classes in ES6
+https://www.javatpoint.com/es6-classes 
+https://exploringjs.com/es6/ch_classes.html 
+https://www.geeksforgeeks.org/es6-classes/#:~:text=There%20are%20two%20types%20of,from%20parent%20class%20except%20constructor 
+-------------------------------------------------------------------------------------------------------------------------------
+Closure
+https://medium.com/@prashantramnyc/javascript-closures-simplified-d0d23fa06ba4 
+https://www.javascripttutorial.net/javascript-closure/ 
+-----------------------------------------------------------------------------------------------------------------------------
+Service worker vs web workers ve web sockets
+https://bitsofco.de/web-workers-vs-service-workers-vs-worklets/#:~:text=Service%20workers%20are%20a%20proxy,work%20from%20the%20main%20thread. 
+https://stackoverflow.com/questions/38632723/what-can-service-workers-do-that-web-workers-cannot 
+https://aarontgrogg.com/blog/2015/07/20/the-difference-between-service-workers-web-workers-and-websockets/ (Recommended)
+--------------------------------------------------------------------------------------------------------------------------
+indexDB
+https://www.javascripttutorial.net/web-apis/javascript-indexeddb/ 
+https://medium.com/@AndyHaskell2013/build-a-basic-web-app-with-indexeddb-8ab4f83f8bda 
+-----------------------------------------------------------------------------------------------------------------------------
+Cookie
+-------------------------------------------------------------------------------------------------------------------
+Local storage, session storage an cookie
+https://wpreset.com/localstorage-sessionstorage-cookies-detailed-comparison/ 
+https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies 
+------------------------------------------------------------------------------------------------------------------------------
+toString() vs String()
+https://stackoverflow.com/questions/3945202/whats-the-difference-between-stringvalue-vs-value-tostring 
+
+—---------------------------------------------------------------------------------------------------------------------------
+Web storage
+Storage event and event handler
+Callback hell 
+Serversent events
+Callback in callback
+Promise.all
+Window vs document
+Event flow - event capturing and event bubbling
+Document load vs DOMContentLoaded
+Native, host and user objects
+Pros and cons of promises over callbacks
+Attribute vs property
+Same origin policy
+Java vs js
+104 What are the steps involved in return false
+BOM
+setTimeout vs setInterval
+Event delegation
+Ecmascript vs javascript
+-------------------------------------------------------------------------------------------------------------------------
+PWA
+https://www.coredna.com/blogs/progressive-web-app 
+------------------------------------------------------------------------------------------------------------------------
+Arguments object
+Pros and cons for, for...of, for….in, foreach
+App shell model
+Polyfill
+Regex object
+Why using {} instead new Object();
+Regex object
+Debugger statement
+Polling
+Null vs undefined
+Window vs document
+http://net-informations.com/js/iq/screen.htm 
+https://stackoverflow.com/questions/9895202/what-is-the-difference-between-window-screen-and-document-in-javascript 
+------------------------------------------------------------------------------------------------------------------------
+Undeclared vs undefined
+Global vs local variable
+Event flow, event bubbling vs event capturing
+DOMContentLoaded vs document load
+
+Proto vs prototype
+https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript 
+
+clearTimeout ve clearInterval
+ARGUMENTS OBJECT	
+App Shell 
+Break vs continue
+Rest vs spread operator
+Proxy object
+Object.freeze vs Object.seal
+weakSet vs Set
+Map vs WeakMap
+encodeURI vs decodeURI
+Eval vs uneval
+Anonymous function vs iife functions
+Get and defineProperty of object
+Switch vs else if
+
+Primitive and no-primitive data type
+Entry controlled and exit controlled loops
+Intl object
+Event loop vs event queue
+Decorator
+248 How do you get meta data of a module
+Object Initializer
+Obfuscation
+Obfuscation vs Encryption
+Enum
+Object.getOwnPropertyNames() ve Object.keys()
+Void operator
+With statement
+Typed arrays
+Dynamic imports
+Module loaders
+Collation
+Array vs array-like objects
+330 What paradigm is Javascript
+Parameter vs argument
+Shallow vs Deep
+Dir method
+Function constructor vs function declaration
+function and class declarations
+ arguments object and rest parameter
+ spread operator and rest parameter
+
+
+
+
+
+
+
+
+
+

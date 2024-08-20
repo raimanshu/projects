@@ -1,0 +1,36 @@
+Based on Asset
+Equity
+Debt
+Liquid 
+Gold 
+REITs
+Hybrid
+
+Types of Equity MF
+Large Cap Fund
+Mid Cap Fund
+Small Cap Fund
+Sector Fund 
+Diversified Equity Fund 
+Dividend Yield Schemes
+ELSS 
+Thematic Fund 
+Debt MF
+
+Types of Debt MF
+Gilt Fund 
+Junk Bond Schemes
+Fixed Maturity Plans
+Liquid Funds - for short term 
+
+
+Based on buy/sell
+Open Ended Fund
+Close Ended Fund
+Interval Fund
+
+Based on managing
+Actively Managed Fund
+Passively Managed Fund
+
+

@@ -1,0 +1,59 @@
+# Types of Commercial Banks
+Public - SBI, PNB, CBI
+Private - HDFC, Axis, Federal
+Foreign - citi, HSBC, RBS
+
+# Types of bank accounts
+Current Account
+Savings Account
+Fixed Deposit Account
+Recurring Deposit Account
+Demand Deposit Account (types - Savings, Current)
+Salary Account
+NRI Account
+Demat Account
+
+# Current Account
+- used by businessmen
+- No maximum amount holding limit
+- minimum amount balance is high 
+- No or minimum return interest
+
+
+Savings Account
+- used by common people
+- types - Regular savings acc, Zero-balance savings acc, Women's savings acc, Kids savings acc, 
+Senior citizen savings acc, Family savings acc, 
+- minimum amount balance is low 
+- bank offer return interest (3% - 6%)
+
+Fixed Deposit Account (FD)
+- bank offer return interest on fixed amount for fixed time period
+- Time period 7 days to 10 years
+- Amount is paid one time
+
+Recurring Deposit Account
+- bank offer return interest on fixed amount for fixed time period
+- Time period 6 months to 10 years
+- installments can be paid monthly,quaterly or yearly
+
+Demand Deposit Account (DD)
+- whenever deposit / withdraw money
+
+Salary Account
+- used by companies for employees
+- bank offer no return interest
+- zero balance account
+
+NRI Account / overseas account
+NRO Non Resident ordinary savings account
+- store money in the form of Indian currency but tax will apply 
+NRE Non Resident external savings account
+- store money from overseas only and tax will not apply
+FCNR Foreign currency Non Resident account
+- store money in the form of Foreign currency and tax will not apply 
+
+
+OBSERVATION
+------------
+- Fixed Deposits account can be used to reduce income tax

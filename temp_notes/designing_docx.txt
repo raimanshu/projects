@@ -1,0 +1,73 @@
+Design Learning
+
+# html_css_projects / Bethany
+       - always first check general properties of the page like - font-size, font-family, letter-spacing,line-spacing etc
+       - d-flex justify-content-between align-content-center ----- to align items and to maintain responsiveness use d-flex + whenever we have to write code in next lines in a card or form always used-flex (very important) + can be written with col-* div
+       - instead of taking next div for next section take section tag
+       - Always remember where to use rows vs list-inline
+       - How to decide which h tag we have to use ?
+       - How to make a carousal with two cols
+       - difference between list-inline vs list-group-horizontal
+       - hover over card show effect on card header image section ??
+       https://www.ordinarycoders.com/blog/article/codepen-bootstrap-card-hovers
+       https://codepen.io/rus-it/pen/dyMxVRW
+       - zoom in image in a div
+       http://vizua.net/image-zoom-on-hover-inside-a-div
+       - show or hide elements on hover on image inside that image div ??
+       - to make background opacity less and show text and other things bright use before on main tag then just after that inside tag use position relative
+       - To make list-style-type of user mind ---- follow about section ul
+
+       -Animations https://bootsnipp.com/tags/animation/4
+       https://mdbootstrap.com/docs/b4/jquery/css/animations/
+       https://uicookies.com/bootstrap-animation/
+       https://animate.style/
+       https://thoughtbot.com/blog/css-animation-for-beginners
+       https://www.kirupa.com/html5/learn_animation.htm
+       https://designmodo.com/jquery-techniques-tutorials/
+
+
+#html_css_projects/blabla_company_theme
+<!-- -where to use jumbotron, card, well, panel ??
+   -we can add color_name with text-, and bg-
+   -we can use form-inline after giving size attribute to input, instead container, padding-x or margin-x
+   -How to decide which one to use h1,h2,h3,h4,h5,h6
+   -<h2><strong>Text : </strong>test</h2> to make size same with bold text title in same line -> not using label inside
+   <p></p>
+   - always start new line with new row class.
+   - how to make row div responsive when for loop is involved ??
+   - change fontawsome size using class - fa-6x, fa-2x, fa-lg, .fa { transform: scale(1.5,1); }
+   - Default properties of form-group, form-control, row. How to use them ??
+   - put ml-auto to make links in left inside nav
+   - when to use <header></header>, <footer></footer>
+   - Vertical allign items in a div - https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap
+   - put transition on hover border shadow + animation
+   - How to make later rows come first
+
+
+#html_css_projects/jonny_legend
+ - always use ul and li to show lists in a row instead p tag 
+    - Read background properties carefully
+    - If padding or margin does not set/looks good to fonts try to change  -  letter-spacing, line-height
+
+
+Points To Remember
+
+For SVG
+- https://bgjar.com/ 
+
+For icons
+- https://www.flaticon.com/ 
+
+For creating images (free illustrator)
+Free Illustrator Online Editor (fixthephoto.com) 
+Photopea | Online Photo Editor 
+
+Powtoons
+Animaker
+Moovly
+Stykz
+Opentoonz
+
+For changing theme color of images
+https://www.imgonline.com.ua/sitemap.php 
+https://manytools.org/image/colorize-filter/ 

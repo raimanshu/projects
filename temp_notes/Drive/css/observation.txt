@@ -1,0 +1,31 @@
+OBSERVATION
+
+List of CSS properties
+https://www.w3schools.com/cssref/ (Recommended)
+https://www.tutorialrepublic.com/css-reference/css3-properties.php 
+CSS selectors
+https://www.w3schools.com/cssref/css_selectors.asp (Recommended)
+CSS functions
+https://www.w3schools.com/cssref/css_functions.asp 
+CSS save webfonts
+https://www.w3schools.com/cssref/css_websafe_fonts.asp 
+CSS animateable properties
+https://www.w3schools.com/cssref/css_animatable.asp 
+CSS units
+https://www.w3schools.com/cssref/css_units.asp 
+
+Solutions
+Center a div horizontly
+https://stackoverflow.com/questions/114543/how-to-horizontally-center-an-element 
+Center a div horizontally and vertically
+https://stackoverflow.com/questions/19461521/how-to-center-an-element-horizontally-and-vertically 
+Center a div  vertically
+https://stackoverflow.com/questions/396145/how-can-i-vertically-center-a-div-element-for-all-browsers-using-css 
+Transition effects
+https://codepen.io/msbtterswrth/pen/LNgXqj 
+https://codepen.io/vulchivijay/pen/KwBGjX 
+https://codepen.io/augur521/pen/WNXmeK 
+https://codepen.io/javierlopez/pen/GwVyJb 
+
+
+

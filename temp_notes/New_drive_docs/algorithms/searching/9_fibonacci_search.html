@@ -1,0 +1,139 @@
+Fibonacci Search is a comparison-based technique that uses Fibonacci numbers to
+search an element in a sorted array. <br />
+
+Works for sorted arrays, A Divide and Conquer Algorithm, Has Log n time
+complexity. <br />
+
+https://www.geeksforgeeks.org/fibonacci-search/
+
+<script>
+  // Method 1 : Recursive method
+
+  // Javascript program for Fibonacci Search
+
+  /* Returns index of x if present, else returns -1 */
+  function recursiveFibMonaccianSearch(arr, n, x) {
+    /* Initialize fibonacci numbers */
+    let fibMMm2 = 0; // (m-2)'th Fibonacci No.
+    let fibMMm1 = 1; // (m-1)'th Fibonacci No.
+    let fibM = fibMMm2 + fibMMm1; // m'th Fibonacci
+
+    /* fibM is going to store the smallest Fibonacci 
+    Number greater than or equal to n */
+    while (fibM < n) {
+      fibMMm2 = fibMMm1;
+      fibMMm1 = fibM;
+      fibM = fibMMm2 + fibMMm1;
+    }
+
+    // Marks the eliminated range from front
+    let offset = -1;
+
+    /* while there are elements to be inspected. Note that 
+    we compare arr[fibMm2] with x. When fibM becomes 1, 
+    fibMm2 becomes 0 */
+
+    while (fibM > 1) {
+      // Check if fibMm2 is a valid location
+      let i = Math.min(offset + fibMMm2, n - 1);
+
+      /* If x is greater than the value at index fibMm2, 
+        cut the subarray array from offset to i */
+      if (arr[i] < x) {
+        fibM = fibMMm1;
+        fibMMm1 = fibMMm2;
+        fibMMm2 = fibM - fibMMm1;
+        offset = i;
+      } else if (arr[i] > x) {
+        /* If x is less than the value at index fibMm2, 
+        cut the subarray after i+1 */
+        fibM = fibMMm2;
+        fibMMm1 = fibMMm1 - fibMMm2;
+        fibMMm2 = fibM - fibMMm1;
+      } else return i;
+
+      /* element found. return index */
+    }
+
+    /* comparing the last element with x */
+    if (fibMMm1 && arr[n - 1] == x) {
+      return n - 1;
+    }
+
+    /*element not found. return -1 */
+    return -1;
+  }
+
+  console.log(
+    "Index of 18: " +
+      recursiveFibMonaccianSearch(
+        [10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47],
+        15,
+        18
+      )
+  );
+</script>
+
+<script>
+  // Method 2 : Iterative method
+
+  function iterativeFibonacciSearch(arr, x) {
+    var n = arr.length;
+    if (n === 0) {
+      return -1;
+    }
+
+    // Initialize Fibonacci numbers
+    var fib1 = 0;
+    var fib2 = 1;
+    var fib3 = fib1 + fib2;
+
+    // Find the smallest Fibonacci number greater than or equal to n
+    while (fib3 < n) {
+      fib1 = fib2;
+      fib2 = fib3;
+      fib3 = fib1 + fib2;
+    }
+
+    // Initialize variables for the current and previous split points
+    var offset = -1;
+    while (fib3 > 1) {
+      var i = Math.min(offset + fib2, n - 1);
+
+      // If x is greater than the value at index i,
+      // move the split point to the right
+      if (arr[i] < x) {
+        fib3 = fib2;
+        fib2 = fib1;
+        fib1 = fib3 - fib2;
+        offset = i;
+
+        // If x is less than the value at index i,
+        // move the split point to the left
+      } else if (arr[i] > x) {
+        fib3 = fib1;
+        fib2 = fib2 - fib1;
+        fib1 = fib3 - fib2;
+
+        // If x is equal to the value at index i, return the index
+      } else {
+        return i;
+      }
+    }
+
+    // If x is not found in the array, return -1
+    if (fib2 === 1 && arr[offset + 1] === x) {
+      return offset + 1;
+    } else {
+      return -1;
+    }
+  }
+
+  console.log(
+    "Index of 18: " +
+      iterativeFibonacciSearch(
+        [10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47],
+        18
+      )
+  );
+</script>

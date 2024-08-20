@@ -1,0 +1,20 @@
+HTML & CSS Quries
+HTML
+Canvas vs SVG
+https://www.educba.com/svg-vs-canvas/ 
+
+CSS
+Animation vs Transitions
+https://www.geeksforgeeks.org/difference-between-animation-and-transition-in-css/#:~:text=CSS%20transitions%20allow%20you%20to,do%20not%20take%20effect%20immediately.&text=fig2%3A%20Animation%20starting%20at%20point,with%20other%20Points%20in%20between. 
+
+Bootstrap 3 vs Bootstrap 4
+https://www.quackit.com/bootstrap/bootstrap_4/differences_between_bootstrap_3_and_bootstrap_4.cfm 
+
+Flex vs Grid
+https://www.geeksforgeeks.org/comparison-between-css-grid-css-flexbox/ 
+
+Inline vs Inline block vs block
+https://www.samanthaming.com/pictorials/css-inline-vs-inlineblock-vs-block/ 
+https://dev.to/shimphillip/inline-vs-inline-block-vs-block-280h 
+
+

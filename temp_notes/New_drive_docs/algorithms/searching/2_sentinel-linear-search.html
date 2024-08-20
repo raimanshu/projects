@@ -1,0 +1,57 @@
+Points to remember <br /><br />
+
+Sentinel linear search is a variation of the standard linear search algorithm
+used to find a target value in an array or list. The basic idea behind this
+algorithm is to add a sentinel value at the end of the array which is equal to
+the target value we are looking for. This helps to avoid checking the array
+boundary condition during each iteration of the loop, as the sentinel value acts
+as a stopper for the loop. <br /><br />
+
+Time Complexity (where 'n' is the size of the list.) <br /><br />
+Best Case - O(1) <br />
+Worst Case - O(n) <br />
+Average Case - O(n) <br />
+Space Complexity - O(n) <br />
+<br />
+
+Implementation ways -- Method 1 & Method 2 <br />
+
+https://www.geeksforgeeks.org/sentinel-linear-search/
+
+<script>
+  // Method 1 : Iterative method
+  function iterativeSentinelLinearSearch(arr_var, required_value) {
+    // Store the last element of the array
+    let last = arr_var[arr_var.length - 1];
+
+    // Replace the last element of the array with the required value
+    array[array.length - 1] = required_value;
+
+    // Initialize the index
+    let i = 0;
+
+    // Check if the array element is equal to the required_value
+    while (arr_var[i] !== required_value) {
+      i++;
+    }
+
+    // Replace the last element of the array with the stored last element
+    arr_var[arr_var.length - 1] = last;
+
+    // Check if the required_value is found in the array
+    if (i < arr_var.length - 1 || last == required_value) {
+      return i;
+    } else {
+      return -1;
+    }
+  }
+
+  console.log(
+    "Element found at index " +
+      iterativeSentinelLinearSearch([3, 5, 6, 8, 9, 10], 6, 6)
+  );
+
+
+  // Method 2: Recursive method
+
+</script>

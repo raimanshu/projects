@@ -1,0 +1,72 @@
+# To read docs
+https://devdocs.io/angular~13/
+
+# Node - Angular version comparision list
+https://gist.github.com/LayZeeDK/c822cc812f75bb07b7c55d07ba2719b3 
+
+# Node version list link
+https://nodejs.org/download/release/
+
+# Install agular specific version
+npm install -g @angular/cli@version
+
+Safe - ng 11.2.7, node 10.13.0
+
+# Clean cache / Uninstall angular
+npm install -g @angular/cli
+npm cache clean --force
+
+# For node and angular integration
+https://edupala.com/integrating-angular-on-node-js/
+
+DOUBTS ::
+Why do we node/npm to install angular ?
+Uses of Angular CLI ?
+How the control flow of an angular project starts ?
+What is  bootstrapModule() ?
+What are polyfills.ts ?
+Folder structure of angular
+Inside package.json, dependencies vs devDependencies ?
+What is webpack ?
+What is Revealing Module pattern ?
+What is Protype pattern ?
+What is Hot Module Replacement (HMR) ?
+AngularJS vs Angular
+What happens with Angular 3 
+What is cohesion ?
+Difference between class and interface ?
+Can a class and an interface be used interchangebly ?
+Difference between public, private and protected in TS ?
+Why do we use access modifiers in Constructors in TS?
+Can we use ? operator as first param only in a function ? 
+What are properties in TS ?
+What are modules in TS ?
+What is a decorator ?
+Why do we use selector ?
+template vs templateUrl
+What are declarations,imports, providers, bootstrap does ?
+What is DOM ?
+Why do we use services in different file ?
+- If we write the service logic inside component file it will be tightly coupled with the component
+- we have to repeat this logic over and over in different required places of the project
+- a component doesnot include logic other than presentation logic
+Coupling vs cohession ?
+What is singleton pattern ?
+Where to use string interpolation and property binding ? 
+DOM vs HTML ?
+What is $event ?
+What is DOM Tree ?
+Event bubbling ?
+What is ngModel ?
+What is BrowserModule ?
+CommonModule?
+PipeTransform ?
+Component API ?
+What is Event EventEmitter ?
+ViewEncapsulation and it's types ?
+Shadow DOM ?
+ng-content vs ng-container ?
+How many ways event binding,style binding, attribute binding, class binding can be used ?
+Why we use trackby ?
+What are directives ?
+What are HostListener, ElementRef, nativeElement ?

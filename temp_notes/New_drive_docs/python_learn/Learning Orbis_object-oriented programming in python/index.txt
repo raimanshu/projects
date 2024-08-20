@@ -1,0 +1,102 @@
+https://www.youtube.com/watch?v=CD6MJ9pEn2k&list=PLWF9TXck7O_zuU2_BVUTrmGMCXYSYzjku&index=1
+
+
+Lesson-01 | Introduction of Object-Oriented Programming
+- procedural programming - concept of procedural concept is used, procedures also called routines or sub routines or functions simply contain a series of computational steps to be carried out, It is a top-down approch
+- object oriented programming - it's about encapsulating data and behaviour into objects
+- In OOP we create objects that have attributes similar to real life objects. The real life objects have some properties and they can perform some functions. Likewise in OOP the objects we create have properties and functions.
+- objects are created by a class. A class contains complete design parameters of it's objects and we can create as many objects as we want from that class. Eg - list is built-in class and we can always create as many list objects as required.
+- Think of class as a factory where we set all parameters and functionalities for the products being manufactured and the objects are the products.
+- type(variable_name) - to check it's data type 
+- class is also called as type but we will be using the term class rather than type.
+The object created from a class is also known as the instance of the class
+- isinstance(object_name, class_name) - to checkif an object weather it belongs to that class 
+- A class object contains two types of information termed as attributes of the object - property & methods 
+- Data which defines the state of the object and also known as property
+- Function that defines the behaviour of that object and also known as method 
+- The attributes  (data and functions/methods) of an object can be accessed using dot notation Eg a.append(3)
+- The difference
+...........CONTD
+
+Lesson-02 | Creating Our First Class | [OOP in Python] 
+
+Lesson-03 | Class Level Attributes | [OOP in Python]
+
+Lesson-04 | Attribute __dict__ | [OOP in Python]
+
+Lesson-05 | Task 1 & 2 | [OOP in Python]
+
+Lesson-06 | __str__ and __repr__ | [OOP in Python]
+- Both methods __str__ and __repr__ donot require method calling syntax they are alled internallyjust define them during class definion
+pi = ClassName()
+print(p1.__str__)  //wrong
+print(p1)           //right
+- __str__ have higher priority than __repr__ and it it is ment to seen by end user while __repris used for developers fordebuging
+
+Lesson-07 | Class Method & Static Method | [OOP in Python]
+
+
+Lesson-08 | Accessing other class object in method | [OOP in Python]
+
+
+Lesson-09 | Data Encapsulation | [OOP in Python]
+- It is a data hiding technique that prevents the access to data outside the class
+- public - accessible everywhere;inside and outside the class 
+- protected - accessible only inside the class and other classes which are extended from it 
+- private - accessible only inside tthe class 
+- In python each attribute is public and cannot be made protected or private 
+- If "_" is added before an attribute name then it is considered as private but it's value can be change. It is just a thumb rule 
+- If "__" is added before an attribute name then with the same name as the the attribute a new attribute is created but it will not be same as that of previous. It is called "NAME MANGLING" 
+
+Lesson-10 | Getters, Setters & Deleters | [OOP in Python]
+- getters aremethods used to get the value of an attribute 
+x = = std.reg
+- setters aremethods used to set the value of an attribute
+std.reg = "test" 
+- deleters aremethods used to delete an attribute 
+- getters and setters are alsoknown as Accessors methods as they are used to access the attributes 
+- In another convention, getters are also known as Accessors while setters are called as mutators 
+- These methods are also known as descriptors
+
+
+
+
+
+
+
+OBSERVATIONS
+-------------
+- behaviour are property/data and actions are functions/methods 
+- type(variable_name) - to check it's data type 
+- isinstance(object_name, class_name) - to checkif an object weather it belongs to that class 
+- class complex in python
+x = 2.5+5j
+print(type(x))
+print(x.real)
+print(x.imag)
+print(x.conjugate())
+- procedural programming - top-down approch, limited code re-use, complex code 
+- OOP - object focused design, code reuse, complex design but simple when used 
+- methods - instance, class , static
+- "this" in java is same as "self" in python 
+- special methods / magic methods / Dunder methods surrounded by __ like __init__
+-__dict__ - to see all attributes of that class ie class_name.__dict__.items()
+- create methods for getting value of instance properties 
+
+
+
+
+DOUBTS
+-------
+static methods vs instance methods vs class methods 
+__repr__ vs __str__
+class method vs static methods vs instance methods 
+_name vs __name syntax  ie name mangling 
+- getters vs setters vs deleters 
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+https://github.com/learning-zone/python-basics
+
+https://github.com/devAmoghS/Python-Interview-Problems-for-Practice
+
+https://github.com/baliyanvinay/Python-Interview-Preparation
+
+https://github.com/kiransagar1/300-python-Interview-questions-and-solutions/blob/main/350interview.txt
+
+
+
+
+
+
+
+
+
+GENERAL TOPICS
+---------------
+
+Variables - destructuring variables
+String Formatting - 
+Type Hinting
+Imports & Relative imports
+Mutability
+
+Errors 
+
+Exceptions 
+
+
+List - list comprehensions, 
+Tuples - 
+Sets - 
+Booleans - 
+Dictionay - dictionary comprehensions
+
+Conditionals - if, if..in, if
+Loops - 
+
+Functions - arguments, parameters, default parameters, function returning values, lambda functions, unpacking arguments, unpacking keyword arguments, first class functions, 
+
+Methods - @staticmethod, @classmethod, __str__ method, __repr__ method, __init__ method, __dict__ method
+
+Decorators - at, decorating functions with parameters, decorating with parameters
+
+OOPS Concepts - class, object, class inheritance, class composition,  
+
+
+IMPORTANT TOPICS
+-----------------

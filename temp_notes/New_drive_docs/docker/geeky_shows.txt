@@ -1,0 +1,88 @@
+https://www.youtube.com/watch?v=Qn08jgrsRY4
+
+VS CODE EXTENSION FOR DOCKER 
+----------------------------
+wsl (Microsoft)
+YAML (Red Hat)
+docker (Microsoft)
+
+INSTALLATION
+------------
+download docker desktop
+Turn windows feature on/off or Control Pannel > Programs and Features > Turn windows feature on/off > Enable Hyper V + Virtual Machine platform + Windows subsystem for linux
+Task manahger > performance > CPU > Virtualization Enabled
+
+wsl --status 
+wsl --update
+wsl -l -v
+(if show no distribution follow https://www.elevenforum.com/t/install-windows-subsystem-for-linux-wsl-distros-in-windows-11.12232/)
+wsl --shutdown
+wsl -t docker-desktop
+
+- list all images 
+docker images
+
+- search images on net 
+docker search <image_name>
+- pull image with random name
+docker pull image_name
+docker pull image_name:tag_name
+- remove an image
+docker rmi <image_name>
+
+- list all containers
+docker ps -a
+- pull image with random name
+docker run image_name
+- create and run container with specified name 
+docker run --name <name> image_name:tag_name
+- create and run container in background
+docker run -d image_name:tag_name
+- create and run container (interactive way)
+docker run -i -t image_name:tag_name "OR"   docker run -it image_name:tag_name
+- create and run container and remove it when it's done
+docker run -it --rm --name <container_name> image_name:tag_name
+- stop a running container
+docker stop <container_name>
+docker stop <container_id_full>
+docker stop <container_id_starting_4_digit>
+- start a container
+docker start <container_name>
+- restart a container
+docker restart <container_name>
+- remove a container
+docker rm <container_name>
+- execute a command in running container
+docker exec -itd <container_name> <command>
+(We can see the command using docker inspect inside CMD key value)
+- show details about a container
+docker inspect <container_id>
+- remove all stopped container 
+docker container prune
+- remove all stopped container and network
+docker system prune
+
+- show logs of a container 
+docker logs <container_name>
+
+- using environment variables
+docker run --name <container_name> -e <VARIABLE_NAME>=<VARIABLE_VALUE> -d <image_name>
+
+- port mapping
+docker run --name <container_name> -d -p <host_port>:<container_port> <image_name>
+
+- create new build
+docker build . -t <image_name>:<tag_name> .
+docker build . --no-cache -t <image_name> .
+
+- to login docker
+docker login
+
+- to push image in dockerhuh
+docker push username/repository:tag
+
+
+
+
+
+

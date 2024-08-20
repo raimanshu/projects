@@ -1,0 +1,61 @@
+GENERAL TOPICS
+---------------
+
+Flask - history, features, advantages, disavantages, limitations, applications, default host & port, general flask commands, url_for(), microframework, SQLite database, template engine, render_template(), Thread local object, django vs flask, flask sessions, jsonify(), before_request(), after_request(), teardown_request(), uploading files, creating logs, HTML Escaping, redirect()
+
+Blueprints & Views
+Control Autoescaping
+Flask Signals
+Decorators
+Application context
+Application dispatching
+URL Processors
+Async and Await
+
+Flask-Mail 
+Flask-Sijax
+Flask-Appbuilder
+Flask-Admin
+Flask-Social
+Flask-WTF
+Flask's g
+Flask-SQLAlchemy
+Flask-MongoEngine
+Flask-API
+Flask-RESTful
+Flask-RESTX
+Connexion
+Setuptools
+Fabric
+
+
+WSGI
+
+PACKAGES USED
+--------------
+Flask-SQLAlchemy
+python-dotenv 
+mysql-connector-python 
+pydantic 
+pydantic[himanshu.rai@mcubefinancial.com] ❌
+pre-commit 
+seed-isort-config 
+isort 
+black 
+flake8 
+pylint 
+prettier 
+bandit 
+autopep8 
+semgrep 
+loguru
+
+
+
+IMPORTANT LINKS
+---------------
+https://mindmajix.com/flask-interview-questions
+
+https://testbook.com/interview/python-flask-interview-questions
+
+https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/Python3_Flask.html

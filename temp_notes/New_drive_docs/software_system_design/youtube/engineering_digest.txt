@@ -1,0 +1,8 @@
+What is system design process in software engineering ?
+-   process of designing the elements of a system such as architecture, modules and components, the different interfaces of those components and the data that goes through the system 
+-   HLD, describes the main components that would be developed for the resulting product
+-   LLD, describes the design of each element mentioned 
+
+Monolithic Architecture In Hindi ( Complete Explanation )
+- architecture, internal design details for building the application
+- monolithic application or centralized application, If all the components and functionalities of a project are entangled and combined in a single codebase 

@@ -1,0 +1,117 @@
+USEFUL LINKS
+------------
+- for colors - https://colorhunt.co/
+- for fonts - https://fonts.google.com/
+- for gradients -https://cssgradient.io/gradient-backgrounds/
+- box-shadow - https://getcssscan.com/css-box-shadow-examples
+- for ui creativity -https://pixcap.com/
+- for icons - https://fontawesome.com/
+- shape divider for background -https://www.shapedivider.app/
+- for image converting -https://squoosh.app/editor 
+- testing website - 
+1. Lighthouse testing
+2. https://pagespeed.web.dev
+3  https://gtmetrix.com/
+- css minification and compression - https://www.toptal.com/developers/cssminifier ??
+- animation plugin 
+1.https://animate.style/
+2.https://michalsnik.github.io/aos
+
+SHORTHAND SYNTAX
+----------------
+background: background-color    background-image    background-repeat   background-position;
+font: font-style    font-weight     font-size   line-height     font-family;
+border: border-width    border-style    border-color;
+outline: outline-width    outline-style    outline-color;
+list-style: list-style-type     list-style-position     list-style-image;
+animation:  animation-duration  animation-name  animation-delay animation-direction  animation-fill-mode  animation-iteration-count animation-play-state    animation-timing-function
+transition:     transition-property transition-duration   transition-timing-function transition-delay
+flex:   flex-grow flex-shrink flex-basis
+place-items: justify-items align-items;
+place-content: justify-content align-content;
+place-self: justify-self align-self;
+text-decoration: text-decoration-line text-decoration-style text-decoration-color;
+
+
+TOPICS
+------
+- color specification ways - rgb(), rgba(), hsl(), hsla(), #rgb, #rrggbb
+- HTST - Hue (a pure color), Tint (a pure color with just white added), Shade (a pure color with just black added), Tone (a pure color with just grey added)
+- parallax effect
+- always prefer rem over px and em for font size
+- always use shorthand properties - gradient, padding, margin, border, transitions, background, box-shadow, animation, 
+- always use color combinations with var()
+- at root use 
+html {
+margin : 0;
+padding: 0;
+box-sizing: border-box;
+font-size: 10px;
+font-family: arial,sans-serif;
+}
+- italic vs oblique ?
+- box model ? 
+- where is the position of outline property in box-model
+- difference between border and padding ?
+- differences between css, css2 and css 3 ?
+- newwest properties in css 3
+- properties for browser compatibility ?
+- when we apply margin-bottom 70px on one dev and margin-top 30px the the browser will only make margin 70px between two divs, ie it will consider maximum value for vertical adjecent divs
+- box-sizing property border-box vs content-box ??
+- should we use rem for padding and margin property in css ?
+- linear vs radial gradient vs transparent gradient  vs repeating-linear-gradient vs repeating-radial-gradient
+- difference between box-shadow vs drop-shadow ??
+- filter property - contrast vs saturate ??
+- we can use multiple filter property on the same image using the same single filter property !!
+- list property ??
+- link property ?
+- combinators - descendent selector vs child selector, adjecent sibling vs general sibling selector??
+- display property - block vs inline vs inline-block ??
+- positions - relative vs absolute vs static vs fixed vs sticky ??
+- z-index property ??
+- overflow property - visible vs hidden vs scroll vs auto ??
+- pseudo elements ??
+- pseudo class ??
+- column layout property ??
+- flexbox - mainaxis vs cross axis, ??
+- aspect ratio ? (IMPORTANT)
+- Grid property - 1fr, use case of grids, repeat, explicit grid vs implicit grit? (IMPORTANT)
+- transitions property ??
+- transform property - translate, scale, scale, skew ??
+- difference between transform's translate proprty vs translate property ??
+- animation property ??
+- difference between transition vs animation ??
+- prespective property ??
+- css variables ??
+- selectors priority - *(universal selector) < element/pseudo element < class/pseudo class < id < inline style < !important
+- css specficity - 0.0.0.0.0 => !importnt . inline style . id . element/pseudo class . element/pseudo element?? 
+- new css features - 
+1 :is, :has, :not, :where
+2 Media query range
+3 container quries
+4 accent-color
+5 aspect ratio
+6 scroll-snap
+7 individual transform property - translate, scale, rotate
+8 css nesting - use &
+9 gap property for flexbox
+10 css logical properties - border-block, border-inline
+11 css writing mode - change writing style/direction
+12 :focus-visible
+- floats property ??
+- css clip path ??
+- css AOS plugin ??
+- css shape divider ??
+- scroll bar styling ??
+- website refrences 
+- center a div -  using position, using flexbox, using grid, 
+- crousal effect ??
+- vendor prefixes - -webkit-, -moz-, -ms-, -o-, 
+- vs extension - css auto prefix, 
+- BEM (block element methodology) - 
+- SMACSS - scalble and modular architecture for css 
+- smooth scrolling ??
+- scroll snapping ?? - https://www.w3schools.com/cssref/css_pr_scroll-snap-type.php
+- reducing render blocking ??
+
+

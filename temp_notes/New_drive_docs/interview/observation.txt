@@ -1,0 +1,4 @@
+
+# Types of API -  open apis, partner apis, internal apis, composite apis
+# Architecture of API - REST, SOAP, RPC 
+https://www.youtube.com/watch?v=WUe8yc3RplQ

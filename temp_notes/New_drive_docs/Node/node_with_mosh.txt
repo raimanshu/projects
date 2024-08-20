@@ -1,0 +1,213 @@
+Node.js with Mosh
+
+# Getting Started
+# Course structure
+# welcome
+# What is node 
+- Open source cross platform runtime environment for executing js code outside the browser 
+- Used for building highly scalable, data-intense and real time apps. 
+- Advantages and Disadvantages
+# Node Architecture 
+- js engine – It converts javascript code into machine code. Chakra (Microsoft Edge), Spider Monkey (Mozilla Firefox), v8 (Google Chrome).
+- Node is not a programming language or framework but it is a runtime environment,
+# How node works 
+- Non-blocking asynchronous nature of node vs Blocking synchronous nature.
+- Node is asynchronous in nature by default.
+- Event Queue
+- Advantage - ideal for i/o intensive apps 
+- Disadvantage – Do not use node for CPU-intensive apps or image manipulation service
+# Installing node
+- node –version – to check the node version in the system (inside cmd)
+- nodejs.org – To download node LTS (latest stable) version
+# Your first node program
+ - node <file_name.js> - to run the file in cmd/terminal
+- No window or document objects in node
+
+# Node module system
+# Introduction
+# Modules 
+- Prevents overriding same function name functionality.
+- module is a object/json which contain some keys like id, path, exports, parent, filename, children, paths. It is not a global variable.
+- In node, every file is a module and every variables and functions defined in that file are scope to that module they are not available outside the module.
+- In a node project, there is always a main module.
+# Creating module
+- console.log(module), id, exports, parent, filename, loaded, children, paths,
+ module.exports.<alias_name> = <property_name/function_name> OR module.exports =
+ <property_name/function_name>
+# Loading a module 
+- const <variable_name> = require(‘<path_of_module>’);
+- jshint <file_name.js> for getting error details.
+- Using exports we can export an object or a function only if the file has only one function like
+ module.export = <function_name>
+# Module Wrapper Function
+- Node does not execute our code directly. It encapsulate our code inside a function under the hood.
+- ( function (exports, require, module, __filename, __dirname) {
+...Code
+})
+- It by default uses IIFE. This parent function is called module wrapper function.
+- require() is not a global function in a project. It is local to every module. 
+- __filename represents the current file name.
+- __dirname represents the path of the current file.
+# Path module
+- It provides a bunch of utility functions to work
+- path module – const path = require(‘path’); os.parse(__filename);
+# OS module
+- Used to retrieve information related to operating system.
+- os module – const os = require(‘os’); os.totalmem(); os.freemem();
+# Global objects
+
+
+- globalobjects – console.log(), setTimeout(), clearTimeout(), setInterval(), clearInterval(), in
+ node window is replaced with global object
+- Path module – const path = require(‘path’); path.parse(__filename);
+-File ystem module – const file = require(‘fs’); file.readdirSync(‘./’); file.readdir(‘./’); Always use
+ async methods
+- Http module – const http = rquire(‘http’); http.createServer().listen(3000); This class inherits
+ from net.Server class, -------------important
+- module wrapper function - (function(exports, require, module, __filename, __dirname){...}),
+ module.exports = log; module.exports.log = log; or exports.log = log;-----------impotant
+- Event module - event is a signal that something has happened, EventEmitter, const
+ EventEmitter = require(‘events’);, A class is a container for some properties and functions
+ called methods, Object vs Class, .emit(), A listener is a function that will be called when then
+ event is raised, .on(), .addListener(), Listener must be written before event raising,
+- Extending EventEmitter – Instead of using require(‘events’); use class class_name extends
+ EventEmitter{},
+- Event Arguments – pass arguments by making objects,
+
+# Node Package Manager
+- introduction – node -v, node -v, npm i -g npm@5.5.1,
+- installing node package – npm i package_name, can be checked in package.json >
+ dependencies, in earlier versions npm i package_name –save
+- installing specific version of package – npm i package_name@version_name, npm list
+ –depth=0,
+- listing the installed packages – npm list, npm list –depth=0,
+- DevDependencies – npm i package_name –save-dev
+- NPM packages and source control – reinstaling install will install all depenencies from
+ package.json file, npm i, using .gitignore,
+- package dependencies -
+- package.json – mkdir folder_name, cd folder_name, npm install, to create package.json npm
+ init, npm init –yes,
+- publish a package – After creating package.json > create index.js > write some functionality in it,
+npm adduser, npm login, npm publish,
+- semantic versioning – SemVer, major_version.minor_version.patch_version, ^version_number
+ vs ~version_number vs version_number, ~ means interested in any version,
+- uninstalling a package – npm un package_name,
+- updating a published package - change version number in package.json OR npm version
+ major/minor/patch , npm publish,
+- updating local packages – npm outdated, npm update, npm i g npmcheck-updates,
+ npm-check-updates, ncu -u
+- using a package – const alias_name = require(‘module_name’), Core module > file or folder >
+ node_modules,
+- viewing registry info for a package – npm view package_name, npm view package_name
+ dependencies/versions
+- working with global packages – npm i -g package_name, npm -g outdated, npm un -g
+ package_name,
+
+# Builing Restful API with express
+- intro – express
+- introducing express - framework, mkdir folder_name, cd folder_name, npm init --yes, npm i
+ express,
+- building first web server - const express = require(‘express’); const app = express(); ,
+ app.get(),
+app.post(), app.put(), app.get(‘/api/courses’, (req, res) =>{res.send(‘Hello’)}); app.listen(3000, ()
+ =>{console.log(‘post started’)})
+- calling api using postman -
+- Environment variables – const port = process.env.PORT || 3000;, set PORT value – (in
+ terminal) export PORT=5000;,
+- Handeling GET requests – res.status(‘404’).send(‘Data not found’); ----impotant
+- Handeling POSt requests – app.use(express.json());,
+- nodemon – for detecting changes continuously – npm i -g nodemon, nodemon index.js,
+- build the gerene app – http://vidly.com
+- Restful Services – REST – Representational State Transfer, get, put, delete, post
+- Route parameters – url params(for required data), query string params(for optional data) ,
+ res.query, res.params,
+-input validation – npm joi, create scheme(object), Joi.validate(res.body, schema);, object
+ destructuring
+- http delete request -
+
+# Express Advanced topics
+- introduction
+- middleware – a function that take request object either give response to the client or other
+ middleware function, request processing pipeline, express is generally a set of some
+ middleware functions
+- Custom middleware – app.use(function(req, res, next){})
+- Built in middleware – express.json(), express.urlencoded(), express.static(‘file_name’);
+- Third party mile ware - mogan, helmet,
+- Environments – process.env.NODE_ENV, app.get(‘env’), export NODE_ENV=production (in
+ terminal)
+- configuration – npm rc, npm config,
+
+--------------------------------------------------------contd............
+
+- Debugging - npm i debug, require(‘debug’)(‘app:startup’), require(‘debug’)(‘app:db’), export
+ DEBUG=app:startup, export DEBUG=app.*
+- Templating Engines – Pug, Mustache, EJS, In general cases we give json in response but
+ when we used to give html markups in response we use templating engines, app.set(‘view
+ engine’, ‘pug’);, app.set(‘views’, ‘./views’);, res.render(‘index.pug’, {title:’title’,
+ message:’messaaage’});
+- Database integration -
+- Authentication – nO place for authentication
+- Structuring express application -
+----------------contd
+
+# Asynchronous Javascript
+- async and sync -
+- pattern for dealing with Async code - Callbacks, Promises, Async/await
+- Callbacks - -----------important
+- Callback Hell/ Christmas tree problem -
+-promises – holds the eventual result of async operations, ----------important
+- replacing callbacks with promises -
+-consuming promises -
+- creating settled promises - promises that are already ressolved or rejected,
+ Promise.ressolve(), Promise.reject(),
+- parallel promises – Promise.all([promise_1, promise_2]),
+ Promise.race([promise_1,promise_2])
+- async and await – await is used when a function return a function, async is used with a
+ function that uses await inside, Instead of .catch like promises we use try{ await statement }
+ catch { error handeled statement }
+
+# CRUD operations using Mongoose
+- intro – mongoDB is a nosql database or document database
+- installing mongoDB – npm install mongodb, mkdir -p /data/db, sudo chown -R `id -un` /data/db,
+ mongod, install mongodb compass
+- installing mongodb in windows – mongodb site , comunity server,
+- connecting with mongodb – mkdir folder_name, cd folder_name, npm init –yes, npm i
+ mongoose, const mongoose = require(‘mongoose’);
+mongoose.connect(‘mongoose://localhost/database_name’),then(() => console.log(“connected
+ to database”)).catch(err => console.error(“couldnot connect”, err))
+- schema – collection == table, row == document,types – String, Number, Date, Buffer, Boolean,
+ ObjectID, Array
+const courseSchema = new mongoose.Schema({
+name:String, author: String, tags: [String], date: {type: Date, default: Date.now}, isPublished:
+ Boolean
+})
+- Models -
+const Course = mongoose.model(‘Course’, courseSchema);
+const course = new Course({
+name: ‘test’, author: ‘test’, tags: [‘test1’,’test2’], isPublished: true
+});
+- Saving a document -
+const result = await course.save()
+- Query Documents - .find({author:”Mosh”, isPublished: true}), .limit(10), sort({name : 1}),
+ .select({author:1, tags:1})
+const courses = await Course.find();
+- Comparision Query Operators – eq, ne, gt, gte,lt, lte, in (filter from a given array), nin,
+.find({price : {$gt: 10}})
+.find({price : {$in: [10,20,30]}})
+- Logical operators – or, and
+.find().or([{author:’Mosh’},{isPublished: true}]);
+- Regular expressions -
+.find({author : /^Mosh/})
+.find({ author: /Hamedami$/i})
+.find({ author: /.*Mosh,*/i})
+- Counting - .count()
+- Pagination -
+
+# Mongo – Data Validation
+# Mongoose – Modeling Relationship between Connected Data
+# Storing Data in MongoDB //
+# Authentication and Authorization
+# Handling and Logging Errors
+# Unit and Integration Testing
+# Test Driven Development
+# Deployment

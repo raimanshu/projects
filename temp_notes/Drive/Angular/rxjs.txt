@@ -1,0 +1,114 @@
+Rxjs ( youtube - UXTrends )
+
+Rxjs
+
+General points
+-for multiple operators use commas 
+.pipe({
+map(res => res),
+take(4)
+})
+
+1
+
+2
+-Rxjs - external library to perform asyn tasks using observables
+-can be used with normal html not only angular
+
+-external library, auto installed in angular, 
+-observables – data source / data stream 
+-observer – code to use observables 
+-subscribe – needs to use obseervables 
+-rxjsmarbles 
+
+2.
+-Promise – async, return single value reject (no) or ressolve(yes)
+-Observable – async + sync,  retern stream of values
+
+3
+- let varName = new Promise((resolve, reject) => {
+resolve(“”);
+reject(“”);
+});
+
+varName.then(res => {
+}).catch((res) => {
+});
+
+5
+async – always return a promise object, run parallaly several tasks
+await – waits to resolve a async or promise resolve/reject 
+
+6
+Create observables – user input, array , http request, object
+fromEvent(target, eventName) - Creates an Observable that emits events of a specific type coming from the given event target.
+
+7
+
+
+8
+interval() - Creates an Observable that emits sequential numbers every specified interval of time, on a specified SchedulerLike.
+timer(delay, interval) - 	Creates an Observable that starts emitting after an dueTime and emits ever increasing numbers after each period of time thereafter.
+
+9
+SwitchMap
+
+10
+of() - Converts the arguments to an observable sequence, takes number of arguments ------------parameters , objects
+From() - Creates an Observable from an Array, an array-like object, a Promise, an iterable object, or an Observable-like object, takes an array -------------Array, Promise, String
+
+11
+toArray() - Collects all source emissions and emits them as an array when the source completes.
+-transform done before subscribe
+- pipeable operator
+
+12
+custom Observables 
+-Observable.create(res => {
+res.next();
+res.error();
+res.complete();
+}) 
+
+13
+
+14
+map() - Applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable.
+-pipeable operator
+-transform data stream
+
+15
+pluck() - Maps each source value (an object) to its specified nested property, 
+-just pass property name
+-shorthand for map operator
+- for nested pass parent the child property name
+
+16
+filter() - Filter items emitted by the source Observable by only emitting those that satisfy a specified predicate.
+- map transforms data but filter() removes data which donot follow conditions
+
+17
+-tap() is also known as do() in older version of Rxjs 
+-Tap() - Perform a side effect for every emission on the source Observable, but return an Observable that is identical to the source.
+- transparently perform actions or side-effects, such as logging
+- The map is a pipeable operator that takes an input observable, performs some manipulation on it and returns a new manipulated observable.
+- The tap operator on another hand takes an input observable perform some action and returns the same input observable.
+- Uses – console.log(data), console.log(response), change property value, Emit value in observable, perform any other action
+- do change response but can test data when used multiple operators
+-tap() vs map() vs filter() - ??
+
+18
+take() - Emits only the first count values emitted by the source Observable.
+-pass number as argument
+Take() vs filter() - ??
+-takeLast() - Emits only the last count values emitted by the source Observable.
+-pass number as argument
+-takeUntil() - Emits the values emitted by the source Observable until a notifier Observable emits a value.
+-pass condition as argument
+-timer(delay, interval) - Creates an Observable that starts emitting after an dueTime and emits ever increasing numbers after each period of time thereafter.
+
+19
+retry() - Returns an Observable that mirrors the source Observable with the exception of an error. If the source Observable calls error, this method will resubscribe to the source Observable for a maximum of count resubscriptions (given as a number parameter) rather than propagating the error call.
+retryWhen() - Returns an Observable that mirrors the source Observable with the exception of an error. If the source Observable calls error, this method will emit the Throwable that caused the error to the Observable returned from notifier. If that Observable calls complete or error then this method will call complete or error on the child subscription. Otherwise this method will resubscribe to the source Observable.
+scan() - Applies an accumulator function over the source Observable, and returns each intermediate result, with an optional seed value.
+Delay -

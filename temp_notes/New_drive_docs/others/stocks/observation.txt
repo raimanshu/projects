@@ -1,0 +1,62 @@
+https://chartink.com/screeners
+https://www.topstockresearch.com/rt/Home
+https://www.investing.com/stock-screener/
+
+https://sensibull.com/
+
+CHART PATTERNS
+https://www.youtube.com/watch?v=oRgpUi234NE&t=2032s
+
+
+
+
+POINTS TO REMEMBER
+------------------
+-   The trading time in India runs from 9.15 am to 3.30 pm, Monday to Friday.
+-   Types of stocks 
+https://www.angelone.in/knowledge-center/share-market/types-of-stocks
+https://www.fool.com/investing/stock-market/types-of-stocks/
+-   Large-cap stocks are generally considered safer and more conservative as investments, while mid caps and small caps have greater capacity for future growth but are riskier.
+-   Growth stocks tend to have higher risk levels than Value stocks, but the potential returns can be extremely attractive.
+-   IPO stocks are stocks of companies that have recently gone public through an initial public offering.
+-   Non-dividend stocks can still be strong investments if their prices rise over time.
+-   Non-cyclical stocks, also known as secular or defensive stocks, don't have those big swings in demand. By contrast,  When economies are strong, however, a rush of demand can make cyclical stocks companies rebound sharply.
+-   Blue Chip stocks typically don't provide the absolute highest returns, but their stability makes them favorites among investors with lower tolerance for risk.
+-   Sectors of stocks 
+        Communication Services -- telephone, internet, media, and entertainment companies
+        Consumer Discretionary -- retailers, automakers, and hotel and restaurant companies
+        Consumer Staples -- food, beverage, tobacco, and household and personal products companies
+        Energy -- oil and gas exploration and production companies, pipeline providers, and gas station operators
+        Financial -- banks, mortgage finance specialists, and insurance and brokerage companies
+        Healthcare -- health insurers, drug and biotech companies, and medical device makers
+        Industrial -- airline, aerospace and defense, construction, logistics, machinery, and railroad companies
+        Materials -- mining, forest products, construction materials, packaging, and chemical companies
+        Real Estate -- real estate investment trusts and real estate management and development companies
+        Technology -- hardware, software, semiconductor, communications equipment, and IT services companies
+        Utilities -- electric, natural gas, water, renewable energy, and multi-product utility companies
+-   Analysis 
+    -   Total revenue should increase time to time.
+    -   Net income should increase time to time.
+    -   Assets should increase time to time.
+    -   Liabilities should decrease time to time.
+    -   Free Cash Flow (ammount of cash that company holds) should be positive.
+    -   EPS (Earning per share), more the better, should increase time to time.
+    -   P/E ratio (Price to Earning ration), market price / EPS, compare P/E ratio to Sector P/E ratio it shows either you are under valued or over valued
+    -   P/B ratio (Price to Book ration), market price / Book Value, compare P/B ratio to Sector P/B ratio it shows that company can grow or not if all liabilities are paid, ideal P/B ratio is 1
+    - check other peers data and compare 
+    - check holding section, it should increase time to time for each type of holder
+-   Ratios
+    -   Current Ratio   -   Assets / Liabilities, Higher the better, must be more than 2
+    -   P/E Ratio   -   Current market price / EPS, Lower the better, Negative is not right
+    -   Book Value  -  Total Assets - Total Liabilities 
+    -   P/B Ratio   -  Book Value / EPS, Lower the better, less than 1 best
+    -   Debt to Equity Ratio    -   Debt / Equity, Lower the better, close to 1 is good but extreme more or extreme less is bad
+    -   EBTT    -   Earning before Interest and Tax
+    -   Interest Coverage Ratio -   EBTT / Interest Payment, Higher the better,
+    -   ROE -   Return on Equity, Higher the better,
+    -   ROCE    -   Return on Capital Employee, Higher the better,
+    -   NPM -   Net Profit Margin, Net profit / Net Revenue, Earning through other sources but focus on CFM
+    -   CFM -   Cash Flow Margin, Cash Flow Operations / Net Revenue, Earning through it's actual business
+
+
+

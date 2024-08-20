@@ -1,0 +1,7 @@
+Learning Angular
+
+Youtube
+- Angular 8 Directives_ Custom Directives in Angular 8 _ Codekul
+- Learn Angular - Full Tutorial Course
+- Learn Angular Material - Full Tutorial
+- [FreeCoursesOnline.Me] Code With Mosh - Angular 4 Beginner to Pro

@@ -1,0 +1,93 @@
+TOPICS
+------
+Container vs Virtual Machine
+
+Docker Engine (Docker CLI + Docker API + Docker Daemon)
+Docker CLI
+Docker API
+Docker Daemon
+
+Docker Objects (Docker Images / Docker Containers / Docker Volumnes / Docker Networks / Docker Swarm Nodes & Services)
+Docker images
+Docker Containers
+Docker Volumnes 
+Docker Networks
+Docker Swarm Nodes & Services
+
+Docker Registry
+
+Docker Compose
+- need to install seperatly
+- docker-compose --version
+- docker-compose down
+- docker-compose ps 
+- docker-compose up -d 
+- docker-compose stop
+
+
+Docker Swarm
+Orchestration
+Components of Docker Swarm - Service, Task, Manager and Worker
+Load Balanceing
+docker swarm init --advertise-addr public_ip_address
+docker info 
+docker node ls
+docker swarm join-token worker 
+docker node rm node_id
+docker swarm leave --force
+docker swarm join-token Manager
+docker stack deploy -c yml_file_name stack_name
+docker service ps 
+docker service scale service_name=number_to_scale
+docker node update --availability drain node_id
+
+Docker Architecture (Interaction between Docker CLI, Docker Host and Docker Registry)
+Docker File - FROM, ADD, COPY, RUN, WORKDIR, CMD, VOLUME, EXPOSE, ENTRYPOINT, LABEL
+
+DOCKER STORAGE
+- Volumes (docker volume create volume_name, docker volume ls, docker volume inspect volume_name, docker volume rm volume_name, docker volume prune, docker run -itd --name containr_name --mount source=volume_name,target=target_folder image_name, docker run -itd --name containr_name --volume volume_name:target_folder image_name)
+- Bind Mount (docker run -itd --name container_name --mount type=bind source=source_folder,target=target_folder image_name)
+- Tmpfs mount (docker run -itd --name container_name --mount type=tmpfs,target=target_folder image_name, docker run -itd --name containr_name --tmpfs target_folder image_name)
+
+Storage Drivers - overlay2, overlayFS, aufs, devicemapper, btrfs, vfs, zfs
+
+Docker Networks
+Bridge (docker network create --driver bridge network_name, docker network ls, docker network inspect)
+Host (docker run -itd --network host --name container_name image_name)
+Overlay (docker network create --driver overlay network_name)
+Macvlan
+None (docker run -itd --network none --name container_name image_name)
+
+Docker Swarm (docker swarm init, docker swarm join --token _token_ )
+
+Docker Service (docker service create --name service_name --network nettwork_name  --replicas replica_count image_name)
+
+AWS ECR (ELASTIC CONTAINER REGISTRY)
+Create a Repository in AWS Console. 
+
+AWS ECS (ELASTIC CONTAINER SERVICE)
+ 
+ MONITORING
+ Types of Monitoring - System Performance, Process Monitoring,Integration, Application Performance, Business Monitoring 
+ Monitoring tools - nagios, splunk, amazon cloudwatch, grafana
+ Prometheus - metric monitoring, Multi-Dimensional, PromQL, Service discovery, Time series collection via pull model, no reliance on distributed storage 
+ Grafana - data visualization, visualization, Dynamic Dashboards, Explore Metrics & Logs, Alerting, Mixed Data Sources
+ Pod, Service, Ingress
+
+
+ KUBERNETES
+ Features - Easy update and rollbacks, Storage distribution, Secret Handling, Heals itself, Load Balancing, Easy Scaling
+
+
+OBSERVATION
+-----------
+docker kill vs docker stop 
+docker volume vs docker volumn drivers
+COPY vs ADD
+ENTRYPOINT vs EXPOSE vs PUBLISH
+image vs container 
+Volumes  vs Bind Mount vs Tmpfs mount 
+Dockerfile vs .yml file
+Docker compose vs orchestration using docker swarn
+Metrics vs logs
+

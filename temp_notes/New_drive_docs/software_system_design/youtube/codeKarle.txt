@@ -1,0 +1,19 @@
+System Design and Architectures Interview Preperation Serious by FANG Developers 
+
+Database Design Tips | Choosing the Best Database in a System Design Interview (IMPORTANT)
+- database - choosing type of database depends upon type of data used, query pattern and scale of database
+- cashing - redis
+- file storage - amazon s3
+- CDN - 
+- Text search engine - elastic search, solr
+- Fuzzy text search
+- Timeseries databases - influxDB, openTSDB
+- Data warehouse / Big Data - Hadoop
+- SQL vs NoSQL
+- Relational DB - SQL Server, Oracle, MySQL, Postgress
+- NoSQL - Document DB - MongoDB, CouchBase
+- NoSQL - Columnar DB - Cassandra, HBase
+- If none of these are required 
+- Combination of DBs - Amazon case study.
+
+Google Maps System Design Interview Question

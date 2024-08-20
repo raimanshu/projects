@@ -1,0 +1,15 @@
+OBSERVATION
+
+List of HTML Tags
+https://www.w3schools.com/TAgs/default.asp 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element (Better details)
+https://www.tutorialstonight.com/html-tags-list-with-examples.php (Recommended)
+
+List of attributes
+https://www.w3schools.com/TAgs/ref_attributes.asp 
+https://www.dofactory.com/html/attributes (Recommended)
+https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes 
+
+List of global attributes
+https://www.w3schools.com/TAgs/ref_standardattributes.asp 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes 

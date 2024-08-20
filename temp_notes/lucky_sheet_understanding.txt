@@ -1,0 +1,59 @@
+Lucky Sheet – Nodejs
+
+# Running Node project
+npm install
+npm install gulp –g
+npm run dev (for development)
+npm run build (for build run)
+
+# gulp  is a task runner that uses Node.js as a platform. Gulp purely uses the JavaScript code and helps to run front-end tasks and large-scale web applications. It builds system automated tasks like CSS and HTML minification, concatenating library files, and compiling the SASS files. These tasks can be run using Shell or Bash scripts on the command line.
+
+# index.js is the starting point of the code
+
+# package.json includes
+@babel/runtime – open source, dependable, 34,093,487 downloads
+Dayjs – Day.js is a minimalist JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers with a largely Moment.js-compatible API,  open source, Not sure about dependability, 6,695,445 downloads
+Esbuild - This is a JavaScript bundler and minifier, not sure about dependency, 1,316,791 downloads
+Flatpicker – Related to date pickers, not sure about dependency,  519,988 downloads
+Jquery - jQuery is a fast, small, and feature-rich JavaScript library., dependable, 4,148,216 downloads
+Numeral - A javascript library for formatting and manipulating numbers., not sure about dependency, 735,937 downloads
+Pako - This project was done to understand how fast JS can be and is it necessary to develop native C modules for CPU-intensive tasks., not sure about dependency, 17,279,080 downloads
+
+# Folder Structure
+Assets – contains css, font files, css files, ttf etc
+Controllers
+Css
+Data
+Demodata
+Expend Plugins
+Fonts 
+Functions
+Global 
+Locale
+Methods
+Plugins
+Store
+Utils – 
+
+# Folder Sub-Division
+Utills/math.js
+Contains methods for +,-,/,%, rounding of decimal numbers, is integer, convert to integer
+isInteger(), toInteger(), operation(), fixed()
+
+Global/validate.js
+isRealNull(), isRealNum(), valueIsError(), hasChinaword(), isEditMode(), hasPartMC(), checkWordByLength()
+Utils/util.js
+isJsonString(), common_extend(), replaceHtml, getObjType, getNowDateTime, hexToRgb, rgbTohex, ABCatNum, chatatABC, createABC,createABC,createABCdim, getByteLen, ArrayUnique, luckysheetfontformat, showrightclickmenu, luckysheetactivecell, numFormat, numfloatlen, mouseclickposition, $$, seriesLoadScripts, parallelLoadScripts, loadlinks, luckysheetContainerFocus, transformRangeToAbsolute, openSelfModel, createProxy, arrayRemoveItem, camel2split
+Utils/chartUtil.js
+isMap(), isObject(), deepCopy(), generateRandomKey(), replaceHtml()
+Utils/polyfill.js
+Config.js
+It contains default luckysheet config object.
+
+Core.js
+Luckysheet()
+Store/index.js
+File to store properties/operations of lucky sheet
+Controllers/server.js
+ 
+Global/api.js 2177 line to start

@@ -1,0 +1,16 @@
+Nodejs
+
+- Nodejs – intro, advantages, disadvantages
+- Architecture – v8 engine + runtime environment not available in browsers
+- Node working – non-blocking asynchronous architecture
+- installation –
+- Basic commands - node -v, node <filename.js>
+- global, require(),
+- module – id, exports, parent, filename, loaded, children, paths
+- module wrapper class – (function (exports, require, module, __filename, __dirname )) {}
+- parse() - <var name of file require>.parse(__filename)
+- operating system – require(‘os’), totalmen() , freemem()
+- file system – require(‘fs’), readdir(<filepath>, function(){}), readdirSyns(<filepath>)
+- event – new EventEmitter, require(‘events’), emit(), on()
+- http – require(‘http’), createServer(), listen(<port number>), write(), end(),
+

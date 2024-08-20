@@ -1,0 +1,132 @@
+HTML INTERVIEW QUESTIONS
+-------------------------------------------------------------------------
+
+1) What is HTML?
+2) Difference HTML Elements and Tags ?
+3) What are attributes and how do you use them ?
+4) Difference between block level and inline level ?
+5) When are comments used in HTML ?
+6) Tags which are used to display data in tabular form ?
+7) how to create hyperlink in HTML ?
+8) Name some common lists used when designing a page ?
+9) What is a sementic in HTML ?
+10) how to create a nested webpage in HTML ?
+11) What is an image map ?
+12) Does a hyperlink only apply to text ?
+13) What is a style sheet ?
+14) Explain the layout of HTML ?
+15) What is marquee ?
+16) Tags used to seperate sections of the text ?
+17) Difference between div and span ?
+18) What is the purpose of using alternative texts in images ?
+19) How to create a new HTML element ?
+20) Is the <!DOCTYPE html> tag considered as HTML Tag ?
+21) Why is url encoded in HTML ?
+22) What is the use of an iFrame tag ?
+23) What are entities in HTML ?
+24) Can you create multi-colored text in web page ?
+25) How to make a picture of a background image of a web page ?
+26) use of span tag ?
+27) What are the advantage of collapsing wite space ?
+28) Is there any way to keep list elements straight in an HTML file ?
+29) Difference between Local storage and Session storage objects ?
+30) When is it appropriate to use frames ?
+31) How to insert a background image of a web page ?
+32) What happens if you open the external css file in a browser ?
+33) What is the hierechy that is being followed when it comes to style sheets ?
+34) How do you create text on a webpage that allows you to send an email when clicked ?
+35) How are active links diferent from normal links ?
+36) Are there instances where the text will appear outside the browser ?
+37) Advantage of grouping several checkboxes together ?
+38) What happens if there is no text between the tags ? Doest this affect the display of the 
+HTML file ?
+39) What ae the limits of text field size ?
+40) What is the relationship between the border and rule attributes ?
+41) What is SVG ?
+42) What is bitton tag ?
+43) List the media types and formats supported by HTML ?
+44) What is cell spacing and cell padding ?
+45) difference between HTML and XHTML ?
+46) How many types of CSS can be included in HTML ?
+47) What are logical and physical tags ?
+48) How can you apply js to web page ?
+
+
+
+What are the new form elements in HTML5?
+What is the DOM? How does the DOM work?
+How does the browser rendering engine work?
+What does a <DOCTYPE html> do?
+What happens when DOCTYPE is not given?
+What is the difference between standards mode and
+quirks mode?
+What is difference between HTML and XHTML?
+What are the building blocks of HTML5?
+Describe the difference between a cookie ,
+sessionStorage and localStorage ?
+What is Critical Rendering Path?
+What are the Benefits of Server Side Rendering (SSR)
+Over Client Side Rendering (CSR)?
+What is the difference between a <span> and a
+<div> ?
+Name 5 common block-level and inline HTML
+elements?
+What are semantic and non-semantic elements?
+What is the purpose of main element?
+Define semantic markup. What are the semantic
+meanings for <section>, <article>, <aside>,
+<nav>, <header>, <footer> and when/how should
+each be used in structuring html markup?
+When should you use section , div or
+article ?
+What is Character Encoding?
+What is the purpose of meta tags?
+What does async and defer refer in script tag?
+Describe the difference between <script> , <script
+async> and <script defer>
+Can you describe the difference between progressive
+enhancement and graceful degradation?
+What is the purpose of cache busting and how can
+you achieve it?
+Name 3 ways to decrease page load?
+What ARIA and screenreaders are, and how to make a
+website accessible?
+What is the purpose of the alt attribute on images?
+Explain some of the pros and cons for CSS
+animations versus JavaScript animations?
+What does CORS stand for and what issue does it
+address?
+Ways to improve website performance
+Comparison of browsers engines like Chrome,
+Firefox, Internet explorer, Safari?
+What does the lang attribute in html do?
+What are data- attributes good for?
+Explain the difference between layout, painting and
+compositing?
+Explain about HTML Canvas?
+Explain about HTML Layout Engines used by
+browsers?
+What are the semantic tags available in html5?
+Why you would like to use semantic tag?
+How to make page responsive?
+What is difference between span tag and div tag?
+What are optional closing tag?
+What is a self closing tag?
+Does the following trigger http request at the time of
+page load?
+How Geo-location API works in html5?
+What is difference between SVG and Canvas?
+Explain Drag and Drop in HTML5?
+Why to use IndexedDB instead of WebSQL in HTML5?
+Explain Application Cache in HTML5. OR What is a manifest file in HTML?
+Explain Microdata in HTML5?
+List the API available in HTML5?
+What are different new form element types provided by HTML5?
+What are the HTML tags which deprecated in HTML5?
+How you can Use Modernizr in HTML5?
+What is the use of WebSocket API?
+What does enctype='multipart/form-data' mean?
+What is progressive rendering?
+What is difference between Select and Datalist?
+
+

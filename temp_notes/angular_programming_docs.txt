@@ -1,0 +1,103 @@
+ANGULAR PROGRAMMING
+===================
+
+# IMPORTANT LINKS
+----------------
+## To read docs
+https://devdocs.io/angular~13/
+## Node - Angular version comparision list
+https://gist.github.com/LayZeeDK/c822cc812f75bb07b7c55d07ba2719b3 
+## Node version list link
+https://nodejs.org/download/release/
+## Install agular specific version
+npm install -g @angular/cli@version
+Safe - ng 11.2.7, node 10.13.0
+## Clean cache / Uninstall angular
+npm install -g @angular/cli
+npm cache clean --force
+## For node and angular integration
+https://edupala.com/integrating-angular-on-node-js/
+
+
+
+# Frequently used npm packages
+------------------------------
+angularx-social-login
+ngx-echarts
+ngx-custom-validators
+ngx-pagination
+ngx-toastr
+@swimlane/ngx-datatable
+ngx-chips
+ng-multiselect-dropdown - https://www.npmjs.com/package/ng-multiselect-dropdown  
+
+# GENERAL RULES FOR CODING
+--------------------------
+- Always return data types with variables, functions or arguments while coding. Valid return types are void, number, string, any, boolean, FormGroup, FormArray, etc.
+  onSubmit(param1: return_type, param2: return_type): return_type {
+    //...
+  }
+- Always use let or const inside a function.
+- Whenever there is a comparision, always try to use === (strict comparision) not ==
+- Variable name must be in lowerCamelCase, PascalCase or UPPER_CASE.
+- Donot use return type with variable when it'sinitial values are assigned with it's declaration. Instead decalare a variable with return type and initialize it inside ngOnInit()
+public variableName: boolean = false;  // Wrong
+public variableName: boolean;          // Right
+
+
+# OBSERVATIONS
+--------------
+- TESTING IS MOST IMPORTANT, develop and TEST again develop and TEST….
+- For any problem or new task, always think where I used this thing earlier
+- Take reference from git repo to take decision about folder structure
+- When using a theme for an angular project, always make a list of components used inside it. That way you remember that I already have a component and do not use bootstrap or others.
+- Don't give below lines after app-routing.module.ts inside angular project. Otherwise, it will not give any error but routing will not work.
+ // { path: '', redirectTo: 'login', pathMatch: 'full' },
+ // { path: '**', redirectTo: 'login' },
+- Always first complete something first completely, then afterwards move to other segment
+- To learn about angular function and workflow, download free angular themes and study them
+- Throttling warning/issue in browser is because we but authguard at the wrong route list
+- During structuring of a project, inside core module
+config - router.config.ts (to store object containing routerPath variables)
+const - app.constant.ts (to store objects for static values like links, status response code statements, error reason statements, etc), constListing.ts (for storing objects for showing listing in forms and other places like dropdown lists, country names and code, phone number codes, etc)
+enum - index.enum.ts (to store objects that have numeric property value like status response code, etc)
+guards - auth.guard.ts (for internal pages/views), guest.guard.ts (for auth module like login, register, forget, reset, etc), user-type.guard.ts (for seperating routes on behalf of user, admin, super-admin)
+interceptors - auth.interceptor.ts (to add header and other information in request), error.interceptor.ts (to handle/distinguish between type f error and their actions), expire-token.interceptor.ts (to take action based on expire token)
+services - auth.service.ts (contains api related to signin, signout, signup, reset, etc), local-storage.service.ts (handles operations related to local storage), common.service.ts (common api http calls)
+validators - contain validators like email, no space, field matcher, etc
+regexes - to contain regexes
+typings/interfaces/models - create interfaces to minimize type casting
+utils - date.util.ts (collection of functions that return desired manipulated data) 
+- After installing the npm package, put it inside shared.module.ts instead of app.module.ts. This way the main module size will be small and each views/pages module/component will get it’s service.
+- Use <div class="login"></div> after clicking social login to restrict other button click in main page in error section
+.login {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   background: transparent;
+   z-index: 9999999;
+  
+}
+- When working with reactive form, Always keep in mind that the format of formControlName and the key of data coming from API will be same. This way we don't have to initialize and patch value repeatedly.
+- While including styles, put styles in assets in differn=ent files like, file for only import links, file for only media quries, general file for pages, header and footer files etc
+- Before pushing code, the files which you are not pushing save them in stash then check whether they are working fine in the browser then push them. May be there is some dependency of those files in pushing files.
+-For the static values of different pages like title, description etc put them inside the const folder and use Subject behaviour for them. Don't forget to destroy them in ngDestroy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

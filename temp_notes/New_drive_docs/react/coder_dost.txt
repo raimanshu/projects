@@ -1,0 +1,139 @@
+https://react.dev/learn/escape-hatches
+
+Intro
+
+
+Ch 1 - React Setup, React DOM, Project Structure
+- use in single page appication also as a part of multipage app
+- ui library based on components 
+- react developer tools chrome extension
+
+
+
+Ch 2 - Component, Props, JSX
+- function Video() {
+
+}
+function Thumb() {
+
+}
+export {Video, Thumb};
+- we can use fragments to wrap all divs in a single div 
+- use className instead class in a div 
+- use {variable_name} syntax to use a variable 
+- to convert html into JSX 
+https://transform.tools/html-to-jsx
+- use Destructuring way to get props 
+function(props){
+    console.log(props.title);
+}
+function({title,name}){
+    console.log(title);
+}
+- values of props should not be changed in recieving component 
+- prefer to use default value of props 
+- children prop are used for nested components 
+- use of spread operatror on a component 
+function test() {
+    let  obj = {
+        title: "title",
+        name: "name"        
+    }
+    return (
+        <Component1 {...obj} > </Component1>
+    )
+}
+
+Ch 3 - Conditional rendering, maps
+- if else donot return anything but ternary operator return value 
+- if we donot want to return any value in a ternay operator then use null
+- to make an emoji as string 'emoji'
+- short circuiting condition 
+{verified ? true_statement : false_statement }
+{varified && true_statement}   //short circuit 
+- higher order function 
+{
+    ["A", "B", "C"].map(e => <div key={e} > e </div>)
+}
+- template/string literal 
+`This is a ${variable}`
+- create seperate file/folder for data, states and for others 
+
+Ch 4 - Events, Event handler, Synthetic Event Object
+- function test(){
+    return (
+        <button onClick={() => console.log("test")}> Play </button>
+    )
+}
+- childern prop 
+function test(){
+    return (
+        <Component1> Play </Component1>
+    )
+}
+function Component1({children}){
+    return (
+        <div> {children} </div>         // get Play
+    )
+}
+- passing function as props 
+function test(){
+    return (
+        <Component1 onClick={()=>console.log("test")}> Play </Component1>
+    )
+}
+function Component1({onClick, children}){
+    test(){
+        onClick();
+    }
+    return (
+        <button onClick={() => test()}> Play </button>        // get Play
+    )
+}
+- e.stopPropagation() vs e.preventDefault()
+- function names should starts like handleThis() {} , if it handles something
+- event bubbling: when one element has onclick property of another element which also have that same onclick property so both the elements will be triggered at
+
+Ch 5 - State, useState hook
+- state update issue ??
+- import {useState} from 'react';
+const [name, setName] = useState([initialValue]);     // array destructuring
+
+Ch 6 - Forms, Event Objects, lifting state up
+(IMPORTANT)
+- send data to parent
+- send data to sibling
+
+Ch 7 - CRUD operations, useEffect hook
+
+
+Ch 8 - useReducers for State management
+- hook based on redux functionality 
+- reducer is a pure function that takes in two arguments: the current state and an action object describing what happened since last time we called this reducer
+- optimized way of handling state 
+
+Ch 9 - Context API , useContext hook
+
+
+Ch 10 - Context API with useReducers, Custom hooks
+
+
+Ch 11 - useRef hook
+
+
+Ch 12 - useEffect hook detailed, API calls
+https://www.mockaroo.com/
+
+
+
+Ch 13 - useMemo, useCallback, memo
+
+
+Ch 14 - Advanced React 1 - forwardRef,useDeferred, useTransistion etc
+<Profiler>
+<StrictMode>
+<Suspense>
+
+
+
+Ch 15 - Advanced React 2 - Lazy loading, flushSync, createPortal etc 

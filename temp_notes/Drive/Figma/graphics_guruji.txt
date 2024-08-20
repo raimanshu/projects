@@ -1,0 +1,191 @@
+Graphics Gurujij
+
+1 Introduction
+
+2 What is figma and it’s feature
+Vector graphics editor and prototyping tool which is primarily web based with additional offline features enabled by desktop applications for macOS and Windows
+Features - Designing, Prototyping, Collaboration, Design Systems
+
+
+3 Create account and setup 
+
+4 Figma interface and tools
+Move(v)
+Scale(k)
+Frame(f) -
+Frame - to set the size of the frame
+Slice(s)
+Rectangle (r)
+Line (l)
+Arrow (Shift + l)
+Ellipse (o)
+Place an image (Ctrl + Shift + k)
+Pen (p)
+Pencil (Shift + p)
+Text (t)
+Hand tool (h)
+Comment (c)
+Save version history  (Ctrl + Alt + S)
+
+5 Setting up teams and projects
+
+6 Working with frames or artboards in figma
+Alt + Drag - to copy frame and move freely
+Alt + Shift +  Drag - to copy frame and move perpendicularly
+Ctrl + D -  To copy frame but we have to move that from same place as original
+
+7 How to set up layout grids in Figma Download
+Open layout grid option in right side nav
+
+8 Working with shapes in figma Important
+Drag - to change the dimensions free hand
+Shift + Drag - to maintain the dimensions
+Alt + Shift + Drag - To change dimensions but center point will not change
+Ctrl + move - rotate element free hand
+Ctrl + Shift + move - rotate element at certain angles
+Fill option to fill color in different ways
+Stroke is used for borders
+Effects is used for shadowing effect on element
+Rectangle
+Line
+Arrow
+Ellipse
+Polygon
+Star
+Place Image
+
+
+9 Boolean operations in Figma
+
+10 Figma Groups and Frames Important
+Select all the elements and press Ctrl + G to make group
+In a group if you want to select a single element of it it dubble click on it And if want to move whole group then single click
+To add an element inside a group create that element then drag it’s name inside that group name from left side nav
+Select the group and press Ctrl + Shift + G to ungroup
+
+To make elements inside a frame first select frame option then select elements using dragging
+Ctrl +Shift + G to unframe 
+To add an element inside a frame drag that element inside frame boundary. It will be automatically added inside that frame
+
+11 Figma pen tool and vector network Important
+To draw line - Select pen tool click on frame then click it’s other end point 
+Shift + click end points - To draw line in straight line / certain angles 
+b - to fill color in closed drown pen drawing
+v - to go out from fill color in pen drawing option
+Select image then Enter - to go into pen drawing
+Esc - to exit from continuous line drawing
+No mirroring, Mirror length, Mirror angle with length
+Alt + click and drag the portion -  to copy that portion
+For practice pen tool - https://bezier.method.ac/ 
+
+12 Figma mask tutorial
+First select the mask then click use as mask.After that drag that image from left side nav and put it inside mask component
+To unmask - remove component from left side nav
+
+13 Figma guides why? when?How?
+Shift + R - Enable/disable ruler
+Select the element + Alt + hover over ruler line - Show distance between ruler line and that element
+
+14 Figma Images and how to insert a gif
+How many ways we can insert an image inside a shape ? - place image, fill option in right side nav, copy image from file explorer then select the shape and paste the image, drop the image inside fill option in right side nav
+How to insert image in bulk in figma ?
+
+15 Figma text tool Download Important
+Auto resizing - Auto width (single click and type) , auto height, fixed size (single click and drag)
+Manual resizing - Scale (k)
+Customization - 
+Change font and size (Ctrl + Shift + </>)
+Font style (Alt + Ctrl  + </>)
+Line height (Shift + Alt  + </>)
+Letter spacing (Alt + </>)
+Paragraph spacing and indent
+Alignment - 
+Justification Alt + Ctrl + R/L/T/J
+Vertical Alignment 
+Properties - color, gradient, stroke, Effects (Drop Shadow)
+Convert text to vector Paths -
+Flatten text Ctrl + E 
+Outline stroke Shift + Ctrl + O
+Insert image
+More properties
+
+16 Auto Layouts Download Important
+Select all elements then Shift + A - Add auto layout
+
+17 Figma styles explained Download Important
+For color styles
+Naming convention -  primary/blue_dark, primary/blue_mid,primary/blue_light
+For text styles
+For shadow
+For grid styles
+
+18 Figma components and figma variants Download Important
+Alt + Ctrl + k - create component
+Combined as variants
+Naming conventions with /
+
+19 Design System Figma
+Design Systems = Identities (colors, fonts, images, sounds) + Principles (brand values, purposes,objectives) + Best Practices (Accessibility, UX, Dos and Don’ts)
+Link for figma files Download 
+
+20 Figma Prototyping
+Navigate to, change to, open overlay, swap overlay, close overlay,back, scroll to, open link
+
+21 Figma Animation Important
+Alt + Ctrl + G - create frame
+Alt + ctrl + k - make component
+
+22 Figma Auto layout updates
+Layer ordering
+Negative spacing
+Canvas stacking order
+Text baseline ordering
+Resizing options
+Canvas controls
+Padding
+Absolute positioning
+Spacing mode
+Strokes occupy space
+
+Extra : 
+UI is a part of UX
+Difference between UI vs UX
+Specialist , Generalist, T Shaped Designer
+Project Ecosystem
+SWOT Analysis
+Project Approach - Plan, define,Design,Develop, develop,Extend OR Waterfall, Agile,Modified,
+Assumption worksheet
+Affinity Diagram
+Customer journey maps
+User persona
+Storyboarding
+Prioritizing the requirements
+Flow diagram
+Wireframes and Annotations
+Low fidelity(Pencil Drawing),High fidelity(Figma UI without colors and standards), Final UI Diagrams (Figma UI with colors and standards)
+Prototyping types - Paper prototyping, Digital prototyping, Basic HTML prototyping
+Usability testing
+Designing to Development
+
+
+
+
+
+
+
+
+
+
+
+
+
+Him…..4
+With google
+
+http://www.uigoodies.com/ 
+
+11 Figma pen tool and vector network
+No mirroring, Mirror length, Mirror angle with length
+Ctrl + Enter - Go into pencil art editor mode
+Network tool
+be

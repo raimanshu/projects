@@ -1,0 +1,14 @@
+PHOTOPEA
+
+For Learning photopea follow “TechSupport, youtube.com”
+
+- Online copy of adobe photoshop
+- Press Alt and hold it then click on the image to copy it
+- Some functionality can only be used when content is “Rasterize” – erazer tool, clone tool, brush tool, 
+
+Doubts
+- What are psd, ai, xd, sketch, pdf, xcf, raw
+- Diff between jpg, jpeg, png, svg, gif
+- Change background color 
+- How to use text wrap property for text in photopea ? 
+

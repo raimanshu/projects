@@ -1,0 +1,83 @@
+collection of data or informtion that can be easily acessable
+-DBMS - not an actual database, software appln in order to create/manage the database
+- SQL vs NoSQL
+- connect – mysql -u user_name -p password -h localhost
+- show/check database – show databases;
+-create database – create databse database_name;
+- using database – use database_name;
+- delete database – drop database database_name;
+- check current database – select database();
+- mysql data types – numeric, strings , Date&time
+- create table – create table table-name ( column_name data_type, column_name data_type);
+- show/check table – show tables;
+- table details – desc table_name; or select columns from table_name;
+- delete tables – drop table table_name;
+- insert data in table - insert into table_name (column_1, column_2 ) values (value_1, value_2);
+- show data of table – select * from table_name;
+- show warnings of table – show warnings;
+- show errors of table – show errors;
+- Null vs not null – Null means the value is not known but null doesnot mean 0. if we set the value of
+NULL in table then we cannot keep empty that field name.
+- implement NOT Null in table – create table table_name ( column_1 data_type NOT NULL, column_2
+data_type);
+- set default value in table - create table table_name ( column_1 data_type DEFAULT default_value,
+column_2 data_type);
+- adding column in table – ALTER TABLE table_name ADD Column column_name;
+- delete column in table – ALTER TABLE table_name DROP Column column_name;
+- primary key – primary key constraint uniquely identifies each record in a table; must contain unique
+value and cannot contain null values.
+create table table_name ( column_1 data_type, column_2 data_type, PRIMARY KEY(column_1) );
+- Auto increment – allows a uniqe number to be generated automatically when a new record is inserted
+into a table;
+create table table_name ( column_1 data_type AUTO_INCREMENT, column_2 data_type, PRIMARY
+KEY(column_1) );
+- where – used to filter records. select * from table_name where column_name=req_value;
+- update statement- used to modify the existing record in table. UPDATE table_name SET
+column_name=req_value where column_name=existing_value;
+- delete statement – used to delete existing record in table DELETE FROM table_name where
+column_name=existing_data;
+- Distinct statement - used to return only distinct values Select DISTINCT column_1,column_2
+from table_name;
+- order by keyword – used to sort the result-set in ascending or descending order.
+Select * from table_name ORDER BY column_name DESC;
+- limit keyword – set the value upto which data will be shown.
+Select * from table_name ORDER BY column_name LIMIT limiting_value;
+- like operator – used in a where clause to search for a specified pattern in a column.
+Select * from table_name where column_name LIKE ‘%letter%’;
+- Aggregate functions-
+- count() - returns the number of rows that matches a specified criteria. select count(column_1) from
+table_name;
+- avg() - returns the average of a numeric column. select avg(column_1) from table_name;
+- sum() - returns the total sum of a numeric column. select sum(column_1) from table_name;
+- max() - select max(column_1) from table_name;
+- min() - select min(column_1) from table_name;
+
+- Logical operators – returns a true or false values to combine one or more true or false values. Ie =,!=,
+<,>,<=,>=, between, and, or, &&, |, not, in
+Select * from table_name where column_name != given_value;
+Select * from table_name where column_name between value_1 and value_2;
+Select * from table_name where column_name in (value_1, value_2);
+- String functions -
+- concat() - adds two or more expressions together
+select concat(fname,’ ’,lname) from students AS fullname;
+- reverse() - reverses a string and returns the result
+select reverse(‘string’); or select reverse(‘string’) as reverse;
+select concat (‘thapa’,reverse(‘thapa’)) as palindrome;
+- char_length()
+- lcase()
+- ucase()
+- Date and time – YYYY-MM-DD HH:mm:ss
+- curdate() -
+- now() -
+- curtime()
+- foreign key – used to link two tables. Is a feld(or collection of fields) in one table refers to the primary
+key in another table.
+create table table_name ( column_1 data_type, column_2 data_type, FOREIGN KEY(column_1)
+references table_1(column_1) );
+- join clause – used to combine rows from two or more tables based on related column between them
+- inner – returns records that having matching values in both tables
+select * from table_1, table_2 where table_1.common_column = table_2.common_column order by
+orderate;
+select * from table_1 inner join table_2 where on table_1.common_column = table_2.common_column
+- left outer – returns all records from the left table, and the matched records from the right table
+- right outer - returns all records from the right table, and the matched records from the left table

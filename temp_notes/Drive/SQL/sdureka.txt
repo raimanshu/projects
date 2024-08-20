@@ -1,0 +1,105 @@
+#Introduction
+DDL Data Definitions Language commands
+DML Data Manipulation Language commands
+Retrieve data from Multiple Tables
+Inbuilt functions in SQL
+Create Advance database Objects 
+# What is RDMS ?
+Relation Database Management System
+Databases connect to the data in different files by using common data numbers or a key field
+Column is called attributes or fields
+Row is called record
+Eg - Oracle, MySQL, etc
+# Normalization in DBMS
+Process of organizing data to avoid duplication and redundancy
+It minimizes duplicate data, minimize or avoid data modification issues and simplify quries
+# Normalization Types in DBMS
+First Normal Form (FNF), Second Normal Form (SNF), Third Normal Form (TNF) and Boyce and Codd Normal Form (BCNF)
+FNF 
+- Each set of column must have a unique value such that multiple columns cannot be used to fetch the same row
+- Each table should be organized into two, and each row should have a primary key that identifies it as unique
+- The primary key is usually a single column, but sometimes more than two column can be combined to  create a single primary key
+- Using FNF, data redundancy increases, as there will bemany columns with same data in multiple rows but each row as a whole will be unique
+- SNF
+	-  There must not be any partial dependency of any column on primary key
+	- A table that has concatenated primary key, each column in the table that is not part of the primary key must depend upon the entire concatenated key for it’s existence
+- If any column depends only on one part of the concatenated key then the table fails SNF
+- TNF
+-  It applies that every non-prime attribute of  table must be dependent on primary key, or we can say that there should not be the case that non-prime attribute is determined by another non-prime attribute
+- so, this transitive functional dependency should be removed from the table and also the table must be in SNF
+	- 
+# Data types in SQL
+A data type is an attribute that specifies the type of data that the object can hold: integer data, character data, monetary data, date and time data, binary strings, and so on.
+Character string data type - char(n), nchar(n), varchar(n), varchar(max), nvarchar(n), nvarchar(max)
+Numeric data type - int, tinyint, smallint, bigint, money, smallmoney,decimal(precision, scale),numeric(precision, scale), float(n), real
+Date and Time data type - date, datetime, datetime2, datetimeoffset, smalldatetime,  time
+Binary data type - bit, binary(n), varbinary(n), varbinary(max)
+
+Database commands
+Data Definition Language (DDL) - deals with database schemes and descriptions, of how the data should reside in the database, CREATE, ALTER, DROP
+Data Manipulation Language (DML) - Used to store, modify, retrieve, delete and update data in database, SELECT, INSERT, UPDATE, DELETE
+Data Control Language (DCL) - Concerned with rights, permissions and other controls of the database system, GRANT, REVOKE
+Transaction Control Language (TCL) - deals with transaction within a database, COMMIT, ROLLBACK, SAVEPOINT
+
+Create Database Objects
+To show available database - show databases;
+To use/enter specific database - use database <database_name>.;
+Create database - create database <database_name>;
+To show available database - show databases;
+To see details of specific table -  desc <table_name>;
+Create table - create table <table_name>(columnA datatype, columnB datatype);
+
+Alter Table Statements
+To add column in table - alter table <table_name> add <column_name datatype>;
+To drop/delete column in table - alter table <table_name> drop column <column_name>;
+To modify column - alter table <table_name> alter column <column_name> <datatype>;
+
+Drop Table Statements
+To drop/delete a table - drop table <table_name>
+
+Various Constants
+- enforce rules on the table whenever rows are inserted, updated and deleted
+- NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK
+
+Creating Views
+
+Table Commands
+Insert Statements
+Insert -As- Select Statement
+Update Statement
+Delete Statement
+Select Statement
+Select Statement: Alias
+Select Statement: Distinct Values
+Sorting
+Filtering
+
+Comparission Operators
+NOT IN
+IN
+Symbols
+Example
+LIKE
+CASE Expression
+
+Joins
+Joins
+Self-Join
+Inner-Join
+Left Outer-Join
+Right Outer-Join
+Full Outer Join
+Cross Join
+
+Functions
+SQL Built-in Functions
+Conversion Function
+Logical Functions
+Math Functions
+Aggregate Functions
+String Functions
+Date & Time Functions
+Custom Functions
+Stored Procedure
+User Defined Functions
+Triggers

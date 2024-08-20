@@ -1,0 +1,48 @@
+Recommended
+https://www.w3schools.com/sql/sql_intro.asp 
+
+https://www.javatpoint.com/sql-tutorial 
+
+How To Create a New User and Grant Permissions in MySQL | DigitalOcean
+
+
+Steps to start mysql
+Create new user using workbench or cmd with standard authentication
+Give the user all privileges
+
+mydb = mysql.connector.connect(
+user='himanshu', 
+password='password', 
+host='localhost',
+port=3306,
+database='sakila',
+auth_plugin='mysql_native_password')
+mycursor = mydb.cursor()
+
+Database Designer
+https://app.dbdesigner.net/designer/schema/guest_template (Recommended)
+himanshurai153647494@gmail.com 
+@Sudhanshu12345
+
+
+https://app.sqldbm.com/MySQL/Draft/?sampleProject=true 
+https://dbdiagram.io/d/623c43f1bed6183873ef0f39 
+https://app.diagrams.net/ 
+
+https://www.holistics.io/blog/top-5-free-database-diagram-design-tools/ 
+
+
+ERR Diagrams
+https://www.edrawsoft.com/er-diagram-symbols.html 
+
+Doubts
+- Difference between DBMS and RDMS ?
+- Difference between drop and delete
+- what if a table is created and you don't run the database ?
+- ; (semi colon) is required in end of every sql command ?
+- DDL vs DCL vs DML
+- SQL Constraints
+- decimal vs  numeric data types in sql
+- data types in sql
+- operators in sql
+- create database

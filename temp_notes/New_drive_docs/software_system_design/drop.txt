@@ -1,0 +1,47 @@
+https://systemdesignprimer.com/dropbox-system-design/
+
+# Pointers
+## Requirements
+- Functional Req
+- Non-Functional Req
+- Out of scope
+
+## Capacity Estimation
+- Assumptions
+- Storage Estimation
+
+## Detailed Component design - Users service, subscription service
+- Client - Client metadata database, Chunker, Watcher, Indexer, Synchronizer
+- Meta Service - Metadata DB,Cache, Notification service, queueing changes , claver algorithm
+- Block Service - Magic pocket
+- Notification service - Http long polling,Websockets, Server Sent Events
+- Queue - RabbitMQ, Apache ActiveMQ, Kafka, Decoupling
+
+## Database Schema
+
+## APIs
+- Download Chunk - used to download the chunk of a file.
+- Upload Chunk - used to upload the chunk of a file.
+- Get Objects - used by clients to query Meta Service for new files/folders when they come online.
+
+## Performance
+- Chunking Files - Instead of uploading entire file in one go, we are chunking files in blocks of 4 MB and then uploading each chunk.
+- Data Deduplication - The files are getting chunked in to blocks of 4 MB and each chunk is assigned a chunk_id which is SHA-256 hash of that chunk.
+- Caching -  uses in-memory caches like Redis and Memcached cache, write-around caching, Least Recently Used (LRU) eviction policy
+
+## Scalability
+- Horizontal Scaling - add more servers behind the load balancer to increase the capacity of each service.
+- Database Sharding - Metadata DB is sharded based on object_id. Our hash function will map each object_id to a random server where we can store the file/folder metadata
+- Cache Sharding - Similar to Metadata DB Sharding, we are distributing the cache to multiple servers., partitioning, consistent hashing
+
+## Security
+- HTTPS - The traffic between client and server is encrypted over HTTPS.
+- Authentication - For each API request post log-in, we are doing authentication by checking the validity of auth_token in Authorization HTTP header.
+
+## Resiliency
+- Distributed Block Storage - Files are split up in to chunks and these chunks are replicated within data center for durability. Also these chunks are distributed across data centers in multiple geographic regions for redundancy.
+- Queuing - We are using queuing in our system for sending out the notification to clients. Hence if any worker dies, message in a queue isn’t acknowledged and other worker picks up the task again.
+- Load Balancing - Load Balancer is continuously doing health check on servers behind it. If any server dies, load balancer stops forwarding the traffic to it and removes it from cluster.
+Geo-redundancy - We are deploying exact replica of our services in data-centers across multiple geographical locations.
+
+## References

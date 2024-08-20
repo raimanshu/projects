@@ -1,0 +1,64 @@
+Github (code_with_harry)
+
+git config --global user.name <name>
+git config –global user.email <email>
+
+git init
+
+
+git status
+git add <file name>
+git commit -m “<message>”
+git add -A
+git checkout <file_name>
+git checkout -f : checkout all changed files
+git log : shows all commits with author name, author email and date of commit
+git log -p -<number> : show diffs of last <number> of times
+git diff : compare local chages to stagged changes
+git diff --staged : compare diff staged area to last commit
+git commit -a -m “<messgae>” : commit the change and skipp the staged area
+git rm <file_name> :
+git rm –cached <file_name> :
+git status -s : git status in short form
+git branch : show list of all branch
+git branch <branch_name> : create a branch with branch name <branch_name>
+git checkout <branch_name> : will switch to <branch_name>
+git merge <branch_2> : merge branch_2 into branch_1
+git checkout -b <branch_name> : create branch with <branch_name> and checkout to that
+git remote add origin <git_remote_url> : link your local repo to remote repo in github
+git remote : show list of remote
+git remote -v : shows remote repo link
+git push origin master : push master branch to my remote origin
+git remote set-url origin <git_remote_url> : set the url to remote origin
+git clone <git_remote_url> : clone the project with same name
+git clone <git_remote_url> <name> : clone the project inside <name folder
+
+
+ssh-keygen -t rsa -b <code> -C “<gmail.com>”
+enter at paraphase
+eval $(ssh-agent -s)
+ssh-add ~/ .ssh/id_rsa
+cat ~/ .ssh/id_rsa.pub
+
+git push -u origin master
+
+
+Git Terminology
+version control system – distributed vs centered
+git initialization
+git clonning
+git configuration
+git files – untracked, unmodified, modified, stagged
+General git commands – add, commit, diff, status, log, checkout
+.gitignore file
+git branching - branch, checkout
+git account – signup, sign in
+remote repository
+SSH and GPG links
+
+
+Terminal commands
+ls -lrt – shows inside file with details
+clear – clear terminal
+touch <file_name.extension> - create a file through terminal
+

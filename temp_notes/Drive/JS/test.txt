@@ -1,0 +1,2 @@
+For node and angular integration
+https://edupala.com/integrating-angular-on-node-js/

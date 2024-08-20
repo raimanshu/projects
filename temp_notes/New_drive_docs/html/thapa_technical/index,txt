@@ -1,0 +1,44 @@
+
+0:00 Introduction to HTML & Course Topics
+6:08 HTML Document Structure
+7:49 Understanding the Building Blocks of a Website
+10:32 What is HTML?
+14:25 A Dive into the History of HTML
+19:05 Mastering HTML Syntax
+21:16 Downloading Your Code Editor
+23:52 Pro Tips for HTML (Part 1 & 2)
+28:32 Navigating HTML Documents & Their Structure
+32:02 Getting to Know the HTML Language
+35:20 Unveiling HTML Attributes
+37:46 Writing HTML Documents in Hindi
+38:44 Creating Our First HTML Code
+41:40 Exploring HTML Headings
+53:30 Understanding HTML Paragraphs
+59:20 Working with HR and BR Tags in HTML
+1:02:35 Mastering HTML Comments: Adding Remarks to Your Code
+1:05:31 Text Formatting in HTML: Adding Style to Your Text
+1:26:18 Creating Seamless Links and Anchors
+2:11:28 Enhancing Content with Images in HTML
+2:32:10 Leveraging HTML Map & Area Elements for Maps
+2:36:55 Exploring Void Elements in HTML
+2:38:35 Optimizing Images with HTML Picture Tag
+2:43:55 Enhancing Images with HTML Figure Tag
+2:47:15 Organizing Information with Lists in HTML
+3:04:50 Effective Data Presentation with HTML Tables
+3:24:10 Embedding Content Like a Pro with HTML IFRAMES
+3:32:00 Adding Audio to Web Pages with HTML Audio TAG
+3:40:00 Mastering Video Embedding with HTML Video TAG
+3:44:50 Creating Interactive Forms with Forms and Input Elements
+4:22:40 Enhancing Website Structure with HTML Semantic Elements
+4:36:25 Boosting SEO with HTML Meta Tags
+4:44:18 Unveiling the Art of HTML SEO
+4:46:29 HTML Final Mega Project
+5:18:55 Website Performance Checkup: Understanding Your Site's Ranking
+5:24:45 Hosting Your Website Live for Free
+5:30:30 Hosting Your Website Live with Paid Options
+5:35:40 Wrapping Up Your HTML Journey - Outro
+
+========================
+-   .htm was used due to MS Dos three letter restriction. After that version .html is used
+-   always us index.html as the main html page 
+-   <!DOCTYPE> used to know the browser that it is written in HTML 5 and aother semantic keywords can be used in it

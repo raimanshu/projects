@@ -1,0 +1,36 @@
+OBSERVATION
+-----------
+For practice/learning
+https://learngitbranching.js.org/ 
+For learning
+https://www.tutorialspoint.com/git/index.htm 
+https://www.javatpoint.com/git (Recommended)
+
+CHEATSHEET 
+----------
+https://git-scm.com/docs
+
+DOUBTS
+------
+DVCS vs CVCS
+After git fetch in which form the file is present in the system
+Git settings -  https://www.tutorialspoint.com/git/git_create_operation.htm 
+Git terminology - https://www.tutorialspoint.com/git/git_basic_concepts.htm 
+https://www.javatpoint.com/git-terminology 
+Git fetch vs Git pull
+Where did git stash data save in local system
+What is HEAD
+Difference between –soft, –hard and –mixed flag used with git reset
+Git vs Github
+Git vs SVN
+Git vs Mercurial
+–global vs –local vs –system flags used with git config
+git gui vs gitk vs git bash
+Light-weight tag  vs Annotated tag
+What is branching model
+Types of branches - master, develop, hotfix, release, feature
+Git cheatsheet https://www.javatpoint.com/git-cheat-sheet 
+
+READMEs vs github gists vs github pages
+
+

@@ -1,0 +1,81 @@
+https://autotrender.stoxkart.com:5858/
+
+FUNDAMENTAL ANALYSIS
+---------------------
+
+# Curent price should be lower than intrinsic value
+
+# Price to Earning Ratio
+- should be minimum
+- less than 20 is good
+# Price to Book Ratio
+- should be minimum
+# Debt to equity Ratio 
+- should be minimum
+- see repaying capacity
+# Current Ratio
+- ( Current Asset / Current Liability )
+- should be maximum
+
+
+# Balance sheet
+## Sales / top line
+should grow year by year
+## Profit / bottom line
+should grow year by year
+## Total asset
+should grow year by year
+## total liabilities
+should reduce year by year
+## cashflow
+should grow year by year
+
+# https://www.tickertape.in/
+
+# Things to remember
+## Business need and it's future
+## Company monopoly
+## competitor -
+##check connection of that company with the political party
+
+# Interest coverage ratio
+- should be high
+
+# Foreign institutions 
+should grow year by year
+
+# Total promoter holding
+should grow year by year
+
+# Free cashflow
+should grow year by year in a positive way
+
+Divident Yield 
+How much company gives return to customer
+higher is good
+
+
+TECHNICAL ANALYSIS
+---------------------
+# Trends 
+Up Trend - Higher High, Higher Low
+Down Trend - Lower High, Lower Low
+Sideways Trend
+
+Resistance - High Imaginary line 
+Support - Low Imaginary line 
+
+# Understanding Candle sticks
+Body 
+Wick
+
+
+
+
+
+
+
+OBSERVATION
+------------
+
+

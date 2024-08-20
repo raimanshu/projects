@@ -1,0 +1,22 @@
+YOUTUBE 
+--------
+simplicode
+Techgun - 3 
+kg coding
+thaapa technical - 1
+codehelp - 2
+
+PRACTICE
+--------
+https://learnhtmlcss.online/app.html?id=2095
+
+CHEATSHEET
+----------
+https://htmlcheatsheet.com/
+https://learntheweb.courses/topics/html-semantics-cheat-sheet/
+
+DOCUMENTATION
+-------------
+https://developer.mozilla.org/en-US/docs/Web/HTML
+https://www.w3schools.com/tags/default.asp (Recommended)
+https://www.w3schools.com/tags/ref_attributes.asp (Recommended)

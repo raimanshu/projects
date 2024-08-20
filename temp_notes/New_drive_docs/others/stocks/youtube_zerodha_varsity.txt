@@ -1,0 +1,152 @@
+https://www.youtube.com/@varsitybyzerodha/playlists
+
+https://in.tradingview.com/chart/?symbol=NSE%3ANIFTY
+
+INTRODUCTION TO STOCKS MARKET
+-----------------------------
+1. Why should you inverst?
+- learnapp.com
+- investing money is better than setting money idle 
+- options - real estate, fixed income, gol, equity
+- NSE and BSE 
+- Equity > real estate > gold > fixed income 
+
+2. Market Intermediaries
+- Broker -  A corporate entity registered as a trading member with the stock exchange 
+- Brokerage -  is the fees taken by broker as it provide services 
+- stock exchage - NSE and BSE 
+- Clearing corporation - NSCCL and ICCL, to ensure that after transaction everything goes well
+- Depository - NSDL and CDSL, a digital locker that stores all your shares digitally
+- Bank - where the money is debited, credited etc
+- SEBI - Financial regulator for all the process
+
+3. Why and how do companies list, and what is an IPO?
+- Reliance starts in 1972 and IPO in 1977
+- Seed round (Initial share capital) - investment get from friends, family etc (Angle invester)
+- Venture Capitalists - who invests in startups
+- Initial public Offering (IPO) -  If a company want to go global and want investments frompublic to enlarge itself 
+- Steps to make a company in IPO
+Appoint a merchant banker
+Apply to SEBI 
+Getting a nod from SEBI 
+DRHP (Draft Red Herring Prospectus)
+Market the IPO 
+Fix the price band 
+Closure 
+Listing Day 
+
+4. Why do stock prices fluctuate?
+- Due to demand and supply 
+
+5. How does a trading platform work?
+- Login with 2 factor verification 
+- Equity vs Commodity
+
+6. What is a stock market index?
+- Nifty 50 and sensex are stock market index that shows the current status of the market 
+- https://www.nseindia.com/
+- https://www.bseindia.com/
+- BSE has around 5000 companies but NSE has 2000 companies 
+- Banknifty index comprises top banking sector companies 
+- Finnifty index comprises top finance sector companies 
+- Small Cap index -  
+- Mid Cap index - 
+- Large Cap index - 
+- All the members in an index may varry their percentage included based on market cap 
+
+7. Clearing and settlement process
+- It takes approx 2-3 days for settlement of buying and selling any stock 
+
+8. Understanding corporate actions like dividends, bonuses and buybacks
+- dividends - part of the profit share with the share holders 
+- Announcement Date, Record Date , Ex-Date
+- Bonus - free shares that shareholders gets that are given by the company,it comes in ratio like 1:1, 3:1 etc
+- Split - price of the share decreses and the number of share increases, it comes in ratio like 1:1, 3:1 etc
+- Buyback - company use the profit to buy the shares that are in the market
+- Types of buyback - open market purchase and fixed price offer
+- Rights issue - getting investment from existing shareholders
+- OFS -
+- Rights Entitlement - 
+- Mergers - 
+- Acquisitions - 
+- Reverse Merger - 
+
+9. Order Types
+- CNC (Cash N Carry) But/Sell
+- limit Order - where you specify the price that you want to place order orsell order
+- Market order - instant buy/sell 
+- MIS (Margin Intraday Squareoff) Order - sell/buy order in the same day ie intraday
+- Shorting - 
+- Exit order - 
+- Stop loss order - 
+- Cover Order -
+- GTT (Good Till Trigger) Order 
+
+10. Getting started
+- Techinalcal Analisis - study of price and volume, can be used on all assets 
+- Fundamental Analisis - study of companies based on financial statements 
+- Quantitative Analisis - study of quantified data, objective way to trade 
+
+TECHNICAL ANALYSIS
+------------------
+1. Fundamental analysis vs technical analysis
+- FA - cashflow statements, balance sheet, annual statement, profit & Loss statement 
+- TA - market participant actions, analysing price stock chart
+- Assumptions of TA - markets discount everything, the how is more important than why, price moves in trends, history tends to repeat itself 
+
+2. Setting realistic expectations
+- for short term investment use TA but for longterm use FA 
+- time interval for holding a stock must be few months maximum not more than that 
+- fix the exit range after entering the trade and use stop loss method to reduce risk
+
+3. Types of charts
+- market timming - 9:15am to 3:30pm
+- line chart - 
+- OHLC Bar Chart -
+- candlestick bar chart - red candlestick, green candlestick, upper wick/shadow, lower wick/shadow
+
+4. Timeframes
+- monthly timeframe - investor
+- weekly timeframe - positional trader / investor
+- daily timeframe - swing trader 
+- intraday timeframe - 5min,15min, 30min
+
+5. Key assumption of technical analysis
+- Markets discount everything
+- How is more important than why 
+- Price moves in trends 
+- History tends to repeat itself 
+
+6. Understanding candlestick patterns
+- types of candlestick pattern - single & multiple
+- single candlestick pattern -  marubozu, doji, spinning top, hammer, hanging man
+- multiple candlestick pattern - bullish engulfing, bearish engulfing, piercing pattern, dark cloud cover, morning star, evening star
+- candlestick cardinal rules - buy strength and sell weakness, be flexible with patterns, look at the prior trend 
+
+7. Single candlestick patterns
+- Marubozu - means bald, doesnot have upper and lower wick, It signifies major change in trend depend upon it's bullish or bearish
+- Paper Umbrella - body-wick ratio is x:2x, In uptrend it is known as Hanging man and in downtrend it is known as hammer, when it appers it reverses the trend
+- shooting star - body-wick ratio is 2x:x, when it appers it reverses the trend
+
+9. Support and Resistance
+- Support - zone at which the trend moves up after touching it 
+- Resistance - zone at which the trend moves down after touching it 
+
+10. Technical indicators (IMPORTANT)
+- why indicators are so popular - quantitative in nature, easy to plot 
+- overlay indicator - Bollinger bands, moving average 
+- Underlay indicator - relative strength index, moving average covergence divergence
+- Oscillator
+- Overbought and over sell bands
+- moving average - running average over a period of time 
+- exponential moving average - weightage added tomoving average 
+- Avoid using short term moving average and use at least daily time frame while determing the trend 
+- When moving average line above and the graph in below it means it it is bearish market and in vice versa it is a bullish market 
+- MACD indicator - trend following system, consists of 12 day or 26 day EMA, MACD Ccrossover, MACD crossunder 
+- Relative Strength Index (RSI) - leading nature, measures momentum
+
+
+
+
+
+

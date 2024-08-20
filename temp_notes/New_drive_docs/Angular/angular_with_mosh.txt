@@ -1,0 +1,106 @@
+
+- Diff between angularjs and angular
+- npm install, npm -v, npm install -g @angular/cli@latest, ng -v, ng new <project name>,
+ng serve,
+- file structure -
+
+
+----------------------------------------------------------------------------------------------
+
+- Interfaces -inline annotation, interface
+- class -
+- Objects -
+- Constructors - optional operator ?,
+- Access modifiers – public, private, modified
+- Properties – set keyword, get keyword, get & set uses within class,
+- Module – export keyword, template literal ``, ${}
+
+- component – encapsulates the data + Html template +logic, app.component
+- Directives - *ngFor,
+- module – container or group of related components, app.module
+- Service – Dependency Injection, Register service in module inside providers
+- Dependency Injection – Instead of let variable_for_service = new Service(), we can use
+constructor(variable_for_service: Service ){}
+- singleton pattern in Angular
+-creating component – create a component, Register to module in declarations, add element in 
+Html,
+- decorator - @Component(), @Injectable(), @NgModule()
+- selector – directive “selector”, class “.selector”, id “#selector”
+- template - “”,``
+- templateUrl
+- StyleUrls
+- Adding Bootstrap – npm install bootstrap –save, inside css file @import
+ “~bootstrap/dist/css/bootstrap.css”
+- interpolation - {{ }}, {{ variable }}, {{ function() }}
+
+- Property Binding – [property]= ”variable” from component to the DOM
+- Attribute Binding – [attr.property]= “variable”
+- Class Binding – [class.class_name]= “variable”
+- Style Binding – [style.property]= “variable”
+- Event Binding – (event_name)=”method()”, from template to component, $event, event
+ bubbling,
+$event.stopPropagation()
+- Event Filtering – (keyup.enter)=”function()”
+- Template variable - #dom_variable
+- Two way binding – [(ngModal)]=”ts_variable”, Register FormsModule in app.module
+- Pipes – used to format data, Uppercase, lowercase, Decimal, Currency, Percent, | pipe_name
+- Custom pipes – Register to module in declarations
+
+- component API -
+- Input – used to get data or statte of a variable, using @Input(), using inputs meta data, aliasing
+ an input field
+- Output - used to raise achange using an event, @Output(), EventEmitter(), emit(), passing
+ data during an emit event, aliasing an output field
+- Template
+- templateUrl
+- style – styleUrls, styles, <style></style>
+- view encapsulation – encapsulation in metadata, ViewEncapsulation – Emulated, Native, None
+- shadow DOM – allows to apply scoped style to elements
+-ngContent - <ng-content></ng-content> use for dynamic template injection, select attribute,
+- ngContainer - <ng-container></ng-container>, render anything without any markup
+
+- Directives – structural, attribute
+- *ngIf - <ng-template></ng-template>, *ngIf=”<condition> ; then true_template_variable else
+ false_template_variable”, For large element tree
+- hidden attribute – [hidden]=”condition”, for small element tree
+- ngSwitchCse – [ngSwitch]=”condition”, *ngSwitchCase=” ’case_variable’ ”, *ngSwitchDefault
+- ngfor - *ngFor=”let _variable of array/object_variable”, index, even, odd, first, trackBy
+- Why * is used – angular rewrite the code with structural directive with ng-template
+- ngClass -
+- ngStyle -
+- Safe Traversal operator - ?
+- Custom directive - @Host Listener(dom_event), ElementRef, nativeElement
+
+- Template driven form vs Modal driven forms (Reactive forms)
+- Template driven form
+- formGroup – value, touched, untouched, dirty, pristine, valid, errors
+- formControl – value, touched, untouched, dirty, pristine, valid, errors
+- ngModel – always use name attribute when use ngModal, template_variable.errors.error_type
+- ngForm - #template_variable=ngForm, | json
+- ngModelGroup -
+- ngValue – ngVakue vs value
+
+- Reactive Forms -
+- Abstract Control – parent or base class for FormControl, FormArray, FormGroup
+-formControlName, Validators, _form.get(‘field_name’)
+- custom validators – by making function inside a function inside classes
+- async operations – call the server behind the scene and when we get response from the
+ server it shows the value. Eg – setTimeout, Ajax
+- async validators – returns promise or observables
+- showing a loader image – formControlName has a property called pending
+- Nested formGroups – formGroupName, this.form.get(‘account.username’)
+- formArray -
+- formBuilder - .array(), .group(), .control()
+
+-Consuming Http services
+- JSONPlaceHolder – jsonplaceholder.typicode.com
+- Getting Data - HttpModule, No provider for http, res.json(), 
+-create data - http requests(get,post,put,delete, patch), this.post(this.url, JSON.stringyfy(body)),
+-update data - patch vs put, 
+- delete data - delete()
+-OnInit - ngOnInit(){}, used for initialization, 
+-services - 
+- errors - unexpected errors, expected errors
+
+# Angular Fundamentals
+## Introduction

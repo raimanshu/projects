@@ -1,0 +1,71 @@
+
+git commit
+
+git branch <branchname>
+git checkout <branchname>
+git checkout <commit>
+git checkout master^ - master^ is equivalent to "the first parent of master"
+git checkout Head^ - moving previous commit wrt Head
+git checkout Head~3 - moves head 3 levels upwards wrt Head
+
+git branch -f master HEAD~3 - moves (by force) the master branch to three parents behind
+ HEAD
+
+
+Merging branch1 into branch2 :
+Go to branch2 - git checkout branch2
+merge branch1 to branch2 - git merge branch1
+
+Rebasing branch1 into branch2
+Go to branch1 - git checkout branch1
+rebase branch2 to branch1 - git rebase branch2
+
+git rebase -i Head~4 - opens an interactive ui before doing rebase
+git rebase -i <Head or commit or branch>
+
+git log
+
+git reset Head~1 - move to previous commit (Only for local commit)
+git reset <branchname>
+git revert Head - restore the previous changes by creating a new commit (for local and remote
+ commit)
+git revert <branchname>
+
+git cherry-pick c1 c2 - copy commit c1 c2 of commits below your current location (HEAD)
+
+git commit --amend - The git commit --amend command is a convenient way to modify the most
+ recent commit. It lets you combine staged changes with the previous commit instead of creating
+ an entirely new commit. It can also be used to simply edit the previous commit message
+ without changing its snapshot.
+
+git tag <tagname> <commitid>
+
+git describe <commit or branch>
+
+git clone
+
+git fetch
+
+git pull
+
+git fakeTeamwork <commitname> <numberofcommit>
+
+git push
+
+git pull --rebase
+
+git checkout -b <newlocalremotebranchname> <bydefaultbranchname>
+git branch -u <bydefaultbranchname> <newlocalremotebranchname>
+
+git push <remote> <place> - as the "place" argument, we told git where the commits will come
+ from and where the commits will go.
+
+git push origin <source>:<destination>
+
+git fetch origin foo -
+
+git push origin :<branch1> - deletes branch1 from local as well as remote
+
+git fetch origin :<branch1> - creates branch1 to local
+
+
