@@ -1,0 +1,213 @@
+LEARNING
+--------
+https://www.geeksforgeeks.org/fundamentals-of-algorithms/
+
+
+DOUBTS
+------
+Comparision of sorting methods
+https://afteracademy.com/blog/comparison-of-sorting-algorithms
+https://www.researchgate.net/figure/COMPARISONS-OF-COMPARISON-BASED-SEARCHING-TECHNIQUES-ON-VARIOUS-PARAMETERS_tbl1_308119139
+Analysis of Time Complexity
+- if loop is outside then +,if loop is inside then *
+- if i is growing as +
+- o(c)<o(log log n)<o(log n)<o(n^1/2)<o(n)<o(n log n)<o(n^2)<o(n^3)<o(n^k)<o(2^n)<o(n^n)<o(2^2^n)
+- Log formulae https://www.vedantu.com/formula/logarithm-formula
+
+IMPORTANT LINKS
+----------------
+Basic operations - searching, sorting, insertion, updation, deletion
+Searching
+➢ Linear Search
+https://www.javatpoint.com/linear-search
+https://www.youtube.com/watch?v=4RSUYXQm8Fc
+➢ Binary Search
+https://www.tutorialspoint.com/data_structures_algorithms/binary_search_algorithm.htm
+➢ Ternary Search
+https://www.geeksforgeeks.org/ternary-search/#:~:text=Ternary%20search%20is%20a%20decrease,the%20key%20(searched%20element).
+➢ Exponential or Doubling or Galloping Search
+https://www.geeksforgeeks.org/exponential-search/
+➢ Interpolation Search
+https://www.geeksforgeeks.org/interpolation-search/
+➢ Fibonacci Search
+➢ Jump Search
+https://www.geeksforgeeks.org/jump-search/
+
+Sorting
+➢ Bubble
+➢ Bucket
+➢ Comb
+➢ Counting
+➢ Heap
+➢ Insertion
+➢ Merge
+➢ Quick
+➢ Radix
+➢ Selection
+➢ Shell
+➢ Bitonic
+➢ Cocktail
+➢ Cycle
+➢ Tim
+
+---------------------------------
+
+1. Sorting Algorithms:
+Bubble Sort
+Selection Sort
+Insertion Sort
+Merge Sort (Divide and Conquer)
+Quick Sort (Divide and Conquer)
+Heap Sort
+Radix Sort
+Counting Sort
+Bucket Sort
+Shell Sort
+Tim Sort (used in Python and Java)
+
+2. Searching Algorithms:
+Linear Search
+Binary Search (works only on sorted data)
+Interpolation Search
+Exponential Search
+Jump Search
+Ternary Search
+
+3. Graph Algorithms:
+Depth-First Search (DFS)
+Breadth-First Search (BFS)
+Dijkstra’s Algorithm (Shortest path)
+Bellman-Ford Algorithm (Shortest path)
+Floyd-Warshall Algorithm (All pairs shortest path)
+Kruskal’s Algorithm (Minimum spanning tree)
+Prim’s Algorithm (Minimum spanning tree)
+Topological Sorting (for Directed Acyclic Graphs)
+Tarjan's Algorithm (Strongly connected components)
+Kosaraju’s Algorithm (Strongly connected components)
+Ford-Fulkerson Algorithm (Maximum flow)
+Edmonds-Karp Algorithm (Maximum flow using BFS)
+Johnson's Algorithm (Shortest paths in sparse graphs)
+
+4. Divide and Conquer Algorithms:
+Merge Sort
+Quick Sort
+Binary Search
+Strassen's Algorithm (Matrix multiplication)
+Karatsuba Algorithm (Multiplication of large numbers)
+Fast Fourier Transform (FFT)
+
+5. Dynamic Programming (DP) Algorithms:
+Fibonacci Sequence
+Knapsack Problem (0/1 Knapsack, Fractional Knapsack)
+Longest Common Subsequence (LCS)
+Longest Increasing Subsequence (LIS)
+Matrix Chain Multiplication
+Edit Distance
+Coin Change Problem
+Rod Cutting Problem
+Subset Sum Problem
+Bellman-Ford Algorithm (Shortest path with negative weights)
+Catalan Numbers
+
+6. Greedy Algorithms:
+Activity Selection Problem
+Huffman Coding
+Dijkstra’s Algorithm (Shortest path)
+Prim’s Algorithm (Minimum spanning tree)
+Kruskal’s Algorithm (Minimum spanning tree)
+Fractional Knapsack Problem
+Job Sequencing Problem
+Greedy Set Cover
+Egyptian Fraction
+
+7. Backtracking Algorithms:
+N-Queens Problem
+Sudoku Solver
+Knight’s Tour Problem
+Hamiltonian Path
+Rat in a Maze Problem
+Subset Sum Problem
+Crossword Puzzle Solver
+
+8. String Algorithms:
+Knuth-Morris-Pratt (KMP) Algorithm (Pattern matching)
+Rabin-Karp Algorithm (Pattern matching)
+Boyer-Moore Algorithm (Pattern matching)
+Z Algorithm (Pattern matching)
+Suffix Tree
+Trie (Prefix Tree)
+Aho-Corasick Algorithm (Multiple pattern matching)
+Levenshtein Distance (Edit Distance)
+Manacher's Algorithm (Longest palindromic substring)
+Longest Common Subsequence (LCS)
+Longest Repeated Substring
+Boyer-Moore-Horspool Algorithm
+
+9. Mathematical Algorithms:
+Euclidean Algorithm (Greatest common divisor)
+Sieve of Eratosthenes (Finding prime numbers)
+Modular Exponentiation
+Fermat’s Little Theorem
+Chinese Remainder Theorem
+Karatsuba Algorithm (Fast multiplication)
+Fast Fourier Transform (FFT)
+Matrix Exponentiation
+Factorial Calculation
+Exponentiation by Squaring
+
+10. Number Theory Algorithms:
+Sieve of Eratosthenes (Prime numbers)
+Fermat’s Primality Test
+Miller-Rabin Primality Test
+RSA Algorithm
+Modular Inverse
+Pollard’s Rho Algorithm (Factorization)
+Extended Euclidean Algorithm
+
+11. Optimization Algorithms:
+Simulated Annealing
+Genetic Algorithm
+Hill Climbing
+Gradient Descent
+Linear Programming
+Branch and Bound
+
+12. Computational Geometry Algorithms:
+Convex Hull Algorithms (Graham Scan, Jarvis March)
+Line Intersection Algorithms
+Closest Pair of Points
+Voronoi Diagrams
+Delaunay Triangulation
+Sweep Line Algorithm
+Bentley-Ottmann Algorithm (for finding intersections)
+
+13. Bit Manipulation Algorithms:
+Checking if a number is a power of 2
+Counting the number of set bits (Hamming weight)
+Swapping two numbers using XOR
+Finding the only non-repeating element in an array where every other element repeats twice
+Binary addition
+
+14. Machine Learning Algorithms:
+Linear Regression
+Logistic Regression
+Decision Trees
+Random Forest
+K-Nearest Neighbors (KNN)
+Support Vector Machines (SVM)
+K-Means Clustering
+Naive Bayes
+Neural Networks
+
+15. Miscellaneous Algorithms:
+Reservoir Sampling (for sampling elements from a stream)
+Floyd’s Tortoise and Hare (Cycle detection)
+Reservoir Sampling
+Bloom Filter (Probabilistic data structure for set membership)
+Skip List
+Monte Carlo Methods
+
+16. Heuristic Algorithms:
+A Algorithm* (Pathfinding)
+Beam Search
+Tabu Search

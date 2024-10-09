@@ -1,0 +1,49 @@
+
+company name - MCube Advisors Pvt Ltd
+started profile - Frontend Developer > Senior Software Developer (Current)
+joining date - 11/Aug/2021
+
+TMS Link
+---------
+Time Management Systems (mcubetms.com) 
+Login Name – 426110207
+Password - @S********123
+
+DKM
+----
+Link - http://www.edkmonline.com/
+Company Code – Mcube
+Employee Code / Login ID - 426110207
+Password - @S********123
+
+Grapecity Credentials
+---------------------
+Link - https://www.grapecity.com/login 
+Email –  Ashish.Gupta@mcubefinancial.com
+Password - Continent@92
+
+VPN Credentials
+---------------
+User Name - Himanshu.Rai
+Password – thanos@12345
+
+
+Health Form 
+-----------
+http://www.123formbuilder.com/form-5342046/form 
+Email
+Himanshu.Rai@mcubefinancial.com
+Reporting Manager
+Ashish Gupta
+7022450444
+
+
+VPN MCube
+(mstsc in Run)
+Port/Computer – 172.16.1.87
+Username – MCUBE\ui.infra
+Password – Wonder@123
+
+
+
+

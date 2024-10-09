@@ -12,9 +12,9 @@ GENERAL TOPICS
 Objects - 
 ways to create objects - Object constructor, Object's create method, Object literal syntax, Function constructor, Function constructor with prototype, ES6 Class syntax, Singleton pattern
 
-Prototype chain
+Prototype chain ??
 
-Call, Apply and Bind
+Call, Apply and Bind ??
 
 JSON
 JSON methods - JSON.parse(text);, JSON.stringify(object);
@@ -23,26 +23,104 @@ Object vs json in JS
 
 splice() vs slice()
 
-object vs map
+object vs map ??
 
 === vs ==
 
 lambda or arrow Function
 
-first class function
-first order function 
-higher order function 
-unary function 
+first class function - when functions in that language are treated like any other variable
+first order function - doesn’t accept another function as an argument and doesn’t return a function as its return value
+higher order function - function that accepts another function as an argument or returns a function as a return value or both
+unary function - function that accepts exactly one argument
 
-currying function / currying 
+currying function / currying ??
 
-pure vs impure function 
+pure vs impure function ??
 
 let, var and const 
 
-Temporal Dead Zone 
-IIFE 
+Temporal Dead Zone - variable is inaccessible until it has been initialized with a value
+IIFE - function that runs as soon as it is defined
 encodeURI(url) vs decodeURI(encodedUrl)
+uri vs url 
 Memoization 
 Hoisting
-Class in JS 
+Class in JS ??
+Closures ??
+Modules
+Scope in JS
+
+Service Worker - typeof Worker
+Service Worker vs Web Weorker ??
+IndexedDB
+Web Storage - Local Storage, Session Storage 
+Post Message 
+Cookie vs Local Storage vs Session Storage
+Storage Event and it's event handler - typeof Storage, StorageEvent, onmessage
+
+Promise - fulfilled, pending and rejected state, alternatives to callback, A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved(for example, network error).
+Callback function - function passed into another function as an argument
+Callback Hell
+Server sent events ??
+EventSource - typeof EventSource, onmessage, onopen, onerror
+Callback in Callback - nest one callback inside in another callback to execute the actions sequentially one by one
+Promise Chaining - executing a sequence of asynchronous tasks one after another using promises, new Promise(function (resolve, reject){...}).then().then().then()
+Promise.all([]) - takes an array of promises as an input (an iterable), and it gets resolved when all the promises get resolved or any one of them gets rejected
+Promise.race([]) - will return the promise instance which is firstly resolved or rejected
+
+Strict mode - "use strict";, useful to write "secure" JavaScript by notifying "bad syntax" into real errors.
+!!
+delete obj.property_name
+typeof variable_name
+null vs undefined - Type of null is object BUT Type of undefined is undefined, null converted to zero (0) while performing primitive operations But undefined converted to NaN while performing primitive operations
+eval - evaluates JavaScript code represented as a string
+Window vs document vs this ??
+window.history.back() vs window.history.forward()
+getModifierState() - used to return a boolean value that indicates whether the specified modifier key is activated or not.
+isNaN - determine whether a value is an illegal number
+undeclared vs undefined variable 
+Global Variable - conflicts, var keyword is used to declare a local variable but if you omit it then it will become global 
+isFinite() - determine whether a number is a finite, legal number
+
+Event flow - order in which event is received on the web page
+Event Bubbling vs Event Capturing vs Event Delegation ??
+Event Delegation - attaching an event listener to a parent element to handle events triggered by child elements
+Event Propagation - the process of an event moving from the target element to the parent elements and then
+
+document.forms[0].submit() - submit a form
+navigator.platform - contains information about the visitor's browser OS details
+document load vs DOMContentLoaded load
+Native, Host and User objects ??
+attribute (HTML Element) vs property (DOM)
+same-origin policy vs cross-origin policy ??
+href="JavaScript:void(0);" 
+JS interpreted or compiled language / single threaded or multi threaded??
+Events 
+preventDefault() vs  stopPropagation()
+
+BOM (Browser Object Model) vs DOM (Document Object Model)
+setTimeout() vs setInterval()
+
+ECMAScript
+JSON
+PWA (Progressive Web Apps) ??
+clearTimeout() vs clearInterval() ??
+window.location.href = "newPage.html" -  redirect to a new page
+window.location.href vs document.URL - get the current url path
+new URLSearchParams(window.location.search) - to get query string values
+for...in vs for...of vs for loop
+Object.keys() vs Object.entries() vs Object.values()
+arguments object ??
+!== vs || vs ?. vs ?= ??
+App Shell Model ??
+Can we define properties for functions ??
+ way to find the number of parameters expected by a function ??
+
+
+
+
+
+
+
+

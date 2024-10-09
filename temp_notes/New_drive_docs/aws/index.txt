@@ -2,4 +2,25 @@ great learning - https://www.youtube.com/watch?v=dDN-t69sa3U
 simplilearn
 Edureka - https://www.youtube.com/watch?v=k1RI5locZE4
 i-Medita - https://www.youtube.com/watch?v=91JZG07lNY0
-intellipath - https://www.youtube.com/watch?v=Clz6kvOtp_Q
+intellipath - https://www.youtube.com/watch?v=Clz6kvOtp_Q (Recommended)
+
+
+AWS 
+Cloud Services - compute and networking services, storage and content delivery services, security and identity services, database services, analytics services, application services, management tools
+Internet vs Intranet
+Virtualization
+Cloud Service Models - IaaS (Infrastructure as a Service), paaS (Platform as a Service), SaaS (Software as a Service)
+Cloud Deployment Services - Public cloud, Private Cloud, Hybrid Cloud 
+
+AWS Suite 
+
+Virtualization in AWS - 
+Types of Hypervisor - Type 2 (Hosted), Type 1(Native/Bare Metal)
+XEN Hypervisor 
+AWS vs Azure vs GCP (Google Cloud Platform)
+
+EC2 (Elastic Compute Cloud)
+Regions and Avaiability Zones
+EC2 Instance Types - General Purpose, Compute Optimized, Memory Optimized, Storage Optimized, Accelerated Computing
+
+AMI (Amazon Machine Image)

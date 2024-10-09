@@ -1,0 +1,104 @@
+1. Brute Force
+Description: Try all possible solutions and choose the correct one.
+Use cases: Simple problems with a small input size.
+Example: Generating all possible subsets of a set.
+
+2. Divide and Conquer
+Description: Break the problem into smaller sub-problems, solve them independently, and then combine the results.
+Use cases: Sorting algorithms like QuickSort and MergeSort.
+Example: MergeSort, Binary Search.
+
+3. Greedy Algorithm
+Description: Make the best possible choice at each step, with the hope that this leads to the global optimum.
+Use cases: Optimization problems, shortest path problems.
+Example: Dijkstra’s algorithm, Huffman coding.
+
+4. Dynamic Programming (DP)
+Description: Break the problem into sub-problems, solve each sub-problem once, and store their solutions (using memoization or tabulation) to avoid redundant work.
+Use cases: Problems with overlapping sub-problems and optimal substructure.
+Example: Fibonacci sequence, Knapsack problem, Longest Common Subsequence.
+
+5. Backtracking
+Description: Try all possible solutions and backtrack when a solution fails.
+Use cases: Puzzle-type problems, combinatorial problems.
+Example: N-Queens problem, Sudoku solver, Permutation generation.
+
+6. Recursion
+Description: Solve the problem by breaking it into smaller instances of the same problem. Often used with divide and conquer or dynamic programming.
+Use cases: Tree traversal, Fibonacci sequence.
+Example: Factorial calculation, Tower of Hanoi.
+
+7. Two Pointers
+Description: Use two pointers to iterate through data structures (like arrays) in different directions.
+Use cases: Problems with linear data structures, like arrays or linked lists.
+Example: Finding pairs with a given sum, merging two sorted arrays.
+
+8. Sliding Window
+Description: Maintain a window of elements and slide it across the data structure to optimize subarray or substring problems.
+Use cases: Substring, subarray, or contiguous segment problems.
+Example: Maximum sum subarray, longest substring without repeating characters.
+
+9. Binary Search
+Description: Search for an element in a sorted data structure by repeatedly dividing the search interval in half.
+Use cases: Searching and optimization problems on sorted data.
+Example: Searching in a sorted array, finding square roots.
+
+10. Graph Traversal (BFS & DFS)
+Description: Use Breadth-First Search (BFS) or Depth-First Search (DFS) to traverse graphs or trees.
+Use cases: Graph-related problems, pathfinding, cycle detection.
+Example: Shortest path in an unweighted graph (BFS), detecting cycles in graphs (DFS).
+
+11. Topological Sorting
+Description: Order the vertices in a directed acyclic graph (DAG) such that for every directed edge (u, v), vertex u comes before vertex v.
+Use cases: Task scheduling, dependency resolution.
+Example: Course scheduling, build systems.
+
+12. Union-Find (Disjoint Set Union)
+Description: Maintain a partition of a set into disjoint subsets and efficiently perform union and find operations.
+Use cases: Connected components, cycle detection in graphs.
+Example: Kruskal's algorithm for Minimum Spanning Tree, finding connected components in a graph.
+
+13. Bit Manipulation
+Description: Use bitwise operations to solve problems efficiently.
+Use cases: Problems involving binary representations or operations.
+Example: Checking if a number is a power of 2, finding the unique element in an array where every other element appears twice.
+
+14. Hashing
+Description: Use a hash table to store and retrieve values in constant time.
+Use cases: Problems involving frequency counting, searching, and uniqueness.
+Example: Counting frequency of elements, checking for duplicates.
+
+15. Sorting Algorithms
+Description: Sorting is a basic technique often used to simplify problems or allow more efficient solutions.
+Use cases: Order-dependent problems.
+Example: MergeSort, QuickSort, HeapSort.
+
+16. Mathematical Techniques
+Description: Use number theory, algebra, geometry, or combinatorics to solve the problem.
+Use cases: Problems based on properties of numbers or geometric figures.
+Example: Prime number checks, GCD/LCM, combinatorial problems.
+
+17. Pattern Matching
+Description: Algorithms designed to search for patterns in data (strings or sequences).
+Use cases: Text search problems, DNA sequencing.
+Example: KMP algorithm, Rabin-Karp algorithm.
+
+18. Monte Carlo and Randomized Algorithms
+Description: Use randomness to solve problems with probabilistic guarantees.
+Use cases: Approximation problems, randomized selection.
+Example: QuickSelect, randomized primality testing.
+
+19. Heap or Priority Queue
+Description: Use a heap (min-heap or max-heap) to solve problems that require keeping track of the largest or smallest elements.
+Use cases: Optimization problems, Dijkstra’s algorithm.
+Example: Finding the k largest elements in an array, merging k sorted lists.
+
+20. Branch and Bound
+Description: Systematically explore the solution space while pruning large sections of it.
+Use cases: Optimization problems with a large search space.
+Example: Traveling Salesman Problem, Knapsack problem.
+
+21. Greedy with DP (Greedy-DP Hybrid)
+Description: Some problems require a combination of greedy and dynamic programming approaches to find the optimal solution.
+Use cases: Pathfinding, optimization problems.
+Example: Maximum subarray sum with dynamic programming.
