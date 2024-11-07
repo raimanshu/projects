@@ -1,10 +1,162 @@
 https://github.com/sudheerj/reactjs-interview-questions
 
+React/ReactJs 
+History of React 
+Features of React
+JSX (Javascript XML)
+React element vs component ??
+Function vs class component 
+Pure component ??
+State 
+Props
+HTML and React event handling
+synthetic events 
+Inline conditional expressions
+"key" prop 
+Virtual DOM ??
+React Fiber 
+Controlled vs Uncontrolled components ??
+createElement and cloneElement ??
+Lifting State Up in React
+Higher-Order Components
+children prop 
+Comments in React
+Reconciliation
+Does the lazy function support named exports ??
+Why React uses className over class attribute?
+Fragments
+Portals ??
+Stateless vs Stateful component 
+validation on props in React
+Advantages of React
+Limitations of React?
+Static type checking - prop-types, Flow, TypeScript
+react-dom package
+ReactDOMServer ?? - renderToString(), renderToStaticMarkup()
+innerHTML in React - dangerouslySetInnerHTML
+styles in React
+impact of indexes as keys?
+How to enable production mode in React?
+Switching component 
+React Mixins ??
+Pointer events in React 
+Why should component names start with capital letter?
+Are custom DOM attributes supported in React v16?
+How to loop inside JSX ??
+React proptype array with shape
+React and ReactDOM ??
+Why ReactDOM is separated from React ??
+for attribute vs htmlFor
+Why you can't update props in React?
+How can we find the version of React at runtime in the browser? - React.version 
+What are the popular packages for animation? - React Transition Group, React Motion
+What are the popular React-specific linters?- ESLint, eslint-plugin-react, eslint-plugin-jsx-a11y
+
+React Router
+How React Router is different from history library?
+What are the <Router> components of React Router v6 ?? - <BrowserRouter>, <HashRouter>, <MemoryRouter>, <StaticRouter>
+How do you programmatically navigate using React Router v4? - withRouter(), <Route>, Using context
+How to get query parameters in React Router v4? - URLSearchParams
+
+React Internationalization
+React Intl
+What are the two ways of formatting in React Intl?- Using react components, Using an API
+How to access current locale with React Intl? - injectIntl()
+How to format date using React Intl? - The injectIntl() higher-order component will give you access to the formatDate()
+
+React Testing
+Shallow Renderer
+Test Renderer
+ReactTestUtils package
+Jest 
+Jest vs jasmine
+
+React Redux
+Flux
+Redux
+downsides of Redux compared to Flux ??
+mapStateToProps() and mapDispatchToProps()
+drawbacks of MVW pattern ??
+Redux vs RxJS
+React context vs React Redux
+Why are Redux state functions called reducers?
+component vs container in React Redux ??
+redux-saga
+call() and put() in redux-saga ??
+Redux Thunk
+redux-saga vs redux-thunk ??
+Redux DevTools
+Redux selectors
+Redux Form ??
+Relay vs Redux ??
+action in Redux
+
+React native 
+React vs React Native 
+
+React supported libraries & Integration
+Reselect 
+Flows
+Flow vs PropTypes ??
+ React Dev Tools
+ Polymer
+ React vs Vue
+ React vs Angular
+ Styled Components 
+
+
+ Misc 
+ Reselect 
+React memo function
+React lazy function
+Hooks
+code-splitting
+Keyed Fragments
+Throttling vs Debouncing
+Formik
+suspense component
+ diffing algorithm
+ windowing technique ??
+ MobX
+ React Server component
+ prop drilling
 
 
 DOUBTS
 ------
+Server Side Rendering 
 React element vs component 
 state vs props
+Pure and Impure components
 synthetic event vs native event 
-Virtual DOM vs Shadow DOM
+Virtual DOM vs Shadow DOM vs Real DOM 
+Error Boundary
+Controlled vs Uncontrolled components ??
+Stateless vs Stateful component
+Lazy Function 
+Portals 
+ReactDOMServer 
+React Mixins
+How to loop inside JSX?
+React and ReactDOM
+Shallow Renderer vs Test Renderer
+Redux vs Flux ??
+drawbacks of MVW pattern ??
+Redux vs RxJS
+React context vs React Redux
+component vs container in React Redux ??
+redux-saga ??
+call() and put() in redux-saga ??
+redux-saga vs redux-thunk ??
+Relay vs Redux ??
+Flow vs PropTypes ??
+render hijacking ??
+Hooks
+normal import vs dynamic import 
+windowing technique??
+Concurrent Rendering ??
+useState() vs useRef() ??
+ useEffect and useLayoutEffect ??
+ React hydration ??
+ forward refs vs callback refs vs String Refs
+ lifecycle hooks 

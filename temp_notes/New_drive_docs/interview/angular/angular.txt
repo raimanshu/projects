@@ -1,0 +1,125 @@
+https://github.com/sudheerj/angular-interview-questions
+
+https://github.com/learning-zone/angular-basics
+
+https://github.com/Yonet/Angular-Interview-Questions
+
+
+
+
+
+Angular Framework
+AngularJs vs Angular 
+TypeScript
+Components of angular application 
+Directives vs Components
+Template 
+Module ??
+Lifecycle hooks - ngOnChanges, ngOnInit, ngDoCheck, ngAfterContentInit, ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked, ngOnDestroy
+Data Binding -  interpollation, property binding, class binding, style binding,  event binding, two way binding 
+Metadata - class decorators, property decorators, method decorators, parameter decorators, 
+Angular CLI 
+constructor vs ngOnInit
+Service
+Dependency injection ?? - Module Injector (Platform module, Null Injector), Element Injector
+Async Pipe ??
+Inline template vs External template Url
+Structural Directive - *ngFor directive, *ngIf directive, *ngSwitch
+Interpollation 
+Template expressions
+Template statements
+Pipes - parameterized pipe, non-parameterized pipe
+Pipe chaining
+Custom pipes
+Pure vs Inpure pipe
+Bootstrapping module
+Observables - observe, observer
+HttpClient
+How can you read full response? - observe 
+RxJs 
+Subscribing
+promise and observable
+Multicasting
+Angular elements
+Custom elements
+Explain how custom elements works internally?
+Dynamic components
+Angular Router
+What is the purpose of base href tag ??
+Router imports
+Router outlet
+Router links
+Active router links
+Router State
+Router Events - NavigationStart, RouteConfigLoadStart, RouteConfigLoadEnd, RoutesRecognized, GuardsCheckStart, ChildActivationStart, ActivationStart, GuardsCheckEnd, ResolveStart, ResolveEnd, ActivationEnd, ChildActivationEnd, NavigationEnd, NavigationCancel, NavigationError, Scroll
+Activated route
+RouterModule.forRoot()
+Wildcard route
+Angular Universal
+Compilation in Angular - JIT, AOT
+Phases of AOT - code analysis, code generation, code validation 
+metadata json 
+Folding
+Macros
+metadata rewriting
+How do you provide configuration inheritance? - tsconfig.json on angularCompilerOptions
+What is the purpose of any type cast function ? -  template:'{{ $any(user).contacts.email }}'
+What is Non null type assertion operator? - contact!.email
+type narrowing
+How do you describe various dependencies in angular application? - Angular packages, Support packages, polyfill packages 
+Zone
+Common module 
+Codelyzer
+angular animation - @angular/animations and @angular/platform-browser
+State function
+Style function
+Animate function
+Transition function
+How to inject the dynamic script in angular? - DomSanitizer
+Service worker 
+Angular Ivy 
+Angular Language Service
+Web workers 
+Angular CLI Builder
+Builder - ng run, angular.json 
+App shell 
+Class decorators 
+Class field decorators 
+Declarable/Declarations
+DI token
+Angular DSL 
+Rxjs Subject 
+Bazel tool 
+
+
+
+
+
+DOUBTS 
+------ 
+AngularJs vs Angular
+Directives vs Components
+Dependency Injectors  
+Async pipe 
+Property Binding vs Interpollation 
+Pure vs Inpure pipe 
+Bootstrapping module
+Observables
+Promise and Observable
+Angular elements vs Custom elements
+Dynamic components ??
+Router State
+Angular Universal ??
+JIT vs AOT compilation
+metadata json ??
+Folding ??
+Macros ??
+metadata rewriting??
+type narrowing ??
+Zone ??
+Rendering engines in angular
+Service workers vs web workers in angular 
+DI token ??
+
+
+
