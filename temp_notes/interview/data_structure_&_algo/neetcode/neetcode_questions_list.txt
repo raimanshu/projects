@@ -1,0 +1,69 @@
+ARRAY AND HASHING
+-----------------
+Two Sum: 1
+Valid Anagram: 242
+Group Anagrams: 49
+Valid Sudoku: 36
+Contains Duplicate: 217
+Product of Array Except Self: 238
+Valid Parentheses: 20
+Longest Consecutive Sequence: 128
+Top K Frequent Elements: 347
+Valid Palindrome: 125
+
+LINKED LIST
+-----------
+Reverse Linked List: 206
+Merge Two Sorted Lists: 21
+Remove Duplicates from Sorted List: 83
+Remove Nth Node From End of List: 19
+Palindrome Linked List: 234
+Linked List Cycle: 141
+Merge K Sorted Lists: 23
+
+STACKS AND QUEUES
+-----------------
+Valid Parentheses: 20
+Min Stack: 155
+Implement Queue using Stacks: 232
+Design Circular Queue: 622
+
+TREES AND GRAPHS
+----------------
+Binary Tree Inorder Traversal: 94
+Binary Tree Level Order Traversal: 102
+Binary Tree Maximum Path Sum: 124
+Validate Binary Search Tree: 98
+Construct Binary Tree from Preorder and Inorder Traversal: 105
+Number of Islands: 200
+Rotting Oranges: 994
+Course Schedule: 207
+Clone Graph: 133
+
+DYNAMIC PROGRAMMING
+--------------------
+Climbing Stairs: 70
+Coin Change: 322
+Longest Increasing Subsequence: 300
+Longest Common Subsequence: 1143   
+House Robber: 198
+Word Break: 139
+
+BACKTRACKING
+------------
+Subsets: 78
+Permutations: 46
+Combinations: 77
+Sudoku Solver: 37
+N-Queens: 51
+
+GREEDY ALGORITHMS
+-----------------
+Jump Game: 55
+Best Time to Buy and Sell Stock: 121
+
+BIT MANIPULATIONS
+-----------------
+Number of 1 Bits: 191
+Reverse Bits: 190
+Sum of Two Integers: 371

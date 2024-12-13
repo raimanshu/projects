@@ -14,6 +14,33 @@
 -   in market section check if your exchange that is coindcx is avaiable
 -   Oscillator donot stick with chart but indicator sticks
 
+
+TYPES OF CRYPTO TRADING 
+-----------------------
+Day Trading 
+Swing Trading 
+Scalping
+Holding 
+Position Trading 
+Algo Trading 
+
+STRATEGIES 
+---------
+
+CIP strategy 
+------------
+Time frame - 4hrs
+Trends
+identification - base formation
+strategy - breakout 
+
+Leverage - 
+
+Reversal strategy 
+-----------------
+
+
+
 INDICATORS
 ----------
 VWAP - Volume Weighted Average Price

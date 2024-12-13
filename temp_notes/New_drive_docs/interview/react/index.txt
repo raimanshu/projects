@@ -126,7 +126,7 @@ DOUBTS
 ------
 Server Side Rendering 
 React element vs component 
-state vs props
+state vs props 
 Pure and Impure components
 synthetic event vs native event 
 Virtual DOM vs Shadow DOM vs Real DOM 
@@ -156,7 +156,7 @@ normal import vs dynamic import
 windowing technique??
 Concurrent Rendering ??
 useState() vs useRef() ??
- useEffect and useLayoutEffect ??
- React hydration ??
- forward refs vs callback refs vs String Refs
- lifecycle hooks 
+useEffect and useLayoutEffect ??
+React hydration ??
+Forward refs vs callback refs vs String Refs
+Lifecycle hooks ✅

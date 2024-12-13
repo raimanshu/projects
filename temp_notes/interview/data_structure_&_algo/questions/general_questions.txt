@@ -1,0 +1,13 @@
+- concurency vs parallelism
+
+
+- process vs threads 
+
+
+- multi-processing vs multi-threading vs multi-tasking vs multi-programming vs hyper-threading 
+multi-processing - system with multiple processors/cpu/core 
+multi-threading - multiple threads running at the same time
+multi-tasking - multiple processes running at the same time by single cpu/core
+multi-programming - multiple programs running at the same time
+multi-processing is faster than multi-threading
+https://www.youtube.com/watch?v=_BhJ2rSo5Wo

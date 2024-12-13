@@ -115,7 +115,7 @@ arguments object ??
 !== vs || vs ?. vs ?= ??
 App Shell Model ??
 Can we define properties for functions ??
- way to find the number of parameters expected by a function ??
+way to find the number of parameters expected by a function ??
 
 
 

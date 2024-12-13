@@ -1,0 +1,84 @@
+
+
+
+Clean Code Principle
+
+
+
+
+
+
+Programming Paradigms
+    Structural programming
+        Imperative programming
+        Logic programming
+        Declarative programming
+    Functional programming
+    Object-oriented programming
+
+Object oriented Programming 
+
+Design Principle 
+
+Design Patterns 
+    GoF (Gang of Four) Design Patterns
+        Creational patterns (focused on creation of objects)
+            Factory Pattern
+            Abstract Factory Pattern
+            Builder Pattern
+            Prototype Pattern
+            Singleton Pattern
+        Structural patterns (focused on structure of classes and objects)
+            Adapter Pattern
+            Bridge Pattern
+            Composite Pattern
+            Decorator Pattern
+            Facade Pattern
+            Flyweight Pattern
+            Proxy Pattern
+        Behavioral patterns (focused on communication between two objects)
+            Chain of responsibility Pattern
+            Command Pattern
+            Interpreter Pattern
+            Iterator Pattern
+            Mediator Pattern
+            Memento Pattern
+            Observer Pattern
+            State Pattern
+            Strategy Pattern
+            Template method Pattern
+            Visitor Pattern
+    POSA (Pattern-Oriented Software Architecture) Patterns
+
+Architectural Principle
+
+Architectural Styles 
+
+Architectural Patterns
+    Front controller Pattern, 
+    Interceptor Pattern, 
+    MVC  Pattern, 
+    MVP Pattern, 
+    MVVM Pattern,
+    ADR Pattern, 
+    ECS Pattern, 
+    n-tier Pattern, 
+    Specification Pattern, 
+    Publish–subscribe Pattern, 
+    Naked objects Pattern, 
+    Service locator Pattern, 
+    Active record Pattern, 
+    Identity map Pattern, 
+    Data access object Pattern, 
+    Data transfer object Pattern, 
+    Inversion of control Pattern, 
+    Model 2 Pattern, 
+    Broker Pattern
+
+Enterprise Patternss
+
+
+
+DOUBTS
+------
+Creational patterns vs Structural patterns vs Behavioral patterns
