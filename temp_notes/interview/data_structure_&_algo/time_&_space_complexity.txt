@@ -1,0 +1,16 @@
+TIME COMPLEXITY
+- Time complexity is the amount of time taken by an algorithm to run, as a function of the length of the input.
+- types - best case, worst case, average case
+- Big O notation - O(n)
+- O(1) - constant time
+- O(log n) - logarithmic time (binary search)
+- O(n) - linear time (linear search)
+- O(n log n) - linearith (merge sort, greedy algorithms)
+- O(n^2) - quadratic time (bubble sort)
+- O(n^3) - cubic time
+- O(2^n) - exponential time (fibonacci recursion)
+- O(n!) - factorial time (n queenss, knight tour)
+- O(n^n) - exponential time
+
+SPACE COMPLEXITY
+- Space complexity is the amount of memory taken by an algorithm to run, as a function of the length of the input.

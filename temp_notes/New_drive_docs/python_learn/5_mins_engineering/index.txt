@@ -1,0 +1,358 @@
+https://drive.google.com/file/d/1GHd0gZlSewckofvjP3PaxijKCqi1qCPB/view?usp=sharing
+
+
+- Introduction
+VARIABLES 
+----------
+- type(variable_name)
+- id(variable_name)
+- print(variable_name)
+- vaid names (python, Python, py_thon, _python, python1, PYTHON)
+- non-valid names (1python, python 1, python$, python@)
+- one liner assignment ways  
+    var_1, var_2, var_3 = 1, 2, 3
+    var_1=var_2=var_3=1
+
+COMMENTS
+--------
+- # single line comment 
+- ''' multi 
+        line 
+        comment '''
+
+DATA TYPES 
+----------                     
+d1 = 1                                ---> int
+d2 = "himanshu"                       ---> str
+d3 = 5.0                              ---> float
+d4 = True                             ---> bool 
+d5 = 5j                               ---> complex
+d6 = [1,2,3]                          ---> list 
+d7 = {1,2,3}                          ---> set  
+d8 = (1,2,3)                          ---> tuple
+d9 = {"name" : "himanshu"}            ---> dict 
+d10 = None                            ---> NoneType
+
+STRING 
+------
+- str_1 = ''' multi 
+    line 
+    comment '''
+- str_2 = "himanshu"
+- str_3 = 'himanshu'
+- print(str_3[2])                            ---> m
+- print(len(str_3))                          ---> 8
+
+TYPE CONVERSION 
+---------------
+- Implicit Type Conversion - 
+a = 5, b = 5.0
+print(a + b)                                ---> 10.0
+- Explicit Type Conversion -
+a = 5, b = 5.0
+print(a + int(b))                           ---> 10
+
+OPERATORS 
+---------
+- arthematic operators - +,-,*,/,%,//,**
+- assignment operators - =,+=,-=,*=,/=,**=,//=,%=,<<=,>>=,&=,|=,^=,
+- comparison operators - ==,!=,>,<,>=,<=,
+- logical operators - and, or, not,
+- bitwise operators - &,|,^,~,<<,>>,
+- membership operators - in, not in
+- identity operators - is, is not
+
+INPUT AND OUTPUT
+----------------
+num = input("Enter a number: ")
+print(num)                                                 ---> 5 type str
+print(type(num))                                           ---> <class 'str'>
+print("himanshu", end=" ") (next line) print("rai")        ---> himanshu rai
+print("himanshu", 5, "rai", sep=".")                       ---> himanshu.5.rai
+print("himanshu " + "rai")                                 ---> himanshu rai
+print("the sum OF {} and {} Is {}".format(1,2,3))          ---> the sum OF 1 and 2 Is 3
+print("himanshu", "rai")                                   ---> himanshu rai
+print("himanshu" + "rai")                                  ---> himanshurai
+
+IF...ELSE 
+---------
+if condition:
+    statement
+elseif condition:
+    statement
+else:
+    statement
+
+LOOPS
+-----
+- break - break the loop
+- continue - skip the current iteration and continue with the next iteration
+- pass - do nothing
+- enumerate - enumerate(iterable, start=0)
+- zip - zip(*iterables)
+- range - range(start, stop, step)
+- filter - filter(function, iterable)
+- map - map(function, iterable)
+- reduce - reduce(function, iterable)
+- lambda -- lambda arguments: expression
+map() vs filter() vs reduce() - map() and filter() are built-in functions that can be used to apply a function to each element of an iterable and return a new iterable with the results. reduce() is a built-in function that can be used to apply a function to an iterable and reduce it to a single value.
+- for..in
+for i in number/string/list/tuple/set/dict/range/enumerate/zip/filter/map/reduce/lambda:
+    print(i)
+- while 
+while condition:
+    statement
+
+LIST 
+----
+- mutable, ordered, indexed, duplicates allowed, heterogeneous, can be nested, can be modified
+lst = [1,2,3,4,5] 
+lst.append(6) - adds 6 to the end of the list
+lst.insert(0,0) - inserts 0 at index 0
+lst.remove(0) - removes 0 from the list
+lst.pop() - removes the last element from the list
+lst.pop(2) - removes the element at index 2
+lst.clear() - removes all the elements from the list
+lst.index(1) - returns the index of the first occurrence of 1
+lst.count(1) -  returns the number of occurrences of 1
+lst.sort(reverse=True) - sorts the list in descending order
+lst.reverse() - reverses the list
+lst.copy() - returns a shallow copy of the list
+lst.extend([6,7,8,9,10]) - adds the elements of the list to the end of the list
+del l1 - deletes the list
+- pop(2) vs remove(2) - pop(2) removes the element at index 2 and returns it, remove(2) removes the element 2 and returns None
+
+TUPLE 
+-----
+- unmutable, ordered, indexed, duplicates allowed, heterogeneous, can be nested, can not be modified
+tup = (1,2,3,4,5,6,7)
+tup.count(2) - returns the number of occurrences of 2
+tup.index(2) - returns the index of the first occurrence of 2
+del tup - deletes the tuple
+
+SET 
+---
+- mutable, unordered, non-indexed, duplicates not allowed, heterogeneous, can be nested, can be modified
+set_1 = {1,2,3,4,5,6,7}
+item in set_1 - checks if the item is present in the set
+set_1.add(4) - adds 4 to the set
+set_1.remove(5) - removes 5 from the set
+set_1.discard(5) - removes 5 from the set
+set_1.union(set_2) - returns a new set with all the elements from both the sets
+set_1.update(set_2) - updates the set with all the elements from the set_1
+set_1.intersection(set_2) - returns a new set with all the elements that are present in both the sets
+set_1.difference(set_2) - returns a new set with all the elements that are present in set_1 but not in set_2
+set_1.symmetric_difference(set_2) - returns a new set with all the elements that are present in either of the sets but not in both
+set_1.issubset(set_2) - returns True if set_1 is a subset of set_2
+set_1.issuperset(set_2) - returns True if set_1 is a superset of set_2
+set_1.isdisjoint(set_2) - returns True if set_1 and set_2 have no elements in common
+set_1.copy() - returns a shallow copy of the set
+set_1.clear() - removes all the elements from the set
+del set_1 - deletes the set
+- union(set_1) vs update(set_1) - union(set_1) returns a new set with all the elements from both the sets, update(set_1) updates the set with all the elements from the set_1
+remove(5) vs discard(5) - remove(5) raises an error if the element is not present in the set, discard(5) does not raise an error if the element is not present in the set
+
+DICTIONARY 
+----------
+- mutable, unordered, non-indexed, duplicates not allowed, heterogeneous, can be nested, can be modified
+dict_1 = {
+  "name"  : "Himanshu",
+  "rollno": 25
+}
+dict_2 = dict(_id = 1, name = 'xyz', price = 99)
+dict_1["name"] - returns the value of the key "name"
+dict_1.keys() - returns a list of all the keys in the dictionary
+dict_1.values() - returns a list of all the values in the
+dict_1.items() - returns a list of tuples of all the key-value pairs in the dictionary
+dict_1.update({"M4": True}) - adds the key-value pair to the dictionary
+dict_1.copy() - returns a shallow copy of the dictionary
+dict_1.pop("M4") - removes the key-value pair from the dictionary
+dict_1.popitem() - removes the last key-value pair from the dictionary
+dict_1.clear() - removes all the key-value pairs from the dictionary
+del dict_1["M4"] - removes the key-value pair from the dictionary
+del dict_1 - deletes the dictionary
+
+FUNCTIONS 
+---------
+def function_name(arg1, arg2, arg3):
+    statement
+    return
+- def - defines a function
+- return -  returns a value from a function
+- arguments (*args) -  parameters passed to a function
+- default arguments -  default values for arguments
+- keyword arguments (**kwargs) -  arguments passed to a function with a key
+- arbitrary arguments -  arguments passed to a function with a *
+- lambda -  anonymous function
+- map -  applies a function to each item in an iterable
+- filter -  filters items in an iterable
+- reduce -  applies a function to an iterable and returns a single value
+- zip -  combines two or more iterables
+- enumerate -  returns an iterable of tuples containing the index and value of each item in an iterable
+- itertools -  provides a set of tools for handling iterators like combinations, permutations, and groupby
+- functools -  provides a set of tools for working with functions like reduce, partial, and lru_cache
+- global -  used to declare a global variable
+
+
+RECURSION 
+---------
+- function calling itself
+- base case - condition to stop the recursion
+- recursive case - condition to continue the recursion
+- stack overflow - when the stack overflows
+- top-bottom approch
+- bottom-top approach
+- tail recursion - function calling itself at the end of the function
+- tail call optimization -  when the compiler optimizes the tail recursion
+
+FILE HANDLING 
+-------------
+with open("file_name", "mode") as file:
+    file.write("text")
+- open, read, write, close, append, readline, readlines, write, writelines, seek, tell, truncate 
+- mode - r, w, a, r+, w+, a+, rb, wb, ab, r+b, w+b, a+b
+- remove a file 
+    import os
+    os.remove("file_name")
+
+EXCEPTION HANDLING 
+------------------
+try:
+    statement
+except Exception as e:
+    statement
+finally:
+    statement
+- try 
+- except 
+- else 
+- finally
+- raise 
+- assert
+- CustomException
+- Exception  
+
+
+OOPs 
+----
+class ClassName:
+    def __init__(self, arg1, arg2, arg3):
+        self.arg1 = arg1
+        self.arg2 = arg2
+        self.arg3 = arg3
+    def method_name(self):
+        statement
+        return
+- self - refers to the instance of the class
+- init - initializes the instance of the class
+- method - a function defined inside a class
+- class - defines a class
+- instance/object - an instance of a class
+- constructor - special method that is called when an object is created, used to initialize the object
+- destructor - special method that is called when an object is destroyed, used to clean up the object
+- inheritance - class that inherits the properties and methods of another class, used to create a new class from an existing class, types - single, multiple, multilevel, hierarchical, hybrid, multiple inheritance 
+- polymorphism - ability of an object to take on many forms, used to create a new class from an existing class
+- abstraction - hiding the implementation details of an object, used to create a new class from an existing class
+- encapsulation - 
+- getter - getter are used to access the private variables of a class
+- setter - setter are used to modify the private variables of a class
+- property - used to access the private variables of a class
+- staticmethod/classmethod - used to create a class method that can be called without creating an instance of the class
+- super - used to call the parent class constructor
+- __init__ - constructor 
+- __str__ - used to return a string representation of the object
+- __repr__ - used to return a string representation of the object
+- __eq__ -
+- __lt__ - 
+- __gt__ - 
+- __le__
+- __ge__
+- __ne__
+- __add__
+- __sub__
+- __mul__
+- __div__
+- __mod__
+- __pow__
+- __and__
+- __or__
+- __xor__
+- __lshift__
+- __rshift__
+- __neg__
+- __pos__
+- __abs__
+- __invert__
+- __round__
+- __floor__
+- __ceil__
+- __trunc__
+- __hash__
+- __bool__
+- __len__
+- __getitem__
+-__setitem__
+- __delitem__
+- __iter__
+- __next__
+- __enter__
+- __exit__
+- __call__
+- __getattr__
+- __setattr__
+- __delattr__
+- __getattribute__
+- __setattr__
+- __delattr__
+- __dir__
+- __str__
+- __repr__
+- __bytes__
+- __format__
+- __hash__
+- __sizeof__
+- __doc__
+- __annotations__
+- __slots__
+- __new__
+- __init__
+- __del__
+
+- ADVANCED TOPICS
+-----------------
+- dir() - function that returns a list of valid attributes and methods of an object
+- help() - function that returns the documentation of an object
+- isinstance() - function that returns True if an object is an instance of a class 
+- yield - keyword that is used to return a value from a generator function
+
+ITERATOR 
+--------
+- object that can be iterated over, used to iterate over a sequence
+    lst.__iter__()
+    iter(lst)
+
+GENERATOR
+---------
+- function that returns an iterator, used to create an iterator/generator 
+
+LAMBDA FUNCTION
+---------------
+- anonymous function, used to create a new function from an existing function
+- function that takes no or any number of arguments, but can only have one expression, used to create a new function from an existing function
+lambda arguments : expression
+
+CLOSURE FUNCTION 
+----------------
+- function that is defined inside another function and has access to the variables of the function in which it is defined, used to create a new function from an existing function
+def outer_function(arg1, arg2):
+    def inner_function(arg3):
+        statement
+        return
+
+DECORATOR 
+---------
+- function that takes another function as an argument and returns a new function, used to modify the behavior of a function, used to add functionality to a function, used to wrap a function,
+def decorator_function(func):
+    def wrapper_function(*args):
+        statement
+        return func(*args)
