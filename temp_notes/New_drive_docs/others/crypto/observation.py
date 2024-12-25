@@ -1,3 +1,30 @@
+# region INTRODUCTION
+# -------------------
+
+'''
+- new money printing check
+https://fred.stlouisfed.org/series/M2SL
+- types of investers
+HNI
+smart invester
+bad invester
+- today - october 25
+- old market = less retuns = first money flow = bad investers
+
+- psychology of market
+disbelief - hope - optimism - belief - thrill - euphorics - compl- anexity - deniel - panic - 
+- coin => vertai, moo waan, gooby, mini 
+- 2021 - matic, sol, ada, ftm, ben dog
+- information - extra-info - balance - gem find - persona portfolio - right entry right exit - mentorship 
+- sol, 
+sui, xrp
+ada - ❌
+tau, woof, fart
+
+
+'''
+
+
 -   30% tax calculation on selling a crypto
 -   Crypto markets are open 24/7, 365 days a year.
 -   https://coinmarketcap.com/
@@ -15,8 +42,8 @@
 -   Oscillator donot stick with chart but indicator sticks
 
 
-TYPES OF CRYPTO TRADING 
------------------------
+# region TYPES OF CRYPTO TRADING 
+# -----------------------
 Day Trading 
 Swing Trading 
 Scalping
@@ -24,8 +51,8 @@ Holding
 Position Trading 
 Algo Trading 
 
-STRATEGIES 
----------
+# region STRATEGIES 
+# ----------
 
 CIP strategy 
 ------------
@@ -41,8 +68,8 @@ Reversal strategy
 
 
 
-INDICATORS
-----------
+# region INDICATORS
+# ----------
 VWAP - Volume Weighted Average Price
 Volumne - 
 Supertrend  -   

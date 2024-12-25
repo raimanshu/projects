@@ -1,0 +1,53 @@
+
+1 BASIC
+-------
+
+
+2 LOAD BALANCING
+----------------
+3 DATA STORES
+-------------
+
+4 CONSISTENCY VS AVAILABILITY
+-----------------------------
+
+5 MESSAGE QUEUES
+----------------
+
+6 DEVOPS CONCEPT
+----------------
+
+7 CACHING
+---------
+
+8 MICROSERVICES
+---------------
+
+9 API GATEWAYS
+--------------
+
+10 AUTHENTICATION MECHANISMS
+----------------------------
+
+11 SYSTEM DESIGN TRADEOFFS
+--------------------------
+
+12 PRACTICE PROBLEMS
+--------------------
+
+13 ADDITIONAL RESOURCES
+-----------------------
+
+
+
+DOUBTS 
+------
+- sytem desin types vs architectural patterns
+- HLD vs  LLD ?? 
+- monolithic/centralized/trivial architecture vs distribute/microservices architecture
+- Latency  (complexity delay + netword delay)- caching, CDN, upgrading systems
+- throughput - volume of work/information flowing through a system
+- availabilty - how long a system is operational, replication(redundancy + synchronous), redundancy 
+- consistancy - data integrity, consistency, consistency model, dirty read, types (strong, eventual consistency, weak consistancy)
+- CAP theorem - consistency, availability, partition tolerance
+- Lamport logical clock - 

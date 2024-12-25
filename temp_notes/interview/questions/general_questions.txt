@@ -23,3 +23,13 @@ DMDL - Data Mining
 DMMLDL - Data Mining Machine Learning Deep Learning
 DMDLDL - Data Mining Deep Learning Deep Learning
 https://www.youtube.com/watch?v=Z27llwBA0Uw
+-cohesion vs coupling
+
+- tight coupling vs loose coupling
+
+- sql vs nosql vs mysql
+
+- website vs web application
+
+- web server vs application server
+
