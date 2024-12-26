@@ -1798,6 +1798,10 @@ print(find_subarrays(arr, sum))
 
 # endregion
 
+
+
+
+
 # region 3.1 ARRAYS - HARD
 # ------------------------
 
@@ -2468,45 +2472,708 @@ print(solve(a, len(a)))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, time complexity O(n)
+# - method 3 : optimal solution, TC - O(N*log(N)), SC - O(N)
+import math 
+def solve(a, n):
+  return merge_sort(a, 0, n-1)
+
+def merge_sort(a, low, high):
+  cnt = 0
+  if low >= high:
+    return cnt
+  mid = (low + high) // 2
+  cnt += merge_sort(a, low, mid)
+  cnt += merge_sort(a, mid+1, high)
+  cnt += merge(a, low, mid, high)
+  return cnt
+
+def merge(a, low, mid, high):
+  cnt = 0
+  temp = []
+  left = low
+  right = mid+1
+  while left <= mid and right <= high:
+    if a[left] <= a[right]:
+      temp.append(a[left])
+      left += 1
+    else:
+      temp.append(a[right])
+      cnt += (mid - left + 1)
+      right += 1
+  while left <= mid:
+    temp.append(a[left])
+    left += 1
+  while right <= high:
+    temp.append(a[right])
+    right += 1
+  for i in range(low, high+1):
+    a[i] = temp[i - low]
+  return cnt
+
+a = [5,4,3,2,1]
+print(solve(a, len(a)))
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 11 TODO : reverse pairs
-# - method 1 : brute force, time complexity O(nlogn)
+# - method 1 : brute force, TC - O(N^2), SC - O(1)
+def team(skill, n):
+  return countPairs(skill, n)
+def countPairs(a, n):
+  cnt = 0
+  for i in range(n):
+    for j in range(i+1, n):
+      if a[i] > 2 * a[j]:
+        cnt += 1
+  return cnt
 
+a = [4,1,2,3,1]
+n  =  5
+print(team(a, n))
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, time complexity O(n)
+# - method 3 : optimal solution, TC - O(2N*log(N)), SC - O(N) ❌❌❌
+# def team(skill, n):
+#   return merge_sort(skill, 0, n-1)
+
+# def merge_sort(a, low, high):
+#   cnt = 0
+#   if low >= high:
+#     return cnt
+#   mid = (low + high) // 2
+#   cnt += merge_sort(a, low, mid)
+#   cnt += merge_sort(a, mid+1, high)
+#   cnt += countPairs(a, low, mid, high)
+#   cnt += merge(a, low, mid, high)
+#   return cnt
+
+# def countPairs(arr, low, mid, high):
+#   right = mid+1
+#   cnt = 0
+#   for i in range(low, mid+1):
+#     while right <= high and a[i] > 2 * a[right]:
+#       right += 1
+#     cnt += (right - (mid+1))
+#   return cnt
+
+# def merge(a, low, mid, high):
+#   temp = []
+#   left = low
+#   right = mid+1
+#   while left <= mid and right <= high:
+#     if a[left] <= a[right]:
+#       temp.append(a[left])
+#       left += 1
+#     else:
+#       temp.append(a[right])
+#       cnt += (mid - left + 1)
+#       right += 1
+#   while left <= mid:
+#     temp.append(a[left])
+#     left += 1
+#   while right <= high:
+#     temp.append(a[right])
+#     right += 1
+#   for i in range(low, high+1):
+#     a[i] = temp[i - low]
+#   return cnt
+
+# a = [4,1,2,3,1]
+# n  =  5
+# print(team(a, n))
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 12 TODO : maximum product subarray
-# - method 1 : brute force, time complexity O(nlogn)
+# - method 1 : brute force, TC - time complexity O(n^2), SC - O(1)
+def maxProduct(nums):
+  n = len(nums)
+  result = float('-inf')
+  for i in range(n-1):
+    for j in range(i+1, n):
+      prod = 1
+      for k in range(i, j+1):
+        prod *= nums[k]
+      result = max(result, prod)
+  return result
+nums = [1,2,-3,0,-4,-5]
+print(maxProduct(nums))
 
-# - method 2 : better solution, time complexity O(n)
+# - method 2 : better solution, TC - time complexity O(n^2), SC - O(1)
+def maxProduct(nums):
+  result = nums[0]
+  for i in range(len(nums) - 1):
+    p = nums[i]
+    for j in range(i+1, len(nums)):
+      result = max(result, p)
+      p *= nums[j]
+    result = max(result, p)
+  return result
+nums = [1,2,-3,0,-4,-5]
+print(maxProduct(nums))
 
-# - method 3 : optimal solution, time complexity O(n)
+
+# - method 3 : optimal solution, TC - O(N), SC - O(1)
+def maxProduct(arr):
+  n = len(arr)
+  pre, suff = 1,1
+  ans = float('-inf')
+  for i in range(n):
+    if pre == 0:
+      pre = 1
+    if suff == 0:
+      suff = 1
+    pre *= arr[i]
+    suff *= arr[n-i-1]
+    ans = max(ans, max(pre, suff))
+  return ans
+nums = [1,2,-3,0,-4,-5]
+print(maxProduct(nums))
+
+# - method 4 : optimal solution, TC - O(N), SC - O(1)
+def maxProduct(nums):
+  prod1 = nums[0]
+  prod2 = nums[0]
+  result = nums[0]
+  for i in range(1, len(nums)):
+    temp = max(nums[i], nums[i]*prod1, nums[i]*prod2)
+    prod2 = min(nums[i], nums[i]*prod1, nums[i]*prod2)
+    prod1 = temp
+    result = max(result, prod1)
+  return result
+nums = [1,2,-3,0,-4,-5]
+print(maxProduct(nums))
 
 # endregion
+
+
+
 
 
 # region 4.1 BINARY SEARCH on 1D ARRAY
 # ------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
-# 13 TODO : 
+# 1 TODO : binary search to find x in the sorted array 
+# method 1 : iterative approch, TC - o(log(N)) , SC -
+def binarySearch(a, target):
+  low = 0
+  high = len(a) - 1
+  while low <= high:
+    mid = (low + high) // 2
+    if a[mid] == target:
+      return mid
+    elif a[mid] < target:
+      low = mid + 1
+    else:
+      high = mid - 1
+  return low
+
+a = [3,4,6,7,9,12,16,17]
+target  = 6
+print(binarySearch(a, target))
+
+# method 2 : recursive approch, TC - O(log(N)) , SC -
+def binarySearch(nums, low, high, target):
+  if low > high:
+    return -1
+  
+  mid = (low + high) // 2
+  if nums[mid] == target:
+    return mid
+  elif target > nums[mid]:
+    return binarySearch(nums, mid+1, high, target)
+  return binarySearch(nums, low,mid-1, target)
+
+def search(nums, target):
+  return binarySearch(nums, 0, len(nums) - 1, target)
+
+a = [3,4,6,7,9,12,16,17]
+target  = 6
+print(search(a, target))
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+
+# 2 TODO : implement lower bound
+# method 1 : brute force approch, TC - O(N) , SC - O(1)
+def lowerBound(arr, n, x):
+  for i in range(n):
+    if arr[i] >= x:
+      return i
+  return n
+
+a = [3,5,8, 15, 19]
+n = 5
+x = 9
+print(lowerBound(a, n, x))
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - O(log(N)), SC - O(1)
+def lowerBound(arr, n, x):
+  low = 0
+  high = n - 1
+  ans = n
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] >= x:
+      ans = mid
+      high = mid - 1
+    else:
+      low = mid + 1
+  return ans
+
+a = [3,5,8, 15, 19]
+n = 5
+x = 9
+print(lowerBound(a, n, x))
+
+
+# 3 TODO : implement upper bound
+def upperBound(arr, x, n):
+  for i in range(n):
+    if arr[i] > x:
+      return i
+  return n
+
+a = [3,5,8, 9, 15, 19]
+n = 6
+x = 9
+print(upperBound(a, x, n))
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - O(log(N)), SC - O(1)
+def upperBound(arr, x, n):
+  low = 0
+  high = n - 1
+  ans = n
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] > x:
+      ans = mid
+      high = mid - 1
+    else:
+      low = mid + 1
+  return ans
+
+a = [3,5,8, 9, 15, 19]
+n = 6
+x = 9
+print(upperBound(a, x, n))
+
+
+
+# 4 TODO : search insert position
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - O(log(N)), SC - O(1) 
+def searchInsert(arr, x):
+  n = len(arr)
+  low = 0
+  high = n - 1
+  ans = n
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] >= x:
+      ans = mid
+      high = mid - 1
+    else:
+      low = mid + 1
+  return ans
+
+arr = [1,2,4,7]
+x  = 6
+print(searchInsert(arr, x))
+
+
+
+# 5 TODO : floor / ceil in sorted array
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+def findFloor(arr, n, x):
+  low = 0
+  high = n - 1
+  ans = -1
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] <= x:
+      ans = arr[mid]
+      low = mid + 1
+    else:
+      high = mid - 1
+  return ans
+
+def findCeil(arr, n, x):
+  low = 0
+  high = n - 1
+  ans = -1
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] >= x:
+      ans = arr[mid]
+      high = mid - 1
+    else:
+      low = mid + 1
+  return ans
+
+def getFloorAndCeil(arr, n, x):
+  f = findFloor(arr, n, x)
+  c = findCeil(arr, n, x)
+  return [f, c]
+
+
+arr = [3, 4,4,7,8,10]
+n = 6
+x = 5
+print(getFloorAndCeil(arr, n, x))
+
+
+
+# 6 TODO : find the first or last occurence of a givennumber in sorted array
+# method 1 : brute force approch, TC - O(n), SC - O(1)
+def count(n, k, x):
+  cnt = -1
+  for i in range(k):
+    if arr[i] == x:
+      cnt = i
+  return cnt
+
+arr = [3,4,13,13,13,20,40]
+n = 7
+x = 13
+print(count(arr, n, x))
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - O(log(N)), SC - O(N) 
+def count(n, k, x):
+  start = 0
+  end = k - 1 
+  res = -1
+  while start <= end:
+    mid = start + (end - start) // 2
+    if arr[mid] == x:
+      res = mid
+      start = mid + 1
+    elif arr[mid] < x:
+      start = mid + 1
+    else:
+      end = mid - 1
+  return res
+
+arr = [3,4,13,13,13,20,40]
+n = 7
+x = 13
+print(count(arr, n, x))
+
+
+# 7 TODO : count occurence of a number in a sorted array with duplicates
+# method 1 : brute force approch, TC - O(N), SC - O(1)
+
+def count(arr, n, x):
+  cnt = 0
+  for i in range(n):
+    if arr[i] == x:
+      cnt += 1
+  return cnt
+
+arr = [2,4,6,8,8,8,11,13]
+n = 8 
+x = 8
+print(count(arr, n, x))
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - O(2*log(N)) , SC - O(1)
+def firstOccurance(arr, n, k):
+  low = 0
+  high = n -1
+  first = -1
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] == k:
+      first = mid
+      high = mid - 1
+    elif arr[mid] < k:
+      low = mid + 1
+    else:
+      high = mid - 1
+  return first
+def lastOccurance(arr, n, k):
+  low = 0
+  high = n -1
+  last = -1
+  while low <= high:
+    mid = (low + high) // 2
+    if  arr[mid] == k:
+      last = mid
+      low  = mid + 1
+    elif arr[mid] < k:
+      low = mid + 1
+    else:
+      high = mid - 1
+  return last
+
+def firstAndLastPosition(arr, n, x):
+  first = firstOccurance(arr, n, x)
+  if first == -1:
+    return (-1, -1)
+  last = lastOccurance(arr, n, x)
+  return (first, last)
+
+def count(arr, n, x):
+  first, last = firstAndLastPosition(arr, n, x)
+  if first == -1:
+    return 0
+  return last - first + 1
+
+arr = [2,4,6,8,8,8,11,13]
+n = 8 
+x = 8
+print(count(arr, n, x))
+
+
+
+# 8 TODO : search in rotated array I
+# method 1 : brute force approch, TC - O(N), SC - O(1)
+
+def search(arr, n, k):
+  for i in range(n):
+    if arr[i] == k:
+      return i
+  return -1
+
+arr = [7,8,9,1,2,3,4,5,6]
+n = 9
+k = 1
+print(search(arr, n, k))
+
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - O(log(N)) , SC - O(1)
+
+def search(arr, n, k):
+  low = 0
+  high = n - 1
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] == k:
+      return mid
+    if arr[low] <= arr[mid]:
+      if arr[low] <= k and k <= arr[mid]:
+        high = mid - 1
+      else:
+        low = mid + 1
+    else:
+      if arr[mid] <= k and k <= arr[high]:
+        low = mid + 1
+      else:
+        high = mid - 1
+  return -1
+
+arr = [7,8,9,1,2,3,4,5,6]
+n = 9
+k = 1
+print(search(arr, n, k))
+
+
+
+# 9 TODO : search in rotated array II
+# method 1 : brute force approch, TC - O(N), SC - O(1)
+
+def search(arr, n, k):
+  for i in arr:
+    if i == k:
+      return True
+  return False
+
+arr = [7,8,1,2,3,3,3,4,5,6]
+k = 3
+print(search(arr, k))
+
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - O(log(N/2)) , SC - O(1)
+
+def search(arr, k):
+  n = len(arr)
+  low = 0
+  high = n - 1
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] == k:
+      return True
+    if arr[low] == arr[mid] and arr[mid] == arr[high]:
+      low += 1
+      high -= 1
+      continue
+    if arr[low] <= arr[mid]:
+      if arr[low] <= k and k <= arr[mid]:
+        high = mid - 1
+      else:
+        low = mid + 1
+    else:
+      if arr[mid] <= k and k <= arr[high]:
+        low = mid + 1
+      else:
+        high = mid - 1
+  return False
+
+arr = [7,8,1,2,3,3,3,4,5,6]
+k = 3
+print(search(arr, k))
+
+# 10 TODO :  find minimum in rotated sorted array
+# method 1 : brute force approch, TC - O(N) , SC - O(1)
+def findMin(arr):
+  n = len(arr)
+  mini = float('inf')
+  for i in range(n):
+    mini = min(mini, arr[i])
+  return mini
+
+arr = [4,5,6,7,0,1,2,3]
+print(findMin(arr))
+
+
+# method 2 : better approch, TC - O(log(N)) , SC - O(1)
+def findMin(arr):
+  low = 0
+  high = len(arr) - 1
+  ans = float('inf')
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[low] <= arr[mid]:
+      ans = min(ans, arr[low])
+      low = mid + 1
+    else: 
+      ans = min(ans, arr[mid])
+      high = mid - 1
+  return ans
+
+arr = [4,5,6,7,0,1,2,3]
+print(findMin(arr))
+
+# method 3 : optimal solution, TC - O(log(N)) , SC - O(1) 
+def findMin(arr):
+  low = 0
+  high = len(arr) - 1
+  ans = float('inf')
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[low] <= arr[high]:
+      ans = min(ans, arr[low])
+      break
+    if arr[low] <= arr[mid]:
+      ans = min(ans, arr[low])
+      low = mid + 1
+    else:
+      ans = min(ans, arr[mid])
+      high = mid - 1
+  return ans
+
+arr = [4,5,6,7,0,1,2,3]
+print(findMin(arr))
+
+
+# 11 TODO : find out how many times has an array been rotated
+# method 1 : brute force approch, TC - O(N), SC - O(1)
+def findRotated(arr):
+  n = len(arr)
+  mini = float('inf')
+  index = -1
+  for i in range(n):
+    if arr[i] < mini:
+      mini = arr[i]
+      index = i
+  return index
+
+arr = [4,5,6,7,0,1,2,3]
+print(findRotated(arr))
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, using binary search, TC - O(log(N)), SC - O(1)
+def findRotated(arr):
+  low = 0
+  high = len(arr) - 1
+  ans = float("inf")
+  index = -1
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[low] <= arr[high]:
+      if arr[low] < ans:
+        ans = arr[low]
+        index = low
+      break
+    if arr[low] <= arr[mid]:
+      if arr[low] < ans:
+        ans = arr[low]
+        index = low
+      low = mid + 1
+    else:
+      if arr[mid] < ans:
+        ans = arr[mid]
+        index = mid
+      high = mid - 1
+  return index
+
+arr = [4,5,6,7,0,1,2,3]
+print(findRotated(arr))
+
+
+
+# 12 TODO : single element in a sorted array
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+
+# 13 TODO : find peak element
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
@@ -2518,20 +3185,155 @@ print(solve(a, len(a)))
 # -----------------------------------
 
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
-# 13 TODO : 
-# 14 TODO : 
+# 1 TODO :  find square root of a number in log(n) 
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : find the Nth root of a number using binary search
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : koko eating bananas
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : minimum days to make M bouquets
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : find the smallest divisors
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : capacity to ship packages within D days
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : Kth missing positive number
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : aggressive cows
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+
+# 9 TODO : book allocation problem
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+# 10 TODO :  split array - largest sum
+
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+# 11 TODO : painter's partition
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 12 TODO : minimize max distance in gas station
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 13 TODO : median of 2 sorted arrays
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 14 TODO : Kth element of 2 sorted arrays
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 # endregion
 
@@ -2543,48 +3345,229 @@ print(solve(a, len(a)))
 # region 4.3 BINARY SEARCH on 2D ARRAY
 # ------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
+# 1 TODO :  find the row with maximum number of 1's
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : search in a 2 D matrix
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : search in a row and column wise sorted matrix
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : find peak element in a 2D matrix
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : matrix median
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
+
+
 
 
 # region 5.1 STRINGS - EASY
 # -------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
+# 1 TODO :  remove outermost pareanthesis
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : reverse words in a given string / palindrome check
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : largest odd number in a string
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : largest common prefix
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : isomorphic string
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : check whether one string is a rotation of another
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : check if two strings are anagram of each other
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 
 # endregion
+
+
+
+
 
 # region 5.2 STRINGS - MEDIUM
 # ---------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
+# 1 TODO : sort characters by frequency
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : maximum nesting depth of parenthesis
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+# 3 TODO : roman number to integer and vice versa
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : implement atoi
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : count number of substrings
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : longest pallindromic substring (without using DP)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : sum of beauty of all substring
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : reverse every word in a substring
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
-
-
-
 
 
 
@@ -2592,162 +3575,842 @@ print(solve(a, len(a)))
 # region 6.1 LINKED LIST - 1D EASY
 # --------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
+# 1 TODO :  introduction to linked list, learn about struct and how is node represented
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : inserting a node in a linked list
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : deleting a node in a linked list
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : find the length of the linked list (learn traversal)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : search an element in the linked list
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 # endregion
+
+
 
 
 
 # region 6.2 LINKED LIST - DOUBLY  EASY
 # -------------------------------------
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
+# 1 TODO :  introduction to linked list, learn about struct and how is node represented
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : insert a node in DLL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : delete a node in DLL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : reverse in DLL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
 
 
 
 # endregion
+
+
+
 
 
 # region 6.3 LINKED LIST - MEDIUM
 # --------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
-# 13 TODO : 
-# 14 TODO : 
-# 15 TODO :
+# 1 TODO :  middle of a LL (Tortoise Hare method)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : reverse a LL (itterative)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : reverse a LL (recursive)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : detect a loop in Ll
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : find the starting point in LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : length of a loop in LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : check if LL is pallindrome or not
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : segrregate odd and even nodes in a LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : remove Nth node from end/back of LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  delete the middle node of a LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : sort LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 12 TODO : sort a LL of 0's, 1's and 2's by changing links
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 13 TODO : find the intersection points of Y LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 14 TODO : add 1 to a number represented by LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 15 TODO :add 2 numbers in LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 # endregion
+
+
 
 
 # region 6.4 LINKED LIST - DOUBLY MEDIUM
 # --------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
+# 1 TODO :  delete all occurences of a key in DLL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : find pairs with given sum in DLL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : remove duplicates from sorted DLL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 
 # endregion
+
+
+
+
 
 # region 6.5 LINKED LIST - HARD
 # -----------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
+# 1 TODO :  reverse LL in group of given size K
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : rotate a LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : flattening of LL
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : clone a linked list with random and next pointer
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 # endregion
+
 
 
 
 # region 7.1 RECURSION - BASIC
 # ----------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
+# 1 TODO :  recursive implementation of atoi()
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : pow(x,n)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : count good numbers
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : sort a stack using recursion
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : reverse a stack using recursion
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
+
+
 
 
 # region 7.2 RECURSION - PATTERN
 # ------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
+# 1 TODO :  generate all binary strings
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : generate paranthesis
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : print all subsequences / power set
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : learn all patterns of subsequences (theory)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : count all subsequences with sum K
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : check if there exists a subsequences with sum K
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : combination sum - I
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : combination sum - II
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : subset sum - I
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  subset sum - II
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : combination sum  - III
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 12 TODO : letter combination of phone number
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 # endregion
+
+
 
 
 # region 7.3 RECUSION - HARD
 # --------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
+# 1 TODO :  pallindrome partitioning
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : word search
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : N queen
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : rent a maze
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : word break
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : M coloring problem
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : sudoko solver
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : expression add operators
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 # endregion
+
+
 
 
 
 # region 8.1 BIT MANIPULATION - BASIC
 # -----------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
+# 1 TODO :  introduction to bit manipulation
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : check if the i-th bit is set or not
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : check if a number is odd or not
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : check if a number is power of 2 or not
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : count the number of set bits
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : set/unset the right most unset bit
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : swap two numbers
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : divide two integers without using multiplication
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 # endregion
+
+
 
 
 
 # region 8.2 BIT MANIPULATION - MEDIUM
 # ------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
+# 1 TODO :  count number of bits to be flipped to convert A to B
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : find the number that appears odd number of times
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : power set 
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : find xor of numbers from left to right
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : find the two numbers appearing off number of times
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
+
+
 
 
 
 # region 8.3 BIT MANIPULATION - HARD
 # ----------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
+# 1 TODO :  print prime factors of a number
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : all divisors of a number
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : sieve of eratosthenes
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : find prime factorisation of a number using sieve
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : power(n,x)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
+
+
 
 
 
@@ -2755,81 +4418,417 @@ print(solve(a, len(a)))
 # region 9.1 STACK/QUEUE - LEARNING
 # ---------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
+# 1 TODO :  implement stack using arrays
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : implement queue using arrays
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : implement stack using queue
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : implement queue using stack
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : implement stack using linked list
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : implement queue using linked list
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : check for balanced paranthesis
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : implement min stack
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
+
+
+
 
 
 
 # region 9.2 STACK/QUEUE - PREFIX/POSTFIX
 # ---------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
+# 1 TODO :  infix to postfix conversion using stack
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : prefix to infix conversion
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : prefix to postfix conversion
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : postfix to prefix conversion
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : postfix to infix 
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : convert infix to prefix notation
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
+
+
+
+
 
 
 # region 9.3 STACK/QUEUE - MONOTONIC
 # ----------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
+# 1 TODO :  next greater element - I
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : next greater element - II
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : next smaller element
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : number of NGEs to the right
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : trapping rainwater
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : sum of subarray minimum
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : asteriod collision
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : sum of subarray ranges
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : remove k digits
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  largest rectangle in a histogram
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : maximal rectangle
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
+
+
+
 
 
 
 # region 9.4 STACK/QUEUE - IMPLEMENTATION
 # ---------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
+# 1 TODO :  sliding window maximum
+# method 1 : brute force approch, TC - , SC -
 
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : stock span problem
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : the celebrity problem
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : LRU cache (important)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : LFU cache
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
 
 
 # endregion
 
 
-
-
 # region 10.1 SLIDING WINDOW/TWO POINTER - MEDIUM
 # -----------------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
+# 1 TODO :  largest substring without repeating characters
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : max consecutive ones - III
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : fruit into baskets
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : longest repeating character replacement
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : binary subarray with sum
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : count number of nice subarrays
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : number of substring containg all three characters
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : maximun point you can obtain from cards
 
 
 # endregion
@@ -2840,10 +4839,46 @@ print(solve(a, len(a)))
 # region 10.2 SLIDING WINDOW/TWO POINTER - HARD
 # ---------------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
+# 1 TODO : largest substring with at most K distincet characters 
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : subarray with k different integers
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : minimum window substring
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : minimum window subsequence
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
@@ -2854,10 +4889,45 @@ print(solve(a, len(a)))
 # region 11.1 HEAP/PRIORITY QUEUE - LEARNING
 # ------------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
+# 1 TODO :  introduction to parity queue using binary heaps
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : min heap and max heap replacement
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : check if an array represents a min-heap or not
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : convert min heap to max heap
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -2868,13 +4938,75 @@ print(solve(a, len(a)))
 # region 11.2 HEAP/PRIORITY QUEUE - MEDIUM
 # ----------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
+# 1 TODO :  Kth largest element in an array (use parity queue)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : Kth smallest element in an array  (use parity queue)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : sort K sorted array
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : merge M sorted lists
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : replace each array element by it's corresponding rank
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : task scheduler
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : hands of straights
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 
@@ -2884,12 +5016,65 @@ print(solve(a, len(a)))
 # region 11.3 HEAP/PRIORITY QUEUE - HARD
 # --------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
+# 1 TODO :  design twitter
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : connect "n" ropes with minimal cost
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : Kth largest element in a stream of running integers
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : maximum sum combination
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : find median from data stream
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : K most frequent elements
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -2898,11 +5083,55 @@ print(solve(a, len(a)))
 # region 12.1 GREEDY ALGORITHM - EASY
 # -----------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
+# 1 TODO :  assign cookies
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : fractional knapsack approch
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : greedy algorithm to find minimum number of coins
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : lemonade charge
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : valid paranthesis checker
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -2912,17 +5141,115 @@ print(solve(a, len(a)))
 # region 12.2 GREEDY ALGORITHM - MEDIUM/HARD
 # ------------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
+# 1 TODO :  N meetings in one room
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : jump game - I
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : jump game - II
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : minimum number of platforms required for a railway station
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : job sequenceing problem
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : candy
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : program for shortest job (one SNF) CPU scheduling
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : program for least recently used (LRU) page replacement algorithm
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : insert interval
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  merge intervals
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : non-overlapping intervals
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -2931,20 +5258,134 @@ print(solve(a, len(a)))
 # region 13.1 BINARY TREES - TRAVERSALS
 # -------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
-# 13 TODO : 
+# 1 TODO :  introduction to trees
+# method 1 : brute force approch, TC - , SC -
 
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : binary tree representation in C++
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : binary tree representation in java
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : binary tree traversals in binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : preorder traversals of binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : inorder traversal of binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : post order traversal of binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : level order traversal / level order traversal in spiral form
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : iterative preorder traversal of binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  iterative inorder traversal of binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : post order traversal of binary tree using 2-stack
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 12 TODO : post-order traversal of binary tree using 1 stack
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 13 TODO : preorder, inorder and post order traversal in one traversal
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
 
 
 # endregion
@@ -2954,18 +5395,124 @@ print(solve(a, len(a)))
 # region 13.2 BINARY TREES - MEDIUM
 # ----------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
+# 1 TODO :  height of a binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : check if the binary tree is height-balanced or not
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : diameter of a binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : maximum path sum
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : check if two trees are identical or not
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : zig-zag traversal of binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : boundary traversal of binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : vertical order traversal of binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : top view binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  bottom view binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : right/left view of a binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 12 TODO : symmetric binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
 
 
 # endregion
@@ -2976,20 +5523,138 @@ print(solve(a, len(a)))
 # --------------------------------
 
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
-# 13 TODO : 
-# 14 TODO : 
+# 1 TODO : root to node in a binary tree  
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : LCA in binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : maximum width of a binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : check for children sum property
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : print all the nodes at a distance of k in binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : minimum time taken to BURN the binary tree from a node
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : count total nodes in a complete binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : requirements needed to construct a unique binary tree (theory)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : construct binary tree from inorder and preorder traversal
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  construct binary tree from postorder and inorder traversal
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : serialize and deserialize binary tree
+
+# 12 TODO : morris preorder traversal of a binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 13 TODO : morris inorder traversal of a binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 14 TODO : flatten  binary tree to linked list
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 # endregion
 
@@ -2998,9 +5663,35 @@ print(solve(a, len(a)))
 # region 14.1 BINARY SEARCH TREES - CONCEPTS
 # ------------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
+# 1 TODO :  introduction to binary search tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : search in a binary search tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : find min/max in BST
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -3011,19 +5702,135 @@ print(solve(a, len(a)))
 # region 14.2 BINARY SEARCH TREES - PRACTICE PROBLEMS
 # ---------------------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
-# 13 TODO : 
+# 1 TODO :  ceil in a BST
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : floor in a BST
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : insert a given node in BST
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : delete a node in BST
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : find Kth smallest/largest element in BST
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : check if a tree is BST or BT
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : LCA in a BST
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : construct a BST from preorder traversal
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : inorder successor/predecessor in BST
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  merge 2 BSTs
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : two sum in BST | check if there exists a pair with sum K
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 12 TODO : remove BST | connest BST with two nodes swapped
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 13 TODO : largest BST in binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -3033,12 +5840,66 @@ print(solve(a, len(a)))
 # region 15.1 GRAPHS - LEARNING
 # -----------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
+# 1 TODO :  graphs and types
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : graph implementation |c++
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : graph implementation | java
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : connected components | logic explanation
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : BFS
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : DFS
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
@@ -3047,20 +5908,146 @@ print(solve(a, len(a)))
 
 # region 15.2 GRAPHS - BFS/DFS
 # ----------------------------
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
-# 13 TODO : 
-# 14 TODO : 
+# 1 TODO :  number of provinces (leetcode)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : connected components problem in matrix
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : return oranges
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : flood fill
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : cycle detectio in undirected graph (BFS)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : cycle detectio in undirected graph (DFS)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : 0/1 matrix (BFS problem)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : surrounded regions (DFS)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : number of enclaves (flood fill implementation - multisource)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  word index - 1
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : word index - 2
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 12 TODO : number of distinct islands (DFS multi source)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 13 TODO : bipartite Graphs (DFS)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 14 TODO : cucle detection in directed graph (DFS)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
@@ -3070,13 +6057,76 @@ print(solve(a, len(a)))
 # region 15.3 GRAPHS - TOPO SORT
 # ------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
+# 1 TODO :  topo sort
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : kahn's algorithm
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : cycle detection in directed graph (BFS)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : course schedule - I
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : course schedule - 2
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : find eventual safe states
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : alien dictionary
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
@@ -3085,19 +6135,136 @@ print(solve(a, len(a)))
 # region 15.4 GRAPHS - SORTEST PATH
 # ---------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
-# 12 TODO : 
-# 13 TODO : 
+# 1 TODO :  shortest path in UG with unit weights
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : shortest path in DAG
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : Dijkatra's algorithm
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : why parity queue is used in dijkatra's algorithm
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : shortest path in binary tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : path with minimum effort
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : cheapest flights with K stops
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : network delay time
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : number of ways to arive at destination
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  minimum steps to reach end from start by performing multiplicationand mod with array elements
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : bellman ford algorithm
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 12 TODO : floyd warshall algorithm
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 13 TODO : find the city with the smallest number of neighbours at a threshold distance
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
@@ -3106,17 +6273,114 @@ print(solve(a, len(a)))
 # region 15.5 GRAPHS - MST/DISJOINT SET
 # -------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
+# 1 TODO :  minimu spanning tree
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : prism's algorithm
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : disjoint set (union by rank)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : disjoint set (union by size)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : kruskal's algorithm
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : number of operations to make network connected
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : most stones removed with the same rows or columns
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : accounts merge
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : number of islands - II
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  making a large island
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : swim in rising water
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
 
 
 # endregion
@@ -3125,9 +6389,36 @@ print(solve(a, len(a)))
 # region 15.6 GRAPHS - OTHER ALGORITHMS
 # -------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
+# 1 TODO :  bridges in graph
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : articulation point
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : kosaraju's algorithm
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
@@ -3137,7 +6428,15 @@ print(solve(a, len(a)))
 # region 16.1 DP - INTRODUCTION
 # -----------------------------
 
-# 1 TODO :  
+# 1 TODO :  dynamic programming introduction
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -3145,11 +6444,56 @@ print(solve(a, len(a)))
 
 # region 16.2 DP - 1D
 # -------------------
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
+# 1 TODO :  climbing stars
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : frog jump (DP -3)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : frog jump with k distances(DP - 4)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : maximum sum of non-adjacent elements (DP-5)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : house robber (DP-6)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 
@@ -3157,13 +6501,74 @@ print(solve(a, len(a)))
 
 # region 16.3 DP - 2D/3D/GRIDS
 # ----------------------------
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
+# 1 TODO :  ninjas's training (Dp-7)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : grid unique paths : DP on grids (DP-8)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : grid unique paths 2 (DP - 9)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : minimum path sum in grid (DP-10)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : minimum path sum in triangular grid (DP-11)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : minimum/maximum falling path sum (DP-12)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : 3D DP : ninja and his friends (DP-13)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
 
 
 
@@ -3172,17 +6577,115 @@ print(solve(a, len(a)))
 # region 16.4 DP - SUBSEQUENCES
 # -----------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
-# 11 TODO : 
+# 1 TODO :  subset sum equals to target (DP-14)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : partition equal subset sum (DP-15)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : partition set into 2 subsets with min absolute sum diff (DP-16)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : count subsets with sum K (DP-17)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : count partitions with given difference (DP-18)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : assign cookies
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : minimum coins (DP-20)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : target sum (DP-21)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : coin change 2 (DP-22)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  unbounded knapsack (DP-23)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 11 TODO : red cutting problem (DP-24)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -3191,16 +6694,104 @@ print(solve(a, len(a)))
 # region 16.5 DP - STRINGS
 # ------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
-# 8 TODO : 
-# 9 TODO : 
-# 10 TODO :  
+# 1 TODO :  longest common subsequence (DP-25)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : print longest common subsequence (DP-26)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : longest common substring (DP-27)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : longest pallindromic subsequence (DP-28)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : minimum insertions to make string pallindromic (DP-29)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : minimum insertions/deletions to convert string (DP-30)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : shortest common subsequence (DP-31)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : distinct subsequences (DP-32)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : edit distance (DP-33)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 10 TODO :  wildcard matching (DP-34)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
 
 
 
@@ -3210,12 +6801,66 @@ print(solve(a, len(a)))
 # region 16.6 DP - STOCKS
 # -----------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
+# 1 TODO : best time to bus stocks - I (DP -35)  
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : buy and sell stock - II (DP - 36)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : buy and sell stock - III (DP-37)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : buy and sell stock - IV (DP-38)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : buy and sell stock with cooldown (DP-39)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : buy and sell stock with transaction fee (DP-40)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
@@ -3224,13 +6869,75 @@ print(solve(a, len(a)))
 # region 16.7 DP - LIS
 # --------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
+# 1 TODO :  longest increasing subsequence (DP-41)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : printing longest increasing subsequence (DP-42)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : longest increasing subsequence (DP-43)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : largest divisible subset (DP-44)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : largest string chain (DP-45)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : longest bitonic subsequence (DP-46)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : number of longest increasing subsequence (DP-47)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -3240,13 +6947,74 @@ print(solve(a, len(a)))
 # region 16.8 DP - MCM/PARTITION
 # ------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
-# 7 TODO : 
+# 1 TODO :  bitonic chain multiplication (DP-48)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : matrix chain multiplication | Bottom up (DP-49)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : minimum cost to cut the stick (DP-50)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : burst balloons (DP-51)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : evaluate boolean expression to true (DP-52)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : pallindrome partioning - I (DP-53)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : partition array for maximumsum (DP-54)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
 
 
 # endregion
@@ -3256,8 +7024,26 @@ print(solve(a, len(a)))
 # region 16.9 DP - SQUARES
 # ------------------------
 
-# 1 TODO :  
-# 2 TODO : 
+
+# 1 TODO :  maximum rectangle area with all 1's (DP-55)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : count square submatrices with all ones (DP-56)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 
@@ -3267,7 +7053,15 @@ print(solve(a, len(a)))
 # region 17.1 TRIES - THEORY
 # --------------------------
 
-# 1 TODO :  
+# 1 TODO :  implement trie | insert |search | startswith
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
 
 
 # endregion
@@ -3276,12 +7070,66 @@ print(solve(a, len(a)))
 # region 17.2 TRIES - PRACTICE PROBLEMS
 # -------------------------------------
 
-# 1 TODO :  
-# 2 TODO : 
-# 3 TODO : 
-# 4 TODO : 
-# 5 TODO : 
-# 6 TODO : 
+# 1 TODO :  implement trie -2 (prefix tree)
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : longest string with all prefixes
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : number of distinct substrings in a string
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : bit preRequisites for trie problems
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : maximum xor of two numbers in an array
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : maximum xor with an element from array
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
 
 
 # endregion
@@ -3290,7 +7138,94 @@ print(solve(a, len(a)))
 # region 18.1 STRINGS - HARD
 # --------------------------
 
-# 1 TODO :  
+# 1 TODO :  minimum number of brackets reversals neededto make an expression balanced
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 2 TODO : count and say
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 3 TODO : hashing in strings | theory
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 4 TODO : rabin karp
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 5 TODO : 2-function
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 6 TODO : KMP algo/LSP(pl) array
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 7 TODO : shortest pallindrome
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 8 TODO : longest happy prefix
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
+
+
+# 9 TODO : count pallindromic subsequence in given string
+# method 1 : brute force approch, TC - , SC -
+
+
+# method 2 : better approch, TC - , SC -
+
+
+# method 3 : optimal solution, TC - , SC - 
 
 
 # endregion
