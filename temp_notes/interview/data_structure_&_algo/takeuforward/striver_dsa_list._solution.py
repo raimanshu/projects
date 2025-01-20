@@ -5,16 +5,421 @@
 # ---------------------------
 
 
+# PATTERN 1
+'''
+*****
+*****
+*****
+*****
+*****
+'''
+for i in range(rows):
+    for j in range(rows):
+        print("*", end="")
+    print("\n")
+
+# PATTERN 2
+'''
+*
+**
+***
+****
+*****
+'''
+for i in range(rows):
+    for j in range(i+1):
+        print("*", end="")
+    print("\n")
+
+# PATTERN 3
+'''
+1
+12
+123
+1234
+12345
+'''
+for i in range(1,rows+1):
+    for j in range(1,i+1):
+        print(j, end="")
+    print("\n")
+
+# PATTERN 4
+'''
+1
+22
+333
+4444
+55555
+'''
+for i in range(1,rows+1):
+    for j in range(1,i+1):
+        print(i, end="")
+    print("\n")
+
+# PATTERN 5
+'''
+*****
+****
+***
+**
+*
+'''
+for i in range(rows):
+    for j in range(rows-i):
+        print("*", end="")
+    print("\n")
+
+# PATTERN 6
+'''
+12345
+1234
+123
+12
+1
+'''
+for i in range(1,rows+1):
+    for j in range(1,rows+1-i+1):
+        print(j, end="")
+    print("\n")
+
+# PATTERN 7
+'''
+    *    
+
+   ***   
+
+  *****  
+
+ ******* 
+
+*********
+'''
+for i in range(1,rows):
+    for j in range(1,rows-i):
+      print("_", end="")
+        
+    for j in range(2*i-1):
+      print("*", end="")
+        
+    for j in range(1,rows-i):
+      print("_", end="")
+    print("\n")
+
+# PATTERN 8
+'''
+*********
+ ******* 
+  ***** 
+   ***   
+    *    
+'''
+for i in range(1,rows):
+    for j in range(1,i):
+      print(" ", end="")
+        
+    for j in range(2*rows-2*i-1):
+      print("*", end="")
+        
+    for j in range(1,i):
+      print(" ", end="")
+    print("\n")
 
 
-# region 1.4 MATHS PROBLEM (123 / 10 = 12.000...., 123 % 2 = 3)
-# -------------------------------------------------------------
+# PATTERN 9
+'''
+    *    
+   ***   
+  *****  
+ ******* 
+*********
+*********
+ ******* 
+  ***** 
+   ***   
+    *  
+'''
+for i in range(1,rows):
+    for j in range(1,rows-i):
+      print(" ", end="")
+        
+    for j in range(2*i-1):
+      print("*", end="")
+        
+    for j in range(1,rows-i):
+      print(" ", end="")
+    print("\n")
+    
+for i in range(1,rows):
+    for j in range(1,i):
+      print(" ", end="")
+        
+    for j in range(2*rows-2*i-1):
+      print("*", end="")
+        
+    for j in range(1,i):
+      print(" ", end="")
+    print("\n")
+
+
+# PATTERN 10
+'''
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+'''
+for i in range(1,2*rows):
+    row_number = i
+    if i>rows:
+      row_number = 2*rows-i
+    for j in range(row_number):
+      print("*", end="")
+    print("\n")
+    
+# PATTERN 11
+'''
+1
+01
+101
+0101
+10101
+'''
+for i in range(1,rows+1):
+    start = 0
+    if i%2: start = 1
+    for j in range(i):
+      print(start, end="")
+      start = 1 - start             # 1-0 = 1 and 1-1 = 0, flipping the number
+    print("\n")
+    
+# PATTERN 12
+'''
+1      1
+12    21
+123  321
+12344321
+'''
+for i in range(1,rows+1):
+    for j in range(1,i+1):
+      print(j, end="")
+      
+    for j in range(2*rows-2*i):
+      print("_", end="")
+      
+    for j in range(i,0,-1):             # 4,3,2,1, reversing the count
+      print(j, end="")
+      
+    print("\n")
+
+# PATTERN 13
+'''
+1 
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+ABCDE
+'''
+num = 1
+for i in range(1, rows+1, 1):
+    for j in range(i):
+      print(num, end=" ")
+      num = num + 1
+    print("\n")
+    
+# PATTERN 14
+'''
+A
+AB
+ABC
+ABCD
+ABCDE
+'''
+for i in range(rows+1):
+    for j in range(i):
+      print(chr(65+j), end="")
+    print("\n")
+    
+    
+# PATTERN 15
+'''
+ABCDE
+ABCD
+ABC
+AB
+A
+'''
+for i in range(rows+1):
+    for j in range(rows-i):
+      print(chr(65+j), end="")
+    print("\n")
+    
+# PATTERN 16
+'''
+A
+BB
+CCC
+DDDD
+EEEEE
+'''
+for i in range(rows):
+    for j in range(i+1):
+      print(chr(65+i), end="")
+    print("\n")
+
+# PATTERN 17
+'''
+   A
+  ABA
+ ABCBA
+ABCDCBA
+'''
+for i in range(1,num + 1):
+  for j in range(num-i):
+    print("_", end="")
+  for k in range(i):
+    print(chr(65 + k), end="")
+  for k in range(i-1,0,-1):
+    print(chr(64+k), end="")
+  for j in range(num-i):
+    print("_", end="")
+  print("\n")
+    
+# PATTERN 18
+'''
+E
+DE
+CDE
+BCDE
+ABCDE
+'''
+for i in range(1,num+1):
+  for j in range(i):
+    print(chr(65+ (num - j -1)), end="")
+  print("\n")
+
+# PATTERN 19
+'''
+**********
+****  ****
+***    ***
+**      **
+*         *
+*         *
+**       **
+***    ***
+****  ****
+**********
+'''
+for i in range(num):
+  for j in range(num-i):
+    print("*", end="")
+  for j in range(2*i):
+    print("_", end="")
+  for j in range(num-i):
+    print("*", end="")
+  print("\n")
+  
+for i in range(num):
+  for j in range(i+1):
+    print("*", end="")
+  for j in range(2*(num - i-1)):
+    print("_", end="")
+  for j in range(i+1):
+    print("*", end="")
+  print("\n")
+
+# PATTERN 20
+'''
+*        *
+**      **
+***    ***
+****  ****
+**********
+****  ****
+***    ***
+**      **
+*        *
+'''
+for i in range(1, 2*num):
+  if i> ((2*num-1)//2):
+    for j in range(2*num-i):
+      print("*", end="")
+    for j in range(2*(i-num)):
+      print("_", end="")
+    for j in range(2*num-i):
+      print("*", end="")
+    print("\n")
+  else:
+    for j in range(i):
+      print("*", end="")
+    for j in range(2*(num - i)):
+      print("_", end="")
+    for j in range(i):
+      print("*", end="")
+    print("\n")
+
+# PATTERN 21
+'''
+****
+*  *
+*  *
+****
+'''
+for i in range(num):
+    for j in range(num):
+        if i == 0 or i == num-1 or j == 0 or j == num-1:
+            print("*", end="")
+        else:
+            print(" ", end="")
+    print()
+
+# PATTERN 22
+# 👉👉👉 https://www.youtube.com/watch?v=tNm_NNSB3_w&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=5
+'''
+4444444
+4333334
+4322234
+4321234
+4322234
+4333334
+4444444
+'''
+for i in range(2*n-1):
+  for j in range(2*n-1):
+    top = i 
+    bottom = (2*n-2) -i 
+    left = j
+    right = (2*n-2) -j
+    print(n - min(min(top, bottom), min(left, right)), end="")
+  print("\n")
+
+
+# endregion
+
+
+
+
+# region 1.4 MATHS PROBLEM 
+# ------------------------
 
 # NOTE : 
+'''
+123 // 10 = 12,
+123 % 10 = 3
+'''
 
 # TODO : 1 Count digits in a number - 
-# Method 1 - brute force, TC- O(log10(N) + 1), SC - O(1)
-def count():
+# Method 1 - brute force
+# TC- O(log10(N)) 
+# SC - O(1)
+def count(num):
   count = 0
   while(num > 0):
     count = count + 1  
@@ -24,36 +429,39 @@ def count():
 num = 5216566
 print(count(num))
 
-# Method 2 - optimal approch, int(log10(Number) +  1), TC - O(1), SC - O(1)
+# Method 2 - optimal approch
+# TC - O(1)
+# SC - O(1)
+'''
+👉👉👉 count = int(math.log10(num)) + 1
+'''
 import math
 num = 5216566
 print(int(math.log10(num)) + 1)
 
 
 # TODO : 2 Reverse a number -
-# Method 1 - optimal approch, newNumber = newNumber * 10 + lastDigit, TC - O(log10(N) + 1), SC - O(1)
-def reverse(n):
+# Method 1 - optimal approch
+# TC - O(log10(N))
+# SC - O(1)
+'''
+👉👉👉 newNumber = newNumber * 10 + lastDigit
+'''
+def reverse(nnum):
   reverse_num = 0
   while(num > 0):
     rem = num % 10
     reverse_num = reverse_num * 10 + rem
     num = num//10
-  return int(reverse_num)
+  return reverse_num
 
 num = 23521
 print(reverse(num))
 
-# Method 2 - use euclidian maths 
-num = 521
-reverse_num = ""
-while(num > 0):
-  reverse_num = reverse_num + str(num%10)
-  num = num//10
-print(int(reverse_num))
-
-
 # TODO : 3 Check pallindrome - 121
-# Method 1 - optimal solution, use euclidian maths, TC - O(log10(N) + 1), SC - (1) 
+# Method 1 - optimal solution
+# TC - O(log10(N))
+# SC - (1) 
 def pallindrome(num):
   original_num = num
   reverse_num = 0
@@ -69,7 +477,9 @@ num = 121
 print(pallindrome(num))
 
 # 4 Armstrong Numbers - (3^3 + 7^3 + 1^3 = 371)
-# Method 1 - optimal approch, use euclidian maths, TC - O(log10(N) + 1), SC - O(1)
+# Method 1 - optimal approch
+# TC - O(log10(N))
+# SC - O(1)
 def armstrong(num):
   original_num = num
   calculated_num = 0
@@ -85,11 +495,14 @@ num = 371
 print(armstrong(num))
 
 # 5 Print all divisors
-#     method 1 - optimized approch, using math.sqrt(), TC - O(sqrt(N)), SC - (2*sqrt(N))
+#     method 1 - optimized approch
+# using math.sqrt()
+# TC - O(sqrt(N))
+# SC - (2*sqrt(N))
 import math
 def divisors(num):
   divisors_lst = []
-  for i in range(1,int(math.sqrt(num))):
+  for i in range(1,int(math.sqrt(num))+1):
     if(num%i == 0):
       divisors_lst.append(i)
       if(num//i != i):
@@ -99,7 +512,10 @@ def divisors(num):
 num = 15
 print(divisors(num))
 
-# Method 2 - brute force, check number % i === 0, TC - O(N), SC - O(N)
+# Method 2 - brute force
+# check number % i === 0
+# TC - O(N)
+# SC - O(N)
 def divisors(num):
   divisors_lst = []
   for i in range(1,num):
@@ -109,36 +525,45 @@ num = 15
 print(divisors(num))
 
 # 6 Check for prime (having exactly two factors, 1 and itself)
-# Method 1 - brute force, TC -O(N), SC - O(1)
+# Method 1 - brute force
+# TC - O(N)
+# SC - O(1)
 def checkPrime(num):
   divisors_lst = []
-  for i in range(1,num):
-    if num%i == 0:
+  for i in range(1,num+1):
+    if(num%i == 0):
       divisors_lst.append(i)
-  if(len(divisors_lst) == 2):
-    print(f"{num} is not prime number.")
+  print(divisors_lst)
+  if len(divisors_lst) == 2:
+    return True
   else:
-    print(f"{num} is prime number.")
+    return False
 num = 15
 print(checkPrime(num))
 
-# Method 2 - optimal approch, TC -O(sqrt(N)), SC - O(1)
+# Method 2 - optimal approch
+# TC - O(sqrt(N))
+# SC - O(1)
 def checkPrime(num):
-  cnt = 0
-  for i in range(1,int(sqrt(num)) + 1):
-    if num%i == 0:
-      cnt = cnt + 1
-      if (num//i != i):
-        cnt = cnt + 1
-  if(cnt == 2):
-    print(f"{num} is not prime number.")
+  divisors_lst = []
+  for i in range(1,int(math.sqrt(num))+1):
+    if(num%i == 0):
+      divisors_lst.append(i)
+      if num//i != i:
+        divisors_lst.append(num//i)
+  print(divisors_lst)
+  if len(divisors_lst) == 2:
+    return True
   else:
-    print(f"{num} is prime number.")
+    return False
 num = 15
 print(checkPrime(num))
 
 # 7 GCD or HCF (Highest Common Factor)
-# Method 1 - brute force, using euclidian maths, TC - O(min(N1,N2)), SC - O(1)
+# Method 1 - brute force
+# using euclidian maths
+# TC - O(min(N1,N2))
+# SC - O(1)
 def find_hcf(num_1, num_2):
   hcf = 1
   for i in range(1, min(num_1, num_2)):
@@ -149,18 +574,10 @@ num_1 = 18
 num_2 = 12
 print(find_hcf(num_1,num_2))
 
-# Method 2 - brute force, using euclidian maths, TC - O(min(N1,N2)), SC - O(1)
-def find_hcf(num_1, num_2):
-  hcf = 1
-  for i in range(min(num_1, num_2), 0, -1):
-    if num_1%i == 0 and num_2%i == 0:
-      hcf = i
-  return hcf
-num_1 = 18
-num_2 = 12
-print(find_hcf(num_1,num_2))
-
-# 8 method 3 : optimal approch, Euclidian algo, TC - O(min(N1,N2)), SC - O(1)
+# 8 method 2 : optimal approch
+# Euclidian algo
+# TC - O(min(N1,N2))
+# SC - O(1)
 '''  GCD(a, b) = GCD(a-b, b) if a > b
   =>  GCD(a, b) = GCD(a % b, b) if a > b
 '''
@@ -175,6 +592,7 @@ def find_gcd(a, b):
     else:
         return a
 print(find_gcd(8, 12))
+
 
 # endregion
 
@@ -199,14 +617,14 @@ def recursive_call_2(N):
   if N == 0:
     return 
   recursive_call_2(N-1)
-  print("head recursion => ", N)
+  print("head recursion => ", N)                # ---> head recursion => 1 2 3 4 5
 recursive_call_2(5)
 
 # 4 print N to 1 using recursion
 def recursive_call_3(N):
   if N == 0:
     return 
-  print("tail recursion => ", N)
+  print("tail recursion => ", N)                # ---> tail recursion => 5 4 3 2 1
   recursive_call_3(N-1)
 recursive_call_3(5)
 
@@ -218,6 +636,8 @@ def sum(N):
 print(sum(3))
 
 # 6 factorial of a numbers
+# TC - O(N)
+# SC - O(N)
 def fact(N):
   if N == 1:
     return 1
@@ -300,6 +720,8 @@ def pallindrome(str, i):
 print(pallindrome("MADAM", 0))
   
 # 9 fibonacci number
+# TC - O(2^N)
+# SC - O(N)
 def fibonacci(num):
   if num == 0: return 0
   if num == 1: return 1
@@ -357,6 +779,8 @@ print(frequency_arr([1,2,4,5,3,2,4,1]))  # ---> {'highest_frequncy => ': 2, 'hig
 # --------------------
 
 # TODO : 1 selection sort
+# TC - O(N^2)
+# SC - 
 '''
 - select the smallest element and swap
 - https://www.youtube.com/watch?v=HGk_ypEuS24&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=14
@@ -525,17 +949,17 @@ arr = [1,2,4,7,7,5]
 largest_element_2(arr)
 print("largest element => ", arr[len(arr) - 1])
 
-# - method 2 : brute force using sort buit-in, TC - O(N log(N)), TC - O(N)
+# - method 2 : brute force using sort buit-in, TC - , TC - 
 def largest_element_2(arr):
   arr.sort()
   return arr[-1]  
 arr = [1,2,4,7,7,5]
 print(largest_element_2(arr))
 
-# - method 3 : using max()
+# - method 3 : brute force, using max() built-in method, TC -, TC - 
 print(max([1,2,4,7,7,5]))
 
-# - method 4 : using loop, TC - O(n), SC - O(1) 
+# - method 4 : using loop, TC - O(N), SC - O(1) 
 def largest_element_1(arr):
   largest = arr[0]
   for i in arr:
@@ -652,6 +1076,10 @@ def remove_duplicates(arr):
 arr = [1,2,2,3,3,4]
 print(remove_duplicates(arr))
 
+# 👉👉👉 replacing with "_"
+  # return list(set(arr)) + ["_"]*(len(arr) - len(list(set(arr))))
+
+
 # - method 2: optimal approch, using two pointers, TC - O(N), SC - O(1)
 def remove_duplicates(arr):
     i = 0
@@ -681,6 +1109,9 @@ def rotate_arr(arr):
 arr = [1, 2, 2, 3, 3, 4]
 print(rotate_arr(arr))
 
+# 👉👉👉 using array slicing 
+# return arr[:len(arr)] + arr[:1]
+
 # - method 2: optimal approch, TC - O(N), SC - O(1)
 def rotate_arr(arr):
     
@@ -708,6 +1139,9 @@ def rotate_arr(arr, rotation):
     return arr
 arr = [1, 2, 2, 3, 3, 4]
 print(rotate_arr(arr, 9))
+
+# 👉👉👉 using array slicing 
+# return arr[k:len(arr)] + arr[:k]
 
 # - method 2: optimal approch, using slicing, TC - O(i), SC - O(N)
 def rotate_arr(arr, rotation):
@@ -837,7 +1271,7 @@ arr1 = [0, 1, 2, 3, 4]
 arr2 = [1,4,5,7]
 print(union(arr1, arr2))
 
-# - method 2: brute force, using set, TC - O((M+N)log(M+N)), SC - O(1)
+# - method 2: brute force, using set, TC - O((M+N)log(M+N)), SC - O(M+N)
 
 def union(arr1, arr2):
   s1 = set()
@@ -1179,7 +1613,21 @@ def sort(arr):
   return [0]*count0 + [1]*count1 + [2]*count2
 print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))
 
-# - method 3 : optimal solution, Dutch National flag algorithm, TC - O(N), SC - (1) 🤯🤯🤯
+# method 3 : better approch
+
+def sort(arr):
+  dict = {}
+  for i in arr:
+    if i == 0:
+      dict[0] = dict.get(0, 0) + 1
+    elif i == 1:
+      dict[1] = dict.get(1, 0) + 1
+    else:
+      dict[2] = dict.get(2, 0) + 1
+  return [0]*dict[0] + [1]*dict[1] + [2]*dict[2]
+print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))
+
+# - method 4 : optimal solution, Dutch National flag algorithm, TC - O(N), SC - (1) 🤯🤯🤯
 '''
 RULES OF DUTCH NATIONAL FLAG ALGORITHM
 1. All elements < pivot must be in the left partition. O -> low-1 => 0
@@ -1230,14 +1678,14 @@ def sort(arr):
 print(sort([2,2,1,4,2,2,3]))
 
 # - method 3 : better solution, using Counter, TC - O(N*log(N)) + O(N), SC - O(N)
-from collections import Counter
-def sort(arr):
-  counter = Counter(arr)
-  for k,v in dict.items():
-    if v > (len(arr)//2):
-      return v 
-  return -1
-print(sort([2,2,1,4,2,2,3]))
+# from collections import Counter
+# def sort(arr):
+#   counter = Counter(arr)
+#   for k,v in dict.items():
+#     if v > (len(arr)//2):
+#       return v 
+#   return -1
+# print(sort([2,2,1,4,2,2,3]))
 
 # - method 3 : optimal solution, using Moore's voting algorithm,
 '''
@@ -1265,7 +1713,7 @@ print(moores_voting_algorithm(arr))
 
 # 4 TODO : Kadane's algorithm, mximum subarray sum in an array
 '''
-KANDANE's ALGORITHM - 
+KANDANE's ALGORITHM - it states that if the sum of the array is negative then we will not consider the sum of the array and will start the sum from the next element.
 - 
 '''
 # - method 1 : brute force, TC - O(N^3), SC - O(1)
@@ -1355,7 +1803,7 @@ print(kadane_algorithm(arr))
 # - method 1 : brute force, TC -O(N^2), SC - (1)
 def buy_sell(arr):
   minimum = arr[0]
-  minimum_profit = 
+  minimum_profit = 0
   max_profit = 0
   for i in range(len(arr)):
     for j in range(i + 1, len(arr)):
@@ -1464,7 +1912,7 @@ print(rearrange(arr))
 # 8 TODO : next permutation - find the next lexiographically greater permutation 🤯🤯🤯🤯🤯
 # - method 1 : brute force, TC - O(N! * N), SC - O(N)
 '''
-generate all permutations
+generate all permutations 
 linear search on that 
 get the arrays
 '''
@@ -1802,10 +2250,30 @@ print(find_subarrays(arr, sum))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 # region 3.1 ARRAYS - HARD
 # ------------------------
 
 # 1 TODO : pascal's triangle
+'''
+PASCAL's Triangle - A triangular array of the binomial coefficients.
+eg -   1
+      1 1
+     1 2 1
+    1 3 3 1
+   1 4 6 4 1
+  1 5 10 10 5 1
+'''
 
 '''
 VARIATION 1 : In this case, we are given row number r and column number c, and we need to find the element at position (r, c).
@@ -1911,7 +2379,7 @@ print(pascal_triangle(n))
 
 # 2 TODO : majority element (>n/3 times)
 
-# - method 1 : brute force, TC -O(N*N), SC - O(1)
+# - method 1 : brute force, TC -O(N^2), SC - O(1)
 def majority_element(arr):
   n = len(arr)
   ls = []
@@ -1931,14 +2399,25 @@ arr = [1,3,3,1,3,1]
 print(majority_element(arr))
 
 # - method 2 : better solution, using hashing, TC - O(N*log(N)), SC - O(N)
-from collections import Counter
+# from collections import Counter
+# def majority_element(arr):
+#   n = len(arr)
+#   counter = Counter(arr)
+#   for num,count in counter.items():
+#     if count > (n//3):
+#       return num
+#   return -1
+
+TC - O(n), SC - O(n)
 def majority_element(arr):
-  n = len(arr)
-  counter = Counter(arr)
-  for num,count in counter.items():
-    if count > (n//3):
-      return num
-  return -1
+  min = len(arr)//3 + 1
+  ls  = []
+  mpp = {}
+  for i in range(len(arr)):
+    mpp[arr[i]] = mpp.get(arr[i], 0) + 1
+    if mpp[arr[i]] == min:
+      ls.append(arr[i])
+  return ls
 
 arr = [1,3,3,1,3,1]
 print(majority_element(arr))
@@ -2654,9 +3133,16 @@ print(maxProduct(nums))
 
 # region 4.1 BINARY SEARCH on 1D ARRAY
 # ------------------------------------
+'''
+👉👉👉https://www.youtube.com/watch?v=MHf6awe89xw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=45
+BINARY SEARCH - 
+WHEN TO USE - when the search space is sorted
+IF low or high - float("inf"), 
+mid = (low + (high - low)) // 2
+'''
 
 # 1 TODO : binary search to find x in the sorted array 
-# method 1 : iterative approch, TC - o(log(N)) , SC -
+# method 1 : iterative approch, TC - o(log2(N)) , SC -
 def binarySearch(a, target):
   low = 0
   high = len(a) - 1
@@ -2674,7 +3160,7 @@ a = [3,4,6,7,9,12,16,17]
 target  = 6
 print(binarySearch(a, target))
 
-# method 2 : recursive approch, TC - O(log(N)) , SC -
+# method 2 : recursive approch, TC - O(log2(N)) , SC -
 def binarySearch(nums, low, high, target):
   if low > high:
     return -1
@@ -2698,9 +3184,14 @@ print(search(a, target))
 # TC     -      
 # SC     -      
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
 
 
 # 2 TODO : implement lower bound
+'''
+👉👉👉 https://www.youtube.com/watch?v=6zhGS79oQ4k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=46
+smallest index such that arr[index] >= k
+'''
 # method 1 : brute force approch, TC - O(N) , SC - O(1)
 def lowerBound(arr, n, x):
   for i in range(n):
@@ -2740,6 +3231,9 @@ print(lowerBound(a, n, x))
 
 
 # 3 TODO : implement upper bound
+'''
+smallest index such that arr[index] > k
+'''
 def upperBound(arr, x, n):
   for i in range(n):
     if arr[i] > x:
@@ -2811,6 +3305,10 @@ print(searchInsert(arr, x))
 
 
 # 5 TODO : floor / ceil in sorted array
+'''
+floor - greatest element <= x
+ceil - smallest element >= x
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -2902,7 +3400,7 @@ def count(n, k, x):
 arr = [3,4,13,13,13,20,40]
 n = 7
 x = 13
-print(count(arr, n, x))
+print(count(arr, n, x))                          # Output ---> 2
 
 
 # 7 TODO : count occurence of a number in a sorted array with duplicates
@@ -2992,9 +3490,25 @@ print(search(arr, n, k))
 
 
 
-# method 2 : better approch
-# TC     -      
-# SC     -     
+# 👉👉👉 method 2 : better approch SELF
+# def firstTarget(arr, k):
+#   ans = -1
+#   low = 0 
+#   high = len(arr) - 1 
+#   while low <= high:
+#     mid = (low + high)//2
+#     print(low, mid, high)
+#     if arr[mid] == k:
+#       return mid
+#     elif arr[low] == k:
+#       return low
+#     elif arr[high] == k:
+#       return high
+#     elif arr[mid]  > k:
+#       high = mid - 1
+#     else:
+#       low = mid + 1 
+#   return ans  
 
 
 # method 3 : optimal solution, TC - O(log(N)) , SC - O(1)
@@ -3046,6 +3560,9 @@ print(search(arr, k))
 
 
 # method 3 : optimal solution, TC - O(log(N/2)) , SC - O(1)
+'''
+shrink condition, arr[low] == arr[mid] && arr[mid] == arr[high]
+'''
 
 def search(arr, k):
   n = len(arr)
@@ -3180,6 +3697,11 @@ print(findRotated(arr))
 
 
 # 12 TODO : single element in a sorted array
+'''
+(even, odd) - element is on right half
+(odd, even) - element is on left half
+
+'''
 # method 1 : brute force approch, TC - O(N), SC - O(1)
 def singleNonDuplicate(arr):
     n = len(arr)  # Size of the array
@@ -3206,8 +3728,6 @@ arr = [1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
 ans = singleNonDuplicate(arr)
 print("The single element is:", ans)
 
-
-
 # method 2 : better approch, TC - O(N), SC - O(1)
 def singleNonDuplicate(arr):
     n = len(arr)  # Size of the array
@@ -3221,10 +3741,7 @@ arr = [1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
 ans = singleNonDuplicate(arr)
 print("The single element is:", ans)
 
-
-
 # method 3 : optimal solution, TC - O(log(N)), SC - O(1) 
-
 def singleNonDuplicate(arr):
     n = len(arr)  # Size of the array
 
@@ -3266,10 +3783,10 @@ print("The single element is:", ans)
 
 
 # 13 TODO : find peak element
+'''
+peak element, arr[i-1] < arr[i] and arr[i] > arr[i+1]
+'''
 # method 1 : brute force approch, TC - O(N) , SC - O(1)
-
-
-
 def findPeakElement(arr: [int]) -> int:
     n = len(arr) # Size of the array
 
@@ -3292,9 +3809,6 @@ print("The peak is at index:", ans)
 
 
 # method 3 : optimal solution, TC - O(log(N)) , SC - O(1) 
-
-
-
 def findPeakElement(arr: [int]) -> int:
     n = len(arr)  # Size of the array
 
@@ -3341,6 +3855,7 @@ print("The peak is at index:", ans)
 
 
 
+
 # region 4.2 BINARY SEARCH on ANSWERS
 # -----------------------------------
 
@@ -3365,15 +3880,8 @@ n = 28
 ans = floorSqrt(n)
 print("The floor of square root of", n, "is:", ans)
 
-
-
-
 # method 2 : better approch, TC - O(log(N)), SC - O(1)
-
-
-
 import math
-
 def floorSqrt(n):
     ans = int(math.sqrt(n))
     return ans
@@ -3382,13 +3890,7 @@ n = 28
 ans = floorSqrt(n)
 print("The floor of square root of", n, "is:", ans)
 
-
-
-
 # method 3 : optimal solution, TC - O(log(N)), SC - O(1)
-
-
-
 def floorSqrt(n):
     low = 1
     high = n
@@ -3408,15 +3910,8 @@ n = 28
 ans = floorSqrt(n)
 print("The floor of square root of", n, "is:", ans)
 
-
-
-
-
 # 2 TODO : find the Nth root of a number using binary search
 # method 1 : brute force approch, TC - O(M), SC - O(1)
-
-
-
 def func(b, exp):
     ans = 1
     base = b
@@ -3443,21 +3938,26 @@ m = 27
 ans = NthRoot(n, m)
 print("The answer is:", ans)
 
-
-
-
-
-
-# method 2 : better approch
-# TC     -      
-# SC     -     
-
-
+# 👉👉👉method 2 : better approch SELF
+# def root(n, m):
+#   ans = -1
+#   low = 0 
+#   high = m  
+#   while low <= high:
+#     mid = (low + high)//2
+#     print(low, mid, high)
+#     if (mid**n) == m:
+#       ans = mid
+#     if (mid**n)  < m:
+#       low = mid + 1
+#     else:
+#       high = mid - 1
+#   return ans  
 
 # method 3 : optimal solution, TC - O(log(N)), SC - O(1) 
-
-
-
+'''
+def func(mid, n, m) -> stop from overflow condition ie 10**9
+'''
 def func(mid, n, m):
     ans = 1
     for i in range(1, n + 1):
@@ -3487,16 +3987,12 @@ m = 27
 ans = NthRoot(n, m)
 print("The answer is:", ans)
 
-
-
-
 # 3 TODO : koko eating bananas
+'''
+Retun the minimum integer k such that she can eat all the bananas within h hours.
+'''
 # method 1 : brute force approch, TC - O(max(a[]) * N), SC - O(1)
-
-
-
 import math
-
 def findMax(v):
     maxi = float('-inf')
     n = len(v)
@@ -4768,8 +5264,6 @@ print("The k-th element of two sorted arrays is:", kthElement(a, b, len(a), len(
 
 
 
-
-
 # region 4.3 BINARY SEARCH on 2D ARRAY
 # ------------------------------------
 
@@ -5204,6 +5698,7 @@ if __name__ == "__main__":
 
 
 
+
 # region 5.1 STRINGS - EASY
 # -------------------------
 
@@ -5464,6 +5959,8 @@ if __name__ == "__main__":
 
 
 
+
+
 # region 6.1 LINKED LIST - 1D EASY
 # --------------------------
 
@@ -5696,6 +6193,8 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
 
 
 
@@ -6104,6 +6603,8 @@ print_dll(head)
 
 
 # endregion
+
+
 
 
 
@@ -8361,6 +8862,8 @@ class Solution:
 
 
 
+
+
 # region 6.4 LINKED LIST - DOUBLY MEDIUM
 # --------------------------------------
 
@@ -8415,6 +8918,7 @@ class Solution:
 
 
 # endregion
+
 
 
 
@@ -9263,6 +9767,8 @@ if __name__ == "__main__":
 
 
 
+
+
 # region 7.1 RECURSION - BASIC
 # ----------------------------
 
@@ -9378,6 +9884,8 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
 
 
 
@@ -9771,6 +10279,8 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
 
 
 
@@ -10306,6 +10816,8 @@ if __name__ == "__main__":
 
 
 
+
+
 # region 8.1 BIT MANIPULATION - BASIC
 # -----------------------------------
 
@@ -10443,6 +10955,8 @@ if __name__ == "__main__":
 
 
 
+
+
 # region 8.2 BIT MANIPULATION - MEDIUM
 # ------------------------------------
 
@@ -10533,6 +11047,9 @@ if __name__ == "__main__":
 
 
 
+
+
+
 # region 8.3 BIT MANIPULATION - HARD
 # ----------------------------------
 
@@ -10618,6 +11135,8 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
 
 
 
@@ -10997,6 +11516,8 @@ if __name__ == '__main__':
 
 
 
+
+
 # region 9.2 STACK/QUEUE - PREFIX/POSTFIX
 # ---------------------------------------
 
@@ -11099,6 +11620,8 @@ if __name__ == '__main__':
 
 
 # endregion
+
+
 
 
 
@@ -11418,6 +11941,8 @@ if __name__ == "__main__":
 
 
 
+
+
 # region 9.4 STACK/QUEUE - IMPLEMENTATION
 # ---------------------------------------
 
@@ -11502,6 +12027,9 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
+
 
 
 # region 10.1 SLIDING WINDOW/TWO POINTER - MEDIUM
@@ -11694,6 +12222,7 @@ if __name__ == "__main__":
 
 
 
+
 # region 10.2 SLIDING WINDOW/TWO POINTER - HARD
 # ---------------------------------------------
 
@@ -11768,6 +12297,8 @@ if __name__ == "__main__":
 
 
 
+
+
 # region 11.1 HEAP/PRIORITY QUEUE - LEARNING
 # ------------------------------------------
 
@@ -11837,6 +12368,8 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
 
 
 
@@ -12296,6 +12829,10 @@ if __name__ == "__main__":
 # endregion
 
 
+
+
+
+
 # region 11.3 HEAP/PRIORITY QUEUE - HARD
 # --------------------------------------
 
@@ -12397,6 +12934,9 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
+
 
 
 # region 12.1 GREEDY ALGORITHM - EASY
@@ -12701,6 +13241,9 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
+
 
 
 
@@ -13192,6 +13735,10 @@ if __name__ == '__main__':
 
 
 # endregion
+
+
+
+
 
 
 # region 13.1 BINARY TREES - TRAVERSALS
@@ -14063,6 +14610,9 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
+
 
 
 
@@ -15468,6 +16018,9 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
+
 
 
 
@@ -16887,6 +17440,9 @@ if __name__ == "__main__":
 
 
 
+
+
+
 # region 14.1 BINARY SEARCH TREES - CONCEPTS
 # ------------------------------------------
 
@@ -17018,6 +17574,8 @@ else:
 
 
 # endregion
+
+
 
 
 
@@ -17652,6 +18210,9 @@ print("Kth largest element:", kth_elements[1])
 
 
 
+
+
+
 # region 15.1 GRAPHS - LEARNING
 # -----------------------------
 
@@ -17754,6 +18315,9 @@ print("Kth largest element:", kth_elements[1])
 
 
 # endregion
+
+
+
 
 
 
@@ -17989,6 +18553,8 @@ print("Kth largest element:", kth_elements[1])
 
 
 
+
+
 # region 15.3 GRAPHS - TOPO SORT
 # ------------------------------
 
@@ -18107,6 +18673,9 @@ print("Kth largest element:", kth_elements[1])
 
 
 # endregion
+
+
+
 
 
 # region 15.4 GRAPHS - SORTEST PATH
@@ -18325,6 +18894,9 @@ print("Kth largest element:", kth_elements[1])
 # endregion
 
 
+
+
+
 # region 15.5 GRAPHS - MST/DISJOINT SET
 # -------------------------------------
 
@@ -18507,6 +19079,9 @@ print("Kth largest element:", kth_elements[1])
 # endregion
 
 
+
+
+
 # region 15.6 GRAPHS - OTHER ALGORITHMS
 # -------------------------------------
 
@@ -18561,6 +19136,9 @@ print("Kth largest element:", kth_elements[1])
 
 
 # endregion
+
+
+
 
 
 
@@ -18642,6 +19220,9 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
+
 
 
 # region 16.2 DP - 1D
@@ -19131,6 +19712,9 @@ if __name__ == '__main__':
 
 
 # endregion
+
+
+
 
 # region 16.3 DP - 2D/3D/GRIDS
 # ----------------------------
@@ -20363,6 +20947,10 @@ if __name__ == '__main__':
 
 # endregion
 
+
+
+
+
 # region 16.4 DP - SUBSEQUENCES
 # -----------------------------
 
@@ -21274,86 +21862,845 @@ if __name__ == '__main__':
 
 # 7 TODO : minimum coins (DP-20)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*T)
+
+Reason: There are N*T states therefore at max ‘N*T’ new problems will be solved.
+
+Space Complexity: O(N*T) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*T)).
+
+def minimumElementsUtil(arr, ind, T, dp):
+    # Base case: If we have reached the first element in the array.
+    if ind == 0:
+        # If the target T is divisible by the first element, return the quotient as the minimum number of coins.
+        if T % arr[0] == 0:
+            return T // arr[0]
+        else:
+            # If not, it's not possible to achieve the target sum, so return a very large value.
+            return int(1e9)
+
+    # If the result for this state is already calculated, return it.
+    if dp[ind][T] != -1:
+        return dp[ind][T]
+
+    # Initialize variables for cases when we don't take the current element.
+    notTaken = 0 + minimumElementsUtil(arr, ind - 1, T, dp)
+
+    # Initialize a variable for the case when we take the current element.
+    taken = int(1e9)
+
+    # Check if the current element can be used to reduce the target sum.
+    if arr[ind] <= T:
+        taken = 1 + minimumElementsUtil(arr, ind, T - arr[ind], dp)
+
+    # Store the minimum of the two cases in the DP table.
+    dp[ind][T] = min(notTaken, taken)
+    return dp[ind][T]
+
+def minimumElements(arr, T):
+    n = len(arr)
+    # Initialize a DP table with -1 values.
+    dp = [[-1 for j in range(T + 1)] for i in range(n)]
+    # Calculate the minimum number of coins required using the helper function.
+    ans = minimumElementsUtil(arr, n - 1, T, dp)
+
+    # If the result is still equal to a very large value, it means it's not possible to achieve the target sum.
+    if ans >= int(1e9):
+        return -1
+    return ans
+
+def main():
+    arr = [1, 2, 3]
+    T = 7
+    print("The minimum number of coins required to form the target sum is", minimumElements(arr, T))
+
+if __name__ == '__main__':
+    main()
 
 
-# method 2 : better approch
-# TC     -      
-# SC     -     
+
+
+Time Complexity: O(N*T)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*T)
+
+Reason: We are using an external array of size ‘N*T’. Stack Space is eliminated.
+
+def minimumElements(arr, T):
+    n = len(arr)
+    # Initialize a DP table with 0 values for bottom-up dynamic programming.
+    dp = [[0 for _ in range(T + 1)] for _ in range(n)]
+
+    # Fill in the DP table for the first element in the array (base case).
+    for i in range(T + 1):
+        if i % arr[0] == 0:
+            dp[0][i] = i // arr[0]
+        else:
+            # Set an initial large value to indicate that it's not possible to achieve the target sum.
+            dp[0][i] = int(1e9)
+
+    # Iterate over the array elements and target values to fill in the DP table.
+    for ind in range(1, n):
+        for target in range(T + 1):
+            # Calculate the minimum number of elements needed to achieve the current target.
+            notTake = dp[ind - 1][target]  # Option: Don't take the current element.
+            take = int(1e9)  # Initialize as a large value.
+            if arr[ind] <= target:
+                # Option: Take the current element, reduce the target, and add 1 to the count.
+                take = 1 + dp[ind][target - arr[ind]]
+            # Store the minimum of the two options in the DP table.
+            dp[ind][target] = min(notTake, take)
+
+    # The result is stored in the last cell of the DP table.
+    ans = dp[n - 1][T]
+    # If the result is still equal to a very large value, it means it's not possible to achieve the target sum.
+    if ans >= int(1e9):
+        return -1
+    return ans
+
+def main():
+    arr = [1, 2, 3]
+    T = 7
+    print("The minimum number of coins required to form the target sum is", minimumElements(arr, T))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*T)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(T)
+
+Reason: We are using two external arrays of size ‘T+1’.
+
+def minimumElements(arr, T):
+    n = len(arr)
+    
+    # Initialize two lists: 'prev' and 'cur' for dynamic programming.
+    prev = [0] * (T + 1)  # To store results for the previous element.
+    cur = [0] * (T + 1)   # To store results for the current element.
+
+    # Fill in the DP table for the first element in the array (base case).
+    for i in range(0, 1 + T):
+        if i % arr[0] == 0:
+            prev[i] = i // arr[0]
+        else:
+            # Set an initial large value to indicate that it's not possible to achieve the target sum.
+            prev[i] = int(1e9)
+
+    # Iterate over the array elements and target values to fill in the DP table.
+    for ind in range(1, n):
+        for target in range(T + 1):
+            # Calculate the minimum number of elements needed to achieve the current target.
+            not_take = prev[target]  # Option: Don't take the current element.
+            take = int(1e9)          # Initialize as a large value.
+            
+            if arr[ind] <= target:
+                # Option: Take the current element, reduce the target, and add 1 to the count.
+                take = 1 + cur[target - arr[ind]]
+                
+            cur[target] = min(not_take, take)  # Store the minimum of the two options in the 'cur' list.
+
+        prev = cur  # Update the 'prev' list with the values from the 'cur' list for the next iteration.
+
+    # The result is stored in the 'prev' list for the target T.
+    ans = prev[T]
+    
+    # If the result is still equal to a very large value, it means it's not possible to achieve the target sum.
+    if ans >= int(1e9):
+        return -1
+    return ans
+
+def main():
+    arr = [1, 2, 3]
+    T = 7
+
+    print("The minimum number of coins required to form the target sum is", minimumElements(arr, T))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # 8 TODO : target sum (DP-21)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*K)
+
+Reason: There are N*K states therefore at max ‘N*K’ new problems will be solved.
+
+Space Complexity: O(N*K) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*K)).
+
+def countPartitionsUtil(ind, target, arr, dp):
+    # Base case: If we have reached the first element in the array.
+    if ind == 0:
+        # Check if the target is zero and the first element is also zero, in which case there are two possibilities.
+        if target == 0 and arr[0] == 0:
+            return 2
+        # If the target is equal to the first element, there is one possibility.
+        if target == 0 or target == arr[0]:
+            return 1
+        # Otherwise, there is no valid partition.
+        return 0
+
+    # If the result for this state is already calculated, return it.
+    if dp[ind][target] != -1:
+        return dp[ind][target]
+
+    # Calculate the number of possibilities when the current element is not taken.
+    notTaken = countPartitionsUtil(ind - 1, target, arr, dp)
+    
+    # Initialize a variable for the number of possibilities when the current element is taken.
+    taken = 0
+    if arr[ind] <= target:
+        taken = countPartitionsUtil(ind - 1, target - arr[ind], arr, dp)
+
+    # Store the total number of possibilities in the DP table.
+    dp[ind][target] = notTaken + taken
+    return dp[ind][target]
+
+def targetSum(n, target, arr):
+    totSum = 0
+    for i in range(len(arr)):
+        totSum += arr[i]
+
+    # Checking for edge cases
+    if totSum - target < 0:
+        return 0
+    if (totSum - target) % 2 == 1:
+        return 0
+
+    s2 = (totSum - target) // 2
+
+    dp = [[-1 for j in range(s2 + 1)] for i in range(n)]
+    return countPartitionsUtil(n - 1, s2, arr, dp)
+
+def main():
+    arr = [1, 2, 3, 1]
+    target = 3
+    n = len(arr)
+    print("The number of ways found is", targetSum(n, target, arr))
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*K)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*K)
+
+Reason: We are using an external array of size ‘N*K’. Stack Space is eliminated.
+
+mod = int(1e9 + 7)
+
+def findWays(num, tar):
+    n = len(num)
+    dp = [[0 for i in range(tar + 1)] for j in range(n)]
+
+    if num[0] == 0:
+        dp[0][0] = 2  # 2 cases - pick and not pick
+    else:
+        dp[0][0] = 1  # 1 case - not pick
+
+    if num[0] != 0 and num[0] <= tar:
+        dp[0][num[0]] = 1  # 1 case - pick
+
+    for ind in range(1, n):
+        for target in range(tar + 1):
+            notTaken = dp[ind - 1][target]
+
+            taken = 0
+            if num[ind] <= target:
+                taken = dp[ind - 1][target - num[ind]]
+
+            dp[ind][target] = (notTaken + taken) % mod
+
+    return dp[n - 1][tar]
+
+def targetSum(n, target, arr):
+    totSum = 0
+    for i in range(n):
+        totSum += arr[i]
+
+    # Checking for edge cases
+    if (totSum - target) < 0 or ((totSum - target) % 2):
+        return 0
+
+    return findWays(arr, (totSum - target) // 2)
+
+def main():
+    arr = [1, 2, 3, 1]
+    target = 3
+    n = len(arr)
+
+    print("The number of ways found is", targetSum(n, target, arr))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*K)
+
+Reason: There are three nested loops
+
+Space Complexity: O(K)
+
+Reason: We are using an external array of size ‘K+1’ to store only one row.   
+
+mod = int(1e9 + 7)
+
+# Function to find the number of ways to partition an array into two subsets
+# with a given target difference using dynamic programming
+def findWays(num, tar):
+    n = len(num)
+
+    # Initialize a list 'prev' to store results for the previous element
+    prev = [0 for i in range(tar + 1)]
+
+    # Initialize 'prev' based on the first element of 'num'
+    if num[0] == 0:
+        prev[0] = 2  # Two cases - pick and not pick
+    else:
+        prev[0] = 1  # One case - not pick
+
+    if num[0] != 0 and num[0] <= tar:
+        prev[num[0]] = 1  # One case - pick
+
+    for ind in range(1, n):
+        # Initialize a list 'cur' to store results for the current element
+        cur = [0 for i in range(tar + 1)]
+        for target in range(tar + 1):
+            notTaken = prev[target]
+
+            taken = 0
+            if num[ind] <= target:
+                taken = prev[target - num[ind]]
+
+            # Store the result in 'cur' with modulo operation
+            cur[target] = (notTaken + taken) % mod
+        prev = cur
+
+    # Return the result for the target sum
+    return prev[tar]
+
+# Function to calculate the number of ways to achieve a target sum
+def targetSum(n, target, arr):
+    totSum = 0
+    for i in range(n):
+        totSum += arr[i]
+
+    # Checking for edge cases
+    if (totSum - target) < 0 or ((totSum - target) % 2):
+        return 0
+
+    # Calculate and return the number of ways using 'findWays' function
+    return findWays(arr, (totSum - target) // 2)
+
+def main():
+    arr = [1, 2, 3, 1]
+    target = 3
+    n = len(arr)
+
+    # Print the number of ways found
+    print("The number of ways found is", targetSum(n, target, arr))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # 9 TODO : coin change 2 (DP-22)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*T)
+
+Reason: There are N*W states therefore at max ‘N*T’ new problems will be solved.
+
+Space Complexity: O(N*T) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*T)).
+
+def countWaysToMakeChangeUtil(arr, ind, T, dp):
+    # Base case: If we have reached the first element in the array.
+    if ind == 0:
+        return 1 if T % arr[0] == 0 else 0
+
+    # If the result for this state is already calculated, return it.
+    if dp[ind][T] != -1:
+        return dp[ind][T]
+
+    # Calculate the number of ways when the current element is not taken.
+    not_taken = countWaysToMakeChangeUtil(arr, ind - 1, T, dp)
+
+    # Initialize a variable for the number of ways when the current element is taken.
+    taken = 0
+    if arr[ind] <= T:
+        taken = countWaysToMakeChangeUtil(arr, ind, T - arr[ind], dp)
+
+    # Store the total number of ways in the DP table.
+    dp[ind][T] = not_taken + taken
+    return dp[ind][T]
+
+# Function to count the number of ways to make change for a given target amount
+def countWaysToMakeChange(arr, n, T):
+    # Create a DP table with initial values as -1.
+    dp = [[-1 for i in range(T + 1)] for j in range(n)]
+    return countWaysToMakeChangeUtil(arr, n - 1, T, dp)
+
+def main():
+    arr = [1, 2, 3]
+    target = 4
+    n = len(arr)
+    print("The total number of ways is", countWaysToMakeChange(arr, n, target))
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*T)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*T)
+
+Reason: We are using an external array of size ‘N*T’. Stack Space is eliminated.
+
+def countWaysToMakeChange(arr, n, T):
+    # Create a DP table to store the number of ways for different target amounts
+    dp = [[0 for j in range(T + 1)] for i in range(n)]
+    
+    # Initialize the base condition for the first element in the array
+    for i in range(T + 1):
+        if i % arr[0] == 0:
+            dp[0][i] = 1
+        # Else condition is automatically fulfilled, as dp array is initialized to zero
+
+    # Iterate through the array elements and target amounts
+    for ind in range(1, n):
+        for target in range(T + 1):
+            # Calculate the number of ways when the current element is not taken
+            notTaken = dp[ind - 1][target]
+
+            # Initialize a variable for the number of ways when the current element is taken
+            taken = 0
+            if arr[ind] <= target:
+                taken = dp[ind][target - arr[ind]]
+
+            # Store the total number of ways in the DP table
+            dp[ind][target] = notTaken + taken
+
+    # Return the total number of ways for the given target amount
+    return dp[n - 1][T]
+
+def main():
+    arr = [1, 2, 3]
+    target = 4
+    n = len(arr)
+    print("The total number of ways is", countWaysToMakeChange(arr, n, target))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*T)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(T)
+
+Reason: We are using an external array of size ‘T+1’ to store two rows only.
+
+def countWaysToMakeChange(arr, n, T):
+    # Initialize a list 'prev' to store the number of ways for different target amounts
+    prev = [0] * (T + 1)
+    
+    # Initialize the base condition for the first element in the array
+    for i in range(T + 1):
+        if i % arr[0] == 0:
+            prev[i] = 1
+    # Else condition is automatically fulfilled, as 'prev' is initialized to zeros.
+
+    # Iterate through the array elements and target amounts
+    for ind in range(1, n):
+        # Initialize a list 'cur' to store the number of ways for the current element
+        cur = [0] * (T + 1)
+        for target in range(T + 1):
+            # Calculate the number of ways when the current element is not taken
+            notTaken = prev[target]
+
+            # Initialize a variable for the number of ways when the current element is taken
+            taken = 0
+            if arr[ind] <= target:
+                taken = cur[target - arr[ind]]
+
+            # Store the total number of ways in 'cur'
+            cur[target] = notTaken + taken
+        
+        # Update 'prev' with the results from 'cur' for the next iteration
+        prev = cur
+
+    # Return the total number of ways for the given target amount
+    return prev[T]
+
+def main():
+    arr = [1, 2, 3]
+    target = 4
+    n = len(arr)
+
+    print("The total number of ways is", countWaysToMakeChange(arr, n, target))
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 # 10 TODO :  unbounded knapsack (DP-23)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*W)
+
+Reason: There are N*W states therefore at max ‘N*W’ new problems will be solved.
+
+Space Complexity: O(N*W) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*W)).
+
+import sys
+
+# Recursive function to solve the unbounded knapsack problem
+def knapsackUtil(wt, val, ind, W, dp):
+    # Base case: If there are no more items to consider (index is 0)
+    if ind == 0:
+        return (W // wt[0]) * val[0]
+
+    # If the result for this state is already calculated, return it
+    if dp[ind][W] != -1:
+        return dp[ind][W]
+
+    # Calculate the maximum value when the current item is not taken
+    notTaken = knapsackUtil(wt, val, ind - 1, W, dp)
+
+    # Initialize a variable to store the maximum value when the current item is taken
+    taken = -sys.maxsize
+    if wt[ind] <= W:
+        taken = val[ind] + knapsackUtil(wt, val, ind, W - wt[ind], dp)
+
+    # Store the maximum of "notTaken" and "taken" in the DP table
+    dp[ind][W] = max(notTaken, taken)
+    return dp[ind][W]
+
+# Function to find the maximum value that can be obtained in unbounded knapsack
+def unboundedKnapsack(n, W, val, wt):
+    # Create a DP table initialized with -1
+    dp = [[-1 for _ in range(W + 1)] for _ in range(n)]
+    return knapsackUtil(wt, val, n - 1, W, dp)
+
+def main():
+    wt = [2, 4, 6]
+    val = [5, 11, 13]
+    W = 10
+    n = len(wt)
+
+    print("The Maximum value of items the thief can steal is", unboundedKnapsack(n, W, val, wt))
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*W)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*W)
+
+Reason: We are using an external array of size ‘N*W’. Stack Space is eliminated.
+
+import sys
+
+# Function to solve the unbounded knapsack problem using dynamic programming
+def unboundedKnapsack(n, W, val, wt):
+    # Create a DP table to store the maximum value for different capacities
+    dp = [[0 for j in range(W + 1)] for i in range(n)]
+
+    # Initialize the base condition for the first item
+    for i in range(wt[0], W + 1, wt[0]):
+        dp[0][i] = ((i // wt[0]) * val[0])
+
+    # Fill in the DP table for the remaining items and capacities
+    for ind in range(1, n):
+        for cap in range(W + 1):
+            # Calculate the maximum value when the current item is not taken
+            notTaken = 0 + dp[ind - 1][cap]
+
+            # Initialize a variable to store the maximum value when the current item is taken
+            taken = -sys.maxsize
+            if wt[ind] <= cap:
+                taken = val[ind] + dp[ind][cap - wt[ind]]
+
+            # Store the maximum of "notTaken" and "taken" in the DP table
+            dp[ind][cap] = max(notTaken, taken)
+
+    # The maximum value for the entire knapsack is at dp[n-1][W]
+    return dp[n - 1][W]
+
+def main():
+    wt = [2, 4, 6]
+    val = [5, 11, 13]
+    W = 10
+    n = len(wt)
+
+    print("The Maximum value of items the thief can steal is", unboundedKnapsack(n, W, val, wt))
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*W)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(W)
+
+Reason: We are using an external array of size ‘W+1’ to store only one row.
+
+import sys
+
+# Function to solve the unbounded knapsack problem using dynamic programming
+def unboundedKnapsack(n, W, val, wt):
+    # Create a list 'cur' to store the maximum value for different capacities
+    cur = [0] * (W + 1)
+
+    # Initialize the base condition for the first item
+    for i in range(wt[0], W + 1):
+        cur[i] = (i // wt[0]) * val[0]
+
+    # Fill in the 'cur' list for the remaining items and capacities
+    for ind in range(1, n):
+        for cap in range(W + 1):
+            # Calculate the maximum value when the current item is not taken
+            notTaken = cur[cap]
+
+            # Initialize a variable to store the maximum value when the current item is taken
+            taken = -sys.maxsize
+            if wt[ind] <= cap:
+                taken = val[ind] + cur[cap - wt[ind]]
+
+            # Store the maximum of "notTaken" and "taken" in the 'cur' list
+            cur[cap] = max(notTaken, taken)
+
+    # The maximum value for the entire knapsack is at 'cur[W]'
+    return cur[W]
+
+def main():
+    wt = [2, 4, 6]
+    val = [5, 11, 13]
+    W = 10
+    n = len(wt)
+
+    print("The Maximum value of items the thief can steal is", unboundedKnapsack(n, W, val, wt))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # 11 TODO : red cutting problem (DP-24)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*W)
+
+Reason: There are N*W states therefore at max ‘N*W’ new problems will be solved.
+
+Space Complexity: O(N*W) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*W)).
+
+import sys
+
+# Recursive function to solve the unbounded knapsack problem
+def knapsackUtil(wt, val, ind, W, dp):
+    # Base case: If there are no more items to consider (index is 0)
+    if ind == 0:
+        return (W // wt[0]) * val[0]
+
+    # If the result for this state is already calculated, return it
+    if dp[ind][W] != -1:
+        return dp[ind][W]
+
+    # Calculate the maximum value when the current item is not taken
+    notTaken = knapsackUtil(wt, val, ind - 1, W, dp)
+
+    # Initialize a variable to store the maximum value when the current item is taken
+    taken = -sys.maxsize
+    if wt[ind] <= W:
+        taken = val[ind] + knapsackUtil(wt, val, ind, W - wt[ind], dp)
+
+    # Store the maximum of "notTaken" and "taken" in the DP table
+    dp[ind][W] = max(notTaken, taken)
+    return dp[ind][W]
+
+# Function to find the maximum value that can be obtained in unbounded knapsack
+def unboundedKnapsack(n, W, val, wt):
+    # Create a DP table initialized with -1
+    dp = [[-1 for _ in range(W + 1)] for _ in range(n)]
+    return knapsackUtil(wt, val, n - 1, W, dp)
+
+def main():
+    wt = [2, 4, 6]
+    val = [5, 11, 13]
+    W = 10
+    n = len(wt)
+
+    print("The Maximum value of items the thief can steal is", unboundedKnapsack(n, W, val, wt))
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*W)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*W)
+
+Reason: We are using an external array of size ‘N*W’. Stack Space is eliminated.
+
+import sys
+
+# Function to solve the unbounded knapsack problem using dynamic programming
+def unboundedKnapsack(n, W, val, wt):
+    # Create a DP table to store the maximum value for different capacities
+    dp = [[0 for j in range(W + 1)] for i in range(n)]
+
+    # Initialize the base condition for the first item
+    for i in range(wt[0], W + 1, wt[0]):
+        dp[0][i] = ((i // wt[0]) * val[0])
+
+    # Fill in the DP table for the remaining items and capacities
+    for ind in range(1, n):
+        for cap in range(W + 1):
+            # Calculate the maximum value when the current item is not taken
+            notTaken = 0 + dp[ind - 1][cap]
+
+            # Initialize a variable to store the maximum value when the current item is taken
+            taken = -sys.maxsize
+            if wt[ind] <= cap:
+                taken = val[ind] + dp[ind][cap - wt[ind]]
+
+            # Store the maximum of "notTaken" and "taken" in the DP table
+            dp[ind][cap] = max(notTaken, taken)
+
+    # The maximum value for the entire knapsack is at dp[n-1][W]
+    return dp[n - 1][W]
+
+def main():
+    wt = [2, 4, 6]
+    val = [5, 11, 13]
+    W = 10
+    n = len(wt)
+
+    print("The Maximum value of items the thief can steal is", unboundedKnapsack(n, W, val, wt))
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*W)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(W)
+
+Reason: We are using an external array of size ‘W+1’ to store only one row.
+
+import sys
+
+# Function to solve the unbounded knapsack problem using dynamic programming
+def unboundedKnapsack(n, W, val, wt):
+    # Create a list 'cur' to store the maximum value for different capacities
+    cur = [0] * (W + 1)
+
+    # Initialize the base condition for the first item
+    for i in range(wt[0], W + 1):
+        cur[i] = (i // wt[0]) * val[0]
+
+    # Fill in the 'cur' list for the remaining items and capacities
+    for ind in range(1, n):
+        for cap in range(W + 1):
+            # Calculate the maximum value when the current item is not taken
+            notTaken = cur[cap]
+
+            # Initialize a variable to store the maximum value when the current item is taken
+            taken = -sys.maxsize
+            if wt[ind] <= cap:
+                taken = val[ind] + cur[cap - wt[ind]]
+
+            # Store the maximum of "notTaken" and "taken" in the 'cur' list
+            cur[cap] = max(notTaken, taken)
+
+    # The maximum value for the entire knapsack is at 'cur[W]'
+    return cur[W]
+
+def main():
+    wt = [2, 4, 6]
+    val = [5, 11, 13]
+    W = 10
+    n = len(wt)
+
+    print("The Maximum value of items the thief can steal is", unboundedKnapsack(n, W, val, wt))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 
 # endregion
+
+
+
 
 
 # region 16.5 DP - STRINGS
@@ -21361,25 +22708,201 @@ if __name__ == '__main__':
 
 # 1 TODO :  longest common subsequence (DP-25)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are N*M states therefore at max ‘N*M’ new problems will be solved.
+
+Space Complexity: O(N*M) + O(N+M)
+
+Reason: We are using an auxiliary recursion stack space(O(N+M)) (see the recursive tree, in the worst case, we will go till N+M calls at a time) and a 2D array ( O(N*M)).
+
+def lcsUtil(s1, s2, ind1, ind2, dp):
+    # Base case: If either of the strings has reached the end
+    if ind1 < 0 or ind2 < 0:
+        return 0
+    
+    # If the result for this state is already calculated, return it
+    if dp[ind1][ind2] != -1:
+        return dp[ind1][ind2]
+    
+    # If the characters at the current indices match, include them in the LCS
+    if s1[ind1] == s2[ind2]:
+        dp[ind1][ind2] = 1 + lcsUtil(s1, s2, ind1 - 1, ind2 - 1, dp)
+    else:
+        # If the characters do not match, consider both possibilities:
+        # 1. Exclude character from s1 and continue matching in s2
+        # 2. Exclude character from s2 and continue matching in s1
+        dp[ind1][ind2] = max(lcsUtil(s1, s2, ind1, ind2 - 1, dp), lcsUtil(s1, s2, ind1 - 1, ind2, dp))
+    
+    return dp[ind1][ind2]
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+    dp = [[-1 for j in range(m)] for i in range(n)]
+    return lcsUtil(s1, s2, n - 1, m - 1, dp)
+
+def main():
+    s1 = "acd"
+    s2 = "ced"
+    print("The Length of Longest Common Subsequence is", lcs(s1, s2))
+
+if __name__ == '__main__':
+    main()
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*M)
+
+Reason: We are using an external array of size ‘N*M)’. Stack Space is eliminated.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+    
+    # Create a DP table of size (n+1) x (m+1) initialized with -1
+    dp = [[-1 for j in range(m + 1)] for i in range(n + 1)]
+
+    # Initialize the base cases:
+    # - The length of LCS with an empty string is 0, so dp[i][0] = 0 for all i
+    # - The length of LCS with an empty string is 0, so dp[0][j] = 0 for all j
+    for i in range(n + 1):
+        dp[i][0] = 0
+    for j in range(m + 1):
+        dp[0][j] = 0
+
+    # Fill in the DP table by considering characters from both strings
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                # If the characters match, increment the LCS length
+                dp[ind1][ind2] = 1 + dp[ind1 - 1][ind2 - 1]
+            else:
+                # If the characters do not match, take the maximum of
+                # LCS length without one character from s1 or s2
+                dp[ind1][ind2] = max(dp[ind1 - 1][ind2], dp[ind1][ind2 - 1])
+    
+    # The value in dp[n][m] represents the length of the Longest Common Subsequence
+    return dp[n][m]
+
+def main():
+    s1 = "acd"
+    s2 = "ced"
+    print("The Length of Longest Common Subsequence is", lcs(s1, s2))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(M)
+
+Reason: We are using an external array of size ‘M+1’ to store only two rows.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+
+    # Initialize two arrays, 'prev' and 'cur', to store the DP values
+    prev = [0] * (m + 1)
+    cur = [0] * (m + 1)
+
+    # Loop through the characters of both strings to compute LCS
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                # If the characters match, increment LCS length by 1
+                cur[ind2] = 1 + prev[ind2 - 1]
+            else:
+                # If the characters do not match, take the maximum of LCS
+                # by excluding one character from s1 or s2
+                cur[ind2] = max(prev[ind2], cur[ind2 - 1])
+        
+        # Update 'prev' to be the same as 'cur' for the next iteration
+        prev = cur[:]
+
+    # The value in 'prev[m]' represents the length of the Longest Common Subsequence
+    return prev[m]
+
+def main():
+    s1 = "acd"
+    s2 = "ced"
+
+    print("The Length of Longest Common Subsequence is", lcs(s1, s2))
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 # 2 TODO : print longest common subsequence (DP-26)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
 
+Reason: There are two nested loops
+
+Space Complexity: O(N*M)
+
+Reason: We are using an external array of size ‘N*M’. Stack Space is eliminated.
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+    
+    dp = [[0 for j in range(m + 1)] for i in range(n + 1)]
+    for i in range(n + 1):
+        dp[i][0] = 0
+    for i in range(m + 1):
+        dp[0][i] = 0
+
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                dp[ind1][ind2] = 1 + dp[ind1 - 1][ind2 - 1]
+            else:
+                dp[ind1][ind2] = 0+max(dp[ind1 - 1][ind2], dp[ind1][ind2 - 1])
+
+    len_ = dp[n][m]
+    i = n
+    j = m
+    
+    index = len_ - 1
+    str_ = ""
+    for k in range(1,1+len_):
+      str_+="$" #dummy string
+    
+    while i > 0 and j > 0:
+        if s1[i - 1] == s2[j - 1]:
+            str_ = s1[i - 1] + str_[:-1]
+            index -= 1
+            i -= 1
+            j -= 1
+        elif s1[i - 1] > s2[j - 1]:
+            i -= 1
+        else:
+            j -= 1
+    
+    print("The Longest Common Subsequence is", str_)
+
+def main():
+    s1 = "abcde"
+    s2 = "bdgek"
+    
+    lcs(s1, s2)
+
+if __name__ == "__main__":
+    main()
 
 # method 2 : better approch
 # TC     -      
@@ -21398,13 +22921,95 @@ if __name__ == '__main__':
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*M)
+
+Reason: We are using an external array of size ‘N*M)’. Stack Space is eliminated.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+    
+    # Create a DP table with dimensions (n+1) x (m+1) initialized to zeros
+    dp = [[0] * (m + 1) for _ in range(n + 1)]
+
+    # Initialize a variable 'ans' to keep track of the maximum LCS length
+    ans = 0
+    
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            if s1[i - 1] == s2[j - 1]:
+                # If the characters match, increment LCS length by 1
+                val = 1 + dp[i - 1][j - 1]
+                dp[i][j] = val
+                ans = max(ans, val)
+            else:
+                # If the characters do not match, reset LCS length to zero
+                dp[i][j] = 0
+    
+    # 'ans' contains the length of the Longest Common Substring
+    return ans
+
+def main():
+    s1 = "abcjklp"
+    s2 = "acjkp"
+
+    print("The Length of Longest Common Substring is", lcs(s1, s2))
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(M)
+
+Reason: We are using an external array of size ‘M+1’ to store only two rows.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+    
+    # Initialize two arrays 'prev' and 'cur' to store the LCS lengths
+    prev = [0 for i in range(m + 1)]
+    cur = [0 for i in range(m + 1)]
+
+    # Initialize a variable 'ans' to keep track of the maximum LCS length
+    ans = 0
+    
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            if s1[i-1] == s2[j-1]:
+                # If the characters match, increment LCS length by 1
+                val = 1 + prev[j-1]
+                cur[j] = val
+                ans = max(ans, val)
+            else:
+                # If the characters do not match, reset LCS length to zero
+                cur[j] = 0
+        prev = cur[:]  # Update 'prev' with the values of 'cur'
+    
+    # 'ans' contains the length of the Longest Common Substring
+    return ans
+
+def main():
+    s1 = "abcjklp"
+    s2 = "acjkp"
+
+    print("The Length of Longest Common Substring is", lcs(s1, s2))
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 # 4 TODO : longest pallindromic subsequence (DP-28)
@@ -21414,13 +23019,106 @@ if __name__ == '__main__':
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*N)
+
+Reason: We are using an external array of size ‘(N*N)’. Stack Space is eliminated.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+
+    # Initialize a 2D array to store the length of the LCS
+    dp = [[-1] * (m + 1) for i in range(n + 1)]
+
+    # Initialize the first row and first column with 0
+    for i in range(n + 1):
+        dp[i][0] = 0
+    for i in range(m + 1):
+        dp[0][i] = 0
+
+    # Fill in the dp array using dynamic programming
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                dp[ind1][ind2] = 1 + dp[ind1 - 1][ind2 - 1]
+            else:
+                dp[ind1][ind2] = max(dp[ind1 - 1][ind2], dp[ind1][ind2 - 1])
+
+    # The final value in dp will be the length of the LCS
+    return dp[n][m]
+
+def longestPalindromeSubsequence(s):
+    # Reverse the input string
+    t = s
+    s = s[::-1]
+
+    # Find the longest common subsequence between s and its reverse
+    return lcs(s, t)
+
+def main():
+    s = "bbabcbcab"
+
+    # Calculate and print the length of the longest palindromic subsequence
+    print("The Length of Longest Palindromic Subsequence is", longestPalindromeSubsequence(s))
+
+if __name__ == "__main__":
+    main()
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*N)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(N)
+
+Reason: We are using an external array of size ‘N+1’ to store only two rows.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+
+    # Initialize two lists, prev and cur, for dynamic programming
+    prev = [0] * (m + 1)
+    cur = [0] * (m + 1)
+
+    # Base Case is covered as we have initialized the prev and cur to 0.
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                cur[ind2] = 1 + prev[ind2 - 1]
+            else:
+                cur[ind2] = max(prev[ind2], cur[ind2 - 1])
+        prev = cur[:]  # Update prev to be a copy of cur for the next iteration
+
+    # The final value in prev will be the length of the LCS
+    return prev[m]
+
+
+def longestPalindromeSubsequence(s):
+    # Reverse the input string
+    t = s[::-1]
+
+    # Find the length of the longest common subsequence between s and its reverse
+    return lcs(s, t)
+
+
+def main():
+    s = "bbabcbcab"
+
+    # Calculate and print the length of the longest palindromic subsequence
+    print("The Length of Longest Palindromic Subsequence is", longestPalindromeSubsequence(s))
+
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # 5 TODO : minimum insertions to make string pallindromic (DP-29)
@@ -21430,13 +23128,119 @@ if __name__ == '__main__':
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*N)
+
+Reason: We are using an external array of size (N*N). Stack Space is eliminated.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+
+    # Initialize a 2D array to store the length of the Longest Common Subsequence (LCS)
+    dp = [[-1 for i in range(m + 1)] for j in range(n + 1)]
+
+    # Base cases: When one of the strings is empty, LCS length is 0.
+    for i in range(n + 1):
+        dp[i][0] = 0
+    for i in range(m + 1):
+        dp[0][i] = 0
+
+    # Fill in the dp array using dynamic programming
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                dp[ind1][ind2] = 1 + dp[ind1 - 1][ind2 - 1]
+            else:
+                dp[ind1][ind2] = max(dp[ind1 - 1][ind2], dp[ind1][ind2 - 1])
+
+    # The final value in dp will be the length of the LCS
+    return dp[n][m]
+
+def longestPalindromeSubsequence(s):
+    # Reverse the input string
+    t = s
+    s = s[::-1]
+
+    # Find the length of the longest common subsequence between s and its reverse
+    return lcs(s, t)
+
+def minInsertion(s):
+    n = len(s)
+
+    # Calculate the length of the longest palindromic subsequence
+    k = longestPalindromeSubsequence(s)
+
+    # The minimum insertions required to make the string palindrome is the difference between its length and the length of its longest palindromic subsequence
+    return n - k
+
+def main():
+    s = "abcaa"
+    print("The Minimum insertions required to make the string palindrome:", minInsertion(s))
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(M)
+
+Reason: We are using an external array of size ‘M+1’ to store only two rows.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+
+    # Initialize two lists, prev and cur, for dynamic programming
+    prev = [0] * (m + 1)
+    cur = [0] * (m + 1)
+
+    # Base Case is covered as we have initialized the prev and cur to 0.
+
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                cur[ind2] = 1 + prev[ind2 - 1]
+            else:
+                cur[ind2] = max(prev[ind2], cur[ind2 - 1])
+
+        prev = cur[:]  # Update prev to be a copy of cur for the next iteration
+
+    # The final value in prev will be the length of the LCS
+    return prev[m]
+
+def longestPalindromeSubsequence(s):
+    # Reverse the input string
+    t = s
+    s = s[::-1]
+
+    # Find the length of the longest common subsequence between s and its reverse
+    return lcs(s, t)
+
+def minInsertion(s):
+    n = len(s)
+
+    # Calculate the length of the longest palindromic subsequence
+    k = longestPalindromeSubsequence(s)
+
+    # The minimum insertions required to make the string palindrome is the difference between its length and the length of its longest palindromic subsequence
+    return n - k
+
+def main():
+    s = "abcaa"
+    print("The Minimum insertions required to make the string palindrome:", minInsertion(s))
+
+if __name__ == '__main__':
+    main()
 
 
 # 6 TODO : minimum insertions/deletions to convert string (DP-30)
@@ -21446,19 +23250,178 @@ if __name__ == '__main__':
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*M)
+
+Reason: We are using an external array of size (N*M). Stack Space is eliminated.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+
+    # Initialize a 2D array to store the length of the LCS
+    dp = [[-1 for i in range(m + 1)] for j in range(n + 1)]
+
+    # Base cases: When one of the strings is empty, LCS length is 0.
+    for i in range(n + 1):
+        dp[i][0] = 0
+    for i in range(m + 1):
+        dp[0][i] = 0
+
+    # Fill in the dp array using dynamic programming
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                dp[ind1][ind2] = 1 + dp[ind1 - 1][ind2 - 1]
+            else:
+                dp[ind1][ind2] = max(dp[ind1 - 1][ind2], dp[ind1][ind2 - 1])
+
+    # The final value in dp will be the length of the LCS
+    return dp[n][m]
+
+# Function to calculate the minimum operations required to convert str1 to str2
+def canYouMake(str1, str2):
+    n = len(str1)
+    m = len(str2)
+
+    # Calculate the length of the LCS between str1 and str2
+    k = lcs(str1, str2)
+
+    # The minimum operations required is the sum of the deletions needed in both strings
+    return (n - k) + (m - k)
+
+def main():
+    str1 = "abcd"
+    str2 = "anc"
+
+    # Calculate and print the minimum operations required to convert str1 to str2
+    print("The Minimum operations required to convert str1 to str2:", canYouMake(str1, str2))
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(M)
+
+Reason: We are using an external array of size ‘M+1’ to store only two rows.
+
+def lcs(s1, s2):
+    n = len(s1)
+    m = len(s2)
+
+    # Initialize two lists, prev and cur, for dynamic programming
+    prev = [0] * (m + 1)
+    cur = [0] * (m + 1)
+
+    # Base Case is covered as we have initialized the prev and cur to 0.
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                cur[ind2] = 1 + prev[ind2 - 1]
+            else:
+                cur[ind2] = max(prev[ind2], cur[ind2 - 1])
+
+        prev = cur[:]  # Update prev to be a copy of cur for the next iteration
+
+    # The final value in prev will be the length of the LCS
+    return prev[m]
+
+# Function to calculate the minimum operations required to convert str1 to str2
+def canYouMake(str1, str2):
+    n = len(str1)
+    m = len(str2)
+
+    # Calculate the length of the LCS between str1 and str2
+    k = lcs(str1, str2)
+
+    # The minimum operations required is the sum of the deletions needed in both strings
+    return (n - k) + (m - k)
+
+def main():
+    str1 = "abcd"
+    str2 = "anc"
+
+    # Calculate and print the minimum operations required to convert str1 to str2
+    print("The Minimum operations required to convert str1 to str2:", canYouMake(str1, str2))
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 # 7 TODO : shortest common subsequence (DP-31)
-# method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*M)
+
+Reason: We are using an external array of size (N*M).
+def shortestSupersequence(s1, s2):
+    n = len(s1)
+    m = len(s2)
+
+    dp = [[0 for i in range(m + 1)] for j in range(n + 1)]
+    for i in range(n + 1):
+        dp[i][0] = 0
+    for i in range(m + 1):
+        dp[0][i] = 0
+
+    for ind1 in range(1, n + 1):
+        for ind2 in range(1, m + 1):
+            if s1[ind1 - 1] == s2[ind2 - 1]:
+                dp[ind1][ind2] = 1 + dp[ind1 - 1][ind2 - 1]
+            else:
+                dp[ind1][ind2] = 0+ max(dp[ind1 - 1][ind2], dp[ind1][ind2 - 1])
+
+    len_ = dp[n][m]
+    i = n
+    j = m
+
+    index = len_ - 1
+    ans = ""
+
+    while i > 0 and j > 0:
+        if s1[i - 1] == s2[j - 1]:
+            ans += s1[i - 1]
+            index -= 1
+            i -= 1
+            j -= 1
+        elif dp[i - 1][j] > dp[i][j - 1]:
+            ans += s1[i - 1]
+            i -= 1
+        else:
+            ans += s2[j - 1]
+            j -= 1
+    #Adding Remaing Characters - Only one of the below two while loops will run 
+    while i > 0:
+        ans += s1[i - 1]
+        i -= 1
+    while j > 0:
+        ans += s2[j - 1]
+        j -= 1
+
+    ans=ans[::-1]
+    return ans
+
+def main():
+    s1 = "brute"
+    s2 = "groot"
+    print("The Longest Common Supersequence is " + shortestSupersequence(s1, s2))
+
+if __name__ == "__main__":
+    main()  
 
 
 # method 2 : better approch
@@ -21473,54 +23436,516 @@ if __name__ == '__main__':
 
 # 8 TODO : distinct subsequences (DP-32)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are N*M states therefore at max ‘N*M’ new problems will be solved.
+
+Space Complexity: O(N*M) + O(N+M)
+
+Reason: We are using a recursion stack space(O(N+M)) and a 2D array ( O(N*M)).
+
+prime = int(1e9 + 7)
+
+# Recursive function to count distinct subsequences of s1 that match s2
+def countUtil(s1, s2, ind1, ind2, dp):
+    # If we have exhausted s2, we found a valid subsequence
+    if ind2 < 0:
+        return 1
+    # If we have exhausted s1, but not s2, no valid subsequence found
+    if ind1 < 0:
+        return 0
+    
+    # If this subproblem has already been solved, return the cached result
+    if dp[ind1][ind2] != -1:
+        return dp[ind1][ind2]
+    
+    # If the current characters match, we can either choose to leave one character
+    # or stay with the current character in s1
+    if s1[ind1] == s2[ind2]:
+        leaveOne = countUtil(s1, s2, ind1 - 1, ind2 - 1, dp)
+        stay = countUtil(s1, s2, ind1 - 1, ind2, dp)
+        
+        # Store the result in the DP table and return it modulo prime
+        dp[ind1][ind2] = (leaveOne + stay) % prime
+        return dp[ind1][ind2]
+    else:
+        # If the characters don't match, we can only skip the character in s1
+        dp[ind1][ind2] = countUtil(s1, s2, ind1 - 1, ind2, dp)
+        return dp[ind1][ind2]
+    
+# Main function to count distinct subsequences of s1 that match s2
+def subsequenceCounting(s1, s2, lt, ls):
+    # Initialize a DP table to store intermediate results
+    dp = [[-1 for j in range(ls)] for i in range(lt)]
+    
+    # Call the recursive function to count distinct subsequences
+    return countUtil(s1, s2, lt - 1, ls - 1, dp)
+
+def main():
+    s1 = "babgbag"
+    s2 = "bag"
+
+    # Calculate and print the count of distinct subsequences
+    print("The Count of Distinct Subsequences is", subsequenceCounting(s1, s2, len(s1), len(s2)))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*M)
+
+Reason: We are using an external array of size ‘N*M’. Stack Space is eliminated.
+
+prime = int(1e9 + 7)
+
+# Function to count distinct subsequences of s1 that match s2
+def subsequenceCounting(s1, s2, n, m):
+    # Initialize a DP table to store the count of distinct subsequences
+    dp = [[0 for i in range(m + 1)] for j in range(n + 1)]
+
+    # Base case: There is exactly one subsequence of an empty string s2 in s1
+    for i in range(n + 1):
+        dp[i][0] = 1
+
+    # Initialize dp[0][i] to 0 for i > 0 since an empty s1 cannot have a non-empty subsequence of s2
+    for i in range(1, m + 1):
+        dp[0][i] = 0
+
+    # Fill in the DP table using dynamic programming
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            # If the current characters match, we have two choices:
+            # 1. Include the current character in both s1 and s2 (dp[i-1][j-1])
+            # 2. Skip the current character in s1 (dp[i-1][j])
+            dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]) % prime if s1[i - 1] == s2[j - 1] else dp[i - 1][j]
+
+    # The final value in dp[n][m] is the count of distinct subsequences
+    return dp[n][m]
+
+def main():
+    s1 = "babgbag"
+    s2 = "bag"
+    
+    # Calculate and print the count of distinct subsequences
+    print("The Count of Distinct Subsequences is", subsequenceCounting(s1, s2, len(s1), len(s2)))
+
+if __name__ == "__main__":
+    main()
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(M)
+
+Reason: We are using an external array of size ‘M+1’ to store only one row.
+
+prime = int(1e9 + 7)
+
+# Function to count distinct subsequences of s1 that match s2
+def subsequenceCounting(s1, s2, n, m):
+    # Initialize a list to store the previous row of the DP table
+    prev = [0 for i in range(m + 1)]
+    
+    # Initialize the first element of prev to 1, as there's always one way to match an empty s2
+    prev[0] = 1
+
+    # Loop through s1 and s2 in reverse direction
+    for i in range(1, n + 1):
+        for j in range(m, 0, -1):
+            # If the current characters match, update prev[j] based on previous values
+            if s1[i - 1] == s2[j - 1]:
+                prev[j] = (prev[j - 1] + prev[j]) % prime
+            # If the characters don't match, keep prev[j] unchanged (omit this statement)
+            else:
+                prev[j] = prev[j]
+
+    # The final value in prev[m] is the count of distinct subsequences
+    return prev[m]
+
+def main():
+    s1 = "babgbag"
+    s2 = "bag"
+    
+    # Calculate and print the count of distinct subsequences
+    result = subsequenceCounting(s1, s2, len(s1), len(s2))
+    print("The Count of Distinct Subsequences is", result)
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 # 9 TODO : edit distance (DP-33)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are N*M states therefore at max ‘N*M’ new problems will be solved.
+
+Space Complexity: O(N*M) + O(N+M)
+
+Reason: We are using a recursion stack space(O(N+M)) and a 2D array ( O(N*M)).
+
+def editDistanceUtil(S1, S2, i, j, dp):
+    # Base cases
+    if i < 0:
+        return j + 1
+    if j < 0:
+        return i + 1
+
+    # If the result for this subproblem is already computed, return it
+    if dp[i][j] != -1:
+        return dp[i][j]
+
+    # If the characters at the current positions match, no operation is needed
+    if S1[i] == S2[j]:
+        dp[i][j] = editDistanceUtil(S1, S2, i - 1, j - 1, dp)
+    else:
+        # Calculate the minimum of three choices:
+        # 1. Replace the current character (diagonal move)
+        # 2. Insert a character into S1 (move up)
+        # 3. Delete a character from S1 (move left)
+        dp[i][j] = 1 + min(
+            editDistanceUtil(S1, S2, i - 1, j - 1, dp),
+            min(editDistanceUtil(S1, S2, i - 1, j, dp), editDistanceUtil(S1, S2, i, j - 1, dp))
+        )
+
+    return dp[i][j]
+
+def editDistance(S1, S2):
+    n = len(S1)
+    m = len(S2)
+
+    # Initialize a 2D DP array with -1 values
+    dp = [[-1 for _ in range(m)] for _ in range(n)]
+
+    # Calculate and return the edit distance
+    return editDistanceUtil(S1, S2, n - 1, m - 1, dp)
+
+def main():
+    s1 = "horse"
+    s2 = "ros"
+
+    # Calculate and print the minimum number of operations required
+    print("The minimum number of operations required is:", editDistance(s1, s2))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*M)
+
+Reason: We are using an external array of size ‘N*M’. Stack Space is eliminated.
+
+def editDistance(S1, S2):
+    n = len(S1)
+    m = len(S2)
+
+    # Initialize a 2D DP array of size (n+1) x (m+1) with all elements set to 0
+    dp = [[0 for _ in range(m + 1)] for _ in range(n + 1)]
+
+    # Initialize the first row and first column of the DP array
+    for i in range(n + 1):
+        dp[i][0] = i
+    for j in range(m + 1):
+        dp[0][j] = j
+
+    # Fill in the DP array using dynamic programming
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            # If the characters at the current positions match, no operation is needed
+            if S1[i - 1] == S2[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1]
+            else:
+                # Calculate the minimum of three choices:
+                # 1. Replace the current character (diagonal move)
+                # 2. Insert a character into S1 (move up)
+                # 3. Delete a character from S1 (move left)
+                dp[i][j] = 1 + min(dp[i - 1][j - 1], min(dp[i - 1][j], dp[i][j - 1]))
+
+    # The final value in dp[n][m] is the minimum number of operations required
+    return dp[n][m]
+
+def main():
+    s1 = "horse"
+    s2 = "ros"
+
+    # Calculate and print the minimum number of operations required
+    print("The minimum number of operations required is:", editDistance(s1, s2))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(M)
+
+Reason: We are using an external array of size ‘M+1’ to store two rows.
+
+def editDistance(S1, S2):
+    n = len(S1)
+    m = len(S2)
+
+    # Initialize two lists, prev and cur, to store the previous and current rows of the DP array
+    prev = [j for j in range(m + 1)]
+    cur = [0 for _ in range(m + 1)]
+
+    # Loop through the characters of S1 and S2
+    for i in range(1, n + 1):
+        cur[0] = i  # Initialize the first element of the current row
+
+        for j in range(1, m + 1):
+            # If the characters at the current positions match, no operation is needed
+            if S1[i - 1] == S2[j - 1]:
+                cur[j] = prev[j - 1]
+            else:
+                # Calculate the minimum of three choices:
+                # 1. Replace the current character (diagonal move)
+                # 2. Insert a character into S1 (move up)
+                # 3. Delete a character from S1 (move left)
+                cur[j] = 1 + min(prev[j - 1], min(prev[j], cur[j - 1]))
+
+        prev, cur = cur, prev  # Update prev to be the current row, and cur to be the new empty row
+
+    # The final value in prev[m] is the minimum number of operations required
+    return prev[m]
+
+def main():
+    s1 = "horse"
+    s2 = "ros"
+
+    # Calculate and print the minimum number of operations required
+    print("The minimum number of operations required is:", editDistance(s1, s2))
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # 10 TODO :  wildcard matching (DP-34)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are N*M states therefore at max ‘N*M’ new problems will be solved.
+
+Space Complexity: O(N*M) + O(N+M)
+
+Reason: We are using a recursion stack space(O(N+M)) and a 2D array ( O(N*M)).
+
+def isAllStars(S1, i):
+    # Helper function to check if all characters up to index i in S1 are '*'
+    for j in range(i + 1):
+        if S1[j] != '*':
+            return False
+    return True
+
+def wildcardMatchingUtil(S1, S2, i, j, dp):
+    # Base conditions
+    if i < 0 and j < 0:
+        return True
+    if i < 0 and j >= 0:
+        return False
+    if j < 0 and i >= 0:
+        return isAllStars(S1, i)
+
+    # If the result for this subproblem is already computed, return it
+    if dp[i][j] != -1:
+        return dp[i][j]
+
+    if S1[i] == S2[j] or S1[i] == '?':
+        # Characters match or S1 has a '?'; move to the previous characters in both strings
+        dp[i][j] = wildcardMatchingUtil(S1, S2, i - 1, j - 1, dp)
+    elif S1[i] == '*':
+        # If S1 has a '*', there are two choices:
+        # 1. '*' represents an empty string in S1, so move to the previous character in S1 (i-1, j).
+        # 2. '*' represents one or more characters in S1, so move to the previous character in S2 (i, j-1).
+        dp[i][j] = wildcardMatchingUtil(S1, S2, i - 1, j, dp) or wildcardMatchingUtil(S1, S2, i, j - 1, dp)
+    else:
+        dp[i][j] = False  # Characters don't match, and S1[i] is not '*'
+
+    return dp[i][j]
+
+def wildcardMatching(S1, S2):
+    n = len(S1)
+    m = len(S2)
+
+    # Initialize a 2D DP array with -1 values
+    dp = [[-1 for _ in range(m)] for _ in range(n)]
+
+    # Calculate and return the result of wildcard matching
+    return wildcardMatchingUtil(S1, S2, n - 1, m - 1, dp)
+
+def main():
+    S1 = "ab*cd"
+    S2 = "abdefcd"
+
+    if wildcardMatching(S1, S2):
+        print("String S1 and S2 do match")
+    else:
+        print("String S1 and S2 do not match")
+
+if __name__ == "__main__":
+    main()
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops
+
+Space Complexity: O(N*M)
+
+Reason: We are using an external array of size ‘N*M’. Stack Space is eliminated.
+
+def isAllStars(S1, i):
+    # Helper function to check if all characters up to index i in S1 are '*'
+    for j in range(1, i + 1):
+        if S1[j - 1] != '*':
+            return False
+    return True
+
+def wildcardMatching(S1, S2):
+    n = len(S1)
+    m = len(S2)
+
+    # Initialize a 2D DP array dp with dimensions (n+1) x m and fill it with False values
+    dp = [[False for _ in range(m)] for _ in range(n + 1)]
+
+    # Initialize dp[0][0] to True since two empty strings match
+    dp[0][0] = True
+
+    # Initialize the first row of dp
+    for j in range(1, m):
+        dp[0][j] = False
+
+    # Initialize the first column of dp based on whether S1 consists of all '*' characters up to that position
+    for i in range(1, n + 1):
+        dp[i][0] = isAllStars(S1, i)
+
+    # Fill in the DP array using dynamic programming
+    for i in range(1, n + 1):
+        for j in range(1, m):
+            if S1[i - 1] == S2[j - 1] or S1[i - 1] == '?':
+                # Characters match or S1 has a '?'; continue matching with the previous characters
+                dp[i][j] = dp[i - 1][j - 1]
+            elif S1[i - 1] == '*':
+                # If S1 has a '*', there are two choices:
+                # 1. '*' represents an empty string in S1, so move to the previous character in S1 (i-1, j).
+                # 2. '*' represents one or more characters in S1, so move to the previous character in S2 (i, j-1).
+                dp[i][j] = dp[i - 1][j] or dp[i][j - 1]
+            else:
+                dp[i][j] = False  # Characters don't match, and S1[i-1] is not '*'
+
+    # The final value in dp[n][m-1] is True if the two strings match, False otherwise
+    return dp[n][m-1]
+
+def main():
+    S1 = "ab*cd"
+    S2 = "abdefcd"
+
+    if wildcardMatching(S1, S2):
+        print("String S1 and S2 do match")
+    else:
+        print("String S1 and S2 do not match")
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*M)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(M)
+
+Reason: We are using an external array of size ‘M+1’ to store two rows.
+
+def isAllStars(S1, i):
+    # Helper function to check if all characters up to index i in S1 are '*'
+    for j in range(1, i + 1):
+        if S1[j - 1] != '*':
+            return False
+    return True
+
+def wildcardMatching(S1, S2):
+    n = len(S1)
+    m = len(S2)
+
+    # Initialize two lists, prev and cur, to store the previous and current rows of the DP array
+    prev = [False for _ in range(m + 1)]
+    cur = [False for _ in range(m + 1)]
+
+    prev[0] = True  # Initialize the first element of prev to True
+
+    for i in range(1, n + 1):
+        cur[0] = isAllStars(S1, i)  # Initialize the first element of cur based on '*' characters in S1
+        for j in range(1, m + 1):
+
+            if S1[i - 1] == S2[j - 1] or S1[i - 1] == '?':
+                # Characters match or S1 has a '?'; continue matching with the previous characters
+                cur[j] = prev[j - 1]
+            elif S1[i - 1] == '*':
+                # If S1 has a '*', there are two choices:
+                # 1. '*' represents an empty string in S1, so move to the previous character in S1 (i-1, j).
+                # 2. '*' represents one or more characters in S1, so move to the previous character in S2 (i, j-1).
+                cur[j] = prev[j] or cur[j - 1]
+            else:
+                cur[j] = False  # Characters don't match, and S1[i-1] is not '*'
+
+        prev = cur  # Update prev to be the current row
+
+    # The final value in prev[m] is True if the two strings match, False otherwise
+    return prev[m]
+
+def main():
+    S1 = "ab*cd"
+    S2 = "abdefcd"
+
+    if wildcardMatching(S1, S2):
+        print("String S1 and S2 do match")
+    else:
+        print("String S1 and S2 do not match")
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 
 # endregion
+
+
+
 
 
 # region 16.6 DP - STOCKS
@@ -21544,82 +23969,754 @@ if __name__ == '__main__':
 
 # 2 TODO : buy and sell stock - II (DP - 36)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2) 
+
+Reason: There are N*2 states therefore at max ‘N*2’ new problems will be solved and we are running a for loop for ‘N’ times to calculate the total sum
+
+Space Complexity: O(N*2) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*2)).
+
+
+def getMaximumProfit(Arr, n):
+    # Function to calculate the maximum profit from buying and selling stocks
+    
+    if n == 0:
+        return 0  # If there are no stocks, the profit is zero
+
+    dp = [[-1 for _ in range(2)] for _ in range(n)]  # Initialize a DP table with -1 values
+
+    def getAns(ind, buy):
+        # Recursive function to calculate the maximum profit
+        
+        if ind == n:
+            return 0  # Base case: If we have reached the end of the array, return zero profit
+        
+        if dp[ind][buy] != -1:
+            return dp[ind][buy]  # If the result is already computed, return it
+        
+        profit = 0
+        
+        if buy == 0:
+            # We can buy the stock
+            profit = max(0 + getAns(ind + 1, 0), -Arr[ind] + getAns(ind + 1, 1))
+        elif buy == 1:
+            # We can sell the stock
+            profit = max(0 + getAns(ind + 1, 1), Arr[ind] + getAns(ind + 1, 0))
+        
+        dp[ind][buy] = profit  # Store the result in the DP table
+        return profit
+
+    ans = getAns(0, 0)  # Start with buying (0) at the first day (0)
+    return ans
+
+def main():
+    n = 6
+    Arr = [7, 1, 5, 3, 6, 4]
+
+    max_profit = getMaximumProfit(Arr, n)
+    print("The maximum profit that can be generated is", max_profit)
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2) 
+
+Reason: There are two nested loops that account for O(N*2) complexity.
+
+Space Complexity: O(N*2)
+
+Reason: We are using an external array of size ‘N*2’. Stack Space is eliminated.
+
+
+def getMaximumProfit(Arr, n):
+    # Function to calculate the maximum profit from buying and selling stocks
+    
+    # Create a 2D DP table with dimensions (n+1) x 2 and initialize it with -1 values
+    dp = [[-1 for _ in range(2)] for _ in range(n + 1)]
+    
+    # Base condition: Initialize the last row of DP table to 0 since there are no more days to trade
+    dp[n][0] = dp[n][1] = 0
+    
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            profit = 0
+            
+            if buy == 0:
+                # We can buy the stock
+                profit = max(0 + dp[ind + 1][0], -Arr[ind] + dp[ind + 1][1])
+            elif buy == 1:
+                # We can sell the stock
+                profit = max(0 + dp[ind + 1][1], Arr[ind] + dp[ind + 1][0])
+            
+            dp[ind][buy] = profit  # Store the result in the DP table
+    
+    return dp[0][0]
+
+def main():
+    n = 6
+    Arr = [7, 1, 5, 3, 6, 4]
+
+    max_profit = getMaximumProfit(Arr, n)
+    print("The maximum profit that can be generated is", max_profit)
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*2)
+
+Reason: There are two nested loops that account for O(N*2) complexity
+
+Space Complexity: O(1)
+
+Reason: We are using an external array of size ‘2’.
+
+
+def getMaximumProfit(Arr, n):
+    # Function to calculate the maximum profit from buying and selling stocks
+    
+    ahead = [0, 0]  # Initialize two lists, 'ahead' and 'cur', to keep track of profits for buying and selling
+    cur = [0, 0]
+    
+    # Base condition: Initialize both 'ahead' and 'cur' to 0, as there are no more days to trade
+    ahead[0] = ahead[1] = 0
+    
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            profit = 0
+            
+            if buy == 0:
+                # We can buy the stock
+                profit = max(0 + ahead[0], -Arr[ind] + ahead[1])
+            elif buy == 1:
+                # We can sell the stock
+                profit = max(0 + ahead[1], Arr[ind] + ahead[0])
+            cur[buy] = profit  # Store the result in the 'cur' list
+        
+        ahead = cur  # Update 'ahead' to be the same as 'cur'
+    
+    return cur[0]
+
+def main():
+    n = 6
+    Arr = [7, 1, 5, 3, 6, 4]
+
+    max_profit = getMaximumProfit(Arr, n)
+    print("The maximum profit that can be generated is", max_profit)
+
+if __name__ == "__main__":
+    main()
+
+
+
+
 
 
 # 3 TODO : buy and sell stock - III (DP-37)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2*3) 
+
+Reason: There are N*2*3 states therefore at max ‘N*2*3’ new problems will be solved.
+
+Space Complexity: O(N*2*3) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 3D array ( O(N*2*3)).
+
+
+def maxProfit(prices):
+    n = len(prices)
+    
+    # Create a 3D DP table with dimensions (n) x 2 x 3 and initialize it with -1 values
+    dp = [[[-1 for _ in range(3)] for _ in range(2)] for _ in range(n)]
+    
+    def getAns(ind, buy, cap):
+        # Recursive function to calculate the maximum profit
+        
+        if ind == n or cap == 0:
+            return 0  # Base case: If we have reached the end of the array or used up all transactions, return zero profit
+        
+        if dp[ind][buy][cap] != -1:
+            return dp[ind][buy][cap]  # If the result is already computed, return it
+        
+        profit = 0
+        
+        if buy == 0:
+            # We can buy the stock
+            profit = max(0 + getAns(ind + 1, 0, cap), -prices[ind] + getAns(ind + 1, 1, cap))
+        elif buy == 1:
+            # We can sell the stock
+            profit = max(0 + getAns(ind + 1, 1, cap), prices[ind] + getAns(ind + 1, 0, cap - 1))
+        
+        dp[ind][buy][cap] = profit  # Store the result in the DP table
+        return profit
+
+    return getAns(0, 0, 2)  # Start with buying (0) and 2 transactions available (cap=2)
+
+def main():
+    prices = [3, 3, 5, 0, 0, 3, 1, 4]
+
+    max_profit = maxProfit(prices)
+    print("The maximum profit that can be generated is", max_profit)
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2*3) 
+
+Reason: There are three nested loops that account for O(N*2*3) complexity.
+
+Space Complexity: O(N*2*3)
+
+Reason: We are using an external array of size ‘N*2*3’. Stack Space is eliminated.
+
+
+def maxProfit(prices):
+    n = len(prices)
+    
+    # Create a 3D DP table with dimensions (n+1) x 2 x 3 and initialize it to 0 values
+    dp = [[[0 for _ in range(3)] for _ in range(2)] for _ in range(n + 1)]
+    
+    # The base case is already covered as the DP array is initialized to 0
+    
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            for cap in range(1, 3):
+                
+                if buy == 0:
+                    # We can buy the stock
+                    dp[ind][buy][cap] = max(0 + dp[ind + 1][0][cap], -prices[ind] + dp[ind + 1][1][cap])
+                elif buy == 1:
+                    # We can sell the stock
+                    dp[ind][buy][cap] = max(0 + dp[ind + 1][1][cap], prices[ind] + dp[ind + 1][0][cap - 1])
+    
+    return dp[0][0][2]
+
+def main():
+    prices = [3, 3, 5, 0, 0, 3, 1, 4]
+
+    max_profit = maxProfit(prices)
+    print("The maximum profit that can be generated is", max_profit)
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*2*3)
+
+Reason: There are three nested loops that account for O(N*2*3) complexity
+
+Space Complexity: O(1)
+
+Reason: We are using two external arrays of size ‘2*3’.
+
+
+def maxProfit(prices):
+    n = len(prices)
+    
+    # Create two 2D arrays, ahead and cur, both of size 2x3, initialized to 0 values
+    ahead = [[0 for _ in range(3)] for _ in range(2)]
+    cur = [[0 for _ in range(3)] for _ in range(2)]
+    
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            for cap in range(1, 3):
+                
+                if buy == 0:
+                    # We can buy the stock
+                    cur[buy][cap] = max(0 + ahead[0][cap], -prices[ind] + ahead[1][cap])
+                elif buy == 1:
+                    # We can sell the stock
+                    cur[buy][cap] = max(0 + ahead[1][cap], prices[ind] + ahead[0][cap - 1])
+        
+        ahead = cur  # Update ahead with the current values
+    
+    return ahead[0][2]
+
+def main():
+    prices = [3, 3, 5, 0, 0, 3, 1, 4]
+
+    max_profit = maxProfit(prices)
+    print("The maximum profit that can be generated is", max_profit)
+
+if __name__ == "__main__":
+    main()
+
+
+
 
 
 # 4 TODO : buy and sell stock - IV (DP-38)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2*3) 
+
+Reason: There are N*2*K states therefore at max ‘N*2*K’ new problems will be solved.
+
+Space Complexity: O(N*2*K) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 3D array ( O(N*2*K)).
+
+
+def get_max_profit(prices, n, ind, buy, cap, dp):
+    # Base case: if we reach the end of the array or have no more capital left
+    if ind == n or cap == 0:
+        return 0
+
+    # Check if the result is already calculated
+    if dp[ind][buy][cap] != -1:
+        return dp[ind][buy][cap]
+
+    # Initialize profit
+    profit = 0
+
+    if buy == 0:  # We can buy the stock
+        profit = max(
+            0 + get_max_profit(prices, n, ind + 1, 0, cap, dp),
+            -prices[ind] + get_max_profit(prices, n, ind + 1, 1, cap, dp)
+        )
+
+    if buy == 1:  # We can sell the stock
+        profit = max(
+            0 + get_max_profit(prices, n, ind + 1, 1, cap, dp),
+            prices[ind] + get_max_profit(prices, n, ind + 1, 0, cap - 1, dp)
+        )
+
+    # Memoize the result and return
+    dp[ind][buy][cap] = profit
+    return profit
+
+
+def maximum_profit(prices, n, k):
+    # Creating a 3D dp array of size [n][2][k+1]
+    dp = [[[(-1) for _ in range(k + 1)] for _ in range(2)] for _ in range(n)]
+
+    return get_max_profit(prices, n, 0, 0, k, dp)
+
+
+if __name__ == "__main__":
+    prices = [3, 3, 5, 0, 0, 3, 1, 4]
+    n = len(prices)
+    k = 2
+
+    result = maximum_profit(prices, n, k)
+    print(f"The maximum profit that can be generated is {result}")
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2*k) 
+
+Reason: There are three nested loops that account for O(N*2*K) complexity.
+
+Space Complexity: O(N*2*k)
+
+Reason: We are using an external array of size ‘N*2*K’. Stack Space is eliminated.
+
+
+def maximum_profit(prices, n, k):
+    # Creating a 3D dp array of size [n+1][2][k+1] initialized to 0
+    dp = [[[0 for _ in range(k + 1)] for _ in range(2)] for _ in range(n + 1)]
+
+    # Loop through the array from right to left
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            for cap in range(1, k + 1):
+
+                if buy == 0:  # We can buy the stock
+                    dp[ind][buy][cap] = max(0 + dp[ind + 1][0][cap],
+                                            -prices[ind] + dp[ind + 1][1][cap])
+
+                if buy == 1:  # We can sell the stock
+                    dp[ind][buy][cap] = max(0 + dp[ind + 1][1][cap],
+                                            prices[ind] + dp[ind + 1][0][cap - 1])
+
+    return dp[0][0][k]
+
+
+if __name__ == "__main__":
+    prices = [3, 3, 5, 0, 0, 3, 1, 4]
+    n = len(prices)
+    k = 2
+
+    result = maximum_profit(prices, n, k)
+    print(f"The maximum profit that can be generated is {result}")
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*2*K)
+
+Reason: There are three nested loops that account for O(N*2*K) complexity
+
+Space Complexity: O(K)
+
+Reason: We are using two external arrays of size ‘2*K’.
+
+
+def max_profit(prices, n, k):
+    # Create two 2D arrays to store the current and ahead states
+    ahead = [[0] * (k + 1) for _ in range(2)]
+    cur = [[0] * (k + 1) for _ in range(2)]
+
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            for cap in range(1, k + 1):
+
+                if buy == 0:  # We can buy the stock
+                    cur[buy][cap] = max(0 + ahead[0][cap],
+                                       -prices[ind] + ahead[1][cap])
+
+                if buy == 1:  # We can sell the stock
+                    cur[buy][cap] = max(0 + ahead[1][cap],
+                                       prices[ind] + ahead[0][cap - 1])
+
+        # Update the 'ahead' array with the current state
+        ahead = cur.copy()
+
+    return ahead[0][k]
+
+
+if __name__ == "__main__":
+    prices = [3, 3, 5, 0, 0, 3, 1, 4]
+    n = len(prices)
+    k = 2
+
+    result = max_profit(prices, n, k)
+    print(f"The maximum profit that can be generated is {result}")
 
 
 # 5 TODO : buy and sell stock with cooldown (DP-39)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2) 
+
+Reason: There are N*2 states therefore at max ‘N*2’ new problems will be solved and we are running a for loop for ‘N’ times to calculate the total sum
+
+Space Complexity: O(N*2) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*2)).
+
+
+def get_max_profit(prices, ind, buy, n, dp):
+    # Base case: if we reach the end of the array
+    if ind >= n:
+        return 0
+
+    # Check if the result is already calculated
+    if dp[ind][buy] != -1:
+        return dp[ind][buy]
+
+    # Initialize profit
+    profit = 0
+
+    if buy == 0:  # We can buy the stock
+        profit = max(
+            0 + get_max_profit(prices, ind + 1, 0, n, dp),
+            -prices[ind] + get_max_profit(prices, ind + 1, 1, n, dp)
+        )
+
+    if buy == 1:  # We can sell the stock
+        profit = max(
+            0 + get_max_profit(prices, ind + 1, 1, n, dp),
+            prices[ind] + get_max_profit(prices, ind + 2, 0, n, dp)
+        )
+
+    # Memoize the result and return
+    dp[ind][buy] = profit
+    return profit
+
+
+def stock_profit(prices):
+    n = len(prices)
+    dp = [[-1 for _ in range(2)] for _ in range(n)]
+
+    ans = get_max_profit(prices, 0, 0, n, dp)
+    return ans
+
+
+if __name__ == "__main__":
+    prices = [4, 9, 0, 4, 10]
+
+    result = stock_profit(prices)
+    print(f"The maximum profit that can be generated is {result}")
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2) 
+
+Reason: There are two nested loops that account for O(N*2) complexity.
+
+Space Complexity: O(N*2)
+
+Reason: We are using an external array of size ‘N*2’. Stack Space is eliminated.
+
+
+def stock_profit(prices):
+    n = len(prices)
+    
+    # Create a 2D dp array of size [n+2][2] initialized to 0
+    dp = [[0 for _ in range(2)] for _ in range(n + 2)]
+
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            profit = 0
+
+            if buy == 0:  # We can buy the stock
+                profit = max(
+                    0 + dp[ind + 1][0],
+                    -prices[ind] + dp[ind + 1][1]
+                )
+
+            if buy == 1:  # We can sell the stock
+                profit = max(
+                    0 + dp[ind + 1][1],
+                    prices[ind] + dp[ind + 2][0]
+                )
+
+            dp[ind][buy] = profit
+
+    return dp[0][0]
+
+
+if __name__ == "__main__":
+    prices = [4, 9, 0, 4, 10]
+
+    result = stock_profit(prices)
+    print(f"The maximum profit that can be generated is {result}")
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*2)
+
+Reason: There are two nested loops that account for O(N*2) complexity
+
+Space Complexity: O(1)
+
+Reason: We are using three external arrays of size ‘2’.
+
+
+def stock_profit(prices):
+    n = len(prices)
+    
+    # Initialize three lists to track the profit states
+    cur = [0, 0]
+    front1 = [0, 0]
+    front2 = [0, 0]
+
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            profit = 0
+
+            if buy == 0:  # We can buy the stock
+                profit = max(
+                    0 + front1[0],
+                    -prices[ind] + front1[1]
+                )
+
+            if buy == 1:  # We can sell the stock
+                profit = max(
+                    0 + front1[1],
+                    prices[ind] + front2[0]
+                )
+
+            cur[buy] = profit
+
+        # Update the 'front' lists for the next iteration
+        front2 = front1.copy()
+        front1 = cur.copy()
+
+    return cur[0]
+
+
+if __name__ == "__main__":
+    prices = [4, 9, 0, 4, 10]
+
+    result = stock_profit(prices)
+    print(f"The maximum profit that can be generated is {result}")
 
 
 # 6 TODO : buy and sell stock with transaction fee (DP-40)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2) 
+
+Reason: There are N*2 states therefore at max ‘N*2’ new problems will be solved and we are running a for loop for ‘N’ times to calculate the total sum
+
+Space Complexity: O(N*2) + O(N)
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*2)).
+
+
+def get_max_profit(prices, ind, buy, n, fee, dp):
+    # Base case: if we reach the end of the array
+    if ind == n:
+        return 0
+
+    # Check if the result is already calculated
+    if dp[ind][buy] != -1:
+        return dp[ind][buy]
+
+    profit = 0
+
+    if buy == 0:  # We can buy the stock
+        profit = max(
+            0 + get_max_profit(prices, ind + 1, 0, n, fee, dp),
+            -prices[ind] + get_max_profit(prices, ind + 1, 1, n, fee, dp)
+        )
+
+    if buy == 1:  # We can sell the stock
+        profit = max(
+            0 + get_max_profit(prices, ind + 1, 1, n, fee, dp),
+            prices[ind] - fee + get_max_profit(prices, ind + 1, 0, n, fee, dp)
+        )
+
+    dp[ind][buy] = profit
+    return profit
+
+
+def maximum_profit(n, fee, prices):
+    dp = [[-1 for _ in range(2)] for _ in range(n)]
+
+    if n == 0:
+        return 0
+
+    ans = get_max_profit(prices, 0, 0, n, fee, dp)
+    return ans
+
+
+if __name__ == "__main__":
+    prices = [1, 3, 2, 8, 4, 9]
+    n = len(prices)
+    fee = 2
+
+    result = maximum_profit(n, fee, prices)
+    print(f"The maximum profit that can be generated is {result}")
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*2) 
+
+Reason: There are two nested loops that account for O(N*2) complexity.
+
+Space Complexity: O(N*2)
+
+Reason: We are using an external array of size ‘N*2’. Stack Space is eliminated.
+
+
+def maximum_profit(n, fee, prices):
+    if n == 0:
+        return 0
+
+    # Create a 2D dp array of size [n+1][2] initialized to 0
+    dp = [[0 for _ in range(2)] for _ in range(n + 1)]
+
+    # Loop through the array from right to left
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            profit = 0
+
+            if buy == 0:  # We can buy the stock
+                profit = max(
+                    0 + dp[ind + 1][0],
+                    -prices[ind] + dp[ind + 1][1]
+                )
+
+            if buy == 1:  # We can sell the stock
+                profit = max(
+                    0 + dp[ind + 1][1],
+                    prices[ind] - fee + dp[ind + 1][0]
+                )
+
+            dp[ind][buy] = profit
+
+    return dp[0][0]
+
+
+if __name__ == "__main__":
+    prices = [1, 3, 2, 8, 4, 9]
+    n = len(prices)
+    fee = 2
+
+    result = maximum_profit(n, fee, prices)
+    print(f"The maximum profit that can be generated is {result}")
+
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*2)
+
+Reason: There are two nested loops that account for O(N*2) complexity
+
+Space Complexity: O(1)
+
+Reason: We are using an external array of size ‘2’.
+
+
+def maximum_profit(n, fee, prices):
+    if n == 0:
+        return 0
+
+    # Initialize two lists to track the profit states
+    ahead = [0, 0]
+    cur = [0, 0]
+
+    # Base condition
+    ahead[0] = ahead[1] = 0
+
+    for ind in range(n - 1, -1, -1):
+        for buy in range(2):
+            profit = 0
+
+            if buy == 0:  # We can buy the stock
+                profit = max(
+                    0 + ahead[0],
+                    -prices[ind] + ahead[1]
+                )
+
+            if buy == 1:  # We can sell the stock
+                profit = max(
+                    0 + ahead[1],
+                    prices[ind] - fee + ahead[0]
+                )
+
+            cur[buy] = profit
+
+        # Update the 'ahead' list for the next iteration
+        ahead = cur.copy()
+
+    return cur[0]
+
+
+if __name__ == "__main__":
+    prices = [1, 3, 2, 8, 4, 9]
+    n = len(prices)
+    fee = 2
+
+    result = maximum_profit(n, fee, prices)
+    print(f"The maximum profit that can be generated is {result}")
 
 
 
@@ -21627,13 +24724,52 @@ if __name__ == '__main__':
 # endregion
 
 
+
+
+
 # region 16.7 DP - LIS
 # --------------------
 
 # 1 TODO :  longest increasing subsequence (DP-41)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N)
+
+Reason: There are N*N states therefore at max ‘N*N’ new problems will be solved.
+
+Space Complexity: O(N*N) + O(N)
+
+Reason: We are using an auxiliary recursion stack space(O(N)) (see the recursive tree, in the worst case we will go till N calls at a time) and a 2D array ( O(N*N+1)).
+def get_longest_increasing_subsequence_length(arr, n, ind, prev_index, dp):
+    # Base condition
+    if ind == n:
+        return 0
+
+    if dp[ind][prev_index + 1] != -1:
+        return dp[ind][prev_index + 1]
+
+    not_take = 0 + get_longest_increasing_subsequence_length(arr, n, ind + 1, prev_index, dp)
+
+    take = 0
+
+    if prev_index == -1 or arr[ind] > arr[prev_index]:
+        take = 1 + get_longest_increasing_subsequence_length(arr, n, ind + 1, ind, dp)
+
+    dp[ind][prev_index + 1] = max(not_take, take)
+    return dp[ind][prev_index + 1]
+
+
+def longest_increasing_subsequence_length(arr):
+    n = len(arr)
+    dp = [[-1 for _ in range(n + 1)] for _ in range(n)]
+
+    return get_longest_increasing_subsequence_length(arr, n, 0, -1, dp)
+
+
+if __name__ == "__main__":
+    arr = [10, 9, 2, 5, 3, 7, 101, 18]
+
+    result = longest_increasing_subsequence_length(arr)
+    print("The length of the longest increasing subsequence is", result)  
 
 
 # method 2 : better approch
@@ -21664,8 +24800,38 @@ if __name__ == '__main__':
 
 # 3 TODO : longest increasing subsequence (DP-43)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*logN)
+
+Reason: We iterate over the array of size N and in every iteration, we perform a binary search which takes logN time.
+
+Space Complexity: O(N)
+
+Reason: We are using an extra array of size N to store the temp variable.
+def longest_increasing_subsequence_length(arr):
+    n = len(arr)
+
+    # Initialize a temporary list to store the increasing subsequence
+    temp = [arr[0]]
+    length = 1
+
+    for i in range(1, n):
+        if arr[i] > temp[-1]:
+            # If arr[i] is greater than the last element of temp, extend the subsequence
+            temp.append(arr[i])
+            length += 1
+        else:
+            # Use binary search to find the position to replace the element in temp
+            ind = bisect_left(temp, arr[i])
+            temp[ind] = arr[i]
+
+    return length
+
+
+if __name__ == "__main__":
+    arr = [10, 9, 2, 5, 3, 7, 101, 18]
+
+    result = longest_increasing_subsequence_length(arr)
+    print("The length of the longest increasing subsequence is", result)
 
 
 # method 2 : better approch
@@ -21680,8 +24846,55 @@ if __name__ == '__main__':
 
 # 4 TODO : largest divisible subset (DP-44)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N)
+
+Reason: There are two nested loops.
+
+Space Complexity: O(N)
+
+Reason: We are only using two rows of size n.
+def longest_divisible_subset(arr):
+    n = len(arr)
+
+    # Sort the array in ascending order
+    arr.sort()
+
+    # Initialize dp and hash arrays with 1s
+    dp = [1] * n
+    hash_arr = list(range(n))
+
+    # Iterate through the array
+    for i in range(n):
+        for prev_index in range(i):
+            if arr[i] % arr[prev_index] == 0 and 1 + dp[prev_index] > dp[i]:
+                dp[i] = 1 + dp[prev_index]
+                hash_arr[i] = prev_index
+
+    ans = -1
+    last_index = -1
+
+    # Find the maximum length and its corresponding index
+    for i in range(n):
+        if dp[i] > ans:
+            ans = dp[i]
+            last_index = i
+
+    # Reconstruct the divisible subset
+    result = [arr[last_index]]
+
+    while hash_arr[last_index] != last_index:
+        last_index = hash_arr[last_index]
+        result.append(arr[last_index])
+
+    return result
+
+
+if __name__ == "__main__":
+    arr = [1, 16, 7, 8, 4]
+
+    ans = longest_divisible_subset(arr)
+
+    print("The longest divisible subset elements are:", ans)
 
 
 # method 2 : better approch
@@ -21695,9 +24908,58 @@ if __name__ == '__main__':
 
 
 # 5 TODO : largest string chain (DP-45)
-# method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N * l)
+
+Reason: We are setting up two nested loops and the compare function can be estimated to l, where l is the length of the longest string in the words [ ] array. Also, we are sorting so the time complexity will be (N^2 * l + NlogN)
+
+Space Complexity: O(N)
+
+Reason: We are only using a single array of size n.
+def is_predecessor(s1, s2):
+    # Check if s2 is a predecessor of s1
+    if len(s1) != len(s2) + 1:
+        return False
+
+    first = 0
+    second = 0
+
+    while first < len(s1):
+        if second < len(s2) and s1[first] == s2[second]:
+            first += 1
+            second += 1
+        else:
+            first += 1
+
+    return first == len(s1) and second == len(s2)
+
+
+def longest_string_chain(arr):
+    n = len(arr)
+
+    # Sort the array in ascending order of string length
+    arr.sort(key=len)
+
+    dp = [1] * n
+    maxi = 1
+
+    for i in range(n):
+        for prev_index in range(i):
+            if is_predecessor(arr[i], arr[prev_index]) and 1 + dp[prev_index] > dp[i]:
+                dp[i] = 1 + dp[prev_index]
+
+        if dp[i] > maxi:
+            maxi = dp[i]
+
+    return maxi
+
+
+if __name__ == "__main__":
+    words = ["a", "b", "ba", "bca", "bda", "bdca"]
+
+    result = longest_string_chain(words)
+
+    print("The length of the longest string chain is:", result)
+
 
 
 # method 2 : better approch
@@ -21712,8 +24974,46 @@ if __name__ == '__main__':
 
 # 6 TODO : longest bitonic subsequence (DP-46)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N)
+
+Reason: There are two nested loops that are run twice.
+
+Space Complexity: O(N)
+
+Reason: We are only using two rows of size n.
+def longest_bitonic_sequence(arr):
+    n = len(arr)
+
+    # Initialize two dynamic programming lists for increasing and decreasing subsequences
+    dp1 = [1] * n
+    dp2 = [1] * n
+
+    # Calculate the length of the longest increasing subsequence
+    for i in range(n):
+        for prev_index in range(i):
+            if arr[prev_index] < arr[i]:
+                dp1[i] = max(dp1[i], 1 + dp1[prev_index])
+
+    # Reverse the direction of nested loops to calculate the length of the longest decreasing subsequence
+    for i in range(n - 1, -1, -1):
+        for prev_index in range(n - 1, i, -1):
+            if arr[prev_index] < arr[i]:
+                dp2[i] = max(dp2[i], 1 + dp2[prev_index])
+
+    maxi = -1
+
+    # Find the maximum length of bitonic subsequence by combining increasing and decreasing lengths
+    for i in range(n):
+        maxi = max(maxi, dp1[i] + dp2[i] - 1)
+
+    return maxi
+
+
+if __name__ == "__main__":
+    arr = [1, 11, 2, 10, 4, 5, 2, 1]
+    n = len(arr)
+
+    print("The length of the longest bitonic subsequence is", longest_bitonic_sequence(arr))
 
 
 # method 2 : better approch
@@ -21728,8 +25028,48 @@ if __name__ == '__main__':
 
 # 7 TODO : number of longest increasing subsequence (DP-47)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N)
+
+Reason: There are two nested loops that are run twice.
+
+Space Complexity: O(N)
+
+Reason: We are only using two rows of size n.
+def find_number_of_LIS(arr):
+    n = len(arr)
+
+    # Initialize two dynamic programming lists for lengths and counts
+    dp = [1] * n
+    count = [1] * n
+
+    maxi = 1
+
+    for i in range(n):
+        for prev_index in range(i):
+            if arr[prev_index] < arr[i] and dp[prev_index] + 1 > dp[i]:
+                dp[i] = dp[prev_index] + 1
+                # Inherit the count
+                count[i] = count[prev_index]
+            elif arr[prev_index] < arr[i] and dp[prev_index] + 1 == dp[i]:
+                # Increase the count
+                count[i] += count[prev_index]
+        
+        maxi = max(maxi, dp[i])
+
+    num_of_LIS = 0
+
+    # Count the number of Longest Increasing Subsequences
+    for i in range(n):
+        if dp[i] == maxi:
+            num_of_LIS += count[i]
+
+    return num_of_LIS
+
+
+if __name__ == "__main__":
+    arr = [1, 5, 4, 3, 2, 6, 7, 2]
+
+    print("The count of Longest Increasing Subsequences is:", find_number_of_LIS(arr))  
 
 
 # method 2 : better approch
@@ -21744,6 +25084,9 @@ if __name__ == '__main__':
 
 
 # endregion
+
+
+
 
 
 
@@ -21768,9 +25111,43 @@ if __name__ == '__main__':
 
 # 2 TODO : matrix chain multiplication | Bottom up (DP-49)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N*N)
 
+Reason: There are N*N states and we explicitly run a loop inside the function which will run for N times, therefore at max ‘N*N*N’ new problems will be solved.
+
+Space Complexity: O(N*N)
+
+Reason: We are using a 2D array ( O(N*N)) space.
+def matrix_multiplication(arr):
+    N = len(arr)
+    
+    # Initialize a 2D dp list with -1 values
+    dp = [[-1 for _ in range(N)] for _ in range(N)]
+    
+    # Initialize the diagonal elements of the dp table to 0
+    for i in range(N):
+        dp[i][i] = 0
+    
+    # Loop through the dp table to calculate the minimum number of operations
+    for i in range(N - 1, 0, -1):
+        for j in range(i + 1, N):
+            mini = float('inf')
+            
+            # Partitioning loop
+            for k in range(i, j):
+                ans = dp[i][k] + dp[k + 1][j] + arr[i - 1] * arr[k] * arr[j]
+                mini = min(mini, ans)
+            
+            dp[i][j] = mini
+    
+    # The result is stored in the top-right corner of the dp table
+    return dp[1][N - 1]
+
+
+if __name__ == "__main__":
+    arr = [10, 20, 30, 40, 50]
+
+    print("The minimum number of operations is:", matrix_multiplication(arr))
 
 # method 2 : better approch
 # TC     -      
@@ -21784,85 +25161,679 @@ if __name__ == '__main__':
 
 # 3 TODO : minimum cost to cut the stick (DP-50)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: Exponential
+
+
+def min_cost(n, c, cuts):
+    # Define a 2D memoization table to store intermediate results
+    dp = [[0] * (c + 2) for _ in range(c + 2)]
+
+    # Extend the cuts list with 0 and n, and sort it
+    cuts = [0] + cuts + [n]
+    cuts.sort()
+
+    # Fill the memoization table using dynamic programming
+    for length in range(2, c + 3):
+        for i in range(c + 3 - length):
+            j = i + length - 1
+            dp[i][j] = float('inf')
+
+            # Find the optimal partition point and calculate the cost
+            for k in range(i + 1, j):
+                dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j] + (cuts[j] - cuts[i]))
+
+    # The result is stored in the top-right corner of the memoization table
+    return dp[0][c + 1]
+
+if __name__ == "__main__":
+    cuts = [3, 5, 1, 4]
+    c = len(cuts)
+    n = 7
+
+    print("The minimum cost incurred:", min_cost(n, c, cuts))
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N*N)
+
+Reason: There are 2 variables i and j, therefore, N*N states and we explicitly run a loop inside the function which will run for N times, therefore at max ‘N*N*N’ new problems will be solved.
+
+Space Complexity: O(N*N) + O(N)
+
+Reason: We are using an auxiliary recursion stack space(O(N))and a 2D array ( O(N*N)).
+
+
+def min_cost(n, c, cuts):
+    # Define a 2D memoization table to store intermediate results
+    dp = [[-1] * (c + 1) for _ in range(c + 1)]
+
+    # Extend the cuts list with 0 and n, and sort it
+    cuts = [0] + cuts + [n]
+    cuts.sort()
+
+    # Recursive function to find the minimum cost
+    def f(i, j):
+        # Base case
+        if i > j:
+            return 0
+        
+        if dp[i][j] != -1:
+            return dp[i][j]
+        
+        mini = float('inf')
+        
+        for ind in range(i, j + 1):
+            ans = cuts[j + 1] - cuts[i - 1] + f(i, ind - 1) + f(ind + 1, j)
+            mini = min(mini, ans)
+        
+        dp[i][j] = mini
+        return mini
+
+    return f(1, c)
+
+if __name__ == "__main__":
+    cuts = [3, 5, 1, 4]
+    c = len(cuts)
+    n = 7
+
+    print("The minimum cost incurred:", min_cost(n, c, cuts))
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*N*N)
+
+Reason: There are 2 variables i and j, therefore, N*N states and we explicitly run a loop inside the function which will run for N times, therefore at max ‘N*N*N’ new problems will be solved.
+
+Space Complexity: O(N*N) 
+
+Reason: We are using a 2D array ( O(N*N)).
+
+
+def min_cost(n, c, cuts):
+    # Extend the cuts list with 0 and n, and sort it
+    cuts = [0] + cuts + [n]
+    cuts.sort()
+    
+    # Create a 2D DP table initialized with zeros
+    dp = [[0] * (c + 2) for _ in range(c + 2)]
+
+    # Calculate the minimum cost using dynamic programming
+    for i in range(c, 0, -1):
+        for j in range(1, c + 1):
+            if i > j:
+                continue
+            
+            mini = float('inf')
+            
+            for ind in range(i, j + 1):
+                ans = cuts[j + 1] - cuts[i - 1] + dp[i][ind - 1] + dp[ind + 1][j]
+                mini = min(mini, ans)
+            
+            dp[i][j] = mini
+    
+    return dp[1][c]
+
+if __name__ == "__main__":
+    cuts = [3, 5, 1, 4]
+    c = len(cuts)
+    n = 7
+
+    print("The minimum cost incurred:", min_cost(n, c, cuts))
 
 
 # 4 TODO : burst balloons (DP-51)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: Exponential
+
+
+def maxCoins(a):
+    n = len(a)
+    a.insert(0, 1)
+    a.append(1)
+
+    # Create a 2D DP table initialized with zeros
+    dp = [[0] * (n + 2) for _ in range(n + 2)]
+
+    # Calculate the maximum coins using dynamic programming
+    for length in range(1, n + 1):
+        for i in range(1, n - length + 2):
+            j = i + length - 1
+            maxi = float('-inf')
+            
+            for ind in range(i, j + 1):
+                cost = a[i - 1] * a[ind] * a[j + 1] + dp[i][ind - 1] + dp[ind + 1][j]
+                maxi = max(maxi, cost)
+            
+            dp[i][j] = maxi
+    
+    return dp[1][n]
+
+if __name__ == "__main__":
+    a = [3, 1, 5, 8]
+    ans = maxCoins(a)
+    print(ans)
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N3), There are total N2 no. of states. And for each state, we are running a partitioning loop roughly for N times.
+
+Space Complexity: O(N2) + Auxiliary stack space of O(N), N2 for the dp array we are using. 
+
+
+def maxCoins(a):
+    n = len(a)
+    
+    # Extend the list 'a' with 1s at both ends
+    a.insert(0, 1)
+    a.append(1)
+
+    # Create a 2D DP table initialized with -1s
+    dp = [[-1] * (n + 2) for _ in range(n + 2)]
+
+    def f(i, j):
+        if i > j:
+            return 0
+        if dp[i][j] != -1:
+            return dp[i][j]
+        maxi = float('-inf')
+        for ind in range(i, j + 1):
+            cost = a[i - 1] * a[ind] * a[j + 1] + f(i, ind - 1) + f(ind + 1, j)
+            maxi = max(maxi, cost)
+        dp[i][j] = maxi
+        return maxi
+
+    return f(1, n)
+
+if __name__ == "__main__":
+    a = [3, 1, 5, 8]
+    ans = maxCoins(a)
+    print(ans)
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N3), There are total N2 no. of states. And for each state, we are running a partitioning loop roughly for N times.
+
+Space Complexity: O(N2), N2 for the dp array we are using.
+
+
+def maxCoins(a):
+    n = len(a)
+    
+    # Extend the list 'a' with 1s at both ends
+    a.insert(0, 1)
+    a.append(1)
+
+    # Create a 2D DP table initialized with 0s
+    dp = [[0] * (n + 2) for _ in range(n + 2)]
+
+    # Loop from the end of 'a' to the beginning
+    for i in range(n, 0, -1):
+        for j in range(1, n + 1):
+            if i > j:
+                continue
+            maxi = float('-inf')
+            
+            # Iterate through the balloons from 'i' to 'j'
+            for ind in range(i, j + 1):
+                cost = a[i - 1] * a[ind] * a[j + 1] + dp[i][ind - 1] + dp[ind + 1][j]
+                maxi = max(maxi, cost)
+            
+            dp[i][j] = maxi
+    
+    return dp[1][n]
+
+if __name__ == "__main__":
+    a = [3, 1, 5, 8]
+    ans = maxCoins(a)
+    print(ans)
+
+
+
+
 
 
 # 5 TODO : evaluate boolean expression to true (DP-52)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: Exponential
+
+
+def evaluateExp(exp):
+    n = len(exp)
+    mod = 1000000007
+    
+    def f(i, j, isTrue):
+        # Base case 1:
+        if i > j:
+            return 0
+        # Base case 2:
+        if i == j:
+            if isTrue == 1:
+                return int(exp[i] == 'T')
+            else:
+                return int(exp[i] == 'F')
+        
+        ways = 0
+        for ind in range(i + 1, j, 2):
+            lT = f(i, ind - 1, 1)
+            lF = f(i, ind - 1, 0)
+            rT = f(ind + 1, j, 1)
+            rF = f(ind + 1, j, 0)
+
+            if exp[ind] == '&':
+                if isTrue:
+                    ways = (ways + (lT * rT) % mod) % mod
+                else:
+                    ways = (ways + (lF * rT) % mod + (lT * rF) % mod + (lF * rF) % mod) % mod
+            elif exp[ind] == '|':
+                if isTrue:
+                    ways = (ways + (lF * rT) % mod + (lT * rF) % mod + (lT * rT) % mod) % mod
+                else:
+                    ways = (ways + (lF * rF) % mod) % mod
+            else:
+                if isTrue:
+                    ways = (ways + (lF * rT) % mod + (lT * rF) % mod) % mod
+                else:
+                    ways = (ways + (lF * rF) % mod + (lT * rT) % mod) % mod
+        
+        return ways
+    
+    return f(0, n - 1, 1)
+
+if __name__ == "__main__":
+    exp = "F|T^F"
+    ways = evaluateExp(exp)
+    print("The total number of ways:", ways)
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*N*2 * N) ~ O(N3) There are a total of 2*N2 no. of states. And for each state, we are running a partitioning loop roughly for N times.
+
+Space Complexity: O(2*N2) + Auxiliary stack space of O(N), 2*N2 for the dp array we are using.
+
+
+def evaluateExp(exp):
+    n = len(exp)
+    mod = 1000000007
+    
+    def f(i, j, isTrue, dp):
+        # Base case 1:
+        if i > j:
+            return 0
+        # Base case 2:
+        if i == j:
+            if isTrue == 1:
+                return int(exp[i] == 'T')
+            else:
+                return int(exp[i] == 'F')
+        
+        if dp[i][j][isTrue] != -1:
+            return dp[i][j][isTrue]
+        
+        ways = 0
+        for ind in range(i + 1, j, 2):
+            lT = f(i, ind - 1, 1, dp)
+            lF = f(i, ind - 1, 0, dp)
+            rT = f(ind + 1, j, 1, dp)
+            rF = f(ind + 1, j, 0, dp)
+
+            if exp[ind] == '&':
+                if isTrue:
+                    ways = (ways + (lT * rT) % mod) % mod
+                else:
+                    ways = (ways + (lF * rT) % mod + (lT * rF) % mod + (lF * rF) % mod) % mod
+            elif exp[ind] == '|':
+                if isTrue:
+                    ways = (ways + (lF * rT) % mod + (lT * rF) % mod + (lT * rT) % mod) % mod
+                else:
+                    ways = (ways + (lF * rF) % mod) % mod
+            else:
+                if isTrue:
+                    ways = (ways + (lF * rT) % mod + (lT * rF) % mod) % mod
+                else:
+                    ways = (ways + (lF * rF) % mod + (lT * rT) % mod) % mod
+        
+        dp[i][j][isTrue] = ways
+        return ways
+    
+    dp = [[[ -1 for _ in range(2)] for _ in range(n)] for _ in range(n)]
+    return f(0, n - 1, 1, dp)
+
+if __name__ == "__main__":
+    exp = "F|T^F"
+    ways = evaluateExp(exp)
+    print("The total number of ways:", ways)
+
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*N*2 * N) ~ O(N3) There are a total of 2*N2 no. of states. And for each state, we are running a partitioning loop roughly for N times.
+
+Space Complexity: O(2*N2), 2*N2 for the dp array we are using.
+
+
+def evaluateExp(exp):
+    n = len(exp)
+    mod = 1000000007
+    
+    # Create a 3D DP array to store the results of subproblems
+    dp = [[[0 for _ in range(2)] for _ in range(n)] for _ in range(n)]
+    
+    # Iterate over the expression string
+    for i in range(n - 1, -1, -1):
+        for j in range(n):
+            # Base case 1: Skip invalid ranges
+            if i > j:
+                continue
+            
+            # Iterate over possible values of 'isTrue' (0 or 1)
+            for isTrue in range(2):
+                # Base case 2: When i == j
+                if i == j:
+                    if isTrue == 1:
+                        dp[i][j][isTrue] = int(exp[i] == 'T')
+                    else:
+                        dp[i][j][isTrue] = int(exp[i] == 'F')
+                    continue
+                
+                # Recurrence logic
+                ways = 0
+                for ind in range(i + 1, j, 2):
+                    lT = dp[i][ind - 1][1]
+                    lF = dp[i][ind - 1][0]
+                    rT = dp[ind + 1][j][1]
+                    rF = dp[ind + 1][j][0]
+
+                    if exp[ind] == '&':
+                        if isTrue:
+                            ways = (ways + (lT * rT) % mod) % mod
+                        else:
+                            ways = (ways + (lF * rT) % mod + (lT * rF) % mod + (lF * rF) % mod) % mod
+                    elif exp[ind] == '|':
+                        if isTrue:
+                            ways = (ways + (lF * rT) % mod + (lT * rF) % mod + (lT * rT) % mod) % mod
+                        else:
+                            ways = (ways + (lF * rF) % mod) % mod
+                    else:
+                        if isTrue:
+                            ways = (ways + (lF * rT) % mod + (lT * rF) % mod) % mod
+                        else:
+                            ways = (ways + (lF * rF) % mod + (lT * rT) % mod) % mod
+                
+                dp[i][j][isTrue] = ways
+    
+    # The final result is stored in dp[0][n - 1][1] when the expression is considered true
+    return dp[0][n - 1][1]
+
+if __name__ == "__main__":
+    exp = "F|T^F"
+    ways = evaluateExp(exp)
+    print("The total number of ways:", ways)
 
 
 # 6 TODO : pallindrome partioning - I (DP-53)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: Exponential
+
+
+def is_palindrome(i, j, s):
+    # Helper function to check if a substring s[i...j] is a palindrome
+    while i < j:
+        if s[i] != s[j]:
+            return False
+        i += 1
+        j -= 1
+    return True
+
+def f(i, n, s):
+    # Base case: If we reach the end of the string, no further partition is needed
+    if i == n:
+        return 0
+
+    min_cost = float('inf')
+    
+    # Iterate over possible substrings starting from index i
+    for j in range(i, n):
+        if is_palindrome(i, j, s):
+            # If s[i...j] is a palindrome, calculate the cost
+            cost = 1 + f(j + 1, n, s)
+            min_cost = min(min_cost, cost)
+
+    return min_cost
+
+def palindrome_partitioning(s):
+    # Main function to find the minimum number of partitions
+    n = len(s)
+    return f(0, n, s) - 1  # Subtract 1 to exclude the initial unpartitioned string
+
+if __name__ == "__main__":
+    str = "BABABCBADCEDE"
+    partitions = palindrome_partitioning(str)
+    print("The minimum number of partitions:", partitions)
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N2)
+Reason: There are a total of N states and inside each state, a loop of size N(apparently) is running.
+
+Space Complexity: O(N) + Auxiliary stack space O(N)
+Reason: The first O(N) is for the dp array of size N.
+
+
+def is_palindrome(i, j, s):
+    # Helper function to check if a substring s[i...j] is a palindrome
+    while i < j:
+        if s[i] != s[j]:
+            return False
+        i += 1
+        j -= 1
+    return True
+
+def f(i, n, s, dp):
+    # Base case: If we reach the end of the string, no further partition is needed
+    if i == n:
+        return 0
+
+    if dp[i] != -1:
+        return dp[i]
+    
+    min_cost = float('inf')
+    
+    # Iterate over possible substrings starting from index i
+    for j in range(i, n):
+        if is_palindrome(i, j, s):
+            # If s[i...j] is a palindrome, calculate the cost
+            cost = 1 + f(j + 1, n, s, dp)
+            min_cost = min(min_cost, cost)
+
+    dp[i] = min_cost
+    return dp[i]
+
+def palindrome_partitioning(s):
+    # Main function to find the minimum number of partitions
+    n = len(s)
+    dp = [-1] * n  # Initialize a memoization array with -1
+    return f(0, n, s, dp) - 1  # Subtract 1 to exclude the initial unpartitioned string
+
+if __name__ == "__main__":
+    str = "BABABCBADCEDE"
+    partitions = palindrome_partitioning(str)
+    print("The minimum number of partitions:", partitions)
+
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N2)
+Reason: There are a total of N states and inside each state a loop of size N(apparently) is running.
+
+Space Complexity: O(N)
+Reason: O(N) is for the dp array we have used.
+
+
+def is_palindrome(i, j, s):
+    # Helper function to check if a substring s[i...j] is a palindrome
+    while i < j:
+        if s[i] != s[j]:
+            return False
+        i += 1
+        j -= 1
+    return True
+
+def palindrome_partitioning(s):
+    # Main function to find the minimum number of partitions
+    n = len(s)
+    dp = [0] * (n + 1)
+    dp[n] = 0  # Initialize the last element of dp to 0
+    for i in range(n - 1, -1, -1):  # Start from the second-to-last element and move backward
+        min_cost = float('inf')
+        # Iterate over possible substrings starting from index i
+        for j in range(i, n):
+            if is_palindrome(i, j, s):
+                # If s[i...j] is a palindrome, calculate the cost
+                cost = 1 + dp[j + 1]
+                min_cost = min(min_cost, cost)
+        dp[i] = min_cost
+
+    return dp[0] - 1  # Subtract 1 to exclude the initial unpartitioned string
+
+if __name__ == "__main__":
+    str = "BABABCBADCEDE"
+    partitions = palindrome_partitioning(str)
+    print("The minimum number of partitions:", partitions)
+
+
+
 
 
 # 7 TODO : partition array for maximumsum (DP-54)
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+Time Complexity: Exponential
+
+
+def max_sum_after_partitioning(num, k):
+    n = len(num)
+    dp = [0] * (n + 1)
+
+    for i in range(1, n + 1):
+        max_val = 0
+        for j in range(1, min(i, k) + 1):
+            max_val = max(max_val, num[i - j])
+            dp[i] = max(dp[i], dp[i - j] + max_val * j)
+
+    return dp[n]
+
+if __name__ == "__main__":
+    num = [1, 15, 7, 9, 2, 5, 10]
+    k = 3
+    max_sum = max_sum_after_partitioning(num, k)
+    print("The maximum sum is:", max_sum)
+
+
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+Time Complexity: O(N*k)
+Reason: There are a total of N states and for each state, we are running a loop from 0 to k.
+
+Space Complexity: O(N) + Auxiliary stack space O(N)
+Reason: First O(N) for the dp array we are using.
+
+
+def max_sum_after_partitioning(num, k):
+    n = len(num)
+    dp = [-1] * n
+
+    def f(ind):
+        # Base case:
+        if ind == n:
+            return 0
+
+        if dp[ind] != -1:
+            return dp[ind]
+
+        len_val = 0
+        max_val = float('-inf')
+        max_ans = float('-inf')
+
+        for j in range(ind, min(ind + k, n)):
+            len_val += 1
+            max_val = max(max_val, num[j])
+            summation = len_val * max_val + f(j + 1)
+            max_ans = max(max_ans, summation)
+
+        dp[ind] = max_ans
+        return dp[ind]
+
+    return f(0)
+
+if __name__ == "__main__":
+    num = [1, 15, 7, 9, 2, 5, 10]
+    k = 3
+    max_sum = max_sum_after_partitioning(num, k)
+    print("The maximum sum is:", max_sum)
+
+
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+Time Complexity: O(N*k)
+Reason: There are a total of N states and for each state, we are running a loop from 0 to k.
+
+Space Complexity: O(N)
+Reason: O(N) for the dp array we are using.
+
+
+def max_sum_after_partitioning(num, k):
+    n = len(num)
+    dp = [0] * (n + 1)
+
+    for ind in range(n - 1, -1, -1):
+        len_val = 0
+        max_val = float('-inf')
+        max_ans = float('-inf')
+
+        for j in range(ind, min(ind + k, n)):
+            len_val += 1
+            max_val = max(max_val, num[j])
+            summation = len_val * max_val + dp[j + 1]
+            max_ans = max(max_ans, summation)
+
+        dp[ind] = max_ans
+
+    return dp[0]
+
+if __name__ == "__main__":
+    num = [1, 15, 7, 9, 2, 5, 10]
+    k = 3
+    max_sum = max_sum_after_partitioning(num, k)
+    print("The maximum sum is:", max_sum)
+
+
+
 
 
 # endregion
+
+
+
 
 
 
@@ -21905,6 +25876,10 @@ if __name__ == '__main__':
 
 
 # endregion
+
+
+
+
 
 
 # region 17.1 TRIES - THEORY
@@ -22037,6 +26012,9 @@ if __name__ == "__main__":
 
 
 # endregion
+
+
+
 
 
 # region 17.2 TRIES - PRACTICE PROBLEMS
@@ -22837,13 +26815,11 @@ if __name__ == "__main__":
     for i, res in enumerate(result):
         print(f"Query {i+1}: {res}")
 
-                           
-                              
-
-
-
 
 # endregion
+
+
+
 
 
 # region 18.1 STRINGS - HARD

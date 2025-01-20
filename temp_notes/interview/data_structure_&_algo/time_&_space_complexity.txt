@@ -1,5 +1,7 @@
 TIME COMPLEXITY
+- time complexity != time taken to run the code
 - Time complexity is the amount of time taken by an algorithm to run, as a function of the length of the input.
+- rate at which the time taken increase with respect to the input size
 - types - best case, worst case, average case
 - Big O notation - O(n)
 - O(1) - constant time
@@ -13,4 +15,11 @@ TIME COMPLEXITY
 - O(n^n) - exponential time
 
 SPACE COMPLEXITY
+- space complexity != memory space 
+- space complexity = input space + auxilary space 
+input space - space that you take to solve the problem 
+auxilary space - space that you take to store the problem input 
+example, c = a + b
+c = auxilary space, a and b  = input space 
+space complexity  O(3)
 - Space complexity is the amount of memory taken by an algorithm to run, as a function of the length of the input.

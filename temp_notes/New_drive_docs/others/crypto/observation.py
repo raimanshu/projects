@@ -52,7 +52,7 @@ Position Trading
 Algo Trading 
 
 # region STRATEGIES 
-# ----------
+# -----------------
 
 CIP strategy 
 ------------
@@ -60,16 +60,19 @@ Time frame - 4hrs
 Trends
 identification - base formation
 strategy - breakout 
+Dow theory
 
 Leverage - 
 
 Reversal strategy 
 -----------------
 
+# 👉👉👉 https://coinmarketcap.com/
 
 
 # region INDICATORS
-# ----------
+# -----------------
+# 👉👉👉 Supertrend
 VWAP - Volume Weighted Average Price
 Volumne - 
 Supertrend  -   

@@ -231,6 +231,7 @@ print(result)                                           # ---> {4: 3, 5: 1, 6: 2
 # region RECUSSION
 # ----------------
 # 👉👉👉  https://www.youtube.com/watch?v=6IIgSFBPQ0U
+# https://www.youtube.com/watch?v=69ZCDFy-OUo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=10
 '''
 - when a function calls itself until a specified condition is met
 - Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem
@@ -313,6 +314,8 @@ print(is_odd(5))   # Output: True
 
 '''
 - recursion tree - a tree where each node represents a recursive call
+- FOR CALL STACK / STACK SPACE, when the function is called first donot put it in the call stack, when it is callduring the function execution then put it inside the stack
+- FOR RECURSION TREE, when the function is called first put it in the recursion tree, when it is called during the function execution then again put it inside the recursion tree
 - base case - the condition when the recursion stops
 - recursive call - the function calls itself
 - recursive call stack - the stack of recursive calls

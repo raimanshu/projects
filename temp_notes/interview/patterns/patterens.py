@@ -1,6 +1,8 @@
 # region Global Variables
 rows = 5
 
+
+
 # region PATTERN 1
 '''
 *****
@@ -276,10 +278,16 @@ for i in range(rows):
  ABCBA
 ABCDCBA
 '''
-# for i in range(rows):
-#     for j in range(i+1):
-#       print(chr(65+i), end="")
-#     print("\n") 
+for i in range(1,num + 1):
+  for j in range(num-i):
+    print("_", end="")
+  for k in range(i):
+    print(chr(65 + k), end="")
+  for k in range(i-1,0,-1):
+    print(chr(64+k), end="")
+  for j in range(num-i):
+    print("_", end="")
+  print("\n")
     
 # region PATTERN 18
 '''
@@ -289,10 +297,10 @@ CDE
 BCDE
 ABCDE
 '''
-# for i in range(rows):
-#     for j in range(i+1):
-#       print(chr(65+i), end="")
-#     print("\n")
+for i in range(1,num+1):
+  for j in range(i):
+    print(chr(65+ (num - j -1)), end="")
+  print("\n")
 
 # region PATTERN 19
 '''
@@ -307,10 +315,23 @@ ABCDE
 ****  ****
 **********
 '''
-# for i in range(rows):
-#     for j in range(i+1):
-#       print(chr(65+i), end="")
-#     print("\n")
+for i in range(num):
+  for j in range(num-i):
+    print("*", end="")
+  for j in range(2*i):
+    print("_", end="")
+  for j in range(num-i):
+    print("*", end="")
+  print("\n")
+  
+for i in range(num):
+  for j in range(i+1):
+    print("*", end="")
+  for j in range(2*(num - i-1)):
+    print("_", end="")
+  for j in range(i+1):
+    print("*", end="")
+  print("\n")
 
 # region PATTERN 20
 '''
@@ -324,10 +345,23 @@ ABCDE
 **      **
 *        *
 '''
-# for i in range(rows):
-#     for j in range(i+1):
-#       print(chr(65+i), end="")
-#     print("\n")
+for i in range(1, 2*num):
+  if i> ((2*num-1)//2):
+    for j in range(2*num-i):
+      print("*", end="")
+    for j in range(2*(i-num)):
+      print("_", end="")
+    for j in range(2*num-i):
+      print("*", end="")
+    print("\n")
+  else:
+    for j in range(i):
+      print("*", end="")
+    for j in range(2*(num - i)):
+      print("_", end="")
+    for j in range(i):
+      print("*", end="")
+    print("\n")
 
 # region PATTERN 21
 '''
@@ -336,12 +370,16 @@ ABCDE
 *  *
 ****
 '''
-# for i in range(rows):
-#     for j in range(i+1):
-#       print(chr(65+i), end="")
-#     print("\n")
+for i in range(num):
+    for j in range(num):
+        if i == 0 or i == num-1 or j == 0 or j == num-1:
+            print("*", end="")
+        else:
+            print(" ", end="")
+    print()
 
 # region PATTERN 22
+# 👉👉👉 https://www.youtube.com/watch?v=tNm_NNSB3_w&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=5
 '''
 4444444
 4333334
@@ -351,18 +389,12 @@ ABCDE
 4333334
 4444444
 '''
-# for i in range(rows):
-#     for j in range(i+1):
-#       print(chr(65+i), end="")
-#     print("\n")
-
-
-
-
-
-
-
-
-
-
+for i in range(2*n-1):
+  for j in range(2*n-1):
+    top = i 
+    bottom = (2*n-2) -i 
+    left = j
+    right = (2*n-2) -j
+    print(n - min(min(top, bottom), min(left, right)), end="")
+  print("\n")
 
