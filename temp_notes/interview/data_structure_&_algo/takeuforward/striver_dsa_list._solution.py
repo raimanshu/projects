@@ -13,6 +13,7 @@
 *****
 *****
 '''
+rows = 5
 for i in range(rows):
     for j in range(rows):
         print("*", end="")
@@ -26,7 +27,9 @@ for i in range(rows):
 ****
 *****
 '''
+rows = 5
 for i in range(rows):
+    # change
     for j in range(i+1):
         print("*", end="")
     print("\n")
@@ -39,7 +42,9 @@ for i in range(rows):
 1234
 12345
 '''
+rows = 5
 for i in range(1,rows+1):
+    # change
     for j in range(1,i+1):
         print(j, end="")
     print("\n")
@@ -54,6 +59,7 @@ for i in range(1,rows+1):
 '''
 for i in range(1,rows+1):
     for j in range(1,i+1):
+        # change
         print(i, end="")
     print("\n")
 
@@ -66,6 +72,7 @@ for i in range(1,rows+1):
 *
 '''
 for i in range(rows):
+    # change
     for j in range(rows-i):
         print("*", end="")
     print("\n")
@@ -79,6 +86,7 @@ for i in range(rows):
 1
 '''
 for i in range(1,rows+1):
+    # change
     for j in range(1,rows+1-i+1):
         print(j, end="")
     print("\n")
@@ -98,7 +106,8 @@ for i in range(1,rows+1):
 for i in range(1,rows):
     for j in range(1,rows-i):
       print("_", end="")
-        
+    
+    # important
     for j in range(2*i-1):
       print("*", end="")
         
@@ -118,6 +127,7 @@ for i in range(1,rows):
     for j in range(1,i):
       print(" ", end="")
         
+    # important
     for j in range(2*rows-2*i-1):
       print("*", end="")
         
@@ -175,6 +185,7 @@ for i in range(1,rows):
 *
 '''
 for i in range(1,2*rows):
+    # important
     row_number = i
     if i>rows:
       row_number = 2*rows-i
@@ -191,10 +202,12 @@ for i in range(1,2*rows):
 10101
 '''
 for i in range(1,rows+1):
+    # important
     start = 0
     if i%2: start = 1
     for j in range(i):
       print(start, end="")
+      # important
       start = 1 - start             # 1-0 = 1 and 1-1 = 0, flipping the number
     print("\n")
     
@@ -209,6 +222,7 @@ for i in range(1,rows+1):
     for j in range(1,i+1):
       print(j, end="")
       
+    # important
     for j in range(2*rows-2*i):
       print("_", end="")
       
@@ -226,6 +240,7 @@ for i in range(1,rows+1):
 11 12 13 14 15
 ABCDE
 '''
+# important
 num = 1
 for i in range(1, rows+1, 1):
     for j in range(i):
@@ -243,6 +258,7 @@ ABCDE
 '''
 for i in range(rows+1):
     for j in range(i):
+      # important
       print(chr(65+j), end="")
     print("\n")
     
@@ -256,6 +272,7 @@ AB
 A
 '''
 for i in range(rows+1):
+    # important
     for j in range(rows-i):
       print(chr(65+j), end="")
     print("\n")
@@ -269,6 +286,7 @@ DDDD
 EEEEE
 '''
 for i in range(rows):
+    # important
     for j in range(i+1):
       print(chr(65+i), end="")
     print("\n")
@@ -283,8 +301,10 @@ ABCDCBA
 for i in range(1,num + 1):
   for j in range(num-i):
     print("_", end="")
+  # important
   for k in range(i):
     print(chr(65 + k), end="")
+  # important
   for k in range(i-1,0,-1):
     print(chr(64+k), end="")
   for j in range(num-i):
@@ -301,6 +321,7 @@ ABCDE
 '''
 for i in range(1,num+1):
   for j in range(i):
+    # important
     print(chr(65+ (num - j -1)), end="")
   print("\n")
 
@@ -320,6 +341,7 @@ for i in range(1,num+1):
 for i in range(num):
   for j in range(num-i):
     print("*", end="")
+  # important
   for j in range(2*i):
     print("_", end="")
   for j in range(num-i):
@@ -329,6 +351,7 @@ for i in range(num):
 for i in range(num):
   for j in range(i+1):
     print("*", end="")
+  # important
   for j in range(2*(num - i-1)):
     print("_", end="")
   for j in range(i+1):
@@ -347,6 +370,7 @@ for i in range(num):
 **      **
 *        *
 '''
+# important
 for i in range(1, 2*num):
   if i> ((2*num-1)//2):
     for j in range(2*num-i):
@@ -374,6 +398,7 @@ for i in range(1, 2*num):
 '''
 for i in range(num):
     for j in range(num):
+        # important
         if i == 0 or i == num-1 or j == 0 or j == num-1:
             print("*", end="")
         else:
@@ -391,6 +416,8 @@ for i in range(num):
 4333334
 4444444
 '''
+# important
+n=5
 for i in range(2*n-1):
   for j in range(2*n-1):
     top = i 
@@ -403,8 +430,8 @@ for i in range(2*n-1):
 
 # endregion
 
-
-
+# c++ stl 
+# https://www.youtube.com/watch?v=RRVYpIET_RU
 
 # region 1.4 MATHS PROBLEM 
 # ------------------------
@@ -416,6 +443,13 @@ for i in range(2*n-1):
 '''
 
 # TODO : 1 Count digits in a number - 
+'''
+
+https://practice.geeksforgeeks.org/problems/count-digits5716/1
+
+E
+
+'''
 # Method 1 - brute force
 # TC- O(log10(N)) 
 # SC - O(1)
@@ -439,8 +473,15 @@ import math
 num = 5216566
 print(int(math.log10(num)) + 1)
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # TODO : 2 Reverse a number -
+'''
+
+https://leetcode.com/problems/reverse-integer/
+
+E
+'''
 # Method 1 - optimal approch
 # TC - O(log10(N))
 # SC - O(1)
@@ -458,7 +499,14 @@ def reverse(nnum):
 num = 23521
 print(reverse(num))
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
 # TODO : 3 Check pallindrome - 121
+'''
+https://leetcode.com/problems/palindrome-number/
+
+E
+'''
 # Method 1 - optimal solution
 # TC - O(log10(N))
 # SC - (1) 
@@ -476,7 +524,15 @@ def pallindrome(num):
 num = 121
 print(pallindrome(num))
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 4 Armstrong Numbers - (3^3 + 7^3 + 1^3 = 371)
+'''
+https://leetcode.com/problems/armstrong-number/
+
+E
+'''
 # Method 1 - optimal approch
 # TC - O(log10(N))
 # SC - O(1)
@@ -494,7 +550,17 @@ def armstrong(num):
 num = 371
 print(armstrong(num))
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 5 Print all divisors
+'''
+https://practice.geeksforgeeks.org/problems/sum-of-all-divisors-from-1-to-n4738/1
+
+E
+
+'''
 #     method 1 - optimized approch
 # using math.sqrt()
 # TC - O(sqrt(N))
@@ -524,7 +590,18 @@ def divisors(num):
 num = 15
 print(divisors(num))
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 6 Check for prime (having exactly two factors, 1 and itself)
+
+'''
+https://practice.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1
+
+E
+
+'''
 # Method 1 - brute force
 # TC - O(N)
 # SC - O(1)
@@ -559,7 +636,18 @@ def checkPrime(num):
 num = 15
 print(checkPrime(num))
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 7 GCD or HCF (Highest Common Factor)
+
+'''
+https://practice.geeksforgeeks.org/problems/lcm-and-gcd4516/1
+
+E
+
+'''
 # Method 1 - brute force
 # using euclidian maths
 # TC - O(min(N1,N2))
@@ -603,8 +691,24 @@ print(find_gcd(8, 12))
 # ----------------------------
 
 # 1 Introduction
+'''
+
+
+https://bit.ly/3K2epHv
+
+'''
 # NOTE : https://www.youtube.com/watch?v=6IIgSFBPQ0U 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 2 print name N times using recursion 
+'''
+https://bit.ly/3y2BiWz
+
+E
+
+'''
 def recursive_call_1(N):
   if N == 0:
     return 
@@ -612,7 +716,15 @@ def recursive_call_1(N):
   recursive_call_1(N-1)
 recursive_call_1(5)
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 3 print 1 to N using recursion
+'''
+https://practice.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1
+
+'''
 def recursive_call_2(N):
   if N == 0:
     return 
@@ -620,7 +732,14 @@ def recursive_call_2(N):
   print("head recursion => ", N)                # ---> head recursion => 1 2 3 4 5
 recursive_call_2(5)
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 4 print N to 1 using recursion
+'''
+https://bit.ly/3LOkcBn
+'''
 def recursive_call_3(N):
   if N == 0:
     return 
@@ -628,14 +747,29 @@ def recursive_call_3(N):
   recursive_call_3(N-1)
 recursive_call_3(5)
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 5 sum of first N numbers
+'''
+https://practice.geeksforgeeks.org/problems/sum-of-first-n-terms5843/1
+'''
 def sum(N):
   if N == 1:
     return 1
   return N + sum(N-1)
 print(sum(3))
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # 6 factorial of a numbers
+'''
+https://practice.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/0?problemType=functional&difficulty%5B%5D=-1&page=1&query=problemTypefunctionaldifficulty%5B%5D-1page1
+
+'''
 # TC - O(N)
 # SC - O(N)
 def fact(N):
@@ -644,7 +778,16 @@ def fact(N):
   return N * fact(N-1)
 print(fact(4))
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # TODO : 7 reverse an array
+'''
+https://practice.geeksforgeeks.org/problems/reverse-an-array/0
+
+'''
 # NOTE: https://www.youtube.com/watch?v=twuC1F6gLI8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=11
 # method 1 - using built-in methods
 def rev(arr, reversed_arr):
@@ -697,7 +840,17 @@ def reverse_arr(arr, index):
 array = [1,2,3,4]
 print(reverse_arr(array, 0))
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 8 TODO : check if a string is palindrome or not using recursion
+'''
+https://leetcode.com/problems/valid-palindrome/
+
+Medium 
+
+'''
 # method 1 : using while loop 
 def pallindrome(str, i):
   left = 0
@@ -718,8 +871,17 @@ def pallindrome(str, i):
     return False
   return pallindrome(str, i + 1)    
 print(pallindrome("MADAM", 0))
-  
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 9 fibonacci number
+'''
+https://leetcode.com/problems/fibonacci-number/
+
+
+'''
 # TC - O(2^N)
 # SC - O(N)
 def fibonacci(num):
@@ -738,10 +900,26 @@ print(fibonacci(6))
 # --------------------------
 
 # TODO : 1 introduction
+'''
+Medium
+
+'''
 # theory - https://www.youtube.com/watch?v=TLk7_Ia3rzQ&t=431s
 # practical - https://www.youtube.com/watch?v=KEs5UyBJ39g&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=13
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # TODO : 2 counting frequency of array elements 
+'''
+https://practice.geeksforgeeks.org/problems/frequency-of-array-elements-1587115620/0
+
+
+'''
+
+
 def frequency_arr(arr):
   freq_arr = [0] * (max(arr) + 1)
   for value in arr:
@@ -750,7 +928,17 @@ def frequency_arr(arr):
 
 print(frequency_arr([1,2,4,5,3,2,4,1]))               # ---> [0, 2, 2, 1, 2, 1]
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # TODO : 3 find the highest/lowest frequency element in an array
+'''
+
+https://leetcode.com/problems/frequency-of-the-most-frequent-element/
+
+'''
 def frequency_arr(arr):
   freq_arr = [0] * (max(arr) + 1)
   for value in arr:
@@ -779,6 +967,10 @@ print(frequency_arr([1,2,4,5,3,2,4,1]))  # ---> {'highest_frequncy => ': 2, 'hig
 # --------------------
 
 # TODO : 1 selection sort
+'''
+https://bit.ly/3ppA6YJ
+
+'''
 # TC - O(N^2)
 # SC - 
 '''
@@ -798,8 +990,16 @@ def selection_sort(arr):
 
 print(selection_sort([1,2,4,5,3,2,4,1]))
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # TODO : 2 bubble sort
 '''
+
+https://bit.ly/3w6yQx8
+
+
 - swapping the adjacent elements and push the max element in the last
 - https://www.youtube.com/watch?v=HGk_ypEuS24&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=14
 - https://www.geeksforgeeks.org/bubble-sort/
@@ -815,8 +1015,16 @@ def bubble_sort(arr):
 print(bubble_sort([1,2,4,5,3,2,4,1]))
 
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # TODO : 3 insertion sort
 '''
+
+https://bit.ly/3JVcqot
+
+
+
 - takes an element and place it in the correct position
 - https://www.youtube.com/watch?v=HGk_ypEuS24&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=14
 - https://www.geeksforgeeks.org/insertion-sort/
@@ -843,6 +1051,10 @@ print(insertion_sort([1,2,4,5,3,2,4,1]))
 
 # TODO : 1 merge sort
 '''
+
+https://bit.ly/3A30Anw
+
+
 - divide array into two parts and sort them
 - https://www.youtube.com/watch?v=ogjf7ORKfd8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=15
 - https://www.geeksforgeeks.org/merge-sort/ 
@@ -887,13 +1099,39 @@ def merge(arr, low, mid, high):
 arr = [1,2,4,5,3,2,4,1]
 print(merge_sort(arr, 0, len(arr)-1))
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # TODO : 2 recursive bubble sort
+'''
+
+https://bit.ly/3QV65vI
+
+'''
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 # TODO : 3 recursive insertion sort
+'''
+https://bit.ly/3PxAWx1
+
+'''
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 # TODO : 4 quick sort
 '''
+
+https://bit.ly/3dsEbIK
+
+
 - pick a pivot and place it in the correct position
 - https://www.youtube.com/watch?v=WIrA4YexLRQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=16
 '''
@@ -934,6 +1172,11 @@ print(quick_sort(arr, 0, len(arr)-1))
 
 # region 3.1 ARRAYS - EASY
 # ------------------------
+'''
+
+https://bit.ly/3Pld280
+
+'''
 # TODO : 1 largest element in an array
 # - method 1 : brute force using sort, TC - O(N^2), TC - O(N)
 def largest_element_2(arr):
@@ -971,6 +1214,11 @@ print(largest_element_1([1,2,4,7,7,5]))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 2 TODO : find smallest and second largest element in an array
+'''
+
+https://bit.ly/3pFvBcN
+
+'''
 # method 1: brute force using sort, TC - O(N log(N)), TC - O(1)
 # NOTE : ONLY WORK IF ARRAY DOESNOT CONTAIN DUPLICATES
 def second_largest_element_2(arr):
@@ -1044,6 +1292,11 @@ print(second_smallest(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 3 TODO : check if array is sorted
+'''
+
+https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/#:~:text=Input%3A%20nums%20%3D%20%5B2%2C,no%20rotation)%20to%20make%20nums.
+
+'''
 # method 1 : brute force, TC - O(N^2), SC - O(1)
 def arr_sorted(arr):
   n = len(arr)
@@ -1067,6 +1320,10 @@ print(arr_sorted(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 4 TODO : remove duplicate from sorted array
+'''
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/#:~:text=Input%3A%20nums%20%3D%20%5B0%2C,%2C%203%2C%20and%204%20respectively.
+
+'''
 # - method 1: brute force, using set(), TC - O(Nlog(N)), SC - O(N)
 def remove_duplicates(arr):
   my_set = set()
@@ -1097,6 +1354,11 @@ k, unique_arr = remove_duplicates(arr)            # ---> k = 4, unique_arr = [1,
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 5 TODO : left rotate an array by one place
+'''
+
+https://leetcode.com/problems/rotate-array/
+
+'''
 # - method 1: brute force, TC - O(N), SC - O(N)
 def rotate_arr(arr):
     temp  = [0]*len(arr)
@@ -1127,6 +1389,10 @@ print(rotate_arr(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 6 TODO : left rotate an array by d places
+'''
+https://leetcode.com/problems/rotate-array/
+
+'''
 # - method 1: brute force, using temp arr,  TC - O(N), SC - O(N)
 def rotate_arr(arr, rotation):
     if len(arr) == 0:
@@ -1189,6 +1455,12 @@ rotated_arr = left_rotate(arr, d)
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 👉👉 TODO : left rotate an array by d places
+
+'''
+
+https://leetcode.com/problems/move-zeroes/
+
+'''
 # - method 1: brute force, using temp arr,  TC - O(N), SC - O(N)
 
 # - method 2: optimal approch, using reversal algorithm,🤯🤯🤯
@@ -1214,6 +1486,10 @@ rotated_arr = left_rotate(arr, d)
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 7 TODO : move all zeros to the end of the array
+'''
+
+https://bit.ly/3KcpHcB
+'''
 # - method 1: brute force, TC - O(N), SC - O(2N) 
 def move_zeros(arr):
     temp = []
@@ -1249,6 +1525,11 @@ print(move_zeros(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 8 TODO : linear search
+'''
+
+https://bit.ly/3KcpHcB
+
+'''
 def linear_search(arr, target):
   for i in range(len(arr)):
     if arr[i] == target:
@@ -1258,6 +1539,11 @@ def linear_search(arr, target):
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 9 TODO : find the union of sorted arrays
+'''
+
+https://bit.ly/3Ap7Onp
+
+'''
 # - method 1: brute force, using map, TC - O((M+N)log(M+N)), SC - O(1)
 def union(arr1, arr2):
   freq = {}
@@ -1322,6 +1608,11 @@ print(union(arr1, arr2))
 
 
 # 10 TODO : find missing number in an array
+'''
+
+https://leetcode.com/problems/missing-number/
+
+'''
 # method 1 : brute force, TC - O(N^2), SC - O(1)
 def missing_num(arr, n):
   for i in range(1, n +1):
@@ -1367,6 +1658,11 @@ print(missing_num([1,2,4,5], 5))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 11 TODO : maximum consecutive ones
+'''
+
+https://leetcode.com/problems/max-consecutive-ones/
+
+'''
 # method 1 : brute force, TC - O(N), SC - O(1)
 def maximum_consecutive(arr):
   maximum = 0
@@ -1386,6 +1682,11 @@ print(maximum_consecutive([1,1,0,1,1,1,3,1,1]))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 12 TODO : find the number that appears once and other number twice
+'''
+
+https://leetcode.com/problems/single-number/
+
+'''
 # method 1 : brute force, TC - O(N^2), SC - O(1)
 def appear_once(arr):
   for i in range(len(arr)):
@@ -1433,6 +1734,11 @@ print(appear_once([1,1,3,3,2,4,4]))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 13 TODO : longest subarray with given sum K (positives) 🤯🤯🤯
+'''
+
+https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=longest-sub-array-with-sum-k
+
+'''
 # subarray - contigious part of the array 
 # method 1 : brute force, TC - O(N^3), SC - O(1)
 def sub_array(arr, target):
@@ -1499,6 +1805,12 @@ print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 14 TODO : longest subarray with given sum K (positives and negatives)
+
+'''
+
+https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=longest-sub-array-with-sum-k
+
+'''
 # method 1 : brute force, TC - O(N^3), SC - O(1)
 def sub_array(arr, target):
   length = 0
@@ -1554,6 +1866,11 @@ print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))
 # --------------------------
 
 # 1 TODO : two sum problem : check if a pair with given sum exists in Array
+'''
+
+https://leetcode.com/problems/two-sum/
+
+'''
 # - method 1 : brute force, TC - O(N^2), SC - O(1)
 def two_sum(arr, target):
   for i in range(len(arr)):
@@ -1596,6 +1913,11 @@ print(two_sum([2,6,5,8,11], 14))
 
 
 # 2 TODO : sort an array of 0's and 2's
+'''
+
+https://leetcode.com/problems/sort-colors/
+
+'''
 # - method 1 : brute force, using any sorting technique, TC - O(N*log(N)), SC - O(1)
 
 # - method 2 : better approch, TC - O(N) + O(N), SC - O(1)  
@@ -1654,6 +1976,10 @@ print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 3 TODO : find the majority element that occurs more than >n/2 times
+'''
+https://leetcode.com/problems/majority-element/
+
+'''
 # - method 1 : brute force, TC - O(N), SC - O(1)
 def sort(arr):
   for i in range(len(arr)):
@@ -1713,6 +2039,11 @@ print(moores_voting_algorithm(arr))
 
 # 4 TODO : Kadane's algorithm, mximum subarray sum in an array
 '''
+
+
+https://leetcode.com/problems/maximum-subarray/
+
+
 KANDANE's ALGORITHM - it states that if the sum of the array is negative then we will not consider the sum of the array and will start the sum from the next element.
 - 
 '''
@@ -1771,6 +2102,11 @@ print(kadane_algorithm(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 5 TODO : print subarray with maximum sum (extended version of kadane's algorithm)
+'''
+
+https://bit.ly/3SLFFhs
+
+'''
 # - method 1 : brute force,
 
 # - method 2 : better solution, 
@@ -1800,6 +2136,12 @@ print(kadane_algorithm(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 6 TODO : stock buy and sell
+'''
+
+
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+'''
 # - method 1 : brute force, TC -O(N^2), SC - (1)
 def buy_sell(arr):
   minimum = arr[0]
@@ -1830,6 +2172,11 @@ print(buy_sell(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 7 TODO : rearrange the array in alternating positive and negative items
+'''
+
+https://leetcode.com/problems/rearrange-array-elements-by-sign/
+
+'''
 # - method 1 : brute force, TC - O(N + N/2), SC - O(N + N/2)
 def rearrange(arr):
   pos,neg = [],[]
@@ -1872,6 +2219,11 @@ print(rearrange(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 👉👉👉 TODO : rearrange the array in alternating positive and negative items (number of positives and negatives are not equal)
+'''
+
+https://leetcode.com/problems/rearrange-array-elements-by-sign/
+
+'''
 # - method 1 : brute force, 
 def rearrange(arr):
     pos, neg, result = [], [], []  
@@ -1910,6 +2262,11 @@ print(rearrange(arr))
 
 
 # 8 TODO : next permutation - find the next lexiographically greater permutation 🤯🤯🤯🤯🤯
+'''
+
+https://leetcode.com/problems/next-permutation/
+
+'''
 # - method 1 : brute force, TC - O(N! * N), SC - O(N)
 '''
 generate all permutations 
@@ -1949,6 +2306,12 @@ print(next_permutation(arr))
 
 
 # 9 TODO : leaders in array problem (every thing in the right should be smaller)
+'''
+
+
+https://bit.ly/3bZqbGc
+
+'''
 # - method 1 : brute force, TC - O(N^2), SC - O(N)
 def leaders(arr):
   leaders = []
@@ -1981,7 +2344,13 @@ print(leaders(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 
-# 10 TODO : largest consecutive sequence in an array
+# 10 TODO : longest consecutive sequence in an array
+
+'''
+https://leetcode.com/problems/longest-consecutive-sequence/solution/
+
+'''
+
 # - method 1 : brute force, TC -O(N^2), SC - O(1)
 def linear_search(arr, num):
   for i in range(len(arr)):
@@ -2042,6 +2411,12 @@ print(longest_consecutive_length(arr))
 
 
 # 11 TODO : set matrix zeros 🤯🤯🤯🤯
+'''
+
+https://leetcode.com/problems/set-matrix-zeroes/
+
+
+'''
 # - method 1 : brute force, TC - O((N*M)*(M*N)) +O(N*M), SC - O(1)
 
 def set_zeros(matrix, n,m):
@@ -2126,6 +2501,11 @@ for i in set_zeros(arr, n, m) :
 
 
 # 12 TODO : rotate matrix by 90 degrees
+'''
+
+https://leetcode.com/problems/rotate-image/
+
+'''
 # - method 1 : brute force, TC - O(N*N), SC - O(N*N)
 def rotate_90(matrix, n,m):
   rotated = [[0 for _ in range(n)] for _ in range(m)]
@@ -2159,6 +2539,12 @@ for i in rotate_90(arr, n, m) :
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 13 TODO : print the matrix in spiral manner
+'''
+
+https://leetcode.com/problems/spiral-matrix/
+
+
+'''
 # - method 1 : brute force, TC - O(N*M), SC - O(N*M)
 def rotate_90(matrix, n,m):
   ans = []
@@ -2195,6 +2581,11 @@ print(rotate_90(arr, n, m))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 14 TODO : count subarrays with given sum
+'''
+
+https://leetcode.com/problems/subarray-sum-equals-k/
+
+'''
 
 # - method 1 : brute force, TC - O(N*N*N), SC - O(1)
 def find_subarrays(arr, sum):
@@ -2253,18 +2644,17 @@ print(find_subarrays(arr, sum))
 
 
 
-
-
-
-
-
-
-
-
 # region 3.1 ARRAYS - HARD
 # ------------------------
 
 # 1 TODO : pascal's triangle
+'''
+
+https://leetcode.com/problems/pascals-triangle/
+
+'''
+
+
 '''
 PASCAL's Triangle - A triangular array of the binomial coefficients.
 eg -   1
@@ -2378,6 +2768,11 @@ print(pascal_triangle(n))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 2 TODO : majority element (>n/3 times)
+'''
+https://leetcode.com/problems/majority-element-ii/
+
+
+'''
 
 # - method 1 : brute force, TC -O(N^2), SC - O(1)
 def majority_element(arr):
@@ -2464,6 +2859,11 @@ print(majority_element(arr))
 
 
 # 3 TODO : 3-sum problem - find triplets that add up to a zero
+'''
+https://leetcode.com/problems/3sum/
+
+
+'''
 # - method 1 : brute force, TC - O(N*N*N*log(nos of unique triplets)), SC - O(2*nos of unique triplets)
 def triplet(n, arr):
   st = set()
@@ -2537,6 +2937,11 @@ print(triplet(n, arr))
 
 
 # 4 TODO : 4-sum problem
+'''
+
+https://leetcode.com/problems/4sum/
+
+'''
 # - method 1 : brute force, TC - O(N*N*N*N), SC - O(2*nos of quadruplets)
 from collections import deque
 def fourSum(nums, target):
@@ -2619,6 +3024,11 @@ print(fourSum(arr, target))
 
 
 # 5 TODO : largest subarray with 0 sum
+'''
+
+https://bit.ly/3w5QSzC
+
+'''
 # - method 1 : brute force, TC - O(n^2), SC - O(1)
 def solve(arr):
   n = len(arr)
@@ -2657,6 +3067,12 @@ print(solve(arr))
 
 
 # 6 TODO : count number of subarrays with given xor k
+'''
+
+https://www.interviewbit.com/problems/subarray-with-given-xor/
+
+
+'''
 # - method 1 : brute force, TC - O(n^3), SC - O(1)
 def subarray(a,b):
   n = len(a)
@@ -2712,6 +3128,11 @@ print(subarray(a,k))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 7 TODO : merge overlapping subintervals
+'''
+
+https://leetcode.com/problems/merge-intervals/
+
+'''
 # - method 1 : brute force, TC - O(nlogn)+O(2n), SC - O(n)
 def merge(arr):
   n = len(arr)
@@ -2752,6 +3173,10 @@ print(merge(arr))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 8 TODO : merge two sorted arrays without extra space
+'''
+https://leetcode.com/problems/merge-sorted-array/
+
+'''
 # - method 1 : brute force, TC - O(n+m) + O(n+m), SC - O(n+m)
 def merge(arr1, arr2):
   n = len(arr1)
@@ -2844,6 +3269,12 @@ print(merge(arr1, arr2))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 9 TODO : find the repeating and missing number
+'''
+https://bit.ly/3zWZoCs
+
+
+
+'''
 # - method 1 : brute force, TC - O(n^2), SC - O(1)
 def solve(a):
   n = len(a)
@@ -2937,6 +3368,11 @@ print(solve(a))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 10 TODO : count inversions
+'''
+
+https://bit.ly/3PtLWLM
+
+'''
 # - method 1 : brute force, TC - O O(n^2), SC - O(1)
 def solve(a, n):
   cnt = 0
@@ -2997,6 +3433,11 @@ print(solve(a, len(a)))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 11 TODO : reverse pairs
+'''
+
+https://leetcode.com/problems/reverse-pairs/
+
+'''
 # - method 1 : brute force, TC - O(N^2), SC - O(1)
 def team(skill, n):
   return countPairs(skill, n)
@@ -3066,6 +3507,11 @@ print(team(a, n))
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 
 # 12 TODO : maximum product subarray
+'''
+
+https://leetcode.com/problems/maximum-product-subarray/
+
+'''
 # - method 1 : brute force, TC - time complexity O(n^2), SC - O(1)
 def maxProduct(nums):
   n = len(nums)
@@ -3134,6 +3580,8 @@ print(maxProduct(nums))
 # region 4.1 BINARY SEARCH on 1D ARRAY
 # ------------------------------------
 '''
+https://leetcode.com/problems/binary-search/
+
 👉👉👉https://www.youtube.com/watch?v=MHf6awe89xw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=45
 BINARY SEARCH - 
 WHEN TO USE - when the search space is sorted
@@ -3189,6 +3637,9 @@ print(search(a, target))
 
 # 2 TODO : implement lower bound
 '''
+
+https://bit.ly/3Cf398N
+
 👉👉👉 https://www.youtube.com/watch?v=6zhGS79oQ4k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=46
 smallest index such that arr[index] >= k
 '''
@@ -3230,8 +3681,15 @@ x = 9
 print(lowerBound(a, n, x))
 
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # 3 TODO : implement upper bound
 '''
+
+https://bit.ly/3CgDDjE
+
 smallest index such that arr[index] > k
 '''
 def upperBound(arr, x, n):
@@ -3271,8 +3729,16 @@ x = 9
 print(upperBound(a, x, n))
 
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 # 4 TODO : search insert position
+'''
+https://leetcode.com/problems/search-insert-position/#:~:text=Search%20Insert%20Position%20%2D%20LeetCode&text=Given%20a%20sorted%20array%20of,(log%20n)%20runtime%20complexity.
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -3303,9 +3769,15 @@ x  = 6
 print(searchInsert(arr, x))
 
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 # 5 TODO : floor / ceil in sorted array
 '''
+
+https://www.codingninjas.com/codestudio/problems/ceiling-in-a-sorted-array_1825401
+
 floor - greatest element <= x
 ceil - smallest element >= x
 '''
@@ -3360,8 +3832,14 @@ x = 5
 print(getFloorAndCeil(arr, n, x))
 
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
 
 # 6 TODO : find the first or last occurence of a givennumber in sorted array
+'''
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
+'''
 # method 1 : brute force approch, TC - O(n), SC - O(1)
 def count(n, k, x):
   cnt = -1
@@ -3403,7 +3881,17 @@ x = 13
 print(count(arr, n, x))                          # Output ---> 2
 
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # 7 TODO : count occurence of a number in a sorted array with duplicates
+'''
+https://bit.ly/3SVcOqW
+
+
+'''
 # method 1 : brute force approch, TC - O(N), SC - O(1)
 
 def count(arr, n, x):
@@ -3474,7 +3962,16 @@ print(count(arr, n, x))
 
 
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # 8 TODO : search in rotated array I
+'''
+https://leetcode.com/problems/search-in-rotated-sorted-array/
+
+
+'''
 # method 1 : brute force approch, TC - O(N), SC - O(1)
 
 def search(arr, n, k):
@@ -3521,7 +4018,7 @@ def search(arr, n, k):
     if arr[mid] == k:
       return mid
     if arr[low] <= arr[mid]:
-      if arr[low] <= k and k <= arr[mid]:
+      if arr[low] <= k and k <= arr[mid]:          # ---> core logic starts
         high = mid - 1
       else:
         low = mid + 1
@@ -3529,7 +4026,7 @@ def search(arr, n, k):
       if arr[mid] <= k and k <= arr[high]:
         low = mid + 1
       else:
-        high = mid - 1
+        high = mid - 1                            # ---> core logic ends
   return -1
 
 arr = [7,8,9,1,2,3,4,5,6]
@@ -3539,7 +4036,16 @@ print(search(arr, n, k))
 
 
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # 9 TODO : search in rotated array II
+'''
+
+https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
+
+'''
 # method 1 : brute force approch, TC - O(N), SC - O(1)
 
 def search(arr, n, k):
@@ -3572,11 +4078,11 @@ def search(arr, k):
     mid = (low + high) // 2
     if arr[mid] == k:
       return True
-    if arr[low] == arr[mid] and arr[mid] == arr[high]:
+    if arr[low] == arr[mid] and arr[mid] == arr[high]:      # ---> core logic starts
       low += 1
       high -= 1
       continue
-    if arr[low] <= arr[mid]:
+    if arr[low] <= arr[mid]:                          # ---> core logic ends
       if arr[low] <= k and k <= arr[mid]:
         high = mid - 1
       else:
@@ -3592,7 +4098,19 @@ arr = [7,8,1,2,3,3,3,4,5,6]
 k = 3
 print(search(arr, k))
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # 10 TODO :  find minimum in rotated sorted array
+'''
+
+
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+
+'''
 # method 1 : brute force approch, TC - O(N) , SC - O(1)
 def findMin(arr):
   n = len(arr)
@@ -3631,7 +4149,7 @@ def findMin(arr):
   while low <= high:
     mid = (low + high) // 2
     if arr[low] <= arr[high]:
-      ans = min(ans, arr[low])
+      ans = min(ans, arr[low])              # ---> core logic
       break
     if arr[low] <= arr[mid]:
       ans = min(ans, arr[low])
@@ -3646,6 +4164,12 @@ print(findMin(arr))
 
 
 # 11 TODO : find out how many times has an array been rotated
+'''
+
+https://bit.ly/3dEvWJD
+
+
+'''
 # method 1 : brute force approch, TC - O(N), SC - O(1)
 def findRotated(arr):
   n = len(arr)
@@ -3675,17 +4199,17 @@ def findRotated(arr):
   while low <= high:
     mid = (low + high) // 2
     if arr[low] <= arr[high]:
-      if arr[low] < ans:
+      if arr[low] < ans:          # ---> core logic 
         ans = arr[low]
         index = low
       break
     if arr[low] <= arr[mid]:
-      if arr[low] < ans:
+      if arr[low] < ans:          # ---> core logic 
         ans = arr[low]
         index = low
       low = mid + 1
     else:
-      if arr[mid] < ans:
+      if arr[mid] < ans:          # ---> core logic 
         ans = arr[mid]
         index = mid
       high = mid - 1
@@ -3698,6 +4222,9 @@ print(findRotated(arr))
 
 # 12 TODO : single element in a sorted array
 '''
+
+https://leetcode.com/problems/single-element-in-a-sorted-array/
+
 (even, odd) - element is on right half
 (odd, even) - element is on left half
 
@@ -3784,6 +4311,9 @@ print("The single element is:", ans)
 
 # 13 TODO : find peak element
 '''
+
+https://leetcode.com/problems/find-peak-element/#:~:text=Find%20Peak%20Element%20%2D%20LeetCode&text=A%20peak%20element%20is%20an,to%20any%20of%20the%20peaks.
+
 peak element, arr[i-1] < arr[i] and arr[i] > arr[i+1]
 '''
 # method 1 : brute force approch, TC - O(N) , SC - O(1)
@@ -3861,6 +4391,10 @@ print("The peak is at index:", ans)
 
 
 # 1 TODO :  find square root of a number in log(n) 
+'''
+https://bit.ly/3JXtGcE
+
+'''
 # method 1 : brute force approch, TC - O(N) , SC - O(1)
 
 
@@ -3897,7 +4431,7 @@ def floorSqrt(n):
     # Binary search on the answers:
     while low <= high:
         mid = (low + high) // 2
-        val = mid * mid
+        val = mid * mid             # ---> core logic
         if val <= n:
             # Eliminate the left half:
             low = mid + 1
@@ -3911,6 +4445,12 @@ ans = floorSqrt(n)
 print("The floor of square root of", n, "is:", ans)
 
 # 2 TODO : find the Nth root of a number using binary search
+'''
+
+https://bit.ly/3zWNyrL
+
+
+'''
 # method 1 : brute force approch, TC - O(M), SC - O(1)
 def func(b, exp):
     ans = 1
@@ -3965,6 +4505,7 @@ def func(mid, n, m):
         if ans > m:
             return 2
     if ans == m:
+      # find the root
         return 1
     return 0
 
@@ -3973,7 +4514,7 @@ def NthRoot(n: int, m: int) -> int:
     high = m
     while low <= high:
         mid = (low + high) // 2
-        midN = func(mid, n, m)
+        midN = func(mid, n, m)      # ---> core logic to handle overflow
         if midN == 1:
             return mid
         elif midN == 0:
@@ -3989,6 +4530,12 @@ print("The answer is:", ans)
 
 # 3 TODO : koko eating bananas
 '''
+
+
+
+https://leetcode.com/problems/koko-eating-bananas/
+
+
 Retun the minimum integer k such that she can eat all the bananas within h hours.
 '''
 # method 1 : brute force approch, TC - O(max(a[]) * N), SC - O(1)
@@ -4077,8 +4624,12 @@ print("Koko should eat at least", ans, "bananas/hr.")
 
 
 
-
+# ⭐⭐⭐ PATTERN CHANGE : find min/max using a helper function
 # 4 TODO : minimum days to make M bouquets
+'''
+https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+
+'''
 # method 1 : brute force approch
 # Time Complexity: O((max(arr[])-min(arr[])+1) * N), where {max(arr[]) -> maximum element of the array, min(arr[]) -> minimum element of the array, N = size of the array}.
 # Reason: We are running a loop to check our answers that are in the range of [min(arr[]), max(arr[])]. For every possible answer, we will call the possible() function. Inside the possible() function, we are traversing the entire array, which results in O(N).
@@ -4137,11 +4688,12 @@ else:
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(log(max(arr[])-min(arr[])+1) * N), where {max(arr[]) -> maximum element of the array, min(arr[]) -> minimum element of the array, N = size of the array}.
 Reason: We are applying binary search on our answers that are in the range of [min(arr[]), max(arr[])]. For every possible answer ‘mid’, we will call the possible() function. Inside the possible() function, we are traversing the entire array, which results in O(N).
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
-
+'''
 
 
 
@@ -4196,16 +4748,21 @@ else:
 
 
 # 5 TODO : find the smallest divisors
+'''
+
+
+https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(max(arr[])*N), where max(arr[]) = maximum element in the array, N = size of the array.
 Reason: We are using nested loops. The outer loop runs from 1 to max(arr[]) and the inner loop runs for N times.
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem. 
-
-
+'''
 
 import math
-
 def smallestDivisor(arr, limit):
     n = len(arr)  # size of array
     maxi = max(arr)
@@ -4233,14 +4790,12 @@ print("The minimum divisor is:", ans)
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(log(max(arr[]))*N), where max(arr[]) = maximum element in the array, N = size of the array.
 Reason: We are applying binary search on our answers that are in the range of [1, max(arr[])]. For every possible divisor ‘mid’, we call the sumByD() function. Inside that function, we are traversing the entire array, which results in O(N).
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
-
-
-
-
+'''
 import math
 
 def sumByD(arr, div):
@@ -4273,15 +4828,20 @@ ans = smallestDivisor(arr, limit)
 print("The minimum divisor is:", ans)
 
 
-
-
-
 # 6 TODO : capacity to ship packages within D days
+'''
+
+
+https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(N * (sum(weights[]) - max(weights[]) + 1)), where sum(weights[]) = summation of all the weights, max(weights[]) = maximum of all the weights, N = size of the weights array.
 Reason: We are using a loop from max(weights[]) to sum(weights[]) to check all possible weights. Inside the loop, we are calling findDays() function for each weight. Now, inside the findDays() function, we are using a loop that runs for N times.
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
+'''
 
 
 
@@ -4330,16 +4890,18 @@ print("The minimum capacity should be:", ans)
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N * log(sum(weights[]) - max(weights[]) + 1)), where sum(weights[]) = summation of all the weights, max(weights[]) = maximum of all the weights, N = size of the weights array.
 Reason: We are applying binary search on the range [max(weights[]), sum(weights[])]. For every possible answer ‘mid’, we are calling findDays() function. Now, inside the findDays() function, we are using a loop that runs for N times.
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
+'''
 
 
 
 
 def findDays(weights, cap):
-    days = 1  # First day
+    days = 1  # First day                       # ---> remember the day = 1 not 0
     load = 0
     n = len(weights)  # Size of array
     for i in range(n):
@@ -4375,15 +4937,21 @@ print("The minimum capacity should be:", ans)
 
 
 
-# 7 TODO : Kth missing positive number
+# 7 TODO : 👉👉👉 IMPORTANT : Kth missing positive number
+'''
+
+https://leetcode.com/problems/kth-missing-positive-number/#:~:text=Given%20an%20array%20arr%20of,13%2C...%5D.
+
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(N), N = size of the given array.
 Reason: We are using a loop that traverses the entire given array in the worst case.
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
-
-
-
+'''
 
 def missingK(vec, n, k):
     for i in range(n):
@@ -4411,14 +4979,24 @@ print("The missing number is:", ans)
 
 
 # method 3 : optimal solution
+'''
+missing = arr[high] - (high + 1)
+more = k - missing
+ans = arr[high] + more
+    = arr[high] + k - missing
+    = arr[high] + k - [arr[high] - (high + 1)]
+    = arr[high] + k - arr[high] + (high + 1)
+    = k + high + 1
+
+OR 
+low = high + 1
+=> ans = low + k
+
 Time Complexity: O(logN), N = size of the given array.
 Reason: We are using the simple binary search algorithm.
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
-
-
-
-
+'''
 def missingK(vec, n, k):
     low = 0
     high = n - 1
@@ -4440,13 +5018,20 @@ print("The missing number is:", ans)
 
 
 
-
+# ⭐⭐⭐ PATTERN CHANGE : min(max) OR max(min)
 # 8 TODO : aggressive cows
+'''
+
+https://www.spoj.com/problems/AGGRCOW/
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(NlogN) + O(N *(max(stalls[])-min(stalls[]))), where N = size of the array, max(stalls[]) = maximum element in stalls[] array, min(stalls[]) = minimum element in stalls[] array.
 Reason: O(NlogN) for sorting the array. We are using a loop from 1 to max(stalls[])-min(stalls[]) to check all possible distances. Inside the loop, we are calling canWePlace() function for each distance. Now, inside the canWePlace() function, we are using a loop that runs for N times.
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
+'''
 
 
 
@@ -4487,16 +5072,19 @@ print("The maximum possible minimum distance is:", ans)
 # SC     -     
 
 
+# method 3 : optimal approch
+'''
 Time Complexity: O(NlogN) + O(N * log(max(stalls[])-min(stalls[]))), where N = size of the array, max(stalls[]) = maximum element in stalls[] array, min(stalls[]) = minimum element in stalls[] array.
 Reason: O(NlogN) for sorting the array. We are applying binary search on [1, max(stalls[])-min(stalls[])]. Inside the loop, we are calling canWePlace() function for each distance, ‘mid’. Now, inside the canWePlace() function, we are using a loop that runs for N times.
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
+'''
 
 
 
 
 def canWePlace(stalls, dist, cows):
-    n = len(stalls)  # size of array
+    n = len(stalls)  # size of array                        # ---> remember to start with 1 not 0
     cntCows = 1  # no. of cows placed
     last = stalls[0]  # position of last placed cow
     for i in range(1, n):
@@ -4509,7 +5097,7 @@ def canWePlace(stalls, dist, cows):
 
 def aggressiveCows(stalls, k):
     n = len(stalls)  # size of array
-    stalls.sort()  # sort the stalls
+    stalls.sort()  # sort the stalls                        # ---> remember to sort() the arr
 
     low = 1
     high = stalls[n - 1] - stalls[0]
@@ -4532,12 +5120,19 @@ print("The maximum possible minimum distance is:", ans)
 
 
 # 9 TODO : book allocation problem
+'''
+
+https://bit.ly/3MZQOct
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(N * (sum(arr[])-max(arr[])+1)), where N = size of the array, sum(arr[]) = sum of all array elements, max(arr[]) = maximum of all array elements.
 Reason: We are using a loop from max(arr[]) to sum(arr[]) to check all possible numbers of pages. Inside the loop, we are calling the countStudents() function for each number. Now, inside the countStudents() function, we are using a loop that runs for N times.
 
 Space Complexity:  O(1) as we are not using any extra space to solve this problem.
-
+'''
 
 
 
@@ -4584,10 +5179,12 @@ print("The answer is:", ans)
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N * log(sum(arr[])-max(arr[])+1)), where N = size of the array, sum(arr[]) = sum of all array elements, max(arr[]) = maximum of all array elements.
 Reason: We are applying binary search on [max(arr[]), sum(arr[])]. Inside the loop, we are calling the countStudents() function for the value of ‘mid’. Now, inside the countStudents() function, we are using a loop that runs for N times.
 
-Space Complexity:  O(1) as we are not using any extra space to solve this problem. 
+Space Complexity:  O(1) as we are not using any extra space to solve this problem.
+''' 
 
 
 
@@ -4629,16 +5226,29 @@ print("The answer is:", ans)
 
 
 
-
-
-
 # 10 TODO :  split array - largest sum
+
+'''
+
+https://leetcode.com/problems/split-array-largest-sum/
+
+
+
+'''
+
+
+'''
+
+
+
+
+
 
 Time Complexity: O(N * (sum(arr[])-max(arr[])+1)), where N = size of the array, sum(arr[]) = sum of all array elements, max(arr[]) = maximum of all array elements.
 Reason: We are using a loop from max(arr[]) to sum(arr[]) to check all possible values of time. Inside the loop, we are calling the countPartitions() function for each number. Now, inside the countPartitions() function, we are using a loop that runs for N times.
 
 Space Complexity:  O(1) as we are not using any extra space to solve this problem.
-
+'''
 
 
 
@@ -4679,11 +5289,12 @@ print("The answer is:", ans)
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N * log(sum(arr[])-max(arr[])+1)), where N = size of the array, sum(arr[]) = sum of all array elements, max(arr[]) = maximum of all array elements.
 Reason: We are applying binary search on [max(arr[]), sum(arr[])]. Inside the loop, we are calling the countPartitions() function for the value of ‘mid’. Now, inside the countPartitions() function, we are using a loop that runs for N times.
 
 Space Complexity:  O(1) as we are not using any extra space to solve this problem.
-
+'''
 
 
 
@@ -4723,12 +5334,19 @@ print("The answer is:", ans)
 
 
 # 11 TODO : painter's partition
+'''
+https://www.codingninjas.com/studio/problems/painter-s-partition-problem_1089557?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(N * (sum(arr[])-max(arr[])+1)), where N = size of the array, sum(arr[]) = sum of all array elements, max(arr[]) = maximum of all array elements.
 Reason: We are using a loop from max(arr[]) to sum(arr[]) to check all possible values of time. Inside the loop, we are calling the countPainters() function for each number. Now, inside the countPainters() function, we are using a loop that runs for N times.
 
 Space Complexity:  O(1) as we are not using any extra space to solve this problem.
-
+'''
 
 
 
@@ -4772,11 +5390,12 @@ print("The answer is:", ans)
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N * log(sum(arr[])-max(arr[])+1)), where N = size of the array, sum(arr[]) = sum of all array elements, max(arr[]) = maximum of all array elements.
 Reason: We are applying binary search on [max(arr[]), sum(arr[])]. Inside the loop, we are calling the countPainters() function for the value of ‘mid’. Now, inside the countPainters() function, we are using a loop that runs for N times.
 
 Space Complexity:  O(1) as we are not using any extra space to solve this problem.
-
+'''
 
 
 
@@ -4817,12 +5436,19 @@ print("The answer is:", ans)
 
 
 # 12 TODO : minimize max distance in gas station
+'''
+
+https://leetcode.com/problems/minimize-max-distance-to-gas-station/
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(k*n) + O(n), n = size of the given array, k = no. of gas stations to be placed.
 Reason: O(k*n) to insert k gas stations between the existing stations with maximum distance. Another O(n) for finding the answer i.e. the maximum distance.
 
 Space Complexity: O(n-1) as we are using an array to keep track of placed gas stations.
-
+'''
 
 
 
@@ -4861,12 +5487,13 @@ print("The answer is:", ans)
 
 
 # method 2 : better approch
+'''
 Time Complexity: O(nlogn + klogn),  n = size of the given array, k = no. of gas stations to be placed.
 Reason: Insert operation of priority queue takes logn time complexity. O(nlogn) for inserting all the indices with distance values and O(klogn) for placing the gas stations.
 
 Space Complexity: O(n-1)+O(n-1)
 Reason: The first O(n-1) is for the array to keep track of placed gas stations and the second one is for the priority queue.
-
+'''
 
 
 
@@ -4907,12 +5534,12 @@ print("The answer is:", ans)
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(n*log(Len)) + O(n), n = size of the given array, Len = length of the answer space.
 Reason: We are applying binary search on the answer space. For every possible answer, we are calling the function numberOfGasStationsRequired() that takes O(n) time complexity. And another O(n) for finding the maximum distance initially.
 
 Space Complexity: O(1) as we are using no extra space to solve this problem.
-
-
+'''
 
 
 def numberOfGasStationsRequired(dist, arr):
@@ -4958,13 +5585,20 @@ print("The answer is:", ans)
 
 
 # 13 TODO : median of 2 sorted arrays
+'''
+
+https://leetcode.com/problems/median-of-two-sorted-arrays/
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(n1+n2), where  n1 and n2 are the sizes of the given arrays.
 Reason: We traverse through both arrays linearly.
 
 Space Complexity: O(n1+n2), where  n1 and n2 are the sizes of the given arrays.
 Reason: We are using an extra array of size (n1+n2) to solve this problem.
-
+'''
 
 
 def median(a, b):
@@ -5004,11 +5638,12 @@ if __name__ == "__main__":
 
 
 # method 2 : better approch
+'''
 Time Complexity: O(n1+n2), where  n1 and n2 are the sizes of the given arrays.
 Reason: We traverse through both arrays linearly.
 
 Space Complexity: O(1), as we are not using any extra space to solve this problem.
-
+'''
 
 
 
@@ -5072,11 +5707,12 @@ if __name__ == "__main__":
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(log(min(n1,n2))), where n1 and n2 are the sizes of two given arrays.
 Reason: We are applying binary search on the range [0, min(n1, n2)].
 
 Space Complexity: O(1) as no extra space is used.
-
+'''
 
 
 
@@ -5127,47 +5763,53 @@ print("The median of two sorted arrays is {:.1f}".format(median(a, b)))
 
 
 # 14 TODO : Kth element of 2 sorted arrays
+'''
+https://bit.ly/3Amcomr
+
+
+'''
+'''
 Time Complexity: O(m+n), where m and n are the sizes of the given arrays.
 Reason: We traverse through both arrays linearly.
 
 Space Complexity: O(m+n), where m and n are the sizes of the given arrays.
 
 Reason: We are using an extra array of size (m+n) to solve this problem.
+'''
+
+def kthElement(a, b, m, n, k):
+    arr3 = []
+
+    # Apply the merge step:
+    i, j = 0, 0
+    while i < m and j < n:
+        if a[i] < b[j]:
+            arr3.append(a[i])
+            i += 1
+        else:
+            arr3.append(b[j])
+            j += 1
+
+    # Copy the left-out elements:
+    arr3.extend(a[i:])
+    arr3.extend(b[j:])
+    return arr3[k - 1]
+
+if __name__ == "__main__":
+    a = [2, 3, 6, 7, 9]
+    b = [1, 4, 8, 10]
+    print("The k-th element of two sorted arrays is:", kthElement(a, b, len(a), len(b), 5))
 
 
-            def kthElement(a, b, m, n, k):
-                arr3 = []
-            
-                # Apply the merge step:
-                i, j = 0, 0
-                while i < m and j < n:
-                    if a[i] < b[j]:
-                        arr3.append(a[i])
-                        i += 1
-                    else:
-                        arr3.append(b[j])
-                        j += 1
-            
-                # Copy the left-out elements:
-                arr3.extend(a[i:])
-                arr3.extend(b[j:])
-                return arr3[k - 1]
-        
-            if __name__ == "__main__":
-                a = [2, 3, 6, 7, 9]
-                b = [1, 4, 8, 10]
-                print("The k-th element of two sorted arrays is:", kthElement(a, b, len(a), len(b), 5))
-        
-        
 
 
 # method 2 : better approch
+'''
 Time Complexity: O(m+n), where m and n are the sizes of the given arrays.
 Reason: We traverse through both arrays linearly.
 
 Space Complexity: O(1), as we are not using any extra space to solve this problem.
-
-
+'''
 def kthElement(a, b, m, n, k):
     ele = -1
     cnt = 0  # counter
@@ -5206,11 +5848,12 @@ print("The k-th element of two sorted arrays is:", kthElement(a, b, len(a), len(
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(log(min(m, n))), where m and n are the sizes of two given arrays.
 Reason: We are applying binary search on the range [max(0, k-n2), min(k, n1)]. The range length <= min(m, n).
 
 Space Complexity: O(1), as we are not using any extra space to solve this problem.
-
+'''
 
 
 def kthElement(a, b, m, n, k):
@@ -5268,15 +5911,19 @@ print("The k-th element of two sorted arrays is:", kthElement(a, b, len(a), len(
 # ------------------------------------
 
 # 1 TODO :  find the row with maximum number of 1's
+'''
+
+https://bit.ly/3QNDw2W
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(n X m), where n = given row number, m = given column number.
 Reason: We are using nested loops running for n and m times respectively.
 
 Space Complexity: O(1) as we are not using any extra space.
-
-
-
-
+'''
 def rowWithMax1s(matrix, n, m):
     cnt_max = 0
     index = -1
@@ -5304,11 +5951,12 @@ if __name__ == "__main__":
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(n X logm), where n = given row number, m = given column number.
 Reason: We are using a loop running for n times to traverse the rows. Then we are applying binary search on each row with m columns.
 
 Space Complexity: O(1) as we are not using any extra space.
-
+'''
 
 
 def lowerBound(arr, n, x):
@@ -5349,14 +5997,19 @@ print("The row with maximum no. of 1's is:", rowWithMax1s(matrix, n, m))
 
 
 # 2 TODO : search in a 2 D matrix
+'''
+https://leetcode.com/problems/search-a-2d-matrix/
+
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(N X M), where N = given row number, M = given column number.
 Reason: In order to traverse the matrix, we are using nested loops running for n and m times respectively.
 
 Space Complexity: O(1) as we are not using any extra space.
-
-
-
+'''
 
 def searchMatrix(matrix, target):
     n = len(matrix)
@@ -5377,11 +6030,12 @@ print("true" if result else "false")
 
 
 # method 2 : better approch
+'''
 Time Complexity: O(N + logM), where N = given row number, M = given column number.
 Reason: We are traversing all rows and it takes O(N) time complexity. But for all rows, we are not applying binary search rather we are only applying it once for a particular row. That is why the time complexity is O(N + logM) instead of O(N*logM).
 
 Space Complexity: O(1) as we are not using any extra space.
-
+'''
 
 
 
@@ -5416,11 +6070,16 @@ print("true" if result else "false")
 
 
 # method 3 : optimal solution
+'''
+convert 1D array index into 2D array coordinate
+row = index // column_len
+col = index % column_len
+
 Time Complexity: O(log(NxM)), where N = given row number, M = given column number.
 Reason: We are applying binary search on the imaginary 1D array of size NxM.
 
 Space Complexity: O(1) as we are not using any extra space.
-
+'''
 
 
 def searchMatrix(matrix, target):
@@ -5451,12 +6110,19 @@ print("true" if result else "false")
 
 
 # 3 TODO : search in a row and column wise sorted matrix
+'''
+https://leetcode.com/problems/search-a-2d-matrix-ii/
+
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(N X M), where N = given row number, M = given column number.
 Reason: In order to traverse the matrix, we are using nested loops running for n and m times respectively.
 
 Space Complexity: O(1) as we are not using any extra space.
-
+'''
 
 
 
@@ -5486,11 +6152,12 @@ print("true" if result else "false")
 
 
 # method 2 : better approch
+'''
 Time Complexity: O(N*logM), where N = given row number, M = given column number.
 Reason: We are traversing all rows and it takes O(N) time complexity. And for all rows, we are applying binary search. So, the total time complexity is O(N*logM).
 
 Space Complexity: O(1) as we are not using any extra space.
-
+'''
 
 
 
@@ -5533,11 +6200,12 @@ print("true" if result else "false")
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N+M), where N = given row number, M = given column number.
 Reason: We are starting traversal from (0, M-1), and at most, we can end up being in the cell (M-1, 0). So, the total distance can be at most (N+M). So, the time complexity is O(N+M).
 
 Space Complexity: O(1) as we are not using any extra space.
-
+'''
 
 
 
@@ -5573,6 +6241,12 @@ print("true" if result else "false")
 
 
 # 4 TODO : find peak element in a 2D matrix
+'''
+
+https://leetcode.com/problems/find-a-peak-element-ii/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5589,13 +6263,21 @@ print("true" if result else "false")
 
 
 # 5 TODO : matrix median
+'''
+https://bit.ly/3PvwuPk
+
+
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(MXN) + O(MXN(log(MXN))), where M = number of row in the given matrix, N = number of columns in the given matrix
 
 Reason: At first, we are traversing the matrix to copy the elements. This takes O(MXN) time complexity. Then we are sorting the linear array of size (MXN), that takes O(MXN(log(MXN))) time complexity
 
 Space Complexity: O(MXN) as we are using a temporary list to store the elements of the matrix.
-                                    
+'''                                    
 def median(matrix, m, n):
     lst = []
 
@@ -5626,12 +6308,13 @@ print("The median element is:", ans)
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(log(109)) X O(M(logN)), where M = number of rows in the given matrix, N = number of columns in the given matrix
 
 Reason: Our search space lies between [0, 109] as the min(matrix) can be 0 and the max(matrix) can be 109. We are applying binary search in this search space and it takes O(log(109)) time complexity. Then we call countSmallEqual() function for every ‘mid’ and this function takes O(M(logN)) time complexity.
 
 Space Complexity : O(1) as we are not using any extra space
-
+'''
                                     
                          
 def upperBound(arr, x, n):
@@ -5687,8 +6370,7 @@ if __name__ == "__main__":
     n = len(matrix[0])
     ans = median(matrix, m, n)
     print("The median element is:", ans)
-                                    
-                                
+
 
 
 
@@ -5703,6 +6385,11 @@ if __name__ == "__main__":
 # -------------------------
 
 # 1 TODO :  remove outermost pareanthesis
+'''
+https://leetcode.com/problems/remove-outermost-parentheses/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5719,6 +6406,12 @@ if __name__ == "__main__":
 
 
 # 2 TODO : reverse words in a given string / palindrome check
+'''
+https://leetcode.com/problems/reverse-words-in-a-string/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5735,6 +6428,12 @@ if __name__ == "__main__":
 
 
 # 3 TODO : largest odd number in a string
+'''
+https://leetcode.com/problems/largest-odd-number-in-string/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5751,6 +6450,11 @@ if __name__ == "__main__":
 
 
 # 4 TODO : largest common prefix
+'''
+https://leetcode.com/problems/longest-common-prefix/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5767,6 +6471,11 @@ if __name__ == "__main__":
 
 
 # 5 TODO : isomorphic string
+'''
+https://leetcode.com/problems/isomorphic-strings/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5783,6 +6492,12 @@ if __name__ == "__main__":
 
 
 # 6 TODO : check whether one string is a rotation of another
+'''
+https://leetcode.com/problems/rotate-string/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5799,6 +6514,12 @@ if __name__ == "__main__":
 
 
 # 7 TODO : check if two strings are anagram of each other
+'''
+
+
+https://leetcode.com/problems/valid-anagram/#:~:text=Given%20two%20strings%20s%20and,the%20original%20letters%20exactly%20once.&text=Constraints%3A,.length%20%3C%3D%205%20*%2010
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5827,6 +6548,12 @@ if __name__ == "__main__":
 # ---------------------------
 
 # 1 TODO : sort characters by frequency
+'''
+
+https://leetcode.com/problems/sort-characters-by-frequency/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5843,6 +6570,12 @@ if __name__ == "__main__":
 
 
 # 2 TODO : maximum nesting depth of parenthesis
+'''
+
+https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5858,6 +6591,12 @@ if __name__ == "__main__":
 # SC     -      
 
 # 3 TODO : roman number to integer and vice versa
+'''
+https://leetcode.com/problems/roman-to-integer/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5874,6 +6613,12 @@ if __name__ == "__main__":
 
 
 # 4 TODO : implement atoi
+'''
+https://leetcode.com/problems/string-to-integer-atoi/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5890,6 +6635,13 @@ if __name__ == "__main__":
 
 
 # 5 TODO : count number of substrings
+'''
+
+https://bit.ly/3CfQfYi
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5906,6 +6658,12 @@ if __name__ == "__main__":
 
 
 # 6 TODO : longest pallindromic substring (without using DP)
+'''
+https://leetcode.com/problems/longest-palindromic-substring/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5922,6 +6680,12 @@ if __name__ == "__main__":
 
 
 # 7 TODO : sum of beauty of all substring
+'''
+https://leetcode.com/problems/sum-of-beauty-of-all-substrings/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5938,6 +6702,12 @@ if __name__ == "__main__":
 
 
 # 8 TODO : reverse every word in a substring
+'''
+https://leetcode.com/problems/reverse-words-in-a-string/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -5962,37 +6732,235 @@ if __name__ == "__main__":
 
 
 # region 6.1 LINKED LIST - 1D EASY
-# --------------------------
+# --------------------------------
+
+'''
+👉👉👉 Summary of this section
+class Node:
+    def __init__(self, data, next = None):
+        self.data = data
+        self.next = next
+    
+class LinkedList:
+  def __init__(self):
+    self.head = None
+  
+  def append(self, data):
+    new_node = Node(data)
+    if not self.head:      # If the list is empty, the new node becomes the head
+      self.head = new_node
+    else:
+      current = self.head
+      while current.next:  # Traverse to the last node
+          current = current.next
+      current.next = new_node  # Add the new node to the end
+
+  def print_list(self):
+    current = self.head
+    while current:
+        print(current.data, end=" -> ")
+        current = current.next
+    print("None")
+  
+  def searchElement(self, target):
+    temp = self.head
+    while temp.next:
+      if temp.data == target:
+        return True
+      else:
+        temp = temp.next
+    return False
+    
+  def delete_head_node(self):
+    if self.head:
+      # case I : if head is the element 
+      current = self.head
+      self.head = current.next
+      current = None
+      return self.head
+    else:
+      return
+  
+  def add_head_node(self, val):
+    if self.head:
+      current = self.head
+      new_node = Node(val)
+      new_node.next = current
+      self.head = new_node
+      return self.head
+    else:
+      new_node = Node(val)
+      self.head = new_node
+      return self.head
+    # temp = Node(val, self.head)
+    # return temp
+    
+  def delete_last_node(self):
+    if self.head or self.head.next:
+      current = self.head
+      while current.next.next:
+        current = current.next
+      current.next = None
+      return self.head
+    else:
+      return
+    
+  def add_tail_node(self, val):
+    if self.head == None:
+      return Node(val)
+    temp = self.head
+    while temp.next:
+      temp = temp.next
+    new_node = Node(val)
+    temp.next = new_node
+    return self.head
+        
+      
+    
+  def delete_index_node(self, index):
+    if self.head or self.head.next:
+      if index == 1:
+        current = self.head
+        self.head = current.next
+        current = None
+        return self.head
+      else:
+        count = 0
+        current = self.head
+        previous = None
+        while current:
+          count +=1
+          if count == index:
+            previous.next = previous.next.next
+            # previous.next = current.next
+            current = None
+            break
+          previous = current
+          current = current.next
+        return self.head
+  
+  def add_index_node(self, value, index):
+    current = self.head
+    if current == None:
+      if index == 1:
+        return Node(value)
+      else:
+        return null
+    if index == 1:
+      return Node(value, current)
+    counter = 0
+    while current.next:
+      counter += 1
+      if current.next.data == value:
+        new_node = Node(value)
+        new_node.next = current.next
+        current.next = new_node
+      current = current.next
+    return self.head
+
+  def delete_value_node(self, index):
+    if self.head or self.head.next:
+      if self.head.data == value:
+        current = self.head
+        self.head = current.next
+        current = None
+        return self.head
+      else:
+        current = self.head
+        previous = None
+        while current:
+          print(current.data)
+          if current.data == value:
+            previous.next = previous.next.next
+            # previous.next = current.next
+            current = None
+            break
+          previous = current
+          current = current.next
+        return self.head
+        
+  def add_value_node(self, value, index):
+    current = self.head
+    if current == None:
+      return null
+    if index == 1:
+      return Node(value, current)
+    counter = 0
+    while current:
+      counter += 1
+      if counter == index-1:
+        new_node = Node(value)
+        new_node.next = current.next
+        current.next = new_node
+      current = current.next
+    return self.head
+      
+  def size(self):
+    counter = 0
+    current = self.head
+    while current:
+      counter += 1 
+      current = current.next
+    return counter
+      
+def convertArrToLL(arr):
+  linked_list = LinkedList()
+  for i in arr:
+    linked_list.append(i)
+  return linked_list
+  
+def main_function(arr):
+  linked_list = convertArrToLL(arr);
+  linked_list_length = linked_list.size()
+  target_element = linked_list.searchElement(44)
+  # delete_node = linked_list.delete_head_node()
+  # delete_node = linked_list.delete_last_node()
+  # delete_node = linked_list.delete_index_node(2)
+  # delete_node = linked_list.delete_value_node(4)
+  print(linked_list.print_list())
+  # add_node = linked_list.add_head_node(5)
+  # add_node = linked_list.add_tail_node(5)
+  # add_node = linked_list.add_index_node(5,3)
+  add_node = linked_list.add_value_node(4,4)
+  print(linked_list.print_list())
+  return None
+  
+arr = [3,4,7,9]
+# arr = []
+print(main_function(arr))
+'''
 
 # 1 TODO :  introduction to linked list, learn about struct and how is node represented
-# # method 1 : brute force approch
-# class Node:
-#     def __init__(self, data1, next1=None):
-#         self.data = data1
-#         self.next = next1
-# # Creating a new Node with the value from the array
-# y = Node(2)
-# # Printing the data stored in the Node
-# print(y.data)
+'''
 
-# class Node:
-#     def __init__(self, data1, next1=None):
-#         self.data = data1
-#         self.next = next1
-# # Creating a Node 'x' with the first element of the array
-# x = Node(2)
-# # Creating a reference 'y' pointing to the same Node 'x'
-# y = x
-# # Printing the reference 'y', which represents the memory address of the Node 'x'
-# print(y)
-   
+https://bit.ly/3URZnst
+
+
+'''
+# # method 1 : brute force approch
+class Node:
+    def __init__(self, data1, next1=None):
+        self.data = data1
+        self.next = next1
+# Creating a new Node with the value from the array
+y = Node(2)
+# Printing the data stored in the Node
+print(y.data)
 
 
 # 2 TODO : inserting a node in a linked list
 # Node class to represent a linked list node
+'''
+insert a node :
+head 
+position
+value 
+last
+
 Time Complexity: O(1) for inserting the new head of the linked list and O(N) for printing the linked list.
 
 Space Complexity: O(1), as we have not used any extra space.
+'''
 class Node:
     def __init__(self, data1, next1=None):
         self.data = data1
@@ -6038,9 +7006,22 @@ if __name__ == "__main__":
 
 
 # 3 TODO : deleting a node in a linked list
+'''
+https://leetcode.com/problems/delete-node-in-a-linked-list/
+
+
+'''
+'''
+delete a node :
+head - start of the list
+tail - last of the linked list 
+position - when index is given
+value - when the node data value is given
+
 Time Complexity: O(N) for traversing the linked list and updating the tail.
 
 Space Complexity: O(1), as we have not used any extra space.
+'''
 # method 1 : brute force approch
 class Node:
     def __init__(self, data, next_node=None):
@@ -6100,11 +7081,18 @@ if __name__ == "__main__":
 
 
 # 4 TODO : find the length of the linked list (learn traversal)
+'''
+https://bit.ly/3Po7tpf
+
+
+
+'''
+'''
 Since we are iterating over the entire list,  time complexity is O(N).
 
 Space Complexity:
-
 We are not using any extra space, thus space complexity is O(1) or constant.
+'''
 # method 1 : brute force approch
 class Node:
     def __init__(self, data, next_node=None):
@@ -6145,9 +7133,16 @@ main()
 
 
 # 5 TODO : search an element in the linked list
+'''
+https://bit.ly/3Epriup
+
+
+'''
+'''
 Time Complexity: O(N) in the worst case if the element is not found. O(1) in the best case if the element is the first element. 
 
 Space Complexity: O(1) as we did not use any extra space.
+'''
 class Node:
     def __init__(self, data1, next1=None):
         self.data = data1
@@ -6203,6 +7198,13 @@ if __name__ == "__main__":
 # region 6.2 LINKED LIST - DOUBLY  EASY
 # -------------------------------------
 # 1 TODO :  introduction to linked list, learn about struct and how is node represented
+'''
+
+https://bit.ly/3V9wY1v
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -6210,8 +7212,234 @@ if __name__ == "__main__":
 
 # method 2 : better approch
 # TC     -      
-# SC     -     
+# SC     -  
+'''
+👉👉👉 all problem summary in this section 
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+  
+  # def append(self, data):
+  #   new_node = Node(data)
+  #   if not self.head:      # If the list is empty, the new node becomes the head
+  #     self.head = new_node
+  #   else:
+  #     current = self.head
+  #     while current.next:  # Traverse to the last node
+  #         current = current.next
+  #     current.next = new_node  # Add the new node to the end
 
+  def print_list(self):
+    current = self.head
+    while current:
+        print(current.data, end=" <-> ")
+        current = current.next
+    print("None")
+  
+  def searchElement(self, target):
+    temp = self.head
+    while temp.next:
+      if temp.data == target:
+        return True
+      else:
+        temp = temp.next
+    return False
+    
+  def delete_head_node(self):
+    # temp = self.head 
+    # print(temp.__dict__)
+    if self.head == None or self.head.next == None:
+      return None
+      
+    # prev = temp
+    temp = self.head
+    self.head = temp.next
+    temp.back = None 
+    temp.next = None
+    temp = None
+    
+    # prev = temp.next
+    
+    
+    return self.head
+  
+  def add_head_node(self, val):
+    new_node = Node(val, self.head, None)
+    self.head.back = new_node
+    return self.head
+    
+  def delete_last_node(self):
+    if self.head == None or self.head.next == None:
+      return None 
+    
+    temp = self.head
+    while temp.next:
+      # prev = temp
+      temp = temp.next
+    print(temp.__dict__)
+    
+    prev = temp.back
+    temp.back = None
+    prev.next = None
+    temp = None
+    
+    return self.head
+    
+  def add_tail_node(self, val):
+    if self.head.next == None:
+      return self.add_head_node(val)
+      
+    temp = self.head
+    while temp.next:
+      temp = temp.next
+    prev = temp.back
+    new_node = Node(val, temp, prev)
+    prev.next =new_node
+    temp.back = new_node
+    return self.head
+    
+  def delete_index_node(self, index):
+    if self.head == None:
+      return None 
+    if index == 1:
+      current = self.head
+      self.head = current.next
+      current = None
+      return self.head
+    else:
+      count = 0
+      temp = self.head 
+      while temp:
+        count += 1 
+        if count == index:
+          break
+        temp = temp.next
+      print(temp.__dict__)
+      
+      prev = temp.back
+      front = temp.next
+      
+      if prev == None and front == None:
+        temp = None
+        return
+      elif prev ==  None:
+        self.delete_head_node()
+      elif front == None:
+        self.delete_last_node()
+      else:
+        prev.next = front
+        front.back = prev 
+        temp.next = None 
+        temp.back = None 
+        temp = None
+        
+      # prev = temp.back
+      # prev.next = temp.next
+      # temp.back = None
+      # temp.next = None
+      # temp = None
+      return self.head
+      
+  def add_index_node(self, value, index):
+    if index == 1:
+      return Node(val, self.head, None)
+    
+    temp = self.head
+    count = 0
+    if temp:
+      count += 1 
+      if count == index:
+        break
+      temp = temp.next
+    
+    prev = temp.back
+    new_node = Node(value, temp, prev)
+    prev.next = new_node
+    temp.back = new_node
+    return self.head
+    
+
+  def delete_value_node(self, temp):
+    prev = temp.back
+    front = temp.next
+    
+    if front == None:
+      prev.next = None
+      temp.back = None
+      temp = None
+      
+    prev.next = front
+    front.back = prev
+    
+    temp.next = None
+    temp.back = None
+    temp = None
+    return self.head
+        
+  def add_value_node(self, node, value):
+    prev = node.next
+    new_node  = Node(value, node, prev)
+    prev.next = new_node
+    node.back = new_node
+    return self.head
+    
+      
+  def size(self):
+    counter = 0
+    current = self.head
+    while current:
+      counter += 1 
+      current = current.next
+    return counter
+      
+  def convertArrToDLL(self,arr):
+    # If the array is empty, return immediately
+    if not arr:
+        return None
+    
+    # Create the head node using the first element of the array
+    self.head = Node(arr[0])
+    prev = self.head
+    
+    # Traverse the array and create nodes, linking them together
+    for i in range(1, len(arr)):
+      # self.append(arr[i])
+      new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+      prev.next = new_node
+      prev = new_node  # Move current to the new node
+    return self.head
+  
+def main_function(arr):
+  # linked_list = convertArrToLL(arr);
+  dll = DoublyLinkedList()
+  arrToDLL = dll.convertArrToDLL(arr)
+  
+  print(dll.print_list())
+  # linked_list_length = linked_list.size()
+  # target_element = linked_list.searchElement(44)
+  # delete_node = dll.delete_head_node()
+  # delete_node = dll.delete_last_node()
+  # delete_node = dll.delete_index_node(2)
+  # delete_node = dll.delete_value_node(4)
+  
+  # add_node = dll.add_head_node(5)
+  # add_node = dll.add_tail_node(5)
+  # add_node = dll.add_index_node(5,3)
+  # add_node = dll.add_value_node(4,4)
+  print(dll.print_list())
+  return None
+  
+arr = [3,4,7,9]
+# arr = []
+print(main_function(arr))
+
+'''
 
 # method 3 : optimal solution
 # TC     -      
@@ -6219,6 +7447,14 @@ if __name__ == "__main__":
 
 
 # 2 TODO : insert a node in DLL
+'''
+https://bit.ly/3QD4hHs
+
+
+
+
+'''
+'''
 Doubly Linked List Initially:
 12 5 8 7 4 
 Doubly Linked List After Inserting at the tail with value 10: 
@@ -6227,6 +7463,7 @@ Doubly Linked List After Inserting at the tail with value 10:
 Time Complexity: O(N) The time complexity of this insertion operation is O(N) because we have to traverse the entire list to reach its tail. The complexity would be O(1) if we were given the tail node directly.
 
 Space Complexity: O(1)  The space complexity is also O(1) because we are notusing any extradatastructures to do the operations apart from creating a single new node.
+'''
 class Node:
     def __init__(self, data, next_node=None, back_node=None):
         """
@@ -6291,7 +7528,7 @@ def insert_at_tail(head, k):
 # Main program
 arr = [12, 5, 8, 7, 4]
 head = convertArr2DLL(arr)
-print(“\nDoubly Linked List Initially:”)
+print(“ Doubly Linked List Initially:”)
 print_list(head)
 print("\nDoubly Linked List After Inserting at the tail with value 10:")
 
@@ -6313,9 +7550,16 @@ print_list(head)
 
 
 # 3 TODO : delete a node in DLL
+'''
+https://bit.ly/3QlEoMx
+
+
+'''
+'''
 Time Complexity: O(1) Removing the head of a doubly linked list is a quick operation, taking constant time because it only involves updating references.
 
 Space Complexity: O(1) Deleting the head also has minimal memory usage, using a few extra pointers without regard to the list's size.
+'''
 class Node:
     def __init__(self, data, next_node=None, back_node=None):
         self.data = data
@@ -6387,9 +7631,20 @@ if __name__ == "__main__":
 
 
 # 4 TODO : reverse in DLL
-Time Complexity : O(2N) During the first traversal, each node's value is pushed into the stack once, which requires O(N) time. Then, during the second iteration, the values are popped from the stack and used to update the nodes. Space Complexity : O(N) This is because we are using an external stack data structure. At the end of the first iteration, the stack will hold all N values of the doubly linked list therefore the space required for stack is directly proportional to the size of the input doubly linked list.
-# method 1 : brute force approch
+'''
+https://bit.ly/3w6hUaa
 
+
+
+'''
+# method 1 : brute force approch
+'''
+pushing  each node data into an array and then reverses it.
+
+Time Complexity : O(2N) During the first traversal, each node's value is pushed into the stack once, which requires O(N) time. Then, during the second iteration, the values are popped from the stack and used to update the nodes. 
+
+Space Complexity : O(N) This is because we are using an external stack data structure. At the end of the first iteration, the stack will hold all N values of the doubly linked list therefore the space required for stack is directly proportional to the size of the input doubly linked list.
+'''
 class Node:
     def __init__(self, data, next_node=None, back_node=None):
         # Data stored in the node
@@ -6498,11 +7753,28 @@ print_dll(head)
 
 
 # method 3 : optimal solution
+'''
+swaping
+temp = a
+a = b
+b = temp
+
+logic same as swaping
+prev = None
+current = self.head
+while current:
+  prev = current.back
+  
+  current.back = current.next
+  current.next = prev
+  
+  current = current.back
+return prev.back
+
 Time Complexity : O(N) We only have to traverse the doubly linked list once, hence our time complexity is O(N).
 
 Space Complexity : O(1), as the reversal is done in place.
-
-
+'''
 class Node:
     def __init__(self, data, next_node=None, back_node=None):
         # Data stored in the node
@@ -6612,13 +7884,25 @@ print_dll(head)
 
 # region 6.3 LINKED LIST - MEDIUM
 # --------------------------------
-
+# ⭐⭐⭐ PATTERN : Tortoise Hare method / slow and fast pointers
 # 1 TODO :  middle of a LL (Tortoise Hare method)
+'''
+https://leetcode.com/problems/middle-of-the-linked-list/
+
+
+
+'''
 # method 1 : brute force approch
+'''
+- count the number of nodes by increaseing counter by 1
+👉 use this ,for odd, middle node = (count/2) + 1
+❌ for even, middle node = (count/2)
+- traverse again till the middle node by reducing (middle - 1) till we get 0
+
 Time Complexity: O(N+N/2) The code traverses the entire linked list once and half times and then only half in the second iteration, first to count the number of nodes then then again to get to the middle node. Therefore, the time complexity is linear, O(N + N/2) ~ O(N).
 
 Space Complexity : O(1) There is constant space complexity because it uses a constant amount of extra space regardless of the size of the linked list. We only use a few variables to keep track of the middle position and traverse the list, and the memory required for these variables does not depend on the size of the list.
-                                
+'''                       
 # Node class represents a node in 
 # a linked list
 
@@ -6682,8 +7966,7 @@ middle_node = find_middle(head)
 
 # Display the value of the middle node
 print("The middle node value is:", middle_node.data)
-                                
-                            
+
 
 
 # method 2 : better approch
@@ -6692,11 +7975,16 @@ print("The middle node value is:", middle_node.data)
 
 
 # method 3 : optimal solution
+'''
+- create two pointers fast and slow
+- itterate over the linked list 
+- move the fast pointer two next to slow pointer 
+- at last slow pointer will end at the middle
+
 Time Complexity: O(N/2) The algorithm requires the 'fast' pointer to reach the end of the list which it does after approximately N/2 iterations (where N is the total number of nodes). Therefore, the maximum number of iterations needed to find the middle node is proportional to the number of nodes in the list, making the time complexity linear, or O(N/2) ~ O(N).
 
 Space Complexity : O(1) There is constant space complexity because it uses a constant amount of extra space regardless of the size of the linked list. We only use a few variables to keep track of the middle position and traverse the list, and the memory required for these variables does not depend on the size of the list.
-                                
-                     
+'''
 # Node class represents a node in 
 # a linked list
 
@@ -6741,16 +8029,22 @@ middle_node = find_middle(head)
 
 # Display the value of the middle node
 print("The middle node value is:", middle_node.data)
-                                
-                                
+
 
 
 # 2 TODO : reverse a LL (itterative)
 # method 1 : brute force approch
+'''
+
+https://leetcode.com/problems/reverse-linked-list/
+
+
+https://www.youtube.com/watch?v=D2vI2DNJGd8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=245
+
 Time Complexity: O(2N) This is because we traverse the linked list twice: once to push the values onto the stack, and once to pop the values and update the linked list. Both traversals take O(N) time, hence time complexity  O(2N) ~ O(N).
 
 Space Complexity: O(N) We use a stack to store the values of the linked list, and in the worst case, the stack will have all N values,  ie. storing the complete linked list. 
-
+'''
 
 class Node:
     def __init__(self, data, next_node=None):
@@ -6825,15 +8119,12 @@ print("Reversed Linked List:", end=" ")
 print_linked_list(head)
 
 
-
-
-
-
 # method 2 : better approch
+'''
 Time Complexity: O(N) The code traverses the entire linked list once, where 'n' is the number of nodes in the list. This traversal has a linear time complexity, O(n).
 
 Space Complexity: O(1) The code uses only a constant amount of additional space, regardless of the linked list's length. This is achieved by using three pointers (prev, temp and front) to reverse the list without any significant extra memory usage, resulting in constant space complexity, O(1).
-
+'''
 
 class Node:
     def __init__(self, data, next_node=None):
@@ -6900,10 +8191,11 @@ print_linked_list(head)
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N) This is because we traverse the linked list twice: once to push the values onto the stack, and once to pop the values and update the linked list. Both traversals take O(N) time.
 
 Space Complexity : O(1) No additional space is used explicitly for data structures or allocations during the linked list reversal process. However, it's important to note that there is an implicit use of stack space due to recursion. This recursive stack space stores function calls and associated variables during the recursive traversal and reversal of the linked list. Despite this, no extra memory beyond the program's existing execution space is allocated, hence maintaining a space complexity of O(1).
-
+'''
 
 class Node:
     def __init__(self, data, next_node=None):
@@ -6968,14 +8260,18 @@ print_linked_list(head)
 
 
 
-
-
 # 3 TODO : reverse a LL (recursive)
+'''
+https://leetcode.com/problems/reverse-linked-list/
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(2N) This is because we traverse the linked list twice: once to push the values onto the stack, and once to pop the values and update the linked list. Both traversals take O(N) time, hence time complexity  O(2N) ~ O(N).
 
 Space Complexity: O(N) We use a stack to store the values of the linked list, and in the worst case, the stack will have all N values,  ie. storing the complete linked list. 
-
+'''
 
 class Node:
     def __init__(self, data, next_node=None):
@@ -7049,16 +8345,12 @@ head = reverse_linked_list(head)
 print("Reversed Linked List:", end=" ")
 print_linked_list(head)
 
-
-
-
-
-
 # method 2 : better approch
+'''
 Time Complexity: O(N) The code traverses the entire linked list once, where 'n' is the number of nodes in the list. This traversal has a linear time complexity, O(n).
 
 Space Complexity: O(1) The code uses only a constant amount of additional space, regardless of the linked list's length. This is achieved by using three pointers (prev, temp and front) to reverse the list without any significant extra memory usage, resulting in constant space complexity, O(1).
-
+'''
 
 class Node:
     def __init__(self, data, next_node=None):
@@ -7126,10 +8418,11 @@ print_linked_list(head)
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N) This is because we traverse the linked list twice: once to push the values onto the stack, and once to pop the values and update the linked list. Both traversals take O(N) time.
 
 Space Complexity : O(1) No additional space is used explicitly for data structures or allocations during the linked list reversal process. However, it's important to note that there is an implicit use of stack space due to recursion. This recursive stack space stores function calls and associated variables during the recursive traversal and reversal of the linked list. Despite this, no extra memory beyond the program's existing execution space is allocated, hence maintaining a space complexity of O(1).
-
+'''
 
 class Node:
     def __init__(self, data, next_node=None):
@@ -7197,13 +8490,27 @@ print_linked_list(head)
 
 
 # 4 TODO : detect a loop in Ll
+'''
+https://leetcode.com/problems/linked-list-cycle/
+
+
+
+
+'''
+# ⭐⭐⭐ PATTERN : linked list with loops
 # method 1 : brute force approch
+'''
+- create an hash object which contain key as the node value and values as the number of time encounter. Initialize it empty
+- iterate over the linked list and fill the hash object via an if condition which check if it is already in the object 
+- if the value is already in the object then return True else at the end False, it donot contain the loop
+
+
 Time Complexity: O(N * 2 * log(N) )The algorithm traverses the linked list once, performing hashmap insertions and searches in the while loop for each node. The insertion and search operations in the unordered_map have a worst-case time complexity of O(log(N)). As the loop iterates through N nodes, the total time complexity is determined by the product of the traversal (O(N)) and the average-case complexity of the hashmap operations (insert and search), resulting in O(N * 2 * log(N)). 
 
 Hashmaps and their time complexities are discussed in more detail here. 
 
 Space Complexity: O(N) The code uses a hashmap/dictionary to store encountered nodes, which can take up to O(N) additional space, where 'n' is the number of nodes in the list. Hence, the spacecomplexity is O(N) due to the use of the map to track nodes.
-
+'''
 # Node class represents
 # a node in a linked list
 class Node:
@@ -7275,13 +8582,19 @@ if __name__ == "__main__":
 
 
 # method 3 : optimal solution
+'''
+- create two pointers fast and slow
+- iterate over the linked list increment the slow pointer by 1 and fast pointer by 2 inside a while loop
+- if fast and slow stop on the same node the loop will break 
+
+
 Time Complexity: O(N), where N is the number of nodes in the linked list. This is because in the worst-case scenario, the fast pointer, which moves quicker, will either reach the end of the list (in case of no loop) or meet the slow pointer (in case of a loop) in a linear time relative to the length of the list.
 
 The key insight into why this is O(N) and not something slower is that each step of the algorithm reduces the distance between the fast and slow pointers (when they are in the loop) by one. Therefore, the maximum number of steps needed for them to meet is proportional to the number of nodes in the list.
 
 
 Space Complexity : O(1) The code uses only a constantamount of additionalspace, regardless of the linked list's length. This is achieved by using two pointers (slow and fast) to detect the loop without any significant extra memory usage, resulting in constantspace complexity, O(1).
-
+'''
 # Node class represents
 # a node in a linked list
 class Node:
@@ -7344,11 +8657,21 @@ if __name__ == "__main__":
 
 
 # 5 TODO : find the starting point in LL
+'''
+https://leetcode.com/problems/linked-list-cycle-ii/
+
+
+'''
 # method 1 : brute force approch
+'''
+- create an hash object which contain key as the node and values as the number of time encounter. Initialize it empty
+- iterate over the linked list and fill the hash object via an if condition which check if it is already in the object 
+- if the value is already in the object then return True else at the end False, it donot contain the loop
+
 Time Complexity: O(N) The code traverses the entire linked list once, where 'N' is the number of nodes in the list. Therefore, the time complexity is linear, O(N).
 
 Space Complexity : O(N) The code uses a hash map/dictionary to store encountered nodes, which can take up to O(N) additional space, where 'n' is the number of nodes in the list. Hence, the space complexity is O(N) due to the use of the map to track nodes.
-                                
+'''
 # Node class represents a node in a linked list
 class Node:
     def __init__(self, data, next_node=None):
@@ -7416,10 +8739,18 @@ else:
 
 
 # method 3 : optimal solution
+'''
+- create two pointers fast and slow
+- iterate over the linked list increment the slow pointer by 1 and fast pointer by 2 inside a while loop
+- if fast and slow stop on the same node then follow below steps
+- inititiate the slow pointer with the head
+- then increment the slow and fast by + 1 node, the point where slow and fast point on the same node break , this is the starting of the loop
+
+
 Time Complexity: O(N) The code traverses the entire linked list once, where 'n' is the number of nodes in the list. This traversal has a linear time complexity, O(n).
 
 Space Complexity : O(1) The code uses only a constant amount of additional space, regardless of the linked list's length. This is achieved by using two pointers (slow and fast) to detect the loop without any significant extra memory usage, resulting in constant space complexity, O(1).
-                                
+'''
                      
 # Node class represents a
 # node in a linked list
@@ -7492,16 +8823,25 @@ if loop_start_node:
     print("Loop detected. Starting node of the loop is:", loop_start_node.data)
 else:
     print("No loop detected in the linked list.")
-                                
-                               
 
 
 # 6 TODO : length of a loop in LL
+'''
+https://bit.ly/3dyXL6m
+
+
+
+'''
 # method 1 : brute force approch
+'''
+- create an hash object which contain key as the node and values as the number start from 0. Initialize it empty
+- iterate over the linked list and fill the hash object by adding the node as key and increment it's value by 1  
+- if the value is already in the object then add it into rthe stack find the difference between the values f the same key it will give the length of the loop
+
 Time Complexity: O(N) The code traverses the entire linked list at least once, where 'N' is the number of nodes in the list. Therefore, the time complexity is linear, O(N).
 
 Space Complexity: O(N) The code uses a hashmap/dictionary to store encountered nodes, which can take up to O(N) additional space, where ‘N' is the number of nodes in the list. Hence, the space complexity is O(N) due to the use of the map to track nodes.
-
+'''
 
 class Node:
     def __init__(self, data1, next1=None):
@@ -7595,10 +8935,17 @@ else:
 
 
 # method 3 : optimal solution
+'''
+- create two pointers fast and slow
+- iterate over the linked list increment the slow pointer by 1 and fast pointer by 2 inside a while loop
+- if fast and slow stop on the same node then follow below steps
+- increment the fast pointer by +1 pointer with a counter variable starts from 0
+- when fast again reaches to the slow pointer the counter gives the length of rthe counter and return the length
+
 Time Complexity: O(N) The code traverses the entire linked list once, where 'n' is the number of nodes in the list. This traversal has a linear time complexity, O(n).
 
 Space Complexity: O(1) The code uses only a constant amount of additional space, regardless of the linked list's length. This is achieved by using two pointers (slow and fast) to detect the loop without any significant extra memory usage, resulting in constant space complexity, O(1).
-
+'''
 class Node:
     def __init__(self, data, next=None):
         self.data = data
@@ -7691,11 +9038,24 @@ else:
 
 
 # 7 TODO : check if LL is pallindrome or not
+'''
+https://leetcode.com/problems/palindrome-linked-list/
+
+
+'''
 # method 1 : brute force approch
+'''
+👉 in place of dequeue, we can also use array
+
+- use an array to store each element of the stack
+- re-iterate the linked list from the head, 
+- in each iteration compare the the node data with the last element of the array, also go to next node and pop() that element from the array
+
+
 Time Complexity: O(2 * N) This is because we traverse the linked list twice: once to push the values onto the stack, and once to pop the values and compare with the linked list. Both traversals take O(2*N) ~ O(N) time.
 
 Space Complexity: O(N) We use a stack to store the values of the linked list, and in the worst case, the stack will have all N values,  ie. storing the complete linked list. 
-
+'''
 from collections import deque
 
 class Node:
@@ -7784,10 +9144,11 @@ if __name__ == "__main__":
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O (2* N) The algorithm traverses the linked list twice, dividing it into halves. During the first traversal, it reverses one-half of the list, and during the second traversal, it compares the elements of both halves. As each traversal covers N/2 elements, the time complexity is calculated as O(N/2 + N/2 + N/2 + N/2), which simplifies to O(2N), ultimately representing O(N). 
 
 Space Complexity: O(1) The approach uses a constant amount of additional space regardless of the size of the input linked list. It doesn't allocate any new data structures that depend on the input size, resulting in a space complexity of O(1).
-
+'''
 class Node:
     def __init__(self, data, next_node=None):
         self.data = data
@@ -7914,9 +9275,115 @@ if __name__ == "__main__":
 
 
 # 8 TODO : segrregate odd and even nodes in a LL
+'''
+
+https://leetcode.com/problems/odd-even-linked-list/
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+using an array data structure then put the values inside the linked list
+TC     -      O(2N)
+SC     -    O(N)  
+'''
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+    
+def print_list(dll):
+  current = dll
+  while current:
+      print(current.data, end=" <-> ")
+      current = current.next
+  print("None")
+
+def convertArrToDLL(arr):
+  # If the array is empty, return immediately
+  if not arr:
+      return None
+  
+  # Create the head node using the first element of the array
+  head = Node(arr[0])
+  prev = head
+  
+  # Traverse the array and create nodes, linking them together
+  for i in range(1, len(arr)):
+    # self.append(arr[i])
+    new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+    prev.next = new_node
+    prev = new_node  # Move current to the new node
+  return head
+
+def sumLL(ll1, ll2):
+  dummy_node = Node(-1)
+  curr = dummy_node
+  carry = 0
+  t1 = ll1
+  t2 = ll2 
+  while t1 is not None or t2 is not None:
+    sum = carry
+    if t1:
+      sum  = sum + t1.data
+    if t2:
+      sum = sum + t2.data
+    new_node = Node(sum % 10)
+    carry = sum // 10
+    curr.next = new_node
+    curr = curr.next
+    if t1:
+      t1 = t1.next
+    if t2:
+      t2 = t2.next
+  if carry:
+    new_node = Node(carry)
+    curr.next = new_node
+  
+  head = remove_dummy_node(dummy_node)
+  return head
+  
+def find_odd_even(ll):
+  print(ll.__dict__)
+  temp = ll
+  arr = []
+  while temp != None or temp.next != None:
+    arr.append(temp.data)
+    print(arr)
+    if temp.next and temp.next.next:
+      temp = temp.next.next
+    else:
+      break
+  
+  temp = ll.next
+  while temp or temp.next:
+    arr.append(temp.data)
+    if temp.next and temp.next.next:
+      temp = temp.next.next
+    else:
+      break
+  
+  i = 0
+  temp = ll
+  while temp:
+    temp.data = arr[i]
+    i += 1
+    temp = temp.next
+  return ll
+
+def main_function(arr1):
+  dll1 = convertArrToDLL(arr1)
+  odd_even = find_odd_even(dll1)
+  print_list(odd_even)
+  return None
+  
+arr1 = [1,2,3,4,5,6,7]
+print(main_function(arr1))  
 
 
 # method 2 : better approch
@@ -7925,16 +9392,84 @@ if __name__ == "__main__":
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -     O(N) 
+# SC     -   O(1)
+
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+    
+def print_list(dll):
+  current = dll
+  while current:
+      print(current.data, end=" <-> ")
+      current = current.next
+  print("None")
+
+def convertArrToDLL(arr):
+  # If the array is empty, return immediately
+  if not arr:
+      return None
+  
+  # Create the head node using the first element of the array
+  head = Node(arr[0])
+  prev = head
+  
+  # Traverse the array and create nodes, linking them together
+  for i in range(1, len(arr)):
+    # self.append(arr[i])
+    new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+    prev.next = new_node
+    prev = new_node  # Move current to the new node
+  return head
+  
+def find_odd_even(ll):
+  if not ll or not ll.next:
+    return ll 
+  odd = ll 
+  even = ll.next
+  evenHead = ll.next
+  while even != None and even.next != None:
+    odd.next = odd.next.next
+    even.next = even.next.next
+    
+    odd = odd.next
+    even = even.next
+    print(odd.__dict__)
+    print(even.__dict__)
+  odd.next = evenHead
+  
+  return ll
+def main_function(arr1):
+  dll1 = convertArrToDLL(arr1)
+  odd_even = find_odd_even(dll1)
+  print_list(odd_even)
+  return None
+  
+arr1 = [1,2,3,4,5,6,7]
+print(main_function(arr1))   
 
 
 # 9 TODO : remove Nth node from end/back of LL
+'''
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
+
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(L)+O(L-N), We are calculating the length of the linked list and then iterating up to the (L-N)th node of the linked list, where L is the total length of the list.
 
 Space Complexity:  O(1), as we have not used any extra space.
-
+'''
 
 class Node:
     def __init__(self, data, next_node=None):
@@ -7995,19 +9530,17 @@ head = DeleteNthNodefromEnd(head, N)
 printLL(head)
 
 
-
-
-
 # method 2 : better approch
 # TC     -      
 # SC     -     
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N) since the fast pointer will traverse the entire linked list, where N is the length of the linked list.
 
 Space Complexity: O(1), as we have not used any extra space.
-
+'''
 class Node:
     def __init__(self, data, next_node=None):
         self.data = data
@@ -8060,11 +9593,28 @@ printLL(head)
 
 
 # 10 TODO :  delete the middle node of a LL
+'''
+https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/#:~:text=You%20are%20given%20the%20head,than%20or%20equal%20to%20x%20.
+
+
+
+
+
+'''
 # method 1 : brute force approch
+'''
+- iteraet over the linked list keep incrementing the counter and temp which currently holding the head
+- after iteration we got the length of the linked list make res = N/2
+- re-iterate the linked list and keep decrementing res when res becomes zero
+- middle  = temp.next 
+temp.next = temp.next.next 
+middle  = None
+- break the loop
+
 Time Complexity: O(N + N/2) The loop traverses the entire linked list once to count the total number of nodes then the loop iterates halfway through the linked list to reach the middle node. Hence, the time complexity is O(N + N/2) ~ O(N).
 
 Space Complexity : O(1) The algorithm uses a constant amount of extra space regardless of the size of the input (linked list). It doesn't use any additional data structures in proportion to the input size. Thus, the space complexity is O(1) (constant space). 
-
+'''
 # Node class represents a node in 
 # a linked list
 
@@ -8166,10 +9716,15 @@ print_linked_list(head)
 
 
 # method 3 : optimal solution
+'''
+- create two pointers fast and slow
+- iterate over the linked list increment the slow pointer by 1 and fast pointer by 2 inside a while loop. But for the first iteration increment fast but not slow
+- at the end of the iteration slow will point to the node previous to middle node
+
 Time Complexity: O(N/2) The algorithm traverses the linked list using the Tortoise and Hare approach. The code increments both 'slow' and 'fast' pointers at different rates, effectively covering about half the list before reaching the midpoint, hence the time complexity of the algorithm is O(N/2) ~ O(N).
 
 Space Complexity: O(1) The algorithm uses a constant amount of extra space regardless of the size of the input (linked list). It doesn't use any additional data structures in proportion to the input size. Thus, the space complexity is O(1) (constant space). 
-
+'''
 # Node class represents a node in 
 # a linked list
 
@@ -8232,14 +9787,29 @@ print_linked_list(head)
 
 
 # 11 TODO : sort LL
+'''
+https://leetcode.com/problems/sort-list/
+
+
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=8ocB7a_c-Cc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=262
+
+- iterate over the linked list and put the node data into an array
+- sort the array 
+- then, push the elements in that linked list  
+
+
 Time Complexity: O(N) + O(N log N) + O(N)where N is the number of nodes in the linked list.
 
 O(N) to traverse the linked list and store its data values in an additional array.
 O(N log N) to sort the array containing the node values.
 O(N) to traverse the sorted array and convert it into a new linked list.
 Space Complexity : O(N)where N is the number of nodes in the linked list as we have to store the values of all nodes in the linked list in an additional array to sort them.
-                                
+'''
 # Node class represents a
 # node in a linked list
 class Node:
@@ -8312,8 +9882,6 @@ head = sort_LL(head)
 
 print("Sorted Linked List: ", end="")
 print_linked_list(head)
-                                
-                             
 
 
 # method 2 : better approch
@@ -8322,10 +9890,13 @@ print_linked_list(head)
 
 
 # method 3 : optimal solution
+'''
+- apply merge sort on the linked list
+
 Time Complexity: O(N log N)where N is the number of nodes in the linked list. Finding the middle node of the linked list requires traversing it linearly taking O(N) time complexity and to reach the individual nodes of the list, it has to be split log N times (continuously halve the list until we have individual elements).
 
 Space Complexity : O(1) as no additional data structures or space is allocated for storage during the merging process. However, space proportional to O(log N) stack space is required for the recursive calls. THe maximum recursion depth of log N height is occupied on the call stack.
-
+'''
                                 
                      
 # Node class represents a
@@ -8447,13 +10018,205 @@ printLinkedList(head)
 
 
 # 12 TODO : sort a LL of 0's, 1's and 2's by changing links
+'''
+https://bit.ly/3Ceotvr
 
-                                
-                            
 
+
+
+
+'''
+# method 1 : brute force approch
+'''
+- create three variables count0, count1, count1 and initialize them with 0
+- iterate over the linked list and increment the variable which ever is found 
+- again, iterate over the linked list push the values inside that linked list 
+
+
+TC - O(2N)
+SC - O(N)
+'''
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+    
+def print_list(dll):
+  current = dll
+  while current:
+      print(current.data, end=" <-> ")
+      current = current.next
+  print("None")
+
+def convertArrToDLL(arr):
+  # If the array is empty, return immediately
+  if not arr:
+      return None
+  
+  # Create the head node using the first element of the array
+  head = Node(arr[0])
+  prev = head
+  
+  # Traverse the array and create nodes, linking them together
+  for i in range(1, len(arr)):
+    # self.append(arr[i])
+    new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+    prev.next = new_node
+    prev = new_node  # Move current to the new node
+  return head
+  
+def sort012(ll):
+  if not ll or not ll.next:
+    return ll 
+  temp = ll 
+  count0 = 0
+  count1 = 0
+  count2 = 0
+  while temp:
+    if temp.data == 0:
+      count0 += 1
+    elif temp.data == 1:
+      count1 += 1 
+    else:
+      count2 += 1 
+    temp = temp.next
+  
+  temp = ll 
+  while temp:
+    if count0:
+      temp.data = 0
+      count0 -= 1
+    elif count1:
+      temp.data = 1
+      count1 -= 1
+    else:
+      temp.data = 2
+      count2 -= 1
+    temp = temp.next    
+  return ll
+  
+def main_function(arr1):
+  dll1 = convertArrToDLL(arr1)
+  odd_even = sort012(dll1)
+  print_list(odd_even)
+  return None
+  
+arr1 = [0,1,1,1,2,2,0,0,1,1]
+print(main_function(arr1))
+
+# method 2 : better approch
+
+# method 3 : optimal approch
+'''
+- create 3 seperate linked list with single note having value -1 also hold their head pointer in 3 different variable zeroHead, oneHead and twoHead
+- iterate over the linked list and add the nodes in the respective linked list based on values
+- remove first node ie -1 from each linked list
+- link the last pointers next value with each other 0 -> 1 -> 2 -> None 
+
+- 
+TC - O(N)
+SC - O(1)
+'''
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+    
+def print_list(dll):
+  current = dll
+  while current:
+      print(current.data, end=" <-> ")
+      current = current.next
+  print("None")
+
+def convertArrToDLL(arr):
+  # If the array is empty, return immediately
+  if not arr:
+      return None
+  
+  # Create the head node using the first element of the array
+  head = Node(arr[0])
+  prev = head
+  
+  # Traverse the array and create nodes, linking them together
+  for i in range(1, len(arr)):
+    # self.append(arr[i])
+    new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+    prev.next = new_node
+    prev = new_node  # Move current to the new node
+  return head
+
+def sort012(ll):
+  if not ll or not ll.next:
+    return ll 
+  temp = ll 
+  zeroHead = Node(-1)
+  oneHead = Node(-1)
+  twoHead = Node(-1)
+  zero = zeroHead
+  one = oneHead
+  two = twoHead
+  while temp != None:
+    if temp.data == 0:
+      print("0 => ",temp.data)
+      zero.next = temp
+      zero = zero.next
+      # zero = temp
+    elif temp.data == 1:
+      print("1 => ",temp.data)
+      one.next = temp
+      one = one.next
+      # one = temp
+    else:
+      print("2 => ",temp.data)
+      two.next = temp
+      two = two.next
+      # two = temp
+    temp = temp.next
+  
+  print_list(zeroHead)
+  print_list(oneHead)
+  print_list(twoHead)
+  zero.next = oneHead.next if oneHead.next else twoHead.next  # Link zero list to the one or two list
+  one.next = twoHead.next  # Link the one list to the two list
+  two.next = None  # End of the list
+  new_node = zeroHead.next
+  # do code to delete dummyHead
+  # ... code 
+  print_list(new_node)
+  return new_node
+  
+def main_function(arr1):
+  dll1 = convertArrToDLL(arr1)
+  odd_even = sort012(dll1)
+  print_list(odd_even)
+  return None
+  
+arr1 = [0,1,1,1,2,2,0,0,1,1]
+print(main_function(arr1))
 
 # 13 TODO : find the intersection points of Y LL
 # method 1 : brute force approch
+'''
+https://leetcode.com/problems/intersection-of-two-linked-lists/
+
+
+
+https://www.youtube.com/watch?v=0DYoPz2Tpt4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=248
+
+
+
+
 Time Complexity: O(m*n)
 
 Reason: For each node in list 2 entire list 1 is iterated. 
@@ -8461,7 +10224,7 @@ Reason: For each node in list 2 entire list 1 is iterated.
 Space Complexity: O(1)
 
 Reason: No extra space is used.
-
+'''
 class Node:
     def __init__(self, val):
         self.val = val
@@ -8536,14 +10299,20 @@ if __name__ == '__main__':
 
 
 # method 2 : better approch
+
+
 Time Complexity: O(n+m)
+'''
+- iterate over the first linked list and store it's node in an array/dict
+- the, iterate over the second linked list and check if it is present in the array or not. 
+- if present return the first node of intersection it will the head 
 
 Reason: Iterating through list 1 first takes O(n), then iterating through list 2 takes O(m). 
 
 Space Complexity: O(n)
 
 Reason: Storing list 1 node addresses in unordered_set.
-
+'''
 class Node:
     def __init__(self, val):
         self.val = val
@@ -8617,6 +10386,13 @@ if __name__ == '__main__':
 
 
 # method 3 : optimal solution
+'''
+- find the length of both linked list
+- find the difference  = l2 -l1
+- mark the longer linked list at the defference index node
+- then iterate over the shorter linked list and compare it's value with the other one
+
+
 Time Complexity:
 
 O(2max(length of list1,length of list2))+O(abs(length of list1-length of list2))+O(min(length of list1,length of list2))
@@ -8626,7 +10402,7 @@ Reason: Finding the length of both lists takes max(length of list1, length of li
 Space Complexity: O(1)
 
 Reason: No extra space is used.
-
+'''
 class Node:
     def __init__(self, val):
         self.val = val
@@ -8721,6 +10497,11 @@ if __name__ == '__main__':
         print('The intersection point is', answerNode.val)
 
 # method 4 optimized
+'''
+- iterate over the linked list simultaneously and increment them by 1
+- if t1 get None then head of ll2 will be assigned to t1 and vice versa
+- at a certain point both gets null at the same time by this
+
 Time Complexity: O(2*max(length of list1,length of list2))
 
 Reason: Uses the same concept of difference of lengths of two lists.
@@ -8728,6 +10509,7 @@ Reason: Uses the same concept of difference of lengths of two lists.
 Space Complexity: O(1)
 
 Reason: No extra data structure is used
+'''
 class Node:
     def __init__(self, val):
         self.val = val
@@ -8799,6 +10581,12 @@ if __name__ == '__main__':
 
 
 # 14 TODO : add 1 to a number represented by LL
+'''
+https://bit.ly/3piCTD3
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -8815,15 +10603,25 @@ if __name__ == '__main__':
 
 
 # 15 TODO :add 2 numbers in LL
+'''
+https://leetcode.com/problems/add-two-numbers/
+
+
+
+
+
+'''
 # method 1 : brute force approch
+'''
 Time Complexity: O(max(m,n)). Assume that m and n represent the length of l1 and l2 respectively, the algorithm above iterates at most max(m,n) times.
 
 Space Complexity: O(max(m,n)). The length of the new list is at most max(m,n)+1.
+'''
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 
 class Solution:
@@ -8847,6 +10645,118 @@ class Solution:
         return dummy.next 
 
 
+👉👉👉
+'''
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+    
+def print_list(dll):
+  current = dll
+  while current:
+      print(current.data, end=" <-> ")
+      current = current.next
+  print("None")
+
+def convertArrToDLL(arr):
+  # If the array is empty, return immediately
+  if not arr:
+      return None
+  
+  # Create the head node using the first element of the array
+  head = Node(arr[0])
+  prev = head
+  
+  # Traverse the array and create nodes, linking them together
+  for i in range(1, len(arr)):
+    # self.append(arr[i])
+    new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+    prev.next = new_node
+    prev = new_node  # Move current to the new node
+  return head
+  
+# def reverseDLL(self):
+#   if self.head == None or self.head.next == None:
+#     return self.head
+  
+#   prev = None
+#   current = self.head
+#   while current:
+#     prev = current.back
+    
+#     current.back = current.next
+#     current.next = prev
+    
+#     current = current.back
+  
+#   print("---->",self.print_list())
+#   return prev.back
+
+def remove_dummy_node(head):
+  if head == None or head.next == None:
+    return None 
+  print_list(head)
+  temp = head
+  head = temp.next
+  head.prev = None
+  temp.next = None 
+  temp = None
+  print_list(head)
+  return head
+
+def sumLL(ll1, ll2):
+  dummy_node = Node(-1)
+  # print_list(dummy_node)
+  curr = dummy_node
+  # print_list(curr)
+  carry = 0
+  t1 = ll1
+  t2 = ll2 
+  while t1 is not None or t2 is not None:
+    sum = carry
+    if t1:
+      sum  = sum + t1.data
+    if t2:
+      sum = sum + t2.data
+    new_node = Node(sum % 10)
+    carry = sum // 10
+    curr.next = new_node
+    curr = curr.next
+    if t1:
+      t1 = t1.next
+    if t2:
+      t2 = t2.next
+  if carry:
+    new_node = Node(carry)
+    curr.next = new_node
+  
+  head = remove_dummy_node(dummy_node)
+  return head
+  
+def main_function(arr1, arr2):
+  dll = DoublyLinkedList()
+  dll1 = convertArrToDLL(arr1)
+  dll2 = convertArrToDLL(arr2)
+  print(print_list(dll1))
+  print(print_list(dll2))
+  
+  sum  = sumLL(dll1,dll2)
+  print(print_list(sum))
+  
+  # print(dll.reverseDLL().__dict__)
+  return None
+  
+arr1 = [3,5]
+arr2 = [4,5,9,9]
+print(main_function(arr1, arr2))
+'''
+
 # method 2 : better approch
 # TC     -      
 # SC     -     
@@ -8868,9 +10778,79 @@ class Solution:
 # --------------------------------------
 
 # 1 TODO :  delete all occurences of a key in DLL
+'''
+https://bit.ly/3zuBr66
+
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+https://www.youtube.com/watch?v=Mh0NH_SD92k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=254
+TC     -      O(N)
+SC     -      O(1)
+'''
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+    
+def print_list(dll):
+  current = dll
+  while current:
+      print(current.data, end=" <-> ")
+      current = current.next
+  print("None")
+
+def convertArrToDLL(arr):
+  # If the array is empty, return immediately
+  if not arr:
+      return None
+  
+  # Create the head node using the first element of the array
+  head = Node(arr[0])
+  prev = head
+  
+  # Traverse the array and create nodes, linking them together
+  for i in range(1, len(arr)):
+    # self.append(arr[i])
+    new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+    prev.next = new_node
+    prev = new_node  # Move current to the new node
+  return head
+  
+def delete_all_occurances(ll, value):
+  temp=ll 
+  while temp:
+    if temp.data == value:
+      if temp == ll:
+        ll = ll.next
+      pre_node = temp.back
+      next_node = temp.next 
+      if next_node:
+        next_node.back = pre_node
+      if pre_node:
+        pre_node.next = next_node
+      temp = None
+      temp = next_node
+    else:
+      temp = temp.next
+  return ll  
+  
+def main_function(arr1, sum):
+  dll1 = convertArrToDLL(arr1)
+  new_ll = delete_all_occurances(dll1, sum)
+  print_list(new_ll)
+  return None
+  
+arr1 = [3,1,2,3,3,4,9,3]
+value  = 3
+print(main_function(arr1,value))   
 
 
 # method 2 : better approch
@@ -8884,10 +10864,76 @@ class Solution:
 
 
 # 2 TODO : find pairs with given sum in DLL
-# method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+https://bit.ly/3zWPiBj
 
+
+'''
+# method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=YitR4dQsddE&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=255
+
+- take head as temp1 and head.next as temp2
+- increment temp2 making temp1 at when place then again increment temp1 and so on
+
+TC     -    O~(N*N)  
+SC     -    O(1) 
+'''
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+    
+def print_list(dll):
+  current = dll
+  while current:
+      print(current.data, end=" <-> ")
+      current = current.next
+  print("None")
+
+def convertArrToDLL(arr):
+  # If the array is empty, return immediately
+  if not arr:
+      return None
+  
+  # Create the head node using the first element of the array
+  head = Node(arr[0])
+  prev = head
+  
+  # Traverse the array and create nodes, linking them together
+  for i in range(1, len(arr)):
+    # self.append(arr[i])
+    new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+    prev.next = new_node
+    prev = new_node  # Move current to the new node
+  return head
+  
+def find_sum_values(ll, target_sum):
+  temp1=ll 
+  list = []
+  while temp1 != None:
+    temp2 = temp1.next
+    while temp2 != None:
+      if (temp1.data + temp2.data == sum) and (temp1.data + temp2.data < sum):
+        list.append([temp1.data, temp2.data])
+      temp2 = temp2.next
+    temp1 = temp1.next
+  return list  
+  
+def main_function(arr1, sum):
+  dll1 = convertArrToDLL(arr1)
+  sum_values = find_sum_values(dll1, sum)
+  print(sum_values)
+  return None
+  
+arr1 = [1,2,3,4,9]
+sum  = 5
+print(main_function(arr1,sum))
 
 # method 2 : better approch
 # TC     -      
@@ -8895,15 +10941,149 @@ class Solution:
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+'''
+- take head as left, tail as right and a list to store the data and apply two pointer approch
+
+TC     -      
+SC     -
+'''
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+    
+def print_list(dll):
+  current = dll
+  while current:
+      print(current.data, end=" <-> ")
+      current = current.next
+  print("None")
+
+def convertArrToDLL(arr):
+  # If the array is empty, return immediately
+  if not arr:
+      return None
+  
+  # Create the head node using the first element of the array
+  head = Node(arr[0])
+  prev = head
+  
+  # Traverse the array and create nodes, linking them together
+  for i in range(1, len(arr)):
+    # self.append(arr[i])
+    new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+    prev.next = new_node
+    prev = new_node  # Move current to the new node
+  return head
+  
+def find_tail(ll):
+  tail = ll
+  while tail.next:
+    tail = tail.next
+  return tail
+  
+def find_sum_values(ll, sum):
+  left=ll 
+  right = find_tail(ll)
+  list = []
+  while left.data < right.data:
+    if left.data + right.data == sum:
+      list.append([left.data, right.data])
+      left = left.next
+      right = right.back
+    elif left.data + right.data < sum:
+      left = left.next
+    else:
+      right = right.back
+  return list
+  # return ll
+  
+def main_function(arr1, sum):
+  dll1 = convertArrToDLL(arr1)
+  sum_values = find_sum_values(dll1, sum)
+  print(sum_values)
+  return None
+  
+arr1 = [1,2,3,4,9]
+sum  = 5
+print(main_function(arr1,sum))
 
 
 # 3 TODO : remove duplicates from sorted DLL
-# method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+https://bit.ly/3FtJUtZ
 
+
+'''
+# method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=YJKVTnOJXSY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=256
+
+TC     -      O(N)
+SC     -     O(1)
+'''
+class Node:
+    def __init__(self, data, next = None, back=None):
+        self.data = data
+        self.next = next
+        self.back = back
+    
+class DoublyLinkedList:
+  def __init__(self):
+    self.head = None
+    
+def print_list(dll):
+  current = dll
+  while current:
+      print(current.data, end=" <-> ")
+      current = current.next
+  print("None")
+
+def convertArrToDLL(arr):
+  # If the array is empty, return immediately
+  if not arr:
+      return None
+  
+  # Create the head node using the first element of the array
+  head = Node(arr[0])
+  prev = head
+  
+  # Traverse the array and create nodes, linking them together
+  for i in range(1, len(arr)):
+    # self.append(arr[i])
+    new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+    prev.next = new_node
+    prev = new_node  # Move current to the new node
+  return head
+  
+def delete_all_duplicates(ll):
+  temp=ll 
+  while temp and temp.next:
+    next_node = temp.next 
+    while next_node and next_node.data == temp.data:
+      duplicate = next_node
+      next_node = next_node.next
+      duplicate = None 
+    temp.next = next_node
+    if next_node:
+      next_node.back = temp
+    temp = temp.next
+  return ll  
+  
+def main_function(arr1):
+  dll1 = convertArrToDLL(arr1)
+  new_ll = delete_all_duplicates(dll1)
+  print_list(new_ll)
+  return None
+  
+arr1 = [1,1,1,2,3,3,4]
+# value  = 3
+print(main_function(arr1))
 
 # method 2 : better approch
 # TC     -      
@@ -8928,11 +11108,37 @@ class Solution:
 # -----------------------------
 
 # 1 TODO :  reverse LL in group of given size K
+'''
+https://leetcode.com/problems/reverse-nodes-in-k-group/
+
+
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=lIar1skcQYI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=258  
+
+- initialize variable tep as head and prevNode as Node
+- write a function to return the Kth node from the linked list
+- write a function to reverse a linked list
+- iterate over the linked list
+- If kth node is None, link the last node to the current node and break
+- store the Kth Node in a vauable, and make Kth node next to null to break the linked list because a section of a linked list cannot be reversed
+- reverse the linked list from the Kth node to the current node
+- if temp == head, then make the Kth node as head else Link the last node of the previous group to the reversed group
+- update the prev Node with temp 
+- take next group first node as temp
+
+
+
+
+
+
 Time Complexity: O(2N) The time complexity consists of actions of reversing segments of K and finding the Kth node which operates in linear time. Thus, O(N) + O(N) = O(2N), which simplifies to O(N).
 
 Space Complexity: O(1) The space complexity is O(1) as the algorithm operates in place without any additional space requirements.
-
+'''
 class Node:
     def __init__(self, data, next_node=None):
         self.data = data
@@ -9094,7 +11300,17 @@ printLinkedList(head)
 
 
 # 2 TODO : rotate a LL
+'''
+https://leetcode.com/problems/rotate-list/description/
+
+
+
+
+'''
 # method 1 : brute force approch
+
+'''
+
 Time Complexity: O(Number of nodes present in the list*k)
 
 Reason: For k times, we are iterating through the entire list to get the last element and move it to first.
@@ -9102,7 +11318,7 @@ Reason: For k times, we are iterating through the entire list to get the last el
 Space Complexity: O(1)
 
 Reason: No extra data structures is used for computations
-
+'''
 class Node:
     def __init__(self, val):
         self.val = val
@@ -9183,6 +11399,20 @@ if __name__ == '__main__':
 
 
 # method 3 : optimal solution
+'''
+
+https://www.youtube.com/watch?v=uT7YI7XbTY8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=258
+
+- take two vaiables head and tail, initialize them with the head of ll and a variable len with 1
+- find the length of the linked list
+- base condition if K%len == 0 then return head
+- connect the tail to the head of the linked list
+- find the node that should be the end ie (len - k)th node
+- make the (len - k)th node next as head
+- make (len - k)th node next as None 
+
+
+
 Time Complexity: O(length of list) + O(length of list - (length of list%k))
 
 Reason: O(length of the list) for calculating the length of the list. O(length of the list - (length of list%k)) for breaking link.
@@ -9190,6 +11420,7 @@ Reason: O(length of the list) for calculating the length of the list. O(length o
 Space Complexity: O(1)
 
 Reason: No extra data structure is used for computation.
+'''
 class Node:
     def __init__(self, val):
         self.val = val
@@ -9275,7 +11506,24 @@ if __name__ == '__main__':
 
 
 # 3 TODO : flattening of LL
+'''
+https://bit.ly/3w9TKf8
+
+
+
+'''
 # method 1 : brute force approch
+'''
+
+https://www.youtube.com/watch?v=ykelywHJWLg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=260
+
+- initialize a blank array to store all elements
+- take temp to point on main node and temp2 to point the child node
+- use while into while and put all ements in the arr
+- do sorting on the arr
+- create avertical linked list wth these values
+
+
 Time Complexity: O(N*M) + O(N*M log(N*M)) + O(N*M)where N is the length of the linked list along the next pointer and M is the length of the linked list along the child pointer.
 
 O(N*M) as we traverse through all the elements, iterating through ‘N’ nodes along the next pointer and ‘M’ nodes along the child pointer.
@@ -9285,7 +11533,7 @@ Space Complexity : O(N*M) + O(N*M)where N is the length of the linked list along
 
 O(N*M) for storing all the elements in an additional array for sorting.
 O(N*M) to reconstruct the linked list from the array after sorting
-
+'''
                                 
 class Node:
     def __init__(self, x=None, nextNode=None, childNode=None):
@@ -9390,8 +11638,6 @@ printOriginalLinkedList(head)
 flattened = flattenLinkedList(head)
 print("\nFlattened linked list: ")
 printLinkedList(flattened)
-                                
-                            
 
 
 
@@ -9401,13 +11647,16 @@ printLinkedList(flattened)
 
 
 # method 3 : optimal solution
+'''
+https://www.youtube.com/watch?v=ykelywHJWLg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=260
+
+
 Time Complexity: O( N*(2M) ) ~ O(2 N*M)where N is the length of the linked list along the next pointer and M is the length of the linked list along the child pointers.
 
 The merge operation in each recursive call takes time complexity proportional to the length of the linked lists being merged as they have to iterate over the entire lists. Since the vertical depth of the linked lists is assume to be M, the time complexity for a single merge operation is proportional to O(2*M).
 This operation operation is performed N number of times (to each and every node along the next pointer list) hence the resultant time complexity becomes: O(N* 2M).
 Space Complexity : O(1) as this algorithm uses no external space or additional data structures to store values. But a recursive stack uses O(N) space to build the recursive calls for each node along the next pointer list.
-
-                                
+'''
                      
 class Node:
     def __init__(self, x=0, nextNode=None, childNode=None):
@@ -9516,11 +11765,24 @@ printLinkedList(flattened)
 
 
 # 4 TODO : clone a linked list with random and next pointer
+'''
+https://leetcode.com/problems/copy-list-with-random-pointer/
+
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=q570bKdrnlw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=263
+
+- store each node as key as the node value node but without links pair
+- put the values of next and random pointer using the hash object
+
+
 Time Complexity: O(2N) where N is the number of nodes in the linked list. The linked list is traversed twice, once for creating copies of each node and for the second time to set the next and random pointers for each copied node. The time to access the nodes in the map is O(1) due to hashing.
 
 Space Complexity : O(N)+O(N)where N is the number of nodes in the linked list as all nodes are stored in the map to maintain mappings and the copied linked lists takes O(N) space as well.
-
+''' 
                                 
 # Node class to represent
 # elements in the linked list
@@ -9621,10 +11883,14 @@ if __name__ == "__main__":
 
 
 # method 3 : optimal solution
+'''
+- insert the copy node in between the nodes
+- then connect the links
+
 Time Complexity: O(3N)where N is the number of nodes in the linked list. The algorithm makes three traversals of the linked list, once to create copies and insert them between original nodes, then to set the random pointers of the copied nodes to their appropriate copied nodes and then to separate the copied and original nodes.
 
 Space Complexity : O(N) where N is the number of nodes in the linked list as the only extra additional space allocated it to create the copied list without creating any other additional data structures.
-
+'''
                                 
                      
 # Node class to represent
@@ -9757,14 +12023,13 @@ if __name__ == "__main__":
     print("\nCloned Linked List with Random Pointers:")
     printClonedLinkedList(clonedList)
 
-                                
-                            
+
 
 
 
 # endregion
 
-
+⭐⭐⭐there are more questions in youtube apart from these 
 
 
 
@@ -9773,6 +12038,13 @@ if __name__ == "__main__":
 # ----------------------------
 
 # 1 TODO :  recursive implementation of atoi()
+'''
+https://leetcode.com/problems/string-to-integer-atoi/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9789,6 +12061,12 @@ if __name__ == "__main__":
 
 
 # 2 TODO : pow(x,n)
+'''
+https://leetcode.com/problems/powx-n/
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N)
 
@@ -9835,6 +12113,10 @@ if __name__ == "__main__":
 
 
 # 3 TODO : count good numbers
+'''
+https://leetcode.com/problems/count-good-numbers/
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9851,6 +12133,13 @@ if __name__ == "__main__":
 
 
 # 4 TODO : sort a stack using recursion
+'''
+https://bit.ly/3Pu0YBn
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9867,6 +12156,12 @@ if __name__ == "__main__":
 
 
 # 5 TODO : reverse a stack using recursion
+'''
+https://bit.ly/3podAiY
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9894,6 +12189,11 @@ if __name__ == "__main__":
 # ------------------------------
 
 # 1 TODO :  generate all binary strings
+'''
+https://bit.ly/3QJ0vwc
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9910,6 +12210,12 @@ if __name__ == "__main__":
 
 
 # 2 TODO : generate paranthesis
+'''
+https://leetcode.com/problems/generate-parentheses/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9926,6 +12232,12 @@ if __name__ == "__main__":
 
 
 # 3 TODO : print all subsequences / power set
+'''
+https://leetcode.com/problems/subsets/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9942,6 +12254,13 @@ if __name__ == "__main__":
 
 
 # 4 TODO : learn all patterns of subsequences (theory)
+'''
+https://bit.ly/3US225G
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9958,6 +12277,11 @@ if __name__ == "__main__":
 
 
 # 5 TODO : count all subsequences with sum K
+'''
+https://bit.ly/3SVf1me
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9974,6 +12298,14 @@ if __name__ == "__main__":
 
 
 # 6 TODO : check if there exists a subsequences with sum K
+'''
+https://www.codingninjas.com/studio/problems/subset-sum_630213?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -9990,6 +12322,13 @@ if __name__ == "__main__":
 
 
 # 7 TODO : combination sum - I
+'''
+https://leetcode.com/problems/combination-sum/
+
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(2^t * k) where t is the target, k is the average length
 
@@ -10051,6 +12390,13 @@ if __name__ == "__main__":
 
 
 # 8 TODO : combination sum - II
+'''
+https://leetcode.com/problems/combination-sum-ii/
+
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity:O(2^n*k)
 
@@ -10108,6 +12454,13 @@ if __name__ == "__main__":
 
 
 # 9 TODO : subset sum - I
+'''
+https://bit.ly/3C9GQRS
+
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(2^n)+O(2^n log(2^n)). Each index has two ways. You can either pick it up or not pick it. So for n index time complexity for O(2^n) and for sorting it will take (2^n log(2^n)).
 
@@ -10158,6 +12511,10 @@ if __name__ == "__main__":
 
 
 # 10 TODO :  subset sum - II
+'''
+https://leetcode.com/problems/subsets-ii/
+
+'''
 # method 1 : brute force approch
 Time Complexity: O( 2^n *(k log (x) )). 2^n  for generating every subset and k* log( x)  to insert every combination of average length k in a set of size x. After this, we have to convert the set of combinations back into a list of list /vector of vectors which takes more time.
 
@@ -10247,6 +12604,12 @@ if __name__ == "__main__":
 
 
 # 11 TODO : combination sum  - III
+'''
+https://leetcode.com/problems/combination-sum-iii/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -10263,6 +12626,11 @@ if __name__ == "__main__":
 
 
 # 12 TODO : letter combination of phone number
+'''
+https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -10289,6 +12657,12 @@ if __name__ == "__main__":
 # --------------------------
 
 # 1 TODO :  pallindrome partitioning
+'''
+https://leetcode.com/problems/palindrome-partitioning/
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O( (2^n) *k*(n/2) )
 
@@ -10354,6 +12728,12 @@ if __name__ == "__main__":
 
 
 # 2 TODO : word search
+'''
+https://leetcode.com/problems/word-search/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -10370,6 +12750,13 @@ if __name__ == "__main__":
 
 
 # 3 TODO : N queen
+'''
+https://leetcode.com/problems/n-queens/
+
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: Exponential in nature since we are trying out all ways, to be precise its O(N! * N).
 
@@ -10498,6 +12885,12 @@ if __name__ == '__main__':
 
 
 # 4 TODO : rent a maze
+'''
+https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(4^(m*n)), because on every cell we need to try 4 different directions.
 
@@ -10630,6 +13023,14 @@ if __name__ == "__main__":
 
 
 # 5 TODO : word break
+'''
+https://leetcode.com/problems/word-break/
+
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -10646,6 +13047,12 @@ if __name__ == "__main__":
 
 
 # 6 TODO : M coloring problem
+'''
+
+https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1#
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O( N^M) (n raised to m)
 
@@ -10726,6 +13133,13 @@ if __name__ == '__main__':
 
 
 # 7 TODO : sudoko solver
+'''
+https://leetcode.com/problems/sudoku-solver/
+
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(9(n ^ 2)), in the worst case, for each cell in the n2 board, we have 9 possible numbers.
 
@@ -10795,6 +13209,13 @@ if __name__ == "__main__":
 
 
 # 8 TODO : expression add operators
+'''
+https://leetcode.com/problems/expression-add-operators/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -10820,8 +13241,62 @@ if __name__ == "__main__":
 
 # region 8.1 BIT MANIPULATION - BASIC
 # -----------------------------------
+'''
+https://www.youtube.com/watch?v=qQd-ViW7bfk&list=PLgUwDviBIf0rnqh8QsJaHyIX7KUiaPUv7&index=1 
+
+👉 binary to decimal, TC - log2(N), SC - log2(N)
+def main_function(num):
+  result = ""
+  if num == 0:
+    return "0"
+  while num > 0:
+    if num %2 == 1:
+      result = result + str(1) 
+    else:
+      result = result + str(0)
+    num = num // 2
+  # reverse a string 
+  result = result[::-1] 
+  
+  return result
+print(main_function(3))
+
+
+👉 decimal to binary, TC - O(len), SC - O(1) 
+def main_function(x):
+  str_len = len(str(x))
+  p2 = 1
+  num = 0
+  for i in range(str_len-1, -1, -1):
+    print(i)
+    if x[i] == '1':
+      num = num + p2
+    p2 = p2 * 2
+  return num
+print(main_function("1101"))
+
+👉 1's complement, first convert to binary then flip the numbers
+13 -> (0010)2
+
+
+👉 2's complement, first 1's complement then add 1 to it
+13 = (0011)2
+
+'''
+
+
 
 # 1 TODO :  introduction to bit manipulation
+'''
+https://bit.ly/3Eo8JVW
+
+
+
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -10838,14 +13313,57 @@ if __name__ == "__main__":
 
 
 # 2 TODO : check if the i-th bit is set or not
-# method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+https://practice.geeksforgeeks.org/problems/check-whether-k-th-bit-is-set-or-not-1587115620/1
 
 
-# method 2 : better approch
-# TC     -      
-# SC     -     
+
+
+
+
+'''
+# method 1 : brute force approch, using left shift
+# TC     -      O(1)
+# SC     -     O(1)
+def is_bit_set(num, i):
+    # Create a mask by shifting 1 to the left by i positions
+    mask = 1 << i
+    # Use the AND operator to check if the i-th bit is set
+    if num & mask:
+        return True  # The i-th bit is set
+    else:
+        return False  # The i-th bit is not set
+
+# Test cases
+num = 5  # binary: 0101
+i = 2    # checking the 2nd bit (counting from 0)
+print(is_bit_set(num, i))  # Output: True, because the 2nd bit is set (0101)
+i = 1
+print(is_bit_set(num, i))  # Output: False, because the 1st bit is not set (0101)
+
+
+
+# method 2 : better approch, using right shift
+# TC     -      O(1)
+# SC     -     O(1)
+def is_bit_set(num, i):
+    # Right shift num by i positions
+    shifted_num = num >> i
+    
+    # Check if the least significant bit of shifted_num is set
+    if shifted_num & 1:
+        return True  # The i-th bit is set
+    else:
+        return False  # The i-th bit is not set
+
+# Test cases
+num = 5  # binary: 0101
+i = 2    # checking the 2nd bit (counting from 0)
+
+print(is_bit_set(num, i))  # Output: True, because the 2nd bit is set (0101)
+
+i = 1
+print(is_bit_set(num, i))  # Output: False, because the 1st bit is not set (0101)
 
 
 # method 3 : optimal solution
@@ -10854,6 +13372,13 @@ if __name__ == "__main__":
 
 
 # 3 TODO : check if a number is odd or not
+'''
+https://practice.geeksforgeeks.org/problems/odd-or-even3618/1
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -10870,9 +13395,24 @@ if __name__ == "__main__":
 
 
 # 4 TODO : check if a number is power of 2 or not
+'''
+https://leetcode.com/problems/power-of-two/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
-# SC     -     
+# SC     -   
+def main_function(num):
+  return (num & (num - 1)) == 0
+  
+num = 16
+print(main_function(num))  
+num = 13
+print(main_function(num)) 
+num = 32
+print(main_function(num))   
 
 
 # method 2 : better approch
@@ -10886,25 +13426,116 @@ if __name__ == "__main__":
 
 
 # 5 TODO : count the number of set bits
+'''
+https://practice.geeksforgeeks.org/problems/count-total-set-bits-1587115620/1
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
-# SC     -     
+# SC     -   
+def main_function(num):
+  count = 0
+  while num > 1:
+    if num % 2 == 1:
+      count += 1
+    num = num // 2
+  if num==1:
+    count += 1
+  return count
+  
+num = 16
+print(main_function(num))  
+num = 13
+print(main_function(num)) 
+num = 32
+print(main_function(num))     
 
 
 # method 2 : better approch
 # TC     -      
-# SC     -     
+# SC     -   
+def main_function(num):
+  count = 0
+  while num > 1:
+    count += num & 1
+    num = num >> 1
+  if num==1:
+    count += 1
+  return count
+  
+num = 16
+print(main_function(num))  
+num = 13
+print(main_function(num)) 
+num = 32
+print(main_function(num))       
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -     O(Nos of bits on) 
+# SC     -     
+def main_function(num):
+  count = 0
+  while num != 0:
+    num = num & (num - 1)
+    count += 1
+  return count
+  
+num = 16
+print(main_function(num))  
+num = 13
+print(main_function(num)) 
+num = 32
+print(main_function(num))   
 
 
-# 6 TODO : set/unset the right most unset bit
+# 👉 toggle the ith bit
+def main_function(num, shift):
+  return num ^ (1<< shift)
+  
+a = 13
+shift = 2
+print(main_function(a, shift))   
+
+# 👉 remove the last set bit (rightmost)
+def main_function(num):
+  return num & (num - 1)
+  
+num = 16
+print(main_function(num))  
+num = 40
+print(main_function(num)) 
+num = 84
+print(main_function(num)) 
+
+
+# 6 TODO : set/unset the right ith bit
+'''
+https://practice.geeksforgeeks.org/problems/set-the-rightmost-unset-bit4436/1
+
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
-# SC     -     
+# SC     -  
+def set_to_1(num, shift):
+  return num | 1<< shift
+
+def unset_to_1(num, shift):
+  return num & ~(1<< shift)
+  
+a = 9
+shift = 2
+print(set_to_1(a, shift)) 
+a = 13
+shift = 2
+print(unset_to_1(a, shift)) 
+
+
 
 
 # method 2 : better approch
@@ -10918,14 +13549,43 @@ if __name__ == "__main__":
 
 
 # 7 TODO : swap two numbers
+'''
+https://practice.geeksforgeeks.org/problems/swap-two-numbers3844/1
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
-# SC     -     
+# SC     -   
+def main_function(a,b):
+  temp = a 
+  a = b 
+  b = temp 
+  return a,b
+  
+a = 5
+b = 6
+print(main_function(a,b))  
 
 
 # method 2 : better approch
+'''
+XORing a number with itself results in 0 (e.g., a ^ a = 0).
+XORing a number with 0 gives the number back (e.g., a ^ 0 = a).
+'''
 # TC     -      
-# SC     -     
+# SC     -  
+def main_function(a, b):
+  a = a ^ b  # Step 1: a becomes the XOR of a and b
+  b = a ^ b  # Step 2: b becomes the original value of a
+  a = a ^ b  # Step 3: a becomes the original value of b
+  return a, b
+
+a = 5
+b = 6
+print(main_function(a, b))  # Output: (6, 5)
 
 
 # method 3 : optimal solution
@@ -10934,19 +13594,101 @@ if __name__ == "__main__":
 
 
 # 8 TODO : divide two integers without using multiplication
+'''
+
+https://leetcode.com/problems/divide-two-integers/
+
+
+'''
 # method 1 : brute force approch
+https://www.youtube.com/watch?v=pBD4B1tzgVc&list=PLgUwDviBIf0rnqh8QsJaHyIX7KUiaPUv7&index=9
 # TC     -      
 # SC     -     
-
+def main_function(dividend, divisor):
+  count = 0
+  sum = 0
+  while sum + divisor <= dividend:
+    count +=1
+    sum += divisor
+  return count
+  
+dividend = 22
+divisor = 3
+print(main_function(dividend, divisor))  
 
 # method 2 : better approch
 # TC     -      
 # SC     -     
+'''def main_function(dividend, divisor):
+  if dividend == 0:
+    return 0
+  if divisor == dividend:
+    return 1 
+  sign = True
 
+  if (dividend < 0 and divisor > 0) or (dividend > 0 and divisor < 0):
+    sign = False
+  dividend = abs(dividend)
+  divisor = abs(divisor)
+  while dividend >= divisor:
+    count = 0
+    ans = 0
+    while dividend >= (divisor*2**count+1):
+      count +=1 
+    # ans = ans + 2**count
+    ans = ans + 1<<count
+    dividend = dividend - (dividend * (1<<count))
+    if ans > 2**31 and sign == True:
+      return "INT-MAX"
+    if ans > 2**31 and sign == False:
+      return "INT-MIN"
+    return ans if sign else (-1*ans)
+  
+dividend = 22
+divisor = 3
+print(main_function(dividend, divisor))  
+ '''
 
 # method 3 : optimal solution
 # TC     -      
-# SC     -      
+# SC     -    
+def main_function(dividend, divisor):
+    # Edge case: if the dividend is 0, return 0
+    if dividend == 0:
+        return 0
+    
+    sign = True
+    if (dividend < 0 and divisor > 0) or (dividend > 0 and divisor < 0):
+        sign = False  # result should be negative if only one of them is negative
+    
+    dividend = abs(dividend)
+    divisor = abs(divisor)
+    
+    ans = 0
+    count = 0
+    
+    while dividend >= divisor:
+        count = 0
+        while dividend >= (divisor << count):
+            count += 1
+        ans += (1 << (count - 1))  # add the appropriate power of 2 to the answer
+        dividend -= (divisor << (count - 1))  # subtract the corresponding divisor multiple
+        
+    # INT_MAX is 2^31 - 1, INT_MIN is -2^31
+    INT_MAX = 2**31 - 1
+    INT_MIN = -2**31
+    
+    # If the answer exceeds 32-bit signed integer range, return the appropriate value
+    if ans > INT_MAX:
+        return INT_MAX if sign else INT_MIN
+    
+    return ans if sign else -ans
+
+# Test case
+dividend = 22
+divisor = 3
+print(main_function(dividend, divisor))  # Expected output: 7
+
 
 
 # endregion
@@ -10961,10 +13703,30 @@ if __name__ == "__main__":
 # ------------------------------------
 
 # 1 TODO :  count number of bits to be flipped to convert A to B
-# method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+https://leetcode.com/problems/minimum-bit-flips-to-convert-number/
 
+
+'''
+# method 1 : brute force approch
+https://www.youtube.com/watch?v=OOdrmcfZXd8&list=PLgUwDviBIf0rnqh8QsJaHyIX7KUiaPUv7&index=3
+# TC     -      O(31) OR O()log2(start^goal)
+# SC     -     O(1)
+def main_function(start, goal):
+  ans = start^goal
+  count = 0 
+  for i in range(0, 31):
+    if ans & (1<<i):
+      count += 1 
+  return count
+  
+start = 10
+goal = 7
+print(main_function(start, goal)) 
+start = 3
+goal = 4
+print(main_function(start, goal)) 
+ 
 
 # method 2 : better approch
 # TC     -      
@@ -10976,26 +13738,80 @@ if __name__ == "__main__":
 # SC     -      
 
 
-# 2 TODO : find the number that appears odd number of times
-# method 1 : brute force approch
-# TC     -      
-# SC     -     
+# 2 TODO : find the number that appears odd number of times, single number - I
+'''
 
+https://leetcode.com/problems/single-number/
+
+
+
+'''
+# method 1 : brute force approch
+https://www.youtube.com/watch?v=sFBCAl8yBfE&list=PLgUwDviBIf0rnqh8QsJaHyIX7KUiaPUv7&index=5
+# TC     -      O(N + logm) + m where m =(n/2)+1
+# SC     -     O(m)
+def main_function(arr):
+  obj = {}
+  for i in range(len(arr)):
+    obj[arr[i]] = obj.get(i, 0) + 1 
+  print(obj)
+  for key, value in obj.items():
+    if value==1:
+      return key
+  return -1
+  
+start = [4,1,2,1,2]
+print(main_function(start)) 
 
 # method 2 : better approch
 # TC     -      
-# SC     -     
+# SC     -  
+def main_function(arr):
+  xor = 0
+  for i in range(len(arr)):
+    xor = xor^arr[i]
+  return xor
+  
+start = [4,1,2,1,2]
+goal = 7
+print(main_function(start))    
 
 
 # method 3 : optimal solution
 # TC     -      
-# SC     -      
+# SC     - 
+     
+# 👉 single number - II
+https://www.youtube.com/watch?v=5Bb2nqA40JY&list=PLgUwDviBIf0rnqh8QsJaHyIX7KUiaPUv7&index=6
 
 
-# 3 TODO : power set 
+# 3 TODO : power set (print all sub sets)
+'''
+https://leetcode.com/problems/subsets/
+
+
+
+'''
+https://www.youtube.com/watch?v=LqKaUv1G3_I&list=PLgUwDviBIf0rnqh8QsJaHyIX7KUiaPUv7&index=4
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(N * 2^n)
+# SC     -     O(2^n * N) near by 
+def main_function(nums):
+    ans = []
+    n = len(nums)
+    subsets = 1 << n  # 2^n, total number of subsets
+    for i in range(subsets):
+        subset = []
+        for j in range(n):
+            if (i & (1 << j)):  # check if the j-th bit is set in i
+                subset.append(nums[j])
+        ans.append(subset)
+    
+    return ans  # Return the list of subsets
+
+arr = [1, 2, 3]
+print(main_function(arr))
+
 
 
 # method 2 : better approch
@@ -11009,25 +13825,101 @@ if __name__ == "__main__":
 
 
 # 4 TODO : find xor of numbers from left to right
+'''
+https://bit.ly/3T8xUCf
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+http://youtube.com/watch?v=WqGb7159h7Q&list=PLgUwDviBIf0rnqh8QsJaHyIX7KUiaPUv7&index=8
+# TC     -     O(N) 
+# SC     -    O(1) 
+def main_function(nums):
+    xor = 0 
+    for i in range(nums+1):
+      xor = xor^i
+    
+    return xor  # Return the list of subsets
+
+arr = 4
+print(main_function(arr))
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+'''
+N % 4 == 1  -> 1
+N % 4 == 2  -> N+1
+N % 4 == 3  -> 0
+N % 4 == 0  -> N
+'''
+# TC     -      O(1)
+# SC     -    O(1) 
+def main_function(N):
+    if N % 4 == 1:
+      return 1
+    elif N % 4 == 2:
+      return N+1
+    elif N % 4 == 3:
+      return 0
+    else:
+      return N
+    
+num = 4
+print(main_function(num))
 
 
 # method 3 : optimal solution
 # TC     -      
-# SC     -      
-
-
-# 5 TODO : find the two numbers appearing off number of times
-# method 1 : brute force approch
-# TC     -      
 # SC     -     
+
+# 👉 find xor between two numbers, TC - O(1), SC - O(N)
+def main_function(left, right):
+  
+  return utility(left-1)^utility(right)
+
+
+def utility(N):
+  if N % 4 == 1:
+    return 1
+  elif N % 4 == 2:
+    return N+1
+  elif N % 4 == 3:
+    return 0
+  else:
+    return N
+  
+left = 4
+right = 7
+print(main_function(left, right))
+
+
+
+# 5 TODO : find the two numbers appearing off number of times, single number - III, 
+'''
+
+
+https://practice.geeksforgeeks.org/problems/two-numbers-with-odd-occurrences5846/1
+
+'''
+concept of buckets
+XORing two number, minimum 1 bit will be different in binary of those numbers
+https://www.youtube.com/watch?v=UA5JnV1J2sI&list=PLgUwDviBIf0rnqh8QsJaHyIX7KUiaPUv7&index=7
+# method 1 : brute force approch
+# TC     -      O(N + logm) + m where m =(n/2)+1
+# SC     -     O(m)
+def main_function(arr):
+  obj = {}
+  for i in range(len(arr)):
+    obj[arr[i]] = obj.get(i, 0) + 1 
+  res = []
+  for key, value in obj.items():
+    if value==1:
+      res.append(key)
+  return res
+  
+start = [4,1,2,1,2]
+print(main_function(start)) 
 
 
 # method 2 : better approch
@@ -11052,32 +13944,189 @@ if __name__ == "__main__":
 
 # region 8.3 BIT MANIPULATION - HARD
 # ----------------------------------
-
+https://www.youtube.com/watch?v=LT7XhVdeRyg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=267
 # 1 TODO :  print prime factors of a number
+'''
+https://bit.ly/3C165p8
+
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -  O(N*sqrt(N))    
+# SC     -    
+def main_function(num):
+  res = []
+  for i in range(2, num+1):
+    if num % i==0:
+      if prime(i):
+        res.append(i)
+        
+  return res
+
+import math
+
+def prime(num):
+    if num <= 1:
+        return False  # 1 and numbers less than 1 are not prime
+    for i in range(2, int(math.sqrt(num)) + 1):  # Check divisibility from 2 to sqrt(num)
+        if num % i == 0:
+            return False  # num is divisible by i, hence it's not prime
+    return True  # num is prime if it's not divisible by any number in the range
+
+num = 60
+print(main_function(num))
+num = 35
+print(main_function(num))
+num = 780
+print(main_function(num)) 
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -     O(sqrt(N) * 2 * sqrt(N)) near by 
+# SC     -    
+import math
+
+def main_function(num):
+    res = []
+    # Loop through divisors from 1 to sqrt(num)
+    for i in range(1, int(math.sqrt(num)) + 1):  # Fixing the range
+        if num % i == 0:  # Check if i is a divisor of num
+            if prime(i):
+                res.append(i)
+            if num // i != i:  # To avoid duplicates, check if i is not the square root of num
+                if prime(num // i):
+                    res.append(num // i)
+    return res
+
+import math
+
+def prime(num):
+    if num <= 1:
+        return False  # 1 and numbers less than 1 are not prime
+    for i in range(2, int(math.sqrt(num)) + 1):  # Check divisibility from 2 to sqrt(num)
+        if num % i == 0:
+            return False  # num is divisible by i, hence it's not prime
+    return True  # num is prime if it's not divisible by any number in the range
+
+num = 60
+print(main_function(num))
+num = 35
+print(main_function(num))
+num = 780
+print(main_function(num)) 
 
 
 # method 3 : optimal solution
 # TC     -      
-# SC     -      
+# SC     -    
+import math
+
+def main_function(num):
+    res = []
+    # Loop through divisors from 1 to sqrt(num)
+    for i in range(2, num):
+      if num % i == 0:
+        res.append(i)
+        while num % i == 0:
+          num = num // i
+    return res
+
+import math
+
+def prime(num):
+    if num <= 1:
+        return False  # 1 and numbers less than 1 are not prime
+    for i in range(2, int(math.sqrt(num)) + 1):  # Check divisibility from 2 to sqrt(num)
+        if num % i == 0:
+            return False  # num is divisible by i, hence it's not prime
+    return True  # num is prime if it's not divisible by any number in the range
+
+num = 60
+print(main_function(num))
+num = 35
+print(main_function(num))
+num = 780
+print(main_function(num))  
+
+# method 4 : optimal solution
+# TC     -      O(sqrt(N)*log(N))
+# SC     -    
+import math
+
+def main_function(num):
+    res = []
+    # Loop through divisors from 1 to sqrt(num)
+    for i in range(2, int(math.sqrt(num)+1)):
+      if num % i == 0:
+        res.append(i)
+        while num % i == 0:
+          num = num // i
+    if num != 1:
+      res.append(num)
+    return res
+
+
+num = 60
+print(main_function(num))
+num = 35
+print(main_function(num))
+num = 780
+print(main_function(num)) 
 
 
 # 2 TODO : all divisors of a number
+'''
+
+https://practice.geeksforgeeks.org/problems/all-divisors-of-a-number/1?utm_source=youtube&amp;utm_medium=collab_striver_ytdescription&amp;utm_campaign=all-divisors-of-a-number
+
+
+
+
+'''
+https://www.youtube.com/watch?v=Ae_Ag_saG9s&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=265
 # method 1 : brute force approch
 # TC     -      
-# SC     -     
+# SC     -    
+import math
+
+def main_function(num):
+    res = []
+    for i in range(1, num + 1):
+      if num % i == 0:
+        res.append(i)
+    return res
+
+
+num = 60
+print(main_function(num))
+num = 36
+print(main_function(num))
+num = 780
+print(main_function(num)) 
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -      O(sqrt(N))
+# SC     -    
+import math
+
+def main_function(num):
+    res = []
+    for i in range(1, int(math.sqrt(num) + 1)):
+      if num % i == 0:
+        res.append(i)
+        if num // i != i:
+          res.append(num//i)
+    return res
+
+
+num = 60
+print(main_function(num))
+num = 36
+print(main_function(num))
+num = 780
+print(main_function(num)) 
 
 
 # method 3 : optimal solution
@@ -11085,31 +14134,182 @@ if __name__ == "__main__":
 # SC     -      
 
 
-# 3 TODO : sieve of eratosthenes
+# 3 TODO : sieve of eratosthenes, print all the prime till the number N
+'''
+https://leetcode.com/problems/count-primes/
+
+'''
+https://www.youtube.com/watch?v=g5Fuxn_AvSk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=269
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
+import math
+
+def main_function(num):
+    res = []
+    for i in range(1, num + 1):
+      if prime(i):
+        res.append(i)
+    return res
+    
+def prime(num):
+    if num <= 1:
+        return False  # 1 and numbers less than 1 are not prime
+    for i in range(2, int(math.sqrt(num)) + 1):  # Check divisibility from 2 to sqrt(num)
+        if num % i == 0:
+            return False  # num is divisible by i, hence it's not prime
+    return True  # num is prime if it's not divisible by any number in the range
+
+
+
+num = 60
+print(main_function(num))
+num = 36
+print(main_function(num))
+num = 780
+print(main_function(num))
 
 
 # method 2 : better approch
 # TC     -      
 # SC     -     
+import math
 
+def main_function(num):
+    res = []
+    # Loop through divisors from 1 to sqrt(num)
+    prime = utility(num)
+    for i in range(1, num + 1):
+      if prime[i]:
+        res.append(i)
+    # utility(num)
+    return res
+    
+def utility(N):
+  prime = [1]*(N+1)
+  print(prime)
+  for i in range(2, N):
+    if prime[i] == 1:
+      for j in range(2*i, N+1, i):
+        prime[j] = 0
+  return prime
+
+
+num = 60
+print(main_function(num))
+num = 36
+print(main_function(num))
+num = 780
+print(main_function(num))
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -     O(N) + O(N*log(log(N))) + O(N) 
+# SC     -  O(N)
+import math
+
+def main_function(num):
+    res = []
+    # Generate a list of primes up to num using the utility function
+    prime = utility(num)
+    # Collecting the prime numbers based on the sieve result
+    for i in range(2, num + 1):
+        if prime[i]:  # If prime[i] is 1, it means i is prime
+            res.append(i)
+    return res
+    
+def utility(N):
+    prime = [1] * (N + 1)  # A list to track if numbers are prime (1 means prime, 0 means not prime)
+    prime[0], prime[1] = 0, 0  # 0 and 1 are not prime numbers
+    
+    # Sieve of Eratosthenes algorithm
+    for i in range(2, int(math.sqrt(N)) + 1):  # We only need to go up to sqrt(N)
+        if prime[i] == 1:  # If i is prime
+            # Mark all multiples of i as non-prime
+            for j in range(i * i, N + 1, i):  # Start from i^2, since smaller multiples would have been marked already
+                prime[j] = 0
+    return prime
+
+# Test cases
+num = 60
+print(main_function(num))  # Output: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+num = 36
+print(main_function(num))  # Output: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+num = 780
+print(main_function(num))  # Output: Primes up to 780
+    
 
 
 # 4 TODO : find prime factorisation of a number using sieve
+'''
+https://bit.ly/3SPGzbK
+
+
+
+'''
+https://www.youtube.com/watch?v=glKWkmKFlMw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=271
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
+import math
+
+def main_function(num):
+    res = []
+    # Loop through divisors from 1 to sqrt(num)
+    for i in range(2, int(math.sqrt(num)+1)):
+      if num % i == 0:
+        
+        while num % i == 0:
+          res.append(i)
+          num = num // i
+    if num != 1:
+      res.append(num)
+    return res
+
+
+num = 60
+print(main_function(num))
+num = 35
+print(main_function(num))
+num = 780
+print(main_function(num)) 
 
 
 # method 2 : better approch
 # TC     -      
-# SC     -     
+# SC     - 
+NOT according to striver    
+# import math
+
+# def main_function(num):
+#     prime_factors = []
+#     primes = utility(num)  # Get primes up to 'num' using the sieve
+#     for i in range(2, num + 1):
+#         # Check if 'i' is prime and divides 'num'
+#         if primes[i]:  # i is prime
+#             while num % i == 0:  # Keep dividing 'num' by i as long as it's divisible
+#                 prime_factors.append(i)
+#                 num //= i  # Update 'num' after dividing by the prime factor
+#     return prime_factors
+    
+# def utility(N):
+#     prime = [1] * (N + 1)  # Sieve of Eratosthenes array
+#     prime[0], prime[1] = 0, 0  # 0 and 1 are not prime
+    
+#     # Sieve of Eratosthenes algorithm
+#     for i in range(2, int(math.sqrt(N)) + 1):
+#         if prime[i] == 1:
+#             for j in range(i * i, N + 1, i):
+#                 prime[j] = 0  # Mark multiples of i as non-prime
+#     return prime
+
+# # Test cases
+# num = 60
+# print(main_function(num))  # Output: [2, 2, 3, 5]
+# num = 36
+# print(main_function(num))  # Output: [2, 2, 3, 3]
+# num = 780
+# print(main_function(num))  # Output: [2, 2, 3, 5, 13]
+
 
 
 # method 3 : optimal solution
@@ -11117,15 +14317,50 @@ if __name__ == "__main__":
 # SC     -      
 
 
-# 5 TODO : power(n,x)
+# ⭐⭐⭐ PATTERN - power exponention
+# 5 TODO : power(n,x), using power exponention
+'''
+https://leetcode.com/problems/powx-n/
+
+
+
+
+'''
+https://www.youtube.com/watch?v=hFWckDXE-K8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=268
 # method 1 : brute force approch
 # TC     -      
-# SC     -     
+# SC     -   
+def main_function(num, pow):
+  res = 1 
+  for i in range(1, pow+1):
+    res = 2*res
+  return res
+
+
+num = 2
+pow = 5
+print(main_function(num, pow))
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -      O(log2(N))
+# SC     -  O(1)
+def main_function(num, pow):
+    ans = 1
+    while pow > 0:
+        if pow % 2 == 1:  # If the exponent is odd
+            ans = ans * num
+        num = num * num  # Square the base
+        pow = pow // 2  # Halve the exponent
+    if pow < 0:
+        return 1 / ans
+    return ans
+
+# Test case
+num = 2
+pow = 5
+print(main_function(num, pow))  # Output should be 32 (2^5)
+   
 
 
 # method 3 : optimal solution
@@ -11145,36 +14380,51 @@ if __name__ == "__main__":
 
 # region 9.1 STACK/QUEUE - LEARNING
 # ---------------------------------
+'''
+https://www.youtube.com/watch?v=tqQ5fTamIN4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=297
 
-# 1 TODO :  implement stack using arrays
-# method 1 : brute force approch
-Time Complexity: O(N)
+Time Complexity: O(1)
 
 Space Complexity: O(N)
+'''
+# 1 TODO :  implement stack using arrays
+'''
+https://bit.ly/3QPJ39w
+
+
+
+
+'''
+# method 1 : brute force approch
+
 class Stack:
     def __init__(self):
-        self.top = -1
-        self.size = 1000
-        self.arr = [0] * self.size
+      self.top = -1
+      self.size = 1000
+      self.arr = [0] * self.size
 
 
     def push(self, x: int) -> None:
-        self.top += 1
-        self.arr[self.top] = x
+      if self.top >= self.size:
+        return "Stack is full."
+      self.top += 1
+      self.arr[self.top] = x
 
 
     def pop(self) -> int:
+      if self.top != -1:
         x = self.arr[self.top]
         self.top -= 1
         return x
 
 
     def Top(self) -> int:
-        return self.arr[self.top]
+      # -1 means stack is empty
+      return self.arr[self.top]
 
 
     def Size(self) -> int:
-        return self.top + 1
+      return self.top + 1
 
 
 
@@ -11202,6 +14452,11 @@ if __name__ == "__main__":
 
 # 2 TODO : implement queue using arrays
 # method 1 : brute force approch
+'''
+https://bit.ly/3C9HLli
+
+https://www.youtube.com/watch?v=tqQ5fTamIN4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=297
+
 Time Complexity:
 
 pop function: O(1)
@@ -11214,7 +14469,7 @@ size function: O(1)
 
 Space Complexity:
 Whole Queue: O(n)
-
+'''
 class Queue:
     def __init__(self):
         self.start = -1
@@ -11228,9 +14483,12 @@ class Queue:
         if self.currSize == self.maxSize:
             print("Queue is full\nExiting...")
             exit(1)
-        if self.end == -1:
+        if self.currSize == 0:
             self.start = 0
             self.end = 0
+        # if self.end == -1:
+        #     self.start = 0
+        #     self.end = 0
         else:
             self.end = (self.end + 1) % self.maxSize
         self.arr[self.end] = newElement
@@ -11266,6 +14524,7 @@ class Queue:
 
 if __name__ == "__main__":
     q = Queue()
+    print(q.__dict__)
     q.push(4)
     q.push(14)
     q.push(24)
@@ -11276,7 +14535,6 @@ if __name__ == "__main__":
     print("The peek of the queue after deleting an element", q.top())
     print("The size of the queue after deleting an element", q.size())
 
-
 # method 2 : better approch
 # TC     -      
 # SC     -     
@@ -11285,56 +14543,82 @@ if __name__ == "__main__":
 # method 3 : optimal solution
 # TC     -      
 # SC     -      
+ 
 
 
 # 3 TODO : implement stack using queue
+'''
+https://leetcode.com/problems/implement-stack-using-queues/
+
+
+
+
+'''
 # method 1 : brute force approch
+
+https://www.youtube.com/watch?v=tqQ5fTamIN4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=297
+
 Time Complexity: O(N)
 
 Space Complexity: O(N)
-from queue import Queue
 
 
-
+from queue import Queue  
 
 class Stack:
     def __init__(self):
-        self.q = Queue()
-
+        self.q = Queue() 
 
     def push(self, x):
-        s = self.q.qsize()
+        s = self.q.qsize()  # Get the current size of the queue (number of elements in the stack)
+        
+        # Add the new element to the end of the queue
         self.q.put(x)
+        
+        # Rotate the queue elements to make the newly added element the front (simulating stack behavior)
         for i in range(s):
-            self.q.put(self.q.get())
-
-
+            self.q.put(self.q.get())  # Remove the front element and put it at the end
+        
     def pop(self):
-        n = self.q.get()
-        return n
-
+        if self.q.empty():  # Check if the queue (stack) is empty
+            print("Stack is empty! Cannot pop.")
+            return None
+        n = self.q.get()  # Get the front element (top of the stack)
+        return n  # Return the popped element
 
     def top(self):
-        return self.q.queue[0]
-
+        if self.q.empty():  # Check if the stack is empty
+            print("Stack is empty! Cannot get the top.")
+            return None
+        return self.q.queue[0]  # Access the front element of the queue (top of the stack)
 
     def size(self):
-        return self.q.qsize()
+        return self.q.qsize()  # Return the size of the queue (number of elements in the stack)
 
-
-
-
+# Driver code to test the Stack implementation
 if __name__ == "__main__":
-    s = Stack()
+    s = Stack()  # Create a new stack instance using the Stack class
+    
+    # Push elements onto the stack
     s.push(3)
     s.push(2)
     s.push(4)
     s.push(1)
-    print("Top of the stack: ", s.top())
-    print("Size of the stack before removing element: ", s.size())
-    print("The deleted element is: ", s.pop())
-    print("Top of the stack after removing element: ", s.top())
-    print("Size of the stack after removing element: ", s.size())  
+    
+    # Print the top element of the stack (should be the most recently added element)
+    print("Top of the stack: ", s.top())  # Expected output: 1 (most recently pushed element)
+    
+    # Print the size of the stack before popping any element
+    print("Size of the stack before removing element: ", s.size())  # Expected output: 4
+    
+    # Pop the top element and print it
+    print("The deleted element is: ", s.pop())  # Expected output: 1 (most recently added element)
+    
+    # Print the top element of the stack after the pop operation
+    print("Top of the stack after removing element: ", s.top())  # Expected output: 4 (next element)
+    
+    # Print the size of the stack after popping an element
+    print("Size of the stack after removing element: ", s.size())  # Expected output: 3
 
 
 # method 2 : better approch
@@ -11348,15 +14632,22 @@ if __name__ == "__main__":
 
 
 # 4 TODO : implement queue using stack
+'''
+https://leetcode.com/problems/implement-queue-using-stacks/
+
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N )  
 
 Space Complexity: O(2N)
+
+
+
 from queue import LifoQueue
 # using LifoQueue which is a stack in python
-
-
-
 
 class Queue:
     def __init__(self):
@@ -11410,7 +14701,86 @@ if __name__ == "__main__":
 
 # method 2 : better approch
 # TC     -      
-# SC     -     
+# SC     -    
+class QueueUsingTwoStacks:
+    def __init__(self):
+        """Initialize the queue using two stacks."""
+        self.stack1 = []  # Stack used for enqueuing
+        self.stack2 = []  # Stack used for dequeuing
+
+    def enqueue(self, x):
+        """Enqueue an element into the queue (push to stack1)."""
+        self.stack1.append(x)
+        print(f"Enqueued: {x}")
+
+    def dequeue(self):
+        """Dequeue an element from the queue (pop from stack2)."""
+        if self.is_empty():
+            print("Queue is empty! Cannot dequeue.")
+            return None
+        
+        # If stack2 is empty, transfer all elements from stack1 to stack2
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        
+        # Pop the element from stack2, which is the front of the queue
+        return self.stack2.pop()
+
+    def peek(self):
+        """Return the front element of the queue without removing it."""
+        if self.is_empty():
+            print("Queue is empty! Cannot peek.")
+            return None
+        
+        # If stack2 is empty, transfer all elements from stack1 to stack2
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        
+        return self.stack2[-1]  # Peek the top element of stack2
+
+    def is_empty(self):
+        """Check if the queue is empty."""
+        return len(self.stack1) == 0 and len(self.stack2) == 0
+
+    def size(self):
+        """Return the current size of the queue."""
+        return len(self.stack1) + len(self.stack2)
+
+# Test the QueueUsingTwoStacks class
+if __name__ == "__main__":
+    queue = QueueUsingTwoStacks()
+    
+    # Enqueue elements into the queue
+    queue.enqueue(10)
+    queue.enqueue(20)
+    queue.enqueue(30)
+    
+    print("Front of the queue:", queue.peek())  # Expected output: 10
+    print("Size of the queue:", queue.size())  # Expected output: 3
+    
+    # Dequeue an element from the queue
+    print("Dequeued element:", queue.dequeue())  # Expected output: 10
+    print("Front of the queue after dequeue:", queue.peek())  # Expected output: 20
+    print("Size of the queue after dequeue:", queue.size())  # Expected output: 2
+    
+    # Enqueue more elements
+    queue.enqueue(40)
+    queue.enqueue(50)
+    
+    print("Front of the queue after more enqueues:", queue.peek())  # Expected output: 20
+    print("Size of the queue after more enqueues:", queue.size())  # Expected output: 4
+    
+    # Dequeue all elements
+    print("Dequeued element:", queue.dequeue())  # Expected output: 20
+    print("Dequeued element:", queue.dequeue())  # Expected output: 30
+    print("Dequeued element:", queue.dequeue())  # Expected output: 40
+    print("Dequeued element:", queue.dequeue())  # Expected output: 50
+    
+    # Check if the queue is empty
+    print("Is the queue empty?", queue.is_empty())  # Expected output: True
+ 
 
 
 # method 3 : optimal solution
@@ -11419,9 +14789,91 @@ if __name__ == "__main__":
 
 
 # 5 TODO : implement stack using linked list
+'''
+https://bit.ly/3w6PwVv
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
-# SC     -     
+# SC     -  
+
+# Node class to represent an element in the linked list
+class Node:
+    def __init__(self, data=None):
+        self.data = data  # Data stored in the node
+        self.next = None  # Reference to the next node
+
+# Stack class using linked list
+class Stack:
+    def __init__(self):
+        self.top = None  # Initialize the stack with no elements
+        self.size = 0  # Initialize stack size to 0
+
+    def push(self, data):
+        """Push an element onto the stack"""
+        new_node = Node(data)  # Create a new node with the given data
+        new_node.next = self.top  # Link the new node to the top element of the stack
+        self.top = new_node  # Update the top of the stack to the new node
+        self.size += 1  # Increment the size of the stack
+        print(f"Pushed {data} onto the stack.")
+
+    def pop(self):
+        """Pop an element from the stack"""
+        if self.is_empty():
+            print("Stack is empty! Cannot pop.")
+            return None
+        popped_node = self.top  # Get the top element
+        self.top = self.top.next  # Update the top to the next element
+        popped_data = popped_node.data  # Store the data of the popped node
+        
+        # Explicitly delete the popped node to free the memory
+        popped_node.next = None  # Disconnect the node from the list (optional but good practice)
+        popped_node = None  # Explicitly dereference the popped node (helpful for garbage collection)
+        
+        self.size -= 1  # Decrement the stack size
+        return popped_data  # Return the popped data
+
+    def peek(self):
+        """Return the top element without removing it"""
+        if self.is_empty():
+            print("Stack is empty! Cannot peek.")
+            return None
+        return self.top.data  # Return the data of the top element
+
+    def is_empty(self):
+        """Check if the stack is empty"""
+        return self.size == 0
+
+    def get_size(self):
+        """Return the size of the stack"""
+        return self.size
+
+# Driver code to test the stack implementation
+if __name__ == "__main__":
+    stack = Stack()
+    
+    # Test pushing elements onto the stack
+    stack.push(10)
+    stack.push(20)
+    stack.push(30)
+    
+    # Test peek operation
+    print(f"Top element is: {stack.peek()}")  # Should print 30
+    
+    # Test popping elements from the stack
+    print(f"Popped element: {stack.pop()}")  # Should print 30
+    print(f"Popped element: {stack.pop()}")  # Should print 20
+    print(f"Popped element: {stack.pop()}")  # Should print 10
+    
+    # Test if the stack is empty
+    print(f"Is stack empty? {stack.is_empty()}")  # Should print True
+    
+    # Test the size of the stack
+    print(f"Stack size: {stack.get_size()}")  # Should print 0
+
 
 
 # method 2 : better approch
@@ -11435,9 +14887,100 @@ if __name__ == "__main__":
 
 
 # 6 TODO : implement queue using linked list
+'''
+https://bit.ly/3PA7mY0
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
-# SC     -     
+# SC     -  
+# Node class to represent an element in the linked list
+class Node:
+    def __init__(self, data=None):
+        self.data = data  # Data stored in the node
+        self.next = None  # Reference to the next node
+
+# Queue class using a linked list
+class Queue:
+    def __init__(self):
+        self.start = None  # Initialize start to None (empty queue)
+        self.end = None    # Initialize end to None (empty queue)
+        self.size = 0      # Initialize queue size to 0
+
+    def enqueue(self, data):
+        """Enqueue an element into the queue"""
+        new_node = Node(data)  # Create a new node with the given data
+        if self.end is None:
+            # If the queue is empty, both start and end will point to the new node
+            self.start = new_node
+            self.end = new_node
+        else:
+            # Add the new node at the end and update the end pointer
+            self.end.next = new_node
+            self.end = new_node
+        self.size += 1  # Increment the size of the queue
+        print(f"Enqueued {data} into the queue.")
+
+    def dequeue(self):
+        """Dequeue an element from the start of the queue"""
+        if self.is_empty():
+            print("Queue is empty! Cannot dequeue.")
+            return None
+        dequeued_node = self.start  # Get the start node
+        self.start = self.start.next  # Move the start pointer to the next node
+        
+        # Explicitly delete the data of the dequeued node
+        dequeued_node.data = None  # Clear the data of the dequeued node
+        
+        if self.start is None:  # If the queue becomes empty, set end to None as well
+            self.end = None
+        self.size -= 1  # Decrement the size of the queue
+        return dequeued_node.data  # Return the dequeued data (which is now None)
+
+    def peek(self):
+        """Return the start element without removing it"""
+        if self.is_empty():
+            print("Queue is empty! Cannot peek.")
+            return None
+        return self.start.data  # Return the data at the start node
+
+    def is_empty(self):
+        """Check if the queue is empty"""
+        return self.size == 0
+
+    def get_size(self):
+        """Return the size of the queue"""
+        return self.size
+
+# Driver code to test the queue implementation
+if __name__ == "__main__":
+    queue = Queue()
+    
+    # Test enqueue operation
+    queue.enqueue(10)
+    queue.enqueue(20)
+    queue.enqueue(30)
+    
+    # Test peek operation
+    print(f"Start element is: {queue.peek()}")  # Should print 10
+    
+    # Test dequeue operation
+    print(f"Dequeued element: {queue.dequeue()}")  # Should print 10
+    print(f"Dequeued element: {queue.dequeue()}")  # Should print 20
+    
+    # Test if the queue is empty
+    print(f"Is queue empty? {queue.is_empty()}")  # Should print False
+    
+    # Test the size of the queue
+    print(f"Queue size: {queue.get_size()}")  # Should print 1
+    
+    # Test the final dequeue operation
+    print(f"Dequeued element: {queue.dequeue()}")  # Should print 30
+    print(f"Is queue empty? {queue.is_empty()}")  # Should print True
+    print(f"Queue size: {queue.get_size()}")  # Should print 0
+   
 
 
 # method 2 : better approch
@@ -11447,29 +14990,40 @@ if __name__ == "__main__":
 
 # method 3 : optimal solution
 # TC     -      
-# SC     -      
+# SC     -   
 
 
 # 7 TODO : check for balanced paranthesis
+'''
+https://leetcode.com/problems/valid-parentheses/
+
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=xwjS0iZhw4I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=298
+
 Time Complexity: O(N)
 
 Space Complexity: O(N)
+'''
+
 def isValid(s: str) -> bool:
-    st = []
-    for it in s:
-        if it == '(' or it == '{' or it == '[':
-            st.append(it)
-        else:
-            if len(st) == 0:
-                return False
-            ch = st[-1]
-            st.pop()
-            if (it == ')' and ch == '(') or (it == ']' and ch == '[') or (it == '}' and ch == '{'):
-                continue
-            else:
-                return False
-    return len(st) == 0
+  st = []
+  for it in s:
+    if it == '(' or it == '{' or it == '[':
+      st.append(it)
+    else:
+      if len(st) == 0:
+        return False
+      ch = st[-1] # taking the top element
+      st.pop()
+      if (it == ')' and ch == '(') or (it == ']' and ch == '[') or (it == '}' and ch == '{'):
+        continue
+      else:
+        return False
+  return len(st) == 0
 
 
 
@@ -11493,6 +15047,12 @@ if __name__ == '__main__':
 
 
 # 8 TODO : implement min stack
+'''
+
+https://leetcode.com/problems/min-stack/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -11520,11 +15080,95 @@ if __name__ == '__main__':
 
 # region 9.2 STACK/QUEUE - PREFIX/POSTFIX
 # ---------------------------------------
+'''   
+https://www.youtube.com/watch?v=4pIc9UBHJtk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=299
 
-# 1 TODO :  infix to postfix conversion using stack
+- operator -  
+- operand - 
+- priority order of operators
+**
+*,//
++,-
+- infix expression
+usecase ??
+(p+q)*(m-n)
+- prefix expression
+usecase ??
+*+pq-mn
+- postfix expression
+usecase ??
+pq+mn-*
+
+
+'''
+
+# 1 TODO :  Shunting Yard algorithm,, infix to postfix conversion using stack
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+https://bit.ly/3JWYj1P
+
+
+- initiate i, stack st and and empty string ans
+- iterate over the expression
+- if encounter an operand, add it to the string ans
+- if encounter an ( bracket, push the bracket ( into the stack
+- if ancounter an ) bracket, keep popping out the operators until found ) bracket and adding those popped operators into the string ans
+- if encounter an operator, then check if the top of the stack has less priority operator then push that current operator. If the top of the stack has operator of higher priority then keep popping that operator and add it to the string ans
+- once iteration is closed, then again iterate over the stack st and keep popping and add those operators in string ans
+
+
+
+
+TC     -      O(N) + O(N)
+SC     -   O(N) + O(N)
+
+'''
+
+def priority(op):
+    # Define the precedence of operators
+    if op == '+' or op == '-':
+        return 1
+    if op == '*' or op == '/':
+        return 2
+    if op == '^':
+        return 3  # ^ has the highest precedence
+    return 0  # for parentheses or non-operator characters
+
+def is_left_associative(op):
+    # ^ is right-associative, other operators are left-associative
+    return op != '^'
+
+def main_function(s):
+    i = 0
+    st = []  # Stack for operators and parentheses
+    ans = ""  # Output for the postfix expression
+    n = len(s)
+
+    while i < n:
+        if s[i].isalnum():  # If the character is an operand (alphabetic or digit)
+            ans += s[i]
+        elif s[i] == "(":  # If it's a left parenthesis, push to stack
+            st.append(s[i])
+        elif s[i] == ")":  # If it's a right parenthesis, pop until left parenthesis is found
+            while st and st[-1] != "(":
+                ans += st.pop()
+            st.pop()  # Pop the '(' from stack
+        else:  # If it's an operator
+            while st and priority(s[i]) < priority(st[-1]) or (priority(s[i]) == priority(st[-1]) and is_left_associative(s[i])):
+                ans += st.pop()  # Pop operators from stack to output if their precedence is higher or equal
+            st.append(s[i])  # Push the current operator to the stack
+        i += 1
+
+    # Pop the remaining operators from the stack
+    while st:
+        ans += st.pop()
+
+    return ans
+
+# Test the function with an expression containing ^
+expression = "(p+q)*(m-n)^2"
+print(main_function(expression))  # Output: pq+mn-2^*
+  
 
 
 # method 2 : better approch
@@ -11538,9 +15182,68 @@ if __name__ == '__main__':
 
 
 # 2 TODO : prefix to infix conversion
+'''
+https://bit.ly/3FwxK3j
+
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+
+- initiate two variables iterator i and stack stack
+- iterate over the expression
+- if encounter an operand, just push it into the stack
+- if get an operator, pop last two operands and create small expression like (operand_1 operator operand_2) , and push this expression into the stack
+
+
+
+
+TC     -  O(N) + O(N)
+SC     -  O(N)
+''' 
+
+def is_operator(c):
+    # Check if the character is an operator
+    return c in '+-*/^'
+
+def prefix_to_infix(prefix):
+    stack = []
+    # Reverse the prefix expression to process it from right to left
+    prefix = prefix[::-1]
+    i = 0
+
+    # Loop through the reversed prefix expression using a while loop
+    while i < len(prefix):
+        char = prefix[i]
+
+        # If the character is an operand, push it onto the stack
+        if not is_operator(char):
+            stack.append(char)
+        else:
+            # If the character is an operator, pop two operands from the stack
+            operand1 = stack.pop()
+            operand2 = stack.pop()
+
+            # Form the infix expression with parentheses around the operands and operator
+            infix_expr = f"({operand1} {char} {operand2})"
+
+            # Push the resulting infix expression back onto the stack
+            stack.append(infix_expr)
+
+        # Increment the index
+        i += 1
+
+    # The final element in the stack will be the infix expression
+    return stack[-1]
+
+# Example usage
+prefix_expr = "*+ab-cd"
+infix_expr = prefix_to_infix(prefix_expr)
+print(f"Prefix Expression: {prefix_expr}")
+print(f"Infix Expression: {infix_expr}")
+
+
 
 
 # method 2 : better approch
@@ -11554,9 +15257,65 @@ if __name__ == '__main__':
 
 
 # 3 TODO : prefix to postfix conversion
+'''
+
+https://bit.ly/3DrwCLI
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+- initialize two variable stack and i
+- iterate over the expression from the end
+- if encounter an operand, just push it into the stack
+- if get an operator, pop last two operands and create small expression like (operand_top_1 operand_top_2 operator ) , and push this expression into the stack
+
+
+TC     -      O(2N)
+SC     -     O(N)
+'''
+def is_operator(c):
+    # Check if the character is an operator
+    return c in '+-*/^'
+
+def prefix_to_postfix(prefix):
+    stack = []
+    i = len(prefix) - 1  # Start from the last character of the prefix expression
+
+    # Loop through the prefix expression in reverse order using a while loop
+    while i >= 0:
+        char = prefix[i]
+
+        # If the character is an operand, push it onto the stack
+        if not is_operator(char):
+            stack.append(char)
+        else:
+            # If the character is an operator, pop two operands from the stack
+            if len(stack) < 2:
+                raise ValueError("Insufficient operands for the operator")
+            operand1 = stack.pop()
+            operand2 = stack.pop()
+
+            # Form the postfix expression by placing the operands first, then the operator
+            postfix_expr = f"{operand1}{operand2}{char}"
+
+            # Push the resulting postfix expression back onto the stack
+            stack.append(postfix_expr)
+
+        # Decrement the index to process the next character from the right
+        i -= 1
+
+    # The final element in the stack will be the postfix expression
+    if len(stack) != 1:
+        raise ValueError("Invalid expression")
+    return stack[-1]
+
+# Example usage
+prefix_expr = "*+ab-cd"
+postfix_expr = prefix_to_postfix(prefix_expr)
+print(f"Prefix Expression: {prefix_expr}")
+print(f"Postfix Expression: {postfix_expr}")
+
 
 
 # method 2 : better approch
@@ -11570,9 +15329,64 @@ if __name__ == '__main__':
 
 
 # 4 TODO : postfix to prefix conversion
+'''
+https://bit.ly/3UaWJxk
+
+
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+- initiate two variables iterator i and stack stack
+- iterate over the expression
+- if encounter an operand, just push it into the stack
+- if get an operator, pop last two operands and create small expression like (operator operand_top_2 operand_top_1) , and push this expression into the stack
+
+
+
+TC     -      O(N)
+SC     -  O(N)
+'''
+
+def is_operator(c):
+    # Check if the character is an operator
+    return c in '+-*/^'
+
+def postfix_to_prefix(postfix):
+    stack = []
+    i = 0
+
+    # Loop through the postfix expression using a while loop
+    while i < len(postfix):
+        char = postfix[i]
+
+        # If the character is an operand, push it onto the stack
+        if not is_operator(char):
+            stack.append(char)
+        else:
+            # If the character is an operator, pop two operands from the stack
+            operand2 = stack.pop()
+            operand1 = stack.pop()
+
+            # Form the prefix expression by placing the operator before the operands
+            prefix_expr = f"{char}{operand1}{operand2}"
+
+            # Push the resulting prefix expression back onto the stack
+            stack.append(prefix_expr)
+
+        # Increment the index
+        i += 1
+
+    # The final element in the stack will be the prefix expression
+    return stack[-1]
+
+# Example usage
+postfix_expr = "ab+c*d+"
+prefix_expr = postfix_to_prefix(postfix_expr)
+print(f"Postfix Expression: {postfix_expr}")
+print(f"Prefix Expression: {prefix_expr}")
+
 
 
 # method 2 : better approch
@@ -11586,9 +15400,64 @@ if __name__ == '__main__':
 
 
 # 5 TODO : postfix to infix 
+'''
+https://bit.ly/3sNZ1a2
+
+
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+- initiate two variables iterator i and stack stack
+- iterate over the expression
+- if encounter an operand, just push it into the stack
+- if get an operator, pop last two operands and create small expression like (operand_1 operator operand_2) , and push this expression into the stack
+
+
+
+
+TC     -      O(N) + O(N)
+SC     -  O(N)
+'''
+def is_operator(c):
+    # Check if the character is an operator
+    return c in '+-*/^'
+
+def postfix_to_infix(postfix):
+    stack = []
+    i = 0
+
+    # Loop through the postfix expression using a while loop
+    while i < len(postfix):
+        char = postfix[i]
+
+        # If the character is an operand (a number or letter), push it onto the stack
+        if not is_operator(char):
+            stack.append(char)
+        else:
+            # If the character is an operator, pop two operands from the stack
+            operand2 = stack.pop()
+            operand1 = stack.pop()
+
+            # Form the infix expression with parentheses around the operands and operator
+            infix_expr = f"({operand1} {char} {operand2})"
+
+            # Push the resulting infix expression back onto the stack
+            stack.append(infix_expr)
+
+        # Increment the index
+        i += 1
+
+    # The final element in the stack will be the infix expression
+    return stack[-1]
+
+# Example usage
+postfix_expr = "ab+c*d+"
+infix_expr = postfix_to_infix(postfix_expr)
+print(f"Postfix Expression: {postfix_expr}")
+print(f"Infix Expression: {infix_expr}")
+
 
 
 # method 2 : better approch
@@ -11602,9 +15471,97 @@ if __name__ == '__main__':
 
 
 # 6 TODO : convert infix to prefix notation
+'''
+https://bit.ly/3T0gZ4P
+
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+Step 1: Reverse the input expression from end to start
+Step 2: Replace parentheses in the reversed string, ( => ) and ) => (
+Step 3: Convert the reversed infix to postfix
+- initiate i, stack st and and empty string ans
+- iterate over the expression
+- if encounter an operand, add it to the string ans
+- if encounter an ( bracket, push the bracket ( into the stack
+- if ancounter an ) bracket, keep popping out the operators until found ) bracket and adding those popped operators into the string ans
+- if encounter an operator, then check if the top of the stack has less priority operator then push that current operator. If the top of the stack has operator of higher priority then keep popping that operator and add it to the string ans
+- once iteration is closed, then again iterate over the stack st and keep popping and add those operators in string ans
+Step 4: Reverse the postfix expression to get prefix
+
+
+TC     -      O(3N)
+SC     -  O(N)
+
+'''
+def priority(op):
+    # Define the precedence of operators
+    if op == '+' or op == '-':
+        return 1
+    if op == '*' or op == '/':
+        return 2
+    if op == '^':
+        return 3  # ^ has the highest precedence
+    return 0
+
+def is_left_associative(op):
+    # ^ is right-associative, other operators are left-associative
+    return op != '^'
+
+def infix_to_postfix(s):
+    st = []  # Stack for operators and parentheses using list
+    ans = ""  # Output for the postfix expression
+    n = len(s)
+
+    for i in range(n):
+        if s[i].isalnum():  # If the character is an operand (alphabetic or digit)
+            ans += s[i]
+        elif s[i] == "(":  # If it's a left parenthesis, push to stack
+            st.append(s[i])
+        elif s[i] == ")":  # If it's a right parenthesis, pop until left parenthesis is found
+            while st and st[-1] != "(":
+                ans += st.pop()
+            st.pop()  # Pop the '(' from stack
+        else:  # If it's an operator
+            while st and (priority(s[i]) < priority(st[-1]) or 
+                          (priority(s[i]) == priority(st[-1]) and is_left_associative(s[i]))):
+                ans += st.pop()  # Pop operators from stack to output if their precedence is higher or equal
+            st.append(s[i])  # Push the current operator to the stack
+            # if s[i] == '^':
+            #     while st and (priority(s[i]) <= priority(st[-1])):
+            #       ans = ans + st.pop()
+            # else:
+            #     while st and priority(s[i]) < priority(st[-1]):
+            #       ans = ans + st.pop()
+            #     st.pop(s[i])
+
+    # Pop the remaining operators from the stack
+    while st:
+        ans += st.pop()
+
+    return ans
+
+def infix_to_prefix(expression):
+    # Step 1: Reverse the input expression
+    expression = expression[::-1]
+    
+    # Step 2: Replace parentheses in the reversed string
+    expression = expression.replace('(', 'temp').replace(')', '(').replace('temp', ')')
+
+    # Step 3: Convert the reversed infix to postfix
+    postfix = infix_to_postfix(expression)
+    
+    # Step 4: Reverse the postfix expression to get prefix
+    prefix = postfix[::-1]
+    
+    return prefix
+
+# Test the function
+expression = "(p+q)*(m-n)^2"
+print("Infix expression:", expression)
+print("Prefix expression:", infix_to_prefix(expression))     
 
 
 # method 2 : better approch
@@ -11631,37 +15588,86 @@ if __name__ == '__main__':
 # region 9.3 STACK/QUEUE - MONOTONIC
 # ----------------------------------
 
-# 1 TODO :  next greater element - I
+# 1 TODO :  (NGE) next greater element - I
+'''
+
+https://leetcode.com/problems/next-greater-element-i/
+
+
+'''
 # method 1 : brute force approch
-Time Complexity: O(N)
+'''
+https://www.youtube.com/watch?v=e7XQLtOQM3I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=301
+
+- monolithis stack, a stack storing elements in a certain order like increasing or decreasing
+
+
+Time Complexity: O(N^2)
 
 Space Complexity: O(N)
+'''
+def main_function(arr):
+    res = []
+    # Loop through each element in the array
+    for i in range(len(arr)):
+        found = False  # Flag to track if a greater element is found
+        # Check all elements after arr[i]
+        for j in range(i + 1, len(arr)):
+            if arr[j] > arr[i]:
+                res.append(arr[j])  # NGE found
+                found = True
+                break  # Break as we've found the NGE
+        if not found:
+            res.append(-1)  # If no NGE found, append -1
+    
+    return res
 
+# Example usage
+arr = [6, 0, 8, 1, 3]
+print(main_function(arr))
+
+
+
+
+
+
+# method 2 : better approch
+# TC     -      
+# SC     -  
+
+
+
+
+
+
+ 
+
+
+# method 3 : optimal solution
+# TC     -  O(2N)    
+# SC     -  O(N) + O(N)
 from typing import List
-
-
-
 
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
         n = len(nums)
-        nge = [-1] * n
-        st = []
+        nge = [-1] * n  # Initialize the result array with -1
+        st = []  # Stack to store elements for which NGE is not found
 
-
-        for i in range(2 * n - 1, -1, -1):
-            while st and st[-1] <= nums[i % n]:
+        # Traverse the list from the end to the beginning
+        for i in range(n - 1, -1, -1):
+            # Pop all elements from the stack that are less than or equal to nums[i]
+            while st and st[-1] <= nums[i]:
                 st.pop()
 
+            # If the stack is empty, no NGE exists, otherwise set nge[i] to the top element of the stack
+            if len(st) > 0:
+                nge[i] = st[-1]
 
-            if i < n:
-                if st:
-                    nge[i] = st[-1]
-            st.append(nums[i % n])
+            # Push the current element onto the stack
+            st.append(nums[i])
+
         return nge
-
-
-
 
 if __name__ == '__main__':
     obj = Solution()
@@ -11669,28 +15675,73 @@ if __name__ == '__main__':
     res = obj.nextGreaterElements(v)
     print("The next greater elements are")
     print(*res)
-
-
-# method 2 : better approch
-# TC     -      
-# SC     -     
-
-
-# method 3 : optimal solution
-# TC     -      
-# SC     -      
+    
 
 
 # 2 TODO : next greater element - II
+'''
+https://leetcode.com/problems/next-greater-element-ii/
+
+https://www.youtube.com/watch?v=7PrncD7v9YQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=302
+
+If the next greater element is not found in the right side of the element then, find it in the left side also
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -     O(N**2) 
+# SC     -   O(N)
+class Solution:
+  def nextGreaterElements(self, nums):
+    n = len(nums)  # Get the length of the input array
+    nge = [-1] * n  # Initialize the result array with -1, meaning no NGE found yet
+    st = []  # Initialize an empty stack to keep track of elements for which NGE is not found
+
+    for i in range(n - 1, -1, -1):  
+      for j in range(i+ 1,i + n - 1, 1):
+        index = j % n
+        if nums[index] > nums[i]:
+          nge[i] = nums[index]
+          break
+    return nge  
+
+if __name__ == '__main__':
+  obj = Solution()
+  v = [5, 7, 1, 2, 6, 0]
+  res = obj.nextGreaterElements(v)
+  print("The next greater elements are")
+  print(*res)  
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -      O(4N)
+# SC     -     O(2N)
+class Solution:
+  def nextGreaterElements(self, nums: List[int]) -> List[int]:
+    n = len(nums)  # Get the length of the input array
+    nge = [-1] * n  # Initialize the result array with -1, meaning no NGE found yet
+    st = []  # Initialize an empty stack to keep track of elements for which NGE is not found
 
+    # Traverse the array twice (2 * n times) to simulate the circular nature of the problem
+    for i in range(2 * n - 1, -1, -1):  # Traverse from end to start, simulating the circular array
+        # The key trick here is to use `i % n` to ensure the index wraps around when `i` exceeds `n - 1`
+        while st and st[-1] <= nums[i % n]:  # While the stack is not empty and the element at the top of the stack is less than or equal to the current element
+            st.pop()  # Pop elements from the stack that cannot be the Next Greater Element
+
+        # If we are in the first pass (i < n), we want to record the NGE for the element at index `i % n`
+        if i < n:
+            if st:  # If the stack is not empty, the NGE is the top of the stack
+                nge[i % n] = st[-1]  # Assign the NGE to the corresponding index in the result array
+
+        # Push the current element to the stack (whether it was an NGE for an element or not)
+        st.append(nums[i % n])
+
+    return nge  # Return the result array containing the NGE for each element
+
+if __name__ == '__main__':
+    obj = Solution()
+    v = [5, 7, 1, 2, 6, 0]
+    res = obj.nextGreaterElements(v)
+    print("The next greater elements are")
+    print(*res)  
 
 # method 3 : optimal solution
 # TC     -      
@@ -11698,6 +15749,12 @@ if __name__ == '__main__':
 
 
 # 3 TODO : next smaller element
+'''
+https://www.interviewbit.com/problems/nearest-smaller-element/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -11714,6 +15771,13 @@ if __name__ == '__main__':
 
 
 # 4 TODO : number of NGEs to the right
+'''
+https://bit.ly/3Np2R2H
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -11730,15 +15794,20 @@ if __name__ == '__main__':
 
 
 # 5 TODO : trapping rainwater
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/trapping-rain-water/
+
+
+https://www.youtube.com/watch?v=1_5VuquLbXg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=304
+
+'''
+# method 1 : brute force approch, 
+'''
 Time Complexity: O(N*N) as for each index we are calculating leftMax and rightMax so it is a nested loop.
 
 Space Complexity: O(1).
-
+'''
 from typing import List
-
-
-
 
 def trap(arr: List[int]) -> int:
     n = len(arr)
@@ -11765,29 +15834,41 @@ if __name__ == "__main__":
     print(f"The water that can be trapped is {trap(arr)}")
 
 
-# method 2 : better approch
+# method 2 : better approch, using prefix Max and suffix Max method 
+'''
 Time Complexity: O(3*N) as we are traversing through the array only once. And O(2*N) for computing prefix and suffix array.
 
 Space Complexity: O(N)+O(N) for prefix and suffix arrays.
+'''
+
 from typing import List
 
-
-
-
 def trap(arr: List[int]) -> int:
-    n = len(arr)
-    prefix = [0] * n
-    suffix = [0] * n
-    prefix[0] = arr[0]
+    n = len(arr)  # Length of the input array (number of bars)
+    
+    # Step 1: Initialize prefix and suffix arrays to store the max heights to the left and right of each element
+    prefix = [0] * n  # Array to store the max height from the left to the current index
+    suffix = [0] * n  # Array to store the max height from the right to the current index
+    
+    # Step 2: Fill the prefix array
+    prefix[0] = arr[0]  # The first element is its own maximum
     for i in range(1, n):
-        prefix[i] = max(prefix[i - 1], arr[i])
-    suffix[n - 1] = arr[n - 1]
+        prefix[i] = max(prefix[i - 1], arr[i])  # For each index, store the maximum height from the left
+    
+    # Step 3: Fill the suffix array
+    suffix[n - 1] = arr[n - 1]  # The last element is its own maximum
     for i in range(n - 2, -1, -1):
-        suffix[i] = max(suffix[i + 1], arr[i])
-    waterTrapped = 0
+        suffix[i] = max(suffix[i + 1], arr[i])  # For each index, store the maximum height from the right
+    
+    # Step 4: Calculate the trapped water
+    waterTrapped = 0  # Variable to accumulate the total trapped water
     for i in range(n):
+        # The trapped water at position `i` is determined by the min of the prefix and suffix values minus the height at that position
         waterTrapped += min(prefix[i], suffix[i]) - arr[i]
+    
+    # Step 5: Return the total amount of trapped water
     return waterTrapped
+
 
 
 
@@ -11798,36 +15879,48 @@ if __name__ == "__main__":
   
 
 
-# method 3 : optimal solution
+# method 3 : optimal solution, two pointer approch
+'''
 Time Complexity: O(N) because we are using 2 pointer approach.
 
 Space Complexity: O(1) because we are not using anything extra.
+
+'''
 from typing import List
 
 
-
-
 def trap(height: List[int]) -> int:
-    n = len(height)
-    left = 0
-    right = n-1
-    res = 0
-    maxLeft = 0
-    maxRight = 0
+    n = len(height)  # Get the length of the input array (number of bars)
+    
+    left = 0  # Initialize the left pointer at the start
+    right = n - 1  # Initialize the right pointer at the end
+    res = 0  # Initialize the variable to store the result (total trapped water)
+    
+    maxLeft = 0  # Initialize the maximum height encountered from the left
+    maxRight = 0  # Initialize the maximum height encountered from the right
+    
+    # Step 1: Loop through the array with two pointers, left and right
     while left <= right:
+        # Step 2: Compare the heights at the left and right pointers
         if height[left] <= height[right]:
+            # Step 3: If height[left] is less than or equal to height[right]
             if height[left] >= maxLeft:
-                maxLeft = height[left]
+                maxLeft = height[left]  # Update maxLeft if current left height is higher than maxLeft
             else:
+                # If height[left] is lower than maxLeft, calculate the trapped water at left position
                 res += maxLeft - height[left]
-            left += 1
+            left += 1  # Move the left pointer to the right
         else:
+            # Step 4: If height[right] is less than height[left]
             if height[right] >= maxRight:
-                maxRight = height[right]
+                maxRight = height[right]  # Update maxRight if current right height is higher than maxRight
             else:
+                # If height[right] is lower than maxRight, calculate the trapped water at right position
                 res += maxRight - height[right]
-            right -= 1
-    return res
+            right -= 1  # Move the right pointer to the left
+
+    return res  # Return the total trapped water
+
 
 
 
@@ -11836,16 +15929,91 @@ if __name__ == "__main__":
     arr = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
     print(f"The water that can be trapped is {trap(arr)}")    
 
+# ⭐⭐⭐ Patteren change
+# 👉👉👉 previous smaller element 
+https://www.youtube.com/watch?v=zMdbdGJNlh4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=303
 
 # 6 TODO : sum of subarray minimum
+'''
+https://leetcode.com/problems/sum-of-subarray-minimums/
+
+
+https://www.youtube.com/watch?v=v0e8p9JCgRc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=305
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(N**2)
+# SC     -O(1)
+def main_function(arr):
+    sum = 0
+    mod = 10**9 + 7
+    for i in range(len(arr) - 1):
+        mini = arr[i]  # Start with the current element as the minimum
+        for j in range(i + 1, len(arr)):  # Start from i + 1 to compare remaining elements
+            mini = min(mini, arr[j])  # Find the minimum of the current mini and arr[j]
+            sum = (sum + mini) % mod  # Add to the sum, keeping it within the modulus
+    return sum
+
+
+arr = [3, 1, 2, 4]
+print(main_function(arr))
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -      O(5N)
+# SC     -  O(5N)
+def findPSE(arr):
+    # PSE: Previous Smaller Element
+    n = len(arr)
+    pse = [-1] * n
+    stack = []
+    
+    for i in range(n):
+        while stack and arr[stack[-1]] >= arr[i]:
+            stack.pop()
+        
+        if stack:
+            pse[i] = stack[-1]
+        
+        stack.append(i)
+    
+    return pse
+
+def findNSE(arr):
+    # NSE: Next Smaller Element
+    n = len(arr)
+    nse = [n] * n
+    stack = []
+    
+    for i in range(n - 1, -1, -1):
+        while stack and arr[stack[-1]] >= arr[i]:
+            stack.pop()
+        
+        if stack:
+            nse[i] = stack[-1]
+        
+        stack.append(i)
+    
+    return nse
+
+def main_function(arr):
+    nse = findNSE(arr)  # Next Smaller Element indices
+    pse = findPSE(arr)  # Previous Smaller Element indices
+    total = 0
+    mod = 10**9 + 7
+    
+    # Loop over each element of the array
+    for i in range(len(arr)):
+        left = i - pse[i]  # Number of subarrays to the left of i where arr[i] is the minimum
+        right = nse[i] - i  # Number of subarrays to the right of i where arr[i] is the minimum
+        # Add the contribution of arr[i] to the total
+        total = (total + (right * left * arr[i]) % mod) % mod
+    
+    return total
+
+# Example array
+arr = [3, 1, 2, 4]
+print(main_function(arr))
+   
 
 
 # method 3 : optimal solution
@@ -11854,9 +16022,39 @@ if __name__ == "__main__":
 
 
 # 7 TODO : asteriod collision
+'''
+https://leetcode.com/problems/asteroid-collision/
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(2N)
+# SC     -  O(N)   
+def asteroidCollision(asteroids):
+    stack = []
+
+    for asteroid in asteroids:
+        # If the current asteroid is moving left (negative), check for collision with stack
+        while stack and asteroid < 0 and stack[-1] > 0:
+            # There's a collision between the current asteroid and the top of the stack
+            if abs(asteroid) > abs(stack[-1]):
+                # The current asteroid destroys the one on the stack
+                stack.pop()
+                continue
+            elif abs(asteroid) == abs(stack[-1]):
+                # Both asteroids destroy each other
+                stack.pop()
+            # If abs(asteroid) < abs(stack[-1]), the current asteroid is destroyed
+            break
+        else:
+            # No collision or asteroid is moving right, just add it to the stack
+            stack.append(asteroid)
+
+    return stack
+
+# Example usage
+asteroids = [5, 10, -5]
+print(asteroidCollision(asteroids))  # Output: [5, 10]
 
 
 # method 2 : better approch
@@ -11870,14 +16068,157 @@ if __name__ == "__main__":
 
 
 # 8 TODO : sum of subarray ranges
+'''
+https://leetcode.com/problems/sum-of-subarray-ranges/
+
+https://www.youtube.com/watch?v=gIrMptNPf5M&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=306
+
+'''
+
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(N**2)
+# SC     -  O(1)
+def main_function(arr):
+    sum = 0
+    n = len(arr)
+    
+    # Outer loop to select the starting element of the subarray
+    for i in range(n - 1):
+        largest = arr[i]
+        smallest = arr[i]
+        
+        # Inner loop to consider all elements after arr[i]
+        for j in range(i + 1, n):
+            # Update the largest and smallest elements in the current subarray
+            largest = max(largest, arr[j])
+            smallest = min(smallest, arr[j])
+            
+            # Add the difference between the largest and smallest elements to sum
+            sum += (largest - smallest)
+    
+    return sum
+
+# Example array
+arr = [1, 4, 3, 2]
+print(main_function(arr))
+   
 
 
-# method 2 : better approch
-# TC     -      
-# SC     -     
+# method 2 : better approch, sum of subarray maximums - sum of sub array minimums
+# TC     -      O(N)
+# SC     -     O(N)
+# def sumSubarrayRanges(arr):
+#     mod = 10**9 + 7  # To handle large numbers, we will use modulo operation to prevent overflow
+#     n = len(arr)  # Length of the input array
+    
+#     # Helper function to calculate the sum of subarray maximums or minimums
+#     def calculateSum(arr, isMax):
+#         stack = []  # Stack to store indices
+#         total_sum = 0  # Variable to accumulate the result
+        
+#         # Loop through each element in the array
+#         for i in range(n):
+#             # For maximums, we want elements in the stack to be in decreasing order,
+#             # For minimums, we want elements in the stack to be in increasing order
+#             while stack and (arr[stack[-1]] < arr[i] if isMax else arr[stack[-1]] > arr[i]):
+#                 idx = stack.pop()  # Pop the element at the top of the stack
+                
+#                 # Calculate the previous index in the stack (or -1 if stack is empty)
+#                 prev_idx = stack[-1] if stack else -1
+                
+#                 # Add the contribution of this element to the total sum:
+#                 # The contribution of the element at arr[idx] is calculated by:
+#                 # (arr[idx] * (i - idx) * (idx - prev_idx)) % mod
+#                 # Where:
+#                 #   (i - idx) -> The number of subarrays where arr[idx] is the maximum (or minimum).
+#                 #   (idx - prev_idx) -> The number of subarrays that end at arr[idx] and have arr[idx] as the maximum (or minimum).
+#                 total_sum += (arr[idx] * (i - idx) * (idx - prev_idx)) % mod
+                
+#             stack.append(i)  # Push the current index onto the stack
+        
+#         # Handle the remaining elements in the stack (those that didn't have a larger or smaller element on the right)
+#         while stack:
+#             idx = stack.pop()
+#             prev_idx = stack[-1] if stack else -1
+#             total_sum += (arr[idx] * (n - idx) * (idx - prev_idx)) % mod
+        
+#         return total_sum % mod  # Return the final result after applying modulo
+    
+#     # Calculate sum of subarray maximums
+#     sum_max = calculateSum(arr, True)  # True indicates we want the maximums
+    
+#     # Calculate sum of subarray minimums
+#     sum_min = calculateSum(arr, False)  # False indicates we want the minimums
+    
+#     # The result is the difference between sum of maximums and sum of minimums
+#     return (sum_max - sum_min) % mod
+
+# # Example usage
+# arr = [1, 3, 2, 4]
+# print(sumSubarrayRanges(arr))  # Output will be the sum of subarray ranges
+
+def sumSubarrayMaximums(arr):
+    mod = 10**9 + 7  # To handle large numbers and avoid overflow
+    n = len(arr)
+    stack = []  # Stack to store indices of elements
+    total_sum = 0  # Variable to accumulate the sum of subarray maximums
+    
+    # Loop through each element in the array
+    for i in range(n):
+        # For maximums, we want elements in the stack to be in decreasing order
+        while stack and arr[stack[-1]] < arr[i]:
+            idx = stack.pop()  # Pop the element at the top of the stack
+            
+            prev_idx = stack[-1] if stack else -1  # Previous index in the stack or -1 if empty
+            total_sum += (arr[idx] * (i - idx) * (idx - prev_idx)) % mod  # Add the contribution of this element to the sum
+            
+        stack.append(i)  # Push the current index onto the stack
+    
+    # Handle remaining elements in the stack that didn't have a larger element to their right
+    while stack:
+        idx = stack.pop()
+        prev_idx = stack[-1] if stack else -1
+        total_sum += (arr[idx] * (n - idx) * (idx - prev_idx)) % mod  # Add the contribution of this element
+    
+    return total_sum % mod  # Return the result modulo mod
+
+def sumSubarrayMinimums(arr):
+    mod = 10**9 + 7  # To handle large numbers and avoid overflow
+    n = len(arr)
+    stack = []  # Stack to store indices of elements
+    total_sum = 0  # Variable to accumulate the sum of subarray minimums
+    
+    # Loop through each element in the array
+    for i in range(n):
+        # For minimums, we want elements in the stack to be in increasing order
+        while stack and arr[stack[-1]] > arr[i]:
+            idx = stack.pop()  # Pop the element at the top of the stack
+            
+            prev_idx = stack[-1] if stack else -1  # Previous index in the stack or -1 if empty
+            total_sum += (arr[idx] * (i - idx) * (idx - prev_idx)) % mod  # Add the contribution of this element to the sum
+            
+        stack.append(i)  # Push the current index onto the stack
+    
+    # Handle remaining elements in the stack that didn't have a smaller element to their right
+    while stack:
+        idx = stack.pop()
+        prev_idx = stack[-1] if stack else -1
+        total_sum += (arr[idx] * (n - idx) * (idx - prev_idx)) % mod  # Add the contribution of this element
+    
+    return total_sum % mod  # Return the result modulo mod
+
+def sumSubarrayRanges(arr):
+    # Calculate sum of subarray maximums and minimums
+    sum_max = sumSubarrayMaximums(arr)  # Sum of maximums
+    sum_min = sumSubarrayMinimums(arr)  # Sum of minimums
+    
+    # The final result is the difference between the sum of maximums and sum of minimums
+    return (sum_max - sum_min) % (10**9 + 7)
+
+# Example usage
+arr = [1, 3, 2, 4]
+print(sumSubarrayRanges(arr))  # Output will be the sum of subarray ranges
+
 
 
 # method 3 : optimal solution
@@ -11886,9 +16227,44 @@ if __name__ == "__main__":
 
 
 # 9 TODO : remove k digits
+'''
+https://leetcode.com/problems/remove-k-digits/
+
+https://www.youtube.com/watch?v=jmbuRzYPGrg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=310
+'''
 # method 1 : brute force approch
+'''
+STep 1 : keep smaller digits at the start
+
+Step 2 : get rid of larger ones
+'''
 # TC     -      
 # SC     -     
+def removeKdigits(num: str, k: int) -> str:
+    stack = []  # Stack to keep track of digits
+    for digit in num:
+        # While we have digits in the stack and the current digit is smaller than the stack's top
+        while k > 0 and stack and stack[-1] > digit:
+            stack.pop()  # Pop the larger digit
+            k -= 1  # Decrease k since we removed a digit
+        stack.append(digit)  # Push the current digit to the stack
+    
+    # If k is still greater than 0, pop the remaining digits from the end
+    while k > 0:
+        stack.pop()
+        k -= 1
+    
+    # Join the digits in the stack and remove leading zeros
+    result = ''.join(stack).lstrip('0')
+    
+    # If the result is empty, return "0" (in case we removed all digits)
+    return result if result else "0"
+
+# Example usage:
+num = "1432219"
+k = 3
+print(removeKdigits(num, k))  # Output: "1219"
+
 
 
 # method 2 : better approch
@@ -11902,14 +16278,86 @@ if __name__ == "__main__":
 
 
 # 10 TODO :  largest rectangle in a histogram
+'''
+https://leetcode.com/problems/largest-rectangle-in-histogram/
+
+
+https://www.youtube.com/watch?v=Bzat9vgD0fs&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=308
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(5N)
+# SC     - O(4N)  
+def largestRectangleArea(heights):
+    n = len(heights)
+    
+    # Step 1: Find Previous Smaller Element (PSE)
+    pse = [-1] * n
+    stack = []
+    for i in range(n):
+        while stack and heights[stack[-1]] >= heights[i]:
+            stack.pop()
+        if stack:
+            pse[i] = stack[-1]
+        stack.append(i)
+    
+    # Step 2: Find Next Smaller Element (NSE)
+    nse = [n] * n
+    stack = []
+    for i in range(n - 1, -1, -1):
+        while stack and heights[stack[-1]] >= heights[i]:
+            stack.pop()
+        if stack:
+            nse[i] = stack[-1]
+        stack.append(i)
+    
+    # Step 3: Calculate the Maximum Area
+    max_area = 0
+    for i in range(n):
+        width = nse[i] - pse[i] - 1
+        area = heights[i] * width
+        max_area = max(max_area, area)
+    
+    return max_area
+
+# Example usage:
+heights = [2, 1, 5, 6, 2, 3]
+print(largestRectangleArea(heights))  # Output: 10
+  
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -      O(N) + O(N)
+# SC     -   O(N)
+def largestRectangleArea(heights):
+    # Initialize variables
+    n = len(heights)
+    stack = []  # This will store indices of histogram bars in increasing height order
+    max_area = 0  # To keep track of the maximum area
+    
+    # Traverse the histogram
+    for i in range(n):
+        # While the current bar is shorter than the bar at stack's top
+        # Calculate the area for the rectangle with the height of the bar at the top of the stack
+        while stack and heights[stack[-1]] > heights[i]:
+            h = heights[stack.pop()]  # Height of the rectangle
+            # If the stack is empty, it means the width extends from the start to the current index
+            w = i if not stack else i - stack[-1] - 1  # Width of the rectangle
+            max_area = max(max_area, h * w)  # Update the max_area with the area of the rectangle
+        # Push the current index onto the stack
+        stack.append(i)
+    
+    # After traversing all bars, process the remaining elements in the stack
+    while stack:
+        h = heights[stack.pop()]  # Height of the rectangle
+        w = n if not stack else n - stack[-1] - 1  # Width of the rectangle
+        max_area = max(max_area, h * w)  # Update the max_area with the area of the rectangle
+    
+    return max_area
+
+# Example usage:
+heights = [2, 1, 5, 6, 2, 3]
+print(largestRectangleArea(heights))  # Output: 10
+  
 
 
 # method 3 : optimal solution
@@ -11918,9 +16366,84 @@ if __name__ == "__main__":
 
 
 # 11 TODO : maximal rectangle
+'''
+https://leetcode.com/problems/maximal-rectangle/
+
+https://www.youtube.com/watch?v=ttVu6G7Ayik&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=309
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
+def maximalRectangle(matrix):
+    # Step 1: Check if the matrix is empty. If so, return 0 as no rectangle can be formed.
+    if not matrix:
+        return 0
+    
+    # Step 2: Get the number of rows and columns in the matrix.
+    rows = len(matrix)
+    cols = len(matrix[0])
+    
+    # Step 3: Initialize a list to store heights of the histogram for each column.
+    heights = [0] * cols  # This will be used to calculate the maximum area in each row's "histogram".
+    
+    # Step 4: Variable to store the maximum area found.
+    max_area = 0
+
+    # Step 5: Iterate through each row of the matrix to build the histogram.
+    for row in range(rows):
+        # Update the heights for the current row. 
+        # For each column, increment the height if there's a '1' or reset to 0 if it's '0'.
+        for col in range(cols):
+            if matrix[row][col] == '1':  # If the cell contains '1', increase the height.
+                heights[col] += 1
+            else:  # If the cell contains '0', reset the height to 0.
+                heights[col] = 0
+        
+        # Step 6: After updating the histogram, find the largest rectangle in the current "histogram".
+        max_area = max(max_area, largestRectangleInHistogram(heights))
+    
+    # Step 7: Return the maximum rectangle area found.
+    return max_area
+
+def largestRectangleInHistogram(heights):
+    # Step 1: Initialize a stack and a variable to keep track of the maximum area.
+    stack = []
+    max_area = 0
+    n = len(heights)  # Number of columns (width of histogram)
+    
+    # Step 2: Iterate through the histogram (heights list).
+    for i in range(n):
+        # Step 3: While the stack is not empty and the current height is smaller than the height
+        # at the index stored at the top of the stack, pop from the stack.
+        # Calculate the area of the rectangle formed with the popped height as the smallest height.
+        while stack and heights[stack[-1]] > heights[i]:
+            h = heights[stack.pop()]  # The height of the rectangle
+            w = i if not stack else i - stack[-1] - 1  # Width of the rectangle (distance between indices)
+            max_area = max(max_area, h * w)  # Calculate the area and update the max_area if needed.
+        
+        # Step 4: Push the current index onto the stack.
+        stack.append(i)
+    
+    # Step 5: After iterating through the histogram, there might still be some indices left in the stack.
+    # We need to process those remaining heights to calculate the area.
+    while stack:
+        h = heights[stack.pop()]  # The height of the rectangle
+        w = n if not stack else n - stack[-1] - 1  # Width of the rectangle (distance between indices)
+        max_area = max(max_area, h * w)  # Calculate the area and update the max_area if needed.
+    
+    # Step 6: Return the largest rectangle area found.
+    return max_area
+
+# Example usage:
+matrix = [
+    ["0", "1", "1", "0"],
+    ["1", "1", "1", "1"],
+    ["1", "1", "1", "0"],
+    ["1", "1", "0", "0"]
+]
+
+# Step 7: Call the maximalRectangle function and print the result.
+print(maximalRectangle(matrix))  # Output: 6
 
 
 # method 2 : better approch
@@ -11939,22 +16462,70 @@ if __name__ == "__main__":
 
 
 
-
-
-
-
 # region 9.4 STACK/QUEUE - IMPLEMENTATION
 # ---------------------------------------
 
 # 1 TODO :  sliding window maximum
+'''
+https://leetcode.com/problems/sliding-window-maximum/
+
+
+https://www.youtube.com/watch?v=NwBvene4Imo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=312
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -  O(N - k) * k    
+# SC     -  O(N - k)
+def main_function(arr, k):
+    result = []
+    # Iterate over the array to consider each sliding window
+    for i in range(len(arr) - k + 1):  # Ensure we don't go beyond the array length
+        maxi = arr[i]  # Start with the first element of the window
+        for j in range(i + 1, i + k):  # Iterate over the next k elements
+            maxi = max(maxi, arr[j])  # Update the maximum of the window
+        result.append(maxi)  # Add the maximum of the current window to the result
+    return result
+
+# Example usage
+arr = [1, 3, -1, -3, 5, 3, 2, 1, 6]
+k = 3
+print(main_function(arr, k))
+   
 
 
-# method 2 : better approch
-# TC     -      
-# SC     -     
+# method 2 : better approch, useing monotonic stack/dequeue
+'''
+Time Complexity: The algorithm runs in O(n) time, where n is the length of the array. Each element is added and removed from the deque at most once, making it very efficient.
+Space Complexity: The space complexity is O(k) due to the deque storing up to k indices at any given time, where k is the window size.
+'''
+from collections import deque
+
+def main_function(arr, k):
+    result = []
+    dq = deque()  # Deque to store indices of array elements
+    
+    for i in range(len(arr)):
+        # Remove indices of elements that are out of the window (i.e., i - k >= dq[0])
+        if dq and dq[0] < i - k + 1:
+            dq.popleft()
+        
+        # Remove elements from the back of deque that are smaller than the current element
+        while dq and arr[dq[-1]] <= arr[i]:
+            dq.pop()
+        
+        # Add the current element index at the back of the deque
+        dq.append(i)
+        
+        # Start appending results to the output once we have processed at least k elements
+        if i >= k - 1:
+            result.append(arr[dq[0]])  # The front of the deque is the maximum for the current window
+    
+    return result
+
+# Example usage
+arr = [1, 3, -1, -3, 5, 3, 2, 1, 6]
+k = 3
+print(main_function(arr, k))  # Output: [3, 3, 5, 5, 5, 5, 6]
+
 
 
 # method 3 : optimal solution
@@ -11963,14 +16534,67 @@ if __name__ == "__main__":
 
 
 # 2 TODO : stock span problem
+'''
+https://leetcode.com/problems/online-stock-span/
+
+https://www.youtube.com/watch?v=eay-zoSRkVc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=311
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(number of days)
+# SC     -    O(total number of next calls)
+def stock_span(arr):
+    n = len(arr)
+    span = [0] * n  # List to store the stock span values
+
+    # Iterate through all days to calculate the span for each day
+    for i in range(n):
+        span[i] = 1  # Start with the span being 1 (the current day itself)
+        
+        # Compare the current day's price with the previous days
+        for j in range(i - 1, -1, -1):  # Go backwards from the previous days
+            if arr[j] <= arr[i]:  # If the price is less than or equal, increment the span
+                span[i] += 1
+            else:
+                break  # Stop as soon as we find a price greater than arr[i]
+    
+    return span
+
+# Example usage
+prices = [100, 80, 60, 70, 60]
+print(stock_span(prices))  # Output: [1, 1, 1, 2, 1]
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -      O(2N)
+# SC     -     O(N)
+def stock_span(arr):
+    n = len(arr)
+    span = [0] * n  # List to store the stock span values
+    stack = []  # Stack to store indices of the array elements
+    
+    # Loop through each day
+    for i in range(n):
+        # Pop elements from the stack while the price at the top of the stack is less than or equal to arr[i]
+        while stack and arr[stack[-1]] <= arr[i]:
+            stack.pop()
+        
+        # If the stack is empty, the span for day i is i + 1
+        if not stack:
+            span[i] = i + 1
+        else:
+            # The span is the difference between the current day and the last larger price
+            span[i] = i - stack[-1]
+        
+        # Push the current day's index onto the stack
+        stack.append(i)
+    
+    return span
+
+# Example usage
+prices = [100, 80, 60, 70, 60]
+print(stock_span(prices))  # Output: [1, 1, 1, 2, 1]
+
 
 
 # method 3 : optimal solution
@@ -11979,14 +16603,130 @@ if __name__ == "__main__":
 
 
 # 3 TODO : the celebrity problem
+'''
+https://leetcode.com/accounts/login/?next=/problems/find-the-celebrity/
+
+
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -   O(N**N) + O(N)   
+# SC     -  O(2N)
+
+def findCelebrity(matrix):
+  n = len(matrix)  # Number of people
+  knows_me = [0] * n  # Initialize a list of size n
+  i_knows = [0] * n  # Initialize a list of size n
+
+  # Step 1: Iterate through the matrix to count how many people know each person and how many people they know
+  for i in range(n):
+    for j in range(n):
+      if matrix[i][j] == 1:
+        knows_me[j] += 1  # Person j is known by person i
+        i_knows[i] += 1   # Person i knows person j
+
+  # Step 2: Check for the celebrity
+  for i in range(n):
+    if knows_me[i] == n - 1 and i_knows[i] == 0:
+      return i  # Person i is the celebrity
+
+  return -1  # No celebrity found
 
 
-# method 2 : better approch
-# TC     -      
-# SC     -     
+# Example Usage
+matrix = [
+    [0, 1, 0, 0],  # Person 0 knows Person 1
+    [0, 0, 0, 0],  # Person 1 knows no one
+    [0, 1, 0, 0],  # Person 2 knows Person 1
+    [0, 1, 0, 0]   # Person 3 knows Person 1
+]
+
+celebrity = findCelebrity(matrix)
+
+if celebrity == -1:
+    print("No celebrity found")
+else:
+    print(f"The celebrity is Person {celebrity}")
+
+
+
+
+
+# def findCelebrity(matrix, n):
+#     # Step 1: Identify potential celebrity
+#     candidate = 0
+#     for i in range(1, n):
+#         if matrix[candidate][i] == 1:  # candidate knows i, so candidate cannot be a celebrity
+#             candidate = i  # update candidate to i
+
+#     # Step 2: Verify if the candidate is a real celebrity
+#     for i in range(n):
+#         # Candidate should not know anyone else, and everyone should know the candidate
+#         if i != candidate:
+#             if matrix[candidate][i] == 1 or matrix[i][candidate] == 0:
+#                 return -1  # Candidate cannot be a celebrity
+    
+#     return candidate  # Return the celebrity index if verified
+
+# # Example Usage
+# matrix = [
+#     [0, 1, 0, 0],  # Person 0 knows Person 1
+#     [0, 0, 0, 0],  # Person 1 knows no one
+#     [0, 1, 0, 0],  # Person 2 knows Person 1
+#     [0, 1, 0, 0]   # Person 3 knows Person 1
+# ]
+# n = 4  # Number of people in the party
+# celebrity = findCelebrity(matrix, n)
+
+# if celebrity == -1:
+#     print("No celebrity found")
+# else:
+#     print(f"The celebrity is Person {celebrity}")
+  
+
+
+# method 2 : better approch, using two pointer
+# TC     -      O(2N)
+# SC     -   o(1)   
+def findCelebrity(matrix):
+    n = len(matrix)  # Number of people
+    top = 0
+    down = n - 1
+    
+    # Step 1: Narrow down to a potential celebrity
+    while top < down:
+        if matrix[top][down] == 1:  # top knows down, so top cannot be a celebrity
+            top += 1
+        elif matrix[down][top] == 1:  # down knows top, so down cannot be a celebrity
+            down -= 1
+        else:
+            top += 1
+            down -= 1
+    
+    # Step 2: Check if the found person is actually a celebrity
+    # Now, `top` should be equal to `down`, and this is the candidate celebrity
+    for i in range(n):
+        if i != top:
+            if matrix[top][i] == 1 or matrix[i][top] == 0:
+                return -1  # If top knows someone or someone doesn't know top, not a celebrity
+    
+    # If the checks passed, `top` is the celebrity
+    return top
+
+
+# Example Usage
+matrix = [
+    [0, 1, 0, 0],  # Person 0 knows Person 1
+    [0, 0, 0, 0],  # Person 1 knows no one
+    [0, 1, 0, 0],  # Person 2 knows Person 1
+    [0, 1, 0, 0]   # Person 3 knows Person 1
+]
+
+celebrity = findCelebrity(matrix)
+
+if celebrity == -1:
+    print("No celebrity found")
+else:
+    print(f"The celebrity is Person {celebrity}")
 
 
 # method 3 : optimal solution
@@ -11994,7 +16734,13 @@ if __name__ == "__main__":
 # SC     -      
 
 
-# 4 TODO : LRU cache (important)
+# 4 TODO : LRU (last recently used) cache (important)
+'''
+https://leetcode.com/problems/lru-cache/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12011,6 +16757,13 @@ if __name__ == "__main__":
 
 
 # 5 TODO : LFU cache
+'''
+https://leetcode.com/problems/lfu-cache/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12034,155 +16787,509 @@ if __name__ == "__main__":
 
 # region 10.1 SLIDING WINDOW/TWO POINTER - MEDIUM
 # -----------------------------------------------
+'''
+http://youtube.com/watch?v=9kdHxplyl5I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=272
+
+'''
 
 # 1 TODO :  largest substring without repeating characters
+'''
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+
+'''
 # method 1 : brute force approch
-Time Complexity: O( N2 )
-
-Space Complexity: O(N) where N is the size of HashSet taken for storing the elements 
-def solve(str: str) -> int:
-    if len(str) == 0:
-        return 0
-    maxans = -1
-    for i in range(len(str)):  # outer loop for traversing the string
-        set = {}
-        # nested loop for getting different string starting with str[i]
-        for j in range(i, len(str)):
-            if str[j] in set:  # if element if found so mark it as ans and break from the loop
-                maxans = max(maxans, j - i)
-                break
-            set[str[j]] = 1
-    return maxans
+'''
 
 
-if __name__ == "__main__":
-    str = "takeUforward"
-    print("The length of the longest substring without repeating characters is", solve(str))
+https://www.youtube.com/watch?v=-zSxTJkcdAo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=274
+
+Time Complexity: 
+
+Space Complexity:  
+
+'''
+def main_function(arr):
+  max_len = 0
+  for i in range(len(arr)):
+    hash_arr = [0] * 256  # Assuming ASCII characters
+    lenth = 0
+    for j in range(i, len(arr)):
+        if hash_arr[ord(arr[j])] == 1:  # Use ord() to get the ASCII value
+            break
+        lenth = j - i + 1
+        max_len = max(max_len, lenth)
+        hash_arr[ord(arr[j])] = 1  # Mark the character as seen
+
+  return max_len
+
+arr = "cadbzabcd"
+print(main_function(arr))
 
 
 # method 2 : better approch
-Time Complexity: O( 2*N ) (sometimes left and right both have to travel a complete array)
+'''
+Time Complexity: O( N ) 
 
-Space Complexity: O(N) where N is the size of HashSet taken for storing the elements
-def solve(str: str) -> int:
-    if len(str) == 0:
-        return 0
-    maxans = float("-inf")
-    setx = set()
+Space Complexity: O(256) 
+
+'''
+def main_function(arr):
     l = 0
-    for r in range(len(str)):  # outer loop for traversing the string
-        if str[r] in setx:  # if duplicate element is found
-            while l < r and str[r] in setx:
-                setx.remove(str[l])
-                l += 1
-        setx.add(str[r])
-        maxans = max(maxans, r - l + 1)
-    return maxans
+    r = 0
+    hash = [-1] * 256  # This assumes only ASCII characters
+    max_len = 0
+    
+    while r < len(arr):
+        if hash[ord(arr[r])] != -1:
+            if hash[ord(arr[r])] >= l:
+                l = hash[ord(arr[r])] + 1 
+        
+        length = r - l + 1 
+        max_len = max(length, max_len)
+        hash[ord(arr[r])] = r
+        r += 1
+  
+    return max_len
 
+arr = "cadbzabcd"
+print(main_function(arr))
 
-if __name__ == "__main__":
-    str = "takeUforward"
-    print("The length of the longest substring without repeating characters is", solve(str))   
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O( N )
 
 Space Complexity: O(N) where N represents the size of HashSet where we are storing our elements
-class Solution:
-    def lengthofLongestSubstring(self, s: str) -> int:
-        mpp = [-1] * 256
-
-
-        left = 0
-        right = 0
-        n = len(s)
-        length = 0
-        while right < n:
-            if mpp[ord(s[right])] != -1:
-                left = max(mpp[ord(s[right])] + 1, left)
-
-
-            mpp[ord(s[right])] = right
-
-
-            length = max(length, right - left + 1)
-            right += 1
-        return length
-
-
-if __name__ == "__main__":
-    str = "takeUforward"
-    obj = Solution()
-    print("The length of the longest substring without repeating characters is",
-          obj.lengthofLongestSubstring(str))   
+'''
 
 
 # 2 TODO : max consecutive ones - III
-# method 1 : brute force approch
-# TC     -      
-# SC     -     
+# longest subarray with atmost k 0s
+'''
 
+https://leetcode.com/problems/max-consecutive-ones-iii/
+
+
+'''
+# method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=275
+ TC     -      O(N^2) nearly 
+ SC     -     O(1)
+'''
+def main_function(arr,k):
+  max_len = 0
+  for i in range(len(arr)):
+    # hash_arr = [0] * 256  # Assuming ASCII characters
+    zeros = 0
+    for j in range(i, len(arr)):
+      if arr[j] == 0:
+        zeros +=1 
+      if zeros <= k:
+        length = j -i + 1 
+        max_len = max(length, max_len)
+      else:
+        break
+      
+
+  return max_len
+
+arr = [1,1,1,0,0,0,1,1,1,1,0]
+k=2
+print(main_function(arr,k))
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -      O2N) nearly 
+# SC     -     O(1)
+def main_function(nums,k):
+  l = 0
+  r = 0
+  zeros = 0
+  max_len = 0
+  
+  while r < len(nums):
+    if nums[r] == 0:
+      zeros +=1 
+    while zeros > k:
+      if nums[l] == 0:
+        zeros -=1 
+      l +=1 
+    if zeros <= k:
+      length = r-l+1 
+      max_len= max(max_len, length)
+    r +=1
+
+  return max_len
+
+arr = [1,1,1,0,0,0,1,1,1,1,0]
+k=2
+print(main_function(arr,k))
+
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -      O(N)
+# SC     -   O(1)      
+def main_function(nums,k):
+  l = 0
+  r = 0
+  zeros = 0
+  max_len = 0
+  
+  while r < len(nums):
+    if nums[r] == 0:
+      zeros +=1 
+    if zeros > k:
+      if nums[l] == 0:
+        zeros -=1 
+      l +=1 
+    if zeros <= k:
+      length = r-l+1 
+      max_len= max(max_len, length)
+    r +=1
+
+  return max_len
+
+arr = [1,1,1,0,0,0,1,1,1,1,0]
+k=2
+print(main_function(arr,k))
+
 
 
 # 3 TODO : fruit into baskets
+'''
+https://bit.ly/3D6d94w
+
+maxlength suarray with atmost 2 types of numbers
+
+https://www.youtube.com/watch?v=e3bs0uA1NhQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=276
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(N^2)
+# SC     -   O(3)  
+def main_function(arr,k):
+  max_len = 0
+  for i in range(len(arr)):
+    # hash_arr = [0] * 256  # Assuming ASCII characters
+    st = set()
+    for j in range(i, len(arr)):
+      st.add(arr[j])
+      if len(st) <= 2:
+        length = j -i + 1 
+        max_len = max(length, max_len)
+      else:
+        break
+      
+
+  return max_len
+
+arr = [3,3,3,1,2,1,1,2,3,3,4]
+k=2
+print(main_function(arr,k))
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -     O(2N) 
+# SC     -    O(1)
+def main_function(arr, k):
+    l = 0
+    r = 0
+    mpp = {}  # Initialize mpp as an empty dictionary
+    max_len = 0
+    
+    while r < len(arr):
+        # Increment the count of the current element in the window
+        mpp[arr[r]] = mpp.get(arr[r], 0) + 1
+        
+        # If the number of distinct elements exceeds k, shrink the window
+        while len(mpp) > k:
+            mpp[arr[l]] -= 1
+            if mpp[arr[l]] == 0:
+                del mpp[arr[l]]  # Remove the element from the dictionary if its count becomes 0
+            l += 1  # Shrink the window from the left
+        
+        # Update max_len when the condition is satisfied
+        if len(mpp) <= k:
+            length = r - l + 1
+            max_len = max(max_len, length)
+        
+        # Expand the window by moving the right pointer
+        r += 1
+    
+    return max_len
+
+arr = [3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4]
+k = 2
+print(main_function(arr, k))
+     
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -      O(N)
+# SC     -      O(1)
+def main_function(arr, k):
+    l = 0
+    r = 0
+    mpp = {}  # Initialize mpp as an empty dictionary
+    max_len = 0
+    
+    while r < len(arr):
+        # Increment the count of the current element in the window
+        mpp[arr[r]] = mpp.get(arr[r], 0) + 1
+        
+        # If the number of distinct elements exceeds k, shrink the window
+        if len(mpp) > k:
+            mpp[arr[l]] -= 1
+            if mpp[arr[l]] == 0:
+                del mpp[arr[l]]  # Remove the element from the dictionary if its count becomes 0
+            l += 1  # Shrink the window from the left
+        
+        # Update max_len when the condition is satisfied
+        if len(mpp) <= k:
+            length = r - l + 1
+            max_len = max(max_len, length)
+        
+        # Expand the window by moving the right pointer
+        r += 1
+    
+    return max_len
+
+arr = [3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4]
+k = 2
+print(main_function(arr, k))
+
 
 
 # 4 TODO : longest repeating character replacement
+'''
+https://leetcode.com/problems/longest-repeating-character-replacement/
+
+
+https://www.youtube.com/watch?v=_eNhaDCr6P0&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=279
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(N62)
+# SC     -  O(26)   
+def main_function(arr, k):
+    max_len = 0
+    for i in range(len(arr)):
+        hash_arr = [0] * 26  # Array to track frequencies of characters (26 letters of the alphabet)
+        maxf = 0  # Maximum frequency of a character in the current window
+        for j in range(i, len(arr)):
+            index = ord(arr[j]) - ord('A')  # Map character to its index (A -> 0, B -> 1, ..., Z -> 25)
+            hash_arr[index] += 1
+            maxf = max(maxf, hash_arr[index])  # Update max frequency of any character in the window
+            
+            changes = (j - i + 1) - maxf  # Number of changes needed to make all characters the same
+            if changes <= k:  # If we can make the changes within the limit k
+                max_len = max(max_len, j - i + 1)  # Update the max length
+            else:
+                break  # If changes exceed k, no need to continue expanding the window
+
+    return max_len
+
+arr = "AABABBA"
+k = 2
+print(main_function(arr, k))
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+
+
+
 
 
 # method 3 : optimal solution
 # TC     -      
-# SC     -      
+# SC     -  
+## using map 
+# TC     -      O(N)
+# SC     -  O(1)   
+# def main_function(s, k):
+#     l = 0
+#     r = 0
+#     mpp = {}  # Initialize mpp as an empty dictionary
+#     max_len = 0
+#     maxf = 0
+    
+#     while r < len(s):
+#         # Increment the count of the current element in the window
+#         mpp[s[r]] = mpp.get(s[r], 0) + 1
+#         maxf = max(maxf, mpp[s[r]])  # Track the max frequency of any character in the window
+        
+#         # If the number of changes exceeds k, shrink the window
+#         if (r - l + 1) - maxf > k:
+#             mpp[s[l]] -= 1  # Decrease the count of the character at the left of the window
+#             if mpp[s[l]] == 0:
+#                 del mpp[s[l]]  # Remove the character from the map if its count becomes 0
+#             l += 1  # Shrink the window from the left
+        
+#         # Update max_len when the condition is satisfied
+#         if (r - l + 1) - maxf <= k:
+#             max_len = max(max_len, r - l + 1)
+        
+#         # Expand the window by moving the right pointer
+#         r += 1
+    
+#     return max_len
+
+# arr = "AABABBA"
+# k = 2
+# print(main_function(arr, k))
+
+# using hash array 
+def main_function(s, k):
+    l = 0
+    r = 0
+    hash = [0] * 26  # Array to track frequencies of characters (26 letters of the alphabet)
+    max_len = 0
+    maxf = 0
+    
+    while r < len(s):
+        # Increment the count of the current character in the window
+        hash[ord(s[r]) - ord('A')] += 1
+        maxf = max(maxf, hash[ord(s[r]) - ord('A')])  # Track the max frequency of any character in the window
+        
+        # If the number of changes exceeds k, shrink the window
+        if (r - l + 1) - maxf > k:
+            hash[ord(s[l]) - ord('A')] -= 1  # Decrease the count of the character at the left of the window
+            l += 1  # Shrink the window from the left
+        
+        # Update max_len when the condition is satisfied
+        if (r - l + 1) - maxf <= k:
+            max_len = max(max_len, r - l + 1)
+        
+        # Expand the window by moving the right pointer
+        r += 1
+    
+    return max_len    
+
+arr = "AABABBA"
+k = 2
+print(main_function(arr, k))
+
 
 
 # 5 TODO : binary subarray with sum
+'''
+https://leetcode.com/problems/binary-subarrays-with-sum/
+
+
+https://www.youtube.com/watch?v=XnMdNUkX6VM&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=280
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
+def longest_subarray_bruteforce(arr, k):
+    n = len(arr)
+    max_len = 0
+    for i in range(n):
+        current_sum = 0
+        for j in range(i, n):
+            current_sum += arr[j]
+            if current_sum = k:
+                max_len = max(max_len, j - i + 1)
+            else:
+                break
+    return max_len
 
+arr = [2, 5, 1, 7, 10]
+k = 14
+print(longest_subarray_bruteforce(arr, k))  
 
 # method 2 : better approch
 # TC     -      
 # SC     -     
+def main_function(arr, k):
+    n = len(arr)
+    l = 0  # left pointer
+    r = 0  # right pointer
+    sum = 0
+    max_len = 0
+
+    while r < n:
+      sum = sum  + arr[r]
+      while sum > k:
+        sum = sum - arr[l]
+        l +=1
+      
+      
+      if sum <= k:
+        max_len = max(max_len, r-l+1)
+      r +=1
+    
+    return max_len
+
+# Example usage
+arr = [2, 5, 1, 7, 10]
+k = 14
+print(main_function(arr, k))  
+
+# slight better approch
+def main_function(arr, k):
+    n = len(arr)
+    l = 0  # left pointer
+    r = 0  # right pointer
+    sum = 0
+    max_len = 0
+
+    while r < n:
+      sum = sum  + arr[r]
+      if sum > k:
+        sum = sum - arr[l]
+        l +=1
+      
+      
+      if sum <= k:
+        max_len = max(max_len, r-l+1)
+      r +=1
+    
+    return max_len
+
+# Example usage
+arr = [2, 5, 1, 7, 10]
+k = 14
+print(main_function(arr, k))  
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -      O(2*2*N)
+# SC     -     O(1)
+def main_function(nums, goal):
+    if goal <= 0:
+      return 0
+    n = len(arr)
+    l = 0  # left pointer
+    r = 0  # right pointer
+    sum = 0
+    count = 0
+
+    while r < n:
+      sum = sum  + nums[r]
+      while sum > goal:
+        sum = sum - nums[l]
+        l +=1
+      count = count + (r-l+1)
+      r +=1
+    
+    return count
+
+# Example usage
+arr = [1,0,0,1,1,0]
+k = 2
+print(main_function(arr, k) - main_function(arr, k-1)) 
 
 
 # 6 TODO : count number of nice subarrays
+'''
+https://leetcode.com/problems/count-number-of-nice-subarrays/
+
+
+https://www.youtube.com/watch?v=j_QOv9OT9Og&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=281
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12195,18 +17302,79 @@ if __name__ == "__main__":
 
 # method 3 : optimal solution
 # TC     -      
-# SC     -      
+# SC     -   
+def main_function(nums, goal):
+    if goal <= 0:
+      return 0
+    n = len(arr)
+    l = 0  # left pointer
+    r = 0  # right pointer
+    sum = 0
+    count = 0
+
+    while r < n:
+      sum = sum  + (nums[r]%2)
+      while sum > goal:
+        sum = sum - (nums[l]%2)
+        l +=1
+      count = count + (r-l+1)
+      r +=1
+    
+    return count
+
+# Example usage
+arr = [1,1,2,1,1]
+k = 3
+print(main_function(arr, k) - main_function(arr, k-1))   
 
 
 # 7 TODO : number of substring containg all three characters
+'''
+https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/
+
+
+https://www.youtube.com/watch?v=xtqN4qlgr8s&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=278
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(N^2)
+# SC     -  O(1)   
+def main_function(arr):
+  count = 0
+  for i in range(len(arr)):
+    hash_arr = [0] * 3
+    for j in range(i, len(arr)):
+      hash_arr[ord(arr[j]) - ord('a')] = 1  
+      
+      if hash_arr[0] + hash_arr[1] + hash_arr[2] == 3:  
+          # count = count + 1
+          count = count + (len(arr) - j)  # optimized
+          break  # optimized
+  return count
+
+arr = "bbacba"
+print(main_function(arr))
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -     O(N) 
+# SC     -     O(1)
+def main_function(arr):
+    count = 0
+    lastSeen = [-1, -1, -1]  # Initialize lastSeen for 'a', 'b', and 'c' as -1
+    
+    for i in range(len(arr)):
+        lastSeen[ord(arr[i]) - ord('a')] = i  # Update lastSeen for the current character
+        
+        # Check if all three characters have been seen
+        if lastSeen[0] != -1 and lastSeen[1] != -1 and lastSeen[2] != -1:
+            # The number of valid substrings that end at index i
+            count += 1 + min(lastSeen[0], lastSeen[1], lastSeen[2])
+    
+    return count
+
+arr = "bbacba"
+print(main_function(arr))
 
 
 # method 3 : optimal solution
@@ -12215,6 +17383,50 @@ if __name__ == "__main__":
 
 
 # 8 TODO : maximun point you can obtain from cards
+'''
+https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
+
+
+
+https://www.youtube.com/watch?v=pBWCOCS636U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=273
+'''
+# method 1 : brute force approch
+# TC     -      
+# SC     -     
+
+
+# method 2 : better approch
+# TC     -      
+# SC     -     
+
+
+# method 3 : optimal solution
+# TC     -      O(2*k)
+# SC     -  O(1)  
+def main_function(arr, k):
+    count = 0
+    lsum = 0
+    rsum = 0
+
+    # Compute the sum of the first k-1 elements
+    for i in range(k - 1):
+        lsum += arr[i]
+
+    maxSum = lsum
+    rindex = len(arr) - 1
+
+    # Loop from the last index to the (k-1)-th index
+    for i in range(k - 1, -1, -1):
+        lsum -= arr[i]
+        rsum += arr[rindex]
+        rindex -= 1
+        maxSum = max(maxSum, lsum + rsum)
+    
+    return maxSum
+
+arr = [6, 2, 3, 4, 7, 2, 1, 7, 1]
+k = 4
+print(main_function(arr, k))
 
 
 # endregion
@@ -12227,41 +17439,206 @@ if __name__ == "__main__":
 # ---------------------------------------------
 
 # 1 TODO : largest substring with at most K distincet characters 
+'''
+https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
+
+https://www.youtube.com/watch?v=teM9ZsVRQyc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=277
+'''
 # method 1 : brute force approch
-# TC     -      
+# TC     -     O(N^2) 
 # SC     -     
+def main_function(s, k):
+    maxlen = 0
+    mpp = {}
+
+    # Compute the sum of the first k-1 elements
+    for i in range(len(s)):
+      mpp = {}
+      for j in range(len(s)):
+        mpp[s[j]] = mpp.get(s[j], 0) + 1
+        if len(mpp) <= k:
+          maxlen = max(maxlen, j-i+1)
+        else:
+          break
+    return maxlen
+
+
+s = "aaabbccd"
+k = 2
+print(main_function(s, k))
 
 
 # method 2 : better approch
 # TC     -      
-# SC     -     
+# SC     -   
+def largest_substring_k_distinct(s, k):
+    # Dictionary to store the frequency of characters in the current window
+    char_count = {}
+    left = 0  # Left pointer of the window
+    max_len = 0  # Variable to store the maximum length of substring
+    max_substr = ""  # To store the largest substring with at most k distinct characters
+    
+    right = 0  # Right pointer of the window
+
+    # Iterate using a while loop for the right pointer
+    while right < len(s):
+        # Add the current character to the dictionary
+        char_count[s[right]] = char_count.get(s[right], 0) + 1
+        
+        # If the number of distinct characters exceeds k, shrink the window from the left
+        while len(char_count) > k:
+            char_count[s[left]] -= 1
+            if char_count[s[left]] == 0:
+                del char_count[s[left]]  # Remove the character if its frequency becomes 0
+            left += 1  # Move the left pointer
+        
+        # Update the maximum length and substring if needed
+        if right - left + 1 > max_len:
+            max_len = right - left + 1
+            max_substr = s[left:right+1]
+        
+        # Move the right pointer to the next character
+        right += 1
+
+    return max_substr
+
+# Example usage
+s = "eceba"
+k = 2
+print("Largest substring with at most", k, "distinct characters:", largest_substring_k_distinct(s, k))
+  
 
 
 # method 3 : optimal solution
 # TC     -      
 # SC     -      
+def largest_substring_k_distinct(s, k):
+    # Dictionary to store the frequency of characters in the current window
+    char_count = {}
+    left = 0  # Left pointer of the window
+    max_len = 0  # Variable to store the maximum length of substring
+    max_substr = ""  # To store the largest substring with at most k distinct characters
+    
+    right = 0  # Right pointer of the window
+
+    # Iterate using a while loop for the right pointer
+    while right < len(s):
+        # Add the current character to the dictionary
+        char_count[s[right]] = char_count.get(s[right], 0) + 1
+        
+        # If the number of distinct characters exceeds k, shrink the window from the left
+        if len(char_count) > k:
+            char_count[s[left]] -= 1
+            if char_count[s[left]] == 0:
+                del char_count[s[left]]  # Remove the character if its frequency becomes 0
+            left += 1  # Move the left pointer
+        
+        # Update the maximum length and substring if needed
+        if right - left + 1 > max_len:
+            max_len = right - left + 1
+            max_substr = s[left:right+1]
+        
+        # Move the right pointer to the next character
+        right += 1
+
+    return max_substr
+
+# Example usage
+s = "eceba"
+k = 2
+print("Largest substring with at most", k, "distinct characters:", largest_substring_k_distinct(s, k))
+
 
 
 # 2 TODO : subarray with k different integers
+'''
+https://leetcode.com/problems/subarrays-with-k-different-integers/
+
+
+https://www.youtube.com/watch?v=7wYGbV_LsX4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=282
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(n^2)
+# SC     -     O(N)
 
+def main_function(arr, k):
+  count = 0
+  for i  in range(len(arr)):
+    mpp = {}
+    for j in range(i,len(arr)):
+      mpp[arr[j]] = 1 
+      if len(mpp) == k:
+        count += 1 
+      elif len(mpp) > k:
+        break
+  return count        
 
+arr = [1,2,1,3,4]
+k = 3
+print(main_function(arr, k))
 # method 2 : better approch
 # TC     -      
 # SC     -     
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -      O(2N)
+# SC     -      O(N)
+def main_function(arr, k):
+  l = 0
+  count = 0
+  mpp = {}
+  for r in range(len(arr)):
+    mpp[arr[r]] = mpp.get(arr[r], 0) + 1
+    while len(mpp) > k:
+      mpp[arr[l]] -= 1
+      if mpp[arr[l]] == 0:
+        del mpp[arr[l]]
+      l += 1
+    count += (r - l + 1)
+  return count
+
+arr = [1, 2, 1, 3, 4]
+k = 3
+print(main_function(arr, k) - main_function(arr, k - 1))
 
 
 # 3 TODO : minimum window substring
+'''
+https://leetcode.com/problems/minimum-window-substring/
+
+
+https://www.youtube.com/watch?v=WJaij9ffOIY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=283
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(N^2)
+# SC     -    O(256) 
+def main_function(arr, k):
+    min_len = 10**9
+    s_index = -1
+    k_set = set(k)  # Convert k to a set of distinct characters
+    
+    for i in range(len(arr)):
+        hash_arr = [0] * 256  # Track frequency of characters (ASCII)
+        count = 0
+        for j in range(i, len(arr)):  # Iterate over the substring from i to j
+            if hash_arr[ord(arr[j])] == 0 and arr[j] in k_set:  # New unique character
+                count += 1
+            hash_arr[ord(arr[j])] += 1
+
+            if count == len(k_set):  # If we've found all distinct characters from k
+                if j - i + 1 < min_len:
+                    min_len = j - i + 1
+                    s_index = i
+                break  # No need to continue with this i, we found the result
+
+    if s_index == -1:
+        return ""  # No valid substring found
+    return arr[s_index:s_index + min_len]
+
+arr = "ddaaabbca"
+k = "abc"
+print(main_function(arr, k))
 
 
 # method 2 : better approch
@@ -12270,11 +17647,62 @@ if __name__ == "__main__":
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -      O(2N) + O(M)
+# SC     -   O(256)   
+def main_function(s, t):
+    n = len(s)
+    m = len(t)
+    l = 0
+    r = 0
+    min_len = float('inf')  # Start with infinity for min_len
+    count = 0
+    s_index = -1
+    hash_arr = [0] * 256  # To track frequency of characters (ASCII size)
+    
+    # Count frequency of characters in t
+    for char in t:
+        hash_arr[ord(char)] += 1  # Increment frequency for each character in t
+    
+    # Sliding window
+    while r < n:
+        # If the character in s[r] exists in t, we decrement the required count
+        if hash_arr[ord(s[r])] > 0:
+            count += 1
+        
+        # Decrease the frequency of the character in hash_arr
+        hash_arr[ord(s[r])] -= 1
+        r += 1
+        
+        # Once we have all characters needed, try to shrink the window
+        while count == m:
+            # Update the minimum length substring
+            if r - l < min_len:
+                min_len = r - l
+                s_index = l
+            
+            # Try to shrink the window from the left
+            hash_arr[ord(s[l])] += 1
+            if hash_arr[ord(s[l])] > 0:
+                count -= 1
+            l += 1
+    
+    # If we found a valid substring, return it
+    if s_index == -1:
+        return ""  # No valid substring found
+    return s[s_index:s_index + min_len]  # Return the smallest valid substring
+
+arr = "ddaaabbca"
+k = "abc"
+print(main_function(arr, k))  # Output should be "abbc" (smallest substring containing "abc")
 
 
 # 4 TODO : minimum window subsequence
+'''
+https://leetcode.com/problems/minimum-window-subsequence/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12303,6 +17731,11 @@ if __name__ == "__main__":
 # ------------------------------------------
 
 # 1 TODO :  introduction to parity queue using binary heaps
+'''
+https://bit.ly/3TSxAHd
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12319,6 +17752,10 @@ if __name__ == "__main__":
 
 
 # 2 TODO : min heap and max heap replacement
+'''
+https://bit.ly/3weGgP3
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12335,6 +17772,12 @@ if __name__ == "__main__":
 
 
 # 3 TODO : check if an array represents a min-heap or not
+'''
+https://bit.ly/3AbFrrI
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12351,6 +17794,11 @@ if __name__ == "__main__":
 
 
 # 4 TODO : convert min heap to max heap
+'''
+https://bit.ly/3flmw7c
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12378,6 +17826,13 @@ if __name__ == "__main__":
 # ----------------------------------------
 
 # 1 TODO :  Kth largest element in an array (use parity queue)
+'''
+https://leetcode.com/problems/kth-largest-element-in-an-array/
+
+
+
+
+'''
 # method 1 : brute force approch
 Time complexity: O(nlogn)
 
@@ -12561,6 +18016,13 @@ if __name__ == "__main__":
 
 
 # 2 TODO : Kth smallest element in an array  (use parity queue)
+'''
+https://bit.ly/3PvAOhK
+
+
+
+
+'''
 # method 1 : brute force approch
 Time complexity: O(nlogn)
 
@@ -12745,6 +18207,13 @@ if __name__ == "__main__":
 
 
 # 3 TODO : sort K sorted array
+'''
+https://bit.ly/3QLpaAs
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12761,6 +18230,13 @@ if __name__ == "__main__":
 
 
 # 4 TODO : merge M sorted lists
+'''
+https://leetcode.com/problems/merge-k-sorted-lists/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12777,6 +18253,12 @@ if __name__ == "__main__":
 
 
 # 5 TODO : replace each array element by it's corresponding rank
+'''
+
+https://bit.ly/3TS3jcg
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12793,6 +18275,13 @@ if __name__ == "__main__":
 
 
 # 6 TODO : task scheduler
+'''
+https://leetcode.com/problems/task-scheduler/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12809,6 +18298,12 @@ if __name__ == "__main__":
 
 
 # 7 TODO : hands of straights
+'''
+https://leetcode.com/problems/hand-of-straights/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12837,6 +18332,12 @@ if __name__ == "__main__":
 # --------------------------------------
 
 # 1 TODO :  design twitter
+'''
+https://leetcode.com/problems/design-twitter/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12853,6 +18354,14 @@ if __name__ == "__main__":
 
 
 # 2 TODO : connect "n" ropes with minimal cost
+'''
+
+https://bit.ly/3QVb1jR
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12869,6 +18378,12 @@ if __name__ == "__main__":
 
 
 # 3 TODO : Kth largest element in a stream of running integers
+'''
+https://leetcode.com/problems/kth-largest-element-in-a-stream/#:~:text=Implement%20KthLargest%20class%3A,largest%20element%20in%20the%20stream.
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12885,6 +18400,12 @@ if __name__ == "__main__":
 
 
 # 4 TODO : maximum sum combination
+'''
+https://www.interviewbit.com/problems/maximum-sum-combinations/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12901,6 +18422,13 @@ if __name__ == "__main__":
 
 
 # 5 TODO : find median from data stream
+'''
+https://leetcode.com/problems/find-median-from-data-stream/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12917,6 +18445,13 @@ if __name__ == "__main__":
 
 
 # 6 TODO : K most frequent elements
+'''
+https://leetcode.com/problems/top-k-frequent-elements/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -12943,21 +18478,32 @@ if __name__ == "__main__":
 # -----------------------------------
 
 # 1 TODO :  assign cookies
+'''
+https://leetcode.com/problems/assign-cookies/
+
+
+'''
+# method 1 : brute force method 
+'''
+https://www.youtube.com/watch?v=DIX2p7vb9co&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=284
+
+sort the cookies arrays and greed array
+take l and r pointer where l iterate over cookies array and r iterate over greed array
+iterate over the arrays and check weather the current cookie fulfill the greed of the current child ie greed <= cookie. if yes increase r. l will increase in any case to continue the iteration
+
+
+
 Time Complexity: O(N logN + M logM + M) where N is the length of the greedy array, M is the length of the cookies array. To sort the greedy and cookies array, the complexity is O(N logN) and O(M logM).
 
 After sorting, we iterate over the arrays at most M times as M is the total number of cookies.
 Since each child and each cookie is considered at most once, the time complexity of this part is linear in terms of the size of the cookie array, which is O(M).
+
 Space Complexity: O(1) as the algorithm uses only a constant amount of extra space regardless of the size of the input array. It does not require any additional data structures that scale with the input size.
-                            
+'''
 from typing import List
 
 # Function to find the maximum
 # number of content children
-Time Complexity: O(N logN + M logM + M) where N is the length of the greedy array, M is the length of the cookies array. To sort the greedy and cookies array, the complexity is O(N logN) and O(M logM).
-
-After sorting, we iterate over the arrays at most M times as M is the total number of cookies.
-Since each child and each cookie is considered at most once, the time complexity of this part is linear in terms of the size of the cookie array, which is O(M).
-Space Complexity: O(1) as the algorithm uses only a constant amount of extra space regardless of the size of the input array. It does not require any additional data structures that scale with the input size.
 def findContentChildren(greed: List[int], cookieSize: List[int]) -> int:
     # Get the size of
     # the greed array
@@ -13023,7 +18569,6 @@ if __name__ == "__main__":
     ans = findContentChildren(greed, cookieSize)
     
     print(f"\nNo. of kids assigned cookies {ans}")
-                           
 
 
 # method 2 : better approch
@@ -13037,43 +18582,52 @@ if __name__ == "__main__":
 
 
 # 2 TODO : fractional knapsack approch
+'''   
+https://practice.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1
+
+http://youtube.com/watch?v=1ibsQrnuEEg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=295
+'''
 # method 1 : brute force approch
+'''
+make an array containg the value for 1 weight (per weight)
+sort that array in desc order so that max weight will be first to add in the bucket
+iterate over that array and start adding the items and also check if the weight <= to given weight
+if the next item cannot weight be added in the bucket then add the fraction of the item
+
+
+
 Time Complexity: O(n log n + n). O(n log n) to sort the items and O(n) to iterate through all the items for calculating the answer.
 
 Space Complexity: O(1), no additional data structure has been used.
+'''
 class Item:
-    def __init__(self, value, weight):
-        self.value = value
-        self.weight = weight
-
-
+  def __init__(self, value, weight):
+    self.value = value
+    self.weight = weight
 
 
 class Solution:
-    def fractionalKnapsack(self, W, arr, n):
-        arr.sort(key=lambda x: x.value / x.weight, reverse=True)
-        curWeight = 0
-        finalvalue = 0.0
-        for i in range(n):
-            if curWeight + arr[i].weight <= W:
-                curWeight += arr[i].weight
-                finalvalue += arr[i].value
-            else:
-                remain = W - curWeight
-                finalvalue += arr[i].value / arr[i].weight * remain
-                break
-        return finalvalue
-
-
-
+  def fractionalKnapsack(self, W, arr, n):
+    arr.sort(key=lambda x: x.value / x.weight, reverse=True)
+    curWeight = 0
+    finalvalue = 0.0
+    for i in range(n):
+      if curWeight + arr[i].weight <= W:
+        curWeight += arr[i].weight
+        finalvalue += arr[i].value
+      else:
+        remain = W - curWeight
+        finalvalue += arr[i].value / arr[i].weight * remain
+        break
+    return finalvalue
 
 if __name__ == '__main__':
-    n = 3
-    W = 50
-    arr = [Item(60, 10), Item(100, 20), Item(120, 30)]
-    obj = Solution()
-    ans = obj.fractionalKnapsack(W, arr, n)
-    print("The maximum value is", ans) 
+  n = 3
+  W = 50
+  arr = [Item(60, 10), Item(100, 20), Item(120, 30)]
+  obj = Solution()
+  ans = obj.fractionalKnapsack(W, arr, n)
+  print("The maximum value is", ans) 
 
 
 # method 2 : better approch
@@ -13087,24 +18641,37 @@ if __name__ == '__main__':
 
 
 # 3 TODO : greedy algorithm to find minimum number of coins
+'''
+https://www.geeksforgeeks.org/find-minimum-number-of-coins-that-make-a-change/
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=mVg9CfJvayM
+
+iterate over the array in reverse order or larger to smaller
+inside the for loop again iterate utill that item is repeatedly substractable withe the give target 
+
+
 Time Complexity:O(V)
 
 Space Complexity:O(1)
+'''
 
 if __name__ == '__main__':
-    V = 49
-    ans = []
-    coins = [1, 2, 5, 10, 20, 50, 100, 500, 1000]
-    n = 9
-    for i in range(n - 1, -1, -1):
-        while V >= coins[i]:
-            V -= coins[i]
-            ans.append(coins[i])
-    print("The minimum number of coins is", len(ans))
-    print("The coins are")
-    for i in range(len(ans)):
-        print(ans[i], end=" ")  
+  V = 49
+  ans = []
+  coins = [1, 2, 5, 10, 20, 50, 100, 500, 1000]
+  n = 9
+  for i in range(n - 1, -1, -1):
+    while V >= coins[i]:
+      V -= coins[i]
+      ans.append(coins[i])
+  print("The minimum number of coins is", len(ans))
+  print("The coins are")
+  for i in range(len(ans)):
+    print(ans[i], end=" ")  
 
 
 # method 2 : better approch
@@ -13118,6 +18685,11 @@ if __name__ == '__main__':
 
 
 # 4 TODO : lemonade charge
+'''
+https://leetcode.com/problems/lemonade-change/
+
+https://www.youtube.com/watch?v=n_tmibEhO6Q&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=286
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -13129,109 +18701,181 @@ if __name__ == '__main__':
 
 
 # method 3 : optimal solution
+'''
+
+iterate overt the array
+if item == 5, increment variable 5 
+if item == 10, decrement variable 5 and increment variable 10
+if item == other, decrement variable 5 and 10, if not possible then decrement variable 5 three times
+
+
 Time Complexity: O(N) where N is the number of people in queue/ bills we will deal with. We iterate through each customer’s bills exactly once. The loop runs for N iterations and at each iteration the operations performed are constant time.
 
 Space Complexity: O(1) as the algorithm uses only a constant amount of extra space regardless of the size of the input array. It does not require any additional data structures that scale with the input size.
-                            
+'''
 # Function to find whether each customer can 
 # be provided with correct change
 def lemonadeChange(bills):
+  # Initialize a counter
+  # for $5 bills
+  five = 0 
+  # Initialize a counter
+  # for $10 bills
+  ten = 0   
+  # Iterate through each customer's bill
+  for bill in bills:
+    # If the customer's
+    # bill is $5
+    if bill == 5:
+      # Increment the
+      # count of $5 bills
+      five += 1  
     
-    # Initialize a counter
-    # for $5 bills
-    five = 0 
+    # If the customer's
+    # bill is $10
+    elif bill == 10:
+      # Check if there are $5
+      # bills available to give change
+      if five:
+        # Use one $5 bill
+        # to give change
+        five -= 1 
+        # Receive one $10 bill
+        ten += 1   
     
-    # Initialize a counter
-    # for $10 bills
-    ten = 0   
+      # If no $5 bill
+      # available, return false
+      else:
+          return False  
     
-    # Iterate through each customer's bill
-    for bill in bills:
-        
-        # If the customer's
-        # bill is $5
-        if bill == 5:
-            
-            # Increment the
-            # count of $5 bills
-            five += 1  
-        
-        # If the customer's
-        # bill is $10
-        elif bill == 10:
-            
-            # Check if there are $5
-            # bills available to give change
-            if five:
-                 # Use one $5 bill
-                 # to give change
-                five -= 1 
-                # Receive one $10 bill
-                ten += 1   
-            
-            # If no $5 bill
-            # available, return false
-            else:
-                return False  
-        
-        # If the customer's
-        # bill is $20
-        else:
-            # Check if there are both
-            # $5 and $10 bills
-            # available to give change
-            if five and ten:
-                 # Use one $5 bill
-                five -= 1 
-                # Use one $10 bill
-                ten -= 1   
-            
-            # If there are not enough $10 bills,
-            # check if there are at least
-            # three $5 bills available
-            elif five >= 3:
-                # Use three $5 bills
-                # to give change
-                five -= 3  
-            
-            # If unable to give
-            # change, return false
-            else:
-                return False  
-    
-    # Return true if all customers
-    # are served with correct change
-    return True  
+    # If the customer's
+    # bill is $20
+    else:
+      # Check if there are both
+      # $5 and $10 bills
+      # available to give change
+      if five and ten:
+        # Use one $5 bill
+        five -= 1 
+        # Use one $10 bill
+        ten -= 1   
+      
+      # If there are not enough $10 bills,
+      # check if there are at least
+      # three $5 bills available
+      elif five >= 3:
+        # Use three $5 bills
+        # to give change
+        five -= 3  
+      
+      # If unable to give
+      # change, return false
+      else:
+        return False  
+
+  # Return true if all customers
+  # are served with correct change
+  return True  
 
 # Main function
 def main():
-    bills = [5, 5, 5, 10, 20]
-    print("Queues of customers:", end=" ")
-    for bill in bills:
-        print(bill, end=" ")
-    print()
-    ans = lemonadeChange(bills)
-    if ans:
-        print("It is possible to provide change for all customers.")
-    else:
-        print("It is not possible to provide change for all customers.")
+  bills = [5, 5, 5, 10, 20]
+  print("Queues of customers:", end=" ")
+  for bill in bills:
+    print(bill, end=" ")
+  print()
+  ans = lemonadeChange(bills)
+  if ans:
+    print("It is possible to provide change for all customers.")
+  else:
+    print("It is not possible to provide change for all customers.")
 
 # Run the main function
 if __name__ == "__main__":
-    main()
-                           
-                          
+  main()
 
 
 # 5 TODO : valid paranthesis checker
+'''
+https://leetcode.com/problems/valid-parenthesis-string/
+
+
+https://www.youtube.com/watch?v=cHT6sG_hUZI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=294
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(3**N)
+# SC     -  O(N)   
+def main_function(s, index, count, n):
+    # Base case: if count is negative, return False (invalid state)
+    if count < 0:
+        return False
+    
+    # If we've reached the end of the string, check if count is 0 (balanced)
+    if index == n:
+        return count == 0
+    
+    # If the current character is '(', increment the count
+    if s[index] == '(':
+        return main_function(s, index + 1, count + 1, n)
+    
+    # If the current character is ')', decrement the count
+    elif s[index] == ')':
+        return main_function(s, index + 1, count - 1, n)
+    
+    # If the current character is '*', it can be '(', ')', or an empty string.
+    # Try all three possibilities and check if any result in valid parentheses.
+    return (main_function(s, index + 1, count + 1, n) or 
+            main_function(s, index + 1, count - 1, n) or 
+            main_function(s, index + 1, count, n))
+
+# Wrapper function to call the recursive function
+def valid_parenthesis(s):
+    n = len(s)
+    return main_function(s, 0, 0, n)
+
+# Test cases
+print(valid_parenthesis("(*)"))    # True
+print(valid_parenthesis("(*))"))   # True
+print(valid_parenthesis("((**)"))  # True
+print(valid_parenthesis("(((**)")) # False
+
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -      O(N)
+# SC     -     O(1)
+def isValidParenthesis(s: str) -> bool:
+    # Greedily assume '*' as '(' (optimistic) in max_balance and ')' (pessimistic) in min_balance
+    min_balance = 0   # Minimum balance (treat '*' as ')')
+    max_balance = 0   # Maximum balance (treat '*' as '(')
+    
+    for char in s:
+        if char == '(':
+            min_balance += 1
+            max_balance += 1
+        elif char == ')':
+            min_balance -= 1
+            max_balance += 1
+        else:  # char == '*'
+            min_balance -= 1  # '*' can be treated as ')'
+            max_balance += 1  # '*' can be treated as '('
+        
+        # Ensure min_balance doesn't go below 0 (because negative balance means more closing than opening)
+        if min_balance < 0:
+            min_balance = 0
+        
+        # If max_balance is negative, it means there are more closing than opening parentheses
+        if max_balance < 0:
+            return False
+    
+    # After processing the whole string, ensure that min_balance is 0 for balanced parentheses
+    return min_balance == 0
+
+# Test cases
+print(isValidParenthesis("(*)"))    # True
+print(isValidParenthesis("(*))"))   # True
+print(isValidParenthesis("((**)"))  # True
+print(isValidParenthesis("(((**)")) # False
 
 
 # method 3 : optimal solution
@@ -13251,52 +18895,81 @@ if __name__ == "__main__":
 # ------------------------------------------
 
 # 1 TODO :  N meetings in one room
+'''
+https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1
+
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=mKfhTotEguk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=290
+
+create a data structure that has start, end and the position for each item of both arrays
+sort that data structure list in asc order of end time
+now traverse the list and check if the start time of the next meeting is greater than the end time of the previous meeting then increment the count and update the end time with the end time of the next meeting
+
+
 Time Complexity: O(n) to iterate through every position and insert them in a data structure. O(n log n)  to sort the data structure in ascending order of end time. O(n)  to iterate through the positions and check which meeting can be performed.
 
 Overall : O(n) +O(n log n) + O(n) ~O(n log n)
 
 Space Complexity: O(n)  since we used an additional data structure for storing the start time, end time, and meeting no.
+'''
 from typing import List
 
-
-
-
+# Defining a class 'meeting' that will hold details for each meeting.
 class meeting:
     def __init__(self, start, end, pos):
-        self.start = start
-        self.end = end
-        self.pos = pos
+        # Constructor to initialize the start time, end time, and position (index) of the meeting.
+        self.start = start  # Start time of the meeting
+        self.end = end      # End time of the meeting
+        self.pos = pos      # Position (or index) of the meeting
 
-
-
-
+# The Solution class contains the method to find the maximum number of meetings that can be held.
 class Solution:
-
-
     def maxMeetings(self, s: List[int], e: List[int], n: int) -> None:
+        # Step 1: Create a list of 'meeting' objects, where each meeting contains start time, end time, and its position.
         meet = [meeting(s[i], e[i], i + 1) for i in range(n)]
+        
+        # Step 2: Sort the meetings list by end time (then by position as a secondary criteria).
+        # This ensures we try to finish meetings as early as possible.
         sorted(meet, key=lambda x: (x.end, x.pos))
+        
+        # Step 3: Initialize an empty list to store the meeting indices in the order they will be performed.
         answer = []
+        
+        # Step 4: Set the 'limit' to the end time of the first meeting (since it starts the schedule).
         limit = meet[0].end
+        
+        # Step 5: Add the first meeting to the answer as it's always included.
         answer.append(meet[0].pos)
+        
+        # Step 6: Loop through the rest of the meetings to check if they can be scheduled after the previous meeting.
         for i in range(1, n):
+            # If the start time of the current meeting is greater than the 'limit' (i.e., the end time of the previous meeting),
+            # then it means we can schedule this meeting.
             if meet[i].start > limit:
-                limit = meet[i].end
-                answer.append(meet[i].pos)
+                limit = meet[i].end  # Update the limit to the end time of the current meeting.
+                answer.append(meet[i].pos)  # Add this meeting to the answer list.
+        
+        # Step 7: Print the order of meetings that can be performed.
         print("The order in which the meetings will be performed is ")
         for i in answer:
-            print(i, end=" ")
+            print(i, end=" ")  # Print each meeting's position (index).
 
-
-
-
+# Driver code to test the Solution class.
 if __name__ == "__main__":
-    obj = Solution()
+    obj = Solution()  # Create an instance of the Solution class.
+    
+    # Input: start times and end times for the meetings.
     n = 6
-    start = [1, 3, 0, 5, 8, 5]
-    end = [2, 4, 5, 7, 9, 9]
-    obj.maxMeetings(start, end, n)   
+    start = [1, 3, 0, 5, 8, 5]  # List of start times
+    end = [2, 4, 5, 7, 9, 9]    # List of end times
+    
+    # Call the maxMeetings method to determine the maximum number of meetings that can be held.
+    obj.maxMeetings(start, end, n)
+
 
 
 # method 2 : better approch
@@ -13310,11 +18983,22 @@ if __name__ == "__main__":
 
 
 # 2 TODO : jump game - I
+'''
+https://leetcode.com/problems/jump-game/
+
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=tZAa_jJ3SwQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=287
+
+
+
 Time Complexity: O(N) where N is the length of the input array. We iterate through the input array exactly once and at each element perform constant time operations.
 
 Space Complexity: O(1) as the algorithm uses only a constant amount of extra space regardless of the size of the input array. It does not require any additional data structures that scale with the input size.
-
+'''
                             
 def can_jump(nums):
     # Initialize the maximum
@@ -13361,9 +19045,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
-                           
-                        
+  main()
 
 
 # method 2 : better approch
@@ -13377,26 +19059,78 @@ if __name__ == "__main__":
 
 
 # 3 TODO : jump game - II
+'''
+https://leetcode.com/problems/jump-game-ii/
+
+
+https://www.youtube.com/watch?v=7SBVnw7GSTk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=288
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -     O(N^N) 
+# SC     -     O(N)
 
+def main_function(arr, index, jumps):
+  if index >= len(arr) - 1:
+      return jumps
+  mini = float('inf')
+  for i in range(1,arr[index]+1):
+    mini = min(mini,main_function(arr,index+i,jumps+1))
+  return mini
 
-# method 2 : better approch
+arr = [2,3,1,1,4]
+print(main_function(arr,0,0))
+
+# method 2 : better approch, use DP
 # TC     -      
 # SC     -     
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -      O(N)
+# SC     -      O(1)
+def main_function(arr):
+    jumps = 0
+    left = 0
+    right = 0
+    
+    # Continue jumping until you reach the end of the array
+    while right < len(arr) - 1:
+        fartest = 0
+        
+        # Check the farthest point we can reach from current range [left, right]
+        for i in range(left, right + 1):
+            fartest = max(fartest, i + arr[i])
+        
+        # Update the left boundary for the next jump
+        left = right + 1
+        # Update the right boundary for the next jump
+        right = fartest
+        
+        # Increment the jump count
+        jumps += 1
+    
+    return jumps
+
+# Test the function
+arr = [2, 3, 4, 1, 1, 2]
+print(main_function(arr))  # Expected output: 3
 
 
 # 4 TODO : minimum number of platforms required for a railway station
+'''
+https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1#
+
+https://www.youtube.com/watch?v=AsGzwR_FWok&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=293
+'''
 # method 1 : brute force approch
+'''
+try to find the intersection of one train timmings with another
+
+
 Time Complexity: O(n^2)  (due to two nested loops).
 
 Space Complexity: O(1)  (no extra space used).
+'''
 def countPlatforms(n, arr, dep):
     ans = 1  # final value
     for i in range(n):
@@ -13418,35 +19152,41 @@ if __name__ == "__main__":
 
 
 # method 2 : better approch
+'''
+sort both arrays
+then use two pointer approach 
+increment/decrement count based on the arrival/departure time of the trains 
+
 Time Complexity: O(nlogn) Sorting takes O(nlogn) and traversal of arrays takes O(n) so overall time complexity is O(nlogn).
+2(nlogn + n)
 
 Space complexity: O(1)  (No extra space used).
+'''
 def countPlatforms(arr, dep):
-    arr.sort()
-    dep.sort()
+  arr.sort()
+  dep.sort()
 
-
-    ans = 1
-    count = 1
-    i = 1
-    j = 0
-    while i < len(arr) and j < len(dep):
-        if arr[i] <= dep[j]:  # one more platform needed
-            count += 1
-            i += 1
-        else:  # one platform can be reduced
-            count -= 1
-            j += 1
-        ans = max(ans, count)  # updating the value with the current maximum
-    return ans
+  ans = 1
+  count = 1
+  i = 1
+  j = 0
+  while i < len(arr) and j < len(dep):
+    if arr[i] <= dep[j]:  # one more platform needed
+      count += 1
+      i += 1
+    else:  # one platform can be reduced
+      count -= 1
+      j += 1
+    ans = max(ans, count)  # updating the value with the current maximum
+  return ans
 
 
 
 
 if __name__ == "__main__":
-    arr = [900, 945, 955, 1100, 1500, 1800]
-    dep = [920, 1200, 1130, 1150, 1900, 2000]
-    print("Minimum number of Platforms required ", countPlatforms(arr, dep))
+  arr = [900, 945, 955, 1100, 1500, 1800]
+  dep = [920, 1200, 1130, 1150, 1900, 2000]
+  print("Minimum number of Platforms required ", countPlatforms(arr, dep))
 
 
 # method 3 : optimal solution
@@ -13455,53 +19195,69 @@ if __name__ == "__main__":
 
 
 # 5 TODO : job sequenceing problem
+'''
+https://practice.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1#
+
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=QbwltemZbRg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=289
+
+
+- sort the array based on the profit asc
+- create a slot array of size max deadline
+- iterate through the array and check if the slot is empty or not
+- if empty then fill the slot and add the profit to the answer
+- if not empty then check for the next slot
+- return the answer
+
 Time Complexity: O(N log N) + O(N*M).
 
 O(N log N ) for sorting the jobs in decreasing order of profit. O(N*M) since we are iterating through all N jobs and for every job we are checking from the last deadline, say M deadlines in the worst case.
 
 Space Complexity: O(M) for an array that keeps track of which day job is performed if M is the maximum deadline available.
-
+'''
 class job:
-    def __init__(self, id, deadline, profit):
-        self.id = id
-        self.deadline = deadline
-        self.profit = profit
+  def __init__(self, id, deadline, profit):
+    self.id = id
+    self.deadline = deadline
+    self.profit = profit
 
 
 
 
 class Solution:
-    def jobScheduling(self, jobs):
-        jobs.sort(key=lambda x: x.profit, reverse=True)
-        maxi = jobs[0].deadline
-        for i in range(1, len(jobs)):
-            maxi = max(maxi, jobs[i].deadline)
+  def jobScheduling(self, jobs):
+    jobs.sort(key=lambda x: x.profit, reverse=True)
+    maxi = jobs[0].deadline
+    for i in range(1, len(jobs)):
+      maxi = max(maxi, jobs[i].deadline)
 
 
-        slot = [-1] * (maxi + 1)
-        countJobs = 0
-        jobProfit = 0
+    slot = [-1] * (maxi + 1)
+    countJobs = 0
+    jobProfit = 0
 
 
-        for i in range(len(jobs)):
-            for j in range(jobs[i].deadline, 0, -1):
-                if slot[j] == -1:
-                    slot[j] = i
-                    countJobs += 1
-                    jobProfit += jobs[i].profit
-                    break
+    for i in range(len(jobs)):
+      for j in range(jobs[i].deadline, 0, -1):
+        if slot[j] == -1:
+          slot[j] = i
+          countJobs += 1
+          jobProfit += jobs[i].profit
+          break
 
-
-        return countJobs, jobProfit
+    return countJobs, jobProfit
 
 
 
 
 if __name__ == "__main__":
-    jobs = [job(1, 4, 20), job(2, 1, 10), job(3, 2, 40), job(4, 2, 30)]
-    count, profit = Solution().jobScheduling(jobs)
-    print(count, profit)
+  jobs = [job(1, 4, 20), job(2, 1, 10), job(3, 2, 40), job(4, 2, 30)]
+  count, profit = Solution().jobScheduling(jobs)
+  print(count, profit)
 
 
 # method 2 : better approch
@@ -13515,22 +19271,118 @@ if __name__ == "__main__":
 
 
 # 6 TODO : candy
-# method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+https://leetcode.com/problems/candy/
 
+
+
+https://www.youtube.com/watch?v=IIqVFvKE6RY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=296
+'''
+# method 1 : brute force approch
+# TC     -      O(3N)
+# SC     -     O(2N)
+def main_function(arr):
+  left_arr = [0]*len(arr)
+  right_arr = [0]*len(arr)
+  left_arr[0] = 1 
+  right_arr[len(arr) - 1] = 1 
+  
+  for i in range(1, len(arr)):
+    if arr[i] > arr[i-1]:
+      left_arr[i] = left_arr[i-1] + 1 
+    else:
+      left_arr[i] = 1
+      
+  for i in range(len(arr) - 2, 0, -1 ):
+    if arr[i] > arr[i+1]:
+      right_arr[i] = right_arr[i+1] + 1 
+    else:
+      left_arr[i] = 1
+  
+  sum = 0
+  for i in range(len(arr)):
+    sum = sum + max(left_arr[i], right_arr[i])
+    
+  return sum
+
+arr = [0,2,4,3,2,1,1,3,5,6,4,0,0]
+print(main_function(arr))
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+# TC     -      O(2N)
+# SC     -     O(N)   
+# ❌❌❌
+# def main_function(arr):
+#   left_arr = [0]*len(arr)
+#   right_arr = [0]*len(arr)
+#   left_arr[0] = 1 
+#   right_arr[len(arr) - 1] = 1 
+  
+#   for i in range(1, len(arr)):
+#     if arr[i] > arr[i-1]:
+#       left_arr[i] = left_arr[i-1] + 1 
+#     else:
+#       left_arr[i] = 1
+  
+#   current =  1 
+#   sum  = max(1, left_arr[len(arr) - 1])
+#   right = 1
+#   for i in range(len(arr) - 2, -1, -1 ):
+#     if arr[i] > arr[i+1]:
+#       current = right + 1
+#       right = current
+#     else:
+#       current = 1
+#     sum = sum + max(current, left_arr[i])
+  
+    
+#   return sum
 
+# arr = [0,2,4,3,2,1,1,3,5,6,4,0,0]
+# print(main_function(arr))
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+# TC     -      O(N)
+# SC     -      O(1)
+def main_function(arr):
+  sum  = 1 
+  i = 1
+  n = len(arr)
+  while i < n:
+    if arr[i] == arr[i-1]:
+      sum = sum + 1 
+      i +=1
+      continue
+    peak = 1 
+    while i < n and arr[i] > arr[i-1]:
+      peak +=1 
+      sum = sum + peak
+      i +=1
+    down = 1
+    while i < n and arr[i] < arr[i-1]:
+      down +=1 
+      sum = sum + down
+      i +=1
+    if down > peak:
+      sum = sum + (down -peak)
+  
+  return sum
+
+arr = [0,2,4,3,2,1,1,3,5,6,4,0,0]
+print(main_function(arr))
 
 
 # 7 TODO : program for shortest job (one SNF) CPU scheduling
+'''
+https://bit.ly/3DYCIFb
+
+
+
+
+https://www.youtube.com/watch?v=3-QbX1iDbXs&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=285
+
+SJF - scheduling policy that selects the waiting process with the smallest execution time to execute next.
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -13542,10 +19394,17 @@ if __name__ == "__main__":
 
 
 # method 3 : optimal solution
+'''
+
+- sort the array in asc
+- create a variable to store the wait time, and a variable to store the total time
+- iterate through the array and add the total time to the wait time then after that add the execution time to the total time
+- return the wait time by averaging the wait time by the length of the array
+
 Time Complexity: O(N logN + N) where N is the length of the jobs array. We sort the jobs array giving complexity O(N log N) and to calculate the waiting time we iterate through the sorted array taking O(N) complexity.
 
 Space Complexity: O(1) as the algorithm uses only a constant amount of extra space regardless of the size of the input array. It does not require any additional data structures that scale with the input size.
-                            
+'''
 # Function to calculate average
 # waiting time using Shortest
 # Job First algorithm
@@ -13585,11 +19444,14 @@ if __name__ == "__main__":
 
     ans = shortest_job_first(jobs)
     print("Average waiting time:", ans)
-                           
-                            
 
 
 # 8 TODO : program for least recently used (LRU) page replacement algorithm
+'''
+https://bit.ly/3dtFqHG
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -13606,9 +19468,45 @@ if __name__ == "__main__":
 
 
 # 9 TODO : insert interval
+'''
+https://leetcode.com/problems/insert-interval/
+
+
+https://www.youtube.com/watch?v=xxRE-46OCC8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=292
+'''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+# TC     -      O(N)
+# SC     -     O(N)
+def main_function(arr, new_interval):
+    res = []
+    i = 0  # Start from the first interval
+    n = len(arr)
+    
+    # First loop: Add all intervals that end before the new_interval starts.
+    while i < n and arr[i][1] < new_interval[0]:
+        res.append(arr[i])
+        i += 1
+    
+    # Second loop: Merge overlapping intervals.
+    while i < n and arr[i][0] <= new_interval[1]:
+        new_interval[0] = min(new_interval[0], arr[i][0])
+        new_interval[1] = max(new_interval[1], arr[i][1])
+        i += 1
+    
+    # Add the merged new_interval.
+    res.append(new_interval)
+    
+    # Third loop: Add all remaining intervals.
+    while i < n:
+        res.append(arr[i])
+        i += 1
+    
+    return res
+
+# Test case
+interval = [[1, 2], [3, 4], [5, 7], [8, 10], [12, 16]]
+new_interval = [6, 8]
+print(main_function(interval, new_interval))
 
 
 # method 2 : better approch
@@ -13623,11 +19521,23 @@ if __name__ == "__main__":
 
 # 10 TODO :  merge intervals
 # method 1 : brute force approch
+'''
+https://leetcode.com/problems/merge-intervals/
+
+
+https://www.youtube.com/watch?v=2JzRBPFYbKE
+
+- sort the array in asc order
+- create a variable to store the result
+- iterate through the array and check if the current interval's start is less than the previous interval's end. if yes then, merge the intervals by updating the end of the previous interval to the maximum of the current interval's end and the previous interval's end.
+- else, append the current interval to the result
+- return the result
+
 Time Complexity: O(N*logN) + O(2*N), where N = the size of the given array.
 Reason: Sorting the given array takes  O(N*logN) time complexity. Now, after that, we are using 2 loops i and j. But while using loop i, we skip all the intervals that are merged with loop j. So, we can conclude that every interval is roughly visited twice(roughly, once for checking or skipping and once for merging). So, the time complexity will be 2*N instead of N2.
 
 Space Complexity: O(N), as we are using an answer list to store the merged intervals. Except for the answer array, we are not using any extra space.
-
+'''
 
 
 from typing import List
@@ -13665,21 +19575,18 @@ if __name__ == '__main__':
     print()
 
 
-
-  
-
-
 # method 2 : better approch
 # TC     -      
 # SC     -     
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N*logN) + O(N), where N = the size of the given array.
 Reason: Sorting the given array takes  O(N*logN) time complexity. Now, after that, we are just using a single loop that runs for N times. So, the time complexity will be O(N).
 
 Space Complexity: O(N), as we are using an answer list to store the merged intervals. Except for the answer array, we are not using any extra space.
-
+'''
 
 
 
@@ -13714,10 +19621,19 @@ if __name__ == '__main__':
 
 
 
-
-
-
 # 11 TODO : non-overlapping intervals
+'''
+
+https://leetcode.com/problems/non-overlapping-intervals/
+
+https://www.youtube.com/watch?v=HDHQ8lAWakY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=291
+
+
+
+like question no 1 
+
+sort the interval 
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -13745,6 +19661,11 @@ if __name__ == '__main__':
 # -------------------------------------
 
 # 1 TODO :  introduction to trees
+'''
+https://bit.ly/3EsRmTM
+
+https://www.youtube.com/watch?v=_ANrF3FJm7I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=73
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -13761,6 +19682,11 @@ if __name__ == '__main__':
 
 
 # 2 TODO : binary tree representation in C++
+'''
+https://bit.ly/3gn5Soh
+
+# https://www.youtube.com/watch?v=ctCpP0RFDFc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=74
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -13777,6 +19703,13 @@ if __name__ == '__main__':
 
 
 # 3 TODO : binary tree representation in java
+'''
+
+https://bit.ly/3gn5Soh
+
+
+https://www.youtube.com/watch?v=hyLyW7rP24I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=75
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -13793,6 +19726,14 @@ if __name__ == '__main__':
 
 
 # 4 TODO : binary tree traversals in binary tree
+'''
+https://www.codingninjas.com/codestudio/problems/tree-traversal_981269?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
+https://www.youtube.com/watch?v=jmy0LaGET1I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=76
+
+DFS (Depth First Search) - inorder (left root right), pre-order (root left right), post-order (left right root)
+BFS (Breadth First Search) - write values levelwise
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -13809,11 +19750,20 @@ if __name__ == '__main__':
 
 
 # 5 TODO : preorder traversals of binary tree
+'''
+https://leetcode.com/problems/binary-tree-preorder-traversal/
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=77
+
+
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once.
 
 Space Complexity: O(N) where N is the number of nodes in the binary tree as an additional space for array is allocated to store the values of all ‘N’ nodes of the binary tree.
-                            
+'''              
 # Node class for
 # the binary tree
 class Node:
@@ -13822,8 +19772,7 @@ class Node:
         self.left = None
         self.right = None
 
-# Function to perform preorder traversal
-# of the tree and store values in 'arr'
+# Function to perform preorder traversal of the tree and store values in 'arr'
 def preorder(root, arr):
     # If the current node is None
     # (base case for recursion), return
@@ -13870,8 +19819,6 @@ if __name__ == "__main__":
     for val in result:
         print(val, end=" ")
     print()
-                            
-                         
 
 
 # method 2 : better approch
@@ -13885,11 +19832,18 @@ if __name__ == "__main__":
 
 
 # 6 TODO : inorder traversal of binary tree
+'''
+https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=78
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once.
 
 Space Complexity: O(N) where N is the number of nodes in the binary tree. This is because the recursive stack uses an auxiliary space which can potentially hold all nodes in the tree when dealing with a skewed tree (all nodes have only one child), consuming space proportional to the number of nodes.In the average case or for a balanced tree, the maximum number of nodes that could be in the stack at any given time would be roughly the height of the tree hence O(log2N).
-
+'''
                             
 # Node class for the binary tree
 class Node:
@@ -13945,8 +19899,6 @@ if __name__ == "__main__":
     for val in result:
         print(val, end=" ")
     print()
-                           
-                        
 
 
 # method 2 : better approch
@@ -13960,11 +19912,20 @@ if __name__ == "__main__":
 
 
 # 7 TODO : post order traversal of binary tree
+'''
+https://leetcode.com/problems/binary-tree-postorder-traversal/
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=79
+
+
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once.
 
 Space Complexity: O(N) where N is the number of nodes in the binary tree as an additional space for array is allocated to store the values of all ‘N’ nodes of the binary tree.
-                            
+'''
 # Node class for the binary tree
 class Node:
     def __init__(self, val):
@@ -14024,8 +19985,7 @@ if __name__ == "__main__":
     # traversal result
     print("Postorder traversal: ", end="")
     printList(result)
-                            
-                        
+
 
 
 # method 2 : better approch
@@ -14039,11 +19999,21 @@ if __name__ == "__main__":
 
 
 # 8 TODO : level order traversal / level order traversal in spiral form
+'''
+https://leetcode.com/problems/binary-tree-level-order-traversal/
+
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=80
+
+
 Time Complexity: O(N) where N is the number of nodes in the binary tree. Each node of the binary tree is enqueued and dequeued exactly once, hence all nodes need to be processed and visited. Processing each node takes constant time operations which contributes to the overall linear time complexity.
 
 Space Complexity: O(N) where N is the number of nodes in the binary tree. In the worst case, the queue has to hold all the nodes of the last level of the binary tree, the last level could at most hold N/2 nodes hence the space complexity of the queue is proportional to O(N).The resultant vector answer also stores the values of the nodes level by level and hence contains all the nodes of the tree contributing to O(N) space as well.
-                            
+'''
 from collections import deque
 
 # TreeNode class represents
@@ -14125,8 +20095,6 @@ if __name__ == "__main__":
     # Printing the level order traversal result
     for level in result:
         printList(level)
-                           
-                         
 
 
 # method 2 : better approch
@@ -14140,11 +20108,21 @@ if __name__ == "__main__":
 
 
 # 9 TODO : iterative preorder traversal of binary tree
+'''
+https://leetcode.com/problems/binary-tree-preorder-traversal/
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=Bfqd8BsPVuw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=81
+
+
 Time Complexity: O(N) where N is the number of nodes in the binary tree. Every node of the binary tree is visited exactly once, and for each node, , the operations performed (pushing and popping from the stack, accessing node values, etc.) are constant time operations.
 
 Space Complexity: O(N) where N is the number of nodes in the binary tree. This is because the stack can potentially hold all nodes in the tree when dealing with a skewed tree (all nodes have only one child), consuming space proportional to the number of nodes.
-                            
+
+'''
 from typing import List
 
 # Define the TreeNode structure
@@ -14216,8 +20194,7 @@ print("Preorder Traversal:", end=" ")
 for val in result:
     print(val, end=" ")
 print()
-                           
-                           
+
 
 
 # method 2 : better approch
@@ -14231,67 +20208,88 @@ print()
 
 
 # 10 TODO :  iterative inorder traversal of binary tree
+'''
+https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=Bfqd8BsPVuw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=82
+
+
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once.
 
 Space Complexity: O(N) where N is the number of nodes in the binary tree. This is because the recursive stack uses an auxiliary space which can potentially hold all nodes in the tree when dealing with a skewed tree (all nodes have only one child), consuming space proportional to the number of nodes.In the average case or for a balanced tree, the maximum number of nodes that could be in the stack at any given time would be roughly the height of the tree hence O(log2N).
-                            
-# Node class for the binary tree
-class Node:
-    def __init__(self, val):
-        self.data = val
+'''
+from typing import List
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
         self.left = None
         self.right = None
 
-# Function to perform inorder traversal
-# of the tree and store values in 'arr'
-def inorder(root, arr):
-    # If the current node is None
-    # (base case for recursion), return
-    if root is None:
-        return
-    # Recursively traverse the left subtree
-    inorder(root.left, arr)
-    # Append the current node's
-    # value into the list
-    arr.append(root.data)
-    # Recursively traverse 
-    # the right subtree
-    inorder(root.right, arr)
+class Solution:
+    # Function to perform inorder traversal
+    # of a binary tree iteratively
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        # Initialize list to store
+        # the inorder traversal result
+        inorder = []
+        
+        # If the root is None, return
+        # an empty traversal result
+        if root is None:
+            return inorder
+        
+        # Create a stack to store
+        # nodes during traversal
+        st = []
+        
+        # Set the current node to root
+        current = root
+        
+        # Perform iterative inorder traversal
+        while current is not None or st:
+            # Reach the leftmost node of the current node
+            while current:
+                # Push the current node to the stack
+                st.append(current)
+                # Move to the left child
+                current = current.left
+            
+            # Pop the node from the stack
+            current = st.pop()
+            
+            # Add the node's value to the inorder traversal result
+            inorder.append(current.val)
+            
+            # Move to the right child
+            current = current.right
+        
+        # Return the inorder traversal result
+        return inorder
 
-# Function to initiate inorder traversal
-# and return the resulting list
-def in_order(root):
-    # Create an empty list to
-    # store inorder traversal values
-    arr = []
-    # Call the inorder traversal function
-    inorder(root, arr)
-    # Return the resulting list
-    # containing inorder traversal values
-    return arr
+# Creating a binary tree
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
 
-# Main function
-if __name__ == "__main__":
-    # Creating a sample binary tree
-    root = Node(1)
-    root.left = Node(2)
-    root.right = Node(3)
-    root.left.left = Node(4)
-    root.left.right = Node(5)
+# Initializing the Solution class
+sol = Solution()
 
-    # Getting inorder traversal
-    result = in_order(root)
+# Getting the inorder traversal
+result = sol.inorderTraversal(root)
 
-    # Displaying the inorder traversal result
-    print("Inorder Traversal:", end=" ")
-    # Output each value in the
-    # inorder traversal result
-    for val in result:
-        print(val, end=" ")
-    print()
-                           
-                        
+# Displaying the inorder traversal result
+print("Inorder Traversal:", end=" ")
+for val in result:
+    print(val, end=" ")
+print()
 
 # method 2 : better approch
 # TC     -      
@@ -14304,11 +20302,19 @@ if __name__ == "__main__":
 
 
 # 11 TODO : post order traversal of binary tree using 2-stack
+'''
+https://leetcode.com/problems/binary-tree-postorder-traversal/
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=Bfqd8BsPVuw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=82
+
 Time Complexity: O(2N) where N is the number of nodes in the Binary Tree. The traversal process visits each node in the Binary Tree exactly once to push into stack1 and stack2. Then after the tree is traversed and the nodes are popped from stack2 to push into the postorder array.
 
 Space Complexity: O(2N) where N is the number of nodes in the Binary Tree. The space occupied by the two stacks depend on the height of the binary tree. In the worst-case scenario, if the tree is skewed, the space complexity would be O(N) as both stacks could potentially hold all nodes at different points during traversal.The postorder array also holds all nodes from the binary tree hence giving another O(N) + O(N) ~ O(2N).
-
+'''
                             
 # Node class for the binary tree
 class Node:
@@ -14391,8 +20397,7 @@ if __name__ == "__main__":
     # traversal result
     print("Postorder traversal: ", end="")
     printList(result)
-                           
-                          
+
 
 
 # method 2 : better approch
@@ -14406,73 +20411,87 @@ if __name__ == "__main__":
 
 
 # 12 TODO : post-order traversal of binary tree using 1 stack
+'''
+https://leetcode.com/problems/binary-tree-postorder-traversal/
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=Bfqd8BsPVuw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=83
+
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once.
 
 Space Complexity: O(N) where N is the number of nodes in the binary tree as an additional space for array is allocated to store the values of all ‘N’ nodes of the binary tree.
-                            
-# Node class for the binary tree
-class Node:
-    def __init__(self, val):
-        self.data = val
+'''
+from typing import List
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
         self.left = None
         self.right = None
 
-# Function to perform postorder
-# traversal recursively
-def postorder(root, arr):
-    # Base case: if root is None, return
-    if root is None:
-        return
-    # Traverse left subtree
-    postorder(root.left, arr)
-    # Traverse right subtree
-    postorder(root.right, arr)
-    # Visit the node
-    # (append node's data to the list)
-    arr.append(root.data)
+class Solution:
+    # Function to perform postorder traversal
+    # of a binary tree iteratively using one stack
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        # Initialize list to store
+        # the postorder traversal result
+        postorder = []
+        
+        # If the root is None, return
+        # an empty traversal result
+        if root is None:
+            return postorder
+        
+        # Create a stack to store nodes during traversal
+        st = []
+        # Push the root node onto the stack
+        st.append(root)
+        
+        # Traverse the tree iteratively
+        while st:
+            # Get the current node from the top of the stack
+            node = st.pop()
+            
+            # Add the node's value to the postorder result
+            # We will add it in reverse order initially
+            postorder.append(node.val)
+            
+            # Push the left child onto the stack if exists
+            if node.left:
+                st.append(node.left)
+            
+            # Push the right child onto the stack if exists
+            if node.right:
+                st.append(node.right)
+        
+        # Postorder is added in root-right-left order,
+        # so we reverse it to get left-right-root order
+        postorder.reverse()
+        
+        # Return the postorder traversal result
+        return postorder
 
-# Function to get the postorder
-# traversal of a binary tree
-def postOrder(root):
-    # Create a list to
-    # store the traversal result
-    arr = []
-    # Perform postorder traversal
-    # starting from the root
-    postorder(root, arr)
-    # Return the postorder
-    # traversal result
-    return arr
+# Creating a binary tree
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
 
-# Function to print the
-# elements of a list
-def printList(lst):
-    # Iterate through the list
-    # and print each element
-    for num in lst:
-        print(num, end=" ")
-    print()
+# Initializing the Solution class
+sol = Solution()
 
-# Main function
-if __name__ == "__main__":
-    # Creating a sample binary tree
-    root = Node(1)
-    root.left = Node(2)
-    root.right = Node(3)
-    root.left.left = Node(4)
-    root.left.right = Node(5)
+# Getting the postorder traversal
+result = sol.postorderTraversal(root)
 
-    # Getting postorder traversal
-    result = postOrder(root)
-
-    # Printing the postorder
-    # traversal result
-    print("Postorder traversal: ", end="")
-    printList(result)
-                            
-                           
-
+# Displaying the postorder traversal result
+print("Postorder Traversal:", end=" ")
+for val in result:
+    print(val, end=" ")
+print()
 
 # method 2 : better approch
 # TC     -      
@@ -14485,12 +20504,20 @@ if __name__ == "__main__":
 
 
 # 13 TODO : preorder, inorder and post order traversal in one traversal
+'''
+https://bit.ly/3T3oW9M
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=ySp2epYvgTE&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=85
+
 Time Complexity: O(3N) where N is the number of nodes in the Binary Tree. Each node is processed once for each traversal type (pre-order, in-order, and post-order). Hence, the algorithm effectively visits each node three times in total across the three traversal types.
 
 Space Complexity: O(4N) where N is the number of nodes in the Binary Tree. The following additional data structures are used:A stack to maintain traversal states, requiring additional space proportional to the maximum number of nodes in the stack at any point during traversal.Three vectors to store the preorder, inorder and postorder traversal. These arrays collectively occupy space proportional to the total number of nodes in the tree. Hence, 3N is added to the space complexity.
+'''
 
-                            
 # Node class for the binary tree
 class Node:
     def __init__(self, val):
@@ -14595,8 +20622,7 @@ if __name__ == "__main__":
 
     print("Postorder traversal: ", end="")
     print_list(post)
-                           
-                        
+
 
 
 # method 2 : better approch
@@ -14620,11 +20646,23 @@ if __name__ == "__main__":
 # ----------------------------------
 
 # 1 TODO :  height of a binary tree
+'''
+https://leetcode.com/problems/maximum-depth-of-binary-tree/
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=eD3tmO66aBA&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=86
+
+
+1 + max(left_depth, right_depth)
+
 Time Complexity: O(N) where N is the number of nodes in the Binary Tree. This complexity arises from visiting each node exactly once during the traversal to determine the maximum depth.
 
 Space Complexity: O(N) where N is the number of nodes in the Binary Tree because in the worst case scenario the tree is balanced and has N/2 nodes in its last level which will have to be stored in the queue.
-                            
+'''
+# Iterative approch
 from queue import Queue
 
 # Node class for the binary tree
@@ -14693,8 +20731,42 @@ solution = Solution()
 depth = solution.maxDepth(root)
 
 print("Maximum depth of the binary tree:", depth)
-                           
-                            
+
+# Recursive approch (recommended)
+# Node class for the binary tree
+class Node:
+    def __init__(self, val):
+        self.data = val
+        self.left = None
+        self.right = None
+
+class Solution:
+    # Function to find the maximum depth (height) of a binary tree using recursion
+    def maxDepth(self, root):
+        # If the root is None (empty tree), depth is 0
+        if root is None:
+            return 0
+        
+        # Recursively find the height of the left and right subtrees
+        left_depth = self.maxDepth(root.left)
+        right_depth = self.maxDepth(root.right)
+        
+        # The height of the current tree is 1 + the maximum of the left and right subtrees' heights
+        return 1 + max(left_depth, right_depth)
+
+# Creating a sample binary tree
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+root.left.right.right = Node(6)
+root.left.right.right.right = Node(7)
+
+solution = Solution()
+depth = solution.maxDepth(root)
+
+print("Maximum depth (height) of the binary tree:", depth)
 
 
 # method 2 : better approch
@@ -14708,11 +20780,22 @@ print("Maximum depth of the binary tree:", depth)
 
 
 # 2 TODO : check if the binary tree is height-balanced or not
+'''
+https://leetcode.com/problems/balanced-binary-tree/
+
+
+'''
 # method 1 : brute force approch
+'''
+https://www.youtube.com/watch?v=Yt50Jfbd8Po&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=87
+
+abs(leftHeight - rightHeight) <= 1
+
 Time Complexity: O(N2) where N is the number of nodes in the Binary Tree.This arises as we calculate the height of each node and to calculate the height for each node, we traverse the tree which is proportional to the number of nodes. Since this calculation is performed for each node in the tree, the complexity becomes: O(N x N) ~ O(N2).
 
 Space Complexity : O(1) as no additional data structures or memory is allocated.O(H): Recursive Stack Space is used to calculate the height of the tree at each node which is proportional to the height of the tree.The recursive nature of the getHeight function, which incurs space on the call stack for each recursive call until it reaches the leaf nodes or the height of the tree.
-                                
+'''
+
 # Node structure for the binary tree
 class Node:
     def __init__(self, val):
@@ -14774,15 +20857,15 @@ if solution.isBalanced(root):
     print("The tree is balanced.")
 else:
     print("The tree is not balanced.")
-                                
-                               
 
 
 # method 2 : better approch
+'''
 Time Complexity: O(N) where N is the number of nodes in the Binary Tree. This complexity arises from visiting each node exactly once during the postorder traversal.
 
 Space Complexity : O(1) as no additional space or data structures is created that is proportional to the input size of the tree. O(H) Recursive Stack Auxiliary Space : The recursion stack space is determined by the maximum depth of the recursion, which is the height of the binary tree denoted as H. In the balanced case it is log2N and in the worst case its N.
-                                
+'''
+
 # Node class for the binary tree
 class Node:
     def __init__(self, val):
@@ -14854,8 +20937,7 @@ if solution.isBalanced(root):
 else:
     print("The tree is not balanced.")                                   
 
-                                
-                            
+
 
 
 # method 3 : optimal solution
@@ -14864,14 +20946,20 @@ else:
 
 
 # 3 TODO : diameter of a binary tree
+'''
+https://leetcode.com/problems/diameter-of-binary-tree/
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N*N) where N is the number of nodes in the Binary Tree.
 
 This arises as we calculate the diameter of each node and to calculate the height of its left and right children, we traverse the tree which is proportional to the number of nodes.
 Since this calculation is performed for each node in the tree, the complexity becomes: O(N x N) ~ O(N2).
+
 Space Complexity : O(1) as no additional data structures or memory is allocated.O(H): Recursive Stack Space is used to calculate the height of the tree at each node which is proportional to the height of the tree.The recursive nature of the getHeight function, which incurs space on the call stack for each recursive call until it reaches the leaf nodes or the height of the tree.
 
-                                
+
 # Node structure for
 # the binary tree
 class Node:
@@ -14935,8 +21023,7 @@ if __name__ == "__main__":
 
     print("The diameter of the binary tree is:", diameter)
 
-                                
-                            
+
 
 
 # method 2 : better approch
@@ -15008,6 +21095,12 @@ if __name__ == "__main__":
 
 
 # 4 TODO : maximum path sum
+'''
+https://leetcode.com/problems/binary-tree-maximum-path-sum/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -15089,6 +21182,12 @@ print("Maximum Path Sum:", maxPathSum)
 
 
 # 5 TODO : check if two trees are identical or not
+'''
+https://leetcode.com/problems/same-tree/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -15149,6 +21248,13 @@ else:
 
 
 # 6 TODO : zig-zag traversal of binary tree
+'''
+https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -15252,6 +21358,13 @@ printResult(result)
 
 
 # 7 TODO : boundary traversal of binary tree
+'''
+https://leetcode.com/problems/boundary-of-binary-tree/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -15389,6 +21502,11 @@ printResult(result)
 
 
 # 8 TODO : vertical order traversal of binary tree
+'''
+https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -15501,6 +21619,13 @@ if __name__ == "__main__":
 
 
 # 9 TODO : top view binary tree
+'''
+https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -15603,6 +21728,12 @@ for node in topView:
 
 
 # 10 TODO :  bottom view binary tree
+'''
+
+https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -15713,6 +21844,12 @@ for node in bottomView:
 
 
 # 11 TODO : right/left view of a binary tree
+'''
+https://leetcode.com/problems/binary-tree-right-side-view/
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N) where N is the number of nodes in the binary tree. Each node of the binary tree is enqueued and dequeued exactly once, hence all nodes need to be processed and visited. Processing each node takes constant time operations which contributes to the overall linear time complexity.
 
@@ -15944,11 +22081,16 @@ print("Left View Traversal:", end=" ")
 for node in leftView:
     print(node, end=" ")
 print()
-                                
-                            
+
 
 
 # 12 TODO : symmetric binary tree
+'''
+https://leetcode.com/problems/symmetric-tree/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -16013,8 +22155,7 @@ if __name__ == "__main__":
     depth = solution.maxDepth(root)
     
     print("Maximum depth of the binary tree:", depth)
-                           
-                        
+
 
 
 # endregion
@@ -16029,6 +22170,15 @@ if __name__ == "__main__":
 
 
 # 1 TODO : root to node in a binary tree  
+'''
+https://bit.ly/3QA600D
+
+
+
+'''
+
+
+
 # method 1 : brute force approch
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once in the inorder traversal.
 
@@ -16130,6 +22280,11 @@ if __name__ == "__main__":
 
 
 # 2 TODO : LCA in binary tree
+'''
+https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -16146,6 +22301,11 @@ if __name__ == "__main__":
 
 
 # 3 TODO : maximum width of a binary tree
+'''
+https://leetcode.com/problems/maximum-width-of-binary-tree/
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N) where N is the number of nodes in the binary tree. Each node of the binary tree is enqueued and dequeued exactly once, hence all nodes need to be processed and visited. Processing each node takes constant time operations which contributes to the overall linear time complexity.
 
@@ -16254,8 +22414,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-                           
-                          
+
 
 
 # method 2 : better approch
@@ -16269,6 +22428,11 @@ if __name__ == "__main__":
 
 
 # 4 TODO : check for children sum property
+'''
+https://bit.ly/3dEr73g
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -16386,6 +22550,11 @@ print()
 
 
 # 5 TODO : print all the nodes at a distance of k in binary tree
+'''
+https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -16402,6 +22571,12 @@ print()
 
 
 # 6 TODO : minimum time taken to BURN the binary tree from a node
+'''
+https://bit.ly/3wcg7k1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -16418,6 +22593,12 @@ print()
 
 
 # 7 TODO : count total nodes in a complete binary tree
+'''
+https://leetcode.com/problems/count-complete-tree-nodes/
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once.
 
@@ -16575,11 +22756,16 @@ if __name__ == "__main__":
 
     # Print the result
     print(f"Total number of nodes in the Complete Binary Tree: {totalNodes}")
-                                
-                            
+
 
 
 # 8 TODO : requirements needed to construct a unique binary tree (theory)
+'''
+https://bit.ly/3UVCR1U
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -16596,6 +22782,12 @@ if __name__ == "__main__":
 
 
 # 9 TODO : construct binary tree from inorder and preorder traversal
+'''
+https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -16687,11 +22879,16 @@ if __name__ == "__main__":
     print("Inorder of Unique Binary Tree Created:")
     printInorder(root)
     print()
-                           
-                           
+
 
 
 # 10 TODO :  construct binary tree from postorder and inorder traversal
+'''
+https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N) where N is the number of nodes in the Binary Tree. This is because each node is processed and visited exactly once.
 
@@ -16812,6 +23009,11 @@ print()
 
 
 # 11 TODO : serialize and deserialize binary tree
+'''
+https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+
+
+'''
 Time Complexity: O(N)
 
 serialize function: O(N), where N is the number of nodes in the tree. This is because the function performs a level-order traversal of the tree, visiting each node once.
@@ -16946,6 +23148,12 @@ if __name__ == "__main__":
                         
 
 # 12 TODO : morris preorder traversal of a binary tree
+'''
+
+https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -17043,11 +23251,17 @@ if __name__ == "__main__":
     for val in preorder:
         print(val, end=" ")
     print()
-                           
-                             
+
 
 
 # 13 TODO : morris inorder traversal of a binary tree
+'''
+https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+
+'''
+
+
 # method 1 : brute force approch
 Time Complexity: O(2N) where N is the number of nodes in the Binary Tree.
 
@@ -17144,6 +23358,11 @@ if __name__ == "__main__":
 
 
 # 14 TODO : flatten  binary tree to linked list
+'''
+https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N) where N is the number of nodes in the Binary Tree. Each node of the binary node is visited exactly once. At each node, constant-time operations are performed. Hence the time complexity is O(N).
 
@@ -17235,8 +23454,6 @@ if __name__ == "__main__":
     print_flatten_tree(root)
     print()
     
-                                
-                              
 
 
 # method 2 : better approch
@@ -17332,8 +23549,7 @@ if __name__ == "__main__":
     print("Binary Tree After Flatten: ", end="")
     print_flatten_tree(root)
     print()
-                                
-                             
+
 
 
 # method 3 : optimal solution
@@ -17431,8 +23647,7 @@ if __name__ == "__main__":
     print()
 
 
-                                
-                            
+
 
 
 
@@ -17447,6 +23662,11 @@ if __name__ == "__main__":
 # ------------------------------------------
 
 # 1 TODO :  introduction to binary search tree
+'''
+https://bit.ly/3gprRLk
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -17463,6 +23683,12 @@ if __name__ == "__main__":
 
 
 # 2 TODO : search in a binary search tree
+'''
+https://leetcode.com/problems/search-in-a-binary-search-tree/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -17557,6 +23783,12 @@ else:
 
 
 # 3 TODO : find min/max in BST
+'''
+https://practice.geeksforgeeks.org/problems/minimum-element-in-bst/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -17584,6 +23816,11 @@ else:
 # ---------------------------------------------------
 
 # 1 TODO :  ceil in a BST
+'''
+https://practice.geeksforgeeks.org/problems/implementing-ceil-in-bst/1
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -17691,6 +23928,11 @@ else:
 
 
 # 2 TODO : floor in a BST
+'''
+https://bit.ly/3TSbXXE
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -17800,6 +24042,11 @@ else:
 
 
 # 3 TODO : insert a given node in BST
+'''
+https://leetcode.com/problems/insert-into-a-binary-search-tree/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -17816,6 +24063,11 @@ else:
 
 
 # 4 TODO : delete a node in BST
+'''
+https://leetcode.com/problems/delete-node-in-a-bst/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -17832,6 +24084,11 @@ else:
 
 
 # 5 TODO : find Kth smallest/largest element in BST
+'''
+https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N) where N is the number of nodes in the Binary Search Tree. because traversing the entire BST to perform an inorder traversal takes linear time. We visit each node once resulting in time complexity proportional to the number of nodes in the BST.
 
@@ -18073,11 +24330,16 @@ kth_elements = solution.find_kth(root, k)
 
 print("Kth smallest element:", kth_elements[0])
 print("Kth largest element:", kth_elements[1])
-                                
-                              
+
 
 
 # 6 TODO : check if a tree is BST or BT
+'''
+
+https://leetcode.com/problems/validate-binary-search-tree/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18094,6 +24356,11 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 7 TODO : LCA in a BST
+'''
+https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18110,6 +24377,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 8 TODO : construct a BST from preorder traversal
+'''
+https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18126,6 +24399,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 9 TODO : inorder successor/predecessor in BST
+'''
+https://leetcode.com/problems/inorder-successor-in-bst/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18142,6 +24421,11 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 10 TODO :  merge 2 BSTs
+'''
+https://leetcode.com/problems/binary-search-tree-iterator/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18158,6 +24442,11 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 11 TODO : two sum in BST | check if there exists a pair with sum K
+'''
+https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18173,7 +24462,12 @@ print("Kth largest element:", kth_elements[1])
 # SC     -      
 
 
-# 12 TODO : remove BST | connest BST with two nodes swapped
+# 12 TODO : recover BST | connest BST with two nodes swapped
+'''
+https://leetcode.com/problems/recover-binary-search-tree/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18190,6 +24484,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 13 TODO : largest BST in binary tree
+'''
+https://practice.geeksforgeeks.org/problems/largest-bst/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18217,6 +24517,11 @@ print("Kth largest element:", kth_elements[1])
 # -----------------------------
 
 # 1 TODO :  graphs and types
+'''
+https://bit.ly/3gpY19t
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18233,6 +24538,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 2 TODO : graph implementation |c++
+'''
+https://bit.ly/3dGuwyv
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18249,6 +24560,13 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 3 TODO : graph implementation | java
+'''
+https://bit.ly/3dGuwyv
+
+
+
+'''
+
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18265,6 +24583,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 4 TODO : connected components | logic explanation
+'''
+https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18281,6 +24605,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 5 TODO : BFS
+'''
+https://practice.geeksforgeeks.org/problems/bfs-traversal-of-graph/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18297,6 +24627,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 6 TODO : DFS
+'''
+https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18324,6 +24660,12 @@ print("Kth largest element:", kth_elements[1])
 # region 15.2 GRAPHS - BFS/DFS
 # ----------------------------
 # 1 TODO :  number of provinces (leetcode)
+'''
+https://leetcode.com/problems/number-of-provinces/#:~:text=A%20province%20is%20a%20group,the%20total%20number%20of%20provinces.
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18340,6 +24682,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 2 TODO : connected components problem in matrix
+'''
+https://bit.ly/3AxzhDG
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18356,6 +24704,13 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 3 TODO : return oranges
+'''
+https://leetcode.com/problems/rotting-oranges/
+
+
+
+'''
+
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18372,6 +24727,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 4 TODO : flood fill
+'''
+https://leetcode.com/problems/flood-fill/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18388,6 +24749,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 5 TODO : cycle detectio in undirected graph (BFS)
+'''
+https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=detect-cycle-in-an-undirected-graph
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18404,6 +24771,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 6 TODO : cycle detectio in undirected graph (DFS)
+'''
+https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=detect-cycle-in-an-undirected-graph
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18420,6 +24793,13 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 7 TODO : 0/1 matrix (BFS problem)
+'''
+https://leetcode.com/problems/01-matrix/
+
+
+
+'''
+
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18436,6 +24816,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 8 TODO : surrounded regions (DFS)
+'''
+https://leetcode.com/problems/surrounded-regions/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18452,6 +24838,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 9 TODO : number of enclaves (flood fill implementation - multisource)
+'''
+https://leetcode.com/problems/number-of-enclaves/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18468,6 +24860,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 10 TODO :  word index - 1
+'''
+https://leetcode.com/problems/word-ladder/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18484,6 +24882,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 11 TODO : word index - 2
+'''
+https://leetcode.com/problems/word-ladder-ii/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18500,6 +24904,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 12 TODO : number of distinct islands (DFS multi source)
+'''
+https://leetcode.com/problems/number-of-distinct-islands-ii/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18516,6 +24926,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 13 TODO : bipartite Graphs (DFS)
+'''
+https://leetcode.com/problems/is-graph-bipartite/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18532,6 +24948,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 14 TODO : cucle detection in directed graph (DFS)
+'''
+https://leetcode.com/problems/course-schedule-ii/discuss/293048/detecting-cycle-in-directed-graph-problem
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18559,6 +24981,12 @@ print("Kth largest element:", kth_elements[1])
 # ------------------------------
 
 # 1 TODO :  topo sort
+'''
+https://practice.geeksforgeeks.org/problems/topological-sort/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18575,6 +25003,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 2 TODO : kahn's algorithm
+'''
+https://bit.ly/3c690mm
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18591,6 +25025,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 3 TODO : cycle detection in directed graph (BFS)
+'''
+https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18607,6 +25047,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 4 TODO : course schedule - I
+'''
+https://leetcode.com/problems/course-schedule/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18623,6 +25069,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 5 TODO : course schedule - 2
+'''
+https://leetcode.com/problems/course-schedule-ii/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18639,6 +25091,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 6 TODO : find eventual safe states
+'''
+https://leetcode.com/problems/find-eventual-safe-states/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18655,6 +25113,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 7 TODO : alien dictionary
+'''
+https://leetcode.com/problems/alien-dictionary/solution/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18682,6 +25146,12 @@ print("Kth largest element:", kth_elements[1])
 # ---------------------------------
 
 # 1 TODO :  shortest path in UG with unit weights
+'''
+https://bit.ly/3UVQD4C
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18698,6 +25168,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 2 TODO : shortest path in DAG
+'''
+https://bit.ly/3Eo1mhq
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18714,6 +25190,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 3 TODO : Dijkatra's algorithm
+'''
+https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18730,6 +25212,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 4 TODO : why parity queue is used in dijkatra's algorithm
+'''
+https://bit.ly/3Et6alk
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18746,6 +25234,13 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 5 TODO : shortest path in binary tree
+'''
+https://leetcode.com/problems/shortest-path-in-binary-matrix/
+
+
+
+'''
+
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18762,6 +25257,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 6 TODO : path with minimum effort
+'''
+https://leetcode.com/problems/path-with-minimum-effort/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18778,6 +25279,13 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 7 TODO : cheapest flights with K stops
+'''
+https://leetcode.com/problems/cheapest-flights-within-k-stops/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18794,6 +25302,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 8 TODO : network delay time
+'''
+https://leetcode.com/problems/network-delay-time/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18810,6 +25324,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 9 TODO : number of ways to arive at destination
+'''
+https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18826,6 +25346,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 10 TODO :  minimum steps to reach end from start by performing multiplicationand mod with array elements
+'''
+https://bit.ly/3QAEsrY
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18842,6 +25368,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 11 TODO : bellman ford algorithm
+'''
+https://practice.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18858,6 +25390,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 12 TODO : floyd warshall algorithm
+'''
+https://practice.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18874,6 +25412,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 13 TODO : find the city with the smallest number of neighbours at a threshold distance
+'''
+https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18901,6 +25445,12 @@ print("Kth largest element:", kth_elements[1])
 # -------------------------------------
 
 # 1 TODO :  minimu spanning tree
+'''
+https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18917,6 +25467,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 2 TODO : prism's algorithm
+'''
+https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18933,6 +25489,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 3 TODO : disjoint set (union by rank)
+'''
+https://bit.ly/3QSGvHz
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18949,6 +25511,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 4 TODO : disjoint set (union by size)
+'''
+
+https://bit.ly/3QSGvHz
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18965,6 +25533,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 5 TODO : kruskal's algorithm
+'''
+https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18981,6 +25555,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 6 TODO : number of operations to make network connected
+'''
+
+https://leetcode.com/problems/number-of-operations-to-make-network-connected/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -18997,6 +25577,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 7 TODO : most stones removed with the same rows or columns
+'''
+https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -19013,6 +25599,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 8 TODO : accounts merge
+'''
+https://leetcode.com/problems/accounts-merge/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -19029,6 +25621,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 9 TODO : number of islands - II
+'''
+https://leetcode.com/problems/number-of-islands-ii/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -19045,6 +25643,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 10 TODO :  making a large island
+'''
+https://leetcode.com/problems/making-a-large-island/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -19061,6 +25665,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 11 TODO : swim in rising water
+'''
+
+https://leetcode.com/problems/swim-in-rising-water/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -19086,6 +25696,12 @@ print("Kth largest element:", kth_elements[1])
 # -------------------------------------
 
 # 1 TODO :  bridges in graph
+'''
+
+https://leetcode.com/problems/critical-connections-in-a-network/discuss/382385/find-bridges-in-a-graph
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -19102,6 +25718,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 2 TODO : articulation point
+'''
+
+https://bit.ly/3T2LPKu
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -19118,6 +25740,12 @@ print("Kth largest element:", kth_elements[1])
 
 
 # 3 TODO : kosaraju's algorithm
+'''
+
+https://bit.ly/3TbvByL
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -19144,9 +25772,25 @@ print("Kth largest element:", kth_elements[1])
 
 # region 16.1 DP - INTRODUCTION
 # -----------------------------
-
 # 1 TODO :  dynamic programming introduction
+'''
+https://bit.ly/3UWkWrS
+
+
+https://www.youtube.com/watch?v=EgG3jsGoPvQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=182
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
 # method 1 : memoization
+'''
 Time Complexity: O(N)
 
 Reason: The overlapping subproblems will return the answer in constant time O(1). Therefore the total number of new subproblems we solve is ‘n’. Hence total time complexity is O(N).
@@ -19154,7 +25798,7 @@ Reason: The overlapping subproblems will return the answer in constant time O(1)
 Space Complexity: O(N)
 
 Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N)
-
+'''
 def f(n, dp):
     if n <= 1:
         return n
@@ -19171,6 +25815,7 @@ if __name__ == "__main__":
 
 
 # method 2 tabulation
+'''
 Time Complexity: O(N)
 
 Reason: We are running a simple iterative loop
@@ -19178,6 +25823,7 @@ Reason: We are running a simple iterative loop
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘n+1’.
+'''
 from typing import List
 
 def main():
@@ -19194,6 +25840,7 @@ def main():
 
 
 # method 3 space optimization
+'''
 Time Complexity: O(N)
 
 Reason: We are running a simple iterative loop
@@ -19201,9 +25848,9 @@ Reason: We are running a simple iterative loop
 Space Complexity: O(1)
 
 Reason: We are not using any extra space
+'''
 def main():
     n = 5
-
     prev2 = 0
     prev = 1
 
@@ -19215,8 +25862,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-  
-
 
 
 # endregion
@@ -19227,8 +25872,17 @@ if __name__ == "__main__":
 
 # region 16.2 DP - 1D
 # -------------------
-# 1 TODO :  climbing stars
-# method 1 : 
+# 1 TODO :  climbing stars, count ways to reach the N-th stairs
+'''
+https://leetcode.com/problems/climbing-stairs/
+https://www.youtube.com/watch?v=EgG3jsGoPvQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=183
+'''
+# method 3 : optimal solution
+# TC     -      
+# SC     -   
+
+# method 2 : tabulation
+'''
 Time Complexity: O(N)
 
 Reason: We are running a simple iterative loop
@@ -19236,6 +25890,7 @@ Reason: We are running a simple iterative loop
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘n+1’.
+'''
 def main():
     n = 3
     dp = [-1] * (n + 1)
@@ -19251,7 +25906,8 @@ if __name__ == "__main__":
     main()  
 
 
-# method 2 : space optimization
+# method 3 : space optimization
+'''
 Time Complexity: O(N)
 
 Reason: We are running a simple iterative loop
@@ -19259,6 +25915,7 @@ Reason: We are running a simple iterative loop
 Space Complexity: O(1)
 
 Reason: We are not using any extra space.
+'''
 def main():
     n = 3
     prev2 = 1
@@ -19272,16 +25929,27 @@ def main():
     print(prev)
 
 if __name__ == "__main__":
-    main()
-
-
-# method 3 : optimal solution
-# TC     -      
-# SC     -      
+    main()   
 
 
 # 2 TODO : frog jump (DP -3)
-# method 1 : brute force approch
+'''
+https://bit.ly/3Xn0Kkw
+https://www.youtube.com/watch?v=EgG3jsGoPvQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=184
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N)
 
 Reason: The overlapping subproblems will return the answer in constant time O(1). Therefore the total number of new subproblems we solve is ‘n’. Hence total time complexity is O(N).
@@ -19289,7 +25957,7 @@ Reason: The overlapping subproblems will return the answer in constant time O(1)
 Space Complexity: O(N)
 
 Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N)
-
+'''
 import sys
 import math
 
@@ -19311,10 +25979,9 @@ if __name__ == "__main__":
     dp = [-1] * n
     print(solve(n-1, height, dp))
 
-    
 
-
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N)
 
 Reason: We are running a simple iterative loop
@@ -19322,7 +25989,7 @@ Reason: We are running a simple iterative loop
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘n+1’.
-
+'''
 def main():
     height = [30, 10, 60, 10, 60, 50]
     n = len(height)
@@ -19342,7 +26009,8 @@ if __name__ == "__main__":
     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N)
 
 Reason: We are running a simple iterative loop
@@ -19350,7 +26018,7 @@ Reason: We are running a simple iterative loop
 Space Complexity: O(1)
 
 Reason: We are not using any extra space.
-
+'''
 import sys
 def main():
     height = [30, 10, 60, 10, 60, 50]
@@ -19373,11 +26041,26 @@ if __name__ == "__main__":
     main()
 
 
-
-
-
 # 3 TODO : frog jump with k distances(DP - 4)
-# method 1 : brute force approch
+'''
+https://bit.ly/3GyNRya
+
+
+https://www.youtube.com/watch?v=Kmh3rhyEtB8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=185
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N *K)
 
 Reason: The overlapping subproblems will return the answer in constant time. Therefore the total number of new subproblems we solve is ‘n’. At every new subproblem, we are running another loop for K times. Hence total time complexity is O(N * K).
@@ -19385,7 +26068,7 @@ Reason: The overlapping subproblems will return the answer in constant time. The
 Space Complexity: O(N)
 
 Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N)
-
+'''
 import sys
 
 # Recursive function to calculate the minimum cost to reach the end
@@ -19427,9 +26110,8 @@ if __name__ == "__main__":
     main()
 
 
-
-
-# method 2 : better approch
+# method 2 : tabulation 
+'''
 Time Complexity: O(N*K)
 
 Reason: We are running two nested loops, where outer loops run from 1 to n-1 and the inner loop runs from 1 to K
@@ -19437,7 +26119,7 @@ Reason: We are running two nested loops, where outer loops run from 1 to n-1 and
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘n’’.
-
+'''
 import sys
 
 # Helper function to solve the problem using dynamic programming
@@ -19474,16 +26156,33 @@ def main():
 if __name__ == "__main__":
     main()
 
- 
 
 
-# method 3 : optimal solution
+
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
-# 4 TODO : maximum sum of non-adjacent elements (DP-5)
-# method 1 : brute force approch
+# 4 TODO : house robber, maximum sum of non-adjacent elements (DP-5)
+'''
+https://leetcode.com/problems/house-robber/
+
+https://www.youtube.com/watch?v=Kmh3rhyEtB8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=186
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N)
 
 Reason: The overlapping subproblems will return the answer in constant time O(1). Therefore the total number of new subproblems we solve is ‘n’. Hence total time complexity is O(N).
@@ -19491,7 +26190,7 @@ Reason: The overlapping subproblems will return the answer in constant time O(1)
 Space Complexity: O(N)
 
 Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N)
-
+'''
 # Function to solve the problem using dynamic programming
 def solveUtil(ind, arr, dp):
     # Check if the solution for this index has already been calculated
@@ -19541,6 +26240,7 @@ if __name__ == '__main__':
 
 
 # method 2 : better approch
+'''
 Time Complexity: O(N)
 
 Reason: We are running a simple iterative loop
@@ -19548,7 +26248,7 @@ Reason: We are running a simple iterative loop
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘n+1’.
-
+'''
 # Function to solve the problem using dynamic programming
 def solveUtil(n, arr, dp):
     # Initialize the first element of the DP table with the first element of the array
@@ -19595,6 +26295,7 @@ if __name__ == '__main__':
 
 
 # method 3 : optimal solution
+'''
 Time Complexity: O(N)
 
 Reason: We are running a simple iterative loop
@@ -19602,7 +26303,7 @@ Reason: We are running a simple iterative loop
 Space Complexity: O(1)
 
 Reason: We are not using any extra space.
-
+'''
 # Function to solve the problem of finding the maximum sum of non-adjacent elements in an array
 def solve(n, arr):
     # Initialize variables to keep track of the previous maximum and the one before that
@@ -19642,11 +26343,36 @@ def main():
 if __name__ == "__main__":
     main()
 
-    
 
 
 # 5 TODO : house robber (DP-6)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/house-robber-ii/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+# TC     -      
+# SC     -     
+
+
+# method 2 : tabulation
+# TC     -      
+# SC     -     
+
+
+# method 3 : space optimization
+'''
 Time Complexity: O(N )
 
 Reason: We are running a simple iterative loop, two times. Therefore total time complexity will be O(N) + O(N) ≈ O(N)
@@ -19654,6 +26380,7 @@ Reason: We are running a simple iterative loop, two times. Therefore total time 
 Space Complexity: O(1)
 
 Reason: We are not using extra space.
+'''
 def solve(arr):
     n = len(arr)
     prev = arr[0]
@@ -19698,17 +26425,6 @@ if __name__ == '__main__':
     main()   
 
 
-# method 2 : better approch
-# TC     -      
-# SC     -     
-
-
-# method 3 : optimal solution
-# TC     -      
-# SC     -      
-
-
-
 
 
 # endregion
@@ -19719,7 +26435,24 @@ if __name__ == '__main__':
 # region 16.3 DP - 2D/3D/GRIDS
 # ----------------------------
 # 1 TODO :  ninjas's training (Dp-7)
-# method 1 : brute force approch
+'''
+https://bit.ly/3glc9kp
+
+https://www.youtube.com/watch?v=AE39gJYuRog&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=188
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*4*3)
 
 Reason: There are N*4 states and for every state, we are running a for loop iterating three times.
@@ -19727,7 +26460,7 @@ Reason: There are N*4 states and for every state, we are running a for loop iter
 Space Complexity: O(N) + O(N*4)
 
 Reason: We are using a recursion stack space(O(N)) and a 2D array (again O(N*4)). Therefore total space complexity will be O(N) + O(N) ≈ O(N)
-
+'''
 def f(day, last, points, dp):
     # Check if the result for this day and last activity is already computed.
     if dp[day][last] != -1:
@@ -19773,10 +26506,9 @@ def main():
 if __name__ == '__main__':
     main()
 
-   
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*4*3)
 
 Reason: There are three nested loops
@@ -19820,10 +26552,10 @@ def main():
 if __name__ == '__main__':
     main()
 
- 
 
 
-# method 3 : optimal solution
+
+# method 3 : space optimization
 Time Complexity: O(N*4*3)
 
 Reason: There are three nested loops
@@ -19880,7 +26612,26 @@ if __name__ == '__main__':
 
 
 # 2 TODO : grid unique paths : DP on grids (DP-8)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/unique-paths/
+
+
+https://www.youtube.com/watch?v=sdE0A2Oxofw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=189
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(M*N)
 
 Reason: At max, there will be M*N calls of recursion.
@@ -19888,7 +26639,7 @@ Reason: At max, there will be M*N calls of recursion.
 Space Complexity: O((N-1)+(M-1)) + O(M*N)
 
 Reason: We are using a recursion stack space: O((N-1)+(M-1)), here (N-1)+(M-1) is the path length and an external DP Array of size ‘M*N’.
-
+'''
 def countWaysUtil(i, j, dp):
     # Base case: If we reach the top-left corner (i=0, j=0), there is one way to reach there.
     if i == 0 and j == 0:
@@ -19927,7 +26678,8 @@ if __name__ == '__main__':
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(M*N)
 
 Reason: There are two nested loops
@@ -19935,7 +26687,7 @@ Reason: There are two nested loops
 Space Complexity: O(M*N)
 
 Reason: We are using an external array of size ‘M*N’’.
-
+'''
 def countWaysUtil(m, n, dp):
     # Loop through each cell in the grid
     for i in range(m):
@@ -19981,9 +26733,8 @@ if __name__ == '__main__':
 
 
 
-
-
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(M*N)
 
 Reason: There are two nested loops
@@ -19991,7 +26742,7 @@ Reason: There are two nested loops
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘N’ to store only one row.
-
+'''
 def countWays(m, n):
     # Initialize a previous row to store intermediate results.
     prev = [0] * n
@@ -20041,8 +26792,26 @@ if __name__ == '__main__':
 
 
 
-# 3 TODO : grid unique paths 2 (DP - 9)
-# method 1 : brute force approch
+# 3 TODO : maze obstacles, grid unique paths 2 (DP - 9)
+'''
+https://leetcode.com/problems/unique-paths-ii/
+
+https://www.youtube.com/watch?v=TmhpgXScLyY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=190
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*M)
 
 Reason: At max, there will be N*M calls of recursion.
@@ -20050,7 +26819,7 @@ Reason: At max, there will be N*M calls of recursion.
 Space Complexity: O((M-1)+(N-1)) + O(N*M)
 
 Reason: We are using a recursion stack space:O((M-1)+(N-1)), here (M-1)+(N-1) is the path length and an external DP Array of size ‘N*M’.
-
+'''
 def mazeObstaclesUtil(i, j, maze, dp):
     # Base case: If we are out of bounds or at an obstacle, return 0.
     if i < 0 or j < 0 or maze[i][j] == -1:
@@ -20094,7 +26863,8 @@ if __name__ == '__main__':
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -20102,7 +26872,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size ‘N*M’’.
-
+'''
 def mazeObstaclesUtil(n, m, maze, dp):
     # Loop through each cell in the maze
     for i in range(n):
@@ -20159,7 +26929,8 @@ if __name__ == "__main__":
  
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(M*N)
 
 Reason: There are two nested loops
@@ -20167,7 +26938,7 @@ Reason: There are two nested loops
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘N’ to store only one row.
-
+'''
 def mazeObstacles(n, m, maze):
     # Initialize the 'prev' list to keep track of the number of paths in the previous row.
     prev = [0] * m
@@ -20224,11 +26995,27 @@ def main():
 if __name__ == "__main__":
     main()
 
- 
 
 
 # 4 TODO : minimum path sum in grid (DP-10)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/minimum-path-sum/
+
+
+https://www.youtube.com/watch?v=_rgTlyky1uQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=191
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*M)
 
 Reason: At max, there will be N*M calls of recursion.
@@ -20236,7 +27023,7 @@ Reason: At max, there will be N*M calls of recursion.
 Space Complexity: O((M-1)+(N-1)) + O(N*M)
 
 Reason: We are using a recursion stack space: O((M-1)+(N-1)), here (M-1)+(N-1) is the path length and an external DP Array of size ‘N*M’.
-
+'''
 def minSumPathUtil(i, j, matrix, dp):
     # Base case: If we are at the top-left corner, return the value of that cell.
     if i == 0 and j == 0:
@@ -20285,7 +27072,8 @@ if __name__ == '__main__':
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -20293,7 +27081,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size ‘N*M’’.
-
+'''
 def minSumPath(n, m, matrix):
     # Create a DP table initialized with zeros.
     dp = [[0 for j in range(m)] for i in range(n)]
@@ -20342,7 +27130,8 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(M*N)
 
 Reason: There are two nested loops
@@ -20350,7 +27139,7 @@ Reason: There are two nested loops
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘N’ to store only one row.
-
+'''
 def minSumPath(n, m, matrix):
     # Initialize the 'prev' list to keep track of the minimum cost in the previous row.
     prev = [0] * m
@@ -20407,6 +27196,34 @@ if __name__ == '__main__':
 
 
 # 5 TODO : minimum path sum in triangular grid (DP-11)
+'''
+https://leetcode.com/problems/triangle/
+
+
+https://www.youtube.com/watch?v=SrP-PiLSYC0&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=192
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+
+# method : memoization
+'''
+
+For these patterns,
+- represent in (i,j) with base cases 
+- explore all paths
+- iteration starts from (0,0) previously we started from end but now from start
+- min of all paths
+
+
 Time Complexity: O(N*N)
 
 Reason: There are two nested loops
@@ -20414,7 +27231,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*N)
 
 Reason: We are using an external array of size ‘N*N’. The stack space will be eliminated.
-
+'''
 def minimumPathSumUtil(i, j, triangle, n, dp):
     # Check if we have already computed the minimum path sum for this cell
     if dp[i][j] != -1:
@@ -20452,7 +27269,8 @@ if __name__ == "__main__":
  
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*N)
 
 Reason: There are two nested loops
@@ -20460,7 +27278,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*N)
 
 Reason: We are using an external array of size ‘N*N’. The stack space will be eliminated.
-
+'''
 def minimum_path_sum(triangle, n):
     # Create a 2D array dp to store minimum path sums
     dp = [[0 for j in range(n)] for i in range(n)]
@@ -20495,7 +27313,8 @@ if __name__ == '__main__':
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*N)
 
 Reason: There are two nested loops
@@ -20503,7 +27322,7 @@ Reason: There are two nested loops
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘N’ to store only one row.
-
+'''
 def minimumPathSum(triangle, n):
     # Initialize two lists: front and cur to represent the current and previous rows in dp
     front = [0] * n  # This represents the previous row
@@ -20544,7 +27363,24 @@ if __name__ == '__main__':
 
 
 # 6 TODO : minimum/maximum falling path sum (DP-12)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/minimum-falling-path-sum/
+
+https://www.youtube.com/watch?v=N_aJ5qQbYA0&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=193
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*N)
 
 Reason: At max, there will be M*N calls of recursion to solve a new problem,
@@ -20552,7 +27388,7 @@ Reason: At max, there will be M*N calls of recursion to solve a new problem,
 Space Complexity: O(N) + O(N*M)
 
 Reason: We are using a recursion stack space: O(N), where N is the path length and an external DP Array of size ‘N*M’.
-
+'''
 import sys
 
 # Recursive function to find the maximum path sum starting from cell (i, j)
@@ -20605,7 +27441,8 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -20613,7 +27450,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size ‘N*M’. The stack space will be eliminated.
-
+'''
 import sys
 
 # Function to find the maximum path sum in the matrix
@@ -20671,7 +27508,8 @@ if __name__ == "__main__":
   
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -20679,7 +27517,7 @@ Reason: There are two nested loops
 Space Complexity: O(M)
 
 Reason: We are using an external array of size ‘M’ to store only one row.
-
+'''
 import sys
 
 # Function to find the maximum path sum in the matrix
@@ -20740,7 +27578,32 @@ if __name__ == '__main__':
 
 
 # 7 TODO : 3D DP : ninja and his friends (DP-13)
-# method 1 : brute force approch
+'''
+https://bit.ly/3U9k6XT
+
+
+https://www.youtube.com/watch?v=QGfn7JeXK54&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=194
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
+
+express everything in terms of (i1,j1) and (i2,j2)
+explore all the paths
+max sum
+
+
+
 Time Complexity: O(N*M*M) * 9
 
 Reason: At max, there will be N*M*M calls of recursion to solve a new problem and in every call, two nested loops together run for 9 times.
@@ -20748,7 +27611,7 @@ Reason: At max, there will be N*M*M calls of recursion to solve a new problem an
 Space Complexity: O(N) + O(N*M*M)
 
 Reason: We are using a recursion stack space: O(N), where N is the path length and an external DP Array of size ‘N*M*M’.
-
+'''
 import sys
 
 # Recursive function to find the maximum chocolates collected
@@ -20805,10 +27668,10 @@ def main():
 if __name__ == "__main__":
     main()
 
-   
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M*M)*9
 
 Reason: The outer nested loops run for (N*M*M) times and the inner two nested loops run for 9 times.
@@ -20816,7 +27679,7 @@ Reason: The outer nested loops run for (N*M*M) times and the inner two nested lo
 Space Complexity: O(N*M*M)
 
 Reason: We are using an external array of size ‘N*M*M’. The stack space will be eliminated.
-
+'''
 import sys
 
 # Function to find the maximum chocolates collected
@@ -20875,7 +27738,8 @@ if __name__ == '__main__':
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*M*M)*9
 
 Reason: The outer nested loops run for (N*M*M) times and the inner two nested loops run for 9 times.
@@ -20883,7 +27747,7 @@ Reason: The outer nested loops run for (N*M*M) times and the inner two nested lo
 Space Complexity: O(M*M)
 
 Reason: We are using an external array of size ‘M*M’.
-
+'''
 import sys
 
 # Function to find the maximum chocolates collected
@@ -20941,7 +27805,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-   
+
 
 
 
@@ -20953,9 +27817,32 @@ if __name__ == '__main__':
 
 # region 16.4 DP - SUBSEQUENCES
 # -----------------------------
+'''
+
+
+https://www.youtube.com/watch?v=fWX9xDmIzRI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=195
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
 
 # 1 TODO :  subset sum equals to target (DP-14)
-# method 1 : brute force approch
+'''
+https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1
+
+'''
+# method 1 : memoization
+'''
+https://www.youtube.com/watch?v=fWX9xDmIzRI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=195
+
+
 Time Complexity: O(N*K)
 
 Reason: There are N*K states therefore at max ‘N*K’ new problems will be solved.
@@ -20963,7 +27850,7 @@ Reason: There are N*K states therefore at max ‘N*K’ new problems will be sol
 Space Complexity: O(N*K) + O(N)
 
 Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*K)).
-
+'''
 def subsetSumUtil(ind, target, arr, dp):
     # Check if the target sum has been achieved.
     if target == 0:
@@ -21012,7 +27899,8 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation 
+'''
 Time Complexity: O(N*K)
 
 Reason: There are two nested loops
@@ -21020,7 +27908,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*K)
 
 Reason: We are using an external array of size ‘N*K’. Stack Space is eliminated.
-
+'''
 def subsetSumToK(n, k, arr):
     # Initialize a 2D DP table with False values.
     dp = [[False for j in range(k + 1)] for i in range(n)]
@@ -21062,7 +27950,8 @@ if __name__ == '__main__':
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*K)
 
 Reason: There are three nested loops
@@ -21070,7 +27959,7 @@ Reason: There are three nested loops
 Space Complexity: O(K)
 
 Reason: We are using an external array of size ‘K+1’ to store only one row.
-
+'''
 def subset_sum_to_k(n, k, arr):
     # Initialize a boolean array 'prev' with size (k + 1).
     prev = [False] * (k + 1)
@@ -21124,7 +28013,25 @@ if __name__ == "__main__":
 
 
 # 2 TODO : partition equal subset sum (DP-15)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/partition-equal-subset-sum/
+
+
+https://www.youtube.com/watch?v=7win3dcgo3k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=196
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*K) + O(N)
 
 Reason: There are N*K states therefore at max ‘N*K’ new problems will be solved and we are running a for loop for ‘N’ times to calculate the total sum
@@ -21132,7 +28039,7 @@ Reason: There are N*K states therefore at max ‘N*K’ new problems will be sol
 Space Complexity: O(N*K) + O(N)
 
 Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*K)).
-
+'''
 def subsetSumUtil(ind, target, arr, dp):
     # Base case: If the target sum is 0, we have found a subset that sums to the target.
     if target == 0:
@@ -21192,7 +28099,8 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*K) +O(N)
 
 Reason: There are two nested loops that account for O(N*K) and at starting we are running a for loop to calculate totSum.
@@ -21200,7 +28108,7 @@ Reason: There are two nested loops that account for O(N*K) and at starting we ar
 Space Complexity: O(N*K)
 
 Reason: We are using an external array of size ‘N*K’. Stack Space is eliminated.
-
+'''
 def canPartition(n, arr):
     # Calculate the total sum of the array elements.
     totSum = sum(arr)
@@ -21256,7 +28164,8 @@ if __name__ == '__main__':
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*K) +O(N)
 
 Reason: There are two nested loops that account for O(N*K) and at starting we are running a for loop to calculate totSum.
@@ -21264,7 +28173,7 @@ Reason: There are two nested loops that account for O(N*K) and at starting we ar
 Space Complexity: O(K)
 
 Reason: We are using an external array of size ‘K+1’ to store only one row.
-
+'''
 def canPartition(n, arr):
     # Calculate the total sum of the array elements.
     totSum = sum(arr)
@@ -21326,7 +28235,24 @@ if __name__ == "__main__":
 
 
 # 3 TODO : partition set into 2 subsets with min absolute sum diff (DP-16)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/
+
+
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*totSum) +O(N) +O(N)
 
 Reason: There are two nested loops that account for O(N*totSum), at starting we are running a for loop to calculate totSum and at last a for loop to traverse the last row.
@@ -21334,7 +28260,7 @@ Reason: There are two nested loops that account for O(N*totSum), at starting we 
 Space Complexity: O(N*totSum) + O(N)
 
 Reason: We are using an external array of size ‘N * totSum’ and a stack space of O(N).
-
+'''
 def subsetSumUtil(ind, target, arr, dp):
     # Base case: If the target sum is 0, we have found a subset that sums to the target.
     if target == 0:
@@ -21394,7 +28320,8 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*totSum) +O(N) +O(N)
 
 Reason: There are two nested loops that account for O(N*totSum), at starting we are running a for loop to calculate totSum, and at last a for loop to traverse the last row.
@@ -21402,7 +28329,7 @@ Reason: There are two nested loops that account for O(N*totSum), at starting we 
 Space Complexity: O(N*totSum)
 
 Reason: We are using an external array of size ‘N * totSum’. Stack Space is eliminated.
-
+'''
 def minSubsetSumDifference(arr, n):
     # Calculate the total sum of the array elements.
     totSum = sum(arr)
@@ -21457,7 +28384,8 @@ if __name__ == '__main__':
   
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*totSum) +O(N) +O(N)
 
 Reason: There are two nested loops that account for O(N*totSum), at starting we are running a for loop to calculate totSum and at last a for loop to traverse the last row.
@@ -21465,7 +28393,7 @@ Reason: There are two nested loops that account for O(N*totSum), at starting we 
 Space Complexity: O(totSum)
 
 Reason: We are using an external array of size ‘totSum+1’ to store only one row.
-
+'''
 def minSubsetSumDifference(arr, n):
     # Calculate the total sum of the array elements.
     totSum = sum(arr)
@@ -21523,7 +28451,22 @@ if __name__ == "__main__":
 
 
 # 4 TODO : count subsets with sum K (DP-17)
-# method 1 : brute force approch
+'''
+https://bit.ly/3AwVr8I
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*K)
 
 Reason: There are N*K states therefore at max ‘N*K’ new problems will be solved.
@@ -21576,7 +28519,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*K)
 
 Reason: There are two nested loops
@@ -21629,7 +28572,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*K)
 
 Reason: There are two nested loops
@@ -21689,7 +28632,23 @@ if __name__ == "__main__":
 
 
 # 5 TODO : count partitions with given difference (DP-18)
-# method 1 : brute force approch
+'''
+https://bit.ly/3gkAM0s
+
+
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*K)
 
 Reason: There are N*K states therefore at max ‘N*K’ new problems will be solved.
@@ -21744,7 +28703,7 @@ if __name__ == "__main__":
     main() 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 mod=int(1e9+7)
 def findWays(num, tar):
     n = len(num)
@@ -21786,7 +28745,7 @@ if __name__ == "__main__":
   main()  
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*K)
 
 Reason: There are three nested loops
@@ -21845,23 +28804,55 @@ if __name__ == '__main__':
 
 
 # 6 TODO : assign cookies
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/assign-cookies/
+
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optmization
 # TC     -      
 # SC     -      
 
 
 # 7 TODO : minimum coins (DP-20)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/coin-change/
+
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*T)
 
 Reason: There are N*T states therefore at max ‘N*T’ new problems will be solved.
@@ -21918,7 +28909,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-
+# method 2 : tabulation
 
 
 Time Complexity: O(N*T)
@@ -21972,7 +28963,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*T)
 
 Reason: There are two nested loops.
@@ -22032,7 +29023,23 @@ if __name__ == "__main__":
 
 
 # 8 TODO : target sum (DP-21)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/target-sum/
+
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*K)
 
 Reason: There are N*K states therefore at max ‘N*K’ new problems will be solved.
@@ -22097,7 +29104,7 @@ if __name__ == '__main__':
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*K)
 
 Reason: There are two nested loops
@@ -22156,7 +29163,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*K)
 
 Reason: There are three nested loops
@@ -22229,7 +29236,22 @@ if __name__ == "__main__":
 
 
 # 9 TODO : coin change 2 (DP-22)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/coin-change-2/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*T)
 
 Reason: There are N*W states therefore at max ‘N*T’ new problems will be solved.
@@ -22278,7 +29300,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*T)
 
 Reason: There are two nested loops
@@ -22326,7 +29348,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*T)
 
 Reason: There are two nested loops.
@@ -22381,7 +29403,22 @@ if __name__ == '__main__':
 
 
 # 10 TODO :  unbounded knapsack (DP-23)
-# method 1 : brute force approch
+'''
+https://bit.ly/3Cbc5fz
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*W)
 
 Reason: There are N*W states therefore at max ‘N*W’ new problems will be solved.
@@ -22435,7 +29472,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*W)
 
 Reason: There are two nested loops
@@ -22487,7 +29524,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*W)
 
 Reason: There are two nested loops.
@@ -22539,7 +29576,21 @@ if __name__ == "__main__":
 
 
 # 11 TODO : red cutting problem (DP-24)
-# method 1 : brute force approch
+'''
+
+
+https://practice.geeksforgeeks.org/problems/rod-cutting0840/1'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*W)
 
 Reason: There are N*W states therefore at max ‘N*W’ new problems will be solved.
@@ -22593,7 +29644,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*W)
 
 Reason: There are two nested loops
@@ -22645,7 +29696,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*W)
 
 Reason: There are two nested loops.
@@ -22707,7 +29758,24 @@ if __name__ == "__main__":
 # ------------------------
 
 # 1 TODO :  longest common subsequence (DP-25)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/longest-common-subsequence/
+
+https://www.youtube.com/watch?v=NPZn9jBrX8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=206
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are N*M states therefore at max ‘N*M’ new problems will be solved.
@@ -22715,7 +29783,7 @@ Reason: There are N*M states therefore at max ‘N*M’ new problems will be sol
 Space Complexity: O(N*M) + O(N+M)
 
 Reason: We are using an auxiliary recursion stack space(O(N+M)) (see the recursive tree, in the worst case, we will go till N+M calls at a time) and a 2D array ( O(N*M)).
-
+'''
 def lcsUtil(s1, s2, ind1, ind2, dp):
     # Base case: If either of the strings has reached the end
     if ind1 < 0 or ind2 < 0:
@@ -22752,7 +29820,8 @@ if __name__ == '__main__':
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -22760,7 +29829,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size ‘N*M)’. Stack Space is eliminated.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -22801,7 +29870,8 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops.
@@ -22809,7 +29879,7 @@ Reason: There are two nested loops.
 Space Complexity: O(M)
 
 Reason: We are using an external array of size ‘M+1’ to store only two rows.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -22848,7 +29918,24 @@ if __name__ == '__main__':
 
 
 # 2 TODO : print longest common subsequence (DP-26)
-# method 1 : brute force approch
+'''
+https://bit.ly/3T1Va4U
+
+https://www.youtube.com/watch?v=-zI4mrF2Pb4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=207
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -22856,6 +29943,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size ‘N*M’. Stack Space is eliminated.
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -22904,23 +29992,43 @@ def main():
 if __name__ == "__main__":
     main()
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 3 TODO : longest common substring (DP-27)
-# method 1 : brute force approch
+'''
+https://practice.geeksforgeeks.org/problems/longest-common-substring1452/1
+
+
+https://www.youtube.com/watch?v=_wP9mWNPL5w&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=208
+
+substring -> consecutive characters without character in between
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -22928,7 +30036,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size ‘N*M)’. Stack Space is eliminated.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -22965,7 +30073,8 @@ if __name__ == '__main__':
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops.
@@ -22973,7 +30082,7 @@ Reason: There are two nested loops.
 Space Complexity: O(M)
 
 Reason: We are using an external array of size ‘M+1’ to store only two rows.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -23013,12 +30122,30 @@ if __name__ == '__main__':
 
 
 # 4 TODO : longest pallindromic subsequence (DP-28)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/longest-palindromic-subsequence/
+
+
+https://www.youtube.com/watch?v=6i_T5kkfv4A&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=209
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*N)
 
 Reason: There are two nested loops
@@ -23026,7 +30153,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*N)
 
 Reason: We are using an external array of size ‘(N*N)’. Stack Space is eliminated.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -23070,7 +30197,8 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*N)
 
 Reason: There are two nested loops.
@@ -23078,7 +30206,7 @@ Reason: There are two nested loops.
 Space Complexity: O(N)
 
 Reason: We are using an external array of size ‘N+1’ to store only two rows.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -23122,12 +30250,29 @@ if __name__ == "__main__":
 
 
 # 5 TODO : minimum insertions to make string pallindromic (DP-29)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/
+
+https://www.youtube.com/watch?v=yMnH0jrir0Q&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=210
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*N)
 
 Reason: There are two nested loops
@@ -23135,7 +30280,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*N)
 
 Reason: We are using an external array of size (N*N). Stack Space is eliminated.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -23187,7 +30332,8 @@ if __name__ == '__main__':
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops.
@@ -23195,7 +30341,7 @@ Reason: There are two nested loops.
 Space Complexity: O(M)
 
 Reason: We are using an external array of size ‘M+1’ to store only two rows.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -23244,12 +30390,29 @@ if __name__ == '__main__':
 
 
 # 6 TODO : minimum insertions/deletions to convert string (DP-30)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/delete-operation-for-two-strings/
+
+https://www.youtube.com/watch?v=yMnH0jrir0Q&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=211
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -23257,7 +30420,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size (N*M). Stack Space is eliminated.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -23306,7 +30469,8 @@ if __name__ == '__main__':
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops.
@@ -23314,7 +30478,7 @@ Reason: There are two nested loops.
 Space Complexity: O(M)
 
 Reason: We are using an external array of size ‘M+1’ to store only two rows.
-
+'''
 def lcs(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -23360,7 +30524,23 @@ if __name__ == '__main__':
 
 
 
-# 7 TODO : shortest common subsequence (DP-31)
+# 7 TODO : shortest common supersequence (DP-31)
+'''
+https://leetcode.com/problems/shortest-common-supersequence/
+
+https://www.youtube.com/watch?v=xElxAuBcvsU&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=212
+'''
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -23368,6 +30548,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size (N*M).
+'''
 def shortestSupersequence(s1, s2):
     n = len(s1)
     m = len(s2)
@@ -23424,18 +30605,33 @@ if __name__ == "__main__":
     main()  
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 8 TODO : distinct subsequences (DP-32)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/distinct-subsequences/
+
+https://www.youtube.com/watch?v=nVG7eTiD2bY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=213
+'''
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are N*M states therefore at max ‘N*M’ new problems will be solved.
@@ -23445,7 +30641,7 @@ Space Complexity: O(N*M) + O(N+M)
 Reason: We are using a recursion stack space(O(N+M)) and a 2D array ( O(N*M)).
 
 prime = int(1e9 + 7)
-
+'''
 # Recursive function to count distinct subsequences of s1 that match s2
 def countUtil(s1, s2, ind1, ind2, dp):
     # If we have exhausted s2, we found a valid subsequence
@@ -23494,7 +30690,8 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -23504,7 +30701,7 @@ Space Complexity: O(N*M)
 Reason: We are using an external array of size ‘N*M’. Stack Space is eliminated.
 
 prime = int(1e9 + 7)
-
+'''
 # Function to count distinct subsequences of s1 that match s2
 def subsequenceCounting(s1, s2, n, m):
     # Initialize a DP table to store the count of distinct subsequences
@@ -23541,7 +30738,8 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops.
@@ -23551,7 +30749,7 @@ Space Complexity: O(M)
 Reason: We are using an external array of size ‘M+1’ to store only one row.
 
 prime = int(1e9 + 7)
-
+'''
 # Function to count distinct subsequences of s1 that match s2
 def subsequenceCounting(s1, s2, n, m):
     # Initialize a list to store the previous row of the DP table
@@ -23588,7 +30786,24 @@ if __name__ == '__main__':
 
 
 # 9 TODO : edit distance (DP-33)
-# method 1 : brute force approch
+
+'''
+https://leetcode.com/problems/edit-distance/
+
+
+https://www.youtube.com/watch?v=fJaKO8FbDdo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=214
+'''
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are N*M states therefore at max ‘N*M’ new problems will be solved.
@@ -23596,7 +30811,7 @@ Reason: There are N*M states therefore at max ‘N*M’ new problems will be sol
 Space Complexity: O(N*M) + O(N+M)
 
 Reason: We are using a recursion stack space(O(N+M)) and a 2D array ( O(N*M)).
-
+'''
 def editDistanceUtil(S1, S2, i, j, dp):
     # Base cases
     if i < 0:
@@ -23646,7 +30861,8 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -23654,7 +30870,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size ‘N*M’. Stack Space is eliminated.
-
+'''
 def editDistance(S1, S2):
     n = len(S1)
     m = len(S2)
@@ -23697,7 +30913,8 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops.
@@ -23705,7 +30922,7 @@ Reason: There are two nested loops.
 Space Complexity: O(M)
 
 Reason: We are using an external array of size ‘M+1’ to store two rows.
-
+'''
 def editDistance(S1, S2):
     n = len(S1)
     m = len(S2)
@@ -23748,7 +30965,23 @@ if __name__ == "__main__":
 
 
 # 10 TODO :  wildcard matching (DP-34)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/wildcard-matching/
+
+
+https://www.youtube.com/watch?v=ZmlQ3vgAOMo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=215
+'''
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are N*M states therefore at max ‘N*M’ new problems will be solved.
@@ -23756,7 +30989,7 @@ Reason: There are N*M states therefore at max ‘N*M’ new problems will be sol
 Space Complexity: O(N*M) + O(N+M)
 
 Reason: We are using a recursion stack space(O(N+M)) and a 2D array ( O(N*M)).
-
+'''
 def isAllStars(S1, i):
     # Helper function to check if all characters up to index i in S1 are '*'
     for j in range(i + 1):
@@ -23814,7 +31047,8 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops
@@ -23822,7 +31056,7 @@ Reason: There are two nested loops
 Space Complexity: O(N*M)
 
 Reason: We are using an external array of size ‘N*M’. Stack Space is eliminated.
-
+'''
 def isAllStars(S1, i):
     # Helper function to check if all characters up to index i in S1 are '*'
     for j in range(1, i + 1):
@@ -23880,7 +31114,8 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
+'''
 Time Complexity: O(N*M)
 
 Reason: There are two nested loops.
@@ -23888,7 +31123,7 @@ Reason: There are two nested loops.
 Space Complexity: O(M)
 
 Reason: We are using an external array of size ‘M+1’ to store two rows.
-
+'''
 def isAllStars(S1, i):
     # Helper function to check if all characters up to index i in S1 are '*'
     for j in range(1, i + 1):
@@ -23952,23 +31187,53 @@ if __name__ == "__main__":
 # -----------------------
 
 # 1 TODO : best time to bus stocks - I (DP -35)  
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+https://www.youtube.com/watch?v=excAOvwF_Wk
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 2 TODO : buy and sell stock - II (DP - 36)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*2) 
 
 Reason: There are N*2 states therefore at max ‘N*2’ new problems will be solved and we are running a for loop for ‘N’ times to calculate the total sum
@@ -24024,7 +31289,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*2) 
 
 Reason: There are two nested loops that account for O(N*2) complexity.
@@ -24072,7 +31337,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*2)
 
 Reason: There are two nested loops that account for O(N*2) complexity
@@ -24123,7 +31388,21 @@ if __name__ == "__main__":
 
 
 # 3 TODO : buy and sell stock - III (DP-37)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*2*3) 
 
 Reason: There are N*2*3 states therefore at max ‘N*2*3’ new problems will be solved.
@@ -24174,7 +31453,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*2*3) 
 
 Reason: There are three nested loops that account for O(N*2*3) complexity.
@@ -24218,7 +31497,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*2*3)
 
 Reason: There are three nested loops that account for O(N*2*3) complexity
@@ -24264,7 +31543,21 @@ if __name__ == "__main__":
 
 
 # 4 TODO : buy and sell stock - IV (DP-38)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*2*3) 
 
 Reason: There are N*2*K states therefore at max ‘N*2*K’ new problems will be solved.
@@ -24322,7 +31615,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*2*k) 
 
 Reason: There are three nested loops that account for O(N*2*K) complexity.
@@ -24361,7 +31654,7 @@ if __name__ == "__main__":
     print(f"The maximum profit that can be generated is {result}")
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*2*K)
 
 Reason: There are three nested loops that account for O(N*2*K) complexity
@@ -24404,7 +31697,22 @@ if __name__ == "__main__":
 
 
 # 5 TODO : buy and sell stock with cooldown (DP-39)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*2) 
 
 Reason: There are N*2 states therefore at max ‘N*2’ new problems will be solved and we are running a for loop for ‘N’ times to calculate the total sum
@@ -24461,7 +31769,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*2) 
 
 Reason: There are two nested loops that account for O(N*2) complexity.
@@ -24506,7 +31814,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*2)
 
 Reason: There are two nested loops that account for O(N*2) complexity
@@ -24557,7 +31865,22 @@ if __name__ == "__main__":
 
 
 # 6 TODO : buy and sell stock with transaction fee (DP-40)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*2) 
 
 Reason: There are N*2 states therefore at max ‘N*2’ new problems will be solved and we are running a for loop for ‘N’ times to calculate the total sum
@@ -24614,7 +31937,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*2) 
 
 Reason: There are two nested loops that account for O(N*2) complexity.
@@ -24665,7 +31988,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*2)
 
 Reason: There are two nested loops that account for O(N*2) complexity
@@ -24731,7 +32054,22 @@ if __name__ == "__main__":
 # --------------------
 
 # 1 TODO :  longest increasing subsequence (DP-41)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/longest-increasing-subsequence/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*N)
 
 Reason: There are N*N states therefore at max ‘N*N’ new problems will be solved.
@@ -24772,34 +32110,65 @@ if __name__ == "__main__":
     print("The length of the longest increasing subsequence is", result)  
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 2 TODO : printing longest increasing subsequence (DP-42)
-# method 1 : brute force approch
+'''
+https://bit.ly/3XiRbmG
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 3 TODO : longest increasing subsequence (DP-43)
-# method 1 : brute force approch
+
+'''
+https://bit.ly/3Pxf84L
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*logN)
 
 Reason: We iterate over the array of size N and in every iteration, we perform a binary search which takes logN time.
@@ -24834,18 +32203,33 @@ if __name__ == "__main__":
     print("The length of the longest increasing subsequence is", result)
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 4 TODO : largest divisible subset (DP-44)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/largest-divisible-subset/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*N)
 
 Reason: There are two nested loops.
@@ -24897,17 +32281,33 @@ if __name__ == "__main__":
     print("The longest divisible subset elements are:", ans)
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 5 TODO : largest string chain (DP-45)
+'''
+https://leetcode.com/problems/longest-string-chain/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*N * l)
 
 Reason: We are setting up two nested loops and the compare function can be estimated to l, where l is the length of the longest string in the words [ ] array. Also, we are sorting so the time complexity will be (N^2 * l + NlogN)
@@ -24962,18 +32362,34 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 6 TODO : longest bitonic subsequence (DP-46)
-# method 1 : brute force approch
+'''
+https://practice.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1
+
+
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*N)
 
 Reason: There are two nested loops that are run twice.
@@ -25016,18 +32432,34 @@ if __name__ == "__main__":
     print("The length of the longest bitonic subsequence is", longest_bitonic_sequence(arr))
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 7 TODO : number of longest increasing subsequence (DP-47)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/number-of-longest-increasing-subsequence/
+
+
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*N)
 
 Reason: There are two nested loops that are run twice.
@@ -25072,12 +32504,13 @@ if __name__ == "__main__":
     print("The count of Longest Increasing Subsequences is:", find_number_of_LIS(arr))  
 
 
-# method 2 : better approch
+# method 2 : tabulation
+
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
@@ -25094,23 +32527,54 @@ if __name__ == "__main__":
 # ------------------------------
 
 # 1 TODO :  bitonic chain multiplication (DP-48)
-# method 1 : brute force approch
+'''
+https://bit.ly/3Cgg36D
+
+
+'''
+
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 2 TODO : matrix chain multiplication | Bottom up (DP-49)
-# method 1 : brute force approch
+'''
+https://bit.ly/3Cgg36D
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: O(N*N*N)
 
 Reason: There are N*N states and we explicitly run a loop inside the function which will run for N times, therefore at max ‘N*N*N’ new problems will be solved.
@@ -25149,18 +32613,32 @@ if __name__ == "__main__":
 
     print("The minimum number of operations is:", matrix_multiplication(arr))
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 3 TODO : minimum cost to cut the stick (DP-50)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/minimum-cost-to-cut-a-stick/
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: Exponential
 
 
@@ -25196,7 +32674,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*N*N)
 
 Reason: There are 2 variables i and j, therefore, N*N states and we explicitly run a loop inside the function which will run for N times, therefore at max ‘N*N*N’ new problems will be solved.
@@ -25243,7 +32721,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*N*N)
 
 Reason: There are 2 variables i and j, therefore, N*N states and we explicitly run a loop inside the function which will run for N times, therefore at max ‘N*N*N’ new problems will be solved.
@@ -25286,7 +32764,22 @@ if __name__ == "__main__":
 
 
 # 4 TODO : burst balloons (DP-51)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/burst-balloons/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: Exponential
 
 
@@ -25321,7 +32814,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N3), There are total N2 no. of states. And for each state, we are running a partitioning loop roughly for N times.
 
 Space Complexity: O(N2) + Auxiliary stack space of O(N), N2 for the dp array we are using. 
@@ -25359,7 +32852,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N3), There are total N2 no. of states. And for each state, we are running a partitioning loop roughly for N times.
 
 Space Complexity: O(N2), N2 for the dp array we are using.
@@ -25402,7 +32895,22 @@ if __name__ == "__main__":
 
 
 # 5 TODO : evaluate boolean expression to true (DP-52)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/parsing-a-boolean-expression/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: Exponential
 
 
@@ -25457,7 +32965,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*N*2 * N) ~ O(N3) There are a total of 2*N2 no. of states. And for each state, we are running a partitioning loop roughly for N times.
 
 Space Complexity: O(2*N2) + Auxiliary stack space of O(N), 2*N2 for the dp array we are using.
@@ -25519,7 +33027,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*N*2 * N) ~ O(N3) There are a total of 2*N2 no. of states. And for each state, we are running a partitioning loop roughly for N times.
 
 Space Complexity: O(2*N2), 2*N2 for the dp array we are using.
@@ -25585,7 +33093,22 @@ if __name__ == "__main__":
 
 
 # 6 TODO : pallindrome partioning - I (DP-53)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/palindrome-partitioning-ii/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: Exponential
 
 
@@ -25626,7 +33149,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N2)
 Reason: There are a total of N states and inside each state, a loop of size N(apparently) is running.
 
@@ -25678,7 +33201,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N2)
 Reason: There are a total of N states and inside each state a loop of size N(apparently) is running.
 
@@ -25722,7 +33245,22 @@ if __name__ == "__main__":
 
 
 # 7 TODO : partition array for maximumsum (DP-54)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/partition-array-for-maximum-sum/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 Time Complexity: Exponential
 
 
@@ -25748,7 +33286,7 @@ if __name__ == "__main__":
 
 
 
-# method 2 : better approch
+# method 2 : tabulation
 Time Complexity: O(N*k)
 Reason: There are a total of N states and for each state, we are running a loop from 0 to k.
 
@@ -25793,7 +33331,7 @@ if __name__ == "__main__":
 
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 Time Complexity: O(N*k)
 Reason: There are a total of N states and for each state, we are running a loop from 0 to k.
 
@@ -25842,33 +33380,63 @@ if __name__ == "__main__":
 
 
 # 1 TODO :  maximum rectangle area with all 1's (DP-55)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/maximal-rectangle/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
 
 # 2 TODO : count square submatrices with all ones (DP-56)
-# method 1 : brute force approch
+'''
+https://leetcode.com/problems/count-square-submatrices-with-all-ones/
+
+
+'''
+
+# method 0 : recursion 
+'''
+Time Complexity: 
+
+Space Complexity: 
+
+'''
+
+
+# method 1 : memoization
 # TC     -      
 # SC     -     
 
 
-# method 2 : better approch
+# method 2 : tabulation
 # TC     -      
 # SC     -     
 
 
-# method 3 : optimal solution
+# method 3 : space optimization
 # TC     -      
 # SC     -      
 
@@ -25886,6 +33454,10 @@ if __name__ == "__main__":
 # --------------------------
 
 # 1 TODO :  implement trie | insert |search | startswith
+'''
+https://leetcode.com/problems/implement-trie-prefix-tree/
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26006,8 +33578,7 @@ if __name__ == "__main__":
 
     print("If words in Trie start with Stri: " +
           ("True" if trie.startsWith("stri") else "False"))
-                           
-                        
+
 
 
 
@@ -26021,6 +33592,10 @@ if __name__ == "__main__":
 # -------------------------------------
 
 # 1 TODO :  implement trie -2 (prefix tree)
+'''
+https://bit.ly/3qwT4OL
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N) where N is the length of the word or prefix being processed.
 
@@ -26252,6 +33827,11 @@ if __name__ == "__main__":
 
 
 # 2 TODO : longest string with all prefixes
+'''
+https://bit.ly/3n3kedU
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26268,6 +33848,10 @@ if __name__ == "__main__":
 
 
 # 3 TODO : number of distinct substrings in a string
+'''
+https://bit.ly/3ocRQW0
+
+'''
 # method 1 : brute force approch
 Time Complexity: O(N*N) where N is the number of characters in the given word. The implementation has two nested loops:
 
@@ -26455,6 +34039,11 @@ if __name__ == "__main__":
 
 
 # 4 TODO : bit preRequisites for trie problems
+'''
+https://bit.ly/3Vw4XB1
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26471,6 +34060,11 @@ if __name__ == "__main__":
 
 
 # 5 TODO : maximum xor of two numbers in an array
+'''
+https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26635,6 +34229,11 @@ if __name__ == "__main__":
 
 
 # 6 TODO : maximum xor with an element from array
+'''
+https://leetcode.com/problems/maximum-xor-with-an-element-from-array/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26826,6 +34425,12 @@ if __name__ == "__main__":
 # --------------------------
 
 # 1 TODO :  minimum number of brackets reversals neededto make an expression balanced
+'''
+m
+
+https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26842,6 +34447,13 @@ if __name__ == "__main__":
 
 
 # 2 TODO : count and say
+'''
+m
+
+https://leetcode.com/problems/count-and-say/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26858,6 +34470,13 @@ if __name__ == "__main__":
 
 
 # 3 TODO : hashing in strings | theory
+'''
+m
+
+https://bit.ly/3glak75
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26874,6 +34493,13 @@ if __name__ == "__main__":
 
 
 # 4 TODO : rabin karp
+'''
+h
+
+https://leetcode.com/problems/repeated-string-match/discuss/416144/Rabin-Karp-algorithm-C%2B%2B-implementation
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26890,6 +34516,15 @@ if __name__ == "__main__":
 
 
 # 5 TODO : 2-function
+'''
+e
+
+
+https://leetcode.com/problems/implement-strstr/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26906,6 +34541,16 @@ if __name__ == "__main__":
 
 
 # 6 TODO : KMP algo/LSP(pl) array
+
+'''
+h
+
+https://leetcode.com/problems/implement-strstr/
+
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26922,6 +34567,13 @@ if __name__ == "__main__":
 
 
 # 7 TODO : shortest pallindrome
+'''
+h
+
+https://leetcode.com/problems/shortest-palindrome/
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26938,6 +34590,14 @@ if __name__ == "__main__":
 
 
 # 8 TODO : longest happy prefix
+'''
+h
+
+https://leetcode.com/problems/longest-happy-prefix/
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     
@@ -26954,6 +34614,14 @@ if __name__ == "__main__":
 
 
 # 9 TODO : count pallindromic subsequence in given string
+'''
+h
+
+https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1#:~:text=Given%20a%20string%20str%20of,formed%20from%20the%20string%20str.&text=Your%20Task%3A,read%20input%20or%20print%20anything.
+
+
+
+'''
 # method 1 : brute force approch
 # TC     -      
 # SC     -     

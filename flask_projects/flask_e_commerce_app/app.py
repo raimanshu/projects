@@ -1,17 +1,25 @@
-from flask import Flask
-
+from flask import Flask, render_template
+from config import Config
 
 app = Flask(__name__)
+app.config.from_object(Config)
+
+@app.route("/")
+@app.route("/index")
+def index():
+    return "Hello, World!"
 
 
-with app.app_context():
-    app.register_blueprint(user.api.bp, url_prefix='/api/users')
-    app.register_blueprint(product.api.bp, url_prefix='/api/products')
-    app.register_blueprint(order.api.bp, url_prefix='/api/orders')
-    app.register_blueprint(payment.api.bp, url_prefix='/api/payments')
-    app.register_blueprint(cart.api.bp, url_prefix='/api/cart')
-    app.register_blueprint(inventory.api.bp, url_prefix='/api/inventory')
+@app.route("/profile")
+def profile():
+    user = {"username": "Miguel"}
+    posts = [
+        {"author": {"username": "John"}, "body": "Beautiful day in Portland!"},
+        {"author": {"username": "Susan"}, "body": "The Avengers movie was so cool!"},
+    ]
+    return render_template("profile.html", title="profile", user=user, posts=posts)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # print(app.__dict__)
+    app.run(debug=True, port=5001)

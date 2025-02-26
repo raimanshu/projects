@@ -30,18 +30,49 @@
 # endregion
 
 
-LINKED LIST 
-- linked list is a data structure that follows the First In First Out (FIFO) principle
-- linked list is a linear data structure
-- linked list is a collection of elements
-- linked list is a non-primitive data structure
+# region LINKED LIST 
+'''
+https://www.youtube.com/watch?v=Nq7ok-OyEpg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=237
+
+Reference - mysirji, takeuforward
+
+- follows the First In First Out (FIFO) principle
+- linear data structure
+- collection of elements
+- non-primitive data structure
+- NOT in contegious memory allocation
+- types of linked list - single linked list, double linked list, circular linked list, doubly circular linked list
+
+- head - first element of the linked list
+- tail - last element of the linked list
+- next - pointer to the next element
+- prev - pointer to the previous element
+- data - data stored in the linked list
+
+
+- heap memory ?
+- stack memory ?
+
 - operations - insertion, deletion, traversal, search, sorting, merging, splitting, reversing, rotating, shuffling
 - types - single linked list, double linked list, circular linked list, doubly circular linked list
 - real world examples - 
+browser url - search -> takeuforward.org -> a2z -> article
+
+- application of linked list - in stacks ans queues
+
+
+
+'''
+
 
 GREEDY ALGORITHM 
 - greedy algorithm is an algorithm that always makes the choice that looks best at the moment
 
+when not to use greedy algorithm
+when there is no uniformity in the data, sometimes it may be very large sometimes it may be very less and it cannot sorted like in a 2D matrix 
+
+
+# endregion 
 
 # region HASHING
 # --------------
@@ -326,21 +357,215 @@ print(is_odd(5))   # Output: True
 
 # endregion
 
-SLIDING WINDOW
-- sliding window is a technique used to solve problems related to arrays and strings
-- when to use - when we have a problem that involves finding the maximum or minimum of a subarray of size k
+
+# region BIT MANIPULATION
+'''
+OPERATORS
+---------
+code for binary to decimal
+//...code
+code for decimal to binary
+//...code
+code for 1's complement
+//...code
+code for 2's complement
+//...code
+
+and - & (all true -> true, 1 false -> false)
+a = 5   # 0101 in binary
+b = 3   # 0011 in binary
+result = a & b  # 0001 in binary (1 in decimal)
+print(result)  # Output: 1
+
+or - | (1 true -> true, all false -> false)
+a = 5   # 0101 in binary
+b = 3   # 0011 in binary
+result = a | b  # 0111 in binary (7 in decimal)
+print(result)  # Output: 7
+
+xor - ^ (nos of 1's odd -> 1, nos of 1's even -> 0 )
+The bitwise XOR (exclusive OR) operator compares corresponding bits of two numbers and returns a 1 if the bits are different, otherwise, it returns 0.
+a = 5   # 0101 in binary
+b = 3   # 0011 in binary
+result = a ^ b  # 0110 in binary (6 in decimal)
+print(result)  # Output: 6
+
+not - ~
+The bitwise NOT operator inverts the bits of the number. It flips 0 to 1 and 1 to 0. In Python, ~a is equivalent to -a-1 because of the way negative numbers are represented in binary using two's complement.
+- for positive number 
+convert to binary 
+flip the values 
+check if the flipped value is negative or not ie sign bit is 1 or not, if it's negative store 2's complement of the flipped value ie flip it again and 1 else stop and store the binary value
+- for negative number
+take 2's complement of the number
+flip the values of 2's complement value
+check if the flipped value is negative or not ie sign bit is 1 or not, if it's negative store 2's complement of the flipped value ie flip it again and 1 else stop and store the binary value
+a = 5   # 0101 in binary
+result = ~a  # Inverts the bits
+print(result)  # Output: -6 (because ~5 = -6 in two's complement)
+
+shift - 
+<< (left shift, multiply by 2) 
+The left shift operator (<<) shifts the bits of a number to the left by the specified number of positions. Each shift to the left is equivalent to multiplying the number by 2.
+- if left shift by 1 the INT-MAX, then it will throw error says data overflow
+a = 5   # 0101 in binary
+result = a << 2  # Shifting left by 2 positions (multiply by 2^2 = 4)
+print(result)  # Output: 20 (10100 in binary)
 
 
-TWO POINTERS TECHNIQUE 
-- two pointers is a technique used to solve problems related to arrays and strings
-- where to use -
+>> (right shift, divide by 2, num // 2^k where num is the given number and k is shift)
+The right shift operator (>>) shifts the bits of a number to the right by the specified number of positions. Each shift to the right is equivalent to integer division by 2.
+a = 20  # 10100 in binary
+result = a >> 2  # Shifting right by 2 positions (divide by 2^2 = 4)
+print(result)  # Output: 5 (0101 in binary)
+
+# store 13 and -13 in 32-bit system, the last bit or 32nd bit is the sign bit, 0 for positive and 1 for negative
+- store positive number as it's binary
+13 = 00000000000000000000000000001101
+- store negative number as 2's complement
+-13 = 
+13 binary is 00000000000000000000000000001101
+1's complement of 13 is 11111111111111111111111111110010
+add 1 to the binary number is 11111111111111111111111111110011
+
+- largest integer number a 32-bit system can store is 2^31 - 1 = 2147483647, INT-MAX
+- smallest integer number a 32-bit system can store is -2^31 = -2147483648, INT-MIN
+ 
+'''
+
+# endregion
 
 
-STACK 
+# region SLIDING WINDOW
+# http://youtube.com/watch?v=9kdHxplyl5I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=272
+# patterns 
+1 - constant size window
+def max_sum_subarray(arr, k):
+    l = 0  # Left pointer
+    r = 0  # Right pointer
+    current_sum = 0  # Sum of elements within the window
+    max_sum = float('-inf')  # Initialize the maximum sum with a very small number
+    
+    while r < len(arr):
+        # Expand the window by including the element at the right pointer
+        current_sum += arr[r]
+        
+        # If the window size reaches k, update the max_sum and move the left pointer
+        if r - l + 1 == k:
+            max_sum = max(max_sum, current_sum)
+            # Move the left pointer to shrink the window and remove the leftmost element
+            current_sum -= arr[l]
+            l += 1
+        
+        # Move the right pointer to expand the window
+        r += 1
+    
+    return max_sum
+
+# Test case
+arr = [-1, 2, 3, 4, 5, -1]
+k = 4
+print("Maximum sum of k consecutive elements:", max_sum_subarray(arr, k))
+
+2 - longest subarray/sustring where <condition>
+brute force - using nested loops, using breaks and continue
+def longest_subarray_bruteforce(arr, k):
+    n = len(arr)
+    max_len = 0
+    for i in range(n):
+        current_sum = 0
+        for j in range(i, n):
+            current_sum += arr[j]
+            if current_sum <= k:
+                max_len = max(max_len, j - i + 1)
+            else:
+                break
+    return max_len
+
+arr = [2, 5, 1, 7, 10]
+k = 14
+print(longest_subarray_bruteforce(arr, k))  
+better approach - using two pointers l and r, r is incremented to expand, l is incremented to shrink
+def longest_subarray_with_sum_less_than_k(arr, k):
+    n = len(arr)
+    l = 0  # left pointer
+    r = 0  # right pointer
+    sum = 0
+    max_len = 0
+
+    while r < n:
+      sum = sum  + arr[r]
+      while sum > k:
+        sum = sum - arr[l]
+        l +=1
+      
+      
+      if sum <= k:
+        max_len = max(max_len, r-l+1)
+      r +=1
+    
+    return max_len
+
+# Example usage
+arr = [2, 5, 1, 7, 10]
+k = 14
+print(longest_subarray_with_sum_less_than_k(arr, k))  
+
+
+optimal approch - replacing while with if
+def longest_subarray_with_sum_less_than_k(arr, k):
+    n = len(arr)
+    l = 0  # left pointer
+    r = 0  # right pointer
+    sum = 0
+    max_len = 0
+
+    while r < n:
+      sum = sum  + arr[r]
+      if sum > k:
+        sum = sum - arr[l]
+        l +=1
+      
+      
+      if sum <= k:
+        max_len = max(max_len, r-l+1)
+      r +=1
+    
+    return max_len
+
+# Example usage
+arr = [2, 5, 1, 7, 10]
+k = 14
+print(longest_subarray_with_sum_less_than_k(arr, k))  
+
+
+3 - number of subarrays where <condition>
+use better approch to solve this problem
+4 - shortest/minimum window where <condition>
+
+
+
+
+
+# - sliding window is a technique used to solve problems related to arrays and strings
+# - when to use - when we have a problem that involves finding the maximum or minimum of a subarray of size k
+
+
+# TWO POINTERS TECHNIQUE 
+# - two pointers is a technique used to solve problems related to arrays and strings
+# - where to use -
+
+# endregion 
+
+# region STACK 
 - stack is a data structure that follows the Last In First Out (LIFO) principle
 - stack is a linear data structure
 - stack is a collection of elements
 - stack is a non-primitive data structure
+ homogeneous data structures
+indexing is typically not maintained 
+- list are used in python for implementing stacks
+
 - operations - push/add, pop, peek/top, isEmpty, isFull, size, clear, print
 - stack implementation using array
 https://www.geeksforgeeks.org/implement-stack-using-array/
@@ -348,13 +573,42 @@ https://www.geeksforgeeks.org/implement-stack-using-array/
 https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
 - stack implementation using queue 
 https://www.geeksforgeeks.org/implement-stack-using-queue/
+# endregion
 
 
-
-QUEUE
+# region QUEUE
 - queue is a data structure that follows the First In First Out (FIFO) principle
 - queue is a linear data structure
 - queue is a collection of elements
+indexing is typically not maintained 
+ homogeneous data structures
+
+Use deque from the collections module for a general-purpose queue.
+from collections import deque
+
+queue = deque()
+queue.append(1)  # Enqueue element to the back
+queue.append(2)
+queue.append(3)
+
+print(queue.popleft())  # Dequeue element from the front (1)
+print(queue.popleft())  # Dequeue next element (2)
+
+Use queue.Queue for thread-safe queues.
+    import queue
+
+q = queue.Queue()
+
+q.put(1)  # Enqueue element
+q.put(2)
+q.put(3)
+
+print(q.get())  # Dequeue element (1)
+print(q.get())  # Dequeue next element (2)
+
+
+
+- list are used in python for implementing stacks
 - queue is a non-primitive data structure
 - operations - enqueue/add, dequeue, peek/top, isEmpty, isFull, size, clear, print
 - types - simple queue, circular queue, priority queue, double ended queue
@@ -364,7 +618,7 @@ https://www.geeksforgeeks.org/array-implementation-of-queue-simple/
 https://www.geeksforgeeks.org/queue-linked-list-implementation/
 - queue implementation using stack
 https://www.geeksforgeeks.org/queue-using-stacks/
-
+# endregion
 
 
 BINARY TREE
@@ -391,18 +645,24 @@ HEAP
 
 
 
-TREE
-- Binary Tree (can have max two nodes)
-- terminologies -root node, children, parent, leaf node, ancestor, sibling, sub-tree, level, height, depth, degree of a node, degree of a tree
+# region TREE
+'''
+takeuforwrd.org - https://www.youtube.com/watch?v=_ANrF3FJm7I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=73
+
+'''
+# - Binary Tree (can have max two nodes)
+- terminologies - root node, children, parent, leaf node, ancestor, sibling, sub-tree, level, height, depth, degree of a node, degree of a tree
 - types - full binary tree, complete binary tree, perfect binary tree, balanced binary tree, degenerate tree, skewed tree
 - full binary tree - every node has either 0 or 2 children
 - complete binary tree - all levels are completely filled except possibly the last level and the last level has all keys as left as possible
 - perfect binary tree - all internal nodes have two children and all leaves are at the same level
 - balanced binary tree - height of the tree is O(logN)
-- degenerate tree - every node has only one child
+- degenerate/skewed tree - every node has only one child
 - Traversal in a tree - BFS & DFS(inorder, preorder, postorder)
 
+real lfe example - folder structure in computer systems
 
+# endregion
 
 GRAPH
 ------
@@ -428,7 +688,75 @@ GRAPH
 
 
 
-DYNAMIC PROGRAMMING
+# region DYNAMIC PROGRAMMING
+
+'''
+those who cannot remember the past are condemned to repeat it. ~ DP
+
+ways to solve DP - tabulation and memoization
+
+tabulation - bottom up approach
+
+memoization - top down approach, tend to store the value of sub problems in some map/table
+
+space optimization - 
+
+overlapping subproblems - 
+
+
+
+1. Recursion: each function calls give rise to 2 more: therefore O(2^n)
+2. Memoization: stores in an array: O(n)
+   Subproblem results are stored in an array, ensuring that each subproblem is solved only once.
+3. Tabulation: iterative approach and takes O(n) subproblems from the smallest to the largest.
+RECURSION: Top down: We start from answer, go to the base case and then go back
+MEMOIZATION: TOP DOWN:  avoids redundant calls done in recursion reducing time complexity
+TABULATION IS: Bottom up: We start from the base case and we try to go to the required answer
+
+
+
+where to use recursion - 
+try all possible ways - count or maximum/minimum
+1. when we have to find the number of ways to do something
+2. when we have to find the maximum/minimum of something
+
+how to convert recursion to DP -
+1. Try to represent any problems in terms of index
+2. Do all possible stuffs on that index, according to the problem statement
+3. Sum of all stuffs ->count all the ways , min(of all stuffs) -> Find min
+
+steps to convert a memoization solution into a tabulation solution
+1. Declare base cases
+2. express all states in for loops
+3. Copy the recurence and write
+
+when can we apply space optimization technique -
+1. when we have 2 states and the value of the states is dependent on the previous value of the state
+ie if there is a previous data row and previous column in case of 2D array
+ic if there are two states value previous data like n-1 and n-2
+
+
+when not to use greedy algorithm
+when there is no uniformity in the data, sometimes it may be very large sometimes it may be very less and it cannot sorted like in a 2D matrix 
+
+subsequence/subsets - may be contiguous or non-contiguous
+[1,2,3]
+subsets - [1,2,3], [1,2], [1,3], [2,3], [1], [2], [3], [] ✅ need to follow order
+non-subsequence - [3,2,1], [3,1], [2,1], [1] ❌
+
+how to solve subsequences/subarray problem
+1. express in (index, target)
+2. explore possibilities of that index
+- arr[index is the part of the subsequence 
+- arr[index] is not the part of the subsequence
+3. return True/False
+
+how to solve subsequences/subarray problem
+1. express in index_1, index_2
+2. explore possibilities of that index
+3. take the best among them
+'''
+
 - techniques - memoization, tabulation
 - memoization - technique of storing the solution of a subproblem, so that we do not have to recompute it when needed later.
 - tabulation - 
@@ -439,3 +767,4 @@ DYNAMIC PROGRAMMING
 - optimal substructure - when an optimal solution can be constructed from optimal solutions of its subproblems
 - 
 
+# endregion 
