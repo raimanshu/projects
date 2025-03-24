@@ -29,7 +29,8 @@ https://www.youtube.com/watch?v=Z27llwBA0Uw
 
 - sql vs nosql vs mysql
 
-- website vs web application
-
 - web server vs application server
 
+- website vs web application vs web service vs web api
+
+- shallow copy vs deep copy

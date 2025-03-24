@@ -1,19 +1,94 @@
 
+****************************************************************************************** PERSONAL TASKS *****************************************************************************
+- r.....sh
+L - H4
+
+- list comprehension, arthematic operators in ibnyb file
+- decorators - @property, @classmethod
+- dunder method - __enter__, __exit__
+
+- react, angular, js functions list
+
+
 ****************************************************************************************** AI TOOLS *****************************************************************************
 
+v0.dev
+bolt.new
+
+pixverse.ai
+
+heygen.ai
+
+huggingface.co
+
+openui.fly.dev
+
+coolshap.es
+penrose.cs.cmu.edu
+stunningui.design
+teable.io
+visactor.io
+matcha.css
+magick.css
+kapwing.com/404-illustrations
+
+****************************************************************************************** WORDS *****************************************************************************
+prognosis - Forecast, Prediction, Outlook, Projection, Anticipation, Estimate, Expectation
+
+cognitive - Mental, Intellectual, Perceptual, Rational, Thought-related, Psychological
+
+narcissist - Egotist, Self-absorbed person, Self-centered person, Egocentric person, Boastful person, Conceited person, Arrogant person
+
+dilemma - Problem, Challenge, Predicament, Confusion, Pickle, Quandary, Conundrum, Tough choice
+
+paranoid - Suspicious, Mistrustful, Distrustful, Worried, Anxious, Cautious, Jumpy, Overly cautious
+
+glitch - Malfunction, Error, Flaw, Problem, Bug, Defect, Fault, Issue, Hiccup, Setback, Snag, Misfire, Disruption, Breakdown
+
+FOMO - Fear Of Missing Out: Used when someone feels they are missing out on something fun or exciting happening elsewhere.
+
+YOLO - You Only Live Once: Used to encourage taking risks or living in the moment, often with a sense of spontaneity.
+
+SMH - Shaking My Head: Used to express disbelief, disappointment, or frustration.
+
+LMK - Let Me Know: A casual way to ask someone to inform you about something.
+
+ICYMI - In Case You Missed It: Used when bringing attention to something someone might have overlooked, usually on social media.
+
+BFF - Best Friends Forever: Refers to a close friendship that is thought to be permanent.
+
+GOAT - Greatest Of All Time: Used to describe someone or something that's considered the best in their field.
+
+TBH - To Be Honest: Often used before giving an honest opinion or statement.
+
+TMI - Too Much Information: Used when someone shares more personal or graphic details than needed.
+
+BRB - Be Right Back: Used to indicate that you're stepping away temporarily, but will return soon.
+
+BTW - By The Way: A casual way to introduce a new point in conversation.
+
+LIT - Refers to something that is exciting, amazing, or really fun (e.g., "The party was lit!").
+
+Vibe Check: Checking if someone is in a good mood or in a good mental space.
+
+Savage: Describes someone who is tough, bold, or unapologetically honest.
+
+Flex: To show off or boast about something (e.g., "He's just flexing his new car").
+TDS:
+
+TDS: Tough Day Syndrome: Refers to having a challenging or stressful day.
+
+NYI: Not Your Interest: Used to let someone know that a particular topic or conversation isn't something they want to engage in.
 
 ****************************************************************************************** BOOKS *****************************************************************************
+eat that frog
+getting to yes
+clarity
 
+****************************************************************************************** IDEAS *****************************************************************************
 
-****************************************************************************************** BOOKS *****************************************************************************
-
-
-
-****************************************************************************************** BOOKS *****************************************************************************
-
-
-
-****************************************************************************************** BOOKS *****************************************************************************
-
-
-****************************************************************************************** BOOKS *****************************************************************************
+comedy channel - bolly
+motivational channel - bolly
+old cartoons/anime - anime/cartoons
+doctor diseases channel with avatar - new
+girl avatar for designer dresses - new

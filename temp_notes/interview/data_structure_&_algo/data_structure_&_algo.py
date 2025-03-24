@@ -2,6 +2,25 @@
 # ---------------------------
 
 
+
+""" 
+algorithm - 
+
+Euclidian algo for HCF/GCD
+
+selection sort, bubble sort, insertion sort, merge sort, quick sort, 
+
+Dutch National flag algorithm, Moore's voting algorithm
+
+Kadane's algorithm, extended version of kadane's algorithm, Boyer Moore's majority voting algorithm
+
+Manacher's Algorithm, the Tortoise and Hare algorithm., Sieve of Eratosthenes algorithm, Shunting Yard algorithm, Job First algorithm, least recently used (LRU) page replacement , flood-fill-algorithm, topological-sort-algorithm, kahn's algorithm, Dijkatra's algorithm, bellman ford algorithm, floyd warshall algorithm, Prim's algorithm, kruskal's algorithm, tarjans-algorithm, kosaraju's algorithm, Rabin-Karp Algorithm, KMP algo/LSP(pl) array or Knuth-Morris-Pratt Algorithm),
+
+
+"""
+
+
+
 # region ARRAY
 # ------------ 
 '''
@@ -664,6 +683,18 @@ real lfe example - folder structure in computer systems
 
 # endregion
 
+# region BINARY SEARCH TREE 
+
+- bst -> left node value < right node value < root node value
+- duplicate values are not allowed
+- height of the bst - O(logN)
+
+
+
+
+
+# endregion
+
 GRAPH
 ------
 - terminologies - nodes/vertices, edge, directed edge, undirected edge, cycle of a graph, 
@@ -755,6 +786,16 @@ how to solve subsequences/subarray problem
 1. express in index_1, index_2
 2. explore possibilities of that index
 3. take the best among them
+
+
+how to solve dp problems on stocks
+1. express in (index, buy)
+2. explore possibilities on that index
+3. take the max of all profits made
+4. base case
+
+
+
 '''
 
 - techniques - memoization, tabulation

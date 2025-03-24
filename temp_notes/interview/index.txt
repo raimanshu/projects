@@ -1,7 +1,7 @@
 DSA - tuf,lc
 
 Database
-
+https://github.com/krishnasagrawal/SQL-and-DBMS-Study-Resources/blob/main/README.md
 
 
 Angular 

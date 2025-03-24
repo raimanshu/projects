@@ -1,43 +1,157 @@
 
-1 BASIC
--------
+# https://www.youtube.com/watch?v=43-X22tdxiI&list=PLA3GkZPtsafZdyC5iucNM_uhqGJ5yFNUM&index=1 (Beginner)
 
 
-2 LOAD BALANCING
-----------------
-3 DATA STORES
--------------
 
-4 CONSISTENCY VS AVAILABILITY
------------------------------
+# region 1 BASIC
+# ----------------
+1 system design 
+2 scaling - horizontal scaling vs vertical scaling
+3 capacity extimation
+4 http
+5 TCP/IP stack
+6 what happens when you type google.com in browser?
+7 relational databases
+8 database indexes
+9 NoSQL databases 
+10 cache
+11 thrashing
+12 threads
 
-5 MESSAGE QUEUES
-----------------
+# region 2 LOAD BALANCING
+# -----------------------
+- load balancing
+- consistent hashing
+- sharding
 
-6 DEVOPS CONCEPT
-----------------
 
-7 CACHING
----------
+# region 3 DATA STORES
+# --------------------
+- bloom filters
+- data replication
+- how are NoSQL optimized
+- location based databases
+- datbase migrations
 
-8 MICROSERVICES
----------------
+# region 4 CONSISTENCY VS AVAILABILITY
+# ------------------------------------
+- data consistancy
+- data consistancy levels
+- transaction isolation levels
 
-9 API GATEWAYS
---------------
+# region 5 MESSAGE QUEUES
+# -----------------------
 
-10 AUTHENTICATION MECHANISMS
-----------------------------
+- message queues
+- public-subscriber model 
+- event driven ststems
+- database as a message queue
 
-11 SYSTEM DESIGN TRADEOFFS
---------------------------
+# region 6 DEVOPS CONCEPT
+# ---------------------
+- single point of failure
+- containers
+- service discovery and heartbeats
+- how to avoid cascading failures
+- anomaly detection in distribute systems
+- distribute rate limiting
 
-12 PRACTICE PROBLEMS
---------------------
+# region 7 CACHING
+# -----------------
+- distribute caching
+- content delivery networks
+- policies
+- replacement policies
 
-13 ADDITIONAL RESOURCES
------------------------
 
+
+# region 8 MICROSERVICES
+# region ---------------
+
+
+- monolithic vs microservices
+- how monoliths are migrated
+
+
+# region 9 API GATEWAYS
+# region --------------
+- how api are designed
+- asynchronous APIs
+
+
+
+
+# region AUTHENTICATION
+# ------------------------
+
+# authentication va authorization
+# https://www.youtube.com/watch?v=B76BhEq1FN8&list=PLA3GkZPtsafZdyC5iucNM_uhqGJ5yFNUM&index=27    
+'''
+
+# endregion
+
+
+
+
+
+# region AUTHORIZATION
+# ----------------------
+
+
+# endregion
+
+
+
+
+
+
+
+# region 11 SYSTEM DESIGN TRADEOFFS
+# region --------------------------
+- pull vs push
+- memory vs latency
+- throughput vs latency
+- consistency vs availability
+- latency vs accuracy
+- SQL vs NoSQL databases
+
+
+# region 12 PRACTICE PROBLEMS
+# region --------------------
+live straming app
+instagram
+tinder
+whatsapp
+tiktok
+system design of an online coding judge - part 1
+system design of an online coding judge - part 2
+UPI payments
+IRCTC
+netflix video onboarding pipelines
+doordash
+amazon online shops
+google maps
+gmail
+chess website
+UnboundLocalErrorgoogle docs
+
+whatsapp
+https://www.youtube.com/watch?v=QhFvII571Lc
+
+
+
+
+# region 13 ADDITIONAL RESOURCES
+# --------------------------------
+interview ready course 
+
+github page
+https://github.com/InterviewReady/system-design-resources
+https://github.com/InterviewReady/Low-Level-Design
+
+designing data-intensive applications
+
+# endregion
 
 
 DOUBTS 
