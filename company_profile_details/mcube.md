@@ -23,7 +23,7 @@ Password – HR$12345
 
 ## Local Admin Credentials
 
-User Name - .\it_himanshu
+User Name - .\it_hr
 Password – Deadpool@123
 
 ## DKM
@@ -60,10 +60,15 @@ OmSai@123
 ## AWS LOGIN
 
 Username - craftbot_team
-Password - zyWO0%Tr
+Password - x6P3z2K*
 Console sign-in URL - https://567168731576.signin.aws.amazon.com/console
 
 ## REMOTE (RDP)
+
+Port/Computer – 54.165.24.117
+Username – Administrator
+Password – oVxR6yiUFRBz2Tp$n;=X6lKxHMGomczk or Wakanda@123
+ 
 
 Port/Computer – 172.16.1.87
 Username – MCUBE\ui.infra

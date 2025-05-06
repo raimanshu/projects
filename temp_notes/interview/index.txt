@@ -13,3 +13,74 @@ JavaScript
 Software Design & Architecture
 System Design 
 AWS
+
+
+
+
+PSUs
+----
+1. Bharat Electronics Limited (BEL)
+BEL recruits experienced professionals through interviews and sometimes through written tests, and it may not always require a GATE score for experienced hires.
+
+Typically, BEL hires for roles in software development, system design, and related positions, including CSE engineers.
+
+2. Hindustan Aeronautics Limited (HAL)
+HAL hires experienced engineers through direct recruitment for various technical roles, including those for CSE graduates.
+
+While GATE is an option for freshers, experienced candidates can often apply through separate channels.
+
+3. Bharat Heavy Electricals Limited (BHEL)
+BHEL conducts recruitment for experienced engineers through advertisement-driven selection processes, including interviews and tests, where GATE is not always mandatory.
+
+BHEL occasionally offers positions to CSE engineers for their IT or software-related roles.
+
+4. Oil and Natural Gas Corporation (ONGC)
+ONGC sometimes hires experienced engineers in various technical roles and may not always require a GATE score. Their selection process can include interviews, and sometimes written exams.
+
+CSE engineers with relevant experience in software development, IT, or data analysis are recruited for various IT-based roles.
+
+5. Indian Oil Corporation Limited (IOCL)
+While IOCL typically conducts GATE-based recruitment, they have also hired experienced CSE engineers in the past for roles in IT and software engineering.
+
+IOCL may use alternate recruitment processes for experienced professionals.
+
+6. Power Grid Corporation of India Limited (PGCIL)
+Power Grid occasionally hires experienced professionals in IT and software-related positions without GATE, especially for roles like System Analyst, IT Officer, and similar.
+
+7. National Thermal Power Corporation (NTPC)
+NTPC may hire experienced CSE engineers without requiring GATE scores, especially for IT and software engineering roles. The recruitment process may include interviews and technical assessments.
+
+8. Indian Space Research Organisation (ISRO)
+ISRO often hires experienced CSE engineers for various technical roles related to software engineering, system administration, and IT infrastructure.
+
+While GATE is commonly used for entry-level positions, experienced hires may not always need GATE scores.
+
+9. Steel Authority of India Limited (SAIL)
+SAIL hires for technical roles that can include positions for CSE engineers. Experienced professionals are recruited based on qualifications, experience, and performance in interviews or tests.
+
+10. Mahanagar Telephone Nigam Limited (MTNL)
+MTNL hires experienced engineers for various technical roles, including those related to software development, network management, and IT systems. GATE is not a strict requirement for experienced candidates.
+
+11. National Aluminium Company (NALCO)
+NALCO may also hire experienced professionals for technical roles like software development and IT system management, and GATE is not always a requirement.
+
+12. Indian Railways (Railway Recruitment Board - RRB)
+While RRB typically hires through GATE for technical roles, some senior positions in areas like software development, data analysis, and IT support are filled through different recruitment channels that may not require GATE.
+
+13. Kochi Metro Rail Limited (KMRL)
+KMRL sometimes hires experienced engineers in IT, software, and network systems, and GATE is not typically a requirement for these roles.
+
+14. Delhi Metro Rail Corporation (DMRC)
+DMRC has occasionally recruited experienced CSE engineers for various IT and software-related positions without requiring a GATE score.
+
+15. Telecommunications Consultants India Limited (TCIL)
+TCIL recruits engineers for roles in software and network technologies. They do not typically require a GATE score for experienced candidates.
+
+16. National Informatics Centre (NIC)
+NIC recruits IT professionals, including experienced CSE engineers, for various technical roles in software development and data management. GATE is not a requirement for experienced applicants.
+
+17. RITES Limited
+RITES often hires experienced engineers for technical roles, and they have occasionally recruited CSE engineers for roles related to IT infrastructure, software development, and systems analysis.
+
+18. Garden Reach Shipbuilders & Engineers (GRSE)
+GRSE recruits experienced engineers for roles like software development, IT systems, and project management, and may not always require GATE scores.

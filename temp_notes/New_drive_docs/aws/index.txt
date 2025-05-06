@@ -24,3 +24,27 @@ Regions and Avaiability Zones
 EC2 Instance Types - General Purpose, Compute Optimized, Memory Optimized, Storage Optimized, Accelerated Computing
 
 AMI (Amazon Machine Image)
+
+
+
+DOUBTS
+difference between bare metal and hosted virtualization
+difference between Iaas, Paas and Saas
+difference between  Public, Private and Hybrid cloud deployemnts 
+difference between region, available and local zones
+difference between roles, groups and policies in IAM 
+what is AMI  
+create launch template vs create image
+stateless vs serverless
+
+
+cloudfront vs multi-location hosting ??
+CIDR ??
+subnet ??
+public subnet vs private subnet
+amplify cloud sandbox
+
+cluster vs service vs task ??
+
+EKS vs ECS ??
+terraform vs cloudformation ??

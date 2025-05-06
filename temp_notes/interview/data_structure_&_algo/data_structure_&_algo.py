@@ -1,9 +1,18 @@
 # RESOURCE - takeuforward.org
 # ---------------------------
 
-
+2.1 -> 3
+2.2 -> 4
+3.1 -> 13
+3.2 -> 6,8,14
 
 """ 
+
+> n/2, > n/3
+2 sum, 3 sum, 4 sum
+binary search - (8,9)
+
+
 algorithm - 
 
 Euclidian algo for HCF/GCD
@@ -23,28 +32,85 @@ Manacher's Algorithm, the Tortoise and Hare algorithm., Sieve of Eratosthenes al
 
 # region ARRAY
 # ------------ 
+# array 
 '''
-- contiguous memory
-- fixed size
-- random access
-- insertion and deletion is costly
-- 2d array - matrix
-- 3d array - cube
-- 4d array - hypercube
-- 5d array - hypercube
-- types - single dimensional array, multi dimensional array
-- operations - insertion, deletion, traversal, search, sorting, merging, splitting, reversing, rotating, shuffling
-- indexing - 0 based indexing, 1 based indexing
+data structure that stores a collection of elements (usually of the same type) in a contiguous block of memory.
+'''
+# characteristics of array
+'''
+stores multiple values in one variable, fixed size.
+elements are stored sequentially, contiguous memory.
+can be accessed using indices (starting at 0).
+typically stores items of the same data type (especially in low-level languages).
+'''
+# operations
+''' 
+Access	            Get value at a specific index	                arr[2] → 30
+Update	            Change value at a specific index	            arr[2] = 99
+Insert	            Add a new item (not native in arrays)	        arr.insert(2, 25)
+Append	            Add to the end	                                arr.append(60)
+Delete	            Remove an item	                                del arr[1] or arr.remove(20)
+Search	            Find if an item exists	                        30 in arr → True
+Length	            Number of items	                                len(arr) → 5
+Iteration	        Loop through all items	                        for item in arr: print(item)
+'''
+# time complexity
+'''
+Access              | O(1) |                                        Fast: Direct index access
+Search              | O(n) |                                        Linear search unless sorted
+Insert              (End) | O(1) / O(n) |                           Amortized O(1), worst O(n)
+Insert              (Middle) | O(n) |                               Needs shifting
+Delete              | O(n) |                                        Shifting required
+'''
+# application of arrays 
+'''
+data structures (stacks, queues, heaps)
+image processing (pixels in 2D arrays)
+machine learning (vectors and matrices)
+database indexing
+games (2D maps, player positions)
+simulations
+'''
+# types of array 
+# one dimentional array
+'''
+# Python List (most common, flexible, can hold mixed types) 
+arr = [1, "hello", 3.5]
+
+# Array Module (for numeric values only)    
+import array
+a = array.array('i', [1, 2, 3])
+
+# NumPy Arrays (powerful for numerical computing) 
+import numpy as np
+a = np.array([1, 2, 3])
+'''
+# multi dimentional array
+'''
+# normal array
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+print(matrix[1][2])  # Output: 6
+
+# with numpy
+import numpy as np
+a = np.array([[1, 2], [3, 4]])
+print(a[1][0])  # Output: 3
+'''
+
+# arrays vs list vs tuple 
+'''
+Feature             | List          | Tuple             | Array 
+Mutable             | ✅            | ❌               | ✅
+Fixed Type          | ❌            | ❌               | ✅
+Performance         | Medium        | Fastest           | Fast (numeric)
+
+'''
+
 - maximum array size can be 10^7 in c++ and 10^6 in python
--
-
-
-
-
-- sorting algorithms - bubble sort, selection sort, insertion sort, merge sort, quick sort, heap sort, counting sort, radix sort, bucket sort, shell sort, tim sort, cocktail sort, comb sort, gnome sort, pigeonhole sort, cycle sort, strand sort, bitonic sort, pancake sort, bogo sort, stooge sort, bead sort, pigeon sort
-- searching algorithms - linear search, binary search, jump search, interpolation search, exponential search, fibonacci search, ternary search, polynomial search, jump search, fibonacci search, interpolation search, exponential search
-
-'''
 
 # endregion
 
@@ -92,6 +158,8 @@ when there is no uniformity in the data, sometimes it may be very large sometime
 
 
 # endregion 
+
+
 
 # region HASHING
 # --------------
@@ -186,6 +254,12 @@ example - load factor = 10 / 10 = 1
 # implementation_of_hash_table_in_python 
 '''
 - map / dictionay / unordered map - unordered map is a data structure that does not maintain the insertion order of keys. It is used when we have to maintain the order of keys and the key values are larger than the size of 10^6.
+
+- Time Complexity (TC): 
+O(1) -> for average and best case 
+O(n) -> for worst case, where n is the number of elements in the map.
+
+- Space Complexity (SC): 
 '''
 def frequency_array(arr):
     frequency_map = {}
@@ -207,6 +281,10 @@ print(result)                                                   # ---> {4: 3, 5:
 # using ordered map in python
 '''
 - ordered map - ordered map is a data structure that maintains the insertion order of keys.It is used when we have to maintain the order of keys and the key values are larger than the size of 10^6.
+
+- Time Complexity (TC): O(log n), where n is the number of elements in the map.
+
+- Space Complexity (SC): 
 '''
 from collections import OrderedDict
 
@@ -245,6 +323,10 @@ print("After moving 'apple' to the beginning:", ordered_map)
 
 '''
 frequency array / hash array - A frequency array is a data structure that stores the frequency of each element in an array. It is used when we have to maintain the order of keys and the key values are less than the size of 10^6.
+
+- Time Complexity (TC): O(n), where n is the number of elements in the array.
+
+- Space Complexity (SC): O(n), where n is the number of unique elements in the array.
 '''
 def frequency_array(arr, max_value):
     # Initialize a list of zeros with length max_value + 1
@@ -263,6 +345,10 @@ print(result)                                               # ---> [0, 0, 0, 0, 
 
 '''
 - using counter - A counter is a data structure that stores the frequency of each element in an array.
+
+- Time Complexity (TC): O(n), where n is the number of elements in the array.
+
+- Space Complexity (SC): O(n), where n is the number of unique elements in the array.
 '''
 from collections import Counter
 
@@ -275,6 +361,8 @@ result = frequency_array(arr)
 print(result)                                           # ---> {4: 3, 5: 1, 6: 2, 7: 1}
 
 # endregion
+
+
 
 
 
@@ -364,7 +452,7 @@ print(is_odd(5))   # Output: True
 
 '''
 - recursion tree - a tree where each node represents a recursive call
-- FOR CALL STACK / STACK SPACE, when the function is called first donot put it in the call stack, when it is callduring the function execution then put it inside the stack
+- FOR CALL STACK / STACK SPACE, when the function is called first donot put it in the call stack, when it is called during the function execution then put it inside the stack
 - FOR RECURSION TREE, when the function is called first put it in the recursion tree, when it is called during the function execution then again put it inside the recursion tree
 - base case - the condition when the recursion stops
 - recursive call - the function calls itself
@@ -375,6 +463,7 @@ print(is_odd(5))   # Output: True
 '''
 
 # endregion
+
 
 
 # region BIT MANIPULATION
@@ -449,7 +538,6 @@ add 1 to the binary number is 11111111111111111111111111110011
 
 - largest integer number a 32-bit system can store is 2^31 - 1 = 2147483647, INT-MAX
 - smallest integer number a 32-bit system can store is -2^31 = -2147483648, INT-MIN
- 
 '''
 
 # endregion
@@ -644,14 +732,88 @@ BINARY TREE
 
 
 
-BINARY SEARCH
-- when to use - all the entries must be  sorted
-- real life example - searching for a book in a library, searching for a person in a phone book, searching for a word in a dictionary
-- binary search is a search algorithm that finds the position of a target value within a sorted array
-- binary search is a divide and conquer algorithm
-- binary search is a recursive algorithm
-- binary search is a logarithmic time complexity algorithm
+# region BINARY SEARCH
+# binary search
+'''
+- search algorithm that finds the position of a target value within a sorted array
+- recursive algorithm
+'''
+# time complexity 
+'''
+O(log2(n)) - logarithmic time complexity algorithm
+'''
+# time complexity
+'''
+Best Case: O(1) (found at the middle)
+Average & Worst Case: O(log n)
+'''
+# space complexity:
+'''
+Iterative: O(1)
+Recursive: O(log n) due to recursive call stack
+'''
+# when to apply binary search
+'''
+when the search space is sorted
+''' 
+# real life examples of binary serach
+'''
+searching for a book in a library, searching for a person in a phone book, searching for a word in a dictionary
+Search engines
+Databases (B-Trees use binary search internally)
+Debugging: Finding first buggy commit (via binary search)
+Games/AI: Efficient decision-making
+Competitive Programming: Super useful in time-constrained problems
+'''
+# iterative approch to implement binary search
+def binary_search_iterative(arr, target):
+    low = 0
+    high = len(arr) - 1
 
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] == target:
+            return mid  # Target found
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1  # Target not found
+
+arr = [1, 3, 5, 7, 9, 11, 13]
+target = 7
+print(binary_search_iterative(arr, target))
+
+# recursive approch to implement binary search
+def binary_search_recursive(arr, target, low, high):
+    if low > high:
+        return -1  # Base case: target not found
+
+    mid = (low + high) // 2
+
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] < target:
+        return binary_search_recursive(arr, target, mid + 1, high)
+    else:
+        return binary_search_recursive(arr, target, low, mid - 1)
+
+arr = [1, 3, 5, 7, 9, 11, 13]
+target = 7
+print(binary_search_recursive(arr, target))
+
+# Overflow condition
+'''
+IF low or high - float("inf") or exceeds integer range
+
+mid = (low + high) // 2 ❌
+
+mid low + (high - low) // 2 ✅
+'''
+
+# endregion
 
 
 
@@ -688,6 +850,7 @@ real lfe example - folder structure in computer systems
 - bst -> left node value < right node value < root node value
 - duplicate values are not allowed
 - height of the bst - O(logN)
+
 
 
 

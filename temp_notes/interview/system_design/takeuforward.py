@@ -1354,12 +1354,164 @@ Salting: Adding random data to passwords before hashing to prevent rainbow table
 # region 11 SYSTEM DESIGN TRADEOFFS
 # region --------------------------
 - pull vs push
-- memory vs latency
-- throughput vs latency
-- consistency vs availability
-- latency vs accuracy
-- SQL vs NoSQL databases
+# memory vs latency
+'''
+- More memory (caching) reduces latency (faster response).
+- Less memory = more computation/disk access = higher latency.
+Trade-off: Store precomputed results (increase storage) vs. Compute on-demand (reduce storage but increase CPU usage).
 
+| More Memory                   | Less Memory                  |
+|--------------------------     |------------------------------|
+| Faster response (low latency) | Saves cost/resources         |
+| Higher infra cost             | Slower system                |
+'''
+
+
+# - throughput vs latency
+'''
+Throughput: How much you can process in unit time (per second).
+
+Latency: How fast a single request completes.
+
+Trade-off: Optimizing for one can reduce the other.
+
+| High Throughput          | Low Latency                  |
+|--------------------------|------------------------------|
+| Handles many users       | Fast for individual users    |
+| May queue/delay requests | May limit total volume       |
+'''
+# - consistency vs availability
+'''
+Consistency: All nodes have same data.
+
+Availability: System is always responsive.
+
+| Consistency             | Availability                 |
+|--------------------------|------------------------------|
+| Accurate data            | Always accessible            |
+| Possible downtime        | May return stale data        |
+'''
+# latency vs accuracy
+'''
+Real-time = low latency but possibly approximate/incomplete results.
+
+Accurate results = higher latency (more processing time).
+
+| Low Latency             | High Accuracy                |
+|--------------------------|------------------------------|
+| Fast but rough results   | Slower but precise           |
+| Used in predictions, ML  | Used in financial reports    |
+'''
+
+# SQL vs NoSQL databases
+'''
+| SQL (Relational)        | NoSQL (Non-relational)       |
+|--------------------------|------------------------------|
+| Structured schema        | Flexible, schema-less        |
+| Strong consistency       | Scales easily (horizontally) |
+| Used for banking, ERP    | Used for big data, real-time apps |
+
+'''
+
+
+# rest vs rpc
+'''
+| REST                    | RPC                          |
+|--------------------------|------------------------------|
+| Standard HTTP, human-readable | Compact, fast, binary (like gRPC) |
+| Language-agnostic       | Language-specific sometimes  |
+| Good for public APIs     | Good for internal services   |
+
+'''
+# strong vs eventful consistency
+'''
+Trade off:
+Strong consistency often requires tight coordination across nodes, limiting scalability.
+Relaxing consistency (eventual consistency) can allow for greater scalability.
+
+| Strong Consistency       | Eventual Consistency         |
+|--------------------------|------------------------------|
+| All users see same data  | May take time to sync        |
+| Slower writes            | Fast, scalable               |
+| Banking systems          | Social feeds, DNS            |
+'''
+# vertical vs horizontal scaling
+'''
+| Vertical Scaling         | Horizontal Scaling           |
+|--------------------------|------------------------------|
+| Add power to one machine | Add more machines            |
+| Simple but limited       | Scalable but complex         |
+'''
+# stateful vs stateless design
+'''
+| Stateful                 | Stateless                   |
+|--------------------------|------------------------------|
+| Server remembers client state | Server doesn’t remember anything |
+| Harder to scale          | Easier to scale (like REST) |
+| Used in games, sessions  | Used in APIs, microservices |
+'''
+# read vs write through cache 
+'''
+| Read-through            | Write-through               |
+|--------------------------|------------------------------|
+| Lazy loading             | Consistent cache             |
+| Cache may miss initially| Higher write latency         |
+
+'''
+# synchronous vs asynchronous 
+'''
+| Synchronous              | Asynchronous                 |
+|--------------------------|------------------------------|
+| Waits for response       | Doesn’t wait                 |
+| Simple to debug          | Better performance/scaling  |
+| Used in simple apps      | Used in queues, emails       |
+'''
+# batch vs stream processing
+'''
+| Batch Processing         | Stream Processing            |
+|--------------------------|------------------------------|
+| Process large data chunks | Process data in real-time    |
+| Slower, but efficient    | Fast, but complex            |
+| Used in reports          | Used in fraud detection, live analytics |
+'''
+# long polling vs websockets
+'''
+| Long Polling             | WebSockets                   |
+|--------------------------|------------------------------|
+| Client asks repeatedly   | Full-duplex connection       |
+| Higher overhead           | Real-time communication      |
+| Used where WebSocket not available | Used in chat, games   |
+'''
+# normalization vs denormalization
+'''
+Trade-offs:
+Optimizing for read (e.g., denormalization) may make writes slower or more complex.
+Optimizing for write (e.g., normalization) can make reads slower.
+
+| Normalization            | Denormalization             |
+|--------------------------|------------------------------|
+| Removes redundancy        | Duplicates data for speed   |
+| Saves space, avoids errors| Faster reads, slower writes |
+| Used in OLTP (writes)     | Used in OLAP (reads, reports)|
+'''
+# security vs usability
+'''
+Trade off:
+Stronger security often makes systems harder to use.
+Easier user experience may expose more attack vectors.
+'''
+# simplicity vs flexibility
+'''
+Simple systems are easier to understand and maintain but might not cover all use cases.
+
+Flexible systems can adapt to more scenarios but are harder to build and maintain.
+'''
+# modularity vs performance
+'''
+Modular (decoupled) design helps maintenance and scalability.
+But it can introduce performance overhead due to abstractions or service boundaries.
+'''
+# endregion
 
 # region 12 PRACTICE PROBLEMS
 # region --------------------
@@ -1379,6 +1531,7 @@ google maps
 gmail
 chess website
 UnboundLocalErrorgoogle docs
+stock exchange
 
 whatsapp
 https://www.youtube.com/watch?v=QhFvII571Lc

@@ -1,0 +1,331 @@
+
+==================================================================================== TASK UPDATES =======================================================================
+
+AIRTEL WIFI BILL PAYMENT - 28/04/25
+
+
+Sent - 796 - 1, Bot Feedback - 6
+Changes - 
+Previous Day Task - 831 - 4, 847 - 3
+Today's task -  848, 681
+Next task - 
+
+
+==================================================================================== CURRENT TASKS =======================================================================
+
+
+👉 CBV2-847
+🤔 When selected 2nd row as table end in commercial rent roll, the pop-up asked me select '.' instead of 'table end'
+Date issue already ressolved + data is distorted
+✅ DONE AND PUSHED BUT PR NOT CREATED
+
+848, 681
+✅ DONE AND PUSHED BUT PR NOT CREATED in same 847
+
+
+
+817, 819, 820, 
+826, 
+832 ❌
+
+
+
+
+---
+NEXT PRODUCTION RELEASE ISSUES
+
+845, 837, 836, 
+
+831 - working file template is changed
+
+827, 825, 
+
+---
+NON-PRODUCTION ISSUES
+
+824, 823, 794, 784, 791, 790, 714, 688, 655, 619, 672, 681, 721, 722,  
+
+1266
+
+ 
+----
+
+
+PENDING / ON HOLD
+-----------------
+- CBV2-796
+code done but in local
+
+- CBv2-790 ()
+frontend - pending 
+
+- CBv2-794 ()
+frontend - completed and pushed but not informed
+
+- CBV2-722 + CBV2-721 ( lease abstraction fetch deals api )
+backend  - pending
+frontend  - pending
+
+==================================================================================== BOT FEEDBACK =======================================================================
+
+- NEED DISCUSSION
+-----------------
+@@ Vineet
+ In the RR input tab, tenants are not listed in order of SF from largest to smallest, as required by our client (Rialto). Additionally, vacant units are not appearing at the end of the rent roll.
+ 
+- TENANT IDs
+------------
+024357ed-935a-46b0-b20b-d4096c62c75f     3650reit
+f733401e-1010-4835-a535-7ff7c320fc41     mcube
+c99af7dc-a347-4801-af36-bbbbf30be8c2     rialto 
+94a66a60-29f5-49a0-9bee-5d610ee77741     greystone
+031e4b75-4cdd-458f-92cf-decc6b56bdac     citi_danberg
+09eea6be-6ca6-4a10-9c9d-56512acfb798     citi
+162f3cdb-8eb8-4a89-bf30-953da990f351     bmo
+989c0a9d-d9c0-4d95-b965-a91ce0ebae01     agency_lst
+ 
+21/04/2025
+----------
+Nisha
+1348 citi industrial e182a6a8-fa41-4d33-b34d-6e7eaa553b5d ❌
+1351 citi office 34c5fa9f-c6f5-4622-9a63-315348da0f74 ❌
+
+
+==================================================================================== KT COMMERCIAL =======================================================================
+
+TOTAL TIME TAKEN - 
+
+KT COMMERCIAL HOURS GIVEN
+
+- KT COMMERCIAL CURRENT STATUS
+all recordings are saved except 24/02/2025 and 10/03/2025 and 11/03/2025 and 17/03/2025
+consolidation api for RR only and excel only 
+working_file_generation 
+client_model generation for bmo except underwritting logic
+no cashflow logic
+
+- KT COMMERCIAL DOCUMENTATION 👉👉👉 Documentation not mailed by Amit, Amit sir was in cc
+- headers identification of column 
+- knowledge base colums/table kt
+- documents difference between based on property types
+- formats available for all propert types 
+- business logic of industrial, office and retail not implementation 
+
+==================================================================================== OFFICE LEARNING =======================================================================
+
+Estimated Given Time - 
+
+Time Taken - 
+
+
+==================================================================================== TASK UPDATES =======================================================================
+
+Issues/Bugs
+- in pdf, page which has been marked as cf/rr can be marked again. ideally, it should be locked
+- make type as  rent_type in frontend and backend
+- mark a column in cf then give target column name, again remark the same column without removing the column header with other header payload have fault
+- mark the same name cf as cf_2 without closing the model it will throw error but when model is closed and open again mark the same it will be good to go
+
+Admin issue
+- select columns in ✅ selection issue
+- user/deals/assets/client_model/model_attribute/deal_header/rent_roll_attribute/role_permission   view/edit goes undefined
+- each row data should be left and upwards allinged
+- serial number should be there for each row in the tables
+- admin page totak nos of deals and total nos of users are not rendering
+- 404 page not working admin
+
+- loader time static
+- google map key is visible on network
+- ocr issue
+- S3 url is openable and file is downloadable
+- save asset changes takes time - working on solution
+- mandatory headers will change logic
+- Optimization
+- Standardization like pre commit, linters etc
+
+- protected file uploading issue 
+- Black screen on UI - CBV2-205
+- xlsm classification and processing issue
+- RR and CF are on the same page
+two CF as one entered
+- merge issue 
+- 41, 147, 
+- Set select if one option is there in dropdown
+
+==================================================================================== OCR UPDATES =======================================================================
+
+SQL Workbench
+SELECT count(*) FROM uzs5idrr_citi.deal where created_by ="1b6ec8eb-3486-42c3-ac3b-7c4b0b7af40b" and date(created_at) = current_date() - interval 1 day and client_model_id is not NUll;
+
+- o3/02 - 38 (office)
+- 04/02 -  44 (wfh)
+- 05/02 - holiday
+- 06/02 - 47 (wfh)
+181 to 218
+- 07/02 - 41 (office)
+235 to 277
+429 to 390
+- 10/02 - 28 (office)
+389 - 
+278 - 
+
+392 
+files
+366
+
+314 -> 260 =>total 54
+260 -> 201 => total 59
+202 -> 176 => total 26
+
+
+==================================================================================== BIT BUCKET BRANCHES =======================================================================
+
+
+Active Branches :
+Frontend - staging
+Backend - staging
+
+
+==================================================================================== LEAVS / HOLIDAYS =======================================================================
+
+Leave Apply
+Jan - 
+Feb - 25 
+Mar - 7, 17
+Apr - 21
+May - 12 to 16
+Jun - 9, 10
+Jul - 
+Aug - 
+Sept - 
+Oct - 
+Nov - 
+Dec - 
+
+till May end
+PLCF - 6, CL - 6, SL - 6, PL - 6
+
+==================================================================================== FRONTEND IMPLICATIONS =======================================================================
+
+Admin Portal
+ - Client model edit & update
+- Model attribute edit, update and compare                
+Website
+ - Light & Dark mode / central color code change in project 
+ - Text size A- A A+
+ - Chatbot/Virtual assistant for help
+ - Guide/Tour indicator for first login user
+ - Chatting system with peers
+ - Attach/send deal info attachments
+ - UI improvements   
+
+
+==================================================================================== SPREADER CHANGE DETECTION =======================================================================
+
+Events Handled
+-	Cell value changed (Edit) ✅
+-	Cell value null (Edit) ✅
+-	Cell cut ✅
+-	Cell copy ✅
+-	Cell paste ✅
+-	Range delete✅
+-	Copy range paste ✅
+-	Cut range paste ✅
+-	Cell drag drop ✅🆕
+-	Range drag drop ✅🆕
+-	Cell extend ✅🆕
+-	Range extend ✅🆕
+-	Delete row ✅🆕
+-	Add row ✅🆕
+-	Delete column ✅🆕
+-	Add column ✅🆕
+
+Feature need to prevent
+--------------------------
+-   Add sheet ❌
+-   Delete sheet ❌
+-   Formulae change ❌
+
+
+
+ISSUES
+------
+- Range Row Paste - id clicked on row number then payload is correct. If pasted on first column just after row numbers then payload will not be correct.
+- Range Column Paste - Column range payload to -1
+- Cell Delete - using delete option from context, we can't track it
+- Can't stop from entering formulae becoz editing will stop
+
+===========================================================================================================
+
+ISSUES/BUGS
+-----------
+loader time static
+google map key is visible on network
+ocr issue
+S3 url is openable and file is downloadable
+save asset changes takes time - working on solution
+mandatory headers will change logic
+Optimization
+Standardization like pre commit, linters etc
+
+protected file uploading issue 
+Black screen on UI - CBV2-205
+xlsm classification and processing issue
+RR and CF are on the same page
+two CF as one entered
+merge issue 
+41, 147, 
+Set select if one option is there in dropdown
+
+ISSUES
+------
+- Range Row Paste - id clicked on row number then payload is correct. If pasted on first column just after row numbers then payload will not be correct.
+- Range Column Paste - Column range payload to -1
+- Cell Delete - using delete option from context, we can't track it
+- Can't stop from entering formulae becoz editing will stop
+
+===========================================
+-	Cell value changed (Edit) ✅
+-	Cell value null (Edit) ✅
+-	Cell cut ✅
+-	Cell copy ✅
+-	Cell paste ✅
+ 
+-	Range delete✅
+-	Copy range paste ✅
+-	Cut range paste ✅
+
+-	Cell drag drop
+-	Range drag drop
+-	Cell extend
+-	Range extend
+
+-	Delete row
+-	Delete column
+
+formulae change 
+
+===========================================
+
+IMPLICATIONS
+------------
+Admin Portal
+	1.	Client model edit & update
+	2.	Model attribute edit, update and compare
+	
+Website
+	1.	Light & Dark mode / central color code change in project 
+	2.	Text size A- A A+
+	3.	Chatbot/Virtual assistant for help
+	4.	Guide/Tour indicator for first login user
+	5.	Chatting system with peers
+	6.	Attach/send deal info attachments
+	5.	UI improvements
+	
+
+
+==================================================================================== MANAGEMENT ISSUES =======================================================================
+
+04/04/2025
+production testing till 8pm
+"work over personal commitments" but Amit sir leaved at 5:30 leaving Ravi, Dhruv and myself

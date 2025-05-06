@@ -29,6 +29,14 @@ https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before
 
 https://www.youtube.com/watch?v=tNm_NNSB3_w&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=5
 
+
+
+
+- for outer loop, count the number of lines/rows
+- for inner loop, count the number of elements in each line or focus on the columns and connect them somehow to the rows
+- print them inside the inner loop
+- observe symmetry
+
 '''
 
 # PATTERN 1
@@ -91,6 +99,7 @@ for i in range(1,rows+1):
 
 # PATTERN 5
 '''
+⭐⭐⭐
 *****
 ****
 ***
@@ -119,6 +128,7 @@ for i in range(1,rows+1):
 
 # PATTERN 7
 '''
+⭐⭐⭐
     *    
 
    ***   
@@ -143,6 +153,7 @@ for i in range(1,rows):
 
 # PATTERN 8
 '''
+⭐⭐⭐
 *********
  ******* 
   ***** 
@@ -200,6 +211,7 @@ for i in range(1,rows):
 
 # PATTERN 10
 '''
+⭐⭐⭐
 *
 **
 ***
@@ -221,6 +233,7 @@ for i in range(1,2*rows):
     
 # PATTERN 11
 '''
+⭐⭐⭐
 1
 01
 101
@@ -259,16 +272,16 @@ for i in range(1,rows+1):
 
 # PATTERN 13
 '''
+⭐⭐⭐
 1 
 2 3
 4 5 6
 7 8 9 10
 11 12 13 14 15
-ABCDE
 '''
 # important
 num = 1
-for i in range(1, rows+1, 1):
+for i in range(1, rows+1):
     for j in range(i):
       print(num, end=" ")
       num = num + 1
@@ -276,6 +289,7 @@ for i in range(1, rows+1, 1):
     
 # PATTERN 14
 '''
+⭐⭐⭐
 A
 AB
 ABC
@@ -319,6 +333,8 @@ for i in range(rows):
 
 # PATTERN 17
 '''
+⭐⭐⭐
+😎😎😎
    A
   ABA
  ABCBA
@@ -357,9 +373,9 @@ for i in range(1,num+1):
 ****  ****
 ***    ***
 **      **
-*         *
-*         *
-**       **
+*        *
+*        *
+**      **
 ***    ***
 ****  ****
 **********
@@ -386,6 +402,7 @@ for i in range(num):
 
 # PATTERN 20
 '''
+⭐⭐⭐
 *        *
 **      **
 ***    ***
@@ -417,6 +434,7 @@ for i in range(1, 2*num):
 
 # PATTERN 21
 '''
+⭐⭐⭐
 ****
 *  *
 *  *
@@ -433,6 +451,7 @@ for i in range(num):
 
 # PATTERN 22
 '''
+⭐⭐⭐
 4444444
 4333334
 4322234
@@ -457,6 +476,8 @@ for i in range(2*n-1):
 
 
 
+
+
 # region 1.3 C++ and Java STL 
 # ---------------------------
 '''
@@ -467,6 +488,9 @@ for i in range(2*n-1):
 
 
 # endregion 
+
+
+
 
 
 # region 1.4 MATHS PROBLEM 
@@ -487,6 +511,10 @@ https://www.youtube.com/watch?v=1xNbjMdbjug&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 to reduce the number, divide - 123 // 10 = 12
 to get the last number, modulo - 123 % 10 = 3
 😎😎😎 count = int(math.log10(num)) + 1
+
+number / 10 -> TC is O(log10(number))
+number / 2 -> TC is O(log2(number))
+number / 5 -> TC is O(log5(number))
 '''
 # Method 1 - brute force
 '''
@@ -529,8 +557,9 @@ https://www.youtube.com/watch?v=1xNbjMdbjug&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 '''
 # Method 1 - optimal approch
 '''
-TC - O(log10(N))
-SC - O(1)
+Time Complexity: O(log10(n))
+
+Space Complexity: O(1)
 '''
 def reverse(nnum):
   reverse_num = 0
@@ -559,8 +588,9 @@ https://www.youtube.com/watch?v=1xNbjMdbjug&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 '''
 # Method 1 - optimal solution
 '''
-TC - O(log10(N))
-SC - (1) 
+Time Complexity: O(log10(n))
+
+Space Complexity: O(1)
 '''
 def pallindrome(num):
   original_num = num
@@ -625,8 +655,9 @@ https://www.youtube.com/watch?v=1xNbjMdbjug&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 '''
 # Method 1 - brute force, check number % i === 0
 '''
-# TC - O(N)
-# SC - O(N)
+Time Complexity: O(num)
+
+Space Complexity: O(num)
 '''
 def divisors(num):
   divisors_lst = []
@@ -639,8 +670,14 @@ print(divisors(num))
 
 # Method 2 - optimized approch, using math.sqrt()
 '''
-TC - O(sqrt(N))
-SC - (2*sqrt(N))
+Time Complexity: O(√num)
+
+Space Complexity: O(√num)
+
+for example, num = 12
+range(1,int(math.sqrt(num))+1) -> range(1, 4) -> 1,2,3
+i * other_number will be appended the result but other number should not be already present in the result !
+
 '''
 import math
 def divisors(num):
@@ -671,8 +708,9 @@ https://www.youtube.com/watch?v=1xNbjMdbjug&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 '''
 # Method 1 - brute force
 '''
-TC - O(N)
-SC - O(1)
+Time Complexity: O((n))
+
+Space Complexity: O(1)
 '''
 def checkPrime(num):
   divisors_lst = []
@@ -689,8 +727,11 @@ print(checkPrime(num))
 
 # Method 2 - optimal approch
 '''
-TC - O(sqrt(N))
-SC - O(1)
+Time Complexity: O(√num)
+
+Space Complexity: O(1)
+
+number of divisors must be 2 only !
 '''
 def checkPrime(num):
   divisors_lst = []
@@ -707,11 +748,7 @@ def checkPrime(num):
 num = 15
 print(checkPrime(num))
 
-
-# 
-
-
-# 7 GCD or HCF (Highest Common Factor)
+# 7 GCD or HCF (Greatest Common Divisor / Highest Common Factor)
 
 '''
 🟢🟢🟢🟢🟢
@@ -722,17 +759,14 @@ https://takeuforward.org/data-structure/find-gcd-of-two-numbers/
 https://practice.geeksforgeeks.org/problems/lcm-and-gcd4516/1
 
 https://www.youtube.com/watch?v=1xNbjMdbjug&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=7
-
-😎😎😎
-Euclidian algo,
-GCD(a, b) = GCD(a-b, b) if a > b
-=>  GCD(a, b) = GCD(a % b, b) if a > b
 '''
 # Method 1 - brute force, using maths
 '''
-TC - O(min(N1,N2))
-SC - O(1)
-'''def find_hcf(num_1, num_2):
+Time Complexity: O(min(num_1, num_2))
+
+Space Complexity: O(1)
+'''
+def find_hcf(num_1, num_2):
   hcf = 1
   for i in range(1, min(num_1, num_2)):
     if num_1%i == 0 and num_2%i == 0:
@@ -744,8 +778,14 @@ print(find_hcf(num_1,num_2))
 
 # Method 2 : optimal approch, Euclidian algo
 '''
-TC - O(min(N1,N2))
-SC - O(1)
+Time Complexity : O(logϕ(min(a, b))), where ϕ may be any number.
+
+Space Complexity : O(1)
+
+😎😎😎
+Euclidian algo,
+GCD(a, b) = GCD(a-b, b) if a > b
+=>  GCD(a, b) = GCD(a % b, b) if a > b
 '''
 def find_gcd(a, b):
     while a > 0 and b > 0:
@@ -765,6 +805,7 @@ print(find_gcd(8, 12))
 
 
 
+
 # region 1.5 RECURSION PROBLEM
 # ----------------------------
 # 1 Introduction
@@ -775,7 +816,8 @@ https://takeuforward.org/recursion/introduction-to-recursion-understand-recursio
 
 https://bit.ly/3K2epHv
 
-https://www.youtube.com/watch?v=6IIgSFBPQ0U
+https://www.youtube.com/watch?v=6IIgSFBPQ0U (Recommended, Love Babbar)
+https://www.youtube.com/watch?v=yVdKa8dnKiE&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=8
 
 ''' 
 
@@ -786,6 +828,10 @@ https://www.youtube.com/watch?v=6IIgSFBPQ0U
 https://takeuforward.org/recursion/print-name-n-times-using-recursion/
 
 https://bit.ly/3y2BiWz
+
+Time Complexity (TC): O(N)
+
+Space Complexity (SC): O(N)
 
 '''
 def recursive_call_1(N):
@@ -804,6 +850,9 @@ https://takeuforward.org/recursion/print-1-to-n-using-recursion/
 
 https://practice.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1
 
+Time Complexity (TC): O(N)
+
+Space Complexity (SC): O(N)
 '''
 def recursive_call_2(N):
   if N == 0:
@@ -819,6 +868,11 @@ recursive_call_2(5)
 https://takeuforward.org/recursion/print-n-to-1-using-recursion/
 
 https://bit.ly/3LOkcBn
+
+Time Complexity (TC): O(N)
+
+Space Complexity (SC): O(N)
+
 '''
 def recursive_call_3(N):
   if N == 0:
@@ -834,6 +888,11 @@ recursive_call_3(5)
 https://takeuforward.org/data-structure/sum-of-first-n-natural-numbers/
 
 https://practice.geeksforgeeks.org/problems/sum-of-first-n-terms5843/1
+
+Time Complexity (TC): O(N) (due to the N recursive calls)
+
+Space Complexity (SC): O(N) (due to the call stack)
+
 '''
 def sum(N):
   if N == 1:
@@ -849,11 +908,12 @@ https://takeuforward.org/data-structure/factorial-of-a-number-iterative-and-recu
 
 https://practice.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/0?problemType=functional&difficulty%5B%5D=-1&page=1&query=problemTypefunctionaldifficulty%5B%5D-1page1
 
+Time Complexity (TC): O(N) (due to the N recursive calls)
+
+Space Complexity (SC): O(N) (due to the call stack)
+
 '''
-'''
-TC - O(N)
-SC - O(N)
-'''def fact(N):
+def fact(N):
   if N == 1:
     return 1
   return N * fact(N-1)
@@ -872,6 +932,11 @@ https://www.youtube.com/watch?v=twuC1F6gLI8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 
 '''
 # method 1 - using built-in methods
+'''
+Time Complexity (TC): O(N) (because the function processes each element of the input list once).
+
+Space Complexity (SC): O(N) (due to the call stack and the reversed_arr list).
+'''
 def rev(arr, reversed_arr):
   if len(arr) == 0:
     return
@@ -881,6 +946,14 @@ def rev(arr, reversed_arr):
 print(rev([3,2,1],[]))
 
 # method 2 - using python swaping technique
+'''
+Time Complexity (TC): O(N) (since we make N / 2 recursive calls and each call does a constant-time swap).
+
+Space Complexity (SC): O(N) (due to the call stack, as recursion depth is proportional to N).
+
+for arr len 5, len(arr)//2 -> 2 -> indexing starts with 0  and middle one donot need swaping -> (0,1)
+for arr len 6  len(arr)//2 -> 3 -> indexing starts with 0 and middle one condition will not arise -> (0,1,2) 
+'''
 def reverse_arr(arr, start, end):
   if start >= end:
     return
@@ -892,16 +965,30 @@ array = [1,2,3,4]
 print(reverse_arr(array, 0, len(array) - 1))
 
 # method 3 - without using any other variable
+'''
+Time Complexity (TC): O(N) (because there are N / 2 recursive calls and each call performs a constant-time operation).
+
+Space Complexity (SC): O(N) (due to the recursion depth, which is proportional to N / 2).
+
+for arr len 5, len(arr)//2 -> 2 -> indexing starts with 0  and middle one donot need swaping -> (0,1)
+for arr len 6  len(arr)//2 -> 3 -> indexing starts with 0 and middle one condition will not arise -> (0,1,2) 
+
+'''
 def reverse_arr(arr, index):
   if index >= len(arr)//2:
     return arr
-  arr[index], arr[len(arr) - index - 1] = arr[len(arr) - index - 1], arr[index]      # ---> start = arr[i], end = arr[len(arr) - i 1]
+  arr[index], arr[len(arr) - index - 1] = arr[len(arr) - index - 1], arr[index]      # ---> start = arr[i], end = arr[len(arr) - i - 1]
   return reverse_arr(arr, index + 1)
   
 array = [1,2,3,4]
 print(reverse_arr(array, 0))
 
 # method 4 - using for loop / extra array
+'''
+Time Complexity (TC): O(n) (since we iterate over the array once).
+
+Space Complexity (SC): O(n) (due to the additional array reversed_arr created).
+'''
 def reverse_arr(arr):
   reversed_arr = [0]*len(arr)
   for i in range(n-1, -1, -1):
@@ -911,6 +998,11 @@ array = [1,2,3,4]
 print(reverse_arr(array, 0))
 
 # method 4 - using while loop/ space optimized meyhod
+'''
+Time Complexity (TC): O(n) (because the function iterates over half of the array).
+
+Space Complexity (SC): O(1) (due to in-place swapping with only two extra variables).
+'''
 def reverse_arr(arr, index):
   p1 = 0
   p2 = len(arr) - 1
@@ -933,6 +1025,11 @@ https://leetcode.com/problems/valid-palindrome/
 
 '''
 # method 1 : using while loop 
+'''
+Time Complexity (TC): O(n), where n is the length of the string (due to the while loop iterating over half the string).
+
+Space Complexity (SC): O(1) (since only a few variables are used and no extra data structures are created).
+'''
 def pallindrome(str, i):
   left = 0
   right = len(str) - 1
@@ -945,6 +1042,11 @@ def pallindrome(str, i):
 print(pallindrome("MADAM", 0))
 
 # method  2 : using recursion  
+'''
+Time Complexity (TC): O(n), where n is the length of the string.
+
+Space Complexity (SC): O(n), due to the recursion stack.
+'''
 def pallindrome(str, i):
   if i >= len(str)//2:
     return True
@@ -961,11 +1063,9 @@ https://takeuforward.org/arrays/print-fibonacci-series-up-to-nth-term/
 
 https://leetcode.com/problems/fibonacci-number/
 
+Time Complexity (TC): O(2^n) (due to exponential growth in recursive calls).
 
-'''
-'''
-TC - O(2^N)
-SC - O(N)
+Space Complexity (SC): O(n) (due to the depth of recursion in the call stack).
 '''
 def fibonacci(num):
   if num == 0: return 0
@@ -975,6 +1075,7 @@ def fibonacci(num):
 print(fibonacci(6))
 
 # endregion
+
 
 
 
@@ -1059,14 +1160,23 @@ https://takeuforward.org/sorting/selection-sort-algorithm/
 https://bit.ly/3ppA6YJ
 
 - https://www.youtube.com/watch?v=HGk_ypEuS24&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=14
+
 - https://www.geeksforgeeks.org/selection-sort-algorithm-2/
 
 - select the smallest element and swap
 
+steps
+- iterate over the arr till n-1 with i
+- take a variable min in side loop and assign i
+- again iterate over the array from i+1 to n with j
+- if arr[j] < arr[min] then min = j
+- after the inner loop is over swap arr[i] and arr[min]
+
 '''
 '''
-TC - O(N^2)
-SC - 
+Time Complexity (TC): O(n^2), where n is the size of the input array.
+
+Space Complexity (SC): O(1), since the sorting is done in place with constant extra space.
 '''
 def selection_sort(arr):
   n = len(arr)
@@ -1091,10 +1201,22 @@ https://takeuforward.org/data-structure/bubble-sort-algorithm/
 https://bit.ly/3w6yQx8
 
 https://www.youtube.com/watch?v=HGk_ypEuS24&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=14
+
 https://www.geeksforgeeks.org/bubble-sort/
 
 - swapping the adjacent elements and push the max element in the last
 
+steps
+- iterate over the arr till n with i
+- iterate over the arr till n-i-1 with j, because for example
+for arr len = 4, i => 0 and j => 0 to 4 not till 5 because we need to swap the element with the next element with j+1. It will cause error if we run it till 5
+- if arr[j] > arr[j+1] then swap arr[j] and arr[j+1]
+
+'''
+'''
+Time Complexity (TC): O(n^2), where n is the size of the input array (for worst and average cases). O(n) for best case only.
+
+Space Complexity (SC): O(1), as it sorts in place without using extra space.
 '''
 def bubble_sort(arr):
   n = len(arr)
@@ -1106,6 +1228,22 @@ def bubble_sort(arr):
 
 print(bubble_sort([1,2,4,5,3,2,4,1]))
 
+# 👉👉👉 optimized bubble sort
+# def bubble_sort(arr):
+#   n = len(arr)
+#   for i in range(n):
+#     swapped = False  # Flag to check if any swapping happened during this iteration
+#     for j in range(n -i -1):
+#       if arr[j] > arr[j+1]:
+#         arr[j], arr[j+1] = arr[j+1], arr[j]
+#         swapped = True
+#     # If no elements were swapped in inner loop, then the array is sorted
+#     if not swapped:
+#       break
+#   return arr  
+
+# print(bubble_sort([1,2,4,5,3,2,4,1]))
+
 # TODO : 3 insertion sort
 '''
 🟢🟢🟢🟢🟢
@@ -1116,10 +1254,29 @@ https://takeuforward.org/data-structure/insertion-sort-algorithm/
 https://bit.ly/3JVcqot
 
 - https://www.youtube.com/watch?v=HGk_ypEuS24&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=14
+
 - https://www.geeksforgeeks.org/insertion-sort/
+- https://www.youtube.com/watch?v=9j7llneJ77o
 
 - takes an element and place it in the correct position
 
+steps
+- iterate over the arr from 1 to n with i
+- take a variable key and assign arr[i]
+- take a variable j and assign i-1
+- while j >= 0 and key < arr[j] if true then arr[j+1] = arr[j] and j = j-1
+for example in an arr 40,30,20 if i is at 2 index the j will be at 1 then 0 then -1 then the condition j >=0 will become false and exit from the loop 
+- after the inner loop is over arr[j+1] = key
+
+'''
+'''
+Time Complexity (TC):
+
+Worst case and Average case: O(n^2) (when the array is sorted in reverse order).
+
+Best case: O(n) (when the array is already sorted).
+
+Space Complexity (SC): O(1), as the sorting is done in place with constant extra space.
 '''
 def insertion_sort(arr):
   n = len(arr)
@@ -1151,49 +1308,73 @@ https://takeuforward.org/data-structure/merge-sort-algorithm/
 https://bit.ly/3A30Anw
 
 - https://www.youtube.com/watch?v=ogjf7ORKfd8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=15
+
 - https://www.geeksforgeeks.org/merge-sort/ 
 
 - divide array into two parts and sort them
+
+
+steps
+merge_sort
+- base condition if low >= high then return
+- divide the array into two parts by mid = (low + high)//2
+- call the merge_sort function for left part as merge_sort(arr, low, mid)
+- call the merge_sort function for right part as merge_sort(arr, mid+1, high)
+- call the merge function for merging the two parts as merge(arr, low, mid, high)
+
+merge
+- take a temp array as [], low as left and mid+1 as right
+- take a while loop for left <= mid and right <= high
+- if arr[left] < arr[right] then append arr[left] to temp and left = left + 1 else append arr[right] to temp and right = right + 1
+- if left <= mid then append arr[left] to temp and left = left + 1 
+- if right<=high then append arr[right] to temp and right = right + 1
+- copy the temp array to arr from low to high 
+
+Time Complexity: O(nlog2(n)), log2(n) is for recursive merge_sort calling and divising it by 2 and n because we are merging it n number of time as the length of arr.
+
+Space Complexity: O(n) because we are creating a temp arr in merge section.
 
 '''
 def merge_sort(arr, low, high):
   if low >= high:
     return
   
-  mid = (low + high)//2
-  merge_sort(arr, low, mid )
-  merge_sort(arr, mid+1, high)
+  mid = (low + high) // 2
+  merge_sort(arr, low, mid)
+  merge_sort(arr, mid + 1, high)
   merge(arr, low, mid, high)
-  return arr  
-  
+  return arr
+
 def merge(arr, low, mid, high):
   temp = []
   left = low
-  right = mid+1
+  right = mid + 1
   
-  while left<=mid and right<=high:
+  while left <= mid and right <= high:
     if arr[left] < arr[right]:
       temp.append(arr[left])
-      left = left + 1
+      left += 1
     else:
       temp.append(arr[right])
-      right = right + 1
-      
-  while left<=mid:
-    temp.append(left)
-    left = left + 1
-    
-  while right<=high:
-    temp.append(right)
-    right = right + 1
-    
-  for i in range(len(temp)):
-    arr[low+1] = temp[i]
-    
-  # return arr
+      right += 1
+          
+  # Append remaining elements from the left half
+  while left <= mid:
+    temp.append(arr[left])
+    left += 1
   
-arr = [1,2,4,5,3,2,4,1]
-print(merge_sort(arr, 0, len(arr)-1))
+  # Append remaining elements from the right half
+  while right <= high:
+    temp.append(arr[right])
+    right += 1
+  
+  # Copy the sorted temp array back to the original arr
+  for i in range(len(temp)):
+    arr[low + i] = temp[i]
+
+arr = [1, 2, 4, 5, 3, 2, 4, 1]
+print(merge_sort(arr, 0, len(arr) - 1))
+
 
 # TODO : 2 recursive bubble sort
 '''
@@ -1299,35 +1480,54 @@ https://bit.ly/3dsEbIK
 
 https://www.youtube.com/watch?v=WIrA4YexLRQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=16
 
-- pick a pivot and place it in the correct position
+https://www.youtube.com/watch?v=UjdyhNkaO9k
 
+- pick a pivot and place it in the correct place to the sorted array
+
+steps
+❌❌❌❌❌❌ NOT UNDERSTAND ❌❌❌❌❌❌
+
+Time Complexity:
+Best and Average Time Complexity: 
+O(n logn)
+Worst Time Complexity: 
+O(n^2)
+
+Space Complexity:
+O(log n ) for best and average case
+O(n) for worst case
 '''
 def quick_sort(arr, low, high):
-    if low < high:
-        partition_index = find_right_place(arr, low, high)
-        quick_sort(arr, low, partition_index - 1)
-        quick_sort(arr, partition_index + 1, high)
-    return arr
+  if low < high:
+    partition_index = find_right_place(arr, low, high)
+    quick_sort(arr, low, partition_index - 1)
+    quick_sort(arr, partition_index + 1, high)
+  return arr
 
 def find_right_place(arr, low, high):
-    pivot = arr[low]
-    i = low
-    j = high
-    
-    while i < j:
-        # find element greater than pivot
-        while i <= high and arr[i] <= pivot:
-            i += 1
-            
-        # find element smaller than pivot
-        while j >= low and arr[j] > pivot:
-            j -= 1
-            
-        if i < j:
-            arr[i], arr[j] = arr[j], arr[i]
-    
-    arr[low], arr[j] = arr[j], arr[low]
-    return j
+  # Choose the pivot element (typically the first element in this implementation)
+  pivot = arr[low]
+  # i will track the index for the left side (elements greater than pivot)
+  # j will track the index for the right side (elements smaller than pivot)
+  i = low
+  j = high
+  
+  # Continue until i and j cross each other
+  while i < j:
+    # Find an element greater than the pivot (i starts from the left and moves right)
+    while i <= high and arr[i] <= pivot:
+      i += 1
+    # Find an element smaller than the pivot (j starts from the right and moves left)
+    while j >= low and arr[j] > pivot:
+      j -= 1
+    # If i < j, swap the elements at i and j because they're out of place
+    if i < j:
+      arr[i], arr[j] = arr[j], arr[i]
+  # After i and j cross, place the pivot in its correct sorted position (swap it with arr[j])
+  arr[low], arr[j] = arr[j], arr[low]
+  
+  # Return the index of the pivot, which is now in the correct place
+  return j
 
 arr = [1,2,4,5,3,2,4,1]
 print(quick_sort(arr, 0, len(arr)-1))
@@ -1346,31 +1546,41 @@ print(quick_sort(arr, 0, len(arr)-1))
 
 https://takeuforward.org/data-structure/find-the-largest-element-in-an-array/
 
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=17
+
 https://bit.ly/3Pld280
 
 '''
 # - method 1 : brute force, using sort 
 '''
+
+steps
+- iterate the outer loop with i till n-1
+- take a variable max and initialize it with i
+- iterate the inner loop with j from i+1 to n
+- check if arr[j] > arr[max] if true them make max = j
+- after the inner loop ends swap arr[i] with arr[max]
+
 TC - O(N^2)
 SC - O(N)
 '''
 def largest_element_2(arr):
   n = len(arr)
   for i in range(n-1):
-    min = i
+    max = i
     for j in range(i+1, n):
-      if arr[j] < arr[min]:
-        min = j
-    arr[i], arr[min] = arr[min], arr[i]
+      if arr[j] < arr[max]:
+        max = j
+    arr[i], arr[max] = arr[max], arr[i]
   return arr  
 arr = [1,2,4,7,7,5]
 largest_element_2(arr)
 print("largest element => ", arr[len(arr) - 1])
 
-# - method 2 : brute force, using sort buit-in
+# - method 2 : brute force, using sort() buit-in
 '''
-TC - 
-SC - 
+TC - O(n logn) depends on which sorting is used internally
+SC - O(1)
 '''
 def largest_element_2(arr):
   arr.sort()
@@ -1380,13 +1590,19 @@ print(largest_element_2(arr))
 
 # - method 3 : brute force, using max() built-in method
 '''
-TC -
-SC - 
+TC - O(n)
+SC - O(1)
 '''
 print(max([1,2,4,7,7,5]))
 
 # - method 4 : using loop, 
 '''
+
+steps
+- initialize largest = arr[0]
+- iterate over the array with i on the array
+- check if i > largest then largest = 1
+
 TC - O(N)
 SC - O(1) 
 '''
@@ -1401,14 +1617,25 @@ print(largest_element_1([1,2,4,7,7,5]))
 # 2 TODO : find smallest and second largest element in an array
 '''
 🟢🟢🟢🟢🟢
+⭐⭐⭐
+
 
 https://takeuforward.org/data-structure/find-second-smallest-and-second-largest-element-in-an-array/
+
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=17
 
 https://bit.ly/3pFvBcN
 
 '''
-# method 1: brute force using sort, TC - O(N log(N)), TC - O(1)
+# method 1: brute force using sort
 # NOTE : ONLY WORK IF ARRAY DOESNOT CONTAIN DUPLICATES
+'''
+
+TC - O(N log(N))
+
+SC - O(1)
+
+'''
 def second_largest_element_2(arr):
   arr.sort()
   return {
@@ -1418,7 +1645,17 @@ def second_largest_element_2(arr):
 arr = [1,2,4,7,7,5]
 print(second_largest_element_2(arr))
 
-# method 2: better approch, using loop, TC - O(N), SC - O(1)
+# method 2: better approch, using loop
+'''
+
+steps
+- initialize smallest = float("inf"), second_smallest = float("inf"), largest = float("-inf"), second_largest = float("-inf")
+- iterate over the array with i on the array and find small and large using min() and max() methods with the current element
+- again iterate over the array with i on the array and find second_small and second_large by comparing small and large element 
+
+Time Complexity - O(N)
+Space Complexity - O(1)
+'''
 def largest_smallest(arr):
   n = len(arr)
   if n == 0 and n==1:
@@ -1444,20 +1681,30 @@ def largest_smallest(arr):
 arr = [1,3,6,6,2,6]
 print(largest_smallest(arr))
 
-# method 3: optimal approch, TC - O(n), SC -- O(1)
+# method 3: optimal approch
+'''
+steps
+- initialize largest = float("-inf") and second_largest = float("-inf")
+- iterate over the array with i 
+- if arr[i] > largest then second_largest = largest and largest = arr[i], elseif arr[i] > second_largest and arr[i] != largest then second_largest = arr[i]
+
+Time Complexity - O(N)
+Space Complexity - O(1)
+
+'''
 def second_smallest(arr):
   if len(arr) < 2:
     return -1
   smallest_item = float("inf")
-  second_smallest_item = float("inf")
+  second_smallest = float("inf")
   
   for i in range(len(arr)):
     if arr[i] < smallest_item:
-      second_smallest_item = smallest_item
+      second_smallest = smallest_item
       smallest_item = arr[i]
     elif arr[i] < second_smallest and arr[i] != smallest_item:
       second_smallest = arr[i]
-  return {"second_largest_item = " : second_smallest, "largest_item = " : largest_item}
+  return {"second_largest_item = " : second_smallest, "largest_item = " : smallest_item}
 
 def second_largest(arr):
   if len(arr) < 2:
@@ -1485,10 +1732,25 @@ print(second_smallest(arr))
 
 https://takeuforward.org/data-structure/check-if-an-array-is-sorted/
 
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=17
+
 https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/#:~:text=Input%3A%20nums%20%3D%20%5B2%2C,no%20rotation)%20to%20make%20nums.
 
 '''
-# method 1 : brute force, TC - O(N^2), SC - O(1)
+# method 1 : brute force, 
+'''
+
+steps
+- iterate the outer array with i 
+- iterate the inner array with j
+- check arr[i] > arr[j] if true then return false
+
+
+TC - O(n^2), where n is the number of elements in the array. The nested loops lead to quadratic time complexity.
+
+SC - O(1) as only a constant amount of extra space is used (no additional arrays or data structures are created).
+
+'''
 def arr_sorted(arr):
   n = len(arr)
   for i in range(n):
@@ -1499,7 +1761,17 @@ def arr_sorted(arr):
 arr = [1,2,2,3,3,4]
 print(arr_sorted(arr))
 
-# method 2 : optimal approch, TC - O(N), SC - O(1)
+# method 2 : optimal approch
+'''
+steps
+- iterate the array with i from 1 till n
+- check arr[i-1] > arr[i] if true then return false
+
+TC - O(n), where n is the number of elements in the input array. The function checks each element once.
+
+SC - O(1), since the function uses a constant amount of space and does not require additional storage.
+
+'''
 def arr_sorted(arr):
   for i in range(1,len(arr)):
     if arr[i-1] > arr[i]:
@@ -1514,12 +1786,26 @@ print(arr_sorted(arr))
 '''
 🟢🟢🟢🟢🟢
 
+
 https://takeuforward.org/data-structure/remove-duplicates-in-place-from-sorted-array/
+
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=17
 
 https://leetcode.com/problems/remove-duplicates-from-sorted-array/#:~:text=Input%3A%20nums%20%3D%20%5B0%2C,%2C%203%2C%20and%204%20respectively.
 
 '''
-# - method 1: brute force, using set(), TC - O(Nlog(N)), SC - O(N)
+# - method 1: brute force, using set()
+'''
+
+steps
+- create a set
+- iterate the array with i and add them in the set
+
+
+TC - O(n),  where n is the number of elements in the input array. This accounts for iterating through the array and adding each element to the set.
+
+SC - O(n), where n is the number of unique elements in the array. In the worst case (when there are no duplicates), this is O(n).
+'''
 def remove_duplicates(arr):
   my_set = set()
   for i in arr:
@@ -1532,19 +1818,29 @@ print(remove_duplicates(arr))
   # return list(set(arr)) + ["_"]*(len(arr) - len(list(set(arr))))
 
 
-# - method 2: optimal approch, using two pointers, TC - O(N), SC - O(1)
+# - method 2: optimal approch, using two pointers
+'''
+steps
+- take the first index 0 in i
+- iterate over the array with j from 1 till end
+- check arr[i] != arr[j] if true increate i by 1 and assign arr[i] with arr[j]
+- return i+1 and arr[:i+1]
+
+TC - O(n), where n is the number of elements in the input array. The function iterates through the array once.
+
+SC - O(k), where k is the number of unique elements in the array. In the worst case (when there are no duplicates), this is O(n).
+'''
 def remove_duplicates(arr):
-    i = 0
-    for j in range(1, len(arr)):
-        if arr[i] != arr[j]:
-            i += 1
-            arr[i] = arr[j]
-            
-    print(arr)
-    return i + 1, arr[:i+1]
+  i = 0
+  for j in range(1, len(arr)):  # Loop through the array starting from the second element
+    if arr[i] != arr[j]:  # If the current element is not equal to the previous one
+      i += 1  # Move i forward to a new unique position
+      arr[i] = arr[j]  # Assign the current element to the new unique position
+      
+  return i + 1, arr[:i + 1]  # Return the number of unique elements and the unique sub-array
 
 arr = [1, 2, 2, 3, 3, 4]
-k, unique_arr = remove_duplicates(arr)            # ---> k = 4, unique_arr = [1, 2, 3, 4]
+k, unique_arr = remove_duplicates(arr)        # ---> k = 4, unique_arr = [1, 2, 3, 4]
 
 # 
 
@@ -1554,17 +1850,31 @@ k, unique_arr = remove_duplicates(arr)            # ---> k = 4, unique_arr = [1,
 
 https://takeuforward.org/data-structure/left-rotate-the-array-by-one/
 
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=18
+
 https://leetcode.com/problems/rotate-array/
 
 '''
-# method 1: brute force, TC - O(N), SC - O(N)
+# method 1: brute force, 
+'''
+steps
+- create a temp array of length of the given array and initialize it with 0
+- iterate on the given array with i from 1 till n
+- assign temp[i-1] with arr[i]
+- after loop ends assign temp[len(arr) - 1] with arr[0]
+- return temp
+
+TC - O(N)
+
+SC - O(N), temp is of same size as given array
+
+'''
 def rotate_arr(arr):
-    temp  = [0]*len(arr)
-    temp = arr[0]
-    for i in range(1, len(arr)):
-      temp[i-1] = arr[i]
-    temp[len(arr) - 1] = arr[0]
-    return temp
+  temp  = [0]*len(arr)
+  for i in range(1, len(arr)):
+    temp[i-1] = arr[i]
+  temp[len(arr) - 1] = arr[0]
+  return temp
 
 arr = [1, 2, 2, 3, 3, 4]
 print(rotate_arr(arr))
@@ -1572,14 +1882,25 @@ print(rotate_arr(arr))
 # 👉👉👉 using array slicing 
 # return arr[:len(arr)] + arr[:1]
 
-# - method 2: optimal approch, TC - O(N), SC - O(1)
+# - method 2: optimal approch
+'''
+steps
+- take the first element and assign it to temp variable
+- iterate on the given array with i from 1 till n
+- assign arr[i-1] with arr[i]
+- after loop ends assign arr[len(arr) - 1] with temp
+- return arr
+
+TC - O(N)
+
+SC - O(1), using only temp to store extra element
+'''
 def rotate_arr(arr):
-    
-    temp = arr[0]
-    for i in range(1, len(arr)):
-      arr[i-1] = arr[i]
-    arr[len(arr)-1] = temp
-    return arr
+  temp = arr[0]
+  for i in range(1, len(arr)):
+    arr[i-1] = arr[i]
+  arr[len(arr)-1] = temp
+  return arr
 
 arr = [1, 2, 2, 3, 3, 4]
 print(rotate_arr(arr))
@@ -1590,13 +1911,30 @@ print(rotate_arr(arr))
 '''
 
 🟢🟢🟢🟢🟢
+⭐⭐⭐
+
 
 https://takeuforward.org/data-structure/rotate-array-by-k-elements/
+
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=18
 
 https://leetcode.com/problems/rotate-array/
 
 '''
-# - method 1: brute force, using temp arr,  TC - O(N), SC - O(N)
+# - method 1: brute force, using temp arr
+'''
+steps
+- find the rotation_number by rotation % len(arr)
+- create a temp array of length from 0 till rotation number
+- iterate on the given array with i from rotation number till n
+- assign arr[i-rotation_number] with arr[i]
+- after loop ends assign arr[rotation_number : ] with temp
+- return arr
+
+TC - O(N), in the worst case when rotation number is 0
+
+SC - O(N), using temp in the worst case temp have to store whole array
+'''
 def rotate_arr(arr, rotation):
     if len(arr) == 0:
         return 
@@ -1612,17 +1950,39 @@ print(rotate_arr(arr, 9))
 # 👉👉👉 using array slicing 
 # return arr[k:len(arr)] + arr[:k]
 
-# - method 2: optimal approch, using slicing, TC - O(i), SC - O(N)
+# - method 2: better approch, using slicing
+'''
+steps
+- find the rotation_number by rotation % len(arr)
+- swap arr[:rotation_number] and arr[rotation_number : ]
+- return arr
+
+TC - O(1), no iteration is done
+
+SC - O(1), no extra variable is used except rotation_number
+'''
 def rotate_arr(arr, rotation):
     if len(arr) == 0:
       return 
-    rotation_number = rotation%len(arr)
+    rotation_number = rotation % len(arr)
     arr[:rotation_number],arr[rotation_number : ] = arr[rotation_number : ],arr[:rotation_number] 
     return arr
 arr = [1, 2, 2, 3, 3, 4]
 print(rotate_arr(arr, 9))
 
-# - method 3: optimal approch, using built-in reverse() and reversed() methods, TC - O(N), SC - O(1)
+# - method 3: better approch, using built-in reverse() and reversed() methods
+'''
+steps
+- find the rotation_number d by rotation % len(arr)
+- reverse the whole array using reverse()
+- reverse the array from 0 to d using reversed()
+- reverse the array from d to n using reversed()
+- return arr
+
+TC - O(1), no iteration is done
+
+SC - O(1), no extra variable is used except rotation_number
+'''
 def left_rotate(arr, d):
     n = len(arr)    
     d = d % n    
@@ -1636,7 +1996,20 @@ d = 2
 rotated_arr = left_rotate(arr, d)
 
 # - method 4: optimal approch, using reversal algorithm,🤯🤯🤯
+'''
+
+steps
+- find the rotation_number d by rotation % len(arr)
+- reverse the array from 0 to d-1
+- reverse the array from d to n-1
+- reverse the whole array
+
+TC - O(n), where n is the length of the array.
+
+SC - O(1), because the algorithm operates in place and only uses a constant amount of extra space.
+'''
 def reverse_arr(arr, start, end):
+  # reverse the array from start to end using temp variable
   while start <= end:
     temp = arr[start]
     arr[start] = arr[end]
@@ -1655,10 +2028,10 @@ arr = [1, 2, 3, 4, 5]
 d = 2
 rotated_arr = left_rotate(arr, d)
 
-# 
+# 👉👉 TODO : right rotate an array by d places
 
-# 👉👉 TODO : left rotate an array by d places
 
+# 7 TODO : move all zeros to the end of the array
 '''
 
 🟢🟢🟢🟢🟢
@@ -1666,45 +2039,23 @@ rotated_arr = left_rotate(arr, d)
 
 https://takeuforward.org/data-structure/rotate-array-by-k-elements/
 
-
-https://leetcode.com/problems/rotate-array/
-
-'''
-# - method 1: brute force, using temp arr,  TC - O(N), SC - O(N)
-
-# - method 2: optimal approch, using reversal algorithm,🤯🤯🤯
-def reverse_arr(arr, start, end):
-  while start <= end:
-    temp = arr[start]
-    arr[start] = arr[end]
-    arr[end] = temp
-    start += 1
-    end -= 1
-
-def left_rotate(arr, d):
-    n = len(arr)
-    d = d % n
-    reverse_arr(arr, 0, n - d - 1)
-    reverse_arr(arr, n - d, n - 1)
-    reverse_arr(arr, 0, n-1)
-
-arr = [1, 2, 3, 4, 5]
-d = 2
-rotated_arr = left_rotate(arr, d)
-
-# 
-
-# 7 TODO : move all zeros to the end of the array
-'''
-
-🟢🟢🟢🟢🟢
-
-https://takeuforward.org/data-structure/move-all-zeros-to-the-end-of-the-array/
-
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=18
 
 https://leetcode.com/problems/move-zeroes/
 '''
-# - method 1: brute force, TC - O(N), SC - O(2N) 
+# - method 1: brute force
+'''
+steps
+- take two variable temp and temp2 to store zero and non-zero values
+- iterate on the given array with i from 0 till n
+- if arr[i] is not zero then append it to temp else append it to temp2
+- return temp + temp2
+
+TC - O(N), iterating over the whole array
+
+SC - ~O(2N), using two temp array different sizes
+
+'''
 def move_zeros(arr):
     temp = []
     temp2 = []
@@ -1718,7 +2069,21 @@ def move_zeros(arr):
 arr = [1, 0, 2, 3, 0, 4]
 print(move_zeros(arr))
 
-# method 2: optimal approch, using two pointers TC - O(N), SC - O(1)🤯🤯🤯
+# method 2: optimal approch, using two pointers
+'''
+steps
+- take a variable j ans assign it with -1
+- iterate on the given array with i from 0 till n to find the first 0 in the array. if found the assign the index to j 
+- check if j == -1 if true retuen the same array
+- iterate the array with i from j+1 till n
+- check if arr[i] is not zero then swap arr[i] with arr[j] and increment j by 1
+- return arr
+
+
+TC - O(N), iterating over the array
+
+SC - O(1), swapping is done in the same array
+'''
 def move_zeros(arr):
   j = -1
   for i in range(len(arr)):
@@ -1736,7 +2101,6 @@ def move_zeros(arr):
 arr = [1, 0, 2, 3, 0, 4]
 print(move_zeros(arr))
 
-# 
 
 # 8 TODO : linear search
 '''
@@ -1746,11 +2110,18 @@ print(move_zeros(arr))
 
 https://takeuforward.org/data-structure/linear-search-in-c/
 
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=18
 
 
 https://bit.ly/3KcpHcB
 
+steps
+- iterate on the given array with i from 0 till n
+- check if arr[i] is equal to target if true return i
 
+Time Complexity: O(n), number may not exists
+
+Space Complexity: O(1), no extra varible is use only returned the index
 
 '''
 def linear_search(arr, target):
@@ -1765,18 +2136,30 @@ def linear_search(arr, target):
 '''
 
 🟡🟡🟡🟡🟡
+⭐⭐⭐
 
 
 https://takeuforward.org/data-structure/union-of-two-sorted-arrays/
 
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=18
 
 https://bit.ly/3Ap7Onp
 
 '''
-# - method 1: brute force, using map, TC - O((M+N)log(M+N)), SC - O(1)
+# - method 1: brute force, using map,
+'''
+steps
+- create an empty map
+- iterate over the arr_1and add the elements in the map with 0, increment the value by 1 if the same number arises.
+- iterate over the arr_2and add the elements in the map with 0, increment the value by 1 if the same number arises.
+- return the list of keys of the map
+
+Time Complexity: O(n + m)
+
+Space Complexity: O(n + m)
+'''
 def union(arr1, arr2):
   freq = {}
-  union = []
   for i in arr1:
     freq[i] = freq.get(i, 0) + 1
   for i in arr2:
@@ -1786,7 +2169,19 @@ arr1 = [0, 1, 2, 3, 4]
 arr2 = [1,4,5,7]
 print(union(arr1, arr2))
 
-# - method 2: brute force, using set, TC - O((M+N)log(M+N)), SC - O(M+N)
+# - method 2: better approch, using set
+'''
+steps
+- create a set
+- iterate over the array_1 and add the value into the set
+- iterate over the array_2 and add the value into the set
+- return list(set)
+
+
+Time Complexity: O(n + m)
+
+Space Complexity: O(n + m)
+'''
 
 def union(arr1, arr2):
   s1 = set()
@@ -1800,12 +2195,26 @@ arr2 = [1,4,5,7]
 print(union(arr1, arr2))
 
 
-# method 2: optimal approch, using two pointers, TC - O(M+N), SC - O(1)🤯🤯🤯
+# method 3: optimal approch, using two pointers🤯🤯🤯
+'''
+steps
+- create two pointers i and j and initialize them with 0 and a variable union = []
+- - iterate over the array_1 and array_2 using while loop till i < len(arr1) and j < len(arr2)
+- check if arr1[i] <= arr2[j] if true then check if union is empty or union[-1] != arr1[i] if true then append arr1[i] to union and increment i by 1 else check if union is empty or union[-1] != arr2[j] if true then append arr2[j] to union and increment j by 1
+- iterate over the array_1 till i < len(arr1) and check if union[-1] != arr1[i] if true then append arr1[i] to union and increment i by 1
+- iterate over the array_2 till j < len(arr2) and check if union[-1] != arr2[j] if true then append arr2[j] to union and increment j by 1
+- return union
+
+Time Complexity: O(m + n)
+
+Space Complexity: O(m + n) (due to the result list)
+'''
 def union(arr1, arr2):
   i,j = 0,0
   union = []
   while i < len(arr1) and j < len(arr2):
     if arr1[i] <= arr2[j]:
+      # union[-1] gets the last element that was added to union
       if len(union) == 0 or union[-1] != arr1[i]:
         union.append(arr1[i])
       i += 1
@@ -1822,37 +2231,115 @@ def union(arr1, arr2):
       union.append(arr2[j])
     j += 1
   return union
+
 arr1 = [0, 1, 2, 3, 4]
 arr2 = [1,4,5,7]
 print(union(arr1, arr2))
 
 
-# 
+# 👉👉👉 TODO : find the intersection of sorted arrays 
+'''
+https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=19
+'''
+# method 1: Brute force
+'''
+steps
+- create an empty list as result
+- iterate over the arr1 with i from 0 till n
+- iterate over the arr2
+- check if arr1[i] == arr2[j] and arr[i] is not in the result if true then append arr1[i] to result and break the loop
+- return result
+
+Time Complexity: O(m * n) → nested loop over both arrays.
+
+Space Complexity: O(k) → for storing result.
+'''
+def intersection(arr1, arr2):
+  result = []
+  for i in range(len(arr1)):
+    for j in range(len(arr2)):
+      if arr1[i] == arr2[j]:
+        if arr1[i] not in result:  # Avoid duplicates in result
+          result.append(arr1[i])
+        break  # Once matched, move to next element in arr1
+  return result
+
+# Example usage
+arr1 = [0, 1, 2, 2, 3, 4]
+arr2 = [1, 2, 2, 4, 5, 7]
+print(intersection(arr1, arr2))  # Output: [1, 2, 4]
+
+# method 2: Optimal approch using two pointer
+'''
+steps
+- create two pointers i and j and initialize them with 0 and a variable result = []
+- iterate over the arr1 and arr2 using while loop till i < len(arr1) and j < len(arr2)
+- check if arr1[i] == arr2[j] then again check if result is empty or result[-1] != arr1[i] if true then append arr1[i] to result and increment i and j by 1
+- check if arr1[i] < arr2[j] if true then increment i by 1 else increment j by 1
+- return result
+
+Time Complexity: O(m + n) where m and n are lengths of the two arrays.
+
+Space Complexity: O(k) for the result list (k = size of intersection).
+'''
+def intersection(arr1, arr2):
+  i, j = 0, 0
+  result = []
+
+  while i < len(arr1) and j < len(arr2):
+    # If both elements are equal, and not already added to result
+    if arr1[i] == arr2[j]:
+      if len(result) == 0 or result[-1] != arr1[i]:  # avoid duplicates
+        result.append(arr1[i])
+      i += 1
+      j += 1
+    elif arr1[i] < arr2[j]:
+      i += 1  # move pointer in arr1
+    else:
+      j += 1  # move pointer in arr2
+
+  return result
 
 
-# 👉👉👉 TODO : find the intersection of sorted arrays
+# Example usage
+arr1 = [0, 1, 2, 2, 3, 4]
+arr2 = [1, 2, 2, 4, 5, 7]
+print(intersection(arr1, arr2))  # Output: [1, 2, 4]
 
-
-# 
 
 
 # 10 TODO : find missing number in an array
 '''
 
 🟢🟢🟢🟢🟢
+⭐⭐⭐
 
 
 https://takeuforward.org/arrays/find-the-missing-number-in-an-array/
+
+https://www.youtube.com/watch?v=bYWLJb3vCWY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=19
 
 
 https://leetcode.com/problems/missing-number/
 
 '''
-# method 1 : brute force, TC - O(N^2), SC - O(1)
+# method 1 : brute force
+'''
+steps
+- iterate over the array from 1 to n+1
+- take variable flag = 0
+- iterate over the array with j till n
+- check if arr[j] == i if true then flag = 1 and break the loop
+- when the inner loop is complete check if flag == 0 then return i
+
+TC - O(N^2), iteration is nested
+
+SC - O(1)
+'''
 def missing_num(arr, n):
   for i in range(1, n +1):
     flag = 0
-    if j in range(len(a)):
+    for j in range(len(arr)):
       if arr[j] == i:
         flag = 1
         break
@@ -1861,7 +2348,19 @@ def missing_num(arr, n):
   return -1
 print(missing_num([1,2,4,5], 5))
 
-# method 2 : better solution, using hashing, TC - O(2*N), SC - O(N)
+
+# method 2 : better solution, using hashing
+'''
+steps
+- take a hash array hash = [0]*(n+1)
+- iterate over the array till n-1 and increment the hash[arr[i]] by 1
+- iterate over again the array from 1 till n+1
+- check if hash[i] == 0 if true return i
+
+TC - O(2*N), iteration is one after another
+
+SC - O(N), taking hash of same length of array
+'''
 def missing_num(arr, n):
   hash = [0]*(n+1)
   for i in range(n-1):
@@ -1872,23 +2371,70 @@ def missing_num(arr, n):
   return -1
 print(missing_num([1,2,4,5], 5))
 
-# method 3 : optimal solution, summation approch, TC - O(N), SC - O(1)
+# method 3 : optimal solution, summation approch
+'''
+steps
+- find the sum of numbers from 1 to n using n*(n+1)//2
+- find the sum of all the numbers present the array using sum()
+- return the difference between them
+
+TC - O(N)
+
+SC - O(1)
+
+'''
 def missing_num(arr, n):
   summation = (n*(n+1))//2
   s2 = sum(arr)
   return summation - s2
 print(missing_num([1,2,4,5], 5))
 
-# method 4 : optimal solution, using XOR, TC - O(N), SC - O(1)
+# method 4 : optimal solution, using XOR
+'''
+NOTE: xor solution is better than sum solution because the sum of 10^5+10^4 etc values will go beyond int range but xor can handle them.
+
+Time Complexity: O(n)
+
+Space Complexity: O(1), Only a few variables used (xor1, xor2), no extra data structures.
+
+'''
 def missing_num(arr, n):
-  xor1 = 0
-  xor2 = 0
-  for i in range(1, n+1):
-    xor1 = xor1 ^ arr[i]
-    xor2 = xor2 ^ (i + 1)
-  xor1 = xor1 ^ n
+  xor1 = 0  # XOR of all elements in the array
+  xor2 = 0  # XOR of all numbers from 1 to n
+
+  for i in range(n):
+    if i < len(arr):
+      xor1 ^= arr[i]  # XOR element from array
+    xor2 ^= (i + 1)      # XOR number from 1 to n
+
   return xor1 ^ xor2
-print(missing_num([1,2,4,5], 5))
+
+# Test case
+print(missing_num([1, 2, 4, 5], 5))  # Output: 3
+
+'''
+OR
+'''
+
+def missing_num(arr, n):
+    xor1 = 0  # Will store XOR of all elements in the input array
+    xor2 = 0  # Will store XOR of all numbers from 1 to n
+
+    # XOR all elements in the given array
+    for i in range(len(arr)):
+        xor1 ^= arr[i]
+
+    # XOR all numbers from 1 to n
+    for i in range(1, n + 1):
+        xor2 ^= i
+
+    # XOR of xor1 and xor2 gives the missing number
+    # Why? Because all numbers that are present will cancel out, only the missing one remains
+    return xor1 ^ xor2
+
+# Test case
+print(missing_num([1, 2, 4, 5], 5))  # Output: 3
+
 
 # 
 
@@ -1897,14 +2443,27 @@ print(missing_num([1,2,4,5], 5))
 
 🟢🟢🟢🟢🟢
 
-
 https://takeuforward.org/data-structure/count-maximum-consecutive-ones-in-the-array/
 
+https://www.youtube.com/watch?v=bYWLJb3vCWY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=19
 
 https://leetcode.com/problems/max-consecutive-ones/
 
 '''
-# method 1 : brute force, TC - O(N), SC - O(1)
+# method 1 : brute force
+'''
+steps
+- take two variables maximum and counter and assign 0 to both
+- iterate over the array with i till n
+- check if arr[i] == 1 if true then increment counter by 1 else make counter = 0
+- update maximum with max(maximum, counter)
+- return maximum
+
+TC - O(N)
+
+SC - O(1)
+
+'''
 def maximum_consecutive(arr):
   maximum = 0
   counter = 0
@@ -1920,20 +2479,31 @@ print(maximum_consecutive([1,1,0,1,1,1,3,1,1]))
 
 # method 2 : optimal solution 
 
-# 
 
 # 12 TODO : find the number that appears once and other number twice
 '''
 🟡🟡🟡🟡🟡
 
-
 https://takeuforward.org/arrays/find-the-number-that-appears-once-and-the-other-numbers-twice/
 
+https://www.youtube.com/watch?v=bYWLJb3vCWY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=19
 
 https://leetcode.com/problems/single-number/
 
 '''
-# method 1 : brute force, TC - O(N^2), SC - O(1)
+# method 1 : brute force,
+'''
+steps
+- iterate over the array with i till n
+- take a variable count and assign 0 to it and a variable num = arr[i]
+- iterate over the array with j till n
+- check if arr[j] == num if true then increment count by 1 
+- after the inner loop ends check if count == 1 if true return num
+
+TC - O(N^2)
+
+SC - O(1)
+'''
 def appear_once(arr):
   for i in range(len(arr)):
     num = arr[i]
@@ -1946,10 +2516,22 @@ def appear_once(arr):
 
 print(appear_once([1,1,3,3,2,4,4]))
 
-# method 2 : better solution, using hash array, TC - O(N) + O(N) + O(N), SC - O(maxElement + 1)
+# method 2 : better solution, using hash array, 
+'''
+steps
+- take a hash array hash = [0]*n
+- iterate the array with i till n and increment the values inside the hash array by 1
+- iterate over the hash array with i till n
+- check if hash[i] == 1 if true return i
+- at the end of the loop return -1
+
+TC - O(N) + O(N)
+
+SC - O(maxElement + 1)
+
+'''
 def appear_once(arr):
   hash_arr = [0] * len(arr)
-  # print(hash_arr)
   for i in range(len(arr)):
     hash_arr[arr[i]] = hash_arr[arr[i]] + 1
   for i in range(len(hash_arr)):
@@ -1958,7 +2540,18 @@ def appear_once(arr):
   return -1
 print(appear_once([1,1,3,3,2,4,4]))
   
-# method 3 : better solution, using unorderd_map, TC - O(N*log(M)) + O(M), SC - O(M)
+# method 3 : better solution, using unorderd_map
+'''
+steps
+- take an empty hash map  {}
+- iterate over the array with i till n and increment the values inside the hash map by 1
+- iterate over the hash array map with i and check if anyone value is 1. if true return the key
+
+
+TC - 
+
+SC - 
+'''
 def appear_once(arr):
   unordered_map = {}
   for i in range(len(arr)):
@@ -1969,7 +2562,17 @@ def appear_once(arr):
   return -1
 print(appear_once([1,1,3,3,2,4,4]))
 
-# method 5 : optimal solution, using XOR, TC - O(N), SC - O(1)
+# method 5 : optimal solution, using XOR, 
+'''
+steps
+- take a variable xor = 0
+- iterate over the array with i till n and xor = xor ^ arr[i]
+- return xor
+
+TC - O(N)
+
+SC - O(1)
+'''
 def appear_once(arr):
   xor = 0
   for i in range(len(arr)):
@@ -1977,20 +2580,41 @@ def appear_once(arr):
   return xor
 print(appear_once([1,1,3,3,2,4,4]))
 
-# 
-
 # 13 TODO : longest subarray with given sum K (positives) 🤯🤯🤯
 '''
 🟡🟡🟡🟡🟡
+⭐⭐⭐
+😎😎😎
 
 https://takeuforward.org/data-structure/longest-subarray-with-given-sum-k/
 
+https://www.youtube.com/watch?v=frf7qxiN2qU&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=20
+https://www.youtube.com/watch?v=KDH4mhFVvHw
 
-https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&utm_🟡🟡🟡🟡🟡=collab_striver_ytdescription&utm_campaign=longest-sub-array-with-sum-k
+https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=longest-sub-array-with-sum-k
+
+NOTE:
+subarray - contigious part of the array
+
+
+
+''' 
+# method 1 : brute force
+'''
+steps
+- take a variable length = 0
+- iterate over the array with i till n
+- iterate an inner loop with j from i till n
+- take total_sum = 0
+- iterate over the array with k from i till j and add all elements in each iteration and assign it to total_sum
+- check if total_sum == target if true then update length = max(length, j-i+1)
+- return length
+
+TC - O(N^3)
+
+SC - O(1)
 
 '''
-# subarray - contigious part of the array 
-# method 1 : brute force, TC - O(N^3), SC - O(1)
 def sub_array(arr, target):
   length = 0
   for i in range(len(arr)):
@@ -2003,7 +2627,20 @@ def sub_array(arr, target):
   return length
 print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))
 
-# method 2 : brute force solution, TC - O(N^2), SC - O(i)
+# method 2 : brute force solution
+'''
+steps
+- take a variable length = 0
+- iterate over the array with i till n
+- take total_sum = 0
+- iterate an inner loop with j from i till n and add all elements in each iteration and assign it to total_sum
+- check if total_sum == target if true then update length = max(length, j-i+1)
+- return length
+
+TC - O(N^2)
+
+SC - O(i)
+'''
 def sub_array(arr, target):
   length = 0
   for i in range(len(arr)):
@@ -2015,26 +2652,61 @@ def sub_array(arr, target):
   return length
 print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))
 
-# - method 3 : better solution, using hashing, TC - O(N), SC - O(N) 🤯🤯🤯🤯
-def sub_array(arr, target):
-  n  = len(arr)
-  preSumMap = {}
-  sum = 0
-  maxLen = 0
-  for i in range(n):
-    sun += arr[i]
-    if sum == target:
-      maxLen = max(maxLen, i+1)
-    rem  = sum - target
-    if rem in preSumMap:
-      length = i - preSumMap[rem]
-      maxLen = max(maxLen, length)
-    if sum not in preSumMap:
-      preSumMap[sum] = i
-  return maxLen
-print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))
+# - method 3 : better solution, using prefix sum 
+'''
+steps
 
-# - method 4 : better solution, using two pointers, TC - O(2*N), SC - O(1) 🤯🤯🤯🤯
+❌❌❌❌ NOT UNDERSTAND ❌❌❌❌❌
+
+TC - O(N)
+
+SC - O(N)
+'''
+def sub_array(arr, target):
+  n = len(arr)
+  preSumMap = {}  # Dictionary to store the first occurrence index of each prefix sum
+  curr_sum = 0    # Current prefix sum
+  maxLen = 0      # Maximum length of subarray found
+
+  for i in range(n):
+    curr_sum += arr[i]
+
+    # Case 1: If current sum is equal to the target, update maxLen
+    if curr_sum == target:
+      maxLen = i + 1
+
+    # Case 2: Check if there is a subarray (ending at i) with the required sum
+    remainder = curr_sum - target
+    if remainder in preSumMap:
+      length = i - preSumMap[remainder]
+      maxLen = max(maxLen, length)
+
+    # Store current sum only if it's not already in map (to keep the earliest index)
+    if curr_sum not in preSumMap:
+      preSumMap[curr_sum] = i
+
+  return maxLen
+
+# Test the function
+print(sub_array([1, 2, 3, 1, 1, 1, 1, 4, 2, 3], 3))
+
+
+# - method 4 : optimal solution, using two pointers 🤯🤯🤯🤯
+'''
+steps
+- take a variable left = 0, right = 0, sum = 0, maxLen = 0
+- iterate over the array with right till n
+- check if sum > target then sum = sum - arr[left] and left = left + 1
+- check if sum == target then maxLen = max(maxLen, right-left+1)
+- right = right + 1
+- check if right < n then sum
+- return maxLen
+
+TC - O(2*N), outer while will iterate for N times, but the inner loop doesnot run every time for each outer iteration. Some times it will iterate 2,3,or 4 times but sometime it will not run. so the inner iterations will will be added not multiplied.
+
+SC - O(1)
+
+'''
 def sub_array(arr, target):
   n  = len(arr)
   left, right = 0,0
@@ -2062,11 +2734,19 @@ print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))
 
 https://takeuforward.org/arrays/longest-subarray-with-sum-k-postives-and-negatives/
 
+https://www.youtube.com/watch?v=frf7qxiN2qU&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=20
+https://www.youtube.com/watch?v=KDH4mhFVvHw
 
 https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=longest-sub-array-with-sum-k
 
 '''
-# method 1 : brute force, TC - O(N^3), SC - O(1)
+# method 1 : brute force
+'''
+TC - O(N^3)
+
+SC - O(1)
+
+'''
 def sub_array(arr, target):
   length = 0
   for i in range(len(arr)):
@@ -2079,7 +2759,12 @@ def sub_array(arr, target):
   return length
 print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))
 
-# method 2 : better approch, TC - O(N^2), SC - O(1)
+# method 2 : better approch
+'''
+TC - O(N^2)
+
+SC - O(1)
+'''
 def sub_array(arr, target):
   length = 0
   for i in range(len(arr)):
@@ -2092,7 +2777,13 @@ def sub_array(arr, target):
   return length
 print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))
 
-# method 3 : optimal approch, using hashing, TC - O(N), SC - O(N)
+# method 3 : optimal approch, using hashing
+'''
+
+TC - O(N)
+
+SC - O(N)
+'''
 def sub_array(arr, target):
   n  = len(arr)
   preSumMap = {}
@@ -2128,10 +2819,23 @@ print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))
 
 https://takeuforward.org/data-structure/two-sum-check-if-a-pair-with-given-sum-exists-in-array/
 
+https://www.youtube.com/watch?v=UXDSeD9mN-k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=21
+
 https://leetcode.com/problems/two-sum/
 
 '''
-# - method 1 : brute force, TC - O(N^2), SC - O(1)
+# - method 1 : brute force, 
+'''
+steps
+- iterate over the array with i till n
+- iterate an inner loop with j from i till n
+- check if arr[i]+arr[j] == target if true then return [i,j]
+- return [-1,-1]
+
+TC - O(N^2)
+
+SC - O(1)
+'''
 def two_sum(arr, target):
   for i in range(len(arr)):
     for j in range(i,len(arr)):
@@ -2141,19 +2845,47 @@ def two_sum(arr, target):
 print(two_sum([2,6,5,8,11], 14))
 
 
-# method 2 : better solution, using hash map, TC - O(N*log(N)), SC - O(N)
+# method 2 : better solution, using hash map, 
+''' 
+steps
+- create a empty hash map
+- iterate over the array with i till n
+- check if target - arr[i] in hash map if true then return [hash[target-arr[i]], i]
+- hash[arr[i]] = i
+
+
+TC - O(N*log(N)), using iteration and hash map
+
+SC - O(N), storing elements in the map
+'''
 def two_sum(arr, target):
-    hash = {}  # hash map to store {number: index}
+    hash = {}
     for i in range(len(arr)):
         num = arr[i]
         more_needed = target - num
         if more_needed in hash:
             return [hash[more_needed], i]
-        more_needed[num] = i
-    return [-1,-1]  
+        hash[num] = i 
+    return [-1, -1]
+
 print(two_sum([2, 7, 11, 15], 9))  # Output: [0, 1]
 
-# method 3 : optimal solution, using two pointer, TC - O(N) + O(N*log(N)), SC - O(1)
+
+# method 3 : optimal solution, using two pointer, 
+'''
+steps
+- take two pointers left_ptr = 0, right_ptr = n-1
+- sort the array
+- iterate over the array with i till n using while loop
+- check if arr[left_ptr] + arr[right_ptr] == target if true then return [left_ptr, right_ptr]
+- check if arr[left_ptr] + arr[right_ptr] < target if true then left_ptr = left_ptr + 1
+- check if arr[left_ptr] + arr[right_ptr] > target if true then right_ptr = right_ptr - 1
+- return [-1,-1]
+
+TC - O(N) + O(N*log(N)), iteration + sorting
+
+SC - O(1)
+'''
 def two_sum(arr, target):
   left_ptr = 0
   right_ptr = len(arr) -1
@@ -2176,10 +2908,13 @@ print(two_sum([2,6,5,8,11], 14))
 '''
 
 🟡🟡🟡🟡🟡
-
+😎😎😎
+⭐⭐⭐
 
 
 https://takeuforward.org/data-structure/sort-an-array-of-0s-1s-and-2s/
+
+https://www.youtube.com/watch?v=tp8JIuCXBaU&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=22
 
 
 https://leetcode.com/problems/sort-colors/
@@ -2187,7 +2922,20 @@ https://leetcode.com/problems/sort-colors/
 '''
 # - method 1 : brute force, using any sorting technique, TC - O(N*log(N)), SC - O(1)
 
-# - method 2 : better approch, TC - O(N) + O(N), SC - O(1)  
+# - method 2 : better approch
+'''
+steps
+- take variables count0, count1, count2
+- iterate over the array with i
+- check if arr[i] == 0 then count0 = count0 + 1
+- check if arr[i] == 1 then count1 = count1 + 1
+- check if arr[i] == 2 then count
+- return [0]*count0 + [1]*count1 + [2]*count2
+
+TC - O(N) 
+
+SC - O(1)  
+'''
 def sort(arr):
   count0 = 0
   count1 = 0
@@ -2203,7 +2951,16 @@ def sort(arr):
 print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))
 
 # method 3 : better approch
+'''
+steps
+- take an empty dict
+- iterate over the array with i
+- check if arr[i] == 0 then dict[0] = dict.get(0, 0) + 1
+- check if arr[i] == 1 then dict[1] = dict.get(1, 0) + 1
+- check if arr[i] == 2 then dict[2] = dict.get(2, 0) + 1
+- return [0]*dict[0] + [1]*dict[1] + [2]*dict[2]
 
+'''
 def sort(arr):
   dict = {}
   for i in arr:
@@ -2218,10 +2975,25 @@ print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))
 
 # - method 4 : optimal solution, Dutch National flag algorithm, TC - O(N), SC - (1) 🤯🤯🤯
 '''
+steps
+- take three pointers low = 0, mid = 0, high = n-1
+- iterate over the array using while where mid <= high
+- check if arr[mid] == 0 then swap arr[low] and arr[mid] and increment low and mid
+- check if arr[mid] == 1 then increment mid
+- check if arr[mid] == 2 then swap arr[high] and arr[mid] and decrement high
+- return arr
+
+
 RULES OF DUTCH NATIONAL FLAG ALGORITHM
 1. All elements < pivot must be in the left partition. O -> low-1 => 0
 2. All elements > pivot must be in the right partition. low -> mid-1 => 1
 3. Elements equal to pivot can go either way. mid+1 -> high => 2
+
+
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)
 '''
 def sort(arr):
     low = 0
@@ -2246,14 +3018,31 @@ print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))
 '''
 
 🟢🟢🟢🟢🟢
+😎😎😎
+⭐⭐⭐
 
 https://takeuforward.org/data-structure/find-the-majority-element-that-occurs-more-than-n-2-times/
+
+https://www.youtube.com/watch?v=nP_ns3uSh80&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=23
 
 
 https://leetcode.com/problems/majority-element/
 
 '''
-# - method 1 : brute force, TC - O(N), SC - O(1)
+# - method 1 : brute force, 
+'''
+steps
+- iterate over the array with i
+- take a variable count = 0
+- iterate over the array with j
+- check if arr[i] == arr[j] then count = count + 1
+- check if count > n/2 then return count
+- return -1
+
+TC - O(N)
+
+SC - O(1)
+'''
 def sort(arr):
   for i in range(len(arr)):
     count = 0
@@ -2265,7 +3054,18 @@ def sort(arr):
   return -1
 print(sort([2,2,1,4,2,2,3]))
 
-# - method 2 : better solution, using hashing, TC - O(N*log(N)) + O(N), SC - O(N)
+# - method 2 : better solution, using hashing, 
+'''
+steps
+- take an empty dict
+- iterate over the dict  with k, v
+- check if v > n/2 then return v
+- return -1
+
+TC - O(N*log(N)) + O(N)
+
+SC - O(N)
+'''
 def sort(arr):
   dict = {}
   for i in arr:
@@ -2288,7 +3088,25 @@ print(sort([2,2,1,4,2,2,3]))
 
 # - method 3 : optimal solution, using Moore's voting algorithm,
 '''
+steps
+- take a variable el = None and count = 0
+- iterate over the array with i
+- check if count == 0 then el = arr[i] and count = 1
+- check if el == arr[i] then count = count + 1
+- else count = count - 1
+- count = arr.count(el)
+- check if count > n/2 then return el
+- return -1
+
+
 MOORE's VOTING ALGORITHM, it states that if an element occurs more than n/2 times in the array then it is the majority element.
+
+NOTE: increment the counter if the same number arises again, decrement if another number arises. If the counter becomes 0, again increment counter for the current number.
+
+TC: O(N)
+
+SC: O(1)
+
 '''
 def moores_voting_algorithm(arr):
     el = None
@@ -2310,15 +3128,13 @@ print(moores_voting_algorithm(arr))
 
 # 
 
-# 4 TODO : Kadane's algorithm, mximum subarray sum in an array
+# 4 TODO : Kadane's algorithm, find mximum subarray sum in an array
 '''
-
-
 🟢🟢🟢🟢🟢
-
 
 https://takeuforward.org/data-structure/kadanes-algorithm-maximum-subarray-sum-in-an-array/
 
+https://www.youtube.com/watch?v=AHZpyENo7k4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=24
 
 https://leetcode.com/problems/maximum-subarray/
 
@@ -2326,7 +3142,22 @@ https://leetcode.com/problems/maximum-subarray/
 KANDANE's ALGORITHM - it states that if the sum of the array is negative then we will not consider the sum of the array and will start the sum from the next element.
 - 
 '''
-# - method 1 : brute force, TC - O(N^3), SC - O(1)
+# - method 1 : brute force, 
+'''
+steps
+- take a variable previous_sum = -infinity
+- iterate over the array with i
+- iterate inner loop over the array with j
+- take a variable sum = 0
+- iterate another inner loop over the array with k from i to j
+- sum = sum + arr[k]
+- previous_sum = max(previous_sum,sum)
+- return previous_sum
+
+TC - O(N^3)
+
+SC - O(1)
+'''
 def kandane_algo(arr):
   previous_sum = float('-inf')
   for i in range(len(arr)):
@@ -2340,7 +3171,19 @@ arr = [-2,-3,4, -1,-2,1,2,-3]
 print(kandane_algo(arr))
 
 
-# - method 2 : better solution, time complexity O(n)
+# - method 2 : better solution, 
+'''
+steps
+- take a variable previous_sum = -infinity
+- iterate over the array with i
+- take a variable sum = 0
+- iterate inner loop over the array with j
+- sum = sum + arr[j]
+- previous_sum = max(previous_sum
+- return previous_sum
+
+time complexity O(n)
+'''
 def kandane_algo(arr):
   previous_sum = float('-inf')
   for i in range(len(arr)):
@@ -2352,11 +3195,25 @@ def kandane_algo(arr):
 arr = [-2,-3,4, -1,-2,1,2,-3]
 print(kandane_algo(arr))
 
-# - method 3 : optimal solution, using Kandane's algo, TC -O(N), SC - (1) 🤯🤯🤯
+# - method 3 : optimal solution, using Kandane's algo
 '''
-# https://www.youtube.com/watch?v=AHZpyENo7k4
+
+steps
+- take a variable current_max = float('-inf')
+- take a variable max_sum = 0
+- iterate over the array with i till n
+- current_max = max(current_max, current_max + arr[i])
+- max_sum = max(max_sum, current_max)
+- return max_sum
+
+KADANE'S ALORITHM - it states that if the sum of the array is negative then we will not consider the sum of the array and will start the sum from the next element.
+
+TC: O(n)
+
+SC: O(1)
+
 '''
-# below function is also right 
+# below function is also right using chatgpt
 # def kadane_algorithm(arr):
 #     current_max = float('-inf')
 #     max_sum = 0
@@ -2366,29 +3223,31 @@ print(kandane_algo(arr))
 #     return max_sum
 
 def kadane_algorithm(arr):
-    maxi = float('-inf')
-    sum = 0
-    for i in range(len(arr)):
-        sum += arr[i]
-        if sum > maxi:
-            maxi = sum
-        if sum < 0:
-          sum = 0
-    return maxi
+  maxi = float('-inf')
+  sum = 0
+  for i in range(len(arr)):
+    sum += arr[i]
+    # if the sum is positive, update maxi
+    if sum > maxi:
+      maxi = sum
+    # if the sum is negative, reset it to 0
+    if sum < 0:
+      sum = 0
+  return maxi
 arr = [2, 3, -2, 4, -1, 5, -3]
 print(kadane_algorithm(arr))  
 
 # 
 
-# 5 TODO : print subarray with maximum sum (extended version of kadane's algorithm)
+# 5 TODO : print subarray with maximum sum (extended version of kadane's algorithm, for printing and finding the sub array)
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
+⭐⭐⭐
+😎😎😎
 
 https://takeuforward.org/data-structure/kadanes-algorithm-maximum-subarray-sum-in-an-array/
+
+https://www.youtube.com/watch?v=AHZpyENo7k4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=24
 
 https://bit.ly/3SLFFhs
 
@@ -2397,7 +3256,23 @@ https://bit.ly/3SLFFhs
 
 # - method 2 : better solution, 
 
-# - method 3 : optimal solution, using Kandane'algo, TC -O(N), SC - (1)
+# - method 3 : optimal solution, using Kandane'algo, 
+'''
+steps
+- take a variable maxi = float('-inf')
+- take a variable sum = 0, start = 0, ansStart = -1, ansEnd = -1
+- iterate over the array with i till n
+- if sum == 0 then start = i
+- sum = sum + arr[i] 
+- if sum > maxi then maxi = sum, ansStart = start, ansEnd = i
+- if sum < 0 then sum = 0
+- print the subarray from ansStart to ansEnd
+- return maxi
+
+TC -O(N) 
+
+SC - (1)
+'''
 def kadane_algorithm(arr):
     maxi = float('-inf')
     sum = 0
@@ -2425,56 +3300,92 @@ print(kadane_algorithm(arr))
 '''
 
 🟢🟢🟢🟢🟢
+😎😎😎
 
 https://takeuforward.org/data-structure/stock-buy-and-sell/
 
+https://www.youtube.com/watch?v=excAOvwF_Wk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=25
 
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 '''
-# - method 1 : brute force, TC -O(N^2), SC - (1)
+# - method 1 : brute force
+'''
+
+TC - O(N^2)
+
+SC - (1)
+
+'''
 def buy_sell(arr):
-  minimum = arr[0]
-  minimum_profit = 0
-  max_profit = 0
+  max_profit = 0  # Initialize max profit
+
+  # Check all pairs (i < j) where we buy at i and sell at j
   for i in range(len(arr)):
     for j in range(i + 1, len(arr)):
-      if arr[j] > arr[i]:
-        max_profit = max(arr[j] - arr[i], profit)
+      if arr[j] > arr[i]:  # Only consider if selling price is higher
+        profit = arr[j] - arr[i]  # Calculate profit
+        max_profit = max(max_profit, profit)  # Update max profit if this is better
+
   return max_profit
-arr = [7,1,5,3,6,4]
-print(buy_sell(arr))
+
+arr = [7, 1, 5, 3, 6, 4]
+print(buy_sell(arr))  # Output: 5 (Buy at 1, sell at 6)
+
 
 # - method 2 : better solution, 
 
-# - method 3 : optimal solution,TC - O(N), SC - (1)
-def buy_sell(arr):
-  min_price = float("inf")
-  mx_profit = 0
-  for i in range(len(arr)):
-    min_price = min(min_price, arr[i])
-    cost = arr[i] - min_price
-    mx_profit = max(mx_profit, cost)
-  return max_profit
-arr = [7,1,5,3,6,4]
-print(buy_sell(arr)) 
 
-# 
+
+# - method 3 : optimal solution
+'''
+
+TC: O(n)
+
+SC: O(1)
+
+'''
+def buy_sell(arr):
+  min_price = arr[0]  # Start by assuming the first day's price is the minimum
+  profit = 0          # Max profit found so far
+
+  # Start from the second day (index 1) because we already took day 0 as min_price
+  for i in range(1, len(arr)):
+    cost = arr[i] - min_price          # Profit if we bought at min_price and sold today
+    profit = max(profit, cost)         # Update max profit if today's profit is better
+    min_price = min(min_price, arr[i]) # Update min_price if today's price is lower
+  return profit
+
+arr = [7, 1, 5, 3, 6, 4]
+print(buy_sell(arr))  # Output: 5 (Buy at 1, sell at 6)
 
 # 7 TODO : rearrange the array in alternating positive and negative items
 '''
-
-
 🟡🟡🟡🟡🟡
 
 
-https://takeuforward.org/arrays/rearrange-array-elements-by-sign/
-
+https://www.youtube.com/watch?v=h4aBagy4Uok&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=26
 
 https://leetcode.com/problems/rearrange-array-elements-by-sign/
 
 '''
-# - method 1 : brute force, TC - O(N + N/2), SC - O(N + N/2)
+# - method 1 : brute force
+'''
+steps
+- take two empty array pos and neg
+- iterate over the array with i till n
+- if arr[i] >= 0 then append in pos array else append in neg array
+- create an array result with same as given array length with zeros
+- iterate over the positive array with i till n and append the values in result array with even indexes
+- iterate over the negative array with i till n and append the values in result array with odd indexes
+- return result
+
+
+TC - O(N + N/2)
+
+SC - O(N + N/2)
+
+'''
 def rearrange(arr):
   pos,neg = [],[]
   
@@ -2497,7 +3408,22 @@ print(rearrange(arr))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, TC - O(N), SC - (N)
+# - method 3 : optimal solution
+'''
+steps
+- take two pointers posIndex and negIndex and assign 0 to both.
+- create a hash array with the same length of the given array.
+- iterate over the array with i till n
+- if arr[i] >= 0 then hash[posIndex] = arr[i] and posIndex += 2
+- else hash[negIndex] = arr[i] and negIndex += 2
+- return hash
+
+
+TC - O(N), iteration is done on the whole array
+
+SC - (N), using an extra array
+
+'''
 def rearrange(arr):
   posIndex = 0
   negIndex=1
@@ -2520,116 +3446,159 @@ print(rearrange(arr))
 
 🟡🟡🟡🟡🟡
 
-
-
-https://takeuforward.org/arrays/rearrange-array-elements-by-sign/
-
+https://www.youtube.com/watch?v=h4aBagy4Uok&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=26
 
 https://leetcode.com/problems/rearrange-array-elements-by-sign/
+
+TC: O(n)m O(max(ps, neg)) = O(leftovers)
+
+SC: (N), using an extra array
 
 '''
 # - method 1 : brute force, 
 def rearrange(arr):
-    pos, neg, result = [], [], []  
-    for i in arr:
-        if i >= 0:
-            pos.append(i)
-        else:
-            neg.append(i)
-    res = [0] * len(arr)
-    if len(pos) > len(neg):
-        for i in range(len(neg)):
-            res[2 * i] = pos[i]
-            res[2 * i + 1] = neg[i]
-        posIndex = len(neg) * 2
-        for i in range(len(pos) - len(neg)):
-            res[posIndex] = pos[len(neg) + i]
-            posIndex += 1
+  pos, neg = [], []  # Separate arrays for positive and negative numbers
+
+  # Split the original array into positives and negatives
+  for i in arr:
+    if i >= 0:
+      pos.append(i)
     else:
-        for i in range(len(pos)):
-            res[2 * i] = pos[i]
-            res[2 * i + 1] = neg[i]
-        negIndex = len(pos) * 2
-        for i in range(len(neg) - len(pos)):
-            res[negIndex] = neg[len(pos) + i]
-            negIndex += 1
-    return res
+      neg.append(i)
+
+  res = [0] * len(arr)  # Final result array of the same length
+
+  # Choose the smaller of the two to alternate first
+  if len(pos) > len(neg):
+    # Fill alternating positions with pos and neg
+    for i in range(len(neg)):
+      res[2 * i] = pos[i]
+      res[2 * i + 1] = neg[i]
+    # Add remaining positive elements at the end
+    index = len(neg) * 2
+    for i in range(len(neg), len(pos)):
+      res[index] = pos[i]
+      index += 1
+  else:
+    for i in range(len(pos)):
+      res[2 * i] = pos[i]
+      res[2 * i + 1] = neg[i]
+    # Add remaining negative elements at the end
+    index = len(pos) * 2
+    for i in range(len(pos), len(neg)):
+      res[index] = neg[i]
+      index += 1
+
+  return res
+
+# Test case
 arr = [3, 1, -2, -5, 2, -4, 4, 7]
 print(rearrange(arr))
+
 
 
 # - method 2 : better solution, 
 
 # - method 3 : optimal solution,
 
-# 
 
 
-# 8 TODO : next permutation - find the next lexiographically greater permutation 🤯🤯🤯🤯🤯
+# 8 TODO : next permutation - find the next lexiographically greater permutation 
 '''
 
 🟡🟡🟡🟡🟡
+😎😎😎
+⭐⭐⭐
 
-
-
-https://takeuforward.org/data-structure/next_permutation-find-next-lexicographically-greater-permutation/
-
+https://www.youtube.com/watch?v=JDOXKqF60RQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=27
 
 https://leetcode.com/problems/next-permutation/
 
+
 '''
-# - method 1 : brute force, TC - O(N! * N), SC - O(N)
+# - method 1 : brute force, 
 '''
-generate all permutations 
+generate all permutations using recursion
 linear search on that 
 get the arrays
+
+TC - O(N! * N)
+
+SC - O(N)
 '''
 
 # - method 2 : better solution, using built in function
 
 
 
-# - method 3 : optimal solution, TC - O(3*N), SC - O(1) 🤯🤯🤯
+# - method 3 : optimal solution, 
 '''
-reference : https://www.takeuforward.org/data-structure/next_permutation-find-next-lexicographically-greater-permutation/
+steps
+
+
+TC - O(3*N)
+
+SC - O(1)
 '''
 def next_permutation(arr):
-    n = len(arr)
-    ind = -1
+  n = len(arr)
+  ind = -1  # Index of the first element from the end where arr[i] < arr[i + 1]
 
-    for i in range(n - 2, -1, -1):
-        if arr[i] < arr[i + 1]:
-            ind = i
-            break
-    if ind == -1:
-      arr.reverse()
-      return arr
-    for i in range(n - 1, ind, -1):
-        if arr[i] > arr[ind]:
-            arr[i], arr[ind] = arr[ind], arr[i]
-            break
-    arr[ind + 1:] = reversed(arr[ind + 1:])
+  # Step 1: Find the first decreasing element from the right
+  for i in range(n - 2, -1, -1):
+    if arr[i] < arr[i + 1]:
+      ind = i
+      break
+
+  # Step 2: If no such element is found, the array is in descending order
+  if ind == -1:
+    arr.reverse()  # So we just return the lowest possible order
     return arr
-arr = [1,3,2]
-print(next_permutation(arr))
 
-# 
+  # Step 3: Find the next bigger element from the right to swap with arr[ind]
+  for i in range(n - 1, ind, -1):
+    if arr[i] > arr[ind]:
+      arr[i], arr[ind] = arr[ind], arr[i]
+      break
+
+  # Step 4: Reverse the subarray to the right of ind to get the smallest suffix
+  arr[ind + 1:] = reversed(arr[ind + 1:])
+  return arr
+
+arr = [1, 3, 2]
+print(next_permutation(arr))  # Output: [2, 1, 3]
 
 
 # 9 TODO : leaders in array problem (every thing in the right should be smaller)
 '''
-
-
 🟢🟢🟢🟢🟢
 
-
-https://takeuforward.org/data-structure/leaders-in-an-array/
+https://www.youtube.com/watch?v=cHrH9CQ8pmY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=28
 
 
 https://bit.ly/3bZqbGc
 
+leaders -> every item after that item in the right is smaller so that item is a leader
+
+
+
+
 '''
-# - method 1 : brute force, TC - O(N^2), SC - O(N)
+# - method 1 : brute force, 
+'''
+steps
+- take an empty array leaders
+- iterate outer loop over the array with i till n
+- take a variable leader and assign true to it
+- iterate inner loop over the array with j from i+1 till n
+- if arr[j] > arr[i] then leader = false
+- if leader is true then append arr[i] to leaders
+- return leaders
+
+TC - O(N^2)
+
+SC - O(N)
+'''
 def leaders(arr):
   leaders = []
   for i in range(len(arr)):
@@ -2646,7 +3615,19 @@ print(leaders(arr))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, TC - (N), SC - (N)
+# - method 3 : optimal solution, 
+'''
+steps
+- take an empty array leaders
+- take a variable maximum and assign -inf to it
+- iterate over the array with i from n-1 till 0
+- if arr[i] > maximum then append arr[i] to leaders and assign arr[i] to maximum
+- return leaders
+
+TC - (N)
+
+SC - (N)
+'''
 def leaders(arr):
   leaders = []
   maximum = float("-inf")
@@ -2658,31 +3639,43 @@ def leaders(arr):
 arr = [10,22, 12,3,0,6]
 print(leaders(arr))
 
-# 
-
 
 # 10 TODO : longest consecutive sequence in an array
 
 '''
-
 🟡🟡🟡🟡🟡
 
-
-https://takeuforward.org/data-structure/longest-consecutive-sequence-in-an-array/
-
+https://www.youtube.com/watch?v=oO5uLE7EUlM&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=29
 
 https://leetcode.com/problems/longest-consecutive-sequence/solution/
 
 '''
 
-# - method 1 : brute force, TC -O(N^2), SC - O(1)
+# - method 1 : brute force, 
+'''
+steps
+linerar_search(arr, num) 
+return true if value found in the arr else false
+longest_consecutive_length(arr)
+- take a variable longest_len and assign 1 to it
+- iterate outer loop over the array with i till n
+- take a variable x and assign arr[i] to it and a variable count and assign 1 to it
+- take a while loop with condition linerar_search(arr, num), in each iteration increment x and count by 1
+- update longest_len with max(longest_len, count)
+- return longest_len
+
+
+TC - O(N^2)
+
+SC - O(1)
+'''
 def linear_search(arr, num):
   for i in range(len(arr)):
     if arr[i] == num:
       return True
   return False
 def longest_consecutive_length(arr):
-  longest = 1
+  longest_len = 1
   for i in range(len(arr)):
     x = arr[i]
     count = 1
@@ -2691,9 +3684,26 @@ def longest_consecutive_length(arr):
       count += 1
     longest_len = max(longest_len, count)
   return longest_len
+
 arr = [100, 4, 200, 1, 3, 2]
 print(longest_consecutive_length(arr))
-# - method 2 : better solution, using sorting, TC - O(N*log(N)) + O(N), SC - O(1)
+
+# - method 2 : better solution, using sorting
+'''
+steps
+- check if it's not an empty array if so return 0
+- sort the array using arr.sort()
+- take 3 variable lastSmaller = float("-inf"), longest = 1, count = 0
+- iterate over the array with i till n
+- if arr[i] - 1 == lastSmaller then increment count by 1 and update lastSmaller to arr[i]
+- if arr[i] != lastSmaller then assign count to 1 and update lastSmaller to arr[i]
+- update longest with max(longest, count)
+- return longest
+
+TC - O(N*log(N)) + O(N), sorting + iteration
+
+SC - O(1)
+'''
 def longest_consecutive_length(arr):
   if len(arr) == 0:
     return 0
@@ -2713,72 +3723,139 @@ def longest_consecutive_length(arr):
 arr = [100, 4, 200, 1, 3, 2]
 print(longest_consecutive_length(arr))
 
-# - method 3 : optimal solution, using set(), TC - O(N) + O(2*N) ~ O(3*N), SC - O(N)
-def longest_consecutive_length(arr):
-    if len(arr) == 0:
-        return 0
-    num_set = set(arr)  
-    longest_len = 0
-    for num in arr:
-        if num - 1 not in num_set:
-            current_num = num
-            current_len = 1
-            while current_num + 1 in num_set:
-                current_num += 1
-                current_len += 1
-            longest_len = max(longest_len, current_len)
-    return longest_len
-arr = [100, 4, 200, 1, 3, 2]
-print(longest_consecutive_length(arr))
+# 👉👉👉 using chatgpt
+# '''
+# steps
+# - check if it's not an empty array if so return 0
+# - first create set with the array and sort it using sorted(set(arr))
+# - take 2 variables longest and  and assign 1 to both
+# - iterate over the array with i from 1 till n
+# - if arr[i] == arr[i-1] + 1 then increment count by 1 and longest with max(longest, count)
+# - else assign count
+# - return longest
+# '''
+# def longest_consecutive_length(arr):
+#   if not arr:
+#     return 0
+#   arr = sorted(set(arr))  # Remove duplicates and sort
+#   longest = 1
+#   count = 1
+#   for i in range(1, len(arr)):
+#     if arr[i] == arr[i - 1] + 1:
+#       count += 1
+#       longest = max(longest, count)
+#     else:
+#       count = 1
+#   return longest
+# arr = [100, 4, 200, 1, 3, 2]
+# print(longest_consecutive_length(arr))  # Output should be 4 (1, 2, 3, 4)
 
-# 
-
-
-# 11 TODO : set matrix zeros 🤯🤯🤯🤯
+# - method 3 : optimal solution, using set()
 '''
+steps
+- check if it's not an empty array if so return 0
+- create a set with the given array
+- take a variable longest_len and assign 0 to it
+- iterate over the set
+- if num - 1 not in set then start counting from the beginning of a sequence
+- take a variable current_num and assign num to it and current_len and assign 1 to it
+- while current num + 1 in set then increment current_num and current_len by 1
+- update longest_len with max(longest_len, current_len)
+- return longest_len
 
+TC - O(N) + O(2*N) ~ O(3*N), for the set + iteration + while is not running full for all items
+
+SC - O(N), for set
+'''
+def longest_consecutive_length(arr):
+  if not arr:
+    return 0
+  num_set = set(arr)
+  longest_len = 0
+  for num in num_set:  # Slight optimization: iterate over set
+    if num - 1 not in num_set:  # Only start counting from the beginning of a sequence
+      current_num = num
+      current_len = 1
+      while current_num + 1 in num_set:
+        current_num += 1
+        current_len += 1
+      longest_len = max(longest_len, current_len)
+  return longest_len
+
+# Example usage
+arr = [100, 4, 200, 1, 3, 2]
+print(longest_consecutive_length(arr))  # Output: 4
+
+# 11 TODO : set matrix zeros 
+'''
 🟡🟡🟡🟡🟡
 
 
-
-https://takeuforward.org/data-structure/set-matrix-zero/
+https://www.youtube.com/watch?v=N0MgLvceX7M&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=30
 
 
 https://leetcode.com/problems/set-matrix-zeroes/
 
 
 '''
-# - method 1 : brute force, TC - O((N*M)*(M*N)) +O(N*M), SC - O(1)
+# - method 1 : brute force
+'''
+steps
+- iterate over the 2D matrix with i and j till n and m
+- if matrix[i][j] == 0 then mark_row(matrix, n, m, i) and mark_col(matrix, n, m, j) with -1
+- iterate over the 2D matrix with i and j till n and m and change -1 to 0
 
-def set_zeros(matrix, n,m):
+TC - O((N*M)*(M*N)) +O(N*M), mark_row + mark_col + extra_iteration
+
+SC - O(1)
+'''
+
+def set_zeros(matrix, n, m):
   for i in range(n):
     for j in range(m):
       if matrix[i][j] == 0:
-        mark_row(matrix,n,m,i)
-        mark_col(matrix,n,m,j)
+        mark_row(matrix, n, m, i)
+        mark_col(matrix, n, m, j)
+
   for i in range(n):
     for j in range(m):
       if matrix[i][j] == -1:
         matrix[i][j] = 0
+
   return matrix
-  
-def mark_col(matrix, n, m, j):
-  for i in range(n):
-    if arr[i][j] != 0:
-      arr[i][j] = -1
 
 def mark_row(matrix, n, m, i):
-  for j in range(len(arr)):
-    if arr[i][j] != 0:
-      arr[i][j] = -1
-      
-arr = [[1,1,1], [1,0,1], [1,1,1]]
+  for j in range(m):
+    if matrix[i][j] != 0:
+      matrix[i][j] = -1
+
+def mark_col(matrix, n, m, j):
+  for i in range(n):
+    if matrix[i][j] != 0:
+      matrix[i][j] = -1
+
+# Test
+arr = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
 n, m = len(arr), len(arr[0])
-for i in set_zeros(arr, n, m) :
-  print(i) 
+for row in set_zeros(arr, n, m):
+  print(row)
 
 
-# - method 2 : better solution, TC - O(2*(N*M)), SC - O(N) + O(M)
+
+# - method 2 : better solution
+'''
+steps
+- create 2 arrays row and col of size n and m and initialize with empty array of size n and m with 0's
+- iterate over the 2D matrix with i and j till n and m
+- if matrix[i][j] == 0 then mark row[i] = 1 and col[j] = 1
+- iterate over the 2D matrix with i and j till n and m
+- if row[i] or col[j] == 1 then matrix[i][j] = 0
+- return matrix
+
+TC - O(2*(N*M)), two separate iteration
+
+SC - O(N) + O(M), rows arr + cols array
+'''
 def set_zeros(matrix, n,m):
   row = [0]*n
   col = [0]*m
@@ -2799,25 +3876,36 @@ n, m = len(arr), len(arr[0])
 for i in set_zeros(arr, n, m) :
   print(i) 
 
-# - method 3 : optimal solution, TC - O(2*(N*M)), SC - O(1)
+# - method 3 : optimal solution,
+'''
+TC - O(2*(N*M))
+
+SC - O(1)
+'''
 def set_zeros(matrix, n,m):
+  # row = [0]*n  --> matrix[0][...]
+  # col = [0]*m  --> matrix[...][0]
   col0 = 1
   for i in range(n):
     for j in range(m):
       if matrix[i][j] == 0:
+        # mark the ith row
         matrix[i][0] = 0
+        # mark the jth col
         if j != 0:
           matrix[0][j] = 0
         else:
-          col0 = 0
-  for i in range(1, n):
-    for j in range(1, m):
+          col0 = 0  # for 0th col
+  for i in range(1, n):  # Skip row 0 (used for markers)
+    for j in range(1, m):  # Skip col 0 (used for markers)
       if matrix[i][j] != 0:
         if matrix[i][0] == 0 or matrix[0][j] == 0:
-          matrix[i][j] = 0
+          matrix[i][j] = 0  # Zero the cell if its row or col was marked
+  # Check if the first row needs to be set to zero
   if matrix[0][0] == 0:
     for j in range(m):
       matrix[0][j] = 0
+  # Check if the first column needs to be set to zero
   if col0 == 0:
     for i in range(n):
       matrix[i][0] = 0
@@ -2828,21 +3916,29 @@ n, m = len(arr), len(arr[0])
 for i in set_zeros(arr, n, m) :
   print(i) 
 
-# 
-
 
 # 12 TODO : rotate matrix by 90 degrees
 '''
 🟡🟡🟡🟡🟡
 
 
-
-https://takeuforward.org/data-structure/rotate-image-by-90-degree/
+https://www.youtube.com/watch?v=Z0R2u6gd3GU&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=31
 
 https://leetcode.com/problems/rotate-image/
 
 '''
-# - method 1 : brute force, TC - O(N*N), SC - O(N*N)
+# - method 1 : brute force 
+'''
+steps
+- create a new matrix of m*n size
+- iterate over the matrix with i and j till n and m
+- assign matrix[j][n-i-1] = matrix[i][j]
+- return rotated
+
+TC - O(N*N)
+
+SC - O(N*N)
+'''
 def rotate_90(matrix, n,m):
   rotated = [[0 for _ in range(n)] for _ in range(m)]
   for i in range(n):
@@ -2857,38 +3953,64 @@ for i in rotate_90(arr, n, m) :
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, TC - O(N*N) + O(N*N), SC - O(1))
-def rotate_90(matrix, n,m):
-  rotated = [[0 for _ in range(n)] for _ in range(m)]
+# - method 3 : optimal solution
+'''
+steps
+- create a new matrix of n*m size
+- iterate over the matrix with i and j till n and m
+- swap the values matrix[i][j] with matrix[j][i]
+- reverse the matrix with n (each row) axis
+- return rotated
+
+TC - O(N*N) + O(N*N)
+
+SC - O(1))
+'''
+def rotate_90(matrix, n, m):
+  # Step 1: Transpose the matrix (swap rows and columns)
   for i in range(n):
-    for j in range(i):
-      rotated[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    for j in range(i + 1, m):  # j > i to avoid repeating swaps or hitting diagonal
+      matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+  # Step 2: Reverse each row
   for i in range(n):
     matrix[i].reverse()
   return matrix
 
-arr = [[1,2,3], [4,5,6], [7,8,9]]
+arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 n, m = len(arr), len(arr[0])
-for i in rotate_90(arr, n, m) :
-  print(i) 
-
-# 
+for row in rotate_90(arr, n, m):
+  print(row) 
 
 # 13 TODO : print the matrix in spiral manner
 '''
-
 🟡🟡🟡🟡🟡
 
-
+https://www.youtube.com/watch?v=3Zv-s9UUrFM&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=32
 
 https://takeuforward.org/data-structure/spiral-traversal-of-matrix/
 
-
 https://leetcode.com/problems/spiral-matrix/
 
-
 '''
-# - method 1 : brute force, TC - O(N*M), SC - O(N*M)
+# - method 1 : brute force
+'''
+steps
+- take 5 variables top, bottom, left, right, and ans = []
+- iterate using while loop till top <= bottom and left <= right
+- iterate from left to right and append matrix[top][i] to ans
+- increment top by 1
+- iterate from top to bottom and append matrix[i][right] to ans
+- decrement right by 1
+- iterate from right to left and append matrix[bottom][i] to ans
+- decrement bottom by 1
+- iterate from bottom to top and append matrix[i][left] to ans
+- increment left by 1
+- return ans
+
+TC - O(N*M)
+
+SC - O(N*M)
+'''
 def rotate_90(matrix, n,m):
   ans = []
   top = 0
@@ -2902,11 +4024,11 @@ def rotate_90(matrix, n,m):
     for i in range(top, bottom+1):
       ans.append(matrix[i][right])
     right -= 1
-    if top <= bottom:
+    if top <= bottom:  # Check if there are more rows to process
       for i in range(right, left-1, -1):
         ans.append(matrix[bottom][i])
       bottom -= 1
-    if left <= right:
+    if left <= right:  # Check if there are more columns to process
       for i in range(bottom, top-1, -1):
         ans.append(matrix[i][left])
       left += 1
@@ -2930,12 +4052,26 @@ print(rotate_90(arr, n, m))
 
 https://takeuforward.org/arrays/count-subarray-sum-equals-k/
 
+https://www.youtube.com/watch?v=xvNwoz-ufXA&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=33
 
 https://leetcode.com/problems/subarray-sum-equals-k/
 
 '''
 
-# - method 1 : brute force, TC - O(N*N*N), SC - O(1)
+# - method 1 : brute force
+'''
+steps
+- take a variable count = 0
+- iterate over the array with i till n
+- iterate inner loop with j from i till n
+- take a variable subarray_sum = sum(arr[i:j+1])
+- if subarray_sum == sum increment count by 1
+- return count
+
+TC - O(N*N), two nested for loops and builtin sum()
+
+SC - O(1)
+'''
 def find_subarrays(arr, sum):
   count = 0
   for i in range(len(arr)):
@@ -2949,7 +4085,21 @@ arr = [3,1,2,4]
 sum = 6
 print(find_subarrays(arr, sum))
 
-# - method 2 : better solution, TC - O(N*N), SC - O(1)
+# - method 2 : better solution
+'''
+steps
+- take a variable count = 0
+- iterate over the array with i till n
+- take a variable subarray_sum = 0
+- iterate inner loop with j from i till n
+- take a variable subarray_sum = subarray_sum + arr[j]
+- check if subarray_sum == sum increment count by 1
+- return count
+
+TC - O(N*N)
+
+C - O(1)
+'''
 def find_subarrays(arr, sum):
   count = 0
   for i in range(len(arr)):
@@ -2964,7 +4114,15 @@ arr = [3,1,2,4]
 sum = 6
 print(find_subarrays(arr, sum))
 
-# - method 3 : optimal solution, TC - O(N) or O(N*log(N)), SC - O(N)
+# - method 3 : optimal solution
+'''
+steps
+
+
+TC - O(N) or O(N*log(N))
+
+SC - O(N)
+'''
 from collections import defaultdict
 def find_subarrays(arr, sum):
   n = len(arr)
@@ -2988,10 +4146,6 @@ print(find_subarrays(arr, sum))
 
 
 
-
-
-
-
 # region 3.1 ARRAYS - HARD
 # ------------------------
 
@@ -2999,15 +4153,15 @@ print(find_subarrays(arr, sum))
 '''
 
 🟡🟡🟡🟡🟡
+😎😎😎
 
 https://takeuforward.org/data-structure/program-to-generate-pascals-triangle/
 
+https://www.youtube.com/watch?v=bR7mQgwQ_o8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=34
 
 https://leetcode.com/problems/pascals-triangle/
 
 '''
-
-
 '''
 PASCAL's Triangle - A triangular array of the binomial coefficients.
 eg -   1
@@ -3024,19 +4178,54 @@ VARIATION 1 : In this case, we are given row number r and column number c, and w
 # - method 1 : brute force
 '''
 formulae, nCr = n! / (r! * (n-r)!)
+where n is the row number and r is the column number.
+
+steps
+- create a function for calculating factorial of a number
+- create a function to implement the above formulae
+- return the answer
+
+TC: 
+
+SC: 
+
 '''
+def nCr(n,r):
+  res = factorial(n) // (factorial(r) * factorial(n-r))
+  return res
+
+def factorial(n):
+  if n == 0:
+    return 1
+  return n * factorial(n-1)
+
+def pascal_triangle(r,c):
+  element = nCr(r-1,c-1)
+  return element
+
+r,c = 5,3
+print(pascal_triangle(r,c))
+
 
 # - method 2 : better solution, 
 
-# - method 3 : optimal solution, TC - O(c), SC - O(1)
+# - method 3 : optimal solution
+'''
+7C2 -> (7*6)/(2*1)  -> (7//1)*(6//2) -> 21
+10C3 -> (10*9*8)/(3*2*1) -> (10//1)*(9//2)*(8//3) -> 120
+
+TC - O(r)
+
+SC - O(1)
+'''
 def nCr(n,r):
   res = 1
   for i in range(r):
-    res = res * (n-i)
-    res = res // (i+1)
+    res = res * (n-i)   # i starts from 0, (n-i)-> 4, 3, 2
+    res = res // (i+1)    # i starts from 0, (i+1) -> 1, 2, 3
   return res
 def pascal_triangle(r,c):
-  element = nCr(r-1,c-1)
+  element = nCr(r-1,c-1) # indexing starts from 0 so decremented by 1
   return element
 
 r,c = 5,3
@@ -3045,15 +4234,23 @@ print(pascal_triangle(r,c))
 '''
 VARIATION 2 : Given the row number, print the n-th row of Pascal’s triangle.
 '''
-# - method 1 : brute force, TC - O(n*r), SC - O(1)
+# - method 1 : brute force
+'''
+- use function nCr(n,r) and iterate it inside for loop from 1 till n+1
+
+TC - O(n*r)
+
+SC - O(1)
+'''
 def nCr(n,r):
   res = 1
   for i in range(r):
     res = res * (n-i)
     res = res // (i+1)
   return res
+
 def pascal_triangle(n):
-  for c in range(1,n+1):
+  for c in range(1,n+1):    # 1 based indexing is important to follow for symmetry and understanding
     print(nCr(n-1,c-1), end=" ")
   print()
 
@@ -3062,12 +4259,20 @@ print(pascal_triangle(n))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, TC - O(N), SC - O(1)
+# - method 3 : optimal solution
+'''
+ans = ans * ((row - col) / col)
+
+
+TC - O(N)
+
+SC - O(1)
+'''
 def pascal_triangle(n):
   ans = 1
   print(ans, end=" ")
   for i in range(1,n):
-    ans = ans * (n - 1)
+    ans = ans * (n - i)
     ans = ans // i
     print(ans, end=" ")
 
@@ -3075,16 +4280,34 @@ n = 5
 print(pascal_triangle(n))
 
 '''
-VARIATION 3 : OTHER
+VARIATION 3 : Given the row number, print the whole pascal triangle
 '''
-# - method 1 : brute force, TC - O(n*n*r) ~O(N*N*N), SC - O(1)
+# - method 1 : brute force
+'''
+- use the function nCr(n, r) in pascal_triangle(n)
+pascal_triangle(n)
+- create an empty array ans = []
+- iterate with row from 1 till n+1
+- create an empty array tenpList = []
+- iterate with col from 1 till row+1
+- append nCr(row-1,col-1) to tempList
+- append tempList to ans
+- return ans
+
+
+TC - O(n*n*r) ~O(N*N*N)
+
+SC - O(1)
+'''
 from typing import *
+
 def nCr(n,r):
   res = 1
   for i in range(r):
     res = res * (n-i)
     res = res // (i+1)
   return int(res)
+
 def pascal_triangle(n):
   ans =[]
   for row in range(1,n+1):
@@ -3099,7 +4322,14 @@ print(pascal_triangle(n))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, TC - O(N*N), SC - O(1)
+# - method 3 : optimal solution, 
+'''
+- use previous variation of creating row and iterate it from i till n+1
+
+TC - O(N*N)
+
+SC - O(1)
+'''
 from typing import *
 def generateRow(row):
   ans = 1
@@ -3109,6 +4339,7 @@ def generateRow(row):
     ans = ans // col
     ansRow.append(ans)
   return ansRow
+
 def pascal_triangle(n):
   ans =[]
   for row in range(1,n+1):
@@ -3128,12 +4359,30 @@ print(pascal_triangle(n))
 
 https://takeuforward.org/data-structure/majority-elementsn-3-times-find-the-elements-that-appears-more-than-n-3-times-in-the-array/
 
+https://www.youtube.com/watch?v=vwZj1K0e9U8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=35
+
 https://leetcode.com/problems/majority-element-ii/
 
 
 '''
 
-# - method 1 : brute force, TC -O(N^2), SC - O(1)
+# - method 1 : brute forc
+'''
+steps
+- take an empty array ls = []
+- iterate over the array till n
+- if ls is empty or ls[0] value is not equal to arr[i], then proceed inside the condition
+- take a cnt variable and initialize it to 0
+- iterate over the array till n
+- if arr[i] == arr[j], then increment the cnt
+- if cnt > n/3, then append arr[i] to ls
+- if len(ls) == 2, then break
+- return ls
+
+TC -O(N^2)
+
+SC - O(1)
+'''
 def majority_element(arr):
   n = len(arr)
   ls = []
@@ -3152,7 +4401,7 @@ def majority_element(arr):
 arr = [1,3,3,1,3,1]
 print(majority_element(arr))
 
-# - method 2 : better solution, using hashing, TC - O(N*log(N)), SC - O(N)
+# - method 2 : better solution, using hashing
 # from collections import Counter
 # def majority_element(arr):
 #   n = len(arr)
@@ -3162,7 +4411,19 @@ print(majority_element(arr))
 #       return num
 #   return -1
 
-TC - O(n), SC - O(n)
+# - method 3 : better solution, using hashing
+'''
+steps
+- take minimum count as n/3 + 1
+- take a map mpp to store the count of element and lst to store the majority elements
+- iterate over the array and store the count of each element in mpp
+- check if the count of element is greater than the minimum count, if true then insert into the list
+- return ls
+
+TC - O(N*log(N))
+
+SC - O(N)
+'''
 def majority_element(arr):
   min = len(arr)//3 + 1
   ls  = []
@@ -3176,7 +4437,33 @@ def majority_element(arr):
 arr = [1,3,3,1,3,1]
 print(majority_element(arr))
 
-# - method 3 : optimal solution, using Boyer Moore's majority voting algorithm, TC - O(N) + O(N), SC - O(1)
+# - method 3 : optimal solution, using Boyer Moore's majority voting algorithm
+'''
+steps
+- take cnt1, cnt2, el1, el2
+- iterate over the array till n
+- if cnt1 == 0 and el2 != arr[i], then cnt1 = 1, el1 = arr[i]
+- elif cnt2 == 0 and el1 != arr[i], then cnt2 = 1, el2 = arr[i]
+- elif arr[i] == el1, then cnt1 += 1
+- elif arr[i] == el2, then cnt2 += 1
+- else, cnt1 -= 1, cnt2 -= 1
+
+# for manual check
+- take cnt1, cnt2, ls = []
+- iterate over the array till n
+- if arr[i] == el1, then cnt1 += 1
+- if arr[i] == el2, then cnt2 += 1
+- mini = int(n/3) + 1
+- if cnt1 >= mini, then append el1 to ls
+- if cnt2 >= mini, then append el2 to ls
+- return ls
+
+
+
+TC - O(N) + O(N)
+
+SC - O(1)
+'''
 from collections import Counter
 def majority_element(arr):
   n = len(arr)
@@ -3197,6 +4484,7 @@ def majority_element(arr):
       cnt1 -= 1
       cnt2 -= 1
 
+  # manual check weather the values are correct or not
   ls = []
   cnt1,cnt2 = 0,0
   for i in range(n):
@@ -3217,7 +4505,7 @@ print(majority_element(arr))
 # 
 
 
-# 3 TODO : 3-sum problem - find triplets that add up to a zero
+# 3 TODO : 3-sum problem - find triplets that add up to a zero, (arr[i] + arr[j] + arr[k] == 0) and (i != j != k)
 '''
 
 🟡🟡🟡🟡🟡
@@ -3225,12 +4513,26 @@ print(majority_element(arr))
 
 https://takeuforward.org/data-structure/3-sum-find-triplets-that-add-up-to-a-zero/
 
+https://www.youtube.com/watch?v=DhFh8Kw7ymk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=36
 
 https://leetcode.com/problems/3sum/
 
 
 '''
-# - method 1 : brute force, TC - O(N*N*N*log(nos of unique triplets)), SC - O(2*nos of unique triplets)
+# - method 1 : brute force
+'''
+steps
+- take a set st
+- iterate over the array with i till n
+- iterate over the array with j from i+1 till n
+- iterate over the array with k from j+1 till n
+- if arr[i] + arr[j] + arr[k] == 0, then append the values to the set (after sort)
+- return the list of set
+
+TC - O(N*N*N*log(nos of unique triplets))
+
+SC - O(2*nos of unique triplets)
+'''
 def triplet(n, arr):
   st = set()
   for i in range(n):
@@ -3248,7 +4550,24 @@ arr = [-1,0,1,2,-1,-4]
 n = len(arr)
 print(triplet(n, arr))
 
-# - method 2 : better solution, using hashing,  TC - O(N*N*log(nos of unique triplets)), SC - O(2*nos of unique triplets)
+# - method 2 : better solution, using hashing
+'''
+steps
+- take a set st
+- iterate over the array with i till n
+- take a hashset = set()
+- iterate over the array with j from i+1 till n
+- take a third variable as third = -(arr[i] + arr[j])
+- if third in hashset, then append the values to the set (after sort)
+- add arr[j] to hashset
+- return the list(st)
+
+why wer using sort() we can easily compare arr[i] != arr[j] != arr[k] ??
+
+TC - O(N*N*log(nos of unique triplets))
+
+SC - O(2*nos of unique triplets)
+'''
 def triplet(n, arr):
   st = set()
   for i in range(n):
@@ -3267,12 +4586,29 @@ arr = [-1,0,1,2,-1,-4]
 n = len(arr)
 print(triplet(n, arr))
 
-# - method 3 : optimal solution, TC - O(N*log(N)) + O(N*N), SC - O(nos of triplets)
+# - method 3 : optimal solution using two pointers 
+'''
+steps
+- take an empty arr ans = []
+- sort the given array using sort()
+- iterate over the arr with i till n
+- check for i continue if it is the same element like i!=0 and arr[i]==arr[i-1]
+- take two variables j = i+1 and k = n-1
+- iterate using while loop with condition j < k
+- take the sum = arr[i] + arr[j] + arr[k]
+- if sum < 0 then j = j+1 else if sum > 0 k= k-1 else append (arr[i] + arr[j] + arr[k]) in ans increment j and decrement k by 1
+- in the same else use while loops for j and k top point another value which is not same as previous
+
+TC - O(N*log(N)) + O(N*N), sort() + for()*while()
+
+SC - O(nos of triplets)
+'''
 def triplet(n, arr):
   # st = set()
   ans = []
   arr.sort()
   for i in range(n):
+    # skip if i is pointing to the same digit
     if i != 0 and arr[i] == arr[i-1]:
       continue
 
@@ -3304,16 +4640,32 @@ print(triplet(n, arr))
 
 # 4 TODO : 4-sum problem
 '''
-
 🔴🔴🔴🔴🔴
 
 https://takeuforward.org/data-structure/4-sum-find-quads-that-add-up-to-a-target-value/
+
+https://www.youtube.com/watch?v=DhFh8Kw7ymk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=37
+
 
 
 https://leetcode.com/problems/4sum/
 
 '''
-# - method 1 : brute force, TC - O(N*N*N*N), SC - O(2*nos of quadruplets)
+# - method 1 : brute force
+'''
+steps
+- take a set st
+- iterate over the array with i till n
+- iterate over the array with j from i+1 till n
+- iterate over the array with k from j+1 till n
+-  iterate over the array with l from k+1 till n
+- if arr[i] + arr[j] + arr[k] + arr[l] == 0, then append the values to the set (after sort)
+- return the list of set
+
+TC - O(N*N*N*N)
+
+SC - O(2*nos of quadruplets)
+'''
 from collections import deque
 def fourSum(nums, target):
   n = len(nums)
@@ -3334,7 +4686,24 @@ arr = [4,3,3,4,4,2,1,2,1,1]
 target = 9
 print(fourSum(arr, target))
 
-# - method 2 : better solution, using hashing,  TC - O(N*N*log(nos of unique triplets)), SC - O(2*nos of unique triplets) + O(N)
+# - method 2 : better solution, using hashing
+'''
+steps
+- take a set st
+- iterate over the array with i till n
+- iterate over the array with j from i+1 till n
+- take a hashset = set()
+- iterate over the array with k from j+1 till n
+- take a forth variable as fourth = target - (nums[i] + nums[j] + nums[k])
+- if fourth in hashset, then append the values to the set (after sort)
+- add arr[k] to hashset
+- return the [list(item) for item in st]
+
+
+TC - O(N*N*log(nos of unique triplets))
+
+SC - O(2*nos of unique triplets) + O(N)
+'''
 import itertools
 def fourSum(nums, target):
   n = len(nums)
@@ -3357,7 +4726,26 @@ arr = [4,3,3,4,4,2,1,2,1,1]
 target = 9
 print(fourSum(arr, target))
 
-# - method 3 : optimal solution, TC - O(N*N*N), SC - O(nos of quadruplets)
+# - method 3 : optimal solution
+'''
+steps
+- take an empty arr ans = []
+- sort the given array using sort()
+- iterate over the arr with i till n
+- check for i continue if it is the same element like i!=0 and arr[i]==arr[i-1]
+- iterate over the arr with j till n
+- check for j continue if it is the same element like j!=0 and arr[j]==arr[j-1]
+- take two variables k = j+1 and l = n-1
+- iterate using while loop with condition k < l
+- take the sum = nums[i] + nums[j] + nums[k] + nums[l]
+- if sum < target then k = k+1 else if sum > 0 l = l-1 else append (arr[i] + arr[j] + arr[k]) in ans increment k and decrement l by 1
+- in the same else use while loops for k and l to point another value which is not same as previous
+- return ans
+
+TC - O(N*N*N)
+
+SC - O(nos of quadruplets)
+'''
 def fourSum(nums, target):
   n = len(nums)
   ans = []
@@ -3407,7 +4795,20 @@ https://takeuforward.org/data-structure/length-of-the-longest-subarray-with-zero
 https://bit.ly/3w5QSzC
 
 '''
-# - method 1 : brute force, TC - O(n^2), SC - O(1)
+# - method 1 : brute force
+'''
+- take maxi = 0
+- iterate over the arr with i till n
+- take sum = 0
+- iterate over the arr with j from i till n
+- add arr[j] to sum
+- if sum == 0, then maxi = max(maxi, j-i+1)
+- return maxi
+
+TC - O(n^2)
+
+SC - O(1)
+'''
 def solve(arr):
   n = len(arr)
   maxi = 0
@@ -3423,7 +4824,21 @@ print(solve(arr))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, using hashmap,  TC - O(n), SC - O(n)
+# - method 3 : optimal solution, using hashmap
+'''
+steps
+- take variables sum = 0, maxi = 0 and mpp = {}
+- iterate over the arr with i till n
+- add arr[i] to sum
+- if sum == 0, then maxi = max(maxi, i+1)
+- if sum in mpp, then maxi = max(maxi, i-mpp[sum]) else mpp[sum] = i
+- return maxi
+
+
+TC - O(n)
+
+SC - O(n)
+'''
 def solve(arr):
   mpp = {}
   sum = 0
@@ -3448,15 +4863,39 @@ print(solve(arr))
 '''
 
 🔴🔴🔴🔴🔴
+😎😎😎
+⭐⭐⭐
 
 
 https://takeuforward.org/data-structure/count-the-number-of-subarrays-with-given-xor-k/
+
+https://www.youtube.com/watch?v=DhFh8Kw7ymk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=38
 
 https://www.interviewbit.com/problems/subarray-with-given-xor/
 
 
 '''
-# - method 1 : brute force, TC - O(n^3), SC - O(1)
+# - method 1 : brute force
+'''
+0^4 --> 4
+4^2 --> 6
+4^2^2 --> 4 because 2 and 2 will be 0
+
+
+steps
+- take a variable cnt = 0
+- iterate over the array with i till n
+- iterate over the array with j from i till n
+- take a variable xor = 0
+- iterate over the array with k from i till j
+- take xor = xor ^ arr[k]
+- if xor == k, then increment cnt by 1
+- return cnt
+
+TC - O(n^3)
+
+SC - O(1)
+'''
 def subarray(a,b):
   n = len(a)
   cnt = 0
@@ -3473,7 +4912,21 @@ a = [4,2,2,6,4]
 k = 6
 print(subarray(a,k))
 
-# - method 2 : better solution, TC - O(n^2), SC - O(1)
+# - method 2 : better solution
+'''
+steps
+- take a variable cnt = 0
+- iterate over the array with i till n
+- take a variable xor = 0
+- iterate over the array with j from i till n
+- take xor = xor ^ arr[j]
+- if xor == b, then increment cnt by 1
+- return cnt
+
+TC - O(n^2)
+
+SC - O(1)
+'''
 def subarray(a,b):
   n = len(a)
   cnt = 0
@@ -3489,48 +4942,83 @@ a = [4,2,2,6,4]
 k = 6
 print(subarray(a,k))
 
-# - method 3 : optimal solution, using hashing, TC - O(n*log(n)), SC - O(N)
+# - method 3 : optimal solution, using hashing
+'''
+x^k = XR
+(x^k)^k = XR^k
+x = XR^k
+
+steps
+- take a variable cnt = 0, xr = 0, mpp = defaultdict(int)
+- initializ dict mpp[xr] = 1
+- iterate over the array with i till n
+- take xr = xr ^ arr[i]
+- take x = xr ^ b
+- take cnt += mpp[x]
+- increment mpp[xr] by 1
+- return cnt
+
+TC - O(n*log(n))
+
+SC - O(N)
+'''
 from collections import defaultdict
 def subarray(a,b):
   n = len(a)
   xr = 0
   mpp = defaultdict(int)
-  mpp[xr] = 1
+  mpp[xr] = 1 # {0 : 1}
   cnt = 0
   for i in range(n):
-    xr = xr ^ a[i]
-    x = xr ^ b
-    cnt += mpp[x]
-    mpp[xr] += 1
+    xr = xr ^ a[i] # xor with current element
+    x = xr ^ b # xor with the target
+    cnt += mpp[x] # if mpp has x, if automatically works here
+    mpp[xr] += 1 # if mpp has x, if automatically works here
   return cnt
 
 a = [4,2,2,6,4]
 k = 6
 print(subarray(a,k))
 
-# 
 
 # 7 TODO : merge overlapping subintervals
 '''
 
 🟡🟡🟡🟡🟡
-
-
+😎😎😎
+⭐⭐⭐
 
 https://takeuforward.org/data-structure/merge-overlapping-sub-intervals/
 
+https://www.youtube.com/watch?v=IexN60k62jo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=39
 
 https://leetcode.com/problems/merge-intervals/
 
 '''
-# - method 1 : brute force, TC - O(nlogn)+O(2n), SC - O(n)
+# - method 1 : brute force
+'''
+steps
+- sort the array based on the 1st element of each array
+- take an empty array ans = []
+- iterate over the array with i till n
+- take start = arr[i][0], end = arr[i][1] 
+- check if ans is empty or start is greater than ans[-1][1]
+- iterate over the array with j from i+1 till n
+- check if arr[j][0] <= end if true then end = max(end, arr[j][1]) else break
+- append start and end to ans
+- return ans
+
+TC - O(nlogn)+O(2n), 
+
+SC - O(n)
+'''
 def merge(arr):
   n = len(arr)
   arr.sort()
   ans = []
   for i in range(n):
     start, end = arr[i][0], arr[i][1]
-    if ans and start <= ans[-1][1]:
+    if ans and start <= ans[-1][1]:  # for the first time only
       continue
     for j in range(i+1,n):
       if arr[j][0] <= end:
@@ -3545,7 +5033,19 @@ print(merge(arr))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, TC - O(nlogn)+O(n), SC - O(n)
+# - method 3 : optimal solution
+'''
+steps
+- sort the array based on the 1st element of each array
+- take an empty array ans = []
+- iterate over the array with i till n
+- check if ans is empty or start is greater than ans[-1][1] else update the end with max(end, arr[i][1])
+- return ans
+
+TC - O(nlogn)+O(n)
+
+SC - O(n)
+'''
 def merge(arr):
   n = len(arr)
   arr.sort()
@@ -3564,18 +5064,37 @@ print(merge(arr))
 
 # 8 TODO : merge two sorted arrays without extra space
 '''
-
 🟡🟡🟡🟡🟡
+😎😎😎
 
 
 
 https://takeuforward.org/data-structure/merge-two-sorted-arrays-without-extra-space/
 
+https://www.youtube.com/watch?v=n7uwj04E0I4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=40
 
 https://leetcode.com/problems/merge-sorted-array/
 
 '''
-# - method 1 : brute force, TC - O(n+m) + O(n+m), SC - O(n+m)
+# - method 1 : brute force
+'''
+steps
+- take an empty array arr3 of size n+m
+- take variables left = 0, right = 0, index = 0
+- use while loop to iterate with condition  left < n and right < m
+- check if arr1[left] <= arr2[right] if true then arr3[index] = arr1[left] and left += 1 and index += 1 else arr3[index] = arr2[right] and right += 1 and index += 1
+- use while loop to iterate with condition left < n
+- arr3[index] = arr1[left] and left += 1 and index += 1
+- use while loop to iterate with condition right < m
+- arr3[index] = arr2[right] and right += 1 and index += 1
+- use for loop to iterate with i till n+m
+- check if i < n if true then arr1[i] = arr3[i] else arr2[i-n] = arr3[i]
+- return arr3
+
+TC - O(n+m) + O(n+m)
+
+SC - O(n+m)
+'''
 def merge(arr1, arr2):
   n = len(arr1)
   m = len(arr2)
@@ -3612,7 +5131,19 @@ print(merge(arr1, arr2))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, TC - O(min(n,m)) + O(nlogn), SC - O(1)
+# - method 3 : optimal solution using two pointers
+'''
+steps
+- take variables left = n-1, right = 0
+- use while loop to iterate with condition left >= 0 and right < m
+- check if arr1[left] > arr2[right] if true then swap arr1[left] and arr2[right] and left -= 1 and right += 1 else break
+- sort arr1 and arr2
+- return arr1 + arr2
+
+TC - O(min(n,m)) + O(nlogn), while() + 2*sort()
+
+SC - O(1)
+'''
 def merge(arr1, arr2):
   n = len(arr1)
   m = len(arr2)
@@ -3633,42 +5164,106 @@ arr1 = [1,4,8,10]
 arr2 = [2,3,9]
 print(merge(arr1, arr2))
 
-# - method 4 : optimal solution, using gap method, TC - O((n+m)*log(n+m)), SC - O(1)
+# - method 4 : optimal solution, using gap method
+'''
+taking gap concept from shell sort method
+
+m = 5, n = 3 --> different
+m = 5, n = 2 --> same
+
+print(((m+n) // 2) + ((m+n) % 2))
+print(((m+n)//2) + 1)
+
+steps
+- take variables n = len(arr1), m = len(arr2), max_len = n+m
+- take gap = (max_len // 2) + (max_len % 2) 
+- use while loop to iterate with condition gap > 0
+- take left = 0, right = left + gap
+- use while loop to iterate with condition right < max_len
+- check if left < n and right >= n if true then swap arr1[left] and arr2[right-n] else if left >= n then swap arr2[left-n] and arr2[right-n] else swap arr1[left] and arr1[right]
+- left += 1 and right += 1
+- check if gap == 1 if true then break
+- gap = (gap // 2) + (gap % 2)
+- return arr1 + arr2
+
+TC - O((n+m)*log(n+m))
+
+SC - O(1)
+'''
 def swapIfGreater(arr1, arr2, ind1, ind2):
-    if arr1[ind1] > arr2[ind2]:
-        arr1[ind1], arr2[ind2] = arr2[ind2], arr1[ind1]
+  # arr1[ind1] > arr2[ind2]:
+  if arr1[ind1] > arr2[ind2]:
+    arr1[ind1], arr2[ind2] = arr2[ind2], arr1[ind1]
 
 def merge(arr1, arr2):
-    n = len(arr1)
-    m = len(arr2)
-    max_len = n + m
-    gap = (max_len // 2) + (max_len % 2)
-    while gap > 0:
-        left = 0
-        right = left + gap
-        while right < max_len:
-            if left < n and right >= n:  
-                swapIfGreater(arr1, arr2, left, right - n)
-            elif left >= n:  
-                swapIfGreater(arr2, arr2, left - n, right - n)
-            else: 
-                swapIfGreater(arr1, arr1, left, right)
-            left += 1
-            right += 1
-        if gap == 1:
-            break
-        gap = (gap // 2) + (gap % 2)
-    return arr1 + arr2
+  n = len(arr1)
+  m = len(arr2)
+  max_len = n + m
+  gap = (max_len // 2) + (max_len % 2) # take ceil value
+  while gap > 0:
+    left = 0
+    right = left + gap
+    while right < max_len:
+      # arr1 and arr2
+      if left < n and right >= n:  
+        swapIfGreater(arr1, arr2, left, right - n)
+      # arr2 and arr2
+      elif left >= n:  
+        swapIfGreater(arr2, arr2, left - n, right - n)
+      # arr1 and arr1
+      else: 
+        swapIfGreater(arr1, arr1, left, right)
+      left += 1
+      right += 1
+    if gap == 1:
+      break
+    gap = (gap // 2) + (gap % 2)
+  return arr1 + arr2
 
 arr1 = [1, 4, 8, 10]
 arr2 = [2, 3, 9]
 print(merge(arr1, arr2))
 
-# 
+# using chatgpt
+# def swapIfGreater(arr1, arr2, ind1, ind2):
+#     if arr1[ind1] > arr2[ind2]:
+#         arr1[ind1], arr2[ind2] = arr2[ind2], arr1[ind1]
+
+# def merge(arr1, arr2):
+#     n = len(arr1)
+#     m = len(arr2)
+#     gap = (n + m + 1) // 2  # Initial gap
+
+#     while gap > 0:
+#         i = 0
+#         j = gap
+#         while j < (n + m):
+#             # Get values from appropriate arrays
+#             if i < n and j < n:
+#                 swapIfGreater(arr1, arr1, i, j)
+#             elif i < n and j >= n:
+#                 swapIfGreater(arr1, arr2, i, j - n)
+#             else:
+#                 swapIfGreater(arr2, arr2, i - n, j - n)
+#             i += 1
+#             j += 1
+
+#         if gap == 1:
+#             break
+#         gap = (gap + 1) // 2  # Reduce gap like Shell sort
+
+#     return arr1 + arr2
+
+# # Test
+# arr1 = [1, 4, 8, 10]
+# arr2 = [2, 3, 9]
+# print(merge(arr1, arr2))  # Output: [1, 2, 3, 4, 8, 9, 10]
+
 
 # 9 TODO : find the repeating and missing number
 '''
 🔴🔴🔴🔴🔴
+😎😎😎
 
 
 https://takeuforward.org/data-structure/find-the-repeating-and-missing-numbers/
@@ -3679,7 +5274,22 @@ https://bit.ly/3zWZoCs
 
 
 '''
-# - method 1 : brute force, TC - O(n^2), SC - O(1)
+# - method 1 : brute force
+'''
+steps
+- take variables rep = -1, mis = -1
+- use for loop to iterate with i from 1 to n+1
+- take variable cnt = 0 
+- use for loop to iterate with j from 0 to n
+- check if a[j] == i if true then cnt += 1
+- check if cnt == 2 if true then rep = i else if cnt == 0 then mis = i
+- check if rep != -1 and mis != -1 if true then break
+- return rep, mis
+
+TC - O(n^2)
+
+SC - O(1)
+'''
 def solve(a):
   n = len(a)
   rep, mis = -1, -1
@@ -3699,7 +5309,21 @@ def solve(a):
 a = [3,1,2,5,4,6,7,5]
 print(solve(a))
 
-# - method 2 : better solution, using hashing, TC - O(2N), SC - O(N)
+# - method 2 : better solution, using hash array 
+'''
+steps
+- take a hash array hash of size n+1 with 0 filled in it
+- use for loop to iterate with i from 0 to n
+- hash[a[i]] += 1
+- iterate given array with i from 1 to n+1
+- check if hash[i] == 2 if true then rep = i else if hash[i] == 0 then mis = i
+- check if rep != -1 and mis != -1 if true break
+- return rep,mis
+
+TC - O(2N)
+
+SC - O(N)
+'''
 def solve(a):
   n = len(a)
   hash = [0] * (n+1)
@@ -3719,70 +5343,144 @@ a = [3,1,2,5,4,6,7,5]
 print(solve(a))
 
 
-# - method 3 : optimal solution, using maths, TC - O(N), SC - O(1)
+# - method 3 : optimal solution, using maths
+'''
+sum of n natual numbers
+sn = (n * (n+1)) 
+
+sum of squares of n natural numbers
+s2n = (n * (n+1) * (2*n+1)) // 6
+
+
+
+steps
+- take variables sn = (n * (n+1)) // 2, s2n = (n * (n+1) * (2*n+1)) // 6
+- take variables s = 0, s2 = 0
+- sum of n natural numbers sn = (n * (n+1)) 
+- sum of squares of n natural numberss2n = (n * (n+1) * (2*n+1))
+- iterate given array with i from 0 to n
+- s += a[i] and s2 += a[i] * a[i]
+- val1 = s - sn
+- val2 = s2 - s2n
+- val2 = val2 // val1
+- mis = (val1 + val2) // 2
+- rep = mis - val1
+- return rep
+
+TC - O(N)
+
+SC - O(1)
+'''
 def solve(a):
   n = len(a)
-  sn = (n * (n+1)) // 2
-  s2n = (n * (n+1) * (2*n+1)) // 6
+  sn = (n * (n+1)) 
+  s2n = (n * (n+1) * (2*n+1)) 
   s, s2 = 0, 0
   for i in range(n):
     s += a[i]
     s2 += a[i] * a[i]
-  val1 = s - sn
-  val2 = s2 - s2n
-  val2 = val2 // val1
-  mis = (val1 + val2) // 2
-  rep = mis - val1
+  val1 = s - sn # x - y
+  val2 = s2 - s2n  # x^2 - y^2
+  val2 = val2 // val1 # x + y
+  mis = (val1 + val2) // 2  # x, missing number
+  rep = mis - val1  # y, repeating number
   return rep, mis
 
 a = [3,1,2,5,4,6,7,5]
 print(solve(a))
 
-# - method 3 : optimal solution, using xor, TC - O(N), SC - O(1) ❌❌❌❌
-# def solve(a):
-#   n = len(a)
-#   xr = 0
-#   for i in range(n):
-#     xr = xr ^ a[i]
-#     xr = xr ^ (i+1)
-#   number = xr & ~(xr-1)
-#   zero = 0
-#   one = 0
-#   for i in range(n):
-#     if a[i] & number != 0:
-#       one = one ^ a[i]
-#     else:
-#       zero = zero ^ a[i]
-#   for i in range(1, n+1):
-#     if (i & number) != 0:
-#       one = one ^ i
-#     else:
-#       zero = zero ^ i
-#   cnt = 0
-#   for i in range(n):
-#     if a[i] == zero:
-#       cnt += 1
-#   if cnt == 2:
-#     return one, zero
-
-# a = [3,1,2,5,4,6,7,5]
-# print(solve(a))
-
-
-# 
-
-# 10 TODO : count inversions
+# - method 3 : optimal solution, using xor
 '''
+TC - O(N)
 
+SC - O(1)
+'''
+def solve(a):
+  n = len(a)
+  xr = 0
+
+  # Step 1: XOR all elements of the array and numbers from 1 to n
+  for i in range(n):
+    xr = xr ^ a[i]  # all array elements
+    xr = xr ^ (i + 1)  # all natural numbers till n
+  
+  # Step 2: Get the rightmost set bit (this will help partition the array)
+  '''
+  number = xr & ~(xr - 1)
+
+  or
+
+  bit = 1
+  number = 0
+  while xr & bit == 0:  # Keep shifting until we find the first set bit
+    bit <<= 1
+  number = bit  # The first set bit (rightmost)
+
+  or
+
+  '''
+  bit = 0
+  while 1:  
+    if (xr and 1<<bit) != 0:
+      break
+    bit = bit + 1
+
+  zero = 0
+  one = 0
+
+  # Step 3: Divide the elements into two sets based on the rightmost set bit ie includes in 0s club or 1's club
+  for i in range(n):
+    if (a[i] & 1<<bit) != 0:
+      one = one ^ a[i]
+    else:
+      zero = zero ^ a[i]
+  
+  # Step 4: Divide the numbers from 1 to n into two sets based on the rightmost set bit
+  for i in range(1, n + 1):
+    if (i & 1<<bit) != 0:
+      one = one ^ i
+    else:
+      zero = zero ^ i
+
+  # Step 5: Count occurrences of zero in the array and compare to return the missing numbers
+  cnt = 0
+  for i in range(n):
+    if a[i] == zero:
+      cnt += 1
+  
+  # Step 6: Return the result
+  if cnt == 2:
+    return one, zero
+  else:
+    return zero, one
+
+a = [3, 1, 2, 5, 4, 6, 7, 5]
+print(solve(a))  # Output should be the two missing numbers
+
+# 10 TODO : count inversions; i<j and a[i] > a[j]
+'''
 🔴🔴🔴🔴🔴
 
 https://takeuforward.org/data-structure/count-inversions-in-an-array/
 
+https://www.youtube.com/watch?v=AseUmwVNaoY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=42
 
 https://bit.ly/3PtLWLM
 
 '''
-# - method 1 : brute force, TC - O O(n^2), SC - O(1)
+# - method 1 : brute force
+'''
+steps
+- take variable cnt = 0
+- iterate on the array with i from 0 to n
+- iterate on the array with j from i+1 to n
+- check if a[i] > a[j] if true then cnt += 1
+- return cnt
+
+TC - O O(n^2)
+
+SC - O(1)
+'''
 def solve(a, n):
   cnt = 0
   for i in range(n):
@@ -3796,7 +5494,15 @@ print(solve(a, len(a)))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, TC - O(N*log(N)), SC - O(N)
+# - method 3 : optimal solution
+'''
+steps
+reference --> merge sort
+
+TC - O(N*log(N))
+
+SC - O(N)
+'''
 import math 
 def solve(a, n):
   return merge_sort(a, 0, n-1)
@@ -3822,7 +5528,7 @@ def merge(a, low, mid, high):
       left += 1
     else:
       temp.append(a[right])
-      cnt += (mid - left + 1)
+      cnt += (mid - left + 1)  # count the pairs
       right += 1
   while left <= mid:
     temp.append(a[left])
@@ -3838,10 +5544,7 @@ a = [5,4,3,2,1]
 print(solve(a, len(a)))
 
 
-
-# 
-
-# 11 TODO : reverse pairs
+# 11 TODO : reverse pairs; i<j and arr[i] > 2*arr[j]
 '''
 
 🔴🔴🔴🔴🔴
@@ -3849,11 +5552,24 @@ print(solve(a, len(a)))
 
 https://takeuforward.org/data-structure/count-reverse-pairs/
 
+https://www.youtube.com/watch?v=0e4bZaP3MDI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=43
 
 https://leetcode.com/problems/reverse-pairs/
 
 '''
-# - method 1 : brute force, TC - O(N^2), SC - O(1)
+# - method 1 : brute force
+'''
+steps
+- take a variable cnt = 0
+- iterate given array with i from 0 to n
+- iterate given array with j from i+1 to n
+- if a[i] > 2 * a[j] then cnt += 1
+- return cnt
+
+TC - O(N^2)
+
+SC - O(1)
+'''
 def team(skill, n):
   return countPairs(skill, n)
 def countPairs(a, n):
@@ -3869,72 +5585,98 @@ n  =  5
 print(team(a, n))
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, TC - O(2N*log(N)), SC - O(N) ❌❌❌
-# def team(skill, n):
-#   return merge_sort(skill, 0, n-1)
+# - method 3 : optimal solution
+'''
+referenece --> merge sort
 
-# def merge_sort(a, low, high):
-#   cnt = 0
-#   if low >= high:
-#     return cnt
-#   mid = (low + high) // 2
-#   cnt += merge_sort(a, low, mid)
-#   cnt += merge_sort(a, mid+1, high)
-#   cnt += countPairs(a, low, mid, high)
-#   cnt += merge(a, low, mid, high)
-#   return cnt
 
-# def countPairs(arr, low, mid, high):
-#   right = mid+1
-#   cnt = 0
-#   for i in range(low, mid+1):
-#     while right <= high and a[i] > 2 * a[right]:
-#       right += 1
-#     cnt += (right - (mid+1))
-#   return cnt
+TC - O(2N*log(N))
 
-# def merge(a, low, mid, high):
-#   temp = []
-#   left = low
-#   right = mid+1
-#   while left <= mid and right <= high:
-#     if a[left] <= a[right]:
-#       temp.append(a[left])
-#       left += 1
-#     else:
-#       temp.append(a[right])
-#       cnt += (mid - left + 1)
-#       right += 1
-#   while left <= mid:
-#     temp.append(a[left])
-#     left += 1
-#   while right <= high:
-#     temp.append(a[right])
-#     right += 1
-#   for i in range(low, high+1):
-#     a[i] = temp[i - low]
-#   return cnt
+SC - O(N)
+'''
+def team(skill, n):
+  return merge_sort(skill, 0, n - 1)
 
-# a = [4,1,2,3,1]
-# n  =  5
-# print(team(a, n))
+def merge_sort(a, low, high):
+  cnt = 0
+  if low >= high:
+    return cnt
+  mid = (low + high) // 2
+  cnt += merge_sort(a, low, mid)
+  cnt += merge_sort(a, mid + 1, high)
+  cnt += countPairs(a, low, mid, high) # extra step
+  cnt += merge(a, low, mid, high)
+  return cnt
+
+def countPairs(a, low, mid, high):
+  right = mid + 1
+  cnt = 0
+  for i in range(low, mid + 1):
+    # Ensure right pointer only moves when condition is met
+    while right <= high and a[i] > 2 * a[right]:
+      right += 1
+    cnt += (right - (mid + 1))
+  return cnt
+
+def merge(a, low, mid, high):
+  temp = []
+  left = low
+  right = mid + 1
+  cnt = 0
+  while left <= mid and right <= high:
+    if a[left] <= a[right]:
+      temp.append(a[left])
+      left += 1
+    else:
+      temp.append(a[right])
+      cnt += (mid - left + 1)  # Count all remaining elements in the left half
+      right += 1
+  while left <= mid:
+    temp.append(a[left])
+    left += 1
+  while right <= high:
+    temp.append(a[right])
+    right += 1
+  for i in range(low, high + 1):
+    a[i] = temp[i - low]
+  return cnt
+
+# Test case
+a = [4, 1, 2, 3, 1]
+n = 5
+print(team(a, n))  # Output the number of pairs
+
 
 # 
 
 # 12 TODO : maximum product subarray
 '''
-
-
 🟢🟢🟢🟢🟢
 
 
 https://takeuforward.org/data-structure/maximum-product-subarray-in-an-array/
 
+https://www.youtube.com/watch?v=hnswaLJvr6g&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=44
 
 https://leetcode.com/problems/maximum-product-subarray/
 
 '''
-# - method 1 : brute force, TC - time complexity O(n^2), SC - O(1)
+# - method 1 : brute force
+'''
+step
+- take variable result = float("-inf")
+- iterate on the array with i from 0 till n-1
+- iterate on the array with j from i+1 till n
+- take variable prod = 1
+- iterate on the array with k from i till j+1
+- prod *= arr[k]
+- result = max(result, prod)
+- return result
+
+TC - O(n^2)
+
+SC - O(1)
+'''
 def maxProduct(nums):
   n = len(nums)
   result = float('-inf')
@@ -3948,7 +5690,22 @@ def maxProduct(nums):
 nums = [1,2,-3,0,-4,-5]
 print(maxProduct(nums))
 
-# - method 2 : better solution, TC - time complexity O(n^2), SC - O(1)
+# - method 2 : better solution
+'''
+steps
+- take variable result = nums[0]
+- iterate on the array with i from 0 till n-1
+- take variable p = 1
+- iterate on the array with j from i+1 till n
+- result = max(result, p)
+- p *= arr[j]
+- result = max(result, p)
+- return result
+
+TC - time complexity O(n^2)
+
+SC - O(1)
+'''
 def maxProduct(nums):
   result = nums[0]
   for i in range(len(nums) - 1):
@@ -3962,7 +5719,24 @@ nums = [1,2,-3,0,-4,-5]
 print(maxProduct(nums))
 
 
-# - method 3 : optimal solution, TC - O(N), SC - O(1)
+# - method 3 : optimal solution using observation
+'''
+why usinng prefix an suffix both? we can use prefix only!
+
+steps
+- take variables pre = 1 and suff = 1 and ans = float('-inf')
+- iterate on the array with i from 0 till n
+- if pre == 0: pre = 1
+- if suff == 0: suff = 1
+- pre *= arr[i]
+- suff *= arr[n-i-1]
+- ans = max(ans, max(pre, suff))
+- return ans
+
+TC - O(N)
+
+SC - O(1)
+'''
 def maxProduct(arr):
   n = len(arr)
   pre, suff = 1,1
@@ -3979,7 +5753,15 @@ def maxProduct(arr):
 nums = [1,2,-3,0,-4,-5]
 print(maxProduct(nums))
 
-# - method 4 : optimal solution, TC - O(N), SC - O(1)
+# - method 4 : optimal solution
+'''
+steps
+
+
+TC - O(N)
+
+SC - O(1)
+'''
 def maxProduct(nums):
   prod1 = nums[0]
   prod2 = nums[0]
@@ -4004,14 +5786,15 @@ print(maxProduct(nums))
 '''
 
 🟢🟢🟢🟢🟢
+⭐⭐⭐
 
 
 https://takeuforward.org/data-structure/binary-search-explained/
 
+https://www.youtube.com/watch?v=MHf6awe89xw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=45
 
 https://leetcode.com/problems/binary-search/
 
-👉👉👉https://www.youtube.com/watch?v=MHf6awe89xw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=45
 BINARY SEARCH - 
 WHEN TO USE - when the search space is sorted
 IF low or high - float("inf"), 
@@ -4019,7 +5802,22 @@ mid = (low + (high - low)) // 2
 '''
 
 # 1 TODO : binary search to find x in the sorted array 
-# method 1 : iterative approch, TC - o(log2(N)) , SC -
+# method 1 : iterative approch
+'''
+steps
+- take variables low = 0, high = len(a) - 1
+- use while loop to iterate on condition low <= high
+- take mid = (low + high) // 2
+- check if a[mid] == target then return mid
+- if a[mid] < target then low = mid + 1
+- else high = mid - 1
+- return -1
+
+
+TC - o(log2(N)) 
+
+SC -
+'''
 def binarySearch(a, target):
   low = 0
   high = len(a) - 1
@@ -4037,7 +5835,21 @@ a = [3,4,6,7,9,12,16,17]
 target  = 6
 print(binarySearch(a, target))
 
-# method 2 : recursive approch, TC - O(log2(N)) , SC -
+# method 2 : recursive approch
+'''
+steps
+- take parameters nums, low, high, target
+- if low > high then return -1
+- take mid = (low + high) // 2
+- if nums[mid] == target then return mid
+- if target > nums[mid] then return binarySearch(nums, mid+1, high, target)
+- return binarySearch(nums, low, mid-1, target)
+
+
+TC - O(log2(N))
+
+SC -
+'''
 def binarySearch(nums, low, high, target):
   if low > high:
     return -1
@@ -4061,25 +5873,39 @@ print(search(a, target))
 # TC     -      
 # SC     -      
 
-# 
 
-
-# 2 TODO : implement lower bound
+# 2 TODO : implement lower bound, smallest index such that arr[index] >= k
 '''
-
-
 🟢🟢🟢🟢🟢
-
+⭐⭐⭐
 
 https://takeuforward.org/arrays/implement-lower-bound-bs-2/
 
+https://www.youtube.com/watch?v=6zhGS79oQ4k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=46
 
 https://bit.ly/3Cf398N
 
-👉👉👉 https://www.youtube.com/watch?v=6zhGS79oQ4k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=46
 smallest index such that arr[index] >= k
+
+eg
+a = [3,5,8, 15, 19]
+x = 8  --> lb = 2
+x = 9  --> lb = 3
+x = 5  --> lb = 4
+x = 20  --> lb = 5
+
 '''
-# method 1 : brute force approch, TC - O(N) , SC - O(1)
+# method 1 : brute force approch
+'''
+steps
+- iterate on the array with i till n
+- check if arr[i] >= x then return i
+- return n
+
+TC - O(N)
+
+SC - O(1)
+'''
 def lowerBound(arr, n, x):
   for i in range(n):
     if arr[i] >= x:
@@ -4097,7 +5923,20 @@ print(lowerBound(a, n, x))
 # SC     -     
 
 
-# method 3 : optimal solution, TC - O(log(N)), SC - O(1)
+# method 3 : optimal solution
+'''
+steps
+- take variables low = 0, high = n-1 and ans = n
+- use while loop to iterate on condition low <= high
+- take mid = (low + high) // 2
+- check if arr[mid] >= x then ans = mid and high = mid - 1
+- else low = mid + 1
+- return ans
+
+TC - O(log2(N))
+
+SC - O(1)
+'''
 def lowerBound(arr, n, x):
   low = 0
   high = n - 1
@@ -4105,8 +5944,8 @@ def lowerBound(arr, n, x):
   while low <= high:
     mid = (low + high) // 2
     if arr[mid] >= x:
-      ans = mid
-      high = mid - 1
+      ans = mid  
+      high = mid - 1        
     else:
       low = mid + 1
   return ans
@@ -4117,24 +5956,37 @@ x = 9
 print(lowerBound(a, n, x))
 
 
-# 
-
-
-
-# 3 TODO : implement upper bound
+# 3 TODO : implement upper bound; smallest index such that arr[index] > k
 '''
-
-
 🟢🟢🟢🟢🟢
-
-
+⭐⭐⭐
 
 https://takeuforward.org/arrays/implement-upper-bound/
 
+https://www.youtube.com/watch?v=6zhGS79oQ4k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=46
 
 https://bit.ly/3CgDDjE
 
 smallest index such that arr[index] > k
+
+eg
+a = [2,3,6,7,8,8,11,11,11,12]
+x = 6  --> lb = 3
+x = 11  --> lb = 9
+x = 12  --> lb = 10
+x = 13  --> lb = 10
+x = 0  --> lb = 0
+'''
+# method 2 : brute force
+'''
+steps
+- iterate on the array with i till n
+- check if arr[i] > x then return i
+- return n
+
+TC - O(N)
+
+SC - O(1) 
 '''
 def upperBound(arr, x, n):
   for i in range(n):
@@ -4153,7 +6005,20 @@ print(upperBound(a, x, n))
 # SC     -     
 
 
-# method 3 : optimal solution, TC - O(log(N)), SC - O(1)
+# method 3 : optimal solution
+'''
+steps
+- take variables low = 0, high = n-1 and ans = n
+- use while loop to iterate on condition low <= high
+- take mid = (low + high) // 2
+- check if arr[mid] = x then ans = mid and high = mid - 1
+- else low = mid + 1
+- return ans
+
+TC - O(log2(N))
+
+SC - O(1)
+'''
 def upperBound(arr, x, n):
   low = 0
   high = n - 1
@@ -4173,22 +6038,18 @@ x = 9
 print(upperBound(a, x, n))
 
 
-# 
-
-
-
 # 4 TODO : search insert position
 '''
-
 🟢🟢🟢🟢🟢
 
 
 https://takeuforward.org/arrays/search-insert-position/
 
+https://www.youtube.com/watch?v=6zhGS79oQ4k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=46
 
 https://leetcode.com/problems/search-insert-position/#:~:text=Search%20Insert%20Position%20%2D%20LeetCode&text=Given%20a%20sorted%20array%20of,(log%20n)%20runtime%20complexity.
 
-
+search insert position --> same as lower bound
 '''
 # method 1 : brute force approch
 # TC     -      
@@ -4200,7 +6061,20 @@ https://leetcode.com/problems/search-insert-position/#:~:text=Search%20Insert%20
 # SC     -     
 
 
-# method 3 : optimal solution, TC - O(log(N)), SC - O(1) 
+# method 3 : optimal solution
+'''
+steps  reference --> lower bound
+- take variables low = 0, high = n-1 and ans = n
+- use while loop to iterate on condition low <= high
+- take mid = (low + high) // 2
+- check if arr[mid] >= x then ans = mid and high = mid - 1
+- else low = mid + 1
+- return ans
+
+TC - O(log2(N))
+
+SC - O(1)
+'''
 def searchInsert(arr, x):
   n = len(arr)
   low = 0
@@ -4220,24 +6094,18 @@ x  = 6
 print(searchInsert(arr, x))
 
 
-# 
-
-
-
 # 5 TODO : floor / ceil in sorted array
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/arrays/floor-and-ceil-in-sorted-array/
 
+https://www.youtube.com/watch?v=6zhGS79oQ4k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=46
+
 https://www.codingninjas.com/codestudio/problems/ceiling-in-a-sorted-array_1825401
 
-floor - greatest element <= x
-ceil - smallest element >= x
+floor - largest element <= x
+ceil - smallest element >= x  --> lower bound
 '''
 # method 1 : brute force approch
 # TC     -      
@@ -4250,8 +6118,22 @@ ceil - smallest element >= x
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+'''
+steps
+- find floor take 3 parameters arr, n, x
+- take 3 variables low = 0, high = n-1 and ans = -1
+- use while loop to iterate on condition low <= high
+- take mid = (low + high) // 2
+- check if arr[mid] <= x then ans = arr[mid] and low = mid + 1
+- else high = mid - 1
+- return ans
+
+find ceil --> reference --> lower bound
+
+
+TC     -      
+SC     -      
+'''
 def findFloor(arr, n, x):
   low = 0
   high = n - 1
@@ -4295,23 +6177,34 @@ print(getFloorAndCeil(arr, n, x))
 
 # 6 TODO : find the first or last occurence of a givennumber in sorted array
 '''
-
 🟢🟢🟢🟢🟢
-
+⭐⭐⭐
 
 https://takeuforward.org/data-structure/last-occurrence-in-a-sorted-array/
 
+https://www.youtube.com/watch?v=hjR1IYVx9lY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=47
 
 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
 '''
-# method 1 : brute force approch, TC - O(n), SC - O(1)
+# method 1 : brute force approch
+'''
+steps
+
+
+TC - O(n)
+
+SC - O(1)
+'''
 def count(n, k, x):
-  cnt = -1
+  first = -1
+  last = -1
   for i in range(k):
     if arr[i] == x:
-      cnt = i
-  return cnt
+      if first == -1:
+        first = i
+      last = i
+  return first, last
 
 arr = [3,4,13,13,13,20,40]
 n = 7
@@ -4324,36 +6217,66 @@ print(count(arr, n, x))
 # SC     -     
 
 
-# method 3 : optimal solution, TC - O(log(N)), SC - O(N) 
-def count(n, k, x):
-  start = 0
-  end = k - 1 
-  res = -1
-  while start <= end:
-    mid = start + (end - start) // 2
-    if arr[mid] == x:
-      res = mid
-      start = mid + 1
-    elif arr[mid] < x:
-      start = mid + 1
+# method 3 : optimal solution
+'''
+steps
+- take 3 variables start = 0, end = n-1 and res = -1
+- use while loop to iterate on condition start <= end
+- take mid = start + (end - start) // 2
+- check if arr[mid] == x then res = mid and start = mid + 1
+- else if arr[mid] < x then start = mid + 1
+- else end = mid - 1
+- return res
+
+TC - O(2*log2(N))
+
+SC - O(N) 
+'''
+def firstOccurrence(arr, n, k):
+  low = 0
+  high = n - 1
+  first = -1
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] == k:
+      first = mid
+      high = mid - 1  # Search on left side
+    elif arr[mid] < k:
+      low = mid + 1
     else:
-      end = mid - 1
-  return res
+      high = mid - 1
+  return first
 
-arr = [3,4,13,13,13,20,40]
-n = 7
-x = 13
-print(count(arr, n, x))                          # Output ---> 2
+def lastOccurrence(arr, n, k):
+  low = 0
+  high = n - 1
+  last = -1
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] == k:
+      last = mid
+      low = mid + 1  # Search on right side
+    elif arr[mid] < k:
+      low = mid + 1
+    else:
+      high = mid - 1
+  return last
 
+def firstAndLastPosition(arr, n, x):
+  first = firstOccurrence(arr, n, x)
+  if first == -1:
+    return (-1, -1)
+  last = lastOccurrence(arr, n, x)
+  return (first, last)
 
-
-# 
-
+arr = [2, 4, 6, 8, 8, 8, 11, 13]
+n = len(arr)
+x = 8
+print(firstAndLastPosition(arr, n, x))  # Output: 3
 
 
 # 7 TODO : count occurence of a number in a sorted array with duplicates
 '''
-
 🟢🟢🟢🟢🟢
 
 https://takeuforward.org/data-structure/count-occurrences-in-sorted-array/
@@ -4363,8 +6286,18 @@ https://bit.ly/3SVcOqW
 
 
 '''
-# method 1 : brute force approch, TC - O(N), SC - O(1)
+# method 1 : brute force approch
+'''
+steps
+- take a variable cnt = 0
+- iterate on the array with i till n
+- check if arr[i] == x then increment cnt by 1
+- return cnt
 
+TC - O(N)
+
+SC - O(1)
+'''
 def count(arr, n, x):
   cnt = 0
   for i in range(n):
@@ -4379,11 +6312,20 @@ print(count(arr, n, x))
 
 
 # method 2 : better approch
-# TC     -      
-# SC     -     
+'''
+firstOccurance -> lower bound
+lastOccurance -> upper bound
 
 
-# method 3 : optimal solution, TC - O(2*log(N)) , SC - O(1)
+TC     -      
+SC     -     
+'''
+
+# method 3 : optimal solution, 
+'''
+TC - O(2*log(N))
+SC - O(1)
+'''
 def firstOccurance(arr, n, k):
   low = 0
   high = n -1
@@ -4392,7 +6334,7 @@ def firstOccurance(arr, n, k):
     mid = (low + high) // 2
     if arr[mid] == k:
       first = mid
-      high = mid - 1
+      high = mid - 1    # ---> difference
     elif arr[mid] < k:
       low = mid + 1
     else:
@@ -4406,7 +6348,7 @@ def lastOccurance(arr, n, k):
     mid = (low + high) // 2
     if  arr[mid] == k:
       last = mid
-      low  = mid + 1
+      low  = mid + 1    # ---> difference
     elif arr[mid] < k:
       low = mid + 1
     else:
@@ -4433,26 +6375,29 @@ print(count(arr, n, x))
 
 
 
-# 
-
-
-
 # 8 TODO : search in rotated array I
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
+⭐⭐⭐
 
 https://takeuforward.org/data-structure/search-element-in-a-rotated-sorted-array/
 
+https://www.youtube.com/watch?v=hjR1IYVx9lY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=48
 
 https://leetcode.com/problems/search-in-rotated-sorted-array/
 
-
 '''
-# method 1 : brute force approch, TC - O(N), SC - O(1)
+# method 1 : brute force approch
+'''
+steps
+- iterate on the array with i till n
+- check if arr[i] == k then return i
+- return -1
+
+TC - O(N)
+
+SC - O(1)
+'''
 
 def search(arr, n, k):
   for i in range(n):
@@ -4488,55 +6433,72 @@ print(search(arr, n, k))
 #   return ans  
 
 
-# method 3 : optimal solution, TC - O(log(N)) , SC - O(1)
+# method 3 : optimal solution
+'''
+steps
+- take 2 variables low = 0 and high = n - 1
+- use while loop to iterate on condition low <= high
+- take mid = (low + high) // 2
+- check if arr[mid] == k then return mid
+- check if 
+
+
+TC - O(log(N))
+
+SC - O(1)
+'''
 
 def search(arr, n, k):
-  low = 0
-  high = n - 1
-  while low <= high:
-    mid = (low + high) // 2
-    if arr[mid] == k:
+  low = 0            
+  high = n - 1             
+  while low <= high:      
+    mid = (low + high) // 2  
+    if arr[mid] == k:        # If mid element is the target, return its index
       return mid
+    # Check if the left half is sorted
     if arr[low] <= arr[mid]:
-      if arr[low] <= k and k <= arr[mid]:          # ---> core logic starts
-        high = mid - 1
+      # If the target lies within the sorted left half
+      if arr[low] <= k and k <= arr[mid]:
+        high = mid - 1                     # Search left half
       else:
-        low = mid + 1
+        low = mid + 1                      # Search right half
     else:
+      # Otherwise, the right half must be sorted
       if arr[mid] <= k and k <= arr[high]:
-        low = mid + 1
+        low = mid + 1                      # Search right half
       else:
-        high = mid - 1                            # ---> core logic ends
-  return -1
+        high = mid - 1                     # Search left half
+  return -1  # If not found, return -1
 
-arr = [7,8,9,1,2,3,4,5,6]
-n = 9
-k = 1
-print(search(arr, n, k))
-
-
-
-# 
-
+# Example usage
+arr = [7,8,9,1,2,3,4,5,6]  
+n = 9                      
+k = 1                    
+print(search(arr, n, k))   # Output: 3
 
 
 # 9 TODO : search in rotated array II
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
-
 
 https://takeuforward.org/arrays/search-element-in-rotated-sorted-array-ii/
 
+https://www.youtube.com/watch?v=w2G2W8l__pc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=49
 
 https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 
 '''
-# method 1 : brute force approch, TC - O(N), SC - O(1)
+# method 1 : brute force approch
+'''
+steps
+- iterate on the array with i till n
+- check if arr[i] == k then return True
+- return False
 
+TC - O(N)
+
+SC - O(1)
+'''
 def search(arr, n, k):
   for i in arr:
     if i == k:
@@ -4554,42 +6516,54 @@ print(search(arr, k))
 # SC     -     
 
 
-# method 3 : optimal solution, TC - O(log(N/2)) , SC - O(1)
+# method 3 : optimal solution
 '''
 shrink condition, arr[low] == arr[mid] && arr[mid] == arr[high]
+
+
+
+TC - O(log(N/2))
+
+SC - O(1)
 '''
 
 def search(arr, k):
-  n = len(arr)
-  low = 0
-  high = n - 1
-  while low <= high:
-    mid = (low + high) // 2
-    if arr[mid] == k:
+  n = len(arr)          
+  low = 0                    
+  high = n - 1               
+
+  while low <= high:         
+    mid = (low + high) // 2  
+    if arr[mid] == k:        
       return True
-    if arr[low] == arr[mid] and arr[mid] == arr[high]:      # ---> core logic starts
+    
+    # Handle case where low, mid, and high are equal (duplicates!)
+    if arr[low] == arr[mid] and arr[mid] == arr[high]:
+      # Move both pointers inward to skip duplicates
       low += 1
       high -= 1
-      continue
-    if arr[low] <= arr[mid]:                          # ---> core logic ends
+      continue               # Restart loop with new bounds
+
+    # If the left half is sorted
+    if arr[low] <= arr[mid]:
+      # Check if target is within the left sorted range
       if arr[low] <= k and k <= arr[mid]:
-        high = mid - 1
+        high = mid - 1       # Narrow search to left half
       else:
-        low = mid + 1
+        low = mid + 1        # Narrow search to right half
     else:
+      # Otherwise, the right half must be sorted
       if arr[mid] <= k and k <= arr[high]:
-        low = mid + 1
+        low = mid + 1        # Narrow search to right half
       else:
-        high = mid - 1
-  return False
+        high = mid - 1       # Narrow search to left half
+
+  return False  # Target not found
+
 
 arr = [7,8,1,2,3,3,3,4,5,6]
 k = 3
 print(search(arr, k))
-
-
-
-# 
 
 
 
@@ -4599,13 +6573,25 @@ print(search(arr, k))
 🟡🟡🟡🟡🟡
 
 
-
 https://takeuforward.org/data-structure/minimum-in-rotated-sorted-array/
+
+https://www.youtube.com/watch?v=nhEMDKMB44g&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=50
 
 https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 
 '''
-# method 1 : brute force approch, TC - O(N) , SC - O(1)
+# method 1 : brute force approch
+'''
+steps
+- take a variable mini = float('inf')
+- iterate on the array with i till n
+- update mini = min(mini, arr[i])
+- return mini
+
+TC - O(N)
+
+SC - O(1)
+'''
 def findMin(arr):
   n = len(arr)
   mini = float('inf')
@@ -4617,33 +6603,52 @@ arr = [4,5,6,7,0,1,2,3]
 print(findMin(arr))
 
 
-# method 2 : better approch, TC - O(log(N)) , SC - O(1)
+# method 2 : better approch
+'''
+TC - O(log(N))
+
+SC - O(1)
+'''
 def findMin(arr):
   low = 0
   high = len(arr) - 1
   ans = float('inf')
   while low <= high:
     mid = (low + high) // 2
+    # Case 1: The left part of the array is sorted
     if arr[low] <= arr[mid]:
+      # The minimum could be the leftmost element
       ans = min(ans, arr[low])
+      # Move to the right half, as left half is sorted and minimum is already considered
       low = mid + 1
     else: 
+      # Case 2: The right part of the array is sorted
+      # The minimum could be the middle element
       ans = min(ans, arr[mid])
+      # Move to the left half
       high = mid - 1
   return ans
 
 arr = [4,5,6,7,0,1,2,3]
 print(findMin(arr))
 
-# method 3 : optimal solution, TC - O(log(N)) , SC - O(1) 
+# method 3 : optimal solution
+'''
+TC - O(log(N))
+
+SC - O(1) 
+'''
 def findMin(arr):
   low = 0
   high = len(arr) - 1
   ans = float('inf')
   while low <= high:
     mid = (low + high) // 2
+    # If the subarray is already sorted (no rotation in this part)
     if arr[low] <= arr[high]:
-      ans = min(ans, arr[low])              # ---> core logic
+      # The smallest element is at 'low'
+      ans = min(ans, arr[low])    
+      # Since it's sorted, we can break early          
       break
     if arr[low] <= arr[mid]:
       ans = min(ans, arr[low])
@@ -4665,12 +6670,20 @@ print(findMin(arr))
 
 https://takeuforward.org/arrays/find-out-how-many-times-the-array-has-been-rotated/
 
+https://www.youtube.com/watch?v=jtSiWTPLwd0&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=51
 
 https://bit.ly/3dEvWJD
 
 
+find the index where the element is smallest
+
 '''
-# method 1 : brute force approch, TC - O(N), SC - O(1)
+# method 1 : brute force approch
+'''
+TC - O(N)
+
+SC - O(1)
+'''
 def findRotated(arr):
   n = len(arr)
   mini = float('inf')
@@ -4690,30 +6703,44 @@ print(findRotated(arr))
 # SC     -     
 
 
-# method 3 : optimal solution, using binary search, TC - O(log(N)), SC - O(1)
+# method 3 : optimal solution, using binary search
+'''
+TC - O(log(N))
+
+SC - O(1)
+'''
 def findRotated(arr):
   low = 0
   high = len(arr) - 1
   ans = float("inf")
   index = -1
   while low <= high:
-    mid = (low + high) // 2
+    mid = (low + high) // 2  # Find the middle index
+    # Case 1: If the current subarray is already sorted
     if arr[low] <= arr[high]:
-      if arr[low] < ans:          # ---> core logic 
+      # The smallest element is at the low index in this sorted subarray
+      if arr[low] < ans:          
         ans = arr[low]
         index = low
-      break
+      break  # Since the subarray is sorted, no need to continue
+
+    # Case 2: Left half is sorted
     if arr[low] <= arr[mid]:
-      if arr[low] < ans:          # ---> core logic 
+      # Compare and update the smallest value found so far
+      if arr[low] < ans:           
         ans = arr[low]
         index = low
+      # Move to the right half since the smallest value isn't in the left
       low = mid + 1
+
+    # Case 3: Right half is unsorted, so minimum is in the left half
     else:
-      if arr[mid] < ans:          # ---> core logic 
+      # Compare and update the smallest value found so far
+      if arr[mid] < ans:          
         ans = arr[mid]
         index = mid
+      # Move to the left half
       high = mid - 1
-  return index
 
 arr = [4,5,6,7,0,1,2,3]
 print(findRotated(arr))
@@ -4728,6 +6755,7 @@ print(findRotated(arr))
 
 https://takeuforward.org/data-structure/search-single-element-in-a-sorted-array/
 
+https://www.youtube.com/watch?v=AZOmHuHadxQ&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=52
 
 https://leetcode.com/problems/single-element-in-a-sorted-array/
 
@@ -4735,110 +6763,149 @@ https://leetcode.com/problems/single-element-in-a-sorted-array/
 (odd, even) - element is on left half
 
 '''
-# method 1 : brute force approch, TC - O(N), SC - O(1)
+# method 1 : brute force approch
+'''
+TC - O(N)
+
+SC - O(1)
+'''
 def singleNonDuplicate(arr):
-    n = len(arr)  # Size of the array
-    if n == 1:
-        return arr[0]
+  n = len(arr) 
+  if n == 1:
+    return arr[0]
 
-    for i in range(n):
-        # Check for first index
-        if i == 0:
-            if arr[i] != arr[i + 1]:
-                return arr[i]
-        # Check for last index
-        elif i == n - 1:
-            if arr[i] != arr[i - 1]:
-                return arr[i]
-        else:
-            if arr[i] != arr[i - 1] and arr[i] != arr[i + 1]:
-                return arr[i]
-
-    # Dummy return statement
-    return -1
+  for i in range(n):
+    # Case 1: First element of the array
+    if i == 0:
+      # If the first element is not equal to the second, it's the unique one
+      if arr[i] != arr[i + 1]:
+        return arr[i]
+    # Case 2: Last element of the array
+    elif i == n - 1:
+      # If the last element is not equal to the second-last, it's the unique one
+      if arr[i] != arr[i - 1]:
+        return arr[i]
+    # Case 3: Middle elements
+    else:
+      # If the current element is different from both its neighbors, it's the unique one
+      if arr[i] != arr[i - 1] and arr[i] != arr[i + 1]:
+        return arr[i]
+  return -1
 
 arr = [1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
 ans = singleNonDuplicate(arr)
 print("The single element is:", ans)
 
-# method 2 : better approch, TC - O(N), SC - O(1)
+# method 2 : better approch
+'''
+TC - O(N)
+
+SC - O(1)
+'''
 def singleNonDuplicate(arr):
-    n = len(arr)  # Size of the array
-    ans = 0
-    # XOR all the elements
-    for i in range(n):
-        ans = ans ^ arr[i]
-    return ans
+  n = len(arr)  # Size of the array
+  ans = 0
+  # XOR all the elements
+  for i in range(n):
+    ans = ans ^ arr[i]
+  return ans
 
 arr = [1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
 ans = singleNonDuplicate(arr)
 print("The single element is:", ans)
 
-# method 3 : optimal solution, TC - O(log(N)), SC - O(1) 
+# method 3 : optimal solution
+'''
+(even, odd) - element is on right half, eliminate left
+(odd, even) - element is on left half, eliminate right
+
+
+TC - O(log(N))
+
+SC - O(1) 
+'''
 def singleNonDuplicate(arr):
-    n = len(arr)  # Size of the array
+  n = len(arr)  # Get the length of the array
 
-    # Edge cases:
-    if n == 1:
-        return arr[0]
-    if arr[0] != arr[1]:
-        return arr[0]
-    if arr[n - 1] != arr[n - 2]:
-        return arr[n - 1]
+  # Edge case 1: If there's only one element, it's the unique one
+  if n == 1:
+      return arr[0]
+  
+  # Edge case 2: If the first element is not equal to the second, it's unique
+  if arr[0] != arr[1]:
+      return arr[0]
+  
+  # Edge case 3: If the last element is not equal to the second last, it's unique
+  if arr[n - 1] != arr[n - 2]:
+      return arr[n - 1]
 
-    low = 1
-    high = n - 2
-    while low <= high:
-        mid = (low + high) // 2
+  # Initialize binary search boundaries
+  low = 1
+  high = n - 2
 
-        # If arr[mid] is the single element:
-        if arr[mid] != arr[mid + 1] and arr[mid] != arr[mid - 1]:
-            return arr[mid]
+  # Binary search loop
+  while low <= high:
+    mid = (low + high) // 2  # Calculate middle index
 
-        # We are in the left:
-        if (mid % 2 == 1 and arr[mid] == arr[mid - 1]) or (mid % 2 == 0 and arr[mid] == arr[mid + 1]):
-            # Eliminate the left half:
-            low = mid + 1
-        # We are in the right:
-        else:
-            # Eliminate the right half:
-            high = mid - 1
+    # Check if the mid element is the unique one
+    if arr[mid] != arr[mid + 1] and arr[mid] != arr[mid - 1]:
+      return arr[mid]
 
-    # Dummy return statement:
-    return -1
+    # Determine which half of the array to search next:
+    # If mid is odd and equals the previous element (pair is on the left)
+    # OR mid is even and equals the next element (pair is on the left)
+    if (mid % 2 == 1 and arr[mid] == arr[mid - 1]) or (mid % 2 == 0 and arr[mid] == arr[mid + 1]):
+      # Move search to the right half
+      low = mid + 1
+    else:
+      # Otherwise, move search to the left half
+      high = mid - 1
+
+  # If no unique element found (should not happen with valid input)
+  return -1
+
 
 arr = [1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
 ans = singleNonDuplicate(arr)
 print("The single element is:", ans)
-
-
 
 
 
 # 13 TODO : find peak element
 '''
-
-
 🔴🔴🔴🔴🔴
 
 https://takeuforward.org/data-structure/peak-element-in-array/
 
+https://www.youtube.com/watch?v=cXxmbemS6XM&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=53
 
 https://leetcode.com/problems/find-peak-element/#:~:text=Find%20Peak%20Element%20%2D%20LeetCode&text=A%20peak%20element%20is%20an,to%20any%20of%20the%20peaks.
 
 peak element, arr[i-1] < arr[i] and arr[i] > arr[i+1]
 '''
-# method 1 : brute force approch, TC - O(N) , SC - O(1)
-def findPeakElement(arr: [int]) -> int:
-    n = len(arr) # Size of the array
+# method 1 : brute force approch
+'''
+TC - O(N)
 
-    for i in range(n):
-        # Checking for the peak:
-        if (i == 0 or arr[i - 1] < arr[i]) and (i == n - 1 or arr[i] > arr[i + 1]):
-            return i
+SC - O(1)
+'''
+def findPeakElement(arr):
+  n = len(arr)  # Get the size of the input array
 
-    # Dummy return statement
-    return -1
+  # Iterate through each element in the array
+  for i in range(n):
+    # Check if the current element is a "peak":
+    # A peak is an element that is greater than its neighbors.
+    # Special handling for the first and last elements:
+    # - If i == 0: only need to check if arr[0] > arr[1]
+    # - If i == n - 1: only need to check if arr[n - 1] > arr[n - 2]
+    # - Otherwise: arr[i] should be greater than both arr[i - 1] and arr[i + 1]
+    if (i == 0 or arr[i - 1] < arr[i]) and (i == n - 1 or arr[i] > arr[i + 1]):
+      return i  # Return the index of the peak element
+
+  # This line will rarely execute; it's a fallback in case no peak is found
+  # (which shouldn't happen in a valid input with at least one peak)
+  return -1
 
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 5, 1]
 ans = findPeakElement(arr)
@@ -4850,44 +6917,52 @@ print("The peak is at index:", ans)
 # SC     -     
 
 
-# method 3 : optimal solution, TC - O(log(N)) , SC - O(1) 
-def findPeakElement(arr: [int]) -> int:
-    n = len(arr)  # Size of the array
+# method 3 : optimal solution
+'''
+TC - O(log(N))
 
-    # Edge cases:
-    if n == 1:
-        return 0
-    if arr[0] > arr[1]:
-        return 0
-    if arr[n - 1] > arr[n - 2]:
-        return n - 1
+SC - O(1) 
 
-    low = 1
-    high = n - 2
-    while low <= high:
-        mid = (low + high) // 2
+solution can have one peak or multiple peak or any from multiple peak
+[1, 2, 3, 4, 5, 6, 7, 8, 5, 1]  -> 7
+[1, 5, 1, 2, 1]  -> 1 or 3 (both are valid peaks)
 
-        # If arr[mid] is the peak:
-        if arr[mid - 1] < arr[mid] and arr[mid] > arr[mid + 1]:
-            return mid
-
-        # If we are in the left:
-        if arr[mid] > arr[mid - 1]:
-            low = mid + 1
-
-        # If we are in the right:
-        # Or, arr[mid] is a common point:
-        else:
-            high = mid - 1
-
-    # Dummy return statement
-    return -1
-
+'''
+def findPeakElement(arr):
+  n = len(arr) 
+  # Handle edge case 1: If there's only one element, it's a peak by default
+  if n == 1:
+      return 0
+  # Edge case 2: If the first element is greater than the second, it's a peak
+  if arr[0] > arr[1]:
+      return 0
+  # Edge case 3: If the last element is greater than the second last, it's a peak
+  if arr[n - 1] > arr[n - 2]:
+      return n - 1
+  # Initialize binary search boundaries, excluding the first and last element
+  low = 1
+  high = n - 2
+  while low <= high:
+      mid = (low + high) // 2  
+      # Check if the middle element is a peak:
+      # A peak is greater than both its left and right neighbors
+      if arr[mid - 1] < arr[mid] and arr[mid] > arr[mid + 1]:
+          return mid  # Found a peak at index 'mid'
+      # If the middle element is increasing (greater than the left neighbor),
+      # then a peak must exist on the right side
+      elif arr[mid] > arr[mid - 1]:
+          low = mid + 1  # Move search space to the right half
+      # Otherwise, a peak exists on the left side
+      elif arr[mid] > arr[mid + 1]:
+          high = mid - 1  # Move search space to the left half
+      else:
+        low = mid + 1
+  # Fallback return; shouldn't happen in a valid input
+  return -1
 
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 5, 1]
 ans = findPeakElement(arr)
 print("The peak is at index:", ans)
-
 
 
 
@@ -4897,45 +6972,50 @@ print("The peak is at index:", ans)
 
 
 
-
 # region 4.2 BINARY SEARCH on ANSWERS
 # -----------------------------------
-
+'''
+range of binary search will always be given in the question
+'''
 
 # 1 TODO :  find square root of a number in log(n) 
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/binary-search/finding-sqrt-of-a-number-using-binary-search/
 
+https://www.youtube.com/watch?v=Bsv3FPUX_BA&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=54
 
 https://bit.ly/3JXtGcE
 
 '''
-# method 1 : brute force approch, TC - O(N) , SC - O(1)
+# method 1 : brute force approch
+'''
+TC - O(N)
 
-
-
+SC - O(1)
+'''
 def floorSqrt(n):
-    ans = 0
-    # Linear search on the answer space:
-    for i in range(1, n+1):
-        val = i * i
-        if val <= n:
-            ans = i
-        else:
-            break
-    return ans
+  ans = 0
+  # Linear search on the answer space:
+  for i in range(1, n+1):
+    val = i * i
+    if val <= n:
+      ans = i
+    else:
+      break
+  return ans
 
 n = 28
 ans = floorSqrt(n)
 print("The floor of square root of", n, "is:", ans)
 
-# method 2 : better approch, TC - O(log(N)), SC - O(1)
+# method 2 : better approch
+'''
+TC - O(log(N))
+
+SC - O(1)
+'''
 import math
 def floorSqrt(n):
     ans = int(math.sqrt(n))
@@ -4945,21 +7025,26 @@ n = 28
 ans = floorSqrt(n)
 print("The floor of square root of", n, "is:", ans)
 
-# method 3 : optimal solution, TC - O(log(N)), SC - O(1)
+# method 3 : optimal solution
+'''
+TC - O(log(N))
+
+SC - O(1)
+'''
 def floorSqrt(n):
-    low = 1
-    high = n
-    # Binary search on the answers:
-    while low <= high:
-        mid = (low + high) // 2
-        val = mid * mid             # ---> core logic
-        if val <= n:
-            # Eliminate the left half:
-            low = mid + 1
-        else:
-            # Eliminate the right half:
-            high = mid - 1
-    return high
+  low = 1
+  high = n
+  # Binary search on the answers:
+  while low <= high:
+    mid = (low + high) // 2
+    val = mid * mid             # ---> core logic
+    if val <= n:
+      # Eliminate the left half:
+      low = mid + 1
+    else:
+      # Eliminate the right half:
+      high = mid - 1
+  return high
 
 n = 28
 ans = floorSqrt(n)
@@ -4967,39 +7052,43 @@ print("The floor of square root of", n, "is:", ans)
 
 # 2 TODO : find the Nth root of a number using binary search
 '''
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/data-structure/nth-root-of-a-number-using-binary-search/
 
 
 https://bit.ly/3zWNyrL
 
+https://www.youtube.com/watch?v=Bsv3FPUX_BA&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=54
+
 
 '''
-# method 1 : brute force approch, TC - O(M), SC - O(1)
+# method 1 : brute force approch
+'''
+TC - O(M)
+
+SC - O(1)
+'''
 def func(b, exp):
-    ans = 1
-    base = b
-    while exp > 0:
-        if exp % 2:
-            exp -= 1
-            ans = ans * base
-        else:
-            exp //= 2
-            base = base * base
-    return ans
+  ans = 1
+  base = b
+  while exp > 0:
+    if exp % 2:
+      exp -= 1
+      ans = ans * base
+    else:
+      exp //= 2
+      base = base * base
+  return ans
 
 def NthRoot(n: int, m: int) -> int:
-    for i in range(1, m + 1):
-        val = func(i, n)
-        if val == m:
-            return i
-        elif val > m:
-            break
-    return -1
+  for i in range(1, m + 1):
+    val = func(i, n)
+    if val == m:
+      return i
+    elif val > m:
+      break
+  return -1
 
 n = 3
 m = 27
@@ -5022,83 +7111,95 @@ print("The answer is:", ans)
 #       high = mid - 1
 #   return ans  
 
-# method 3 : optimal solution, TC - O(log(N)), SC - O(1) 
+# method 3 : optimal solution
 '''
 def func(mid, n, m) -> stop from overflow condition ie 10**9
+
+TC - O(log2(N) * log2(M))
+
+SC - O(1) 
 '''
 def func(mid, n, m):
-    ans = 1
-    for i in range(1, n + 1):
-        ans *= mid
-        if ans > m:
-            return 2
-    if ans == m:
-      # find the root
-        return 1
-    return 0
+  ans = 1  # Start with ans = 1
+  # Multiply mid, n times to compute mid^n
+  for i in range(1, n + 1):
+    ans *= mid
+    # Early exit if the result exceeds m — no need to continue
+    if ans > m:
+      return 2  # mid^n is greater than m
+  # If result exactly equals m, we found the root
+  if ans == m:
+      return 1  # mid is the nth root of m
+  # Otherwise, mid^n is less than m
+  return 0
 
 def NthRoot(n: int, m: int) -> int:
-    low = 1
-    high = m
-    while low <= high:
-        mid = (low + high) // 2
-        midN = func(mid, n, m)      # ---> core logic to handle overflow
-        if midN == 1:
-            return mid
-        elif midN == 0:
-            low = mid + 1
-        else:
-            high = mid - 1
-    return -1
+  low = 1
+  high = m
+  while low <= high:
+    mid = (low + high) // 2
+    midN = func(mid, n, m)  
+    if midN == 1:
+      return mid  # Found the nth root
+    elif midN == 0:
+      low = mid + 1  # mid^n is too small; try higher
+    else:
+      high = mid - 1  # mid^n is too large; try lower
+  return -1
 
 n = 3
 m = 27
 ans = NthRoot(n, m)
 print("The answer is:", ans)
 
-# 3 TODO : koko eating bananas
+# 3 TODO : koko eating bananas, 
 '''
-
 🔴🔴🔴🔴🔴
-
 
 https://takeuforward.org/binary-search/koko-eating-bananas/
 
 https://leetcode.com/problems/koko-eating-bananas/
 
+https://www.youtube.com/watch?v=rjEJeYCasHs&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=56
+
 
 Retun the minimum integer k such that she can eat all the bananas within h hours.
 '''
-# method 1 : brute force approch, TC - O(max(a[]) * N), SC - O(1)
+# method 1 : brute force approch
+'''
+TC - O(max(a[]) * N)
+
+SC - O(1)
+'''
 import math
 def findMax(v):
-    maxi = float('-inf')
-    n = len(v)
-    # Find the maximum
-    for i in range(n):
-        maxi = max(maxi, v[i])
-    return maxi
+  maxi = float('-inf')
+  n = len(v)
+  # Find the maximum
+  for i in range(n):
+    maxi = max(maxi, v[i])
+  return maxi
 
 def calculateTotalHours(v, hourly):
-    totalH = 0
-    n = len(v)
-    # Find total hours
-    for i in range(n):
-        totalH += math.ceil(v[i] / hourly)
-    return totalH
+  totalH = 0
+  n = len(v)
+  # Find total hours
+  for i in range(n):
+    totalH += math.ceil(v[i] / hourly)
+  return totalH
 
 def minimumRateToEatBananas(v, h):
-    # Find the maximum number
-    maxi = findMax(v)
+  # Find the maximum number
+  maxi = findMax(v)
 
-    # Find the minimum value of k
-    for i in range(1, maxi+1):
-        reqTime = calculateTotalHours(v, i)
-        if reqTime <= h:
-            return i
+  # Find the minimum value of k
+  for i in range(1, maxi+1):
+    reqTime = calculateTotalHours(v, i)
+    if reqTime <= h:
+      return i
 
-    # Dummy return statement
-    return maxi
+  # Dummy return statement
+  return maxi
 
 v = [7, 15, 6, 3]
 h = 8
@@ -5112,41 +7213,44 @@ print("Koko should eat at least", ans, "bananas/hr.")
 # SC     -     
 
 
-# method 3 : optimal solution, TC - O(N * log(max(a[]))), SC - O(1)
+# method 3 : optimal solution
+'''
 
+TC - O(N * log(max(a[])))
 
-
+SC - O(1)
+'''
 import math
 
 def findMax(v):
-    maxi = float('-inf')
-    n = len(v)
-    # Find the maximum
-    for i in range(n):
-        maxi = max(maxi, v[i])
-    return maxi
+  maxi = float('-inf')
+  n = len(v)
+  # Find the maximum
+  for i in range(n):
+    maxi = max(maxi, v[i])
+  return maxi
 
 def calculateTotalHours(v, hourly):
-    totalH = 0
-    n = len(v)
-    # Find total hours
-    for i in range(n):
-        totalH += math.ceil(v[i] / hourly)
-    return totalH
+  totalH = 0
+  n = len(v)
+  # Find total hours
+  for i in range(n):
+    totalH += math.ceil(v[i] / hourly)
+  return totalH
 
 def minimumRateToEatBananas(v, h):
-    low = 1
-    high = findMax(v)
+  low = 1
+  high = findMax(v)
 
-    # Apply binary search
-    while low <= high:
-        mid = (low + high) // 2
-        totalH = calculateTotalHours(v, mid)
-        if totalH <= h:
-            high = mid - 1
-        else:
-            low = mid + 1
-    return low
+  # Apply binary search
+  while low <= high:
+    mid = (low + high) // 2
+    totalH = calculateTotalHours(v, mid)
+    if totalH <= h:
+      high = mid - 1
+    else:
+      low = mid + 1
+  return low
 
 v = [7, 15, 6, 3]
 h = 8
@@ -5164,57 +7268,70 @@ print("Koko should eat at least", ans, "bananas/hr.")
 
 https://takeuforward.org/arrays/minimum-days-to-make-m-bouquets/
 
+https://www.youtube.com/watch?v=TXAuxeYBTdg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=57
 
 https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
 
 '''
 # method 1 : brute force approch
-# Time Complexity: O((max(arr[])-min(arr[])+1) * N), where {max(arr[]) -> maximum element of the array, min(arr[]) -> minimum element of the array, N = size of the array}.
-# Reason: We are running a loop to check our answers that are in the range of [min(arr[]), max(arr[])]. For every possible answer, we will call the possible() function. Inside the possible() function, we are traversing the entire array, which results in O(N).
+'''
 
-# Space Complexity: O(1) as we are not using any extra space to solve this problem.   
+Time Complexity: O((max(arr[])-min(arr[])+1) * N), where {max(arr[]) -> maximum element of the array, min(arr[]) -> minimum element of the array, N = size of the array}.
+Reason: We are running a loop to check our answers that are in the range of [min(arr[]), max(arr[])]. For every possible answer, we will call the possible() function. Inside the possible() function, we are traversing the entire array, which results in O(N).
 
+Space Complexity: O(1) as we are not using any extra space to solve this problem.  
 
-
+''' 
 def possible(arr, day, m, k):
-    n = len(arr)  # size of the array
-    cnt = 0
-    noOfB = 0
-    # count the number of bouquets
-    for i in range(n):
-        if arr[i] <= day:
-            cnt += 1
-        else:
-            noOfB += cnt // k
-            cnt = 0
-    noOfB += cnt // k
-    return noOfB >= m
+  n = len(arr)  # Get the total number of flowers
+  cnt = 0       # Count of consecutive flowers bloomed by 'day'
+  noOfB = 0     # Number of bouquets made so far
+
+  # Traverse through each flower
+  for i in range(n):
+    if arr[i] <= day:
+      # Flower is bloomed by 'day'; increase consecutive count
+      cnt += 1
+    else:
+      # If flower not bloomed, check how many bouquets can be made from previous group
+      noOfB += cnt // k  # integer division gives full bouquets
+      cnt = 0  # reset the count since this flower breaks the streak
+
+  # After the loop, check leftover consecutive bloomed flowers
+  noOfB += cnt // k
+  # Return whether we can make at least 'm' bouquets
+  return noOfB >= m
 
 def roseGarden(arr, k, m):
-    val = m * k
-    n = len(arr)  # size of the array
-    if val > n:
-        return -1  # impossible case
-    # find maximum and minimum
-    mini = float('inf')
-    maxi = float('-inf')
-    for i in range(n):
-        mini = min(mini, arr[i])
-        maxi = max(maxi, arr[i])
+  val = m * k  # Total flowers needed to make m bouquets of size k
+  n = len(arr)
 
-    for i in range(mini, maxi+1):
-        if possible(arr, i, m, k):
-            return i
+  # If not enough flowers in total, it's impossible
+  if val > n:
     return -1
+
+  # Find the minimum and maximum bloom days in the array
+  mini = float('inf')
+  maxi = float('-inf')
+  for i in range(n):
+    mini = min(mini, arr[i])
+    maxi = max(maxi, arr[i])
+
+  # Try every day from earliest bloom to latest
+  for i in range(mini, maxi + 1):
+    if possible(arr, i, m, k):
+      return i  # Found the earliest day we can make m bouquets
+  # If no such day found, return -1
+  return -1
 
 arr = [7, 7, 7, 7, 13, 11, 12, 7]
 k = 3
 m = 2
 ans = roseGarden(arr, k, m)
 if ans == -1:
-    print("We cannot make m bouquets.")
+  print("We cannot make m bouquets.")
 else:
-    print("We can make bouquets on day", ans)
+  print("We can make bouquets on day", ans)
 
 
 
@@ -5232,68 +7349,66 @@ Reason: We are applying binary search on our answers that are in the range of [m
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
 '''
-
-
-
 def possible(arr, day, m, k):
-    n = len(arr)  # size of the array
-    cnt = 0
-    noOfB = 0
-    # count the number of bouquets
-    for i in range(n):
-        if arr[i] <= day:
-            cnt += 1
-        else:
-            noOfB += cnt // k
-            cnt = 0
-    noOfB += cnt // k
-    return noOfB >= m
+  n = len(arr)  # Get the total number of flowers
+  cnt = 0       # Count of consecutive flowers bloomed by 'day'
+  noOfB = 0     # Number of bouquets made so far
+
+  # Traverse through each flower
+  for i in range(n):
+    if arr[i] <= day:
+      # Flower is bloomed by 'day'; increase consecutive count
+      cnt += 1
+    else:
+      # If flower not bloomed, check how many bouquets can be made from previous group
+      noOfB += cnt // k  # integer division gives full bouquets
+      cnt = 0  # reset the count since this flower breaks the streak
+
+  # After the loop, check leftover consecutive bloomed flowers
+  noOfB += cnt // k
+  # Return whether we can make at least 'm' bouquets
+  return noOfB >= m
 
 def roseGarden(arr, k, m):
-    val = m * k
-    n = len(arr)  # size of the array
-    if val > n:
-        return -1  # impossible case
-    # find maximum and minimum
-    mini = float('inf')
-    maxi = float('-inf')
-    for i in range(n):
-        mini = min(mini, arr[i])
-        maxi = max(maxi, arr[i])
+  val = m * k
+  n = len(arr)  # size of the array
+  if val > n:
+    return -1  # impossible case
+  # find maximum and minimum
+  mini = float('inf')
+  maxi = float('-inf')
+  for i in range(n):
+    mini = min(mini, arr[i])
+    maxi = max(maxi, arr[i])
 
-    # apply binary search
-    low = mini
-    high = maxi
-    while low <= high:
-        mid = (low + high) // 2
-        if possible(arr, mid, m, k):
-            high = mid - 1
-        else:
-            low = mid + 1
-    return low
+  # apply binary search
+  low = mini
+  high = maxi
+  while low <= high:
+    mid = (low + high) // 2
+    if possible(arr, mid, m, k):
+      high = mid - 1
+    else:
+      low = mid + 1
+  return low
 
 arr = [7, 7, 7, 7, 13, 11, 12, 7]
 k = 3
 m = 2
 ans = roseGarden(arr, k, m)
 if ans == -1:
-    print("We cannot make m bouquets.")
+  print("We cannot make m bouquets.")
 else:
-    print("We can make bouquets on day", ans)
-
-
-
+  print("We can make bouquets on day", ans)
 
 
 # 5 TODO : find the smallest divisors
 '''
-
-
 🟢🟢🟢🟢🟢
-
 
 https://takeuforward.org/arrays/find-the-smallest-divisor-given-a-threshold/
 
+https://www.youtube.com/watch?v=UvBKTVaG6U8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=58
 
 https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
 
@@ -5308,17 +7423,17 @@ Space Complexity: O(1) as we are not using any extra space to solve this problem
 
 import math
 def smallestDivisor(arr, limit):
-    n = len(arr)  # size of array
-    maxi = max(arr)
-    # Find the smallest divisor
-    for d in range(1, maxi+1):
-        # Find the summation result
-        sum = 0
-        for i in range(n):
-            sum += math.ceil(arr[i] / d)
-        if sum <= limit:
-            return d
-    return -1
+  n = len(arr)  # size of array
+  maxi = max(arr)
+  # Find the smallest divisor
+  for d in range(1, maxi+1):
+    # Find the summation result
+    sum = 0
+    for i in range(n):
+      sum += math.ceil(arr[i] / d)
+    if sum <= limit:
+      return d
+  return -1
 
 arr = [1, 2, 3, 4, 5]
 limit = 8
@@ -5343,28 +7458,28 @@ Space Complexity: O(1) as we are not using any extra space to solve this problem
 import math
 
 def sumByD(arr, div):
-    n = len(arr)  # size of array
-    # Find the summation of division values
-    total_sum = 0
-    for i in range(n):
-        total_sum += math.ceil(arr[i] / div)
-    return total_sum
+  n = len(arr)  # size of array
+  # Find the summation of division values
+  total_sum = 0
+  for i in range(n):
+    total_sum += math.ceil(arr[i] / div)
+  return total_sum
 
 def smallestDivisor(arr, limit):
-    n = len(arr)
-    if n > limit:
-        return -1
-    low = 1
-    high = max(arr)
+  n = len(arr)
+  if n > limit:
+    return -1
+  low = 1
+  high = max(arr)
 
-    # Apply binary search
-    while low <= high:
-        mid = (low + high) // 2
-        if sumByD(arr, mid) <= limit:
-            high = mid - 1
-        else:
-            low = mid + 1
-    return low
+  # Apply binary search
+  while low <= high:
+    mid = (low + high) // 2
+    if sumByD(arr, mid) <= limit:
+      high = mid - 1
+    else:
+      low = mid + 1
+  return low
 
 arr = [1, 2, 3, 4, 5]
 limit = 8
@@ -5374,13 +7489,11 @@ print("The minimum divisor is:", ans)
 
 # 6 TODO : capacity to ship packages within D days
 '''
-
-
 🔴🔴🔴🔴🔴
-
 
 https://takeuforward.org/arrays/capacity-to-ship-packages-within-d-days/
 
+https://www.youtube.com/watch?v=MG-Ac4TAvTY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=59
 
 https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 
@@ -5392,38 +7505,33 @@ Reason: We are using a loop from max(weights[]) to sum(weights[]) to check all p
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
 '''
+def findDays(weights, cap):
+  days = 1  # Start with the first day
+  load = 0  # Current load for the day
+  n = len(weights)  # Total number of packages
 
+  # Go through each package
+  for i in range(n):
+    # If adding the current weight exceeds capacity,
+    # we need to move to the next day
+    if load + weights[i] > cap:
+      days += 1            # Increment the number of days
+      load = weights[i]    # Start the new day with this package
+    else:
+      # Add the weight to the current day's load
+      load += weights[i]
+  return days  # Return the total number of days needed for this capacity
 
-
-
-from typing import List
-
-def findDays(weights: List[int], cap: int) -> int:
-    days = 1  # First day
-    load = 0
-    n = len(weights)  # size of array
-
-    for i in range(n):
-        if load + weights[i] > cap:
-            days += 1  # move to next day
-            load = weights[i]  # load the weight
-        else:
-            # load the weight on the same day
-            load += weights[i]
-    
-    return days
 
 def leastWeightCapacity(weights: List[int], d: int) -> int:
-    # Find the maximum and the summation
-    maxi = max(weights)
-    summation = sum(weights)
-
-    for i in range(maxi, summation + 1):
-        if findDays(weights, i) <= d:
-            return i
-
-    # dummy return statement
-    return -1
+  # Find the maximum and the summation
+  maxi = max(weights)
+  summation = sum(weights)
+  for i in range(maxi, summation + 1):
+    if findDays(weights, i) <= d:
+      return i
+  # dummy return statement
+  return -1
 
 weights = [5, 4, 5, 2, 3, 4, 5, 6]
 d = 5
@@ -5446,22 +7554,22 @@ Reason: We are applying binary search on the range [max(weights[]), sum(weights[
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
 '''
-
-
-
-
 def findDays(weights, cap):
-    days = 1  # First day                       # ---> remember the day = 1 not 0
-    load = 0
-    n = len(weights)  # Size of array
-    for i in range(n):
-        if load + weights[i] > cap:
-            days += 1  # Move to next day
-            load = weights[i]  # Load the weight
-        else:
-            # Load the weight on the same day
-            load += weights[i]
-    return days
+  days = 1  # Start with the first day
+  load = 0  # Current load for the day
+  n = len(weights)  # Total number of packages
+
+  # Go through each package
+  for i in range(n):
+    # If adding the current weight exceeds capacity,
+    # we need to move to the next day
+    if load + weights[i] > cap:
+      days += 1            # Increment the number of days
+      load = weights[i]    # Start the new day with this package
+    else:
+      # Add the weight to the current day's load
+      load += weights[i]
+  return days  # Return the total number of days needed for this capacity
 
 def leastWeightCapacity(weights, d):
     # Find the maximum and the summation
@@ -5484,25 +7592,21 @@ ans = leastWeightCapacity(weights, d)
 print("The minimum capacity should be:", ans)
 
 
-
-
-
 # 7 TODO : 👉👉👉 IMPORTANT : Kth missing positive number
 '''
-
-
 🟢🟢🟢🟢🟢
 
 https://takeuforward.org/arrays/kth-missing-positive-number/
 
+https://www.youtube.com/watch?v=uZ0N_hZpyps&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=60
 
 https://leetcode.com/problems/kth-missing-positive-number/#:~:text=Given%20an%20array%20arr%20of,13%2C...%5D.
-
 
 
 '''
 # method 1 : brute force approch
 '''
+
 Time Complexity: O(N), N = size of the given array.
 Reason: We are using a loop that traverses the entire given array in the worst case.
 
@@ -5510,23 +7614,21 @@ Space Complexity: O(1) as we are not using any extra space to solve this problem
 '''
 
 def missingK(vec, n, k):
-    for i in range(n):
-        if vec[i] <= k:
-            k += 1  # shifting k
-        else:
-            break
-    return k
-
+  # Iterate through the first n elements of the list
+  for i in range(n):
+    # If the current number in the list is less than or equal to k,
+    # it means k is not missing and we need to look further.
+    if vec[i] <= k:
+      k += 1  # Increment k to check for the next missing number
+    else:
+      break  # If the current number is greater than k, k is the missing number
+  return k  # Return the k-th missing number
 
 vec = [4, 7, 9, 10]
 n = 4
 k = 4
 ans = missingK(vec, n, k)
 print("The missing number is:", ans)
-
-
-
-
 
 
 # method 2 : better approch
@@ -5554,16 +7656,23 @@ Reason: We are using the simple binary search algorithm.
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
 '''
 def missingK(vec, n, k):
-    low = 0
-    high = n - 1
-    while low <= high:
-        mid = (low + high) // 2
-        missing = vec[mid] - (mid + 1)
-        if missing < k:
-            low = mid + 1
-        else:
-            high = mid - 1
-    return k + high + 1
+  low = 0
+  high = n - 1
+  while low <= high:
+    mid = (low + high) // 2  # Find the middle index
+    # Calculate how many numbers are missing up to index mid
+    # For a perfect sequence (no missing numbers), vec[i] should be i+1
+    # So, missing = vec[mid] - (mid + 1)
+    missing = vec[mid] - (mid + 1)
+    if missing < k:
+        # Not enough numbers are missing yet, search in the right half
+        low = mid + 1
+    else:
+        # Enough or too many numbers are missing, search in the left half
+        high = mid - 1
+  # After the loop, 'high' is the last index where missing < k
+  # So, the answer is k more than the number of elements before it (i.e., high + 1)
+  return k + high + 1
 
 vec = [4, 7, 9, 10]
 n = 4
@@ -5575,13 +7684,14 @@ print("The missing number is:", ans)
 
 
 # ⭐⭐⭐ PATTERN CHANGE : min(max) OR max(min)
-# 8 TODO : aggressive cows
+# 8 TODO : aggressive cows, (minimum distance between the cows) is maximum
 '''
-
 🔴🔴🔴🔴🔴
 
 https://takeuforward.org/data-structure/aggressive-cows-detailed-solution/
 
+https://www.youtube.com/watch?v=R_Mfw4ew-Vo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=61
+https://www.youtube.com/watch?v=7wOzDqsfXy0
 
 https://www.spoj.com/problems/AGGRCOW/
 
@@ -5593,30 +7703,37 @@ Reason: O(NlogN) for sorting the array. We are using a loop from 1 to max(stalls
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
 '''
-
-
-
-
+# Helper function to check if we can place 'cows' cows in stalls such that
+# the minimum distance between any two cows is at least 'dist'
 def canWePlace(stalls, dist, cows):
-    n = len(stalls)  # size of array
-    cntCows = 1  # no. of cows placed
-    last = stalls[0]  # position of last placed cow
-    for i in range(1, n):
-        if stalls[i] - last >= dist:
-            cntCows += 1  # place next cow
-            last = stalls[i]  # update the last location
-        if cntCows >= cows:
-            return True
-    return False
+  n = len(stalls)  # number of stalls
+  cntCows = 1  # we can always place the first cow in the first stall
+  last = stalls[0]  # position where the last cow was placed
 
+  # Try placing the rest of the cows
+  for i in range(1, n):
+    # If the current stall is at least 'dist' away from the last placed cow
+    if stalls[i] - last >= dist:
+      cntCows += 1  # place another cow
+      last = stalls[i]  # update the last placed position
+    # If we have placed all cows, return True
+    if cntCows >= cows:
+      return True
+  # Not enough cows could be placed
+  return False
+
+# Main function to find the largest minimum distance between cows
 def aggressiveCows(stalls, k):
-    n = len(stalls)  # size of array
-    stalls.sort()  # sort the stalls[]
-    limit = stalls[n - 1] - stalls[0]
-    for i in range(1, limit + 1):
-        if not canWePlace(stalls, i, k):
-            return i - 1
-    return limit
+  n = len(stalls)  # number of stalls
+  stalls.sort()  # sort the stall positions in ascending order
+  limit = stalls[n - 1] - stalls[0]  # maximum possible distance
+  # Try all distances from 1 to 'limit'
+  for i in range(1, limit + 1):
+    # If it's not possible to place all cows with at least 'i' distance
+    if not canWePlace(stalls, i, k):
+      return i - 1  # return the last successful distance
+  # If all distances from 1 to limit worked
+  return limit
 
 stalls = [0, 3, 4, 7, 10, 9]
 k = 4
@@ -5640,42 +7757,42 @@ Reason: O(NlogN) for sorting the array. We are applying binary search on [1, max
 
 Space Complexity: O(1) as we are not using any extra space to solve this problem.
 '''
-
-
-
-
+# Helper function to check if we can place 'cows' cows in stalls such that
+# the minimum distance between any two cows is at least 'dist'
 def canWePlace(stalls, dist, cows):
-    n = len(stalls)  # size of array                        # ---> remember to start with 1 not 0
-    cntCows = 1  # no. of cows placed
-    last = stalls[0]  # position of last placed cow
-    for i in range(1, n):
-        if stalls[i] - last >= dist:
-            cntCows += 1  # place next cow
-            last = stalls[i]  # update the last location
-        if cntCows >= cows:
-            return True
-    return False
+  n = len(stalls)  # number of stalls
+  cntCows = 1  # we can always place the first cow in the first stall
+  last = stalls[0]  # position where the last cow was placed
+
+  # Try placing the rest of the cows
+  for i in range(1, n):
+    # If the current stall is at least 'dist' away from the last placed cow
+    if stalls[i] - last >= dist:
+      cntCows += 1  # place another cow
+      last = stalls[i]  # update the last placed position
+    # If we have placed all cows, return True
+    if cntCows >= cows:
+      return True
+  # Not enough cows could be placed
+  return False
 
 def aggressiveCows(stalls, k):
-    n = len(stalls)  # size of array
-    stalls.sort()  # sort the stalls                        # ---> remember to sort() the arr
-
-    low = 1
-    high = stalls[n - 1] - stalls[0]
-    # apply binary search
-    while low <= high:
-        mid = (low + high) // 2
-        if canWePlace(stalls, mid, k):
-            low = mid + 1
-        else:
-            high = mid - 1
-    return high
+  n = len(stalls)  
+  stalls.sort()  # sort the stalls                        # ---> remember to sort() the arr
+  low = 1
+  high = stalls[n - 1] - stalls[0]
+  while low <= high:
+    mid = (low + high) // 2
+    if canWePlace(stalls, mid, k):
+      low = mid + 1
+    else:
+      high = mid - 1
+  return high
 
 stalls = [0, 3, 4, 7, 10, 9]
 k = 4
 ans = aggressiveCows(stalls, k)
 print("The maximum possible minimum distance is:", ans)
-
 
 
 
@@ -5687,6 +7804,7 @@ print("The maximum possible minimum distance is:", ans)
 
 https://takeuforward.org/data-structure/allocate-minimum-number-of-pages/
 
+https://www.youtube.com/watch?v=Z0hwjftStI4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=63
 
 https://bit.ly/3MZQOct
 
@@ -5699,43 +7817,39 @@ Reason: We are using a loop from max(arr[]) to sum(arr[]) to check all possible 
 
 Space Complexity:  O(1) as we are not using any extra space to solve this problem.
 '''
-
-
-
+# Helper function to count how many students are needed if each student gets at most 'pages' pages
 def countStudents(arr, pages):
-    n = len(arr)  # size of array
-    students = 1
-    pagesStudent = 0
-    for i in range(n):
-        if pagesStudent + arr[i] <= pages:
-            # add pages to current student
-            pagesStudent += arr[i]
-        else:
-            # add pages to next student
-            students += 1
-            pagesStudent = arr[i]
-    return students
+  n = len(arr)  # number of books
+  students = 1  # start by assigning books to the first student
+  pagesStudent = 0  # pages allocated to the current student
+  for i in range(n):
+    # If adding this book doesn't exceed the current student's limit
+    if pagesStudent + arr[i] <= pages:
+      pagesStudent += arr[i]  # assign the book to current student
+    else:
+      students += 1  # assign the book to a new student
+      pagesStudent = arr[i]  # start a new allocation
+  return students  # return total students needed with the given 'pages' limit
 
+
+# Main function to find the minimum number of pages a student has to read
 def findPages(arr, n, m):
-    # book allocation impossible
-    if m > n:
-        return -1
+  if m > n:
+    return -1  # Not enough books for each student to get at least one
 
-    low = max(arr)
-    high = sum(arr)
-
-    for pages in range(low, high + 1):
-        if countStudents(arr, pages) == m:
-            return pages
-    return low
+  low = max(arr)  # A student must be assigned at least the largest single book
+  high = sum(arr)  # One student reads all books, the upper bound
+  # Brute-force search from the minimum to maximum possible pages
+  for pages in range(low, high + 1):
+    if countStudents(arr, pages) == m:
+      return pages  # found the minimum number of pages per student
+  return low  # fallback (shouldn’t usually be hit if input is valid)
 
 arr = [25, 46, 28, 49, 24]
 n = 5
 m = 4
 ans = findPages(arr, n, m)
 print("The answer is:", ans)
-
-
 
 
 
@@ -5751,38 +7865,34 @@ Reason: We are applying binary search on [max(arr[]), sum(arr[])]. Inside the lo
 
 Space Complexity:  O(1) as we are not using any extra space to solve this problem.
 ''' 
-
-
-
+# Helper function to count how many students are needed if each student gets at most 'pages' pages
 def countStudents(arr, pages):
-    n = len(arr)  # size of array
-    students = 1
-    pagesStudent = 0
-    for i in range(n):
-        if pagesStudent + arr[i] <= pages:
-            # add pages to current student
-            pagesStudent += arr[i]
-        else:
-            # add pages to next student
-            students += 1
-            pagesStudent = arr[i]
-    return students
+  n = len(arr)  # number of books
+  students = 1  # start by assigning books to the first student
+  pagesStudent = 0  # pages allocated to the current student
+  for i in range(n):
+    # If adding this book doesn't exceed the current student's limit
+    if pagesStudent + arr[i] <= pages:
+      pagesStudent += arr[i]  # assign the book to current student
+    else:
+      students += 1  # assign the book to a new student
+      pagesStudent = arr[i]  # start a new allocation
+  return students  # return total students needed with the given 'pages' limit
 
 def findPages(arr, n, m):
-    # book allocation impossible
-    if m > n:
-        return -1
-
-    low = max(arr)
-    high = sum(arr)
-    while low <= high:
-        mid = (low + high) // 2
-        students = countStudents(arr, mid)
-        if students > m:
-            low = mid + 1
-        else:
-            high = mid - 1
-    return low
+  # book allocation impossible
+  if m > n:
+      return -1
+  low = max(arr)
+  high = sum(arr)
+  while low <= high:
+    mid = (low + high) // 2
+    students = countStudents(arr, mid)
+    if students > m:
+      low = mid + 1
+    else:
+      high = mid - 1
+  return low
 
 arr = [25, 46, 28, 49, 24]
 n = 5
@@ -5795,26 +7905,19 @@ print("The answer is:", ans)
 # 10 TODO :  split array - largest sum
 
 '''
-
-
 🔴🔴🔴🔴🔴
 
 https://takeuforward.org/arrays/split-array-largest-sum/
 
+https://www.youtube.com/watch?v=thUd_WJn6wk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=63
 
 https://leetcode.com/problems/split-array-largest-sum/
 
-
-
 '''
 
-
+# method 1 : Brute force method
 '''
-
-
-
-
-
+reference -> same as books allocation problem 
 
 Time Complexity: O(N * (sum(arr[])-max(arr[])+1)), where N = size of the array, sum(arr[]) = sum of all array elements, max(arr[]) = maximum of all array elements.
 Reason: We are using a loop from max(arr[]) to sum(arr[]) to check all possible values of time. Inside the loop, we are calling the countPartitions() function for each number. Now, inside the countPartitions() function, we are using a loop that runs for N times.
@@ -6518,9 +8621,9 @@ print("The k-th element of two sorted arrays is:", kthElement(a, b, len(a), len(
 
 https://takeuforward.org/arrays/find-the-row-with-maximum-number-of-1s/
 
+https://www.youtube.com/watch?v=SCz-1TtYxDI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=68
 
 https://bit.ly/3QNDw2W
-
 
 '''
 # method 1 : brute force approch
@@ -6531,22 +8634,22 @@ Reason: We are using nested loops running for n and m times respectively.
 Space Complexity: O(1) as we are not using any extra space.
 '''
 def rowWithMax1s(matrix, n, m):
-    cnt_max = 0
-    index = -1
+  cnt_max = 0
+  index = -1
 
-    # traverse the matrix:
-    for i in range(n):
-        cnt_ones = sum(matrix[i])
-        if cnt_ones > cnt_max:
-            cnt_max = cnt_ones
-            index = i
-    return index
+  # traverse the matrix:
+  for i in range(n):
+    cnt_ones = sum(matrix[i])
+    if cnt_ones > cnt_max:
+      cnt_max = cnt_ones
+      index = i
+  return index
 
 if __name__ == "__main__":
-    matrix = [[1, 1, 1], [0, 0, 1], [0, 0, 0]]
-    n = 3
-    m = 3
-    print("The row with maximum no. of 1's is:", rowWithMax1s(matrix, n, m))
+  matrix = [[1, 1, 1], [0, 0, 1], [0, 0, 0]]
+  n = 3
+  m = 3
+  print("The row with maximum no. of 1's is:", rowWithMax1s(matrix, n, m))
 
 
 
@@ -6563,36 +8666,35 @@ Reason: We are using a loop running for n times to traverse the rows. Then we ar
 
 Space Complexity: O(1) as we are not using any extra space.
 '''
-
-
+# Function to find the first index where the value is >= x in a sorted array
 def lowerBound(arr, n, x):
     low = 0
     high = n - 1
-    ans = n
-
+    ans = n  # default answer if x is not found (i.e., all elements are < x)
+    # Binary search to find the lower bound
     while low <= high:
         mid = (low + high) // 2
-        # maybe an answer
+        # If current element is greater than or equal to x, it could be a valid answer
         if arr[mid] >= x:
-            ans = mid
-            # look for smaller index on the left
-            high = mid - 1
+            ans = mid  # store current index as potential answer
+            high = mid - 1  # try to find a smaller index on the left
         else:
-            low = mid + 1  # look on the right
-    return ans
+            low = mid + 1  # search in the right half
+    return ans  # returns index of the first element >= x
 
+# Function to find the row with the maximum number of 1s in a binary matrix
 def rowWithMax1s(matrix, n, m):
-    cnt_max = 0
-    index = -1
-
-    # traverse the rows:
-    for i in range(n):
-        # get the number of 1's:
-        cnt_ones = m - lowerBound(matrix[i], m, 1)
-        if cnt_ones > cnt_max:
-            cnt_max = cnt_ones
-            index = i
-    return index
+  cnt_max = 0  # to store the maximum count of 1s seen so far
+  index = -1   # to store the index of the row with the most 1s
+  # Traverse all rows of the matrix
+  for i in range(n):
+    # Use lowerBound to find the first 1 in the row (since rows are sorted)
+    cnt_ones = m - lowerBound(matrix[i], m, 1)  # total 1s = total columns - index of first 1
+    # Update max count and row index if this row has more 1s
+    if cnt_ones > cnt_max:
+      cnt_max = cnt_ones
+      index = i
+  return index  # returns the index of the row with the maximum 1s
 
 matrix = [[1, 1, 1], [0, 0, 1], [0, 0, 0]]
 n = 3
