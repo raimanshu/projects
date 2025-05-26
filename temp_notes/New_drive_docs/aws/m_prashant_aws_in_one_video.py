@@ -2,7 +2,6 @@
 https://www.youtube.com/watch?v=N4sJj-SxX00
 '''
 
-
 # What is Virtualization?
 '''
 - virtualization is the process of creating multiple simulates environments or virtual machines from a single hardware system, enabling more efficient resource use.
@@ -49,8 +48,6 @@ api management
 
 
 '''
-
-
 
 # What is AWS? 
 '''
@@ -391,6 +388,7 @@ pay as you go
 - this is cost-effective as you only pay for the compute time that you use and there's no charge for idle time
 
 '''
+
 # AWS CloudFormation IAC
 '''
 AWS CloudFormation is a service that helps you model and set up your AWS resources so that you can spend less time managing those resources and more time focusing on your applications that run in AWS
@@ -453,8 +451,6 @@ summary of billing
 - free tier - route 53 doesnot include a free tier so charges start as soon as you use it's services
 
 '''
-
-
 
 # AWS CloudFront CDN
 '''

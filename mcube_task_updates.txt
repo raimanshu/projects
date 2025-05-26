@@ -7,9 +7,10 @@ AIRTEL WIFI BILL PAYMENT - 28/04/25
 Sent - 796 - 1, Bot Feedback - 6
 Changes - 
 Previous Day Task - 831 - 4, 847 - 3
-Today's task -  848, 681
-Next task - 
+Today's task -  860
+Next task - 853
 
+RR band is not removing even after rr classified sheet is removed
 
 ==================================================================================== CURRENT TASKS =======================================================================
 
@@ -23,10 +24,8 @@ Date issue already ressolved + data is distorted
 ✅ DONE AND PUSHED BUT PR NOT CREATED in same 847
 
 
-
-817, 819, 820, 
-826, 
-832 ❌
+CBV2-860
+DONE, BRANCHED PUSHED BUT PR NOT RAISED
 
 
 
@@ -86,9 +85,7 @@ c99af7dc-a347-4801-af36-bbbbf30be8c2     rialto
  
 21/04/2025
 ----------
-Nisha
-1348 citi industrial e182a6a8-fa41-4d33-b34d-6e7eaa553b5d ❌
-1351 citi office 34c5fa9f-c6f5-4622-9a63-315348da0f74 ❌
+
 
 
 ==================================================================================== KT COMMERCIAL =======================================================================

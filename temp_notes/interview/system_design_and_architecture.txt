@@ -1,4 +1,8 @@
 
+https://roadmap.sh/software-design-architecture
+
+
+
 
 
 Clean Code Principle
@@ -13,7 +17,7 @@ Programming Paradigms
         Imperative programming
         Logic programming
         Declarative programming
-    Functional programming
+    Functional programming / Procedural programming 
     Object-oriented programming
 
 Object oriented Programming 

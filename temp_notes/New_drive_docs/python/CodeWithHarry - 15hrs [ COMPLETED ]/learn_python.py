@@ -2,7 +2,8 @@
 - Download vs code
 - 
 
-CH 1 – modules, comments and pip
+# CH 1 – modules, comments and pip
+'''
 - extension - .py
 - vs extension used - python by microsoft
 - semi colon (;) - is not used in python code instead indentation is used
@@ -15,15 +16,16 @@ CH 1 – modules, comments and pip
 - comments - single line & multi-line 
 - single line comment - # comments
 - multi-line comment - ''' comments '''
-
-CH 2 - Variables and Data Types
+'''
+# CH 2 - Variables and Data Types
+'''
 - variables - container to store data
 - string literal vs number literal
 - keywords - reserved words used in python like def, etc
 - identifiers - class, function, variable name
 - Data types - types of data
 - types of data types - integer, floating point, strings, booleans, none
-- strings - "Himanshu", 'Himanshu', '''Himanshu'''
+- strings - "Himanshu", 'Himanshu', Himanshu
 - booleans - True, False
 - type of variable - type(variable_name)
 - rules to decide a variable name - can contain albhabet, letters and underscores, can only start with alphabet or underscore, cannot start with a digit, no white space in between variable_name
@@ -31,36 +33,41 @@ CH 2 - Variables and Data Types
 - type() function - to find the type of variable 
 - typecasting -  way to convert one type to another like int(), str(), float(), etc
 - input() function - allows to take input from user as string
-
-CH 3: strings
+'''
+# CH 3: strings
+'''
 - strings - a data type, squence of strings
-- strings - "Himanshu", 'Himanshu', '''Himanshu'''
+- strings - "Himanshu", 'Himanshu', Himanshu
 - slicing a string - variable_name[starting_point : ending_point : skipping_index]
 - string function - str.len(), str.endswith("item"), str.count("item"), str.capitalize(), str.find("item"), str.replace("old_item", "new_item")
-
-CH 4: List and Tuples
+'''
+# CH 4: List and Tuples
+'''
 - list - to store set of values of any data type
 - slicing is possible like string slicing
 - list methods - list_name.sort(), list_name.reverse(), list_name.append(item), list_name.sort(), list_name.insert(item), list_name.pop(item_index), list_name.remove(item)
 - tuples - inmutable data type, cannot be updated once declared
 - single element tuple is declared as tuple_variable=(item,) not like tuple_variable=(item) it will be treated like integer  
 - tuple methods - tuple_variable.count(item), tuple_variable.index(item)
-
-CH 5 : Dictionary and Sets
+'''
+# CH 5 : Dictionary and Sets
+'''
 - Dictionary - collection of key-value pair, unordered, mutable, indexed, cannot contain duplicate keys
 - Difference between print(myDict.get("coder")) & print(myDict["coder"]) is former one will not throw an error if not found but the later one can
 - sets - collection of non-repetative elements, unordered, unindexed, items cannot be changed, cannot contain duplicate items
 - a = {}, This syntax will create an empty dictionary not an empty set
-
-CH 6 : Conditional Expressions
+'''
+# CH 6 : Conditional Expressions
+'''
 - if, else and elif / else if ladder -
 - Relatinal operators - ==, >=, <=, evaluate conditions inside if statements
 - logical operators - and, or, not, operate on conditional statements
 - elif clause/block - 
 - is and in operator - is is same as == operator, in is same as for in loop in javascript
 - else block is optional. It is not mandatory to mention.
-
-CH 7 : Loops
+'''
+# CH 7 : Loops
+'''
 - loops - to repeat instructions
 - while loop - repeat instructions until a condition is False
 - for loop - iterate through a sequence of list, tuple or strings (iterables)
@@ -70,8 +77,9 @@ CH 7 : Loops
 - continue statement - 
 - pass statement - to instructs the loop/condition to do nothing, null statement
 - def - def keyword is used to create a statement
-
-CH 8 : Functions and Recurssion
+'''
+# CH 8 : Functions and Recurssion
+'''
 - function - group of statements performing a specific task, can be called any number of times
 - function call - place where we need to use the function, funct()
 - function definition - set of instruction to provide specific funcitionality, 
@@ -85,8 +93,9 @@ def funct()
 - Recurssion - function which call itself
 - In python print("string_literal", end="") function, end parametr denotes new line ie \n 
 - strip() function - to trip spacees from left and right of string ie trim() in javascript
-
-CH 9 : File I/O
+'''
+# CH 9 : File I/O
+'''
 - file - data stored in a storage device
 - During reading a file data flow from file to progran but during write process code flow vice versa
 - RAM - volatile
@@ -99,8 +108,9 @@ CH 9 : File I/O
 - read() function to read the opened file. This function takes an int parameter using which it read only upto that character from the starting point like read(5)
 - readline() - read only one line
 - with statement -  It is the best way to work with file. We donot need to close() function to close the file
-
-CH 10 : Object Oriented programming
+'''
+# CH 10 : Object Oriented programming
+'''
 OOP - solving a problem using objects is called OOP
 DRY principle - Donot Repeat Yourself principle
 class - blueprint of creating objects, class is written in pascal case, contains methods and variables
@@ -127,8 +137,9 @@ Employee.getSalary(harry)
 - static method - @staticmethod decorator is used to make a method run without self parameter
 - __init__ () or Constructor - is a special method which is first run as soon as the object is created, also known as constructor, takes self argument but can also take more arguments, used to initialize  
 - We can rename with other name to self, but it will create confusion to other programmers
-
-CH 11 : Inheritance
+'''
+# CH 11 : Inheritance
+'''
 - inheritence =  way of creating a new class from the existing class
 - base class / parent class - 
 - derived class / child class - 
@@ -145,8 +156,9 @@ CH 11 : Inheritance
 - operator overloading - operators can be overloaded using dunder methods, __sum__, __mul__, etc
 - __str__ method -
 - __len__ method -
-
-CH 12 :  Advanced Python 1
+'''
+# CH 12 :  Advanced Python 1
+'''
 - exception handeling - 
 - try - 
 - except Exception
@@ -157,8 +169,9 @@ CH 12 :  Advanced Python 1
 - global keyword - used to modify the variable outside of the current scope 
 - enumerate() function - adds counter to an itterable and returns it
 - list/dictionary/set comprehensions - to write the code in shorter syntax
-
-CH : Advanced Python 2
+'''
+# CH : Advanced Python 2
+'''
 - Virtual Environment - Environment same as system interpreter but is installed from the other python environments, 
 1) install virtual virtualenv using pip install virtualenv
 2) virtualenv env_name
@@ -173,7 +186,7 @@ CH : Advanced Python 2
 - map - map applies a function to all the items in an input list
 - filter - creates a list of items for which the function returns True
 - reduce - reduce applies a rolling comparision to sequential pair of elements
-
+'''
 
 OBSERVATIONS :
 - semi colon (;) - isnot used in python code instead indentation is used
