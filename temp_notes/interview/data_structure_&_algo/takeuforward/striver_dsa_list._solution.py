@@ -30,8 +30,6 @@ https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before
 https://www.youtube.com/watch?v=tNm_NNSB3_w&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=5
 
 
-
-
 - for outer loop, count the number of lines/rows
 - for inner loop, count the number of elements in each line or focus on the columns and connect them somehow to the rows
 - print them inside the inner loop
@@ -415,6 +413,7 @@ for i in range(num):
 '''
 # important
 for i in range(1, 2*num):
+  # Lower Part
   if i> ((2*num-1)//2):
     for j in range(2*num-i):
       print("*", end="")
@@ -424,6 +423,7 @@ for i in range(1, 2*num):
       print("*", end="")
     print("\n")
   else:
+    # Upper Part
     for j in range(i):
       print("*", end="")
     for j in range(2*(num - i)):
@@ -465,9 +465,9 @@ n=5
 for i in range(2*n-1):
   for j in range(2*n-1):
     top = i 
-    bottom = (2*n-2) -i 
+    bottom = (2*n-2) -i  # (2n-1)-1-i
     left = j
-    right = (2*n-2) -j
+    right = (2*n-2) -j  # (2n-1)-1-j
     print(n - min(min(top, bottom), min(left, right)), end="")
   print("\n")
 
@@ -572,8 +572,6 @@ def reverse(nnum):
 num = 23521
 print(reverse(num))
 
-# 
-
 # TODO : 3 Check pallindrome
 '''
 🟢🟢🟢🟢🟢
@@ -630,7 +628,7 @@ def armstrong(num):
   original_num = num
   calculated_num = 0
   while(num > 0):
-    temp_num = num%10
+    temp_num = num % 10
     calculated_num = calculated_num + temp_num * temp_num * temp_num
     num = num//10
   if original_num == calculated_num:

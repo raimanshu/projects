@@ -1,0 +1,487 @@
+INTEGER
+-------
+# Define an integer
+n = 42
+
+# ▶️ Type and basic info
+print(type(n))               # <class 'int'>
+print(isinstance(n, int))    # True
+
+# ▶️ Arithmetic
+print(n + 5)                 # 47
+print(n - 2)                 # 40
+print(n * 2)                 # 84
+print(n / 5)                 # 8.4
+print(n // 5)                # 8
+print(n % 5)                 # 2
+print(n ** 3)                # 74088
+
+# ▶️ Dunder (magic) methods (same as above ops)
+print(n.__add__(10))         # 52
+print(n.__sub__(2))          # 40
+print(n.__mul__(3))          # 126
+print(n.__floordiv__(8))     # 5
+print(n.__truediv__(8))      # 5.25
+print(n.__mod__(5))          # 2
+print(n.__pow__(2))          # 1764
+
+# ▶️ Bitwise Operations
+print(n & 3)                 # 2
+print(n | 3)                 # 43
+print(n ^ 3)                 # 41
+print(~n)                    # -43 (bitwise NOT)
+print(n << 1)                # 84 (left shift)
+print(n >> 1)                # 21 (right shift)
+
+# ▶️ Special integer methods
+print(n.bit_length())        # 6 (number of bits to represent 42)
+print((-42).bit_length())    # 6 (always positive bits count)
+
+print(n.to_bytes(2, byteorder='big'))    # b'\x00*'
+print(int.from_bytes(b'\x00*', 'big'))   # 42
+
+print(n.conjugate())         # 42 (used for complex compatibility)
+print(n.numerator)           # 42
+print(n.denominator)         # 1
+print(n.real)                # 42
+print(n.imag)                # 0
+
+# ▶️ Conversions
+print(float(n))              # 42.0
+print(complex(n))            # (42+0j)
+print(str(n))                # "42"
+print(bin(n))                # "0b101010"
+print(oct(n))                # "0o52"
+print(hex(n))                # "0x2a"
+
+# ▶️ Built-in functions
+print(abs(-n))               # 42
+print(pow(n, 2))             # 1764
+print(divmod(n, 5))          # (8, 2)
+print(round(42.8))           # 43
+
+
+STRINGS
+-------
+# 🔤 Case Conversion
+s = "hello world"
+print(s.upper())        # 'HELLO WORLD'
+print(s.lower())        # 'hello world'
+print(s.capitalize())   # 'Hello world'
+print(s.title())        # 'Hello World'
+print(s.swapcase())     # 'HELLO WORLD' -> 'hello world'
+print("Straße".casefold())  # 'strasse'
+
+# 🧹 Trim / Strip Whitespace
+s = "  hello  "
+print(s.strip())        # 'hello'
+print(s.lstrip())       # 'hello  '
+print(s.rstrip())       # '  hello'
+
+# 🔍 Search & Find
+s = "hello world"
+print(s.find("o"))      # 4
+print(s.rfind("o"))     # 7
+print(s.index("o"))     # 4
+print(s.rindex("o"))    # 7
+print(s.startswith("he"))  # True
+print(s.endswith("ld"))    # True
+
+# 🔁 Replace & Modify
+s = "hello world"
+print(s.replace("l", "L"))      # 'heLLo worLd'
+print(s.replace("l", "", 1))    # 'helo world'
+print(s.translate(str.maketrans("hel", "xyz")))  # 'xyzzo worzd'
+
+# 📐 Align / Padding
+s = "cat"
+print(s.center(10, '-'))    # '--cat-----'
+print(s.ljust(10, '_'))     # 'cat_______'
+print(s.rjust(10, '*'))     # '*******cat'
+print("42".zfill(5))        # '00042'
+
+# ✂️ Split & Join
+s = "a,b,c"
+print(s.split(","))         # ['a', 'b', 'c']
+print(s.rsplit(",", 1))     # ['a,b', 'c']
+print(" line1\nline2 ".splitlines())  # [' line1', 'line2 ']
+print(" ".join(['hello', 'world']))   # 'hello world'
+
+# ✅ Check Types / Content
+s = "Hello123"
+print(s.isalpha())          # False
+print("Hello".isalpha())    # True
+print(s.isdigit())          # False
+print("123".isdigit())      # True
+print(s.isalnum())          # True
+print("hello".islower())    # True
+print("HELLO".isupper())    # True
+print("  ".isspace())       # True
+print("Title Case".istitle())  # True
+
+# 🧱 Encoding / Expanding
+s = "hello"
+print(s.encode())           # b'hello'
+print("line1\tline2".expandtabs(4))  # 'line1   line2'
+
+# 🔡 Format Strings
+name = "John"
+print("Hello, {}".format(name))   # 'Hello, John'
+print(f"Hello, {name}")           # f-string: 'Hello, John'
+print("{:>10}".format("cat"))     # '       cat'
+
+# 🧠 Other Useful Tricks
+print(str(123))             # '123'
+print(repr("hello\n"))      # "'hello\\n'"
+
+
+FLOATS
+------
+# Define a float
+x = 12.75
+
+# ▶️ Type check
+print(type(x))              # <class 'float'>
+print(isinstance(x, float)) # True
+
+# ▶️ Arithmetic operations
+print(x + 1.25)             # 14.0
+print(x - 2.75)             # 10.0
+print(x * 2)                # 25.5
+print(x / 2)                # 6.375
+print(x // 2)               # 6.0 (floor division)
+print(x % 5)                # 2.75
+print(x ** 2)               # 162.5625
+
+# ▶️ Conversions
+print(int(x))               # 12 (truncates decimal)
+print(str(x))               # '12.75'
+print(complex(x))           # (12.75+0j)
+
+# ▶️ Built-in functions
+print(round(x))             # 13 (nearest int)
+print(round(x, 1))          # 12.8 (1 decimal place)
+print(abs(-x))              # 12.75
+print(pow(x, 2))            # 162.5625
+print(divmod(x, 5))         # (2.0, 2.75)
+
+# ▶️ Float-specific methods and attributes
+print(x.is_integer())       # False (has decimal part)
+
+print((13.0).is_integer())  # True (decimal = 0.0)
+
+print(x.as_integer_ratio()) # (51, 4) → 12.75 = 51/4
+print(x.hex())              # Float to hexadecimal: '0x1.98p+3'
+
+print(float.fromhex('0x1.98p+3'))  # 12.75 (hex → float)
+
+# ▶️ Boolean check
+print(bool(0.0))            # False
+print(bool(x))              # True
+
+Complex Numbers
+---------------
+# Define complex number
+z = 3 + 4j
+
+# ▶️ Type and conversion
+print(type(z))              # <class 'complex'>
+print(complex(5))           # (5+0j)
+print(complex(2, -3))       # (2-3j)
+print(complex("1+2j"))      # (1+2j)
+
+# ▶️ Attributes
+print(z.real)               # 3.0
+print(z.imag)               # 4.0
+
+# ▶️ Methods
+print(z.conjugate())        # (3 - 4j)
+print(abs(z))               # 5.0 → magnitude: √(3² + 4²)
+
+# ▶️ Arithmetic
+print(z + (1 + 2j))         # (4+6j)
+print(z - (2 + 1j))         # (1+3j)
+print(z * (2 + 0j))         # (6+8j)
+print(z / (1 - 1j))         # (-0.5+3.5j)
+
+# ▶️ Dunder (magic) methods
+print(z.__add__(1 + 1j))    # (4+5j)
+print(z.__sub__(1j))        # (3+3j)
+print(z.__mul__(2))         # (6+8j)
+print(z.__truediv__(2))     # (1.5+2j)
+print(z.__abs__())          # 5.0
+print(z.__neg__())          # (-3-4j)
+print(z.__pos__())          # (3+4j)
+print(z.__eq__(3 + 4j))     # True
+
+# ▶️ Polar form (via cmath)
+import cmath
+polar = cmath.polar(z)      # (r, θ)
+print("Polar:", polar)      # (5.0, 0.927...)
+
+rect = cmath.rect(*polar)
+print("Rectangular:", rect) # (3+4j)
+
+BOOLEAN 
+-------
+# Values
+a = True
+b = False
+
+# Basic methods inherited from int
+print(a.bit_length())       # 1 → (True is 1)
+print(b.bit_length())       # 0 → (False is 0)
+
+print(a.to_bytes(1, 'big')) # b'\x01'
+print(b.to_bytes(1, 'big')) # b'\x00'
+
+print(a.__add__(5))         # 6 → (True is 1)
+print(b.__mul__(10))        # 0
+
+# Logical operators (not methods, but essential)
+print(a and b)              # False
+print(a or b)               # True
+print(not a)                # False
+
+# Convert from other types
+print(bool(0))              # False
+print(bool(1))              # True
+print(bool(""))             # False
+print(bool("Hello"))        # True
+print(bool([]))             # False
+print(bool([1, 2]))         # True
+
+
+LIST
+----
+# Create a list
+fruits = ["apple", "banana", "cherry", "banana"]
+
+# ▶️ Length
+print(len(fruits))                # 4
+
+# ▶️ Access & Indexing
+print(fruits[0])                  # 'apple'
+print(fruits[-1])                 # 'banana' (last item)
+
+# ▶️ Slicing Examples
+print(fruits[1:3])                # ['banana', 'cherry'] (start to end-1)
+print(fruits[:2])                 # ['apple', 'banana'] (start from 0)
+print(fruits[2:])                 # ['cherry', 'banana'] (till end)
+print(fruits[::2])                # ['apple', 'cherry'] (every 2nd item)
+print(fruits[::-1])               # ['banana', 'cherry', 'banana', 'apple'] (reversed)
+
+# ▶️ Add Items
+fruits.append("orange")           # Add at end
+fruits.insert(1, "grape")         # Insert at index 1
+fruits.insert(0, "kiwi")          # ✅ Insert at front
+print(fruits)                     # ['kiwi', 'apple', 'grape', 'banana', 'cherry', 'banana', 'orange']
+
+# ▶️ Remove Items
+fruits.remove("banana")           # Removes first 'banana'
+front_item = fruits.pop(0)        # ✅ Remove from front
+print(front_item)                 # 'kiwi'
+
+# ▶️ Delete by index
+del fruits[0]                     # Deletes 'apple'
+
+# ▶️ Clear list
+# fruits.clear()                 # Uncomment to empty list
+
+# ▶️ Other Operations
+print(fruits.index("banana"))     # Find index
+print(fruits.count("banana"))     # Count occurrences
+
+fruits.reverse()                  # Reverse list
+fruits.sort()                     # Sort list
+copy_fruits = fruits.copy()       # Copy list
+
+fruits.extend(["kiwi", "mango"])  # Add multiple items
+print(fruits)
+
+
+TUPULE
+------
+# Create a tuple
+colors = ("red", "green", "blue", "green")
+
+# ▶️ Type check
+print(type(colors))           # <class 'tuple'>
+
+# ▶️ Access by index
+print(colors[0])              # red
+print(colors[-1])             # green (last)
+
+# ▶️ Slicing
+print(colors[1:3])            # ('green', 'blue')
+print(colors[:2])             # ('red', 'green')
+print(colors[::-1])           # ('green', 'blue', 'green', 'red')
+
+# ▶️ Count and Index
+print(colors.count("green"))  # 2
+print(colors.index("blue"))   # 2 (first occurrence)
+
+# ▶️ Length
+print(len(colors))            # 4
+
+# ▶️ Tuple with one item (⚠️)
+single = ("only_one",)
+print(type(single))           # <class 'tuple'>
+
+# ▶️ Tuple unpacking
+r, g, b, g2 = colors
+print(r, g, b, g2)            # red green blue green
+
+# ▶️ Nested tuple
+nested = (1, 2, (3, 4))
+print(nested[2][1])           # 4
+
+# ▶️ Immutable nature (will raise error)
+# colors[0] = "yellow"        # ❌ TypeError: 'tuple' object does not support item assignment
+
+SET
+---
+# Create a set
+fruits = {"apple", "banana", "cherry", "banana"}  # duplicate 'banana' ignored
+
+print(fruits)                   # {'cherry', 'apple', 'banana'} (unordered, unique)
+
+# ▶️ Type check
+print(type(fruits))             # <class 'set'>
+
+# ▶️ Add items
+fruits.add("orange")
+print(fruits)
+
+# ▶️ Remove items
+fruits.remove("banana")         # Raises KeyError if not found
+fruits.discard("kiwi")          # Does NOT raise error if not found
+print(fruits)
+
+# ▶️ Check membership
+print("apple" in fruits)        # True
+print("kiwi" in fruits)         # False
+
+# ▶️ Set operations
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+print(A.union(B))               # {1, 2, 3, 4, 5, 6}
+print(A.intersection(B))        # {3, 4}
+print(A.difference(B))          # {1, 2}
+print(A.symmetric_difference(B)) # {1, 2, 5, 6}
+
+# ▶️ Length
+print(len(fruits))
+
+# ▶️ Clear set
+# fruits.clear()               # Uncomment to empty set
+
+
+DICTIONARY
+----------
+# Create a dictionary
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York",
+    "hobbies": ["reading", "hiking"]
+}
+
+# ▶️ Access values by key
+print(person["name"])          # Alice
+print(person.get("age"))       # 30
+print(person.get("salary", "N/A"))  # N/A (default if key not found)
+
+# ▶️ Add or update key-value pair
+person["email"] = "alice@example.com"
+person["age"] = 31             # update existing key
+
+# ▶️ Remove items
+del person["city"]
+removed = person.pop("hobbies")
+print(removed)                 # ['reading', 'hiking']
+
+# ▶️ Check keys
+print("name" in person)        # True
+print("city" in person)        # False
+
+# ▶️ Get keys, values, items
+print(person.keys())           # dict_keys(['name', 'age', 'email'])
+print(person.values())         # dict_values(['Alice', 31, 'alice@example.com'])
+print(person.items())          # dict_items([('name', 'Alice'), ('age', 31), ('email', 'alice@example.com')])
+
+# ▶️ Loop through dictionary
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+# ▶️ Clear dictionary
+# person.clear()              # Uncomment to empty dictionary
+
+# ▶️ Copy dictionary
+person_copy = person.copy()
+print(person_copy)
+
+
+TYPE CONVERSION
+----------------
+# Numeric conversions
+x = 10                # int
+y = 3.14              # float
+z = 2 + 3j            # complex
+
+print(float(x))       # int → float: 10.0
+print(int(y))         # float → int (truncates): 3
+print(complex(x))     # int → complex: (10+0j)
+print(complex(y))     # float → complex: (3.14+0j)
+
+# String conversions
+a = 123
+b = 45.67
+c = 8 + 4j
+
+print(str(a))         # int → str: '123'
+print(str(b))         # float → str: '45.67'
+print(str(c))         # complex → str: '(8+4j)'
+
+s = "100"
+print(int(s))         # str → int: 100 (if valid integer string)
+print(float(s))       # str → float: 100.0
+
+s_float = "56.78"
+print(float(s_float)) # str → float: 56.78
+
+# List, Tuple, Set conversions
+lst = [1, 2, 3, 4]
+tpl = (5, 6, 7)
+st = {8, 9, 10}
+
+print(tuple(lst))     # list → tuple: (1, 2, 3, 4)
+print(list(tpl))      # tuple → list: [5, 6, 7]
+print(set(lst))       # list → set: {1, 2, 3, 4}
+print(list(st))       # set → list: [8, 9, 10] (order not guaranteed)
+print(set(tpl))       # tuple → set: {5, 6, 7}
+print(tuple(st))      # set → tuple: (8, 9, 10)
+
+# Dict conversions
+pairs = [("a", 1), ("b", 2), ("c", 3)]
+print(dict(pairs))    # list of pairs → dict: {'a': 1, 'b': 2, 'c': 3}
+
+# dict keys and values conversions
+d = {'x': 10, 'y': 20}
+print(list(d))        # dict → list of keys: ['x', 'y']
+print(list(d.keys())) # same as above
+print(list(d.values())) # list of values: [10, 20]
+print(list(d.items()))  # list of (key, value) tuples: [('x', 10), ('y', 20)]
+
+# Bool conversions
+print(bool(0))        # False
+print(bool(123))      # True
+print(bool([]))       # False (empty list)
+print(bool([1, 2]))   # True (non-empty list)
+print(bool(""))       # False (empty string)
+print(bool("Hello"))  # True (non-empty string)
+
+
+
+
