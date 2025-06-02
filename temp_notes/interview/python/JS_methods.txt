@@ -47,8 +47,8 @@ console.log(text.toLowerCase());                 // 'hello, javascript!'
 console.log(text.includes("Java"));              // true
 console.log(text.startsWith("Hell"));            // true
 console.log(text.endsWith("!"));                 // true
-console.log(text.indexOf("a"));                  // 1
-console.log(text.lastIndexOf("a"));              // 11
+console.log(text.indexOf("a"));                   // 1 (first 'a' found at index 1)
+console.log(text.lastIndexOf("a"));               // 11 (last 'a' found at index 11)
 
 // ▶️ Replace / Modify
 console.log(text.replace("JavaScript", "World"));   // 'Hello, World!'
@@ -56,58 +56,59 @@ console.log(text.replaceAll("a", "@"));             // 'Hello, J@v@Script!'
 
 // ▶️ Regex Match & Replace
 console.log(text.match(/Java\w+/));              // ['JavaScript']
-console.log(text.matchAll(/[A-Z]/g));            // iterator of matches
-console.log(text.search(/Script/));              // 10
-console.log(text.replace(/a/g, '*'));            // Replace all 'a's with '*'
+console.log([...text.matchAll(/[A-Z]/g)]);       // Array of matches for uppercase letters: [{index: 0, input: ...}, {index: 7, ...}]
+console.log(text.search(/Script/));               // 10 (position where 'Script' begins)
+console.log(text.replace(/a/g, '*'));             // Replace all 'a's with '*': 'Hello, J*v*Script!'
 
 // ▶️ Padding
-console.log(text.padStart(20, '*'));             // '***Hello, JavaScript!'
-console.log(text.padEnd(20, '-'));               // 'Hello, JavaScript!---'
+console.log(text.padStart(20, '*'));              // '***Hello, JavaScript!'
+console.log(text.padEnd(20, '-'));                 // 'Hello, JavaScript!---'
 
 // ▶️ Trimming
-console.log(spaced.trim());                      // 'padded string'
-console.log(spaced.trimStart());                 // 'padded string   '
-console.log(spaced.trimEnd());                   // '   padded string'
+console.log(spaced.trim());                        // 'padded string'
+console.log(spaced.trimStart());                   // 'padded string   ' (leading spaces removed)
+console.log(spaced.trimEnd());                     // '   padded string' (trailing spaces removed)
 
 // ▶️ Split & Join
-let parts = text.split(", ");                    // ['Hello', 'JavaScript!']
-console.log(parts.join(" - "));                  // 'Hello - JavaScript!'
+let parts = text.split(", ");                      // ['Hello', 'JavaScript!']
+console.log(parts.join(" - "));                    // 'Hello - JavaScript!'
 
 // ▶️ Char Access
-console.log(text.charAt(1));                     // 'e'
-console.log(text.charCodeAt(1));                 // 101
-console.log(text.codePointAt(1));                // 101
+console.log(text.charAt(1));                       // 'e'
+console.log(text.charCodeAt(1));                   // 101 (UTF-16 code unit)
+console.log(text.codePointAt(1));                  // 101 (full Unicode code point)
 
 // ▶️ Unicode Handling
-console.log([...emoji]);                         // ['😀', '😃', '😄']
-console.log(emoji.normalize());                  // NFC normalization
+console.log([...emoji]);                            // ['😀', '😃', '😄']
+console.log(emoji.normalize());                     // Unicode NFC normalized form (returns same string here)
 
 // ▶️ Repeat & Concat
-console.log("Hi".repeat(3));                     // 'HiHiHi'
-console.log("Hello".concat(", ", "World"));      // 'Hello, World'
+console.log("Hi".repeat(3));                        // 'HiHiHi'
+console.log("Hello".concat(", ", "World"));         // 'Hello, World'
 
 // ▶️ Comparison
-console.log("abc".localeCompare("abd"));         // -1
+console.log("abc".localeCompare("abd"));            // -1 (abc < abd)
 
 // ▶️ Iteration
-for (let char of text) console.log(char);        // prints each character
+for (let char of text) console.log(char);          // prints each character on its own line
 
 // ▶️ Template Literals
 let name = "Alice";
-console.log(`Hello, ${name}!`);                  // 'Hello, Alice!'
+console.log(`Hello, ${name}!`);                      // 'Hello, Alice!'
 
 // ▶️ Raw Strings
-console.log(String.raw`Line1\nLine2`);           // 'Line1\\nLine2'
+console.log(String.raw`Line1\nLine2`);               // 'Line1\\nLine2' (raw string, backslash not escaped)
 
 // ▶️ Type Conversion
-console.log(text.valueOf());                     // 'Hello, JavaScript!'
-console.log(text.toString());                    // 'Hello, JavaScript!'
+console.log(text.valueOf());                         // 'Hello, JavaScript!'
+console.log(text.toString());                        // 'Hello, JavaScript!'
 
 // ▶️ Prototype Inherited
 console.log(text.__proto__.includes === String.prototype.includes); // true
 
 // ▶️ Access Prototype & All Methods
-console.log(Object.getOwnPropertyNames(String.prototype));
+console.log(Object.getOwnPropertyNames(String.prototype));          // lists all String prototype methods
+
 
 NUMBERS
 -------
@@ -123,86 +124,95 @@ let h = new Number(5);     // Object wrapper (avoid!)
 
 
 // ▶️ Type Check & Safety
-console.log(typeof a);                    // 'number'
-console.log(Number.isFinite(a));          // true
-console.log(Number.isInteger(b));         // false
-console.log(Number.isNaN(NaN));           // true
+console.log(typeof a);                          // 'number'
+console.log(Number.isFinite(a));                // true
+console.log(Number.isInteger(b));               // false
+console.log(Number.isNaN(NaN));                  // true
 console.log(Number.isSafeInteger(9007199254740991)); // true
 
 // ▶️ Special Values
-console.log(1 / 0);                       // Infinity
-console.log(-1 / 0);                      // -Infinity
-console.log(0 / 0);                       // NaN
+console.log(1 / 0);                             // Infinity
+console.log(-1 / 0);                            // -Infinity
+console.log(0 / 0);                             // NaN
 
 // ▶️ Constants
-console.log(Number.MAX_VALUE);           // 1.7976931348623157e+308
-console.log(Number.MIN_VALUE);           // 5e-324
-console.log(Number.MAX_SAFE_INTEGER);    // 9007199254740991
-console.log(Number.MIN_SAFE_INTEGER);    // -9007199254740991
-console.log(Number.POSITIVE_INFINITY);   // Infinity
-console.log(Number.NEGATIVE_INFINITY);   // -Infinity
-console.log(Number.NaN);                 // NaN
+console.log(Number.MAX_VALUE);                   // 1.7976931348623157e+308
+console.log(Number.MIN_VALUE);                   // 5e-324
+console.log(Number.MAX_SAFE_INTEGER);            // 9007199254740991
+console.log(Number.MIN_SAFE_INTEGER);            // -9007199254740991
+console.log(Number.POSITIVE_INFINITY);           // Infinity
+console.log(Number.NEGATIVE_INFINITY);           // -Infinity
+console.log(Number.NaN);                         // NaN
 
 // ▶️ Conversion
-console.log(Number("123"));              // 123
-console.log(parseInt("42px"));           // 42
-console.log(parseFloat("3.14abc"));      // 3.14
-console.log(+"100");                     // 100 (unary + coercion)
-console.log((123.456).toFixed(1));       // '123.5'
-console.log((123.456).toPrecision(4));   // '123.5'
+console.log(Number("123"));                      // 123
+console.log(parseInt("42px"));                   // 42
+console.log(parseFloat("3.14abc"));              // 3.14
+console.log(+"100");                             // 100 (unary + coercion)
+console.log((123.456).toFixed(1));               // '123.5'
+console.log((123.456).toPrecision(4));           // '123.5'
 
 // ▶️ Formatting
-console.log((255).toString());           // '255'
-console.log((255).toString(2));          // '11111111' (binary)
-console.log((255).toString(16));         // 'ff' (hex)
-console.log((1000).toLocaleString());    // '1,000' (based on locale)
-console.log((9.9).toExponential(1));     // '9.9e+0'
+console.log((255).toString());                   // '255'
+console.log((255).toString(2));                  // '11111111' (binary)
+console.log((255).toString(16));                 // 'ff' (hex)
+console.log((1000).toLocaleString());            // '1,000' (based on locale)
+console.log((9.9).toExponential(1));             // '9.9e+0'
 
 // ▶️ Math Operations
-console.log(Math.abs(-7));               // 7
-console.log(Math.ceil(4.2));             // 5
-console.log(Math.floor(4.7));            // 4
-console.log(Math.round(4.5));            // 5
-console.log(Math.trunc(4.9));            // 4
-console.log(Math.max(1, 5, 3));          // 5
-console.log(Math.min(1, 5, 3));          // 1
-console.log(Math.pow(2, 3));             // 8
-console.log(2 ** 3);                     // 8 (ES6 exponentiation)
-console.log(Math.sqrt(16));              // 4
-console.log(Math.cbrt(27));              // 3
+console.log(Math.abs(-7));                       // 7
+console.log(Math.ceil(4.2));                     // 5
+console.log(Math.floor(4.7));                    // 4
+console.log(Math.round(4.5));                    // 5
+console.log(Math.trunc(4.9));                    // 4
+console.log(Math.max(1, 5, 3));                  // 5
+console.log(Math.min(1, 5, 3));                  // 1
+console.log(Math.pow(2, 3));                     // 8
+console.log(2 ** 3);                             // 8 (ES6 exponentiation)
+console.log(Math.sqrt(16));                      // 4
+console.log(Math.cbrt(27));                      // 3
 
 // ▶️ Math Constants
-console.log(Math.PI);                    // 3.141592653589793
-console.log(Math.E);                     // 2.718281828459045
-console.log(Math.LN2);                   // 0.6931471805599453
+console.log(Math.PI);                            // 3.141592653589793
+console.log(Math.E);                             // 2.718281828459045
+console.log(Math.LN2);                           // 0.6931471805599453
 
 // ▶️ Random & Rounding
-console.log(Math.random());              // 0.0 <= x < 1.0
-console.log(Math.floor(Math.random() * 10)); // 0–9
+console.log(Math.random());                      // 0.0 <= x < 1.0
+console.log(Math.floor(Math.random() * 10));    // 0–9
 
 // ▶️ Sign & Clamping
-console.log(Math.sign(-50));             // -1
-console.log(Math.sign(0));               // 0
-console.log(Math.sign(50));              // 1
-console.log(Math.clamp?.(5, 1, 10));     // 5 (Not built-in yet)
+console.log(Math.sign(-50));                     // -1
+console.log(Math.sign(0));                       // 0
+console.log(Math.sign(50));                      // 1
+
+// Math.clamp is not built-in — add a polyfill:
+Math.clamp = Math.clamp || function(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+};
+console.log(Math.clamp(5, 1, 10));               // 5
+console.log(Math.clamp(-1, 1, 10));              // 1
+console.log(Math.clamp(15, 1, 10));              // 10
 
 // ▶️ BigInt (for large integers)
 let big = 1234567890123456789012345678901234567890n;
-console.log(typeof big);                // 'bigint'
+console.log(typeof big);                          // 'bigint'
+console.log(big + 10n);                           // 1234567890123456789012345678901234567900n
 
 // ▶️ Edge Cases
-console.log(0.1 + 0.2);                 // 0.30000000000000004
-console.log((0.1 + 0.2).toFixed(2));    // '0.30'
+console.log(0.1 + 0.2);                           // 0.30000000000000004
+console.log((0.1 + 0.2).toFixed(2));              // '0.30'
 
 // ▶️ Prototype Methods (Object-style)
 let numObj = new Number(123.456);
-console.log(numObj.valueOf());           // 123.456
-console.log(numObj.toString());          // '123.456'
-console.log(numObj.constructor === Number); // true
+console.log(numObj.valueOf());                     // 123.456
+console.log(numObj.toString());                    // '123.456'
+console.log(numObj.constructor === Number);       // true
 
 // ▶️ Inspect All Methods
 console.log(Object.getOwnPropertyNames(Number.prototype));
-console.log(Object.getOwnPropertyNames(Number)); // Static methods
+console.log(Object.getOwnPropertyNames(Number)); // Static methods on Number object
+
 
 
 BOOLEANS
@@ -216,7 +226,7 @@ let e = new Boolean(false);       // ⚠️ truthy object, not primitive
 
 // ▶️ Type Check
 console.log(typeof a);            // 'boolean'
-console.log(typeof e);            // 'object'
+console.log(typeof e);            // 'object' (wrapper object)
 console.log(e instanceof Boolean); // true
 
 // ▶️ Coercion (Truthy / Falsy)
@@ -227,8 +237,8 @@ console.log(Boolean(123));        // true
 console.log(Boolean(null));       // false
 console.log(Boolean(undefined));  // false
 console.log(Boolean(NaN));        // false
-console.log(Boolean([]));         // true
-console.log(Boolean({}));         // true
+console.log(Boolean([]));         // true (empty array is truthy)
+console.log(Boolean({}));         // true (empty object is truthy)
 
 // ▶️ Truthy Values
 let truthyExamples = [1, -1, "0", "false", [], {}, Infinity];
@@ -244,15 +254,16 @@ console.log(true || false);       // true
 console.log(!true);               // false
 
 // ▶️ Short-circuit Evaluation
-console.log("Hello" && 123);      // 123
-console.log(0 || "fallback");     // 'fallback'
-console.log("" || 0 || "yes");    // 'yes'
+console.log("Hello" && 123);      // 123 (returns second value if first truthy)
+console.log(0 || "fallback");     // 'fallback' (returns first truthy or last falsy)
+console.log("" || 0 || "yes");    // 'yes' (first truthy value)
 
 // ▶️ Boolean Object Wrapper (⚠️ Avoid)
 let wrapped = new Boolean(false);
-console.log(wrapped == true);     // true (object is truthy)
-console.log(wrapped.valueOf());   // false
-console.log(Boolean(wrapped));    // true (!)
+console.log(wrapped == true);     // false (because wrapped is object, not coerced to primitive automatically)
+console.log(wrapped === true);    // false (strict comparison)
+console.log(wrapped.valueOf());   // false (primitive boolean value)
+console.log(Boolean(wrapped));    // true (objects are always truthy)
 
 // ▶️ Boolean Conversion via !!
 console.log(!!"text");            // true
@@ -260,16 +271,18 @@ console.log(!!null);              // false
 
 // ▶️ Boolean to String / Number
 console.log(true.toString());     // 'true'
+console.log(false.toString());    // 'false'
 console.log(Number(true));        // 1
 console.log(Number(false));       // 0
 
 // ▶️ Boolean Object Methods
 let boolObj = new Boolean(true);
-console.log(boolObj.valueOf());   // true
+console.log(boolObj.valueOf());   // true (primitive boolean)
 console.log(boolObj.toString());  // 'true'
 
 // ▶️ Inspect All Boolean Prototype Methods
-console.log(Object.getOwnPropertyNames(Boolean.prototype)); // ['constructor', 'toString', 'valueOf']
+console.log(Object.getOwnPropertyNames(Boolean.prototype)); 
+// ['constructor', 'toString', 'valueOf']
 
 
 SYMBOLS
@@ -351,7 +364,7 @@ const obj = {
 
 console.log(obj.toString());           // '[object CustomObject]'
 
-
+// ▶️ Using Symbol.iterator to make an object iterable
 const range = {
   from: 1,
   to: 3,
@@ -366,6 +379,54 @@ const range = {
 };
 
 for (let num of range) console.log(num); // 1, 2, 3
+
+// ▶️ Additional well-known Symbols examples:
+
+// Symbol.hasInstance: customize instanceof behavior
+class MyClass {
+  static [Symbol.hasInstance](instance) {
+    return instance.customCheck === true;
+  }
+}
+const instance = { customCheck: true };
+console.log(instance instanceof MyClass);  // true
+
+// Symbol.toPrimitive: customize object-to-primitive conversion
+const obj2 = {
+  [Symbol.toPrimitive](hint) {
+    if (hint === "number") return 42;
+    if (hint === "string") return "forty-two";
+    return true;
+  }
+};
+console.log(+obj2);      // 42 (number hint)
+console.log(`${obj2}`);  // "forty-two" (string hint)
+console.log(obj2 + "");  // "true" (default hint)
+
+// Symbol.isConcatSpreadable: control array spread in concat
+const arr = [1, 2];
+arr[Symbol.isConcatSpreadable] = false;
+const result = [3].concat(arr);
+console.log(result);    // [ [1, 2] ] instead of [3, 1, 2]
+
+// ▶️ Retrieve all well-known symbols supported by the environment
+console.log(Object.getOwnPropertySymbols(Symbol)); 
+// This is usually empty because well-known symbols are properties on Symbol, not symbol-valued.
+// Instead, access via Symbol.* like Symbol.iterator, Symbol.toStringTag, etc.
+console.log([
+  Symbol.hasInstance,
+  Symbol.isConcatSpreadable,
+  Symbol.iterator,
+  Symbol.match,
+  Symbol.replace,
+  Symbol.search,
+  Symbol.species,
+  Symbol.split,
+  Symbol.toPrimitive,
+  Symbol.toStringTag,
+  Symbol.unscopables
+]);
+
 
 
 OBJECTS
@@ -382,7 +443,7 @@ obj2.country = "India";                       // Add property
 delete obj2.age;                              // Remove property
 console.log("age" in obj2);                   // false
 
-// ▶️ Optional Chaining
+// ▶️ Optional Chaining (safe property access)
 let person = { address: { city: "NYC" } };
 console.log(person.address?.city);            // 'NYC'
 console.log(person.phone?.number);            // undefined
@@ -393,90 +454,97 @@ console.log(name);                            // 'Alice'
 
 // ▶️ Looping Properties
 for (let key in obj2) {
-  console.log(key, obj2[key]);                // Only enumerable keys
+  console.log(key, obj2[key]);                // Only enumerable keys, including inherited ones
 }
-console.log(Object.keys(obj2));               // ['name', 'country']
+console.log(Object.keys(obj2));               // ['name', 'country'] (own enumerable keys)
 console.log(Object.values(obj2));             // ['Alice', 'India']
 console.log(Object.entries(obj2));            // [['name', 'Alice'], ['country', 'India']]
 
 // ▶️ Object Cloning & Merging
-let copy = { ...obj2 };                       // Shallow clone
-let merged = Object.assign({}, obj2, { age: 25 });
+let copy = { ...obj2 };                       // Shallow clone via spread syntax
+let merged = Object.assign({}, obj2, { age: 25 }); // Merge objects (rightmost overwrites)
 console.log(merged);                          // { name: ..., country: ..., age: 25 }
 
 // ▶️ Equality (Objects are reference types)
 let a = { x: 1 };
 let b = { x: 1 };
-console.log(a === b);                         // false
-console.log(JSON.stringify(a) === JSON.stringify(b)); // true (value equality)
+console.log(a === b);                         // false (different references)
+console.log(JSON.stringify(a) === JSON.stringify(b)); // true (deep equality by serialization)
 
 // ▶️ Freeze / Seal / Prevent Extensions
-let frozen = Object.freeze({ foo: 1 });       // Immutable
-frozen.foo = 2;                               // ❌ No change
+let frozen = Object.freeze({ foo: 1 });       // Immutable object: no add/delete/change props
+frozen.foo = 2;                               // ❌ No change (fails silently or throws in strict mode)
 
-let sealed = Object.seal({ a: 1 });
+let sealed = Object.seal({ a: 1 });           // Prevent add/delete but allow changes to existing props
 sealed.a = 2;                                 // ✅ can update
 delete sealed.a;                              // ❌ can't delete
 
-let blocked = Object.preventExtensions({ x: 1 });
-blocked.y = 2;                                // ❌ can't add new
+let blocked = Object.preventExtensions({ x: 1 }); // Prevent adding new props, but allow changing/deleting
+blocked.y = 2;                                // ❌ can't add new prop
 
-// ▶️ Property Descriptors
+// ▶️ Property Descriptors (control property behavior)
 let user = { name: "Bob" };
 Object.defineProperty(user, "id", {
   value: 101,
-  writable: false,
-  enumerable: false,
-  configurable: false,
+  writable: false,      // Cannot be changed
+  enumerable: false,    // Hidden from for..in and Object.keys
+  configurable: false   // Cannot delete or redefine descriptor
 });
-console.log(Object.getOwnPropertyDescriptor(user, "id"));
-console.log(Object.getOwnPropertyNames(user));  // includes non-enumerable
+console.log(Object.getOwnPropertyDescriptor(user, "id")); 
+// { value: 101, writable: false, enumerable: false, configurable: false }
+console.log(Object.getOwnPropertyNames(user));  // includes non-enumerable keys ['name', 'id']
 
 // ▶️ Inheritance & Prototypes
 let parent = { greet() { console.log("Hello"); } };
 let child = Object.create(parent);
 child.name = "Tom";
-child.greet();                                // Inherited: Hello
-console.log(child.__proto__ === parent);      // true
+child.greet();                                // Inherited method: 'Hello'
+console.log(child.__proto__ === parent);      // true (prototype link)
 
-// ▶️ Check if property is own
-console.log(child.hasOwnProperty("name"));    // true
-console.log(child.hasOwnProperty("greet"));   // false
+// ▶️ Check if property is own vs inherited
+console.log(child.hasOwnProperty("name"));    // true (own property)
+console.log(child.hasOwnProperty("greet"));   // false (inherited)
 
-// ▶️ Object.create()
+// ▶️ Object.create() (create with prototype)
 let base = {
   sayHi() { console.log("Hi"); }
 };
 let obj4 = Object.create(base);
 obj4.sayHi();                                 // 'Hi'
 
-// ▶️ Object Constructor Methods
-console.log(Object.keys(obj2));               // ['name', 'country']
+// ▶️ Object Constructor Methods (static methods)
+console.log(Object.keys(obj2));               // ['name', 'country'] (own enumerable keys)
 console.log(Object.values(obj2));             // ['Alice', 'India']
 console.log(Object.entries(obj2));            // [['name', 'Alice'], ['country', 'India']]
-console.log(Object.fromEntries([["a", 1], ["b", 2]]));  // { a: 1, b: 2 }
+console.log(Object.fromEntries([["a", 1], ["b", 2]]));  // Build object from key-value pairs: { a: 1, b: 2 }
 
 // ▶️ Prototype Chain Utilities
-console.log(Object.getPrototypeOf(obj4));     // base
-console.log(Object.setPrototypeOf(obj2, base)); // set parent
-obj2.sayHi();                                 // now has sayHi
+console.log(Object.getPrototypeOf(obj4));     // base object (prototype)
+Object.setPrototypeOf(obj2, base);             // change prototype chain
+obj2.sayHi();                                 // now works because of prototype change
 
 // ▶️ Built-in Static Methods
+
+// Object.is(): compares values like === but treats NaN === NaN and +0 !== -0
 console.log(Object.is(0, -0));                // false
 console.log(Object.is(NaN, NaN));             // true
-console.log(Object.assign({}, { x: 1 }, { y: 2 })); // merge
-console.log(Object.hasOwn(obj2, "name"));     // true (ES2022+)
 
-// ▶️ Useful Inherited Methods (via prototype)
+// Object.assign(): merges source objects into target (shallow copy)
+console.log(Object.assign({}, { x: 1 }, { y: 2 })); // { x: 1, y: 2 }
+
+// Object.hasOwn(): checks own property (ES2022+)
+console.log(Object.hasOwn(obj2, "name"));     // true
+
+// ▶️ Useful Inherited Methods (via Object.prototype)
 let obj = { x: 10 };
-console.log(obj.toString());                  // '[object Object]'
-console.log(obj.valueOf());                   // { x: 10 }
-console.log(obj.hasOwnProperty("x"));         // true
-console.log(obj.propertyIsEnumerable("x"));   // true
-console.log(obj.isPrototypeOf(child));        // false
-console.log(Object.prototype.isPrototypeOf(child)); // true
+console.log(obj.toString());                  // '[object Object]' (default string representation)
+console.log(obj.valueOf());                   // Returns the object itself (used for primitive conversion)
+console.log(obj.hasOwnProperty("x"));         // true (own property check)
+console.log(obj.propertyIsEnumerable("x"));   // true (property is enumerable)
+console.log(obj.isPrototypeOf(child));        // false (obj is not in child's prototype chain)
+console.log(Object.prototype.isPrototypeOf(child)); // true (Object.prototype is ancestor)
 
-// ▶️ Inspect Prototype Methods
+// ▶️ Inspect Prototype Methods on Object.prototype
 console.log(Object.getOwnPropertyNames(Object.prototype));
 /*
 [
@@ -486,6 +554,51 @@ console.log(Object.getOwnPropertyNames(Object.prototype));
 ]
 */
 
+// ▶️ Additional Useful Object.prototype Methods
+
+// __defineGetter__ / __defineSetter__: define getter/setter (non-standard but widely supported)
+obj.__defineGetter__("foo", function() { return 42; });
+console.log(obj.foo); // 42
+
+obj.__defineSetter__("foo", function(val) { console.log("Setting foo to", val); });
+obj.foo = 10; // logs: Setting foo to 10
+
+// __lookupGetter__ / __lookupSetter__: get getter/setter function of property (if defined)
+console.log(obj.__lookupGetter__("foo")); // function() { return 42; }
+console.log(obj.__lookupSetter__("foo")); // function(val) { ... }
+
+// __proto__: get/set prototype object (deprecated in favor of Object.getPrototypeOf/setPrototypeOf)
+console.log(obj.__proto__ === Object.prototype);  // true
+obj.__proto__ = base;     // sets prototype (not recommended)
+
+// ▶️ Object Property Enumeration Types
+// for..in loops all enumerable properties (own + inherited)
+// Object.keys() returns own enumerable keys only
+// Object.getOwnPropertyNames() returns all own properties (enumerable + non-enumerable)
+// Object.getOwnPropertySymbols() returns own symbol properties
+
+// ▶️ Summary of common Object methods:
+
+/*
+Object.create(proto, [descriptors])  - creates new object with specified prototype and property descriptors
+Object.assign(target, ...sources)    - shallow copies enumerable own properties from sources to target
+Object.freeze(obj)                   - prevents any modification (add/delete/update)
+Object.seal(obj)                    - prevents adding/deleting props but allows updating existing
+Object.preventExtensions(obj)       - prevents adding new properties
+Object.keys(obj)                    - returns own enumerable property names
+Object.values(obj)                  - returns own enumerable property values
+Object.entries(obj)                 - returns own enumerable [key, value] pairs
+Object.fromEntries(iterable)        - creates object from iterable of [key, value]
+Object.getPrototypeOf(obj)          - returns prototype of obj
+Object.setPrototypeOf(obj, proto)   - sets prototype of obj (avoid performance penalty)
+Object.getOwnPropertyDescriptor(obj, prop) - get property descriptor
+Object.getOwnPropertyNames(obj)     - get all own property names (including non-enumerable)
+Object.getOwnPropertySymbols(obj)   - get own symbol properties
+Object.is(value1, value2)            - compares values (like === but NaN === NaN, +0 !== -0)
+Object.hasOwn(obj, prop)             - ES2022+ own property check
+*/
+
+// You got all the main missing methods + what they do! Need examples or details on any specific?
 
 
 
