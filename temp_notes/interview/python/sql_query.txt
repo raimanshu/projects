@@ -1,0 +1,269 @@
+-- =====================================================
+-- 1. Data Query Language (DQL)
+-- =====================================================
+
+-- Basic SELECT
+SELECT column1, column2 FROM table_name;
+-- Retrieves specified columns from a table
+
+-- SELECT ALL (default, returns all rows)
+SELECT ALL column1 FROM table_name;
+
+-- SELECT DISTINCT (removes duplicates)
+SELECT DISTINCT column1 FROM table_name;
+
+-- SELECT with WHERE clause (filter rows)
+SELECT * FROM table_name WHERE column1 = 'value';
+
+-- SELECT with ORDER BY (sort results)
+SELECT * FROM table_name ORDER BY column1 ASC;
+SELECT * FROM table_name ORDER BY column1 DESC;
+
+-- SELECT with GROUP BY (group rows by column)
+SELECT column1, COUNT(*) FROM table_name GROUP BY column1;
+
+-- SELECT with HAVING (filter grouped rows)
+SELECT column1, COUNT(*) FROM table_name GROUP BY column1 HAVING COUNT(*) > 1;
+
+-- SELECT with LIMIT / OFFSET (restrict rows)
+SELECT * FROM table_name LIMIT 10;       -- Return first 10 rows
+SELECT * FROM table_name LIMIT 5 OFFSET 10; -- Skip 10 rows, then 5 rows
+
+-- EXISTS: Checks if subquery returns any rows
+SELECT column1 FROM table_name WHERE EXISTS (
+    SELECT 1 FROM other_table WHERE other_table.id = table_name.ref_id
+);
+
+-- ANY / SOME: Compares value to any in subquery or list
+SELECT * FROM table_name WHERE column1 > ANY (SELECT column2 FROM other_table);
+
+-- ALL: Compares value to all in subquery or list
+SELECT * FROM table_name WHERE column1 > ALL (SELECT column2 FROM other_table);
+
+-- UNION / UNION ALL: Combine results of two SELECTs
+SELECT column1 FROM table1
+UNION
+SELECT column1 FROM table2;
+-- UNION removes duplicates
+
+SELECT column1 FROM table1
+UNION ALL
+SELECT column1 FROM table2;
+-- UNION ALL keeps duplicates
+
+-- INTERSECT: Returns rows common to both SELECTs (not supported everywhere)
+SELECT column1 FROM table1
+INTERSECT
+SELECT column1 FROM table2;
+
+-- EXCEPT / MINUS: Returns rows in first SELECT not in second
+SELECT column1 FROM table1
+EXCEPT
+SELECT column1 FROM table2;
+-- (Oracle uses MINUS instead of EXCEPT)
+
+-- WITH / CTE (Common Table Expressions): Temporary named result sets
+WITH RecentOrders AS (
+  SELECT * FROM orders WHERE order_date > '2024-01-01'
+)
+SELECT * FROM RecentOrders WHERE total > 100;
+
+-- Recursive CTE example (generates numbers 1 to 10)
+WITH RECURSIVE numbers AS (
+  SELECT 1 AS n
+  UNION ALL
+  SELECT n + 1 FROM numbers WHERE n < 10
+)
+SELECT * FROM numbers;
+
+-- =====================================================
+-- 2. Data Manipulation Language (DML)
+-- =====================================================
+
+-- INSERT INTO: Insert rows
+INSERT INTO table_name (col1, col2) VALUES ('val1', 'val2');
+
+-- INSERT INTO ... SELECT: Insert from another query
+INSERT INTO table_name (col1, col2) SELECT colA, colB FROM other_table;
+
+-- UPDATE: Modify existing rows
+UPDATE table_name SET col1 = 'newval' WHERE col2 = 'condition';
+
+-- DELETE: Remove rows
+DELETE FROM table_name WHERE col1 = 'value';
+
+-- TRUNCATE TABLE: Quickly delete all rows (cannot rollback in many DBMS)
+TRUNCATE TABLE table_name;
+
+-- MERGE (UPSERT): Insert or update rows conditionally (DBMS-specific)
+MERGE INTO target_table AS t
+USING source_table AS s
+ON t.id = s.id
+WHEN MATCHED THEN UPDATE SET t.value = s.value
+WHEN NOT MATCHED THEN INSERT (id, value) VALUES (s.id, s.value);
+
+-- REPLACE INTO: MySQL command to insert or replace existing rows
+REPLACE INTO table_name (id, col) VALUES (1, 'value');
+
+-- =====================================================
+-- 3. Data Definition Language (DDL)
+-- =====================================================
+
+-- CREATE TABLE: Define a new table
+CREATE TABLE table_name (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  age INT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+);
+-- Defines columns, types, constraints
+-- CREATE TABLE with constraints
+CREATE TABLE table_name (
+  id INT PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  age INT CHECK (age >= 0),
+  country_id INT,
+  FOREIGN KEY (country_id) REFERENCES countries(id)
+);
+-- DROP TABLE: Remove entire table and data
+DROP TABLE table_name;
+
+-- ALTER TABLE: Modify table structure
+ALTER TABLE table_name ADD column_name datatype;
+ALTER TABLE table_name DROP COLUMN column_name;
+ALTER TABLE table_name RENAME TO new_table_name;
+
+-- DROP TABLE: Remove table and all data
+DROP TABLE table_name;
+
+-- CREATE INDEX: Create an index to speed up queries
+CREATE INDEX idx_name ON table_name (column1, column2);
+
+-- DROP INDEX: Remove an index
+DROP INDEX idx_name ON table_name;  -- MySQL syntax
+DROP INDEX idx_name;                -- PostgreSQL syntax
+
+-- CREATE VIEW: Create a virtual table from a query
+CREATE VIEW view_name AS
+SELECT column1, column2 FROM table_name WHERE condition;
+
+-- DROP VIEW: Remove a view
+DROP VIEW view_name;
+
+-- CREATE SCHEMA: Define a namespace/logical container
+CREATE SCHEMA schema_name;
+
+-- ALTER SCHEMA: Rename or modify schema (DBMS-specific, e.g. PostgreSQL)
+
+-- =====================================================
+-- 4. Transaction Control Language (TCL)
+-- =====================================================
+
+-- START TRANSACTION: Begin a new transaction
+START TRANSACTION;
+
+-- COMMIT: Save transaction changes permanently
+COMMIT;
+
+-- ROLLBACK: Undo uncommitted changes
+ROLLBACK;
+
+-- SAVEPOINT: Create a point to rollback to
+SAVEPOINT savepoint_name;
+
+-- RELEASE SAVEPOINT: Remove a savepoint
+RELEASE SAVEPOINT savepoint_name;
+
+-- SET TRANSACTION: Set transaction properties (e.g. isolation level)
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+-- LOCK TABLE: Lock a table explicitly (DBMS-specific)
+LOCK TABLE table_name IN EXCLUSIVE MODE;
+
+-- =====================================================
+-- 5. Data Control Language (DCL)
+-- =====================================================
+
+-- GRANT: Assign permissions to users/roles
+GRANT SELECT, INSERT ON table_name TO user_name;
+
+-- REVOKE: Remove permissions
+REVOKE INSERT ON table_name FROM user_name;
+
+-- CREATE USER: Create a new database user (DBMS-specific)
+CREATE USER username IDENTIFIED BY 'password';
+
+-- DROP USER: Remove a database user
+DROP USER username;
+
+-- ALTER USER: Modify user properties/password
+ALTER USER username IDENTIFIED BY 'newpassword';
+
+-- =====================================================
+-- 6. Miscellaneous / Utility Commands
+-- =====================================================
+
+-- DESCRIBE / DESC: Show table structure (columns and types)
+DESCRIBE table_name;
+
+-- SHOW DATABASES: List all databases (MySQL)
+SHOW DATABASES;
+
+-- SHOW TABLES: List tables in current database
+SHOW TABLES;
+
+-- SHOW COLUMNS FROM: Show columns in a table
+SHOW COLUMNS FROM table_name;
+
+-- EXPLAIN: Show query execution plan
+EXPLAIN SELECT * FROM table_name;
+
+-- EXPLAIN ANALYZE: Execute and show detailed query plan (PostgreSQL)
+EXPLAIN ANALYZE SELECT * FROM table_name;
+
+-- USE: Switch to a different database
+USE database_name;
+
+-- COMMENT ON: Add a comment to database object (PostgreSQL, Oracle)
+COMMENT ON TABLE table_name IS 'This is a sample table';
+
+-- SET ROLE: Change current role for permission purposes
+SET ROLE role_name;
+
+-- VACUUM: Cleanup and optimize tables (PostgreSQL)
+VACUUM;
+
+-- ANALYZE: Update statistics for optimizer (PostgreSQL)
+ANALYZE;
+
+-- =====================================================
+-- 7. Procedural SQL (PL/SQL, T-SQL, etc.)
+-- =====================================================
+
+-- DECLARE variables, control flow, loops inside stored procedures/functions
+
+-- Example PostgreSQL anonymous block
+DO $$
+BEGIN
+  RAISE NOTICE 'Hello World!';
+END;
+$$ LANGUAGE plpgsql;
+
+-- CREATE PROCEDURE / FUNCTION syntax example
+CREATE PROCEDURE proc_name()
+LANGUAGE SQL
+AS $$
+BEGIN
+  -- SQL statements here
+END;
+$$;
+
+-- =====================================================
+-- Notes
+-- =====================================================
+
+-- SQL syntax varies slightly between database systems (MySQL, PostgreSQL, Oracle, SQL Server).
+-- Some commands like MERGE, REPLACE, INTERSECT, EXCEPT may not be supported in all DBMS.
+-- Always check your DBMS documentation for specifics.
+
