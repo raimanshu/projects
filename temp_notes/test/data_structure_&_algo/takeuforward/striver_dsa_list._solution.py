@@ -1165,7 +1165,7 @@ https://bit.ly/3ppA6YJ
 
 steps
 - iterate over the arr till n-1 with i
-- take a variable min in side loop and assign i
+- take a variable min inside loop and assign i
 - again iterate over the array from i+1 to n with j
 - if arr[j] < arr[min] then min = j
 - after the inner loop is over swap arr[i] and arr[min]
@@ -1612,7 +1612,7 @@ def largest_element_1(arr):
   return largest
 print(largest_element_1([1,2,4,7,7,5]))
 
-# 2 TODO : find smallest and second largest element in an array
+# 2 TODO : find smallest/largest and second largest/second largest element in an array
 '''
 🟢🟢🟢🟢🟢
 ⭐⭐⭐
@@ -1903,7 +1903,6 @@ def rotate_arr(arr):
 arr = [1, 2, 2, 3, 3, 4]
 print(rotate_arr(arr))
 
-# 
 
 # 6 TODO : left rotate an array by d places
 '''
@@ -2473,7 +2472,7 @@ def maximum_consecutive(arr):
     maximum = max(maximum, counter)
   return maximum
 
-print(maximum_consecutive([1,1,0,1,1,1,3,1,1]))
+print(maximum_consecutive([1,1,0,1,1,1,3,1,1]))      # Output - 3
 
 # method 2 : optimal solution 
 
@@ -2662,7 +2661,7 @@ SC - O(N)
 '''
 def sub_array(arr, target):
   n = len(arr)
-  preSumMap = {}  # Dictionary to store the first occurrence index of each prefix sum
+  preSumMap = {}  # Dictionary to store the first occurrence index of each prefix sum {sum, index}
   curr_sum = 0    # Current prefix sum
   maxLen = 0      # Maximum length of subarray found
 
@@ -2711,12 +2710,15 @@ def sub_array(arr, target):
   sum = 0
   maxLen = 0
   while right < n:
+    # Shrink the window from the left if the sum exceeds the target
     while sum > target:
       sum -= arr[left]
       left += 1
+    # Check if the current sum matches the target, update maxLen if so
     if sum == target:
       maxLen = max(maxLen, right-left+1)
-    right += 1
+    right += 1          # Expand the window by moving right pointer to the right
+    # Add the new right element to sum if right pointer is still inside the array
     if right < n:
       sum += arr[right]
   return maxLen
@@ -3232,7 +3234,7 @@ def kadane_algorithm(arr):
     if sum < 0:
       sum = 0
   return maxi
-arr = [2, 3, -2, 4, -1, 5, -3]
+arr = [2, -3, 4, -1, -2, 1, 5, -3]
 print(kadane_algorithm(arr))  
 
 # 
@@ -3292,7 +3294,6 @@ def kadane_algorithm(arr):
 arr = [-2,1,-3,4,-1,2,1,-5,4]
 print(kadane_algorithm(arr))
 
-# 
 
 # 6 TODO : stock buy and sell
 '''
@@ -3437,7 +3438,6 @@ def rearrange(arr):
 arr = [3,1,-2,-5,2,-4]
 print(rearrange(arr))
 
-# 
 
 # 👉👉👉 TODO : rearrange the array in alternating positive and negative items (number of positives and negatives are not equal)
 '''
@@ -3771,12 +3771,16 @@ def longest_consecutive_length(arr):
   num_set = set(arr)
   longest_len = 0
   for num in num_set:  # Slight optimization: iterate over set
-    if num - 1 not in num_set:  # Only start counting from the beginning of a sequence
-      current_num = num
-      current_len = 1
+    # Check if the current number is the start of a sequence
+    # Only begin counting if num-1 is not in the set (i.e., it's the start)
+    if num - 1 not in num_set: 
+      current_num = num  # Start of a new sequence
+      current_len = 1  # Current sequence length starts at 1
+      # Continue checking for the next consecutive numbers
       while current_num + 1 in num_set:
         current_num += 1
         current_len += 1
+      # Update the longest sequence length if the current one is longer
       longest_len = max(longest_len, current_len)
   return longest_len
 
@@ -3784,7 +3788,7 @@ def longest_consecutive_length(arr):
 arr = [100, 4, 200, 1, 3, 2]
 print(longest_consecutive_length(arr))  # Output: 4
 
-# 11 TODO : set matrix zeros 
+# 11 TODO : set matrix zeros vertically and horizontally of a 0
 '''
 🟡🟡🟡🟡🟡
 
@@ -3837,6 +3841,11 @@ arr = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
 n, m = len(arr), len(arr[0])
 for row in set_zeros(arr, n, m):
   print(row)
+
+# Output
+# [1, 0, 1]
+# [0, 0, 0]
+# [1, 0, 1]
 
 
 
@@ -4009,7 +4018,7 @@ TC - O(N*M)
 
 SC - O(N*M)
 '''
-def rotate_90(matrix, n,m):
+def spiral_matrix(matrix, n,m):
   ans = []
   top = 0
   bottom = n-1
@@ -4034,7 +4043,7 @@ def rotate_90(matrix, n,m):
 
 arr = [[1,2,3], [4,5,6], [7,8,9]]
 n, m = len(arr), len(arr[0])
-print(rotate_90(arr, n, m))
+print(spiral_matrix(arr, n, m))
 
 # - method 2 : better solution, time complexity O(n)
 
@@ -4122,21 +4131,26 @@ TC - O(N) or O(N*log(N))
 SC - O(N)
 '''
 from collections import defaultdict
-def find_subarrays(arr, sum):
+def find_subarrays(arr, target):
   n = len(arr)
-  mpp = defaultdict(int)
-  preSum = 1
-  cnt = 0
-  mpp[0] = 1
-  for i in range(n):
-    preSum += arr[i]
-    remove = preSum - sum
-    cnt += mpp[remove]
-    mpp[preSum] += 1
-  return cnt
+  prefix_sum_map = defaultdict(int)  # Stores frequency of prefix sums {current_sum,  count}
+  current_sum = 0                    # Running prefix sum
+  count = 0                          # Count of valid subarrays found
+  prefix_sum_map[0] = 1  # Base case: one way to have a zero prefix sum
 
-arr = [3,1,2,4]
-sum = 6
+  for i in range(n):
+      current_sum += arr[i]  # Update running prefix sum
+      # Check if there's a prefix sum that when subtracted gives the target
+      remainder = current_sum - target
+      count += prefix_sum_map[remainder]  # Add number of times that remainder has occurred
+      # Record the current prefix sum for future subarrays
+      prefix_sum_map[current_sum] += 1
+
+  return count
+
+arr = [1,2,3,-3, 1,1,1,4,2,-3]
+# arr = [3,-3,1,1,1]
+sum = 3
 print(find_subarrays(arr, sum))
 
 # endregion
@@ -4364,7 +4378,7 @@ https://leetcode.com/problems/majority-element-ii/
 
 '''
 
-# - method 1 : brute forc
+# - method 1 : brute force
 '''
 steps
 - take an empty array ls = []
@@ -4385,13 +4399,17 @@ def majority_element(arr):
   n = len(arr)
   ls = []
   for i in range(n):
+    # Only check frequency if ls is empty or the current element is different from the first element in ls
     if len(ls) == 0 or ls[0] != arr[i]:
-      cnt = 0
+      cnt = 0   # Initialize counter for current element
+      # Count how many times arr[i] appears in the array
       for j in range(n):
         if arr[i] == arr[j]:
           cnt += 1
+      # If the count is greater than n//3, consider it a majority element and add to result list
       if cnt > (n//3):
         ls.append(arr[i])
+    # At most two elements can appear more than n//3 times in an array
     if len(ls) == 2:
       break
   return ls
@@ -44611,17 +44629,13 @@ print(main_function(arr))
 
 # 2 TODO : buy and sell stock - II (DP - 36)
 '''
-
 🔴🔴🔴🔴🔴
 
-
 https://takeuforward.org/data-structure/buy-and-sell-stock-ii-dp-36/
-
 
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 
 https://www.youtube.com/watch?v=nGJmxkUJQGs&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=216
-
 
 '''
 

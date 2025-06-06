@@ -8,20 +8,20 @@
 
 """ 
 
-> n/2, > n/3
-2 sum, 3 sum, 4 sum
+Majority Element  - > n/2, > n/3 (3.3.2)
+Two sum - 2 sum , 3 sum (3.3.4), 4 sum (3.3.5)
 binary search - (8,9)
 
 
 algorithm - 
 
-Euclidian algo for HCF/GCD
+Euclidian algo for HCF/GCD ✅
 
-selection sort, bubble sort, insertion sort, merge sort, quick sort, 
+selection sort✅, bubble sort✅, insertion sort, merge sort✅, quick sort, 
 
-Dutch National flag algorithm, Moore's voting algorithm
+Dutch National flag algorithm✅, Moore's voting algorithm✅
 
-Kadane's algorithm, extended version of kadane's algorithm, Boyer Moore's majority voting algorithm
+Kadane's algorithm✅, extended version of kadane's algorithm✅, Boyer Moore's majority voting algorithm✅
 
 Manacher's Algorithm, the Tortoise and Hare algorithm., Sieve of Eratosthenes algorithm, Shunting Yard algorithm, Job First algorithm, least recently used (LRU) page replacement , flood-fill-algorithm, topological-sort-algorithm, kahn's algorithm, Dijkatra's algorithm, bellman ford algorithm, floyd warshall algorithm, Prim's algorithm, kruskal's algorithm, tarjans-algorithm, kosaraju's algorithm, Rabin-Karp Algorithm, KMP algo/LSP(pl) array or Knuth-Morris-Pratt Algorithm),
 
