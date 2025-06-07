@@ -8,8 +8,8 @@
 
 """ 
 
-Majority Element  - > n/2, > n/3 (3.3.2)
-Two sum - 2 sum , 3 sum (3.3.4), 4 sum (3.3.5)
+Majority Element  - > n/2 (3.2.3), > n/3 (3.3.2)
+Two sum - 2 sum (3.2.1), 3 sum (3.3.3), 4 sum (3.3.4)
 binary search - (8,9)
 
 
