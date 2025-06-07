@@ -2808,7 +2808,7 @@ print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))
 
 
 
-# region 3.1 ARRAYS - MEDIUM
+# region 3.2 ARRAYS - MEDIUM
 # --------------------------
 
 # 1 TODO : two sum problem : check if a pair with given sum exists in Array
@@ -4624,26 +4624,31 @@ def triplet(n, arr):
   ans = []
   arr.sort()
   for i in range(n):
-    # skip if i is pointing to the same digit
+    # Skip duplicates for the first element of the triplet
     if i != 0 and arr[i] == arr[i-1]:
       continue
 
-    j = i+1
-    k = n-1
+    # Two pointers
+    j = i + 1  # Start pointer just after i
+    k = n - 1  # End pointer at the last element
     while j < k:
-      sum = arr[i] + arr[j] + arr[k]
-      if sum < 0:
-        j += 1
-      elif sum > 0:
-        k -= 1
+      total = arr[i] + arr[j] + arr[k]  # Calculate the sum of the triplet
+      if total < 0:
+        j += 1  # Move the left pointer right to increase the sum
+      elif total > 0:
+        k -= 1  # Move the right pointer left to decrease the sum
       else:
-        temp = [arr[i],arr[j],arr[k]]
+        # Found a triplet with sum == 0
+        temp = [arr[i], arr[j], arr[k]]
         ans.append(temp)
+        # Move both pointers to look for new pairs
         j += 1
         k -= 1
-        while j < k and arr[j] == arr[j-1]:
+        # Skip duplicates for the second number
+        while j < k and arr[j] == arr[j - 1]:
           j += 1
-        while j < k and arr[k] == arr[k+1]:
+        # Skip duplicates for the third number
+        while j < k and arr[k] == arr[k + 1]:
           k -= 1
   return ans
 
@@ -4654,15 +4659,13 @@ print(triplet(n, arr))
 # 
 
 
-# 4 TODO : 4-sum problem
+# 4 TODO : 4-sum problem, quardupulets that add up to a k, (arr[i] + arr[j] + arr[k] + arr[l] == k) and (i != j != k != l)
 '''
 🔴🔴🔴🔴🔴
 
 https://takeuforward.org/data-structure/4-sum-find-quads-that-add-up-to-a-target-value/
 
 https://www.youtube.com/watch?v=DhFh8Kw7ymk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=37
-
-
 
 https://leetcode.com/problems/4sum/
 
@@ -4795,15 +4798,12 @@ arr = [4,3,3,4,4,2,1,2,1,1]
 target = 9
 print(fourSum(arr, target))
 
-# 
 
 
 # 5 TODO : largest subarray with 0 sum
 '''
 
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/data-structure/length-of-the-longest-subarray-with-zero-sum/
 
@@ -4840,7 +4840,7 @@ print(solve(arr))
 
 # - method 2 : better solution, time complexity O(n)
 
-# - method 3 : optimal solution, using hashmap
+# - method 3 : optimal solution, using prefix sum
 '''
 steps
 - take variables sum = 0, maxi = 0 and mpp = {}
@@ -4856,23 +4856,29 @@ TC - O(n)
 SC - O(n)
 '''
 def solve(arr):
+  # Dictionary to store the first occurrence of each prefix sum {prefix_sum, index}
   mpp = {}
+  # Variable to store the prefix sum while traversing the array
   sum = 0
+  # Variable to keep track of the maximum length of subarray with 0 sum
   maxi = 0
+  # Loop through the array
   for i in range(len(arr)):
-    sum += arr[i]
+    sum += arr[i]  # Update the prefix sum up to index i
+    # If the prefix sum is 0, it means the subarray from index 0 to i has a sum of 0
     if sum == 0:
-      maxi =  i+1
+      maxi = i + 1  # Update the max length
+    # If this prefix sum has been seen before
     else:
       if sum in mpp:
-        maxi = max(maxi, i-mpp[sum])
+        # The subarray from the previous index+1 to current index has a sum of 0
+        maxi = max(maxi, i - mpp[sum])  # Update max length if this subarray is longer
       else:
+        # Store the index of the first occurrence of this prefix sum
         mpp[sum] = i
-  return maxi
+  return maxi  # Return the length of the longest subarray with 0 sum
 arr = [9,-3,3,-1,6,-5]
-print(solve(arr))
-
-# 
+print(solve(arr))                  # Output - 5
 
 
 # 6 TODO : count number of subarrays with given xor k
@@ -4885,7 +4891,7 @@ print(solve(arr))
 
 https://takeuforward.org/data-structure/count-the-number-of-subarrays-with-given-xor-k/
 
-https://www.youtube.com/watch?v=DhFh8Kw7ymk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=38
+https://www.youtube.com/watch?v=eZr-6p0B7ME&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=38
 
 https://www.interviewbit.com/problems/subarray-with-given-xor/
 
@@ -5030,18 +5036,33 @@ SC - O(n)
 '''
 def merge(arr):
   n = len(arr)
+  # Sort intervals based on the start time
   arr.sort()
+  # List to store the merged intervals
   ans = []
+  # Loop over each interval
   for i in range(n):
+    # Extract the start and end of the current interval
     start, end = arr[i][0], arr[i][1]
-    if ans and start <= ans[-1][1]:  # for the first time only
+    # Skip this interval if it is already merged in a previous step
+    # This condition works because merged intervals may overlap with upcoming ones,
+    # and we're handling merging inside the inner loop below.
+    if ans and start <= ans[-1][1]:
       continue
-    for j in range(i+1,n):
+    # Try to merge with subsequent intervals if they overlap
+    for j in range(i + 1, n):
+      # If the next interval starts before or at the current 'end',
+      # it overlaps with the current interval
       if arr[j][0] <= end:
+        # Update the end to the furthest end of the overlapping intervals
         end = max(end, arr[j][1])
       else:
+        # No more overlapping intervals, break out of the loop
         break
-    ans.append(start, end)
+    # Append the merged interval to the result list
+    # (Fix: should be appended as a list, not separate arguments)
+    ans.append([start, end])
+  # Return the merged list of intervals
   return ans
 
 arr = [[1,3],[2,6],[8,10],[15,18]]
