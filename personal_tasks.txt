@@ -41,3 +41,31 @@ NEXT RECHARGE
 21 July 2025 - last day
 
 ==================================================================================== CURRENT TASKS =======================================================================
+Excalidraw
+add sticky notes in laptop
+flask app of the websites for gujiya/thekua
+sites for portfolio
+
+striver every day - morning
+learning and coding - night
+
+React
+Angular
+JS
+Workbench
+Flask
+
+*************LinkedIn*******************
+Connection Greeting
+Hi <name>,
+I appreciate your taking the time to include me in your professional network. I value the thought of an upcoming relationship! I hope you have an awesome day.
+Thanks
+ ~Himanshu
+
+Profile Status
+Backend Developer | 5⭐ at HackerRank | 2⭐ LeetCode | 350+ DSA LeetCode + GFG + HackerRank + PepCoding | Python | JAVA | HTML | CSS | Javascript | ReactJs | Ex- QA Engineer at Appsuccessor Media | CSE Grad'22
+
+*************Job Portals*******************
+LinkedIn
+Hirist
+Naukri
