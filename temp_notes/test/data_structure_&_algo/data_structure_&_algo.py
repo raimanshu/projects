@@ -543,116 +543,9 @@ add 1 to the binary number is 11111111111111111111111111110011
 # endregion
 
 
-# region SLIDING WINDOW
+# region STRINGS
+
 # http://youtube.com/watch?v=9kdHxplyl5I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=272
-# patterns 
-1 - constant size window
-def max_sum_subarray(arr, k):
-    l = 0  # Left pointer
-    r = 0  # Right pointer
-    current_sum = 0  # Sum of elements within the window
-    max_sum = float('-inf')  # Initialize the maximum sum with a very small number
-    
-    while r < len(arr):
-        # Expand the window by including the element at the right pointer
-        current_sum += arr[r]
-        
-        # If the window size reaches k, update the max_sum and move the left pointer
-        if r - l + 1 == k:
-            max_sum = max(max_sum, current_sum)
-            # Move the left pointer to shrink the window and remove the leftmost element
-            current_sum -= arr[l]
-            l += 1
-        
-        # Move the right pointer to expand the window
-        r += 1
-    
-    return max_sum
-
-# Test case
-arr = [-1, 2, 3, 4, 5, -1]
-k = 4
-print("Maximum sum of k consecutive elements:", max_sum_subarray(arr, k))
-
-2 - longest subarray/sustring where <condition>
-brute force - using nested loops, using breaks and continue
-def longest_subarray_bruteforce(arr, k):
-    n = len(arr)
-    max_len = 0
-    for i in range(n):
-        current_sum = 0
-        for j in range(i, n):
-            current_sum += arr[j]
-            if current_sum <= k:
-                max_len = max(max_len, j - i + 1)
-            else:
-                break
-    return max_len
-
-arr = [2, 5, 1, 7, 10]
-k = 14
-print(longest_subarray_bruteforce(arr, k))  
-better approach - using two pointers l and r, r is incremented to expand, l is incremented to shrink
-def longest_subarray_with_sum_less_than_k(arr, k):
-    n = len(arr)
-    l = 0  # left pointer
-    r = 0  # right pointer
-    sum = 0
-    max_len = 0
-
-    while r < n:
-      sum = sum  + arr[r]
-      while sum > k:
-        sum = sum - arr[l]
-        l +=1
-      
-      
-      if sum <= k:
-        max_len = max(max_len, r-l+1)
-      r +=1
-    
-    return max_len
-
-# Example usage
-arr = [2, 5, 1, 7, 10]
-k = 14
-print(longest_subarray_with_sum_less_than_k(arr, k))  
-
-
-optimal approch - replacing while with if
-def longest_subarray_with_sum_less_than_k(arr, k):
-    n = len(arr)
-    l = 0  # left pointer
-    r = 0  # right pointer
-    sum = 0
-    max_len = 0
-
-    while r < n:
-      sum = sum  + arr[r]
-      if sum > k:
-        sum = sum - arr[l]
-        l +=1
-      
-      
-      if sum <= k:
-        max_len = max(max_len, r-l+1)
-      r +=1
-    
-    return max_len
-
-# Example usage
-arr = [2, 5, 1, 7, 10]
-k = 14
-print(longest_subarray_with_sum_less_than_k(arr, k))  
-
-
-3 - number of subarrays where <condition>
-use better approch to solve this problem
-4 - shortest/minimum window where <condition>
-
-
-
-
 
 # - sliding window is a technique used to solve problems related to arrays and strings
 # - when to use - when we have a problem that involves finding the maximum or minimum of a subarray of size k
@@ -661,6 +554,181 @@ use better approch to solve this problem
 # TWO POINTERS TECHNIQUE 
 # - two pointers is a technique used to solve problems related to arrays and strings
 # - where to use -
+
+
+# PATTERN 1 - constant size window
+'''
+Example - Maximum Sum of a Subarray of Size K
+'''
+def max_sum_subarray(arr, k):
+    n = len(arr)
+    if n < k:
+        return None  # If array length is smaller than k, no valid subarray exists
+
+    # Calculate sum of first 'k' elements (initial window)
+    window_sum = sum(arr[:k])
+    max_sum = window_sum  # Initialize max_sum with the first window sum
+
+    start = 0  # Start index of the sliding window
+    end = k    # End index (exclusive) of the sliding window
+
+    # Slide the window while the end pointer is within array bounds
+    while end < n:
+        # Remove the element leaving the window and add the new element coming in
+        window_sum = window_sum - arr[start] + arr[end]
+
+        # Update max_sum if the current window sum is greater
+        if window_sum > max_sum:
+            max_sum = window_sum
+
+        # Move the window forward by incrementing start and end
+        start += 1
+        end += 1
+    return max_sum
+
+# Example usage:
+arr = [2, 1, 5, 1, 3, 2]
+k = 3
+print(max_sum_subarray(arr, k))  # Output: 9
+
+# PATTERN 2 - longest subarray/sustring where <condition>
+'''
+Example - Maximum Sum of a Subarray of Size K
+'''
+'''
+Brute Force - using nested loops, using breaks and continue
+'''
+def longest_subarray_bruteforce(arr, k):
+    n = len(arr)          # Get the length of the array
+    max_len = 0           # Initialize max length of subarray found so far to 0
+    # Outer loop picks the start index of the subarray
+    for i in range(n):
+        current_sum = 0   # Reset the current sum for the new start index
+        # Inner loop picks the end index of the subarray
+        for j in range(i, n):
+            current_sum += arr[j]  # Add the current element to the current sum
+            # Check if the current sum is within the allowed limit k
+            if current_sum <= k:
+                # Update max_len if the current subarray is longer than previous max
+                max_len = max(max_len, j - i + 1)
+            else:
+                # If sum exceeded k, no need to check longer subarrays starting at i
+                break
+    return max_len   # Return the length of the longest subarray found
+
+arr = [2, 5, 1, 7, 10]
+k = 14
+print(longest_subarray_bruteforce(arr, k))  # Output: 3 (e.g. subarray [2, 5, 1])
+
+'''
+Better Approach - using two pointers l and r, r is incremented to expand, l is incremented to shrink
+'''
+def longest_subarray_with_sum_less_than_k(arr, k):
+    n = len(arr)         # Length of the array
+    l = 0                # Left pointer of the window (start of subarray)
+    r = 0                # Right pointer of the window (end of subarray)
+    current_sum = 0      # Sum of elements in the current window
+    max_len = 0          # Maximum length of valid subarray found so far
+
+    # Move the right pointer to expand the window
+    while r < n:
+        current_sum += arr[r]   # Add the current element to the window sum
+
+        # If the sum exceeds k, shrink the window from the left
+        while current_sum > k:
+            current_sum -= arr[l]  # Remove the leftmost element
+            l += 1                # Move the left pointer to the right
+
+        # At this point, sum <= k, update max_len if this window is longer
+        if current_sum <= k:
+            max_len = max(max_len, r - l + 1)
+        r += 1   # Expand the window by moving right pointer to the right
+    return max_len
+
+arr = [2, 5, 1, 7, 10]
+k = 14
+print(longest_subarray_with_sum_less_than_k(arr, k))  # Output: 3 (e.g. subarray [2, 5, 1])
+
+'''
+optimal approch - replacing while with if
+'''
+def longest_subarray_with_sum_less_than_k(arr, k):
+    n = len(arr)
+    l = 0                  # Left pointer of the sliding window
+    r = 0                  # Right pointer of the sliding window
+    current_sum = 0        # Current sum of the sliding window
+    max_len = 0            # Maximum length found so far
+
+    while r < n:
+        current_sum += arr[r]   # Expand window by adding element at right pointer
+
+        # Shrink window from left if sum exceeds k
+        if current_sum > k:
+            current_sum -= arr[l]
+            l += 1
+
+        # Update max length if current sum <= k
+        if current_sum <= k:
+            max_len = max(max_len, r - l + 1)
+        r += 1
+    return max_len
+
+arr = [2, 5, 1, 7, 10]
+k = 14
+print(longest_subarray_with_sum_less_than_k(arr, k))  # Output: 3 ([2, 5, 1])
+
+# PATTERN 3 - Number of subarrays where <condition>
+'''
+Example - Maximum Sum of a Subarray of Size K
+'''
+'''
+Use better approch of previous problem to solve this problem
+'''
+def count_subarrays_sum_k(arr, k):
+    n = len(arr)
+    l = 0
+    current_sum = 0
+    count = 0
+
+    for r in range(n):
+        current_sum += arr[r]  # Expand window from right
+        # Shrink window from left while sum > k (non-negative array assumption)
+        while current_sum > k and l <= r:
+            current_sum -= arr[l]
+            l += 1
+
+        # If current sum equals k, increment count
+        if current_sum == k:
+            count += 1
+    return count
+
+arr = [1, 2, 3, 4, 2]
+k = 5
+print(count_subarrays_sum_k(arr, k))  # Output: 2 ([2,3], [5])
+
+# PATTERN 4 - Shortest/minimum window where <condition>
+'''
+Example - Maximum Sum of a Subarray of Size K
+'''
+def min_subarray_len_with_sum_at_least_k(arr, k):
+    n = len(arr)
+    left = 0
+    current_sum = 0
+    min_len = float('inf')  # Track minimum length found
+
+    for right in range(n):
+        current_sum += arr[right]  # Expand window by adding arr[right]
+        # Shrink window from left as long as condition is met
+        while current_sum >= k:
+            min_len = min(min_len, right - left + 1)  # Update minimum length
+            current_sum -= arr[left]  # Remove leftmost element
+            left += 1  # Shrink window
+    # If min_len was never updated, return 0 (no such window)
+    return 0 if min_len == float('inf') else min_len
+
+arr = [2, 3, 1, 2, 4, 3]
+k = 7
+print(min_subarray_len_with_sum_at_least_k(arr, k))  # Output: 2 ([4,3])
 
 # endregion 
 

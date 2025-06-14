@@ -1,0 +1,6 @@
+{
+  "welcome": "Bienvenido a React",
+  "description": "Este ejemplo muestra i18n y l10n.",
+  "date_label": "Hoy es {{date}}",
+  "currency_label": "Precio: {{price}}"
+}

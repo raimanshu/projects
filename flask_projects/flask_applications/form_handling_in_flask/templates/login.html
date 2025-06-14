@@ -1,0 +1,115 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+<h2>Login</h2>
+
+<form id="loginForm" method="POST" action="/login" novalidate>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      required
+    />
+    <div class="invalid-feedback required-msg">Email is required.</div>
+    <div class="invalid-feedback invalid-format-msg" style="display: none">
+      Please enter a valid email address.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Password"
+      required
+      minlength="6"
+    />
+    <div class="invalid-feedback required-msg">Password is required.</div>
+    <div class="invalid-feedback minlength-msg" style="display: none">
+      Password must be at least 6 characters.
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("loginForm");
+    const inputs = form.querySelectorAll("input");
+
+    inputs.forEach((input) => {
+      input.addEventListener("blur", () => {
+        validateInput(input);
+      });
+    });
+
+    form.addEventListener("submit", function (event) {
+      let allValid = true;
+
+      inputs.forEach((input) => {
+        if (!validateInput(input)) {
+          allValid = false;
+        }
+      });
+
+      if (!allValid) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    });
+
+    function validateInput(input) {
+      // Reset messages
+      const requiredMsg = input.parentElement.querySelector(".required-msg");
+      const minlengthMsg = input.parentElement.querySelector(".minlength-msg");
+      const invalidFormatMsg = input.parentElement.querySelector(
+        ".invalid-format-msg"
+      );
+
+      requiredMsg.style.display = "none";
+      if (minlengthMsg) minlengthMsg.style.display = "none";
+      if (invalidFormatMsg) invalidFormatMsg.style.display = "none";
+
+      // Remove validation classes
+      input.classList.remove("is-invalid", "is-valid");
+
+      // Check required
+      if (!input.value.trim()) {
+        requiredMsg.style.display = "block";
+        input.classList.add("is-invalid");
+        return false;
+      }
+
+      // Check minlength if applicable
+      if (input.hasAttribute("minlength")) {
+        const minLength = parseInt(input.getAttribute("minlength"), 10);
+        if (input.value.length < minLength) {
+          if (minlengthMsg) minlengthMsg.style.display = "block";
+          input.classList.add("is-invalid");
+          return false;
+        }
+      }
+
+      // Check email validity separately
+      if (input.type === "email") {
+        // Use HTML5 validity check
+        if (!input.checkValidity()) {
+          if (invalidFormatMsg) invalidFormatMsg.style.display = "block";
+          input.classList.add("is-invalid");
+          return false;
+        }
+      }
+
+      // All good
+      input.classList.add("is-valid");
+      return true;
+    }
+  });
+</script>
+
+{% endblock %}

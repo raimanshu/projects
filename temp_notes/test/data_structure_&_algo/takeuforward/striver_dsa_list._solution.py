@@ -1538,7 +1538,12 @@ print(quick_sort(arr, 0, len(arr)-1))
 # region 3.1 ARRAYS - EASY
 # ------------------------
 
-# TODO : 1 largest element in an array
+# TODO : 1 largest element in an array 
+"""
+[using two nested for loops, 
+using builtin methods, 
+using one for loop]
+"""
 '''
 🟢🟢🟢🟢🟢
 
@@ -1613,10 +1618,15 @@ def largest_element_1(arr):
 print(largest_element_1([1,2,4,7,7,5]))
 
 # 2 TODO : find smallest/largest and second largest/second largest element in an array
+"""
+[
+using built-in method (max, min) and for loop,
+using for loop only 
+]
+"""
 '''
 🟢🟢🟢🟢🟢
 ⭐⭐⭐
-
 
 https://takeuforward.org/data-structure/find-second-smallest-and-second-largest-element-in-an-array/
 
@@ -1722,9 +1732,14 @@ arr = [1,3,6,6,2,6]
 print(second_largest(arr))
 print(second_smallest(arr))
 
-# 
 
 # 3 TODO : check if array is sorted
+"""
+[
+using two for loops, 
+using only one for loop
+]
+"""
 '''
 🟢🟢🟢🟢🟢
 
@@ -1781,6 +1796,13 @@ print(arr_sorted(arr))
 # 
 
 # 4 TODO : remove duplicate from sorted array
+"""
+[
+using set, 
+using return list(set(arr)) + ["_"]*(len(arr) - len(list(set(arr)))), 
+using one pointer i and a for loop with j
+]
+"""
 '''
 🟢🟢🟢🟢🟢
 
@@ -1810,10 +1832,10 @@ def remove_duplicates(arr):
     my_set.add(i)
   return my_set
 arr = [1,2,2,3,3,4]
-print(remove_duplicates(arr))
+print(remove_duplicates(arr))             # Output - 1, 2, 3, 4
 
 # 👉👉👉 replacing with "_"
-  # return list(set(arr)) + ["_"]*(len(arr) - len(list(set(arr))))
+# return list(set(arr)) + ["_"]*(len(arr) - len(list(set(arr))))
 
 
 # - method 2: optimal approch, using two pointers
@@ -1843,6 +1865,13 @@ k, unique_arr = remove_duplicates(arr)        # ---> k = 4, unique_arr = [1, 2, 
 # 
 
 # 5 TODO : left rotate an array by one place
+"""
+[
+using temp array and for loop, 
+using slicing,
+using temp variable and for loop
+]
+"""
 '''
 🟢🟢🟢🟢🟢
 
@@ -1875,7 +1904,7 @@ def rotate_arr(arr):
   return temp
 
 arr = [1, 2, 2, 3, 3, 4]
-print(rotate_arr(arr))
+print(rotate_arr(arr))            # Output - [2, 2, 3, 3, 4, 1]
 
 # 👉👉👉 using array slicing 
 # return arr[:len(arr)] + arr[:1]
@@ -1901,15 +1930,21 @@ def rotate_arr(arr):
   return arr
 
 arr = [1, 2, 2, 3, 3, 4]
-print(rotate_arr(arr))
+print(rotate_arr(arr))                    # Output - [2, 2, 3, 3, 4, 1]
 
 
 # 6 TODO : left rotate an array by d places
-'''
+"""
+[
+using slicing and return new array,
+using slicing and swapping with same array, 
+using reversed() three times,
 
+]
+"""
+'''
 🟢🟢🟢🟢🟢
 ⭐⭐⭐
-
 
 https://takeuforward.org/data-structure/rotate-array-by-k-elements/
 
@@ -2029,8 +2064,13 @@ rotated_arr = left_rotate(arr, d)
 
 
 # 7 TODO : move all zeros to the end of the array
+"""
+[
+using two temp arrays,
+using one pointer and for loop
+]
+"""
 '''
-
 🟢🟢🟢🟢🟢
 
 
@@ -2064,7 +2104,7 @@ def move_zeros(arr):
     return temp + temp2
         
 arr = [1, 0, 2, 3, 0, 4]
-print(move_zeros(arr))
+print(move_zeros(arr))                    # Output - [1, 2, 3, 4, 0, 0]
 
 # method 2: optimal approch, using two pointers
 '''
@@ -2096,12 +2136,16 @@ def move_zeros(arr):
   return arr    
 
 arr = [1, 0, 2, 3, 0, 4]
-print(move_zeros(arr))
+print(move_zeros(arr))                       # Output - [1, 2, 3, 4, 0, 0]
 
 
 # 8 TODO : linear search
+"""
+[
+using simple for loop
+]
+"""
 '''
-
 🟢🟢🟢🟢🟢
 
 
@@ -2127,11 +2171,16 @@ def linear_search(arr, target):
       return i
   return -1
 
-# 
 
 # 9 TODO : find the union of sorted arrays
+"""
+[
+using frequency object, 
+using set, 
+using two pointer
+]
+"""
 '''
-
 🟡🟡🟡🟡🟡
 ⭐⭐⭐
 
@@ -2164,7 +2213,7 @@ def union(arr1, arr2):
   return list(freq.keys())
 arr1 = [0, 1, 2, 3, 4]
 arr2 = [1,4,5,7]
-print(union(arr1, arr2))
+print(union(arr1, arr2))                          # Output - [0, 1, 2, 3, 4, 5, 7]
 
 # - method 2: better approch, using set
 '''
@@ -2189,7 +2238,7 @@ def union(arr1, arr2):
   return list(s1)
 arr1 = [0, 1, 2, 3, 4]
 arr2 = [1,4,5,7]
-print(union(arr1, arr2))
+print(union(arr1, arr2))                          # Output - [0, 1, 2, 3, 4, 5, 7]
 
 
 # method 3: optimal approch, using two pointers🤯🤯🤯
@@ -2231,10 +2280,16 @@ def union(arr1, arr2):
 
 arr1 = [0, 1, 2, 3, 4]
 arr2 = [1,4,5,7]
-print(union(arr1, arr2))
+print(union(arr1, arr2))                          # Output - [0, 1, 2, 3, 4, 5, 7]
 
 
 # 👉👉👉 TODO : find the intersection of sorted arrays 
+"""
+[
+using two nested for loops,
+using two pointers
+]
+"""
 '''
 https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=19
 '''
@@ -2306,8 +2361,15 @@ print(intersection(arr1, arr2))  # Output: [1, 2, 4]
 
 
 # 10 TODO : find missing number in an array
+"""
+[
+using for loop,
+using hash array, 
+using sum of all numbers,
+using xor,
+]
+"""
 '''
-
 🟢🟢🟢🟢🟢
 ⭐⭐⭐
 
@@ -2343,7 +2405,7 @@ def missing_num(arr, n):
     if flag == 0:
       return i
   return -1
-print(missing_num([1,2,4,5], 5))
+print(missing_num([1,2,4,5], 5))                        # Output - 3
 
 
 # method 2 : better solution, using hashing
@@ -2366,7 +2428,8 @@ def missing_num(arr, n):
     if hash[i] == 0:
       return i
   return -1
-print(missing_num([1,2,4,5], 5))
+print(missing_num([1,2,4,5], 5))                        # Output - 3
+
 
 # method 3 : optimal solution, summation approch
 '''
@@ -2384,7 +2447,7 @@ def missing_num(arr, n):
   summation = (n*(n+1))//2
   s2 = sum(arr)
   return summation - s2
-print(missing_num([1,2,4,5], 5))
+print(missing_num([1,2,4,5], 5))                        # Output - 3
 
 # method 4 : optimal solution, using XOR
 '''
@@ -2433,11 +2496,14 @@ def missing_num(arr, n):
 print(missing_num([1, 2, 4, 5], 5))  # Output: 3
 
 
-# 
 
 # 11 TODO : maximum consecutive ones
+"""
+[
+using for loop,
+]
+"""
 '''
-
 🟢🟢🟢🟢🟢
 
 https://takeuforward.org/data-structure/count-maximum-consecutive-ones-in-the-array/
@@ -2478,6 +2544,14 @@ print(maximum_consecutive([1,1,0,1,1,1,3,1,1]))      # Output - 3
 
 
 # 12 TODO : find the number that appears once and other number twice
+"""
+[
+using two nested for loops,
+using hash array,
+using unordered map,
+using xor
+]
+"""
 '''
 🟡🟡🟡🟡🟡
 
@@ -2559,7 +2633,7 @@ def appear_once(arr):
   return -1
 print(appear_once([1,1,3,3,2,4,4]))
 
-# method 5 : optimal solution, using XOR, 
+# method 4 : optimal solution, using XOR, 
 '''
 steps
 - take a variable xor = 0
@@ -2578,6 +2652,14 @@ def appear_once(arr):
 print(appear_once([1,1,3,3,2,4,4]))
 
 # 13 TODO : longest subarray with given sum K (positives) 🤯🤯🤯
+"""
+[
+using three for loops,
+using two for loops,
+using prefix sum, 
+using two pointers
+]
+"""
 '''
 🟡🟡🟡🟡🟡
 ⭐⭐⭐
@@ -2592,8 +2674,6 @@ https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?u
 
 NOTE:
 subarray - contigious part of the array
-
-
 
 ''' 
 # method 1 : brute force
@@ -2622,7 +2702,7 @@ def sub_array(arr, target):
       if total_sum == target:
         length = max(length, j-i+1)
   return length
-print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))
+print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))              # Output - 3
 
 # method 2 : brute force solution
 '''
@@ -2647,7 +2727,7 @@ def sub_array(arr, target):
       if total_sum == target:
         length = max(length, j-i+1)
   return length
-print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))
+print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))              # Output - 3
 
 # - method 3 : better solution, using prefix sum 
 '''
@@ -2685,7 +2765,7 @@ def sub_array(arr, target):
   return maxLen
 
 # Test the function
-print(sub_array([1, 2, 3, 1, 1, 1, 1, 4, 2, 3], 3))
+print(sub_array([1, 2, 3, 1, 1, 1, 1, 4, 2, 3], 3))           # Output - 3
 
 
 # - method 4 : optimal solution, using two pointers 🤯🤯🤯🤯
@@ -2722,12 +2802,18 @@ def sub_array(arr, target):
     if right < n:
       sum += arr[right]
   return maxLen
-print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))
+print(sub_array([1,2,3,1,1,1,1,4,2,3], 3))                # Output - 3
 
 # 
 
 # 14 TODO : longest subarray with given sum K (positives and negatives)
-
+"""
+[
+using three nested for loops,
+using two nested for loops,
+using prefix sum
+]
+"""
 '''
 🟡🟡🟡🟡🟡 
 
@@ -2757,7 +2843,7 @@ def sub_array(arr, target):
       if total_sum == target:
         length = max(length, j-i+1)
   return length
-print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))
+print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))                 # Output - 8
 
 # method 2 : better approch
 '''
@@ -2775,7 +2861,7 @@ def sub_array(arr, target):
       if total_sum == target:
         length = max(length, j-i+1)
   return length
-print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))
+print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))                 # Output - 8
 
 # method 3 : optimal approch, using hashing
 '''
@@ -2790,7 +2876,7 @@ def sub_array(arr, target):
   sum = 0
   maxLen = 0
   for i in range(n):
-    sun += arr[i]
+    sum += arr[i]
     if sum == target:
       maxLen = max(maxLen, i+1)
     rem  = sum - target
@@ -2800,7 +2886,7 @@ def sub_array(arr, target):
     if sum not in preSumMap:
       preSumMap[sum] = i
   return maxLen
-print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))
+print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))                 # Output - 8
 
 
 # endregion
@@ -2812,10 +2898,15 @@ print(sub_array([1,-2,-3,1,1,-1,1,4,2,3], 3))
 # --------------------------
 
 # 1 TODO : two sum problem : check if a pair with given sum exists in Array
+"""
+[
+using two nested for loops,
+using a hash map,
+using two pointers
+]
+"""
 '''
-
 🟡🟡🟡🟡🟡
-
 
 https://takeuforward.org/data-structure/two-sum-check-if-a-pair-with-given-sum-exists-in-array/
 
@@ -2842,7 +2933,7 @@ def two_sum(arr, target):
       if arr[i]+arr[j] == target:
         return [i,j]
   return [-1,-1]
-print(two_sum([2,6,5,8,11], 14))
+print(two_sum([2,6,5,8,11], 14))                  # Output - [1, 3]
 
 
 # method 2 : better solution, using hash map, 
@@ -2904,9 +2995,16 @@ print(two_sum([2,6,5,8,11], 14))
 # 
 
 
-# 2 TODO : sort an array of 0's and 2's
+# 2 TODO : sort an array of 0's, 1's and 2's
+"""
+[
+using built-in method sort(), 
+using counters and for loop,
+using object with key 0,1,2,
+using dutch national flag algorithm
+]
+"""
 '''
-
 🟡🟡🟡🟡🟡
 😎😎😎
 ⭐⭐⭐
@@ -2948,7 +3046,7 @@ def sort(arr):
     else:
       count2 = count2 + 1
   return [0]*count0 + [1]*count1 + [2]*count2
-print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))
+print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))                          # Output - [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2]
 
 # method 3 : better approch
 '''
@@ -2971,7 +3069,7 @@ def sort(arr):
     else:
       dict[2] = dict.get(2, 0) + 1
   return [0]*dict[0] + [1]*dict[1] + [2]*dict[2]
-print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))
+print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))                          # Output - [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2]
 
 # - method 4 : optimal solution, Dutch National flag algorithm, TC - O(N), SC - (1) 🤯🤯🤯
 '''
@@ -3010,13 +3108,19 @@ def sort(arr):
             arr[high], arr[mid] = arr[mid], arr[high] 
             high -= 1 
     return arr
-print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))
+print(sort([0,1,2,0,0,2,2,0,1,1,1,0]))                          # Output - [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2]
 
 # 
 
 # 3 TODO : find the majority element that occurs more than >n/2 times
+"""
+[
+using nested for loops,
+using hash map,
+using Moore's Voting Algorithm
+]
+"""
 '''
-
 🟢🟢🟢🟢🟢
 😎😎😎
 ⭐⭐⭐
@@ -3052,7 +3156,7 @@ def sort(arr):
     if count > (len(arr)/2):
       return count
   return -1
-print(sort([2,2,1,4,2,2,3]))
+print(sort([2,2,1,4,2,2,3]))            # Output - 2
 
 # - method 2 : better solution, using hashing, 
 '''
@@ -3074,7 +3178,7 @@ def sort(arr):
     if v > (len(arr)//2):
       return v 
   return -1
-print(sort([2,2,1,4,2,2,3]))
+print(sort([2,2,1,4,2,2,3]))            # Output - 2
 
 # - method 3 : better solution, using Counter, TC - O(N*log(N)) + O(N), SC - O(N)
 # from collections import Counter
@@ -3124,11 +3228,18 @@ def moores_voting_algorithm(arr):
         return el
     return None
 arr = [2, 2, 1, 4, 2, 2, 3]
-print(moores_voting_algorithm(arr))
+print(moores_voting_algorithm(arr))               # Output - 2
 
 # 
 
 # 4 TODO : Kadane's algorithm, find mximum subarray sum in an array
+"""
+[
+using three nested for loops, 
+using two nested for loops,
+using kadane's algorithm,
+]
+"""
 '''
 🟢🟢🟢🟢🟢
 
@@ -3167,8 +3278,8 @@ def kandane_algo(arr):
         sum +=arr[k]
         previous_sum = max(previous_sum,sum)
   return previous_sum
-arr = [-2,-3,4, -1,-2,1,2,-3]
-print(kandane_algo(arr))
+arr = [2, -3, 4, -1, -2, 1, 5, -3]
+print(kandane_algo(arr))                             # Output - 7
 
 
 # - method 2 : better solution, 
@@ -3192,8 +3303,8 @@ def kandane_algo(arr):
       sum +=arr[j]
       previous_sum = max(previous_sum,sum)
   return previous_sum
-arr = [-2,-3,4, -1,-2,1,2,-3]
-print(kandane_algo(arr))
+arr = [2, -3, 4, -1, -2, 1, 5, -3]
+print(kandane_algo(arr))                             # Output - 7
 
 # - method 3 : optimal solution, using Kandane's algo
 '''
@@ -3235,7 +3346,7 @@ def kadane_algorithm(arr):
       sum = 0
   return maxi
 arr = [2, -3, 4, -1, -2, 1, 5, -3]
-print(kadane_algorithm(arr))  
+print(kadane_algorithm(arr))                               # Output - 7
 
 # 
 
@@ -3292,12 +3403,17 @@ def kadane_algorithm(arr):
       print(arr[i], end=" ")
     return maxi
 arr = [-2,1,-3,4,-1,2,1,-5,4]
-print(kadane_algorithm(arr))
+print(kadane_algorithm(arr))                            # Output = 7
 
 
 # 6 TODO : stock buy and sell
+"""
+[
+using two for loops,
+using one for loop,
+]
+"""
 '''
-
 🟢🟢🟢🟢🟢
 😎😎😎
 
@@ -3359,9 +3475,14 @@ arr = [7, 1, 5, 3, 6, 4]
 print(buy_sell(arr))  # Output: 5 (Buy at 1, sell at 6)
 
 # 7 TODO : rearrange the array in alternating positive and negative items
+"""
+[
+using two arrays and some for loops,
+using one for loop,
+]
+"""
 '''
 🟡🟡🟡🟡🟡
-
 
 https://www.youtube.com/watch?v=h4aBagy4Uok&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=26
 
@@ -3403,7 +3524,7 @@ def rearrange(arr):
   #   result[2*i+1] = neg[i]
   return result
 arr = [3,1,-2,-5,2,-4]
-print(rearrange(arr))
+print(rearrange(arr))                           # Output - [3, -2, 1, -5, 2, -4]
 
 # - method 2 : better solution, time complexity O(n)
 
@@ -3436,7 +3557,7 @@ def rearrange(arr):
       posIndex +=2
   return res
 arr = [3,1,-2,-5,2,-4]
-print(rearrange(arr))
+print(rearrange(arr))                           # Output - [3, -2, 1, -5, 2, -4]
 
 
 # 👉👉👉 TODO : rearrange the array in alternating positive and negative items (number of positives and negatives are not equal)
@@ -3502,8 +3623,13 @@ print(rearrange(arr))
 
 
 # 8 TODO : next permutation - find the next lexiographically greater permutation 
+"""
+[
+using recursion,
+using two separate for loops
+]
+"""
 '''
-
 🟡🟡🟡🟡🟡
 😎😎😎
 ⭐⭐⭐
@@ -3524,7 +3650,26 @@ TC - O(N! * N)
 
 SC - O(N)
 '''
+def linear_search(permutations, target):
+    for i, perm in enumerate(permutations):
+        if perm == target:
+            return i  # return index if found
+    return -1  # not found
 
+def generate_permutations(arr):
+    results = []
+    def helper(start):
+        # Base case: if start reaches the end, save a copy of arr
+        if start == len(arr):
+            results.append(arr.copy())
+            return
+        # Recursive case: swap each element from start to end and recurse
+        for i in range(start, len(arr)):
+            arr[start], arr[i] = arr[i], arr[start]  # swap
+            helper(start + 1)                        # recurse for next position
+            arr[start], arr[i] = arr[i], arr[start]  # swap back (backtrack)
+    helper(0)  # start recursion from index 0
+    return results
 # - method 2 : better solution, using built in function
 
 
@@ -3568,6 +3713,13 @@ print(next_permutation(arr))  # Output: [2, 1, 3]
 
 
 # 9 TODO : leaders in array problem (every thing in the right should be smaller)
+"""
+[
+using two nested for loops,
+using one for loop
+]
+
+"""
 '''
 🟢🟢🟢🟢🟢
 
@@ -3577,9 +3729,6 @@ https://www.youtube.com/watch?v=cHrH9CQ8pmY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 https://bit.ly/3bZqbGc
 
 leaders -> every item after that item in the right is smaller so that item is a leader
-
-
-
 
 '''
 # - method 1 : brute force, 
@@ -3608,7 +3757,7 @@ def leaders(arr):
       leaders.append(arr[i])
   return leaders
 arr = [10,22, 12,3,0,6]
-print(leaders(arr))
+print(leaders(arr))                         # Output - [22, 12, 6]
 
 
 # - method 2 : better solution, time complexity O(n)
@@ -3635,11 +3784,15 @@ def leaders(arr):
       leaders.append(arr[i])
   return leaders
 arr = [10,22, 12,3,0,6]
-print(leaders(arr))
+print(leaders(arr))                         # Output - [22, 12, 6]
 
 
 # 10 TODO : longest consecutive sequence in an array
+"""
+[
 
+]
+"""
 '''
 🟡🟡🟡🟡🟡
 
@@ -3684,7 +3837,7 @@ def longest_consecutive_length(arr):
   return longest_len
 
 arr = [100, 4, 200, 1, 3, 2]
-print(longest_consecutive_length(arr))
+print(longest_consecutive_length(arr))                # Output - 4
 
 # - method 2 : better solution, using sorting
 '''
@@ -3789,15 +3942,20 @@ arr = [100, 4, 200, 1, 3, 2]
 print(longest_consecutive_length(arr))  # Output: 4
 
 # 11 TODO : set matrix zeros vertically and horizontally of a 0
+"""
+[
+making row and columnwith -1,
+using extra row and column array and mark them.
+using the first row and columnof same matrix
+]
+"""
 '''
 🟡🟡🟡🟡🟡
-
 
 https://www.youtube.com/watch?v=N0MgLvceX7M&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=30
 
 
 https://leetcode.com/problems/set-matrix-zeroes/
-
 
 '''
 # - method 1 : brute force
@@ -3925,6 +4083,10 @@ for i in set_zeros(arr, n, m) :
 
 
 # 12 TODO : rotate matrix by 90 degrees
+"""
+using relation between i and j with matrix and rotated matrix,
+first transpose the same matrix then reverse each row
+"""
 '''
 🟡🟡🟡🟡🟡
 
@@ -3947,6 +4109,7 @@ TC - O(N*N)
 SC - O(N*N)
 '''
 def rotate_90(matrix, n,m):
+  # creating a mtrix with 0 entries
   rotated = [[0 for _ in range(n)] for _ in range(m)]
   for i in range(n):
     for j in range(m):
@@ -3956,7 +4119,7 @@ def rotate_90(matrix, n,m):
 arr = [[1,1,1], [1,0,1], [1,1,1]]
 n, m = len(arr), len(arr[0])
 for i in rotate_90(arr, n, m) :
-  print(i) 
+  print(i)                                                # Output - [[1, 1, 1],[1, 0, 1],[1, 1, 1]]
 
 # - method 2 : better solution, time complexity O(n)
 
@@ -3986,9 +4149,12 @@ def rotate_90(matrix, n, m):
 arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 n, m = len(arr), len(arr[0])
 for row in rotate_90(arr, n, m):
-  print(row) 
+  print(row)                                                 # Output - [[1, 1, 1],[1, 0, 1],[1, 1, 1]]
 
 # 13 TODO : print the matrix in spiral manner
+"""
+using top, bottom, left, right variable and while loop and for loop
+"""
 '''
 🟡🟡🟡🟡🟡
 
@@ -4043,18 +4209,20 @@ def spiral_matrix(matrix, n,m):
 
 arr = [[1,2,3], [4,5,6], [7,8,9]]
 n, m = len(arr), len(arr[0])
-print(spiral_matrix(arr, n, m))
+print(spiral_matrix(arr, n, m))                           # Output - [1, 2, 3, 6, 9, 8, 7, 4]
 
 # - method 2 : better solution, time complexity O(n)
 
 # - method 3 : optimal solution, time complexity O(n)
 
 
-# 
-
 # 14 TODO : count subarrays with given sum
+"""
+using three for loops,
+using two for loops,
+using prefix sum
+"""
 '''
-
 🟢🟢🟢🟢🟢
 
 https://takeuforward.org/arrays/count-subarray-sum-equals-k/
@@ -4079,18 +4247,21 @@ TC - O(N*N), two nested for loops and builtin sum()
 
 SC - O(1)
 '''
-def find_subarrays(arr, sum):
+def find_subarrays(arr, target_sum):
   count = 0
-  for i in range(len(arr)):
-    for j in range(i, len(arr)):
-      subarray_sum = sum(arr[i:j+1])
-      if subarray_sum == sum:
+  n = len(arr)
+  for i in range(n):
+    for j in range(i, n):
+      subarray_sum = 0
+      for k in range(i, j + 1):
+        subarray_sum += arr[k]
+      if subarray_sum == target_sum:
         count += 1
   return count
 
-arr = [3,1,2,4]
-sum = 6
-print(find_subarrays(arr, sum))
+arr = [3, 1, 2, 4]
+target_sum = 6
+print(find_subarrays(arr, target_sum))  # Output: 2
 
 # - method 2 : better solution
 '''
@@ -4185,6 +4356,13 @@ eg -   1
 '''
 
 '''
+METHODS :
+using formulae nCr = n! / (r! * (n-r)!),
+optimizing factorial calculation,
+
+
+
+
 VARIATION 1 : In this case, we are given row number r and column number c, and we need to find the element at position (r, c).
 '''
 # - method 1 : brute force
@@ -4216,7 +4394,7 @@ def pascal_triangle(r,c):
   return element
 
 r,c = 5,3
-print(pascal_triangle(r,c))
+print(pascal_triangle(r,c))                     # Output - 6
 
 
 # - method 2 : better solution, 
@@ -4241,9 +4419,15 @@ def pascal_triangle(r,c):
   return element
 
 r,c = 5,3
-print(pascal_triangle(r,c))
+print(pascal_triangle(r,c))                     # Output - 6
 
 '''
+METHODS :
+using formulae nCr = n! / (r! * (n-r)!) as separate nested for loop,
+using formulae nCr = n! / (r! * (n-r)!) an a for loop,
+
+
+
 VARIATION 2 : Given the row number, print the n-th row of Pascal’s triangle.
 '''
 # - method 1 : brute force
@@ -4267,7 +4451,7 @@ def pascal_triangle(n):
   print()
 
 n = 5
-print(pascal_triangle(n))
+print(pascal_triangle(n))                                 # Output - 1 4 6 4 1 
 
 # - method 2 : better solution, time complexity O(n)
 
@@ -4289,9 +4473,16 @@ def pascal_triangle(n):
     print(ans, end=" ")
 
 n = 5
-print(pascal_triangle(n))
+print(pascal_triangle(n))                                 # Output - 1 4 6 4 1 
 
 '''
+METHODS :
+using formulae nCr = n! / (r! * (n-r)!) in three for loops,
+using previous optimized solution,
+
+
+
+
 VARIATION 3 : Given the row number, print the whole pascal triangle
 '''
 # - method 1 : brute force
@@ -4330,7 +4521,7 @@ def pascal_triangle(n):
   return ans
 
 n = 5
-print(pascal_triangle(n))
+print(pascal_triangle(n))                      # Output - [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
 
 # - method 2 : better solution, time complexity O(n)
 
@@ -4359,13 +4550,17 @@ def pascal_triangle(n):
   return ans
 
 n = 5
-print(pascal_triangle(n))
+print(pascal_triangle(n))                    # Output - [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
 
 # 
 
 # 2 TODO : majority element (>n/3 times)
+"""
+using two for loops,
+using hash map and one for loop,
+using Boyer Moore's majority voting algorithm
+"""
 '''
-
 🟡🟡🟡🟡🟡
 
 
@@ -4414,8 +4609,8 @@ def majority_element(arr):
       break
   return ls
 
-arr = [1,3,3,1,3,1]
-print(majority_element(arr))
+arr = [1,3,3,1,3,1,2,2]
+print(majority_element(arr))                  # Output - [1, 3]
 
 # - method 2 : better solution, using hashing
 # from collections import Counter
@@ -4522,8 +4717,12 @@ print(majority_element(arr))
 
 
 # 3 TODO : 3-sum problem - find triplets that add up to a zero, (arr[i] + arr[j] + arr[k] == 0) and (i != j != k)
+"""
+using three for loops and set,
+using two for loops and a set,
+using one for loop and a while loop and two pointers
+"""
 '''
-
 🟡🟡🟡🟡🟡
 
 
@@ -4660,6 +4859,11 @@ print(triplet(n, arr))
 
 
 # 4 TODO : 4-sum problem, quardupulets that add up to a k, (arr[i] + arr[j] + arr[k] + arr[l] == k) and (i != j != k != l)
+"""
+using four for loops,
+using three for loops,
+using two for loops and a while loop and two pointers,
+"""
 '''
 🔴🔴🔴🔴🔴
 
@@ -4800,9 +5004,12 @@ print(fourSum(arr, target))
 
 
 
-# 5 TODO : largest subarray with 0 sum
+# 5 TODO : largest subarray with sum = 0
+"""
+using two nested for loops,
+using prefix sum
+"""
 '''
-
 🟡🟡🟡🟡🟡
 
 https://takeuforward.org/data-structure/length-of-the-longest-subarray-with-zero-sum/
@@ -4882,8 +5089,13 @@ print(solve(arr))                  # Output - 5
 
 
 # 6 TODO : count number of subarrays with given xor k
-'''
+"""
+using three for loops
+using two for loops
+using hashing
 
+"""
+'''
 🔴🔴🔴🔴🔴
 😎😎😎
 ⭐⭐⭐
@@ -4932,7 +5144,7 @@ def subarray(a,b):
 
 a = [4,2,2,6,4]
 k = 6
-print(subarray(a,k))
+print(subarray(a,k))                                # Output - 4
 
 # - method 2 : better solution
 '''
@@ -4962,7 +5174,8 @@ def subarray(a,b):
 
 a = [4,2,2,6,4]
 k = 6
-print(subarray(a,k))
+print(subarray(a,k))                                # Output - 4
+
 
 # - method 3 : optimal solution, using hashing
 '''
@@ -5000,12 +5213,15 @@ def subarray(a,b):
 
 a = [4,2,2,6,4]
 k = 6
-print(subarray(a,k))
+print(subarray(a,k))                                # Output - 4
 
 
 # 7 TODO : merge overlapping subintervals
+"""
+using two for loops
+using one for loop
+"""
 '''
-
 🟡🟡🟡🟡🟡
 😎😎😎
 ⭐⭐⭐
@@ -5066,7 +5282,7 @@ def merge(arr):
   return ans
 
 arr = [[1,3],[2,6],[8,10],[15,18]]
-print(merge(arr))
+print(merge(arr))                                   # Output - [[1, 6], [8, 10], [15, 18]]
 
 # - method 2 : better solution, time complexity O(n)
 
@@ -5095,11 +5311,15 @@ def merge(arr):
   return ans
 
 arr = [[1,3],[2,6],[8,10],[15,18]]
-print(merge(arr))
+print(merge(arr))                                   # Output - [[1, 6], [8, 10], [15, 18]]
 
 # 
 
 # 8 TODO : merge two sorted arrays without extra space
+"""
+using two pointers
+
+""""
 '''
 🟡🟡🟡🟡🟡
 😎😎😎
@@ -5135,36 +5355,31 @@ SC - O(n+m)
 def merge(arr1, arr2):
   n = len(arr1)
   m = len(arr2)
-  arr3 = [] * (n + m)
+  arr3 = [] 
   left = 0
   right = 0
-  index = 0
+  # Merge two sorted arrays into arr3
   while left < n and right < m:
     if arr1[left] <= arr2[right]:
-      arr3[index] = arr1[left]
+      arr3.append(arr1[left])
       left += 1
-      index += 1
-    else: 
-      arr3[index] = arr2[right]
-      right += 1
-      index += 1
-  while left < n:
-    arr3[index] = arr1[left]
-    left += 1
-    index += 1
-  while right < m:
-    arr3[index] = arr2[right]
-    right += 1
-    index += 1
-  for i in range(n+m):
-    if i < n:
-      arr1[i] = arr3[i]
     else:
-      arr2[i-n] = arr3[i]
+      arr3.append(arr2[right])
+      right += 1
+  # Append remaining elements
+  while left < n:
+    arr3.append(arr1[left])
+    left += 1
+  
+  while right < m:
+    arr3.append(arr2[right])
+    right += 1
   return arr3
-arr1 = [1,4,8,10]
-arr2 = [2,3,9]
-print(merge(arr1, arr2))
+
+arr1 = [1, 4, 8, 10]
+arr2 = [2, 3, 9]
+print(merge(arr1, arr2))                      # Output - [1, 2, 3, 4, 8, 9, 10]
+
 
 # - method 2 : better solution, time complexity O(n)
 
@@ -5199,7 +5414,7 @@ def merge(arr1, arr2):
 
 arr1 = [1,4,8,10]
 arr2 = [2,3,9]
-print(merge(arr1, arr2))
+print(merge(arr1, arr2))                      # Output - [1, 2, 3, 4, 8, 9, 10]
 
 # - method 4 : optimal solution, using gap method
 '''
@@ -5259,7 +5474,7 @@ def merge(arr1, arr2):
 
 arr1 = [1, 4, 8, 10]
 arr2 = [2, 3, 9]
-print(merge(arr1, arr2))
+print(merge(arr1, arr2))                      # Output - [1, 2, 3, 4, 8, 9, 10]
 
 # using chatgpt
 # def swapIfGreater(arr1, arr2, ind1, ind2):
@@ -5820,11 +6035,14 @@ print(maxProduct(nums))
 
 # region 4.1 BINARY SEARCH on 1D ARRAY
 # ------------------------------------
-'''
 
+# 1 TODO : binary search to find x in the sorted array 
+"""
+
+"""
+'''
 🟢🟢🟢🟢🟢
 ⭐⭐⭐
-
 
 https://takeuforward.org/data-structure/binary-search-explained/
 
@@ -5837,8 +6055,6 @@ WHEN TO USE - when the search space is sorted
 IF low or high - float("inf"), 
 mid = (low + (high - low)) // 2
 '''
-
-# 1 TODO : binary search to find x in the sorted array 
 # method 1 : iterative approch
 '''
 steps
@@ -9247,11 +9463,14 @@ if __name__ == "__main__":
 # region 5.1 STRINGS - EASY
 # -------------------------
 
+
 # 1 TODO :  remove outermost pareanthesis
+"""
+using stack, 
+using number
+"""
 '''
-
 🟢🟢🟢🟢🟢
-
 
 https://leetcode.com/problems/remove-outermost-parentheses/
 
@@ -9259,35 +9478,35 @@ https://leetcode.com/problems/remove-outermost-parentheses/
 '''
 # method 1 : brute force approch
 '''
-
 Time Complexity (TC):
 O(n): We only iterate through the string once where n is the length of the input string.
 
 Space Complexity (SC):
 O(n): We are storing the result string.
 '''
-def removeOuterParentheses(s: str) -> str:
-    result = ""
-    open_count = 0
-    
-    for i in range(len(s)):
-        if s[i] == '(' and open_count > 0:
-            result += s[i]
-        if s[i] == ')':
-            open_count -= 1
-        if s[i] == '(':
-            open_count += 1
-    
-    return result
+# def removeOuterParentheses(s: str) -> str:
+#   result = ""
+#   open_count = 0
 
-# Example usage
-s = "(()())"
-print(removeOuterParentheses(s))  # Output: ()()
+#   for char in s:
+#     if char == '(':
+#       if open_count > 0:
+#         result += char
+#       open_count += 1
+#     else:  # char == ')'
+#       open_count -= 1
+#       if open_count > 0:
+#         result += char
+
+#   return result
+
+# # Example usage
+# s = "(()())"
+# print(removeOuterParentheses(s))  # Output: ()()
 
 
 # method 2 : better approch
 '''
-
 Time Complexity (TC):
 O(n): We iterate through the string once.
 Space Complexity (SC):
@@ -9295,24 +9514,26 @@ O(n): The stack holds a subset of the characters.
 
 '''   
 def removeOuterParentheses(s: str) -> str:
-    stack = []
-    result = []
-    
-    for char in s:
-        if char == '(' and stack:
-            result.append(char)
-        if char == ')':
-            if stack:
-                result.append(char)
-            stack.pop()
-        if char == '(':
-            stack.append(char)
-    
-    return ''.join(result)
+  stack = []
+  result = []
 
-# Example usage
+  for char in s:
+    if char == '(':
+      # Append '(' only if this is not outermost (stack not empty)
+      if stack:
+        result.append(char)
+      stack.append(char)
+    else:  # char == ')'
+      stack.pop()  # Remove matching '(' from stack
+      # Append ')' only if this is not outermost (stack still not empty)
+      if stack:
+        result.append(char)
+  return ''.join(result)
+
 s = "(()())"
 print(removeOuterParentheses(s))  # Output: ()()
+
+
 
 
 # method 3 : optimal solution
@@ -9325,47 +9546,45 @@ O(n): We are storing the result in the result list
 ''' 
 
 def removeOuterParentheses(s: str) -> str:
-    result = []
-    balance = 0
-    
-    for char in s:
-        if char == '(' and balance > 0:
-            result.append(char)
-        if char == ')':
-            if balance > 1:
-                result.append(char)
-            balance -= 1
-        if char == '(':
-            balance += 1
-    
-    return ''.join(result)
+  result = []
+  balance = 0
+  
+  for char in s:
+    if char == '(' and balance > 0:
+      result.append(char)
+    if char == ')':
+      if balance > 1:
+        result.append(char)
+      balance -= 1
+    if char == '(':
+      balance += 1
+  return ''.join(result)
 
-# Example usage
 s = "(()())"
 print(removeOuterParentheses(s))  # Output: ()()
 
 
 
 # 2 TODO : reverse words in a given string / palindrome check
-'''
+"""
 
+
+"""
+'''
 🟢🟢🟢🟢🟢
 
 https://takeuforward.org/data-structure/reverse-words-in-a-string/
 
-
 https://leetcode.com/problems/reverse-words-in-a-string/
-
-
 
 '''
 # method 1 : brute force approch
 # TC     -      Reverse Words: O(n) — splitting the string and reversing the list of words.
 # SC     -     Reverse Words: O(n) — due to the extra space used by the list of words.
 def reverseWords(s: str) -> str:
-    words = s.split()
-    words.reverse()
-    return " ".join(words)
+  words = s.split()
+  words.reverse()
+  return " ".join(words)
 
 # Example usage
 s = "Hello World"
@@ -9376,25 +9595,22 @@ print(reverseWords(s))  # Output: "World Hello"
 # TC     -     Reverse Words: O(n) — processing each character once. 
 # SC     -     Reverse Words: O(n) — due to the stack holding words.
 def reverseWords(s: str) -> str:
-    stack = []
-    word = ""
-    
-    # Traverse the string and collect words
-    for char in s:
-        if char == " ":
-            if word:
-                stack.append(word)
-                word = ""
-        else:
-            word += char
-    
-    if word:
-        stack.append(word)  # Append the last word
-    
-    # Reverse and join words
-    return " ".join(stack[::-1])
+  stack = []
+  word = ""
+  
+  # Traverse the string and collect words
+  for char in s:
+    if char == " ":
+      if word:
+        stack.append(word)
+        word = ""
+    else:
+      word += char
+  
+  if word:
+    stack.append(word)  # Append the last word
+  return " ".join(stack[::-1])
 
-# Example usage
 s = "Hello World"
 print(reverseWords(s))  # Output: "World Hello"
 
@@ -9403,21 +9619,20 @@ print(reverseWords(s))  # Output: "World Hello"
 # TC     -      Reverse Words: O(n) — reversing the entire string and reversing individual words.
 # SC     -      Reverse Words: O(n) — space for the list s.
 def reverseWords(s: str) -> str:
-    s = list(s)  # Convert to list to mutate string (strings are immutable)
-    
-    # Reverse the entire string
-    s.reverse()
-    
-    # Reverse each word in the string
-    start = 0
-    for end in range(len(s)):
-        if s[end] == " " or end == len(s) - 1:
-            if end == len(s) - 1:
-                end += 1
-            s[start:end] = s[start:end][::-1]
-            start = end + 1
-    
-    return "".join(s)
+  s = list(s)  # Convert to list to mutate string (strings are immutable)
+  # Reverse the entire string
+  s.reverse()
+  
+  # Reverse each word in the string
+  start = 0
+  for end in range(len(s)):
+    if s[end] == " " or end == len(s) - 1:
+      if end == len(s) - 1:
+        end += 1
+      s[start:end] = s[start:end][::-1]
+      start = end + 1
+  
+  return "".join(s)
 
 # Example usage
 s = "Hello World"
@@ -9426,9 +9641,7 @@ print(reverseWords(s))  # Output: "World Hello"
 
 # 3 TODO : largest odd number in a string
 '''
-
 🟢🟢🟢🟢🟢
-
 
 https://leetcode.com/problems/largest-odd-number-in-string/
 
@@ -9443,103 +9656,37 @@ Space Complexity (SC):
 O(n): We store the current number being built, and the maximum odd number found.
 ''' 
 def largestOddNumber(s: str) -> int:
-    largest_odd = -1  # Initialize with an invalid number
-    
-    current_number = ""
-    
-    for char in s:
-        if char.isdigit():
-            current_number += char  # Build the current number
-        else:
-            if current_number and int(current_number) % 2 != 0:
-                largest_odd = max(largest_odd, int(current_number))  # Check if it's odd
-            current_number = ""  # Reset the current number
-    
-    # Check the last number (if string ends with a number)
-    if current_number and int(current_number) % 2 != 0:
-        largest_odd = max(largest_odd, int(current_number))
-    
-    return largest_odd if largest_odd != -1 else None
+  largest_odd = -1  # Initialize with an invalid number
+  current_number = ""
+  for char in s:
+    if char.isdigit():
+      current_number += char  # Build the current number
+    else:
+      if current_number and int(current_number) % 2 != 0:
+        largest_odd = max(largest_odd, int(current_number))  # Check if it's odd
+      current_number = ""  # Reset the current number
+  
+  # Check the last number (if string ends with a number)
+  if current_number and int(current_number) % 2 != 0:
+    largest_odd = max(largest_odd, int(current_number))
+  
+  return largest_odd if largest_odd != -1 else None
 
-# Example usage
 s = "abc12345678xyz34569"
 print(largestOddNumber(s))  # Output: 34569
 
 
 # method 2 : better approch
-'''
-Time Complexity (TC):
-O(n): We iterate through the string once, processing each character individually.
-Space Complexity (SC):
-O(n): We store the current number being built and the largest odd number.
-
-
-'''    
-def largestOddNumber(s: str) -> int:
-    largest_odd = -1
-    current_number = ""
-    
-    for char in s:
-        if char.isdigit():
-            current_number += char
-        else:
-            if current_number:
-                if int(current_number) % 2 != 0:
-                    largest_odd = max(largest_odd, int(current_number))
-            current_number = ""
-    
-    # Check the last number (if string ends with a number)
-    if current_number:
-        if int(current_number) % 2 != 0:
-            largest_odd = max(largest_odd, int(current_number))
-    
-    return largest_odd if largest_odd != -1 else None
-
-# Example usage
-s = "abc12345678xyz34569"
-print(largestOddNumber(s))  # Output: 34569
 
 
 # method 3 : optimal solution
-'''
-
-Time Complexity (TC):
-O(n): We go through the string once.
-Space Complexity (SC):
-O(n): We are storing the current number in the string as we parse it.
-
-'''    
-def largestOddNumber(s: str) -> int:
-    largest_odd = -1
-    current_number = ""
-    
-    for char in s:
-        if char.isdigit():
-            current_number += char
-        else:
-            if current_number and int(current_number) % 2 != 0:
-                largest_odd = max(largest_odd, int(current_number))
-            current_number = ""
-    
-    # Check the last number if string ends with digits
-    if current_number and int(current_number) % 2 != 0:
-        largest_odd = max(largest_odd, int(current_number))
-    
-    return largest_odd if largest_odd != -1 else None
-
-# Example usage
-s = "abc12345678xyz34569"
-print(largestOddNumber(s))  # Output: 34569
 
 
 # 4 TODO : largest common prefix
 '''
-
 🟢🟢🟢🟢🟢
 
-
 https://leetcode.com/problems/longest-common-prefix/
-
 
 '''
 # method 1 : brute force approch
@@ -9553,21 +9700,20 @@ O(1): We only use a few extra variables to store the current prefix.
 
 '''
 def longestCommonPrefix(strs):
-    if not strs:
-        return ""
+  if not strs:
+    return ""
 
-    prefix = strs[0]  # Start with the first string as the initial prefix
-    for string in strs[1:]:
-        i = 0
-        while i < len(prefix) and i < len(string) and prefix[i] == string[i]:
-            i += 1
-        prefix = prefix[:i]  # Update the prefix to the common part
-        if prefix == "":
-            break
+  prefix = strs[0]  # Start with the first string as the initial prefix
+  for string in strs[1:]:
+    i = 0
+    while i < len(prefix) and i < len(string) and prefix[i] == string[i]:
+      i += 1
+    prefix = prefix[:i]  # Update the prefix to the common part
+    if prefix == "":
+      break
 
-    return prefix
+  return prefix
 
-# Example usage
 strs = ["flower", "flow", "flight"]
 print(longestCommonPrefix(strs))  # Output: "fl"
 
@@ -9583,18 +9729,17 @@ O(1): We do not use any extra space apart from a few variables.
 
 '''  
 def longestCommonPrefix(strs):
-    if not strs:
-        return ""
+  if not strs:
+    return ""
 
-    for i in range(len(strs[0])):
-        char = strs[0][i]
-        for string in strs[1:]:
-            if i == len(string) or string[i] != char:
-                return strs[0][:i]
+  for i in range(len(strs[0])):
+    char = strs[0][i]
+    for string in strs[1:]:
+      if i == len(string) or string[i] != char:
+        return strs[0][:i]
 
-    return strs[0]
+  return strs[0]
 
-# Example usage
 strs = ["flower", "flow", "flight"]
 print(longestCommonPrefix(strs))  # Output: "fl"
 
@@ -9610,25 +9755,25 @@ O(log n): This comes from the recursive stack used by the divide-and-conquer alg
 
 '''    
 def longestCommonPrefix(strs):
-    if not strs:
-        return ""
+  if not strs:
+      return ""
 
-    def commonPrefix(left, right):
-        min_length = min(len(left), len(right))
-        for i in range(min_length):
-            if left[i] != right[i]:
-                return left[:i]
-        return left[:min_length]
+  def commonPrefix(left, right):
+    min_length = min(len(left), len(right))
+    for i in range(min_length):
+      if left[i] != right[i]:
+        return left[:i]
+    return left[:min_length]
 
-    def divideAndConquer(strs, left, right):
-        if left == right:
-            return strs[left]
-        mid = (left + right) // 2
-        left_prefix = divideAndConquer(strs, left, mid)
-        right_prefix = divideAndConquer(strs, mid + 1, right)
-        return commonPrefix(left_prefix, right_prefix)
+  def divideAndConquer(strs, left, right):
+    if left == right:
+      return strs[left]
+    mid = (left + right) // 2
+    left_prefix = divideAndConquer(strs, left, mid)
+    right_prefix = divideAndConquer(strs, mid + 1, right)
+    return commonPrefix(left_prefix, right_prefix)
 
-    return divideAndConquer(strs, 0, len(strs) - 1)
+  return divideAndConquer(strs, 0, len(strs) - 1)
 
 # Example usage
 strs = ["flower", "flow", "flight"]
@@ -9654,26 +9799,36 @@ Space Complexity (SC):
 O(1): We don't use any extra space aside from variables used for iteration.
 
 ''' 
+def count_char_occurrences(s, char, end):
+  count = 0
+  for k in range(end):
+    if s[k] == char:
+      count += 1
+  return count
+
 def isIsomorphic(s1, s2):
-    if len(s1) != len(s2):
-        return False
+  if len(s1) != len(s2):
+    return False
+  
+  n = len(s1)
+  for i in range(n):
+    # Count how many times s1[i] appeared before i (excluding i)
+    count_s1 = count_char_occurrences(s1, s1[i], i)
     
-    for i in range(len(s1)):
-        found = False
-        for j in range(len(s2)):
-            if s1[i] == s2[j]:
-                if s1[:i].count(s1[i]) != s2[:j].count(s2[j]):
-                    return False
-                found = True
-                break
-        if not found:
-            return False
-    return True
+    # Count how many times s2[i] appeared before i (excluding i)
+    count_s2 = count_char_occurrences(s2, s2[i], i)
+    
+    # If counts don't match, pattern breaks => not isomorphic
+    if count_s1 != count_s2:
+      return False
+  
+  return True
 
 # Example usage
 s1 = "egg"
 s2 = "add"
 print(isIsomorphic(s1, s2))  # Output: True
+
 
 
 # method 2 : better approch
@@ -9685,31 +9840,41 @@ O(n): We use two dictionaries to store the mappings.
 
 '''   
 def isIsomorphic(s1, s2):
-    if len(s1) != len(s2):
+  # If lengths differ, they can't be isomorphic
+  if len(s1) != len(s2):
+    return False
+  
+  # Maps for characters from s1 to s2 and from s2 to s1
+  map_s1_to_s2 = {}
+  map_s2_to_s1 = {}
+  
+  # Check each character pair
+  for i in range(len(s1)):
+    c1 = s1[i]  # char from s1
+    c2 = s2[i]  # char from s2
+    
+    # Check mapping s1->s2
+    if c1 in map_s1_to_s2:
+      if map_s1_to_s2[c1] != c2:
         return False
+    else:
+      map_s1_to_s2[c1] = c2
     
-    map_s1_to_s2 = {}
-    map_s2_to_s1 = {}
-    
-    for i in range(len(s1)):
-        if s1[i] in map_s1_to_s2:
-            if map_s1_to_s2[s1[i]] != s2[i]:
-                return False
-        else:
-            map_s1_to_s2[s1[i]] = s2[i]
-        
-        if s2[i] in map_s2_to_s1:
-            if map_s2_to_s1[s2[i]] != s1[i]:
-                return False
-        else:
-            map_s2_to_s1[s2[i]] = s1[i]
-    
-    return True
+    # Check mapping s2->s1
+    if c2 in map_s2_to_s1:
+      if map_s2_to_s1[c2] != c1:
+        return False
+    else:
+      map_s2_to_s1[c2] = c1
+  
+  # All characters mapped correctly
+  return True
 
 # Example usage
 s1 = "egg"
 s2 = "add"
 print(isIsomorphic(s1, s2))  # Output: True
+
 
 
 # method 3 : optimal solution
@@ -9721,21 +9886,32 @@ O(n): We use a single dictionary to store the mappings.
 
 '''  
 def isIsomorphic(s1, s2):
-    if len(s1) != len(s2):
+  # If lengths differ, they can't be isomorphic
+  if len(s1) != len(s2):
+    return False
+
+  # Dictionary to map characters from s1 to s2
+  map_s1_to_s2 = {}
+  # Iterate over each character in s1 and s2 simultaneously
+  for i in range(len(s1)):
+    c1 = s1[i]  # Current char from s1
+    c2 = s2[i]  # Current char from s2
+
+    # If c1 is already mapped, check if it maps to c2
+    if c1 in map_s1_to_s2:
+      # If mapped char differs from c2, not isomorphic
+      if map_s1_to_s2[c1] != c2:
         return False
-    
-    map_s1_to_s2 = {}
-    
-    for i in range(len(s1)):
-        if s1[i] in map_s1_to_s2:
-            if map_s1_to_s2[s1[i]] != s2[i]:
-                return False
-        else:
-            if s2[i] in map_s1_to_s2.values():
-                return False
-            map_s1_to_s2[s1[i]] = s2[i]
-    
-    return True
+    else:
+      # If c2 is already mapped to some other char in s1, return False
+      if c2 in map_s1_to_s2.values():
+        return False
+      # Create new mapping from c1 to c2
+      map_s1_to_s2[c1] = c2
+
+  # All characters mapped correctly without conflicts
+  return True
+
 
 # Example usage
 s1 = "egg"
@@ -9745,14 +9921,9 @@ print(isIsomorphic(s1, s2))  # Output: True
 
 # 6 TODO : check whether one string is a rotation of another
 '''
-
-
 🟡🟡🟡🟡🟡
 
-
 https://leetcode.com/problems/rotate-string/
-
-
 
 '''
 # method 1 : brute force approch
@@ -9765,39 +9936,45 @@ O(1): We only use a few extra variables.
 
 ''' 
 def isRotation(s1, s2):
-    if len(s1) != len(s2):
-        return False
-    
-    for i in range(len(s1)):
-        if s1[i:] + s1[:i] == s2:
-            return True
+  # If lengths are different, s2 cannot be a rotation of s1
+  if len(s1) != len(s2):
     return False
+
+  n = len(s1)
+
+  # Try each possible rotation starting point 'i' in s1
+  for i in range(n):
+    match = True  # Assume s2 matches this rotation until proven otherwise
+
+    # Check all characters one by one
+    for j in range(n):
+      # Compare character from s1 rotated by 'i' with character from s2
+      # Use modulo to wrap around the end of s1
+      if s1[(i + j) % n] != s2[j]:
+        match = False  # Mismatch found, this rotation doesn't match s2
+        break         # Stop checking further characters for this rotation
+
+    # If all characters matched, s2 is a rotation of s1
+    if match:
+      return True
+
+  # No rotation matched s2
+  return False
 
 # Example usage
 s1 = "abcde"
 s2 = "cdeab"
 print(isRotation(s1, s2))  # Output: True
+
+
+# Example usage
+s1 = "abcde"
+s2 = "cdeab"
+print(isRotation(s1, s2))  # Output: True
+
 
 
 # method 2 : better approch
-'''
-Time Complexity (TC):
-O(n): Concatenating s1 with itself takes O(n) time, and checking if s2 is a substring of s1 + s1 also takes O(n) time.
-n is the length of the string.
-Space Complexity (SC):
-O(n): The space complexity is O(n) due to the creation of the concatenated string s1 + s1.
-
-'''  
-def isRotation(s1, s2):
-    if len(s1) != len(s2):
-        return False
-    # Concatenate s1 with itself
-    return s2 in (s1 + s1)
-
-# Example usage
-s1 = "abcde"
-s2 = "cdeab"
-print(isRotation(s1, s2))  # Output: True
 
 
 # method 3 : optimal solution
@@ -9821,15 +9998,16 @@ print(isRotation(s1, s2))  # Output: True
 
 # 7 TODO : check if two strings are anagram of each other
 '''
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/data-structure/check-if-two-strings-are-anagrams-of-each-other/
 
-
 https://leetcode.com/problems/valid-anagram/#:~:text=Given%20two%20strings%20s%20and,the%20original%20letters%20exactly%20once.&text=Constraints%3A,.length%20%3C%3D%205%20*%2010
+
+When two strings are anagrams of each other, it means:
+- They have exactly the same characters,
+- In the same quantity,
+- But possibly in a different order.
 
 '''
 # method 1 : brute force approch
@@ -9841,9 +10019,9 @@ O(n): The space complexity is O(n) because we are storing the sorted strings.
 
 ''' 
 def areAnagrams(s1, s2):
-    if len(s1) != len(s2):
-        return False
-    return sorted(s1) == sorted(s2)
+  if len(s1) != len(s2):
+    return False
+  return sorted(s1) == sorted(s2)
 
 # Example usage
 s1 = "listen"
@@ -9862,9 +10040,9 @@ O(k): The space complexity is O(k), where k is the number of unique characters i
 from collections import Counter
 
 def areAnagrams(s1, s2):
-    if len(s1) != len(s2):
-        return False
-    return Counter(s1) == Counter(s2)
+  if len(s1) != len(s2):
+    return False
+  return Counter(s1) == Counter(s2)
 
 # Example usage
 s1 = "listen"
@@ -9881,20 +10059,17 @@ O(1): The space complexity is constant, O(1), because the array size is fixed at
 
 '''
 def areAnagrams(s1, s2):
-    if len(s1) != len(s2):
-        return False
-    
-    # Assuming ASCII characters (256 possible characters)
-    char_count = [0] * 256  # Array to count character frequencies
-
-    for char in s1:
-        char_count[ord(char)] += 1  # Increment count for each character in s1
-
-    for char in s2:
-        char_count[ord(char)] -= 1  # Decrement count for each character in s2
-
-    # If all counts are zero, the strings are anagrams
-    return all(count == 0 for count in char_count)
+  if len(s1) != len(s2):
+    return False
+  
+  # Assuming ASCII characters (256 possible characters)
+  char_count = [0] * 256  # Array to count character frequencies
+  for char in s1:
+    char_count[ord(char)] += 1  # Increment count for each character in s1
+  for char in s2:
+    char_count[ord(char)] -= 1  # Decrement count for each character in s2
+  # If all counts are zero, the strings are anagrams
+  return all(count == 0 for count in char_count)
 
 # Example usage
 s1 = "listen"
@@ -9930,22 +10105,33 @@ O(n log n): Sorting the items takes O(n log n) time where n is the number of uni
 Space Complexity (SC):
 O(n): We are storing the frequency count, which requires O(n) space, where n is the length of the string.
 '''
-from collections import Counter
+# 1) Brute force: manual frequency count + bubble sort
 
-def sortByFrequency(s):
-    # Count frequencies of each character
-    freq = Counter(s)
-    
-    # Sort characters by frequency (in descending order)
-    sorted_chars = sorted(freq.items(), key=lambda x: x[1], reverse=True)
-    
-    # Reconstruct the string by repeating characters based on their frequency
-    result = ''.join([char * freq for char, freq in sorted_chars])
-    return result
+def frequency_sort_bruteforce(s):
+  freq = {}
+  # Initialize frequency dictionary keys to 0
+  for ch in s:
+    freq[ch] = 0
+  # Count frequency of each character
+  for ch in s:
+    freq[ch] += 1
+
+  # Convert dictionary to list of (char, frequency) tuples
+  freq_list = list(freq.items())
+  n = len(freq_list)
+  # Bubble sort the freq_list by frequency descending (inefficient)
+  for i in range(n):
+    for j in range(0, n - i - 1):
+      if freq_list[j][1] < freq_list[j + 1][1]:
+        freq_list[j], freq_list[j + 1] = freq_list[j + 1], freq_list[j]
+  result = ""
+  for ch, count in freq_list:
+    result += ch * count
+  return result
 
 # Example usage
-s = "tree"
-print(sortByFrequency(s))  # Output: "eetr" or any valid permutation
+print(frequency_sort_bruteforce("tree"))  # Output: "eert" or "eetr"
+
 
 
 # method 2 : better approch
@@ -9956,31 +10142,26 @@ Space Complexity (SC):
 O(n): The space complexity is O(n) because we use additional space for the frequency count and buckets.
 
 ''' 
-from collections import Counter
+# 2) Better: frequency dictionary + built-in sorted()
 
-def sortByFrequency(s):
-    # Count frequencies of each character
-    freq = Counter(s)
-    
-    # Create a list of empty buckets, where each bucket represents a frequency
-    max_freq = max(freq.values())
-    buckets = [[] for _ in range(max_freq + 1)]
-    
-    # Put characters into the corresponding bucket based on their frequency
-    for char, count in freq.items():
-        buckets[count].append(char)
-    
-    # Build the result string by taking characters from the buckets
-    result = []
-    for i in range(max_freq, 0, -1):
-        for char in buckets[i]:
-            result.append(char * i)
-    
-    return ''.join(result)
+def frequency_sort_better(s):
+  freq = {}
+  # Count frequencies in one pass
+  for ch in s:
+    if ch not in freq:
+      freq[ch] = 0
+    freq[ch] += 1
+  # Sort the items by frequency descending using sorted() and a lambda
+  freq_list = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+  # Build the output string
+  result = ""
+  for ch, count in freq_list:
+    result += ch * count
+  return result
 
 # Example usage
-s = "tree"
-print(sortByFrequency(s))  # Output: "eetr" or any valid permutation
+print(frequency_sort_better("tree"))  # Output: "eert" or "eetr"
+
 
 
 # method 3 : optimal solution
@@ -9991,35 +10172,40 @@ In the worst case, k is the length of the string, so the time complexity becomes
 Space Complexity (SC):
 O(n): The space complexity is O(n) because we store the frequencies and heap elements.
 '''
-import heapq
-from collections import Counter
+# 3) Optimal: bucket sort by frequency for linear time complexity
 
-def sortByFrequency(s):
-    # Count frequencies of each character
-    freq = Counter(s)
-    
-    # Build a max-heap based on the negative frequency
-    max_heap = [(-count, char) for char, count in freq.items()]
-    heapq.heapify(max_heap)
-    
-    # Rebuild the string by popping from the heap
-    result = []
-    while max_heap:
-        count, char = heapq.heappop(max_heap)
-        result.append(char * -count)  # Revert negative count back to positive
-    
-    return ''.join(result)
+def frequency_sort_optimal(s):
+  freq = {}
+  # Count character frequencies
+  for ch in s:
+    freq[ch] = freq.get(ch, 0) + 1
+
+  max_freq = len(s)  # Maximum possible frequency
+
+  # Create buckets: index is frequency, value is list of chars with that frequency
+  buckets = [[] for _ in range(max_freq + 1)]
+
+  # Place each character in the bucket corresponding to its frequency
+  for ch, count in freq.items():
+    buckets[count].append(ch)
+
+  result = ""
+  # Iterate over buckets from high frequency to low
+  for count in range(max_freq, 0, -1):
+    for ch in buckets[count]:
+      # Append char repeated 'count' times
+      result += ch * count
+
+  return result
 
 # Example usage
-s = "tree"
-print(sortByFrequency(s))  # Output: "eetr" or any valid permutation
+print(frequency_sort_optimal("tree"))  # Output: "eert" or "eetr"
+
 
 
 # 2 TODO : maximum nesting depth of parenthesis
 '''
-
 🟢🟢🟢🟢🟢
-
 
 https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/
 
@@ -10033,82 +10219,32 @@ Space Complexity (SC):
 O(1): We use a constant amount of extra space.
 '''
 def maxDepth(s):
-    max_depth = 0
-    current_depth = 0
-    
-    # Iterate through each character in the string
-    for char in s:
-        if char == '(':
-            current_depth += 1  # Increase depth for opening parenthesis
-            max_depth = max(max_depth, current_depth)  # Update the max depth
-        elif char == ')':
-            current_depth -= 1  # Decrease depth for closing parenthesis
-    
-    return max_depth
+  max_depth = 0
+  current_depth = 0
+  # Iterate through each character in the string
+  for char in s:
+    if char == '(':
+      current_depth += 1  # Increase depth for opening parenthesis
+      max_depth = max(max_depth, current_depth)  # Update the max depth
+    elif char == ')':
+      current_depth -= 1  # Decrease depth for closing parenthesis
+  return max_depth
 
 # Example usage
 s = "(1+(2*3)+((8)/4))+1"
 print(maxDepth(s))  # Output: 3
-     
 
 
 # method 2 : better approch
-'''
-Time Complexity (TC):
-O(n): We iterate over the string once, where n is the length of the string.
-Space Complexity (SC):
-O(n): We use a stack, and in the worst case (if all characters are opening parentheses), the space complexity is O(n).
-
-'''
-def maxDepth(s):
-    stack = []
-    max_depth = 0
-    
-    # Iterate through each character in the string
-    for char in s:
-        if char == '(':
-            stack.append('(')  # Push to stack for opening parenthesis
-            max_depth = max(max_depth, len(stack))  # Update max depth
-        elif char == ')':
-            stack.pop()  # Pop from stack for closing parenthesis
-    
-    return max_depth
-
-# Example usage
-s = "(1+(2*3)+((8)/4))+1"
-print(maxDepth(s))  # Output: 3
 
 
 # method 3 : optimal solution
-'''
-Time Complexity (TC):
-O(n): We iterate over the string once, where n is the length of the string.
-Space Complexity (SC):
-O(1): We use only a constant amount of extra space for current_depth and max_depth.
-'''    
-def maxDepth(s):
-    max_depth = 0
-    current_depth = 0
-    
-    # Iterate through each character in the string
-    for char in s:
-        if char == '(':
-            current_depth += 1  # Increase depth for opening parenthesis
-            max_depth = max(max_depth, current_depth)  # Update max depth
-        elif char == ')':
-            current_depth -= 1  # Decrease depth for closing parenthesis
-    
-    return max_depth
 
-# Example usage
-s = "(1+(2*3)+((8)/4))+1"
-print(maxDepth(s))  # Output: 3
 
 
 
 # 3 TODO : roman number to integer and vice versa
 '''
-
 🟢🟢🟢🟢🟢
 
 
@@ -10125,22 +10261,21 @@ Space Complexity (SC):
 O(1): We use a fixed-size dictionary for Roman numeral symbols, so the space complexity is constant.
 '''
 def romanToInt(s):
-    roman_map = {
-        'I': 1, 'V': 5, 'X': 10, 'L': 50,
-        'C': 100, 'D': 500, 'M': 1000
-    }
-    
-    total = 0
-    for i in range(len(s) - 1):
-        if roman_map[s[i]] < roman_map[s[i + 1]]:
-            total -= roman_map[s[i]]  # Subtraction case
-        else:
-            total += roman_map[s[i]]
-    
-    # Add the value of the last character
-    total += roman_map[s[-1]]
-    
-    return total
+  roman_map = {
+      'I': 1, 'V': 5, 'X': 10, 'L': 50,
+      'C': 100, 'D': 500, 'M': 1000
+  }
+  total = 0
+  for i in range(len(s) - 1):
+    if roman_map[s[i]] < roman_map[s[i + 1]]:
+      total -= roman_map[s[i]]  # Subtraction case
+    else:
+      total += roman_map[s[i]]
+  
+  # Add the value of the last character
+  total += roman_map[s[-1]]
+  
+  return total
 
 # Example usage:
 print(romanToInt("MCMXCIV"))  # Output: 1994
@@ -10155,19 +10290,19 @@ O(1): We are using a fixed-size list of Roman symbols and constructing a result 
 
 '''
 def intToRoman(num):
-    roman_map = [
-        (1000, "M"), (900, "CM"), (500, "D"), (400, "CD"),
-        (100, "C"), (90, "XC"), (50, "L"), (40, "XL"),
-        (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")
-    ]
-    
-    result = []
-    for value, symbol in roman_map:
-        while num >= value:
-            result.append(symbol)
-            num -= value
-    
-    return ''.join(result)
+  roman_map = [
+      (1000, "M"), (900, "CM"), (500, "D"), (400, "CD"),
+      (100, "C"), (90, "XC"), (50, "L"), (40, "XL"),
+      (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")
+  ]
+  
+  result = []
+  for value, symbol in roman_map:
+    while num >= value:
+      result.append(symbol)
+      num -= value
+  
+  return ''.join(result)
 
 # Example usage:
 print(intToRoman(1994))  # Output: "MCMXCIV"
@@ -10347,7 +10482,6 @@ print(myAtoi("words and 987"))  # Output: 0
 
 # 5 TODO : count number of substrings
 '''
-
 🟡🟡🟡🟡🟡
 
 
@@ -10365,16 +10499,16 @@ O(n^2): We store all substrings in a set, and in the worst case, there can be O(
 
 '''
 def countSubstrings(s):
-    n = len(s)
-    substrings = set()
+  n = len(s)
+  substrings = set()
 
-    # Generate all substrings
-    for i in range(n):
-        for j in range(i + 1, n + 1):
-            substrings.add(s[i:j])
-    
-    # Return the number of distinct substrings
-    return len(substrings)
+  # Generate all substrings
+  for i in range(n):
+    for j in range(i + 1, n + 1):
+      substrings.add(s[i:j])
+  
+  # Return the number of distinct substrings
+  return len(substrings)
 
 # Example usage:
 print(countSubstrings("abc"))  # Output: 6
@@ -10465,10 +10599,7 @@ print(countSubstrings("abc"))  # Output: 6
 
 🔴🔴🔴🔴🔴
 
-
 https://leetcode.com/problems/longest-palindromic-substring/
-
-
 
 '''
 # method 1 : brute force approch
@@ -10789,6 +10920,8 @@ print(reverse_words_in_substring(input_str))  # Output: "olleH dlroW"
 # --------------------------------
 
 '''
+https://www.youtube.com/watch?v=VaECK03Dz-g&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=237
+https://www.youtube.com/watch?v=VaECK03Dz-g&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=238
 👉👉👉 Summary of this section
 class Node:
     def __init__(self, data, next = None):
@@ -10893,20 +11026,20 @@ class LinkedList:
           current = current.next
         return self.head
   
-  def add_index_node(self, value, index):
+  def add_value_node(self, value, new_value):
     current = self.head
     if current == None:
-      if index == 1:
-        return Node(value)
-      else:
-        return null
-    if index == 1:
-      return Node(value, current)
-    counter = 0
+        return None
+    # Special case: if the head node itself has the target value,
+    # insert new node before head and update head
+    if current.data == value:
+      new_node = Node(new_value, current)
+      self.head = new_node
+      return self.head
     while current.next:
       counter += 1
       if current.next.data == value:
-        new_node = Node(value)
+        new_node = Node(new_value)
         new_node.next = current.next
         current.next = new_node
       current = current.next
@@ -10933,7 +11066,7 @@ class LinkedList:
           current = current.next
         return self.head
         
-  def add_value_node(self, value, index):
+  def add_index_node(self, value, index):
     current = self.head
     if current == None:
       return null
@@ -10986,21 +11119,20 @@ print(main_function(arr))
 
 # 1 TODO :  introduction to linked list, learn about struct and how is node represented
 '''
-
 🟢🟢🟢🟢🟢
 
 https://takeuforward.org/linked-list/linked-list-introduction
 
+https://www.youtube.com/watch?v=Nq7ok-OyEpg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=237&t=1528s
 
 https://bit.ly/3URZnst
-
 
 '''
 # # method 1 : brute force approch
 class Node:
-    def __init__(self, data1, next1=None):
-        self.data = data1
-        self.next = next1
+  def __init__(self, data1, next1=None):
+    self.data = data1
+    self.next = next1
 # Creating a new Node with the value from the array
 y = Node(2)
 # Printing the data stored in the Node
@@ -11009,11 +11141,11 @@ print(y.data)
 
 # 2 TODO : inserting a node in a linked list
 '''
-
 🟢🟢🟢🟢🟢
 
-
 https://takeuforward.org/linked-list/insert-at-the-head-of-a-linked-list
+
+https://www.youtube.com/watch?v=Nq7ok-OyEpg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=237&t=1528s
 
 https://bit.ly/3w9pEIt
 
@@ -11031,37 +11163,37 @@ Time Complexity: O(1) for inserting the new head of the linked list and O(N) for
 Space Complexity: O(1), as we have not used any extra space.
 '''
 class Node:
-    def __init__(self, data1, next1=None):
-        self.data = data1
-        self.next = next1
+  def __init__(self, data1, next1=None):
+    self.data = data1
+    self.next = next1
 
 # Function to print the linked list
 def printLL(head):
-    while head is not None:
-        print(head.data, end=" ")
-        head = head.next
+  while head is not None:
+    print(head.data, end=" ")
+    head = head.next
 
 # Function to insert a new node at the head of the linked list
 def insertHead(head, val):
-    temp = Node(val, head)
-    return temp
+  temp = Node(val, head)
+  return temp
 
 if __name__ == "__main__":
-    # Sample array and value for insertion
-    arr = [12, 8, 5, 7]
-    val = 100
+  # Sample array and value for insertion
+  arr = [12, 8, 5, 7]
+  val = 100
 
-    # Creating a linked list with initial elements from the array
-    head = Node(arr[0])
-    head.next = Node(arr[1])
-    head.next.next = Node(arr[2])
-    head.next.next.next = Node(arr[3])
+  # Creating a linked list with initial elements from the array
+  head = Node(arr[0])
+  head.next = Node(arr[1])
+  head.next.next = Node(arr[2])
+  head.next.next.next = Node(arr[3])
 
-    # Inserting a new node at the head of the linked list
-    head = insertHead(head, val)
+  # Inserting a new node at the head of the linked list
+  head = insertHead(head, val)
 
-    # Printing the linked list
-    printLL(head) 
+  # Printing the linked list
+  printLL(head) 
 
 
 # method 2 : better approch
@@ -11084,6 +11216,7 @@ if __name__ == "__main__":
 
 https://takeuforward.org/data-structure/delete-last-node-of-linked-list/
 
+https://www.youtube.com/watch?v=Nq7ok-OyEpg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=237&t=1528s
 
 https://leetcode.com/problems/delete-node-in-a-linked-list/
 
@@ -11102,51 +11235,48 @@ Space Complexity: O(1), as we have not used any extra space.
 '''
 # method 1 : brute force approch
 class Node:
-    def __init__(self, data, next_node=None):
-        self.data = data
-        self.next = next_node
+  def __init__(self, data, next_node=None):
+    self.data = data
+    self.next = next_node
 
 # Function to delete the tail of the linked list
 def delete_tail(head):
-    # Check if the linked list is empty or has only one node
-    if head is None or head.next is None:
-        return None
+  # Check if the linked list is empty or has only one node
+  if head is None or head.next is None:
+    return None
+  # Create a temporary pointer for traversal
+  temp = head
+  # Traverse the list until the second-to-last node
+  while temp.next.next is not None:
+    temp = temp.next
+  # Nullify the connection from the second-to-last node to delete the last node
+  temp.next = None
 
-    # Create a temporary pointer for traversal
-    temp = head
-
-    # Traverse the list until the second-to-last node
-    while temp.next.next is not None:
-        temp = temp.next
-
-    # Nullify the connection from the second-to-last node to delete the last node
-    temp.next = None
-
-    # Return the updated head of the linked list
-    return head
+  # Return the updated head of the linked list
+  return head
 
 # Function to print the linked list
 def print_ll(head):
-    while head is not None:
-        print(head.data, end=" ")
-        head = head.next
+  while head is not None:
+    print(head.data, end=" ")
+    head = head.next
 
 # Main function
 if __name__ == "__main__":
-    # Initialize an array with integer values
-    arr = [2, 5, 8, 7]
+  # Initialize an array with integer values
+  arr = [2, 5, 8, 7]
 
-    # Create the linked list with nodes initialized with array values
-    head = Node(arr[0])
-    head.next = Node(arr[1])
-    head.next.next = Node(arr[2])
-    head.next.next.next = Node(arr[3])
+  # Create the linked list with nodes initialized with array values
+  head = Node(arr[0])
+  head.next = Node(arr[1])
+  head.next.next = Node(arr[2])
+  head.next.next.next = Node(arr[3])
 
-    # Delete the tail of the linked list
-    head = delete_tail(head)
+  # Delete the tail of the linked list
+  head = delete_tail(head)
 
-    # Print the modified linked list
-    print_ll(head)
+  # Print the modified linked list
+  print_ll(head)
 
 # method 2 : better approch
 # TC     -      
@@ -11165,10 +11295,9 @@ if __name__ == "__main__":
 
 https://takeuforward.org/linked-list/find-the-length-of-a-linked-list
 
+https://www.youtube.com/watch?v=Nq7ok-OyEpg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=237&t=1528s
 
 https://bit.ly/3Po7tpf
-
-
 
 '''
 '''
@@ -11179,30 +11308,30 @@ We are not using any extra space, thus space complexity is O(1) or constant.
 '''
 # method 1 : brute force approch
 class Node:
-    def __init__(self, data, next_node=None):
-        self.data = data
-        self.next = next_node
+  def __init__(self, data, next_node=None):
+    self.data = data
+    self.next = next_node
 # Function to calculate the length of a linked list
 def length_of_linked_list(head):
-    cnt = 0
-    temp = head
-    
-    # Traverse the linked list and count nodes
-    while temp is not None:
-        temp = temp.next
-        cnt += 1
+  cnt = 0
+  temp = head
   
-    return cnt
+  # Traverse the linked list and count nodes
+  while temp is not None:
+    temp = temp.next
+    cnt += 1
+  return cnt
+
 # Main function
 def main():
-    arr = [2, 5, 8, 7]
-    # Create a linked list
-    head = Node(arr[0])
-    head.next = Node(arr[1])
-    head.next.next = Node(arr[2])
-    head.next.next.next = Node(arr[3])
-    # Print the length of the linked list
-    print("Length of the linked list:", length_of_linked_list(head))
+  arr = [2, 5, 8, 7]
+  # Create a linked list
+  head = Node(arr[0])
+  head.next = Node(arr[1])
+  head.next.next = Node(arr[2])
+  head.next.next.next = Node(arr[3])
+  # Print the length of the linked list
+  print("Length of the linked list:", length_of_linked_list(head))
 main()
 
 
@@ -11224,6 +11353,7 @@ main()
 
 https://takeuforward.org/linked-list/search-an-element-in-a-linked-list
 
+https://www.youtube.com/watch?v=Nq7ok-OyEpg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=237&t=1528s
 https://bit.ly/3Epriup
 
 
@@ -11234,37 +11364,37 @@ Time Complexity: O(N) in the worst case if the element is not found. O(1) in the
 Space Complexity: O(1) as we did not use any extra space.
 '''
 class Node:
-    def __init__(self, data1, next1=None):
-        self.data = data1
-        self.next = next1
+  def __init__(self, data1, next1=None):
+    self.data = data1
+    self.next = next1
 
 # Function to check if a given element is present in the linked list
 def check_if_present(head, desired_element):
-    temp = head
+  temp = head
 
-    # Traverse the linked list
-    while temp is not None:
-        # Check if the current node's data is equal to the desired element
-        if temp.data == desired_element:
-            return 1  # Return 1 if the element is found
+  # Traverse the linked list
+  while temp is not None:
+    # Check if the current node's data is equal to the desired element
+    if temp.data == desired_element:
+      return 1  # Return 1 if the element is found
 
-        # Move to the next node
-        temp = temp.next
+    # Move to the next node
+    temp = temp.next
 
-    return 0  # Return 0 if the element is not found in the linked list
+  return 0  # Return 0 if the element is not found in the linked list
 
 # Main function
 if __name__ == "__main__":
-    # Create a linked list: 1 -> 2 -> 3
-    arr = [1, 2, 3]
-    head = Node(arr[0])
-    head.next = Node(arr[1])
-    head.next.next = Node(arr[2])
+  # Create a linked list: 1 -> 2 -> 3
+  arr = [1, 2, 3]
+  head = Node(arr[0])
+  head.next = Node(arr[1])
+  head.next.next = Node(arr[2])
 
-    val = 3  # Element to be checked for presence in the linked list
+  val = 3  # Element to be checked for presence in the linked list
 
-    # Call the check_if_present function and print the result
-    print(check_if_present(head, val))
+  # Call the check_if_present function and print the result
+  print(check_if_present(head, val))
 
 # method 2 : better approch
 # TC     -      
@@ -11308,230 +11438,225 @@ https://bit.ly/3V9wY1v
 # TC     -      
 # SC     -  
 '''
+https://www.youtube.com/watch?v=0eKMU10uEDI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=239
+
 👉👉👉 all problem summary in this section 
 class Node:
-    def __init__(self, data, next = None, back=None):
-        self.data = data
-        self.next = next
-        self.back = back
-    
+  def __init__(self, data, next=None, back=None):
+    self.data = data
+    self.next = next
+    self.back = back
+
 class DoublyLinkedList:
   def __init__(self):
     self.head = None
-  
-  # def append(self, data):
-  #   new_node = Node(data)
-  #   if not self.head:      # If the list is empty, the new node becomes the head
-  #     self.head = new_node
-  #   else:
-  #     current = self.head
-  #     while current.next:  # Traverse to the last node
-  #         current = current.next
-  #     current.next = new_node  # Add the new node to the end
 
   def print_list(self):
     current = self.head
     while current:
-        print(current.data, end=" <-> ")
-        current = current.next
+      print(current.data, end=" <-> ")
+      current = current.next
     print("None")
-  
+
   def searchElement(self, target):
     temp = self.head
-    while temp.next:
+    while temp:
       if temp.data == target:
         return True
-      else:
-        temp = temp.next
+      temp = temp.next
     return False
-    
+
   def delete_head_node(self):
-    # temp = self.head 
-    # print(temp.__dict__)
-    if self.head == None or self.head.next == None:
+    if self.head is None:
       return None
-      
-    # prev = temp
+    if self.head.next is None:
+      self.head = None
+      return None
+
     temp = self.head
     self.head = temp.next
-    temp.back = None 
+    self.head.back = None
     temp.next = None
-    temp = None
-    
-    # prev = temp.next
-    
-    
+    temp.back = None
     return self.head
-  
+
   def add_head_node(self, val):
     new_node = Node(val, self.head, None)
-    self.head.back = new_node
+    if self.head is not None:
+      self.head.back = new_node
+    self.head = new_node
     return self.head
-    
-  def delete_last_node(self):
-    if self.head == None or self.head.next == None:
-      return None 
-    
-    temp = self.head
-    while temp.next:
-      # prev = temp
-      temp = temp.next
-    print(temp.__dict__)
-    
-    prev = temp.back
-    temp.back = None
-    prev.next = None
-    temp = None
-    
-    return self.head
-    
-  def add_tail_node(self, val):
-    if self.head.next == None:
-      return self.add_head_node(val)
-      
-    temp = self.head
-    while temp.next:
-      temp = temp.next
-    prev = temp.back
-    new_node = Node(val, temp, prev)
-    prev.next =new_node
-    temp.back = new_node
-    return self.head
-    
-  def delete_index_node(self, index):
-    if self.head == None:
-      return None 
-    if index == 1:
-      current = self.head
-      self.head = current.next
-      current = None
-      return self.head
-    else:
-      count = 0
-      temp = self.head 
-      while temp:
-        count += 1 
-        if count == index:
-          break
-        temp = temp.next
-      print(temp.__dict__)
-      
-      prev = temp.back
-      front = temp.next
-      
-      if prev == None and front == None:
-        temp = None
-        return
-      elif prev ==  None:
-        self.delete_head_node()
-      elif front == None:
-        self.delete_last_node()
-      else:
-        prev.next = front
-        front.back = prev 
-        temp.next = None 
-        temp.back = None 
-        temp = None
-        
-      # prev = temp.back
-      # prev.next = temp.next
-      # temp.back = None
-      # temp.next = None
-      # temp = None
-      return self.head
-      
-  def add_index_node(self, value, index):
-    if index == 1:
-      return Node(val, self.head, None)
-    
-    temp = self.head
-    count = 0
-    if temp:
-      count += 1 
-      if count == index:
-        break
-      temp = temp.next
-    
-    prev = temp.back
-    new_node = Node(value, temp, prev)
-    prev.next = new_node
-    temp.back = new_node
-    return self.head
-    
 
-  def delete_value_node(self, temp):
+  def delete_last_node(self):
+    if self.head is None:
+      return None
+    if self.head.next is None:
+      self.head = None
+      return None
+
+    temp = self.head
+    while temp.next:
+      temp = temp.next
+
+    prev = temp.back
+    prev.next = None
+    temp.back = None
+    return self.head
+
+  def add_tail_node(self, val):
+    if self.head is None:
+      return self.add_head_node(val)
+
+    temp = self.head
+    while temp.next:
+      temp = temp.next
+    new_node = Node(val, None, temp)
+    temp.next = new_node
+    return self.head
+
+  def delete_index_node(self, index):
+    if self.head is None or index < 1:
+      return None
+    if index == 1:
+      return self.delete_head_node()
+
+    temp = self.head
+    count = 1
+    while temp and count < index:
+      temp = temp.next
+      count += 1
+
+    if temp is None:
+      return self.head  # index out of range
+
     prev = temp.back
     front = temp.next
-    
-    if front == None:
+
+    if front is None:  # last node
       prev.next = None
-      temp.back = None
-      temp = None
-      
-    prev.next = front
-    front.back = prev
-    
+    else:
+      prev.next = front
+      front.back = prev
+
     temp.next = None
     temp.back = None
-    temp = None
     return self.head
-        
+
+  def delete_value_node(self, value):
+    temp = self.head
+    while temp:
+      if temp.data == value:
+        break
+      temp = temp.next
+
+    if temp is None:
+      return self.head  # value not found
+
+    if temp.back is None:  # head node
+      return self.delete_head_node()
+    if temp.next is None:  # last node
+      return self.delete_last_node()
+
+    prev = temp.back
+    front = temp.next
+    prev.next = front
+    front.back = prev
+
+    temp.next = None
+    temp.back = None
+    return self.head
+
   def add_value_node(self, node, value):
-    prev = node.next
-    new_node  = Node(value, node, prev)
-    prev.next = new_node
-    node.back = new_node
+    # Insert new node AFTER the given node
+    if node is None:
+      return self.head
+    new_node = Node(value, node.next, node)
+    if node.next is not None:
+      node.next.back = new_node
+    node.next = new_node
     return self.head
-    
-      
+
+  def add_index_node(self, value, index):
+    # Insert node with value at position index (1-based)
+    if index < 1:
+      return self.head
+    if index == 1:
+      return self.add_head_node(value)
+
+    temp = self.head
+    count = 1
+    while temp and count < index - 1:
+      temp = temp.next
+      count += 1
+
+    if temp is None:
+      # Index is beyond the length, add at tail
+      return self.add_tail_node(value)
+
+    new_node = Node(value, temp.next, temp)
+    if temp.next is not None:
+      temp.next.back = new_node
+    temp.next = new_node
+    return self.head
+
   def size(self):
     counter = 0
     current = self.head
     while current:
-      counter += 1 
+      counter += 1
       current = current.next
     return counter
-      
-  def convertArrToDLL(self,arr):
-    # If the array is empty, return immediately
+
+  def convertArrToDLL(self, arr):
     if not arr:
-        return None
-    
-    # Create the head node using the first element of the array
+      self.head = None
+      return None
+
     self.head = Node(arr[0])
     prev = self.head
-    
-    # Traverse the array and create nodes, linking them together
     for i in range(1, len(arr)):
-      # self.append(arr[i])
-      new_node = Node(arr[i], None ,prev)  # Create a new node for each element
+      new_node = Node(arr[i], None, prev)
       prev.next = new_node
-      prev = new_node  # Move current to the new node
+      prev = new_node
     return self.head
-  
+
 def main_function(arr):
-  # linked_list = convertArrToLL(arr);
   dll = DoublyLinkedList()
-  arrToDLL = dll.convertArrToDLL(arr)
-  
-  print(dll.print_list())
-  # linked_list_length = linked_list.size()
-  # target_element = linked_list.searchElement(44)
-  # delete_node = dll.delete_head_node()
-  # delete_node = dll.delete_last_node()
-  # delete_node = dll.delete_index_node(2)
-  # delete_node = dll.delete_value_node(4)
-  
-  # add_node = dll.add_head_node(5)
-  # add_node = dll.add_tail_node(5)
-  # add_node = dll.add_index_node(5,3)
-  # add_node = dll.add_value_node(4,4)
-  print(dll.print_list())
+  dll.convertArrToDLL(arr)
+
+  print("Original list:")
+  dll.print_list()
+
+  print("Add node with value 10 at head")
+  dll.add_head_node(10)
+  dll.print_list()
+
+  print("Add node with value 20 at tail")
+  dll.add_tail_node(20)
+  dll.print_list()
+
+  print("Add node with value 15 at index 3")
+  dll.add_index_node(15, 3)
+  dll.print_list()
+
+  print("Add node with value 17 after 2nd node")
+  second_node = dll.head.next  # get second node
+  dll.add_value_node(second_node, 17)
+  dll.print_list()
+
+  print("Delete node at index 4")
+  dll.delete_index_node(4)
+  dll.print_list()
+
+  print("Delete node with value 15")
+  dll.delete_value_node(15)
+  dll.print_list()
+
+  print("List size:", dll.size())
   return None
-  
-arr = [3,4,7,9]
-# arr = []
-print(main_function(arr))
+
+arr = [3, 4, 7, 9]
+main_function(arr)
 
 '''
 
@@ -11628,7 +11753,7 @@ def insert_at_tail(head, k):
 # Main program
 arr = [12, 5, 8, 7, 4]
 head = convertArr2DLL(arr)
-print(“ Doubly Linked List Initially:”)
+print("Doubly Linked List Initially:")
 print_list(head)
 print("\nDoubly Linked List After Inserting at the tail with value 10:")
 
@@ -11740,18 +11865,13 @@ if __name__ == "__main__":
 
 # 4 TODO : reverse in DLL
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/data-structure/reverse-a-doubly-linked-list/
 
+https://www.youtube.com/watch?v=u3WUW2qe6ww&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=240
 
 https://bit.ly/3w6hUaa
-
-
 
 '''
 # method 1 : brute force approch
@@ -11763,86 +11883,86 @@ Time Complexity : O(2N) During the first traversal, each node's value is pushed 
 Space Complexity : O(N) This is because we are using an external stack data structure. At the end of the first iteration, the stack will hold all N values of the doubly linked list therefore the space required for stack is directly proportional to the size of the input doubly linked list.
 '''
 class Node:
-    def __init__(self, data, next_node=None, back_node=None):
-        # Data stored in the node
-        self.data = data
-        # Reference to the next node
-        # in the list (forward direction)
-        self.next = next_node
-        # Reference to the previous node
-        # in the list (backward direction)
-        self.back = back_node
+  def __init__(self, data, next_node=None, back_node=None):
+    # Data stored in the node
+    self.data = data
+    # Reference to the next node
+    # in the list (forward direction)
+    self.next = next_node
+    # Reference to the previous node
+    # in the list (backward direction)
+    self.back = back_node
 
 def convert_arr_to_dll(arr):
-    # Create the head node with
-    # the first element of the array
-    head = Node(arr[0])
-    # Initialize 'prev' to the head node
-    prev = head
+  # Create the head node with
+  # the first element of the array
+  head = Node(arr[0])
+  # Initialize 'prev' to the head node
+  prev = head
 
-    for i in range(1, len(arr)):
-        # Create a new node with data from the
-        # array and set its 'back' pointer
-        # to the previous node
-        temp = Node(arr[i], None, prev)
-        
-        # Update the 'next' pointer of the
-        # previous node to point to the new node
-        prev.next = temp
-        # Move 'prev' to the newly created 
-        # node for the next iteration
-        prev = temp
+  for i in range(1, len(arr)):
+    # Create a new node with data from the
+    # array and set its 'back' pointer
+    # to the previous node
+    temp = Node(arr[i], None, prev)
+    
+    # Update the 'next' pointer of the
+    # previous node to point to the new node
+    prev.next = temp
+    # Move 'prev' to the newly created 
+    # node for the next iteration
+    prev = temp
 
-    # Return the head of the doubly linked list
-    return head
+  # Return the head of the doubly linked list
+  return head
 
 def print_dll(head):
-    while head is not None:
-        # Print the data in the current node
-        print(head.data, end=" ")
-        # Move to the next node
-        head = head.next
-    print()
+  while head is not None:
+    # Print the data in the current node
+    print(head.data, end=" ")
+    # Move to the next node
+    head = head.next
+  print()
 
 
 def reverse_dll(head):
-    # If head is empty or there is only
-    # one element, return the head directly
-    if head is None or head.next is None:
-        return head
-
-    # Initialize a stack to store values
-    st = []
-    # Initialize the node pointer
-    #'temp' at head
-    temp = head
-
-    # Traverse the doubly linked list
-    # via the 'temp' pointer
-    while temp is not None:
-        # Insert the data of the current
-        # node into the stack
-        st.append(temp.data)
-        # Traverse further
-        temp = temp.next
-
-    # Reinitialize 'temp' to head
-    temp = head
-
-    # Second iteration of the DLL
-    # to replace the values
-    while temp is not None:
-        # Replace the value pointed to
-        # by 'temp' with the value from
-        # the top of the stack and pop it
-        temp.data = st.pop()
-        # Traverse further
-        temp = temp.next
-
-    # Return the updated doubly linked list
-    # where the values of nodes from both
-    # ends have been swapped
+  # If head is empty or there is only
+  # one element, return the head directly
+  if head is None or head.next is None:
     return head
+
+  # Initialize a stack to store values
+  st = []
+  # Initialize the node pointer
+  #'temp' at head
+  temp = head
+
+  # Traverse the doubly linked list
+  # via the 'temp' pointer
+  while temp is not None:
+    # Insert the data of the current
+    # node into the stack
+    st.append(temp.data)
+    # Traverse further
+    temp = temp.next
+
+  # Reinitialize 'temp' to head
+  temp = head
+
+  # Second iteration of the DLL
+  # to replace the values
+  while temp is not None:
+    # Replace the value pointed to
+    # by 'temp' with the value from
+    # the top of the stack and pop it
+    temp.data = st.pop()
+    # Traverse further
+    temp = temp.next
+
+  # Return the updated doubly linked list
+  # where the values of nodes from both
+  # ends have been swapped
+  return head
 
 
 # Example usage:
@@ -11893,83 +12013,82 @@ Time Complexity : O(N) We only have to traverse the doubly linked list once, hen
 Space Complexity : O(1), as the reversal is done in place.
 '''
 class Node:
-    def __init__(self, data, next_node=None, back_node=None):
-        # Data stored in the node
-        self.data = data
-        # Reference to the next node
-        # in the list (forward direction)
-        self.next = next_node
-        # Reference to the previous node
-        # in the list (backward direction)
-        self.back = back_node
+  def __init__(self, data, next_node=None, back_node=None):
+    # Data stored in the node
+    self.data = data
+    # Reference to the next node
+    # in the list (forward direction)
+    self.next = next_node
+    # Reference to the previous node
+    # in the list (backward direction)
+    self.back = back_node
 
 def convert_arr_to_dll(arr):
-    # Create the head node with
-    # the first element of the array
-    head = Node(arr[0])
-    # Initialize 'prev' to the head node
-    prev = head
+  # Create the head node with
+  # the first element of the array
+  head = Node(arr[0])
+  # Initialize 'prev' to the head node
+  prev = head
 
-    for i in range(1, len(arr)):
-        # Create a new node with data from the
-        # array and set its 'back' pointer
-        # to the previous node
-        temp = Node(arr[i], None, prev)
-        
-        # Update the 'next' pointer of the
-        # previous node to point to the new node
-        prev.next = temp
-        # Move 'prev' to the newly created 
-        # node for the next iteration
-        prev = temp
+  for i in range(1, len(arr)):
+    # Create a new node with data from the
+    # array and set its 'back' pointer
+    # to the previous node
+    temp = Node(arr[i], None, prev)
+    
+    # Update the 'next' pointer of the
+    # previous node to point to the new node
+    prev.next = temp
+    # Move 'prev' to the newly created 
+    # node for the next iteration
+    prev = temp
 
-    # Return the head of the doubly linked list
-    return head
+  # Return the head of the doubly linked list
+  return head
 
 def print_dll(head):
-    while head is not None:
-        # Print the data in the current node
-        print(head.data, end=" ")
-        # Move to the next node
-        head = head.next
-    print()
+while head is not None:
+  # Print the data in the current node
+  print(head.data, end=" ")
+  # Move to the next node
+  head = head.next
+print()
 
 def reverse_dll(head):
-    # Check if the list is empty
-    # or has only one node
-    if head is None or head.next is None:
-        # No change is needed;
-        # return the current head
-        return head
-    
-    # Initialize a pointer to
+  # Check if the list is empty
+  # or has only one node
+  if head is None or head.next is None:
+    # No change is needed;
+    # return the current head
+    return head
+  
+  # Initialize a pointer to
+  # the previous node
+  prev = None  
+  
+  # Initialize a pointer
+  # to the current node
+  current = head  
+
+  # Traverse the linked list
+  while current is not None:
+    # Store a reference to
     # the previous node
-    prev = None  
+    prev = current.back 
+
+    # Swap the previous and next pointers
+    current.back = current.next
     
-    # Initialize a pointer
-    # to the current node
-    current = head  
+    # This step reverses the links
+    current.next = prev 
+    
+    # Move to the next node
+    # in the original list
+    current = current.back  
 
-    # Traverse the linked list
-    while current is not None:
-        
-        # Store a reference to
-        # the previous node
-        prev = current.back 
-
-        # Swap the previous and next pointers
-        current.back = current.next
-        
-         # This step reverses the links
-        current.next = prev 
-        
-        # Move to the next node
-        # in the original list
-        current = current.back  
-
-    # The final node in the original list
-    # becomes the new head after reversal
-    return prev.back
+  # The final node in the original list
+  # becomes the new head after reversal
+  return prev.back
 
 # Example usage:
 arr = [12, 5, 6, 8, 4]
@@ -22581,16 +22700,17 @@ print(cache.get(3))  # Returns 3
 http://youtube.com/watch?v=9kdHxplyl5I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=272
 
 '''
-
 # 1 TODO :  largest substring without repeating characters
+"""
+using hashing,
+using sliding window,
+"""
 '''
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/data-structure/length-of-longest-substring-without-any-repeating-character/
 
+https://www.youtube.com/watch?v=-zSxTJkcdAo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=274
 
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
@@ -22598,31 +22718,38 @@ https://leetcode.com/problems/longest-substring-without-repeating-characters/
 '''
 # method 1 : brute force approch
 '''
-
-
-https://www.youtube.com/watch?v=-zSxTJkcdAo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=274
-
-Time Complexity: 
+Time Complexity: O(N^2)
 
 Space Complexity:  
 
+ord("a") -> 97
+
 '''
 def main_function(arr):
-  max_len = 0
+  max_len = 0  # Keep track of longest substring without repeating chars
+
   for i in range(len(arr)):
-    hash_arr = [0] * 256  # Assuming ASCII characters
-    lenth = 0
+    seen = [0] * 256  # Track characters we've seen in this substring
+    length = 0
     for j in range(i, len(arr)):
-        if hash_arr[ord(arr[j])] == 1:  # Use ord() to get the ASCII value
-            break
-        lenth = j - i + 1
-        max_len = max(max_len, lenth)
-        hash_arr[ord(arr[j])] = 1  # Mark the character as seen
+      char_code = ord(arr[j])  # Get ASCII code of character
+      # If character is already seen, stop this substring
+      if seen[char_code] == 1:
+        break
+
+      # Mark character as seen and update substring length
+      seen[char_code] = 1
+      length = j - i + 1
+
+      # Update max length if needed
+      if length > max_len:
+        max_len = length
 
   return max_len
 
 arr = "cadbzabcd"
-print(main_function(arr))
+print(main_function(arr))  # Output: 5
+
 
 
 # method 2 : better approch
@@ -22633,26 +22760,33 @@ Space Complexity: O(256)
 
 '''
 def main_function(arr):
-    l = 0
-    r = 0
-    hash = [-1] * 256  # This assumes only ASCII characters
-    max_len = 0
-    
-    while r < len(arr):
-        if hash[ord(arr[r])] != -1:
-            if hash[ord(arr[r])] >= l:
-                l = hash[ord(arr[r])] + 1 
-        
-        length = r - l + 1 
-        max_len = max(length, max_len)
-        hash[ord(arr[r])] = r
-        r += 1
+  l = 0                # Start of current substring window
+  r = 0                # End of current substring window
+  last_seen = [-1] * 256  # Stores last position of each character (ASCII)
+  max_len = 0          # Longest substring length without repeats found so far
   
-    return max_len
+  while r < len(arr):
+    char_pos = ord(arr[r])  # Get ASCII code of current character
+
+    # If this character was seen before and inside the current window,
+    # move the start pointer just after its last position to avoid duplicates
+    if last_seen[char_pos] >= l:
+      l = last_seen[char_pos] + 1
+
+    # Update the last seen position of current character
+    last_seen[char_pos] = r
+
+    # Calculate current window length and update max length if bigger
+    current_len = r - l + 1
+    if current_len > max_len:
+      max_len = current_len
+
+    r += 1  # Move end pointer forward
+
+  return max_len
 
 arr = "cadbzabcd"
-print(main_function(arr))
-
+print(main_function(arr))  # Output: 5
 
 
 # method 3 : optimal solution
@@ -22666,8 +22800,9 @@ Space Complexity: O(N) where N represents the size of HashSet where we are stori
 # 2 TODO : max consecutive ones - III
 # longest subarray with atmost k 0s
 '''
-
 🟡🟡🟡🟡🟡
+
+https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=275
 
 
 https://leetcode.com/problems/max-consecutive-ones-iii/
@@ -22676,7 +22811,6 @@ https://leetcode.com/problems/max-consecutive-ones-iii/
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=275
  TC     -      O(N^2) nearly 
  SC     -     O(1)
 '''
@@ -23208,16 +23342,13 @@ print(main_function(arr))
 
 
 # 8 TODO : maximun point you can obtain from cards
+"""
+using for loop
+"""
 '''
-
-
 🟡🟡🟡🟡🟡
 
-
-
 https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
-
-
 
 https://www.youtube.com/watch?v=pBWCOCS636U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=273
 '''
@@ -23232,32 +23363,34 @@ https://www.youtube.com/watch?v=pBWCOCS636U&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 
 
 # method 3 : optimal solution
-# TC     -      O(2*k)
-# SC     -  O(1)  
+'''
+TC     -  O(2*k)
+SC     -  O(1)  
+'''
 def main_function(arr, k):
-    count = 0
-    lsum = 0
-    rsum = 0
+  lsum = 0           # Sum of the "left" selected elements
+  rsum = 0           # Sum of the "right" selected elements
 
-    # Compute the sum of the first k-1 elements
-    for i in range(k - 1):
-        lsum += arr[i]
+  # Compute the sum of the first (k-1) elements from the start (left side)
+  for i in range(k - 1):
+    lsum += arr[i]
 
-    maxSum = lsum
-    rindex = len(arr) - 1
+  maxSum = lsum      # Initialize maxSum with the sum of these first (k-1) elements
+  rindex = len(arr) - 1  # Start from the last element of the array (right side)
 
-    # Loop from the last index to the (k-1)-th index
-    for i in range(k - 1, -1, -1):
-        lsum -= arr[i]
-        rsum += arr[rindex]
-        rindex -= 1
-        maxSum = max(maxSum, lsum + rsum)
-    
-    return maxSum
+  # Loop from index (k-1) down to 0 (inclusive) backwards
+  for i in range(k - 1, -1, -1):
+    lsum -= arr[i]        # Remove the element at index i from the left sum
+    rsum += arr[rindex]   # Add the element at rindex from the right to right sum
+    rindex -= 1           # Move the right index leftwards (towards front)
+    # Update maxSum with the maximum sum between current maxSum and combined sums
+    maxSum = max(maxSum, lsum + rsum)
+  return maxSum
 
 arr = [6, 2, 3, 4, 7, 2, 1, 7, 1]
 k = 4
-print(main_function(arr, k))
+print(main_function(arr, k))  # Output: 21
+
 
 
 # endregion
