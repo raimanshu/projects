@@ -11869,11 +11869,15 @@ if __name__ == "__main__":
 
 https://takeuforward.org/data-structure/reverse-a-doubly-linked-list/
 
-https://www.youtube.com/watch?v=u3WUW2qe6ww&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=240
+https://www.youtube.com/watch?v=u3WUW2qe6ww&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=241
 
 https://bit.ly/3w6hUaa
 
 '''
+"""
+using stack/array,
+using swapping of links
+"""
 # method 1 : brute force approch
 '''
 pushing  each node data into an array and then reverses it.
@@ -12047,12 +12051,12 @@ def convert_arr_to_dll(arr):
   return head
 
 def print_dll(head):
-while head is not None:
-  # Print the data in the current node
-  print(head.data, end=" ")
-  # Move to the next node
-  head = head.next
-print()
+  while head is not None:
+    # Print the data in the current node
+    print(head.data, end=" ")
+    # Move to the next node
+    head = head.next
+  print()
 
 def reverse_dll(head):
   # Check if the list is empty
@@ -12105,8 +12109,6 @@ print('Doubly Linked List After Reversing :')
 head = reverse_dll(head)
 # Print the reversed doubly linked list
 print_dll(head)
-
-
 
 
 
@@ -12186,8 +12188,8 @@ def find_middle(head):
 
         # Check if the middle position is reached.
         if mid == 0:
-           # break out of the loop
-           # to return temp
+            # break out of the loop
+            # to return temp
             break
         
         # Move temp ahead
@@ -13562,17 +13564,13 @@ if __name__ == "__main__":
 
 # 8 TODO : segrregate odd and even nodes in a LL
 '''
-
 🟡🟡🟡🟡🟡
-
-
-
 
 https://takeuforward.org/data-structure/segregate-even-and-odd-nodes-in-linkedlist
 
+https://www.youtube.com/watch?v=qf6qp7GzD5Q&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=242
 
 https://leetcode.com/problems/odd-even-linked-list/
-
 
 '''
 # method 1 : brute force approch
@@ -14950,12 +14948,9 @@ https://bit.ly/3piCTD3
 
 https://takeuforward.org/data-structure/add-two-numbers-represented-as-linked-lists/
 
+https://www.youtube.com/watch?v=XmRrGzR6udg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=241
 
 https://leetcode.com/problems/add-two-numbers/
-
-
-
-
 
 '''
 # method 1 : brute force approch
@@ -14966,30 +14961,54 @@ Space Complexity: O(max(m,n)). The length of the new list is at most max(m,n)+1.
 '''
 # Definition for singly-linked list.
 class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
+  def __init__(self, val=0, next=None):
+    self.val = val
+    self.next = next
 
 class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        dummy = ListNode()
-        temp = dummy
-        carry = 0
-        while (l1 != None or l2 != None) or carry:
-            sum = 0
-            if l1 != None:
-                sum += l1.val
-                l1 = l1.next
-            if l2 != None:
-                sum += l2.val
-                l2 = l2.next
-            sum += carry
-            carry = sum // 10
-            node = ListNode(sum % 10)
-            temp.next = node
-            temp = temp.next
-        return dummy.next 
+  def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+    dummy = ListNode()
+    temp = dummy
+    carry = 0
+    while l1 or l2 or carry:
+      total = carry
+      if l1:
+        total += l1.val
+        l1 = l1.next
+      if l2:
+        total += l2.val
+        l2 = l2.next
+      carry = total // 10
+      node = ListNode(total % 10)
+      temp.next = node
+      temp = temp.next
+    return dummy.next
+
+def create_linked_list(nums):
+  head = ListNode(nums[0])
+  current = head
+  for num in nums[1:]:
+    current.next = ListNode(num)
+    current = current.next
+  return head
+
+def print_linked_list(node):
+  while node:
+    print(node.val, end="")
+    if node.next:
+      print(" -> ", end="")
+    node = node.next
+  print()
+
+# Example: (2 -> 4 -> 3) + (5 -> 6 -> 4) = 7 -> 0 -> 8
+l1 = create_linked_list([2, 4, 3])
+l2 = create_linked_list([5, 6, 4])
+
+solution = Solution()
+result = solution.addTwoNumbers(l1, l2)
+
+print_linked_list(result)
+
 
 
 👉👉👉
