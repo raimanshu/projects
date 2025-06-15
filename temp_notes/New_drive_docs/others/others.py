@@ -18,4 +18,12 @@
 '''
 
 
+
+perplexity.ai for research
+
+
+grok (Deepsearch, grok 3) - financial anlysis / compare stocks
+
+right price entry - Stock Name : NTPC Author Name : Himanshu Rai , consice, claude sonnet 4
+claude.ai
 # endregion
