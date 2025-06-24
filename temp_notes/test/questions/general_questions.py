@@ -1,5 +1,29 @@
 # concurency vs parallelism
 
+CSRF or XSRF vs XSSI vs XSS vs SQL Injection vs CORS
+
+internationalization vs localization
+
+nm vs npx
+
+dependencies vs devDependencies
+
+rest vs soap vs others
+
+
+SQL vs NoSQL vs ORM
+
+DBMS vs RDMS
+
+RESTFUL vs
+
+Stateless vs Stateful
+
+ORM vs ODM
+
+authentication vs authorization
+
+URL vs URI  
 
 # process vs threads 
 

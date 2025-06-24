@@ -10,7 +10,7 @@ def index():
     return "Hello, World!"
 
 
-@app.route("/profile")
+@app.route("/profile", methods=["GET", "POST"])
 def profile():
     user = {"username": "Miguel"}
     posts = [

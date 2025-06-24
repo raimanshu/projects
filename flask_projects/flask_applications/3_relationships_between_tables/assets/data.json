@@ -1,0 +1,43 @@
+{
+    "users": [
+        {
+            "id": "00000000-0000-0000-0000-000000000001",
+            "name": "admin",
+            "email": "admin@example.com",
+            "password": "admin123"
+        }
+    ],
+    "products": [
+        {
+            "name": "Laptop",
+            "description": "High performance laptop",
+            "price": 1200.0,
+            "stock": 10
+        },
+        {
+            "name": "Phone",
+            "description": "Smartphone with OLED display",
+            "price": 800.0,
+            "stock": 20
+        }
+    ],
+    "orders": [
+        {
+            "user_id": "00000000-0000-0000-0000-000000000001",
+            "product_names": [
+                "Laptop",
+                "Phone"
+            ]
+            ,
+            "total": 2
+        },
+        {
+            "user_id": "00000000-0000-0000-0000-000000000001",
+            "product_names": [
+                "Phone"
+            ],
+            "total": 1
+
+        }
+    ]
+}

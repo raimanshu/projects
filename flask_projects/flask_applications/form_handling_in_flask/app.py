@@ -15,7 +15,7 @@ def login():
         password = request.form.get('password')
 
         # Dummy check — replace with your real authentication logic
-        if email == "user@example.com" and password == "password123":
+        if email == "test@gmail.com" and password == "password@123":
             return redirect(url_for('dashboard'))
         else:
             # Optionally, render login.html with an error message
