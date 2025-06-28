@@ -1,0 +1,19 @@
+
+
+Nodejs vs javascript
+single threaded event driven non-blocking I/O model
+cluster
+middleware 
+cache mecanishm
+authentication - bycrypt
+authorization - jwt
+robust api - modularity, MVC pattern, common helper functions, middleware for error handling, logging, validation, etc.
+
+Nodejs - Python
+express - flask
+express-session - 
+connect-mongodb-session - 
+mongodb - 
+ejs -  jinja template
+mongoose - SQL-Alchemy
+joy - pydentic
