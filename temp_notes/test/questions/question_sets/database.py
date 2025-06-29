@@ -7,13 +7,9 @@ create table new_table_name as (select * from table_name where 1=2);
 # create a table of same structure and same data of another table
 create table new_table_name as (select * from table_name);
 # query to find 2nd/3rd/nth highest salary
-Mrthod 1 : using sub-query
 select max(salary) from employee where salary < (select max(salary) from employee where salary < (select max(salary) from employee));
-Method 2 : using limit and offset
 select salary from employee order by salary desc limit 1 offset N-1;
-Method 3 : using limit
 select salary from employee order by salary asc limit N-1,1;
-Method 4 : using distinct 
 select distinct salary from employee e1 where N-1 = (select count(distinct(e2.salary)) from employee e2 where e2.salary > e1.salary);
 # find all employees who also hold the managerial position 
 select * from employees where employee_id in (select manager_id from employees);
@@ -79,3 +75,16 @@ Index and its types
 View in database
 OLAP vs OLTP
 CTE vs Subquery
+
+
+
+
+Database
+table 
+Records or rows 
+Fields or attributes
+SQL vs NoSQL
+DBMS vs RDBMS
+DCL vs DML vs DCL vs TCL vs DQL -> civil engineer child vs Mother vs Security Guard vs Father vs curious kids
+
+

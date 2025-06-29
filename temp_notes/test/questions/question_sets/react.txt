@@ -3,6 +3,168 @@ http://youtube.com/watch?v=wIyHSOugGGw
 https://www.youtube.com/watch?v=LOH1l-MP_9k
 
 
-jsx
-fragments
-props vs states
+# sudheerj/react-interview-questions
+✅ React - open-source front-end JavaScript library
+major features - 
+✅ JSX -
+✅ rules of JSX
+✅ state and props
+key prop 
+✅ children prop 
+default props 
+✅ Lifting State Up
+class vs className 
+✅ Fragments 
+Keyed Fragments
+Poprtals
+✅ dangerouslySetInnerHTML 
+How to enable production mode
+use for loop instead map() in jsx
+✅ React.version
+Polymer
+React vs Angular 
+✅ render hijacking 
+✅ registerServiceWorker 
+React.memo()
+React lazy function - lets you render a dynamic import as a regular component
+code splitting
+route based code splitting
+Throttling vs Debouncing vs RequestAnimationFrame throttling
+windowing technique
+react-window and react-virtualized - libraries to implement windowing technique
+windowing technique
+Concurrent Rendering 
+Imperative and Declarative in React?
+JSX transform
+props drilling
+strict mode in react 
+local mutation 
+batching vs automatic batching in react 
+updater function 
+initializer function or lazy initialization
+layout thrashing 
+
+
+Hooks
+Rules with hooks 
+useEffect()
+useRef() - forward ref
+useEffect()
+uselayoutEffect()
+useContext()
+useReducer()
+useMemo()
+useImperativeHandle()
+
+
+
+✅ Components - 
+✅ functional components
+✅ class components
+❌ pure components 
+✅ stateful components - component is dependent of its state
+✅ stateless components - component is independent of its state
+✅ controlled components - fully manages the form element's state
+✅ uncontrolled components - manage their own state internally via the DOM
+✅ higher-order components
+✅ switching component
+loadable component 
+suspense component
+react server components
+wrapper component
+
+
+
+✅ HTML and React event
+synthetic events
+inline conditional expressions
+✅ pointer events - unified way of handling all input events
+✅ htmlFor vs for
+defaultValue vs value
+Diffing Algorithm
+capture phase events
+
+
+❌ Element vs Component -
+✅ Virtual DOM - lightweight, in-memory representation of Real DOM
+✅ How Virtual DOM works
+Real DOM vs Virtual DOM  
+Shadow DOM vs Virtual DOM
+❌ createElement and cloneElement
+
+✅ React Fiber
+✅ Reconcilation
+React.lazy
+
+✅ prop-types - library for type checking
+React.PropTypes.shape({...}) - pass an array of objects to a component with a particular shape 
+✅ moize - library for memoization of component in another component.
+React Transition Group and React Motion -  animation packages
+✅ React Router - routing library 
+react-router vs history
+<Router> - <BrowserRouter>, <HashRouter>, <MemoryRouter>, <StaticRouter> 
+✅ URLSearchParams - parse query strings
+✅ React Intl - internationalization library
+<FormattedMessage>
+injectIntl()
+formatDate()
+redux-saga - library for managing side effects in React uses generators
+call() vs put() in redux-saga - 
+Redux thunk - library for managing side effects in React uses promises
+redux-saga vs redux-thunk
+React Dev-tools - debugging tool
+Formik - library for handling forms in React
+web components in react app 
+MobX - library fro state management 
+Reux vs MobX 
+immer - library for immutable state management
+
+✅ react-dom - 
+❌ React vs ReactDOM
+✅ Server Side Rendering - handle rendering on Node servers
+React hydration 
+ReactDOMServer - renderToString(), renderToStaticMarkup()
+render()
+hydrate()
+unmountComponentAtNode()
+findDOMNode()
+createPortal()
+flushSync() 
+
+React Mixins
+
+✅ Shallow Renderer
+TestRenderer 
+✅ ReactTestUtils 
+✅ Jest - testing framework
+Jest vs Jasmine
+
+flux - application architecture  to manage data flow in React,
+Action, Dispatcher, Store, View
+Flux vs redux 
+Redux - state management library  enabling easier debugging, testing, and maintenance of states 
+core principles of  Redux -
+mapStateToProps() vs mapDispatchToProps()
+createStore()
+connect()
+Redux vs RxJs
+React context vs Redux
+Reducer
+root reducer
+component vs container in Redux -
+ownProps 
+selectors - 
+Redux Form 
+applyMiddleware()
+Relay vs Redux 
+Actions 
+
+React vs React native
+
+reselect - memoized inputs/outputs of redux reducers
+✅ flow - static type checking
+✅ flow vs prop-types
+
+webpack and babel
+
+styled-components - library for styling React components
