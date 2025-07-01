@@ -1,10 +1,7 @@
 
 
-<<<<<<< Updated upstream
 
 cookies vs local storage vs session storage
 
 promise vs async await
-=======
 Debounce vs Throttle ✅
->>>>>>> Stashed changes

@@ -6425,7 +6425,6 @@ x = 5
 print(getFloorAndCeil(arr, n, x))
 
 
-# 
 
 
 # 6 TODO : find the first or last occurence of a givennumber in sorted array

@@ -1072,6 +1072,7 @@ The alternate key can contain NULL values unless the NOT NULL constraint is set 
 All alternate keys can be candidate keys, but all candidate keys can not be alternate keys.
 The primary key, which is also a candidate key, can not be considered as an alternate key.
 '''
+# COMPOUND KEY
 # endregion
 
 # region SQL INDEX 
