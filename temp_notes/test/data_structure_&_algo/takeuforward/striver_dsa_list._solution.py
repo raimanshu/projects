@@ -7943,7 +7943,7 @@ print("The missing number is:", ans)
 https://takeuforward.org/data-structure/aggressive-cows-detailed-solution/
 
 https://www.youtube.com/watch?v=R_Mfw4ew-Vo&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=61
-https://www.youtube.com/watch?v=7wOzDqsfXy0
+https://www.youtube.com/watch?v=YTTdLgyqOLY
 
 https://www.spoj.com/problems/AGGRCOW/
 
@@ -8057,8 +8057,11 @@ print("The maximum possible minimum distance is:", ans)
 https://takeuforward.org/data-structure/allocate-minimum-number-of-pages/
 
 https://www.youtube.com/watch?v=Z0hwjftStI4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=63
+https://www.youtube.com/watch?v=YTTdLgyqOLY
 
 https://bit.ly/3MZQOct
+
+
 
 
 '''
