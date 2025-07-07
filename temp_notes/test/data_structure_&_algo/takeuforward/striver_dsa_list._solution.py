@@ -12127,16 +12127,13 @@ print_dll(head)
 # ⭐⭐⭐ PATTERN : Tortoise Hare method / slow and fast pointers
 # 1 TODO :  middle of a LL (Tortoise Hare method)
 '''
-
 🟢🟢🟢🟢🟢
-
 
 https://takeuforward.org/data-structure/find-middle-element-in-a-linked-list/
 
-
 https://leetcode.com/problems/middle-of-the-linked-list/
 
-
+https://www.youtube.com/watch?v=7LjQ57RqgEc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=249
 
 '''
 # method 1 : brute force approch
@@ -12282,16 +12279,11 @@ print("The middle node value is:", middle_node.data)
 # 2 TODO : reverse a LL (itterative)
 # method 1 : brute force approch
 '''
-
-
 🟢🟢🟢🟢🟢
-
 
 https://takeuforward.org/data-structure/reverse-a-linked-list/
 
-
 https://leetcode.com/problems/reverse-linked-list/
-
 
 https://www.youtube.com/watch?v=D2vI2DNJGd8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=245
 
@@ -12338,8 +12330,8 @@ def reverse_linked_list(head):
         # the value at the top of the stack
         temp.data = stack.pop()  
         
-         # Move to the next node in
-         # the linked list
+        # Move to the next node in
+        # the linked list
         temp = temp.next        
 
     # Return the new head of
@@ -12516,14 +12508,13 @@ print_linked_list(head)
 
 # 3 TODO : reverse a LL (recursive)
 '''
-
-
 🟢🟢🟢🟢🟢
 
 https://takeuforward.org/data-structure/reverse-a-linked-list/
 
 https://leetcode.com/problems/reverse-linked-list/
 
+https://www.youtube.com/watch?v=lRY_G-u_8jk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=245
 
 '''
 # method 1 : brute force approch
@@ -12674,9 +12665,6 @@ print("Reversed Linked List:", end=" ")
 print_linked_list(head)
 
 
-
-
-
 # method 3 : optimal solution
 '''
 Time Complexity: O(N) This is because we traverse the linked list twice: once to push the values onto the stack, and once to pop the values and update the linked list. Both traversals take O(N) time.
@@ -12751,19 +12739,13 @@ print_linked_list(head)
 
 # 4 TODO : detect a loop in Ll
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/data-structure/detect-a-cycle-in-a-linked-list/
 
-
 https://leetcode.com/problems/linked-list-cycle/
 
-
-
+https://www.youtube.com/watch?v=wiOo4DC5GGA&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=250
 
 '''
 # ⭐⭐⭐ PATTERN : linked list with loops
@@ -12927,16 +12909,13 @@ if __name__ == "__main__":
 
 # 5 TODO : find the starting point in LL
 '''
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/data-structure/starting-point-of-loop-in-a-linked-list/
 
-
 https://leetcode.com/problems/linked-list-cycle-ii/
 
+https://www.youtube.com/watch?v=2Kd0KKmmHFc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=253
 
 '''
 # method 1 : brute force approch
@@ -13006,8 +12985,7 @@ if loop_start_node:
     print("Loop detected. Starting node of the loop is:", loop_start_node.data)
 else:
     print("No loop detected in the linked list.")
-                                
-                              
+
 
 
 # method 2 : better approch
@@ -13028,7 +13006,7 @@ Time Complexity: O(N) The code traverses the entire linked list once, where 'n' 
 
 Space Complexity : O(1) The code uses only a constant amount of additional space, regardless of the linked list's length. This is achieved by using two pointers (slow and fast) to detect the loop without any significant extra memory usage, resulting in constant space complexity, O(1).
 '''
-                     
+
 # Node class represents a
 # node in a linked list
 class Node:
@@ -13104,15 +13082,13 @@ else:
 
 # 6 TODO : length of a loop in LL
 '''
-
 🟢🟢🟢🟢🟢
 
 https://takeuforward.org/linked-list/length-of-loop-in-linked-list
 
-
 https://bit.ly/3dyXL6m
 
-
+https://www.youtube.com/watch?v=I4g1qbkTPus&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=251
 
 '''
 # method 1 : brute force approch
@@ -13322,14 +13298,13 @@ else:
 
 # 7 TODO : check if LL is pallindrome or not
 '''
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/data-structure/check-if-given-linked-list-is-plaindrome/
 
 https://leetcode.com/problems/palindrome-linked-list/
+
+https://www.youtube.com/watch?v=lRY_G-u_8jk&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=246
 
 
 '''
@@ -13752,19 +13727,13 @@ print(main_function(arr1))
 
 # 9 TODO : remove Nth node from end/back of LL
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/data-structure/remove-n-th-node-from-the-end-of-a-linked-list/
 
-
 https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
-
-
+https://www.youtube.com/watch?v=3kMKYQ2wNIU&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=244
 
 '''
 # method 1 : brute force approch
@@ -13897,19 +13866,13 @@ printLL(head)
 
 # 10 TODO :  delete the middle node of a LL
 '''
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/linked-list/delete-the-middle-node-of-the-linked-list
 
-
 https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/#:~:text=You%20are%20given%20the%20head,than%20or%20equal%20to%20x%20.
 
-
-
-
+https://www.youtube.com/watch?v=ePpV-_pfOeI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=252
 
 '''
 # method 1 : brute force approch
@@ -14099,25 +14062,17 @@ print_linked_list(head)
 
 # 11 TODO : sort LL
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
 
 https://takeuforward.org/linked-list/sort-a-linked-list
 
-
 https://leetcode.com/problems/sort-list/
 
-
-
+https://www.youtube.com/watch?v=8ocB7a_c-Cc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=263
 
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=8ocB7a_c-Cc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=262
-
 - iterate over the linked list and put the node data into an array
 - sort the array 
 - then, push the elements in that linked list  
@@ -14217,8 +14172,7 @@ Time Complexity: O(N log N)where N is the number of nodes in the linked list. Fi
 
 Space Complexity : O(1) as no additional data structures or space is allocated for storage during the merging process. However, space proportional to O(log N) stack space is required for the recursive calls. THe maximum recursion depth of log N height is occupied on the call stack.
 '''
-                                
-                     
+
 # Node class represents a
 # node in a linked list
 class Node:
@@ -14339,18 +14293,11 @@ printLinkedList(head)
 
 # 12 TODO : sort a LL of 0's, 1's and 2's by changing links
 '''
-
-
 🟡🟡🟡🟡🟡
-
-
-
 
 https://bit.ly/3Ceotvr
 
-
-
-
+https://www.youtube.com/watch?v=gRII7LhdJWc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=243
 
 '''
 # method 1 : brute force approch
@@ -14533,24 +14480,17 @@ arr1 = [0,1,1,1,2,2,0,0,1,1]
 print(main_function(arr1))
 
 # 13 TODO : find the intersection points of Y LL
-# method 1 : brute force approch
 '''
-
-
 🟡🟡🟡🟡🟡
-
 
 https://takeuforward.org/data-structure/find-intersection-of-two-linked-lists/
 
-
 https://leetcode.com/problems/intersection-of-two-linked-lists/
 
-
-
 https://www.youtube.com/watch?v=0DYoPz2Tpt4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=248
-
-
-
+'''
+# method 1 : brute force approch
+'''
 
 Time Complexity: O(m*n)
 
@@ -14920,16 +14860,83 @@ if __name__ == '__main__':
 
 🟡🟡🟡🟡🟡
 
-
-
 https://bit.ly/3piCTD3
 
-
+https://www.youtube.com/watch?v=aXQWhbvT3w0&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=247
 
 '''
 # method 1 : brute force approch
-# TC     -      
-# SC     -     
+'''
+Reverse the list, add 1, reverse it back
+
+
+Time Complexity: O(n)
+Space Complexity: O(1) (ignoring recursion stack in reverse)
+
+'''
+
+# Definition for singly-linked list
+class ListNode:
+  def __init__(self, val=0, next=None):
+    self.val = val
+    self.next = next
+
+class Solution:
+  # Helper function to reverse a linked list
+  def reverse(self, head: ListNode) -> ListNode:
+    prev = None
+    current = head
+    while current:
+      next_node = current.next
+      current.next = prev
+      prev = current
+      current = next_node
+    return prev
+
+  def plusOne(self, head: ListNode) -> ListNode:
+    # Step 1: Reverse the list to make addition easier (start from least significant digit)
+    head = self.reverse(head)
+
+    # Step 2: Add 1 to the number
+    current = head
+    carry = 1  # We need to add 1
+    while current:
+      current.val += carry
+      if current.val < 10:
+        carry = 0
+        break  # No more carry, we can stop
+      else:
+        current.val = 0  # Set current to 0 and continue
+        if not current.next:
+          current.next = ListNode(0)  # Add new node if at end
+      current = current.next
+
+    # Step 3: Reverse the list again to restore original order
+    return self.reverse(head)
+
+# Utility to create a linked list from a list
+def create_linked_list(nums):
+  head = ListNode(nums[0])
+  current = head
+  for num in nums[1:]:
+    current.next = ListNode(num)
+    current = current.next
+  return head
+
+# Utility to print a linked list
+def print_linked_list(head):
+  while head:
+    print(head.val, end="")
+    if head.next:
+      print(" -> ", end="")
+    head = head.next
+  print()
+
+# Example usage
+l1 = create_linked_list([1, 9, 9])
+solution = Solution()
+result = solution.plusOne(l1)
+print_linked_list(result)  # Output: 2 -> 0 -> 0
 
 
 # method 2 : better approch
@@ -14938,8 +14945,59 @@ https://bit.ly/3piCTD3
 
 
 # method 3 : optimal solution
-# TC     -      
-# SC     -      
+'''
+Time Complexity: O(n)
+Space Complexity: O(n) (due to recursion stack)
+'''   
+
+# Definition for singly-linked list
+class ListNode:
+  def __init__(self, val=0, next=None):
+    self.val = val
+    self.next = next
+
+class Solution:
+  # Recursive function to add 1 starting from the end
+  def addOneRecursive(self, node: ListNode) -> int:
+    if not node:
+      return 1  # Base case: carry is 1 since we need to add 1
+
+    carry = self.addOneRecursive(node.next)
+    total = node.val + carry
+    node.val = total % 10
+    return total // 10  # Return new carry
+
+  def plusOne(self, head: ListNode) -> ListNode:
+    carry = self.addOneRecursive(head)
+    if carry:  # If there's a carry left, add new node at head
+      new_head = ListNode(carry)
+      new_head.next = head
+      return new_head
+    return head
+
+# Utility to create a linked list from a list
+def create_linked_list(nums):
+  head = ListNode(nums[0])
+  current = head
+  for num in nums[1:]:
+    current.next = ListNode(num)
+    current = current.next
+  return head
+
+# Utility to print a linked list
+def print_linked_list(head):
+  while head:
+    print(head.val, end="")
+    if head.next:
+      print(" -> ", end="")
+    head = head.next
+  print()
+
+# Example usage
+l1 = create_linked_list([9, 9, 9])
+solution = Solution()
+result = solution.plusOne(l1)
+print_linked_list(result)  # Output: 1 -> 0 -> 0 -> 0
 
 
 # 15 TODO :add 2 numbers in LL
@@ -15013,8 +15071,9 @@ print_linked_list(result)
 
 
 
-👉👉👉
 '''
+👉👉👉
+
 class Node:
     def __init__(self, data, next = None, back=None):
         self.data = data
@@ -15148,18 +15207,16 @@ print(main_function(arr1, arr2))
 # 1 TODO :  delete all occurences of a key in DLL
 '''
 
-
 🟡🟡🟡🟡🟡
-
 
 https://bit.ly/3zuBr66
 
-
+https://www.youtube.com/watch?v=Mh0NH_SD92k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=254
 
 '''
+
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=Mh0NH_SD92k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=254
 TC     -      O(N)
 SC     -      O(1)
 '''
@@ -15241,15 +15298,14 @@ print(main_function(arr1,value))
 
 🟡🟡🟡🟡🟡
 
-
 https://bit.ly/3zWPiBj
+
+https://www.youtube.com/watch?v=YitR4dQsddE&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=255
 
 
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=YitR4dQsddE&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=255
-
 - take head as temp1 and head.next as temp2
 - increment temp2 making temp1 at when place then again increment temp1 and so on
 
@@ -15394,18 +15450,15 @@ print(main_function(arr1,sum))
 # 3 TODO : remove duplicates from sorted DLL
 '''
 
-
 🟡🟡🟡🟡🟡
-
-
 
 https://bit.ly/3FtJUtZ
 
+https://www.youtube.com/watch?v=YJKVTnOJXSY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=256
 
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=YJKVTnOJXSY&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=256
 
 TC     -      O(N)
 SC     -     O(1)
@@ -15497,16 +15550,14 @@ print(main_function(arr1))
 
 https://takeuforward.org/data-structure/reverse-linked-list-in-groups-of-size-k/
 
-
 https://leetcode.com/problems/reverse-nodes-in-k-group/
 
-
+https://www.youtube.com/watch?v=lIar1skcQYI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=258  
 
 
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=lIar1skcQYI&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=258  
 
 - initialize variable tep as head and prevNode as Node
 - write a function to return the Kth node from the linked list
@@ -15693,15 +15744,11 @@ printLinkedList(head)
 
 🟡🟡🟡🟡🟡
 
-
-
 https://takeuforward.org/data-structure/rotate-a-linked-list/
-
 
 https://leetcode.com/problems/rotate-list/description/
 
-
-
+https://www.youtube.com/watch?v=uT7YI7XbTY8&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=258
 
 '''
 # method 1 : brute force approch
@@ -15909,10 +15956,9 @@ if __name__ == '__main__':
 
 https://takeuforward.org/data-structure/flattening-a-linked-list/
 
-
 https://bit.ly/3w9TKf8
 
-
+https://www.youtube.com/watch?v=ykelywHJWLg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=260
 
 '''
 # method 1 : brute force approch
@@ -16163,13 +16209,10 @@ flattened = flattenLinkedList(head)
 print("\nFlattened linked list: ", end="")
 printLinkedList(flattened)
 
-                                
-                            
 
 
 # 4 TODO : clone a linked list with random and next pointer
 '''
-
 🔴🔴🔴🔴🔴
 
 https://takeuforward.org/data-structure/clone-linked-list-with-random-and-next-pointer/
@@ -16177,13 +16220,11 @@ https://takeuforward.org/data-structure/clone-linked-list-with-random-and-next-p
 
 https://leetcode.com/problems/copy-list-with-random-pointer/
 
-
+https://www.youtube.com/watch?v=q570bKdrnlw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=263
 
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=q570bKdrnlw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=263
-
 - store each node as key as the node value node but without links pair
 - put the values of next and random pointer using the hash object
 
@@ -16435,10 +16476,259 @@ if __name__ == "__main__":
 
 
 
+# 👉👉👉 there are more questions in youtube apart from these 
+
+# TODO : merge two sorted linked list
+'''
+👉👉👉
+🔴🔴🔴🔴🔴
+
+https://www.youtube.com/watch?v=jXu-H7XuClE&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=259
+
+'''
+# method 1 : brute force approch
+'''
+Time Complexity: O(m + n), where m and n are the lengths of the two lists
+Space Complexity: O(1)
+''' 
+# Definition for singly-linked list
+class ListNode:
+  def __init__(self, val=0, next=None):
+    self.val = val
+    self.next = next
+
+class Solution:
+  def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
+    # Dummy node to act as the start of the merged list
+    dummy = ListNode()
+    tail = dummy
+
+    # Traverse both lists and attach the smaller node each time
+    while list1 and list2:
+      if list1.val < list2.val:
+        tail.next = list1
+        list1 = list1.next
+      else:
+        tail.next = list2
+        list2 = list2.next
+      tail = tail.next
+
+    # Attach the remaining part of whichever list is not empty
+    if list1:
+      tail.next = list1
+    elif list2:
+      tail.next = list2
+
+    # The merged list starts at dummy.next
+    return dummy.next
+
+# Utility to create linked list from Python list
+def create_linked_list(nums):
+  if not nums:
+    return None
+  head = ListNode(nums[0])
+  current = head
+  for num in nums[1:]:
+    current.next = ListNode(num)
+    current = current.next
+  return head
+
+# Utility to print linked list
+def print_linked_list(head):
+  while head:
+    print(head.val, end="")
+    if head.next:
+      print(" -> ", end="")
+    head = head.next
+  print()
+
+# Example usage
+list1 = create_linked_list([1, 3, 5])
+list2 = create_linked_list([2, 4, 6])
+
+solution = Solution()
+merged = solution.mergeTwoLists(list1, list2)
+
+print_linked_list(merged)  # Output: 1 -> 2 -> 3 -> 4 -> 5 -> 6
+
+
+# method 2 : better approch
+'''
+Time Complexity: 
+
+Space Complexity : 
+''' 
+
+# method 1 : optimal approch
+'''
+Time Complexity: 
+
+Space Complexity : 
+''' 
+
+# TODO : merge k sorted linked list
+'''
+👉👉👉
+🔴🔴🔴🔴🔴
+
+https://www.youtube.com/watch?v=1zktEppsdig&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=261
+
+'''
+# method 1 : brute force approch
+'''
+Time Complexity: O(N log K), where N is total nodes, K is number of lists
+Space Complexity: O(K) for the heap
+
+'''
+import heapq
+
+# Definition for singly-linked list
+class ListNode:
+  def __init__(self, val=0, next=None):
+    self.val = val
+    self.next = next
+
+  # This helps the heapq compare ListNode objects directly using val
+  def __lt__(self, other):
+    return self.val < other.val
+
+class Solution:
+  def mergeKLists(self, lists) -> ListNode:
+    min_heap = []
+
+    # Step 1: Push the head of each list into the heap
+    for l in lists:
+      if l:
+        heapq.heappush(min_heap, l)
+
+    # Dummy node to start the result list
+    dummy = ListNode()
+    current = dummy
+
+    # Step 2: Extract min, add to result, push next node from the same list
+    while min_heap:
+      smallest_node = heapq.heappop(min_heap)
+      current.next = smallest_node
+      current = current.next
+      if smallest_node.next:
+        heapq.heappush(min_heap, smallest_node.next)
+
+    return dummy.next
+
+# Utility to create linked list from Python list
+def create_linked_list(nums):
+  if not nums:
+    return None
+  head = ListNode(nums[0])
+  current = head
+  for num in nums[1:]:
+    current.next = ListNode(num)
+    current = current.next
+  return head
+
+# Utility to print linked list
+def print_linked_list(head):
+  while head:
+    print(head.val, end="")
+    if head.next:
+      print(" -> ", end="")
+    head = head.next
+  print()
+
+# Example usage
+list1 = create_linked_list([1, 4, 5])
+list2 = create_linked_list([1, 3, 4])
+list3 = create_linked_list([2, 6])
+lists = [list1, list2, list3]
+
+solution = Solution()
+merged_head = solution.mergeKLists(lists)
+
+print_linked_list(merged_head)  # Output: 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6
+
+
+# method 2 : better approch
+'''
+Time Complexity: 
+
+Space Complexity : 
+''' 
+
+# method 1 : optimal approch
+'''
+Time Complexity: 
+
+Space Complexity : 
+''' 
+
+# TODO : design a browser history
+'''
+👉👉👉
+🔴🔴🔴🔴🔴
+
+https://www.youtube.com/watch?v=mG3KLugbOdc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=264
+
+'''
+# method 1 : brute force approch
+'''
+Time Complexity:
+- visit: O(1)
+- back: O(1)
+- forward: O(1)
+
+Space Complexity: O(N), where N is number of visited URLs
+''' 
+# Doubly Linked List Node
+class Node:
+  def __init__(self, url: str):
+    self.url = url
+    self.prev = None
+    self.next = None
+
+class BrowserHistory:
+  def __init__(self, homepage: str):
+    self.current = Node(homepage)  # The current page node
+
+  def visit(self, url: str) -> None:
+    # Create a new node and link it
+    new_node = Node(url)
+    self.current.next = None  # Clear forward history
+    new_node.prev = self.current
+    self.current.next = new_node
+    self.current = new_node  # Move to new page
+
+  def back(self, steps: int) -> str:
+    # Move back up to `steps`, or until no more prev
+    while steps > 0 and self.current.prev:
+      self.current = self.current.prev
+      steps -= 1
+    return self.current.url
+
+  def forward(self, steps: int) -> str:
+    # Move forward up to `steps`, or until no more next
+    while steps > 0 and self.current.next:
+      self.current = self.current.next
+      steps -= 1
+    return self.current.url
+
+
+
+# method 2 : better approch
+'''
+Time Complexity: 
+
+Space Complexity : 
+''' 
+
+# method 1 : optimal approch
+'''
+Time Complexity: 
+
+Space Complexity : 
+''' 
 
 # endregion
 
-⭐⭐⭐there are more questions in youtube apart from these 
 
 
 
@@ -16454,8 +16744,6 @@ if __name__ == "__main__":
 - The atoi() function converts a string (which may represent a number) into an integer. 
 
 https://leetcode.com/problems/string-to-integer-atoi/
-
-
 
 
 '''
@@ -16788,13 +17076,9 @@ print("Reversed stack:", stack)
 
 # 1 TODO :  generate all binary strings
 '''
-
-
 🟡🟡🟡🟡🟡
 
-
 https://bit.ly/3QJ0vwc
-
 
 '''
 # method 1 : brute force approch
@@ -16810,14 +17094,14 @@ Additionally, the space required to store the generated strings in memory is O(2
 
 '''
 def generate_binary_strings(n, current=""):
-    # Base case: If the current string reaches the length n, print it
-    if len(current) == n:
-        print(current)
-        return
-    
-    # Recursive case: Append '0' or '1' and call the function recursively
-    generate_binary_strings(n, current + "0")
-    generate_binary_strings(n, current + "1")
+  # Base case: If the current string reaches the length n, print it
+  if len(current) == n:
+    print(current)
+    return
+  
+  # Recursive case: Append '0' or '1' and call the function recursively
+  generate_binary_strings(n, current + "0")
+  generate_binary_strings(n, current + "1")
 
 # Example usage:
 n = 3
@@ -16837,12 +17121,9 @@ generate_binary_strings(n)
 
 # 2 TODO : generate paranthesis
 '''
-
 🟡🟡🟡🟡🟡
 
-
 https://leetcode.com/problems/generate-parentheses/
-
 
 
 '''
@@ -16858,18 +17139,18 @@ The recursion depth is at most 2n (because we are adding one character at a time
 
 '''
 def generate_parentheses(n, open_count=0, close_count=0, current=""):
-    # Base case: If the current string has used n pairs of parentheses
-    if open_count == n and close_count == n:
-        print(current)
-        return
-    
-    # Recursive case: Add an opening parenthesis if we have not yet used n opening ones
-    if open_count < n:
-        generate_parentheses(n, open_count + 1, close_count, current + "(")
-    
-    # Recursive case: Add a closing parenthesis if we have opened more parentheses than closed
-    if close_count < open_count:
-        generate_parentheses(n, open_count, close_count + 1, current + ")")
+  # Base case: If the current string has used n pairs of parentheses
+  if open_count == n and close_count == n:
+    print(current)
+    return
+  
+  # Recursive case: Add an opening parenthesis if we have not yet used n opening ones
+  if open_count < n:
+    generate_parentheses(n, open_count + 1, close_count, current + "(")
+  
+  # Recursive case: Add a closing parenthesis if we have opened more parentheses than closed
+  if close_count < open_count:
+    generate_parentheses(n, open_count, close_count + 1, current + ")")
 
 # Example usage:
 n = 3
@@ -26732,12 +27013,9 @@ print("Number of intervals to remove:", result)
 
 # 1 TODO :  introduction to trees
 '''
-
 🟢🟢🟢🟢🟢
 
-
 https://takeuforward.org/data-structure/merge-overlapping-sub-intervals/
-
 
 https://bit.ly/3EsRmTM
 
@@ -26760,16 +27038,14 @@ https://www.youtube.com/watch?v=_ANrF3FJm7I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 
 # 2 TODO : binary tree representation in C++
 '''
-
 🟢🟢🟢🟢🟢
 
-
 https://takeuforward.org/binary-tree/binary-tree-representation-in-c/
-
 
 https://bit.ly/3gn5Soh
 
 # https://www.youtube.com/watch?v=ctCpP0RFDFc&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=74
+
 '''
 # method 1 : brute force approch
 # TC     -      
@@ -26788,17 +27064,14 @@ https://bit.ly/3gn5Soh
 
 # 3 TODO : binary tree representation in java
 '''
-
 🟢🟢🟢🟢🟢
-
 
 https://takeuforward.org/binary-tree/binary-tree-representation-in-java/
 
-
 https://bit.ly/3gn5Soh
 
-
 https://www.youtube.com/watch?v=hyLyW7rP24I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=75
+
 '''
 # method 1 : brute force approch
 # TC     -      
@@ -26817,12 +27090,9 @@ https://www.youtube.com/watch?v=hyLyW7rP24I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_
 
 # 4 TODO : binary tree traversals in binary tree
 '''
-
 🟢🟢🟢🟢🟢
 
-
 https://takeuforward.org/binary-tree/binary-tree-traversal-inorder-preorder-postorder/
-
 
 https://www.codingninjas.com/codestudio/problems/tree-traversal_981269?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
 
@@ -26848,20 +27118,17 @@ BFS (Breadth First Search) - write values levelwise
 
 # 5 TODO : preorder traversals of binary tree
 '''
-
 🟢🟢🟢🟢🟢
-
 
 https://takeuforward.org/data-structure/preorder-traversal-of-binary-tree/
 
-
 https://leetcode.com/problems/binary-tree-preorder-traversal/
 
+https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=77
 
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=77
 
 
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once.
@@ -26937,20 +27204,17 @@ if __name__ == "__main__":
 
 # 6 TODO : inorder traversal of binary tree
 '''
-
 🟢🟢🟢🟢🟢
-
 
 https://takeuforward.org/data-structure/inorder-traversal-of-binary-tree/
 
-
 https://leetcode.com/problems/binary-tree-inorder-traversal/
 
+https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=78
 
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=78
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once.
 
 Space Complexity: O(N) where N is the number of nodes in the binary tree. This is because the recursive stack uses an auxiliary space which can potentially hold all nodes in the tree when dealing with a skewed tree (all nodes have only one child), consuming space proportional to the number of nodes.In the average case or for a balanced tree, the maximum number of nodes that could be in the stack at any given time would be roughly the height of the tree hence O(log2N).
@@ -27024,20 +27288,17 @@ if __name__ == "__main__":
 
 # 7 TODO : post order traversal of binary tree
 '''
-
 🟢🟢🟢🟢🟢
-
 
 https://takeuforward.org/data-structure/post-order-traversal-of-binary-tree/
 
-
 https://leetcode.com/problems/binary-tree-postorder-traversal/
 
+https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=79
 
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=79
 
 
 Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary tree is visited exactly once.
@@ -27116,23 +27377,19 @@ if __name__ == "__main__":
 # SC     -      
 
 
-# 8 TODO : level order traversal / level order traversal in spiral form
+# 8 TODO : level order traversal / level order traversal in spiral form (BFS)
 '''
-
 🟢🟢🟢🟢🟢
-
 
 https://takeuforward.org/data-structure/level-order-traversal-of-a-binary-tree/
 
-
 https://leetcode.com/problems/binary-tree-level-order-traversal/
 
-
+https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=80
 
 '''
 # method 1 : brute force approch
 '''
-https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=80
 
 
 Time Complexity: O(N) where N is the number of nodes in the binary tree. Each node of the binary tree is enqueued and dequeued exactly once, hence all nodes need to be processed and visited. Processing each node takes constant time operations which contributes to the overall linear time complexity.

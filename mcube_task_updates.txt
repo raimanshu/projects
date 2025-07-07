@@ -6,45 +6,26 @@ AIRTEL WIFI BILL PAYMENT - 28/04/25
 
 Sent - 796 - 1, Bot Feedback - 6
 Changes - 
-Previous Day Task - 831 - 4, 847 - 3
-Today's task -  860
-Next task - 853
+Previous Day Task - 877 
+Today's task -  878
+Next task - 
 
 RR band is not removing even after rr classified sheet is removed
 
 ==================================================================================== CURRENT TASKS =======================================================================
 
 
-👉 CBV2-847
-🤔 When selected 2nd row as table end in commercial rent roll, the pop-up asked me select '.' instead of 'table end'
-Date issue already ressolved + data is distorted
-✅ DONE AND PUSHED BUT PR NOT CREATED
-
-848, 681
-✅ DONE AND PUSHED BUT PR NOT CREATED in same 847
 
 
-CBV2-860
-DONE, BRANCHED PUSHED BUT PR NOT RAISED
+CBV2-864 (Integrate API_1 and API_2 and popup for duplicate line items)
 
 
+CBV2-865 (Manage both approval dropdowns with validation when user change dropdown from inspect)
 
 
----
-NEXT PRODUCTION RELEASE ISSUES
+CBV2-866 (Pass the columns in props which only need to be visible or hide)
 
-845, 837, 836, 
 
-831 - working file template is changed
-
-827, 825, 
-
----
-NON-PRODUCTION ISSUES
-
-824, 823, 794, 784, 791, 790, 714, 688, 655, 619, 672, 681, 721, 722,  
-
-1266
 
  
 ----

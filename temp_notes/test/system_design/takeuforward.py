@@ -1515,6 +1515,22 @@ But it can introduce performance overhead due to abstractions or service boundar
 
 # region 12 PRACTICE PROBLEMS
 # region --------------------
+# NOTIFICATION SYSTEM
+
+https://www.youtube.com/watch?v=1E3oeYkJ1P8
+
+Questions - 
+types of notifications we want to send
+Email Notifications, SMS Notifications, Device based Notification (ios, android) 
+
+# URL SHORTNER SYSTEM
+https://www.youtube.com/watch?v=Y-BO_4XNw8c
+https://www.youtube.com/watch?v=JQDHz72OA3c
+https://www.youtube.com/watch?v=16d35un5a9Q
+https://www.youtube.com/watch?v=AVztRY77xxA
+https://www.youtube.com/watch?v=Cg3XIqs_-4c
+https://www.youtube.com/watch?v=HxjOFsyAl3w
+
 live straming app
 instagram
 tinder
@@ -1536,7 +1552,7 @@ stock exchange
 whatsapp
 https://www.youtube.com/watch?v=QhFvII571Lc
 
-
+# endregion
 
 
 # region 13 ADDITIONAL RESOURCES

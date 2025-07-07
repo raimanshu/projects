@@ -543,7 +543,7 @@ add 1 to the binary number is 11111111111111111111111111110011
 # endregion
 
 
-# region STRINGS
+# region SLIDING WINDOW
 
 # http://youtube.com/watch?v=9kdHxplyl5I&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=272
 
