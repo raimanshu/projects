@@ -4578,7 +4578,7 @@ n = len(arr)
 print(triplet(n, arr))
 
 // - method 2 : better solution, using hashing
-'''
+/*
 steps
 - take a set st
 - iterate over the array with i till n
@@ -4594,27 +4594,28 @@ why wer using sort() we can easily compare arr[i] != arr[j] != arr[k] ??
 TC - O(N*N*log(nos of unique triplets))
 
 SC - O(2*nos of unique triplets)
-'''
-def triplet(n, arr):
-  st = set()
-  for i in range(n):
-    hashset = set()
-    for j in range(i+1,n):
-      third = -(arr[i] + arr[j])
-      if third in hashset:
-        temp = [arr[i],arr[j],third]
-        temp.sort()
-        st.add(tuple(temp))
+*/
+var threeSum = function(arr) {
+  result = new Set();
+  for (var i = 0; i < arr.length; i++) {
+    hashset = new Set()
+    for (var j = i+1; j < arr.length; j++) {
+      third = -(arr[i] + arr[j]);
+      if(hashset.has(third)){
+        temp = [arr[i], arr[j], third].sort((a,b) => a-b)
+        result.add(JSON.stringify(temp))
+      }
       hashset.add(arr[j])
-  ans = list(st)
-  return ans
+    }
+  }
+  return Array.from(result).map(item => JSON.parse(item));
+};
 
-arr = [-1,0,1,2,-1,-4]
-n = len(arr)
-print(triplet(n, arr))
+nums = [-1,0,1,2,-1,-4]
+console.log(threeSum(nums));
 
 // - method 3 : optimal solution using two pointers 
-'''
+/*
 steps
 - take an empty arr ans = []
 - sort the given array using sort()
@@ -4629,38 +4630,38 @@ steps
 TC - O(N*log(N)) + O(N*N), sort() + for()*while()
 
 SC - O(nos of triplets)
-'''
-def triplet(n, arr):
-  // st = set()
-  ans = []
-  arr.sort()
-  for i in range(n):
-    // skip if i is pointing to the same digit
-    if i != 0 and arr[i] == arr[i-1]:
-      continue
+*/
+var threeSum = function(arr) {
+  let n = arr.length;
+  arr.sort((a, b) => a - b); // Correct numeric sort
+  let result = [];
+  for (let i = 0; i < n - 2; i++) {
+    // Skip duplicates for i
+    if (i > 0 && arr[i] === arr[i - 1]) continue;
+    let j = i + 1;
+    let k = n - 1;
+    while (j < k) {
+      let total = arr[i] + arr[j] + arr[k];
+      if (total < 0) {
+        j++;
+      } else if (total > 0) {
+        k--;
+      } else {
+        result.push([arr[i], arr[j], arr[k]]);
+        j++;
+        k--;
+        // Skip duplicates for j and k
+        while (j < k && arr[j] === arr[j - 1]) j++;
+        while (j < k && arr[k] === arr[k + 1]) k--;
+      }
+    }
+  }
+  return result;
+};
 
-    j = i+1
-    k = n-1
-    while j < k:
-      sum = arr[i] + arr[j] + arr[k]
-      if sum < 0:
-        j += 1
-      elif sum > 0:
-        k -= 1
-      else:
-        temp = [arr[i],arr[j],arr[k]]
-        ans.append(temp)
-        j += 1
-        k -= 1
-        while j < k and arr[j] == arr[j-1]:
-          j += 1
-        while j < k and arr[k] == arr[k+1]:
-          k -= 1
-  return ans
+let nums = [2, -3, 0, -2, -5, -5, -4, 1, 2, -2, 2, 0, 2, -4, 5, 5, -10];
+console.log(threeSum(nums));
 
-arr = [-1,0,1,2,-1,-4]
-n = len(arr)
-print(triplet(n, arr))
 
 // 
 
@@ -4714,7 +4715,7 @@ target = 9
 print(fourSum(arr, target))
 
 // - method 2 : better solution, using hashing
-'''
+/*
 steps
 - take a set st
 - iterate over the array with i till n
@@ -4730,31 +4731,33 @@ steps
 TC - O(N*N*log(nos of unique triplets))
 
 SC - O(2*nos of unique triplets) + O(N)
-'''
-import itertools
-def fourSum(nums, target):
-  n = len(nums)
-  st = set()
-  for i in range(n):
-    for j in range(i+1,n):
-      hashset = set()
-      for k in range(j+1,n):
-        sum_ = nums[i] + nums[j] + nums[k]
-        fourth = target - sum_
-        if fourth in hashset:
-          temp = [nums[i],nums[j],nums[k],fourth]
-          temp.sort()
-          st.add(tuple(temp))
-        hashset.add(nums[k])
-  ans = [list(item) for item in st]
-  return ans
+*/
+var fourSum = function(arr, target) {
+    result = new Set()
+    for (var i = 0; i < arr.length; i++) {
+      for (var j = i+1; j < arr.length; j++) {
+        hashset = new Set();
+        for (var k = j+1; k < arr.length; k++) {
+          forth = target-(arr[i] + arr[j] + arr[k])
+          if(hashset.has(forth)){
+            temp = [arr[i], arr[j], arr[k], forth].sort((a,b) => a-b);
+            result.add(JSON.stringify(temp))
+          }
+          hashset.add(arr[k])
+        }
+      }
+    }
+    
+    return Array.from(result).map(item => JSON.parse(item));
+};
 
-arr = [4,3,3,4,4,2,1,2,1,1]
-target = 9
-print(fourSum(arr, target))
+
+
+nums = [1,0,-1,0,-2,2], target = 0
+console.log(fourSum(nums, target));
 
 // - method 3 : optimal solution
-'''
+/*
 steps
 - take an empty arr ans = []
 - sort the given array using sort()
@@ -4772,7 +4775,7 @@ steps
 TC - O(N*N*N)
 
 SC - O(nos of quadruplets)
-'''
+*/
 def fourSum(nums, target):
   n = len(nums)
   ans = []
@@ -14814,57 +14817,73 @@ https://bit.ly/3piCTD3
 
 
 // 15 TODO :add 2 numbers in LL
-'''
-
+/*
 🟡🟡🟡🟡🟡
-
 
 https://takeuforward.org/data-structure/add-two-numbers-represented-as-linked-lists/
 
-
 https://leetcode.com/problems/add-two-numbers/
 
-
-
-
-
-'''
+*/
 // method 1 : brute force approch
-'''
+/*
 Time Complexity: O(max(m,n)). Assume that m and n represent the length of l1 and l2 respectively, the algorithm above iterates at most max(m,n) times.
 
 Space Complexity: O(max(m,n)). The length of the new list is at most max(m,n)+1.
-'''
+*/
 // Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+function ListNode(val, next) {
+  this.val = (val === undefined ? 0 : val);
+  this.next = (next === undefined ? null : next);
+}
 
+/**
+ * Add two numbers represented as linked lists
+ */
+var addTwoNumbers = function(l1, l2) {
+  const dummy = new ListNode(-1);
+  let temp = dummy;
+  let carry = 0;
 
-class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        dummy = ListNode()
-        temp = dummy
-        carry = 0
-        while (l1 != None or l2 != None) or carry:
-            sum = 0
-            if l1 != None:
-                sum += l1.val
-                l1 = l1.next
-            if l2 != None:
-                sum += l2.val
-                l2 = l2.next
-            sum += carry
-            carry = sum // 10
-            node = ListNode(sum % 10)
-            temp.next = node
-            temp = temp.next
-        return dummy.next 
+  while (l1 || l2 || carry) {
+    let total = carry;
+    if (l1) {
+      total += l1.val;
+      l1 = l1.next;
+    }
+    if (l2) {
+      total += l2.val;
+      l2 = l2.next;
+    }
+
+    carry = Math.floor(total / 10); 
+    const node = new ListNode(total % 10);
+    temp.next = node;
+    temp = temp.next;
+  }
+
+  return dummy.next;
+};
+
+// Helper: Convert array to linked list
+function arrayToList(arr) {
+  const dummy = new ListNode(-1);
+  let curr = dummy;
+  for (let val of arr) {
+    curr.next = new ListNode(val);
+    curr = curr.next;
+  }
+  return dummy.next;
+}
+
+// Test
+const l1 = arrayToList([2, 4, 3]);
+const l2 = arrayToList([5, 6, 4]);
+console.log(addTwoNumbers(l1, l2));
 
 
 👉👉👉
-'''
+/*
 class Node:
     def __init__(self, data, next = None, back=None):
         self.data = data
@@ -14973,7 +14992,7 @@ def main_function(arr1, arr2):
 arr1 = [3,5]
 arr2 = [4,5,9,9]
 print(main_function(arr1, arr2))
-'''
+*/
 
 // method 2 : better approch
 // TC     -      

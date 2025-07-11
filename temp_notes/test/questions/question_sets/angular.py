@@ -305,190 +305,496 @@ Promises are used for single asynchronous operations and can only emit a single 
 
 
 # What is zone
+''' an execution context that persists across async tasks. Angular relies on zone.js to run Angular's change detection processes when native JavaScript operations raise events'''
 # What is the purpose of common module
+'''commonly-needed services, pipes, and directives provided by @angular/common module.'''
 # What is codelyzer
+'''a set of tslint rules for static code analysis of Angular TypeScript projects.'''
+
 # What is angular animation
-# What are the steps to use animation module
+'''Angular animations enable you to use CSS transitions, animations, and styles to make your application more dynamic and engaging. @angular/animations '''
+# What are the steps to use animation module - Enabling the animations module:, Importing animation functions into component files, Adding the animation metadata property
 # What is State function
+''' state() function is used to define different states to call at the end of each transition. This function takes two arguments: a unique name like open or closed and a style() function.
+state('open', style({
+  height: '300px',
+  opacity: 0.5,
+  backgroundColor: 'blue'
+})),'''
 # What is Style function
+'''style() function is used to define the styles for the different states. This function takes an object as an argument that contains the styles for the different states.'''
 # What is the purpose of animate function
+'''way to implement sophisticated and compelling animations for your Angular single page web application
+animations: [
+    trigger('changeState', [
+    state('state1', style({
+        backgroundColor: 'green',
+        transform: 'scale(1)'
+    })),
+    state('state2', style({
+        backgroundColor: 'red',
+        transform: 'scale(1.5)'
+    })),
+    transition('*=>state1', animate('300ms')),
+    transition('*=>state2', animate('2000ms'))
+    ])
+]'''
 # What is transition function
-# How to inject the dynamic script in angular
+'''transition function is used to specify the changes that occur between one state and another over a period of time. It accepts two arguments: the first argument accepts an expression that defines the direction between two transition states, and the second argument accepts an animate() function.'''
+# How to inject the dynamic script in angular - 
+'''Using DomSanitizer, 
+export class App {
+       constructor(protected sanitizer: DomSanitizer) {}
+       htmlSnippet: string = this.sanitizer.bypassSecurityTrustScript("<script>safeCode()</script>");
+   }'''
 # What is a service worker and its role in Angular
+'''A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction like caching resources, syncing resources, push notifications, and background sync.'''
 # What are the design goals of service workers
+'''
+- It caches an application just like installing a native application
+- A running application continues to run with the same version of all files without any incompatible files
+- When you refresh the application, it loads the latest fully cached version
+- When changes are published then it immediately updates in the background
+- Service workers saves the bandwidth by downloading the resources only when they changed.'''
 # What are the differences between AngularJS and Angular with respect to dependency injection
+'''
+- Token: AngularJs dependency injection tokens are always strings but in angular tokens can have different types. They are often classes and sometimes can be strings.
+- Quantity - In AngularJs there is exactly one injector even though it is a multi-module applications, where as in angular there is a tree hierarchy of injectors, with a root injector and an additional injector for each component.'''
 # What is Angular Ivy
-# What are the features included in ivy preview
+'''rendering engine for Angular, 
+- ng new ivy-demo-app --enable-ivy
+- tsconfig.app.json
+{
+  "compilerOptions": { ... },
+  "angularCompilerOptions": {
+    "enableIvy": true
+  }
+}'''
+# What are the features included in ivy preview - Generated code that is easier to read and debug at runtime, Faster re-build time, Improved payload size, Improved template type checking
 # Can I use AOT compilation with Ivy
+'''
+in angular.json
+{
+  "projects": {
+    "my-project": {
+      "architect": {
+        "build": {
+          "options": {
+            ...
+            "aot": true,
+          }
+        }
+      }
+    }
+  }
+}
+'''
 # What is Angular Language Service
+'''way to get completions, errors, hints, and navigation inside your Angular templates whether they are external in an HTML file or embedded in annotations/decorators in a string. It has the ability to autodetect that you are opening an Angular file, reads your tsconfig.json file, finds all the templates you have in your application, and then provides all the language services.'''
 # How do you install angular language service in the project
-# Is there any editor support for Angular Language Service
-# Explain the features provided by Angular Language Service
-# How do you add web workers in your application
+'''
+- npm install --save-dev @angular/language-service
+- "compilerOptions" section of your project's tsconfig.json
+"plugins": [
+    {"name": "@angular/language-service"}
+]'''
+# What are the benefits of Angular Language Service - 
+# Is there any editor support for Angular Language Service - available for Visual Studio Code and WebStorm IDE
+# Explain the features provided by Angular Language Service - Autocompletion, Error checking, Navigation
+# How do you add web workers in your application - ng generate web-worker <name>
 # What are the limitations with web workers
+'''
+- Some environments or platforms(like @angular/platform-server) used in Server-side Rendering, don't support Web Workers. In this case you need to provide a fallback mechanism to perform the computations to work in this environments.
+- Running Angular in web worker using @angular/platform-webworker is not yet supported in Angular CLI.'''
 # What is Angular CLI Builder
-# What is a builder
-# How do you invoke a builder
+'''Angular CLI Builder is a library that allows you to create custom builders for Angular CLI. It provides a set of tools and utilities to create custom builders that can be used with Angular CLI.'''
+# ❌ What is a builder
+'''A builder is a TypeScript class that implements the Builder interface. Builders are used to perform a specific task, such as building a project, running tests, or deploying an application.'''
+# How do you invoke a builder - ng run is used to invoke a builder with a specific target configuration.
 # How do you create app shell in Angular
-# What are the case types in Angular
+'''way to render a portion of your application via a route at build time. This is useful to first paint of your application that appears quickly because the browser can render static HTML and CSS without the need to initialize JavaScript. ng generate appShell [options] '''
+# What are the case types in Angular - camelCase, UpperCamelCase, dash-case (or "kebab-case"), UPPER_UNDERSCORE_CASE
 # What are the class decorators in Angular
+'''decorator that appears immediately before a class definition, which declares the class to be of the given type, and provides metadata suitable to the type. like @Component(), @Directive(), @Pipe(), @Injectable(), @NgModule()'''
 # What are class field decorators
+'''decorator that appears immediately before a class field declaration, which declares the field to be of the given type, and provides metadata suitable to the type. like @Input(), @Output(), @ViewChild(), @ViewChildren(), @ContentChild(), @ContentChildren()'''
 # What is declarable in Angular
-# What are the restrictions on declarable classes
-# What is a DI token
+'''class type that you can add to the declarations list of an NgModule. The class types such as components, directives, and pipes comes can be declared in the module.'''
+# What are the restrictions on declarable classes - A class that's already declared in another NgModule, Ngmodule classes, Service classes, Helper classes
+# ❌ What is a DI token
+'''a value that can be used to identify or select a service. A DI token can be a string, a token class, or a token factory function.
+const BASE_URL = new InjectionToken<string>('BaseUrl');
+const injector =
+   Injector.create({providers: [{provide: BASE_URL, useValue: 'http://some-domain.com'}]});
+const url = injector.get(BASE_URL);'''
 # What is Angular DSL
+'''(DSL) is a computer language specialized to a particular application domain. Angular has its own Domain Specific Language (DSL) which allows us to write Angular specific html-like syntax on top of normal html. It has its own compiler that compiles this syntax to html that the browser can understand. This DSL is defined in NgModules such as animations, forms, and routing and navigation.'''
 # What is an rxjs Subject
+'''special type of Observable that allows values to be multicasted to many Observers. While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.'''
 # What is Bazel tool
-# What are the advantages of Bazel tool
-# How do you use Bazel with Angular CLI
-# How do you run Bazel directly
+'''a build and test tool from Google that builds code quickly and reliably.'''
+# What are the advantages of Bazel tool - creates the possibility of building your back-ends and front-ends with the same tool, incremental build and tests, creates the possibility to have remote builds and cache on a build farm.
+# How do you use Bazel with Angular CLI - npm install -g @angular/bazel
+# How do you run Bazel directly - @bazel/bazel npm package
 # What is platform in Angular
-# What happens if I import the same module twice
+'''A platform is the context in which an Angular application runs. The most common platform for Angular applications is a web browser, but it can also be an operating system for a mobile device, or a web server. The runtime-platform is provided by the @angular/platform-* packages and these packages allow applications that make use of @angular/core and @angular/common to execute in different environments. '''
+# What happens if I import the same module twice -  angular evaluates it only once
 # How do you select an element with in a component template
-# How do you detect route change in Angular
+'''
+<input #uname>
+------
+@ViewChild('uname') input;
+
+ngAfterViewInit() {
+  console.log(this.input.nativeElement.value);
+}'''
+# How do you detect route change in Angular - this.router.events.subscribe((event: Event) => {})
 # How do you pass headers for HTTP client
+'''
+constructor(private _http: HttpClient) {}
+this._http.get('someUrl',{
+   headers: {'header1':'value1','header2':'value2'}
+});'''
 # What is the purpose of differential loading in CLI
-# Does Angular support dynamic imports
+'''Angular CLI provides a way to build your application with different sets of application code based on the browser that the user is using. This is called differential loading.'''
+# Does Angular support dynamic imports - {path: ‘user’, loadChildren: () => import(‘./users/user.module’).then(m => m.UserModule)};
 # What is lazy loading
+'''download the web pages in chunks instead of downloading everything in a big bundle. It is used for lazy loading by asynchronously loading the feature module for routing whenever required using the property loadChildren.'''
 # What are workspace APIs
-# How do you upgrade angular version
+'''Workspace APIs to make it easier for developers to read and modify the angular.json file instead of manually modifying it. Currently, the only supported storage3 format is the JSON-based format used by the Angular CLI.'''
+# How do you upgrade angular version - ng update @angular/cli @angular/core
 # What is Angular Material
+'''Angular Material is a UI component library that implements Google's Material Design specification for Angular. It provides a set of reusable, well-tested, and accessible UI components based on Google's Material Design system. npm install --save @angular/material @angular/cdk @angular/animations'''
 # How do you upgrade location service of angularjs
+'''
+import { LocationUpgradeModule } from '@angular/common/upgrade';
+@NgModule({
+  imports: [
+    // Other NgModule imports...
+    LocationUpgradeModule.config()
+  ]
+})
+export class AppModule {}'''
 # What is NgUpgrade
+'''library put together by the Angular team, which you can use in your applications to mix and match AngularJS and Angular components and bridge the AngularJS and Angular dependency injection systems.'''
 # How do you test Angular application using CLI
+'''Angular CLI downloads and install everything needed with the Jasmine Test framework. You just need to run ng test to see the test results. By default this command builds the app in watch mode, and launches the Karma test runner. '''
 # How to use polyfills in Angular application
+''' When you create a new project with the ng new command, a src/polyfills.ts configuration file is created as part of your project folder. This file includes the mandatory and many of the optional polyfills as JavaScript import statements. Let's categorize the polyfills,
+- Mandatory polyfills: These are installed automatically when you create your project with ng new command and the respective import statements enabled in 'src/polyfills.ts' file.
+- Optional polyfills: You need to install its npm package and then create import statement in 'src/polyfills.ts' file. For example, first you need to install below npm package for adding web animations (optional) polyfill. bash npm install --save web-animations-js  and create import statement in polyfill file. javascript import 'web-animations-js'; '''
 # What are the ways to trigger change detection in Angular
-# What are the differences of various versions of Angular
+'''
+- ApplicationRef.tick(): Invoke this method to explicitly process change detection and its side-effects. It check the full component tree.
+- NgZone.run(callback): It evaluate the callback function inside the Angular zone.
+- ChangeDetectorRef.detectChanges(): It detects only the components and it's children.'''
+# ❌ What are the differences of various versions of Angular
 # What are the security principles in angular
-# What is the reason to deprecate Web Tracing Framework
-# What is the reason to deprecate web worker packages
-# How do you find angular CLI version
+'''
+- avoid direct use of the DOM APIs.
+- enable Content Security Policy (CSP) and configure your web server to return appropriate CSP HTTP headers.
+- Use the offline template compiler.
+- Use Server Side XSS protection.
+- Use DOM Sanitizer.
+- Preventing CSRF or XSRF attacks.'''
+# What is the reason to deprecate Web Tracing Framework - for the purpose of performance testing. Since it is not well maintained and failed in majority of the applications, the support is deprecated in latest releases.
+# What is the reason to deprecate web worker packages - Both @angular/platform-webworker and @angular/platform-webworker-dynamic are officially deprecated, the Angular team realized it's not good practice to run the Angular application on Web worker
+# How do you find angular CLI version - ng --version
 # What is the browser support for Angular
+
 # What is schematic
+'''It's a scaffolding library that defines how to generate or transform a programming project by creating, modifying, refactoring, or moving files and code. It defines rules that operate on a virtual file system called a tree.'''
 # What is rule in Schematics
+'''A rule is a function that takes a tree and returns a tree. It is a pure function that takes a tree and returns a tree. It is a pure function that takes a tree and returns a tree.'''
 # What is Schematics CLI
-# What are the best practices for security in angular
-# What is Angular security model for preventing XSS attacks
-# What is the role of template compiler for prevention of XSS attacks
-# What are the various security contexts in Angular
-# What is Sanitization Does Angular support it
-# What is the purpose of innerHTML
+'''The schematics CLI is a command-line interface for working with schematics. It provides a set of commands for creating, running, and testing schematics. npm install -g @angular-devkit/schematics-cli'''
+# What are the best practices for security in angular - Use the latest Angular library releases, Don't modify your copy of Angular, Avoid Angular APIs marked in the documentation as “Security Risk.”
+# What is Angular security model for preventing XSS attacks - 
+'''Angular treats all values as untrusted by default. i.e, Angular sanitizes and escapes untrusted values When a value is inserted into the DOM from a template, via property, attribute, style, class binding, or interpolation.'''
+# What is the role of template compiler for prevention of XSS attacks - it is recommended to use offline template compiler in production deployments without dynamically generating any template.
+# What are the various security contexts in Angular - HTML, Style, URL, Resource URL
+# What is Sanitization Does Angular support it- 
+'''Sanitization is the inspection of an untrusted value, turning it into a value that's safe to insert into the DOM. '''
+# What is the purpose of innerHTML - innerHtml is a property of HTML-Elements, which allows you to set it's html-content programmatically.
 # What is the difference between interpolated content and innerHTML
+'''Interpolated content is a value or strings with < > that is inserted into the DOM by Angular. InnerHTML is a property of HTML-Elements, which allows you to set it's html-content programmatically.'''
 # How do you prevent automatic sanitization
-# Is it safe to use direct DOM API methods in terms of security
-# What is DOM sanitizer
-# How do you support server side XSS protection in Angular application
+'''
+- Inject DomSanitizer
+- Mark the trusted value by calling some of the below methods - bypassSecurityTrustHtml, bypassSecurityTrustScript, bypassSecurityTrustStyle, bypassSecurityTrustUrl, bypassSecurityTrustResourceUrl
+Example:
+constructor(private sanitizer: DomSanitizer) {
+  this.dangerousUrl = 'javascript:alert("XSS attack")';
+  this.trustedUrl = sanitizer.bypassSecurityTrustUrl(this.dangerousUrl);
+'''
+# Is it safe to use direct DOM API methods in terms of security - No, security issues
+# What is DOM sanitizer 
+'''used to help preventing Cross Site Scripting Security bugs (XSS) by sanitizing values to be safe to use in the different DOM contexts.'''
+# How do you support server side XSS protection in Angular application - by using a templating language that automatically escapes values to prevent XSS vulnerabilities on the server
 # Does Angular prevent HTTP level vulnerabilities
+'''
+- HttpClient supports a token mechanism used to prevent XSRF attacks
+- HttpClient library recognizes the convention of prefixed JSON responses(which non-executable js code with ")]}',\n" characters) and automatically strips the string ")]}',\n" from all responses before further parsing'''
 # What are Http Interceptors
-# What are the applications of HTTP interceptors
-# Are multiple interceptors supported in Angular
+'''part of @angular/common/http, which inspect and transform HTTP requests from your application to the server and vice-versa on HTTP responses. These interceptors can perform a variety of implicit tasks, from authentication to logging.'''
+# What are the applications of HTTP interceptors - Authentication, Logging, Caching, Fake backend, URL transformation, Modifying headers
+# Are multiple interceptors supported in Angular - Yes, define multiple interceptors in providers property  
 # How can I use interceptor for an entire application
+'''You can use same instance of HttpInterceptors for the entire app by importing the HttpClientModule only in your AppModule, and add the interceptors to the root application injector. '''
+
+
 # How does Angular simplify Internationalization
+'''
+- Displaying dates, number, percentages, and currencies in a local format.
+- Preparing text in component templates for translation.
+- Handling plural forms of words.
+- Handling alternative text.'''
 # How do you manually register locale data
+'''
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+
+registerLocaleData(localeDe, 'de');'''
 # What are the four phases of template translation
-# What is the purpose of i18n attribute
-# What is the purpose of custom id
+'''
+- Mark static text messages in your component templates for translation
+- Create a translation file
+- Edit the generated translation file
+- Merge the completed translation file into the app'''
+# What is the purpose of i18n attribute - marks translatable content. It is a custom attribute, recognized by Angular tools and compilers. The compiler removes it after translation.
+# ❌ What is the purpose of custom id
+'''
+When you change the translatable text, the Angular extractor tool generates a new id for that translation unit. Because of this behavior, you must then update the translation file with the new id every time.'''
 # What happens if the custom id is not unique
-# Can I translate text without creating an element
-# How can I translate attribute
-# List down the pluralization categories
+'''If you use the same id for two different text messages then only the first one is extracted. But its translation is used in place of both original text messages.'''
+# Can I translate text without creating an element - <ng-container i18n>I'm not using any DOM element for translation</ng-container>
+# How can I translate attribute - <img [src]="example" i18n-title title="Internationlization" />
+# List down the pluralization categories - =0 (or any other number), zero, one, two, few, many, other
 # What is select ICU expression
-# How do you report missing translations
+'''ICU expression is is similar to the plural expressions except that you choose among alternative translations based on a string value instead of a number. Here you define those string values.
+Example:
+<span i18n>The person is {residenceStatus, select, citizen {citizen} permanent resident {permanentResident} foreigner {foreigner}}</span>'''
+# How do you report missing translations - By default, When translation is missing, it generates a warning message such as "Missing translation for message 'somekey'"
 # How do you provide build configuration for multiple locales
+'''
+in angular.json file
+"configurations": {
+  "de": {
+    "aot": true,
+    "outputPath": "dist/my-project-de/",
+    "baseHref": "/fr/",
+    "i18nFile": "src/locale/messages.de.xlf",
+    "i18nFormat": "xlf",
+    "i18nLocale": "de",
+    "i18nMissingTranslation": "error",
+  }'''
 # What is an angular library
+'''Angular library is an Angular project that differs from an app in that it cannot run on its own. It must be imported and used in an app.'''
 # What is AOT compiler
-# How do you select an element in component template
+'''AOT compiler is part of a build process that produces a small, fast, ready-to-run application package, typically for production. It converts your Angular HTML and TypeScript code into efficient JavaScript code during the build phase before the browser downloads and runs that code.'''
+# How do you select an element in component template - via ElementRef by injecting it into your component's constructor
 # What is TestBed
+'''api for writing unit tests for Angular applications and it's libraries. Even though We still write our tests in Jasmine and run using Karma, this API provides an easier way to create components, handle injection, test asynchronous behaviour and interact with our application.'''
 # What is protractor
-# What is collection
-# How do you create schematics for libraries
+'''end-to-end test framework for Angular and AngularJS applications. It runs tests against your application running in a real browser, interacting with it as a user would, npm install -g protractor'''
+# What is collection - set of related schematics collected in an npm package
+# How do you create schematics for libraries - Add schematics, Generate schematics, Update schematics
 # How do you use jquery in Angular
-# What is the reason for No provider for HTTP exception
-# What is router state
-# How can I use SASS in angular project
-# What is the purpose of hidden property
-# What is the difference between ngIf and hidden property
-# What is slice pipe
-# What is index property in ngFor directive
+'''
+=    npm install --save jquery
+- "scripts": [
+   "node_modules/jquery/dist/jquery.min.js"
+]
+- declare var $: any;'''
+# What is the reason for No provider for HTTP exception - missing HttpClientModule in your module
+# What is router state -  interface which represents the state of the router as a tree of activated routes.
+# How can I use SASS in angular project - ng new My_New_Project --style=sass
+# What is the purpose of hidden property - used to show or hide the associated DOM element, based on an expression.
+# What is the difference between ngIf and hidden property - *ngIf will remove the element from the DOM, while [hidden] actually plays with the CSS style by setting display:none
+# What is slice pipe - create a new Array or String containing a subset (slice) of the elements. {{ value_expression | slice : start [ : end ] }}
+# What is index property in ngFor directive - used to return the zero-based index of the item in each iteration.
 # What is the purpose of ngFor trackBy
-# What is the purpose of ngSwitch directive
+# What is the purpose of ngSwitch directive - displays one element from among several possible elements, based on a switch condition. It has been used along with NgSwitch, NgSwitchCase and NgSwitchDefault directives.
 # Is it possible to do aliasing for inputs and outputs
+'''
+- Aliasing in metadata
+inputs: ['input1: buyItem'],
+outputs: ['outputEvent1: completedEvent']
+- Aliasing with @Input()/@Output() decorator
+@Input('buyItem') input1: string;
+@Output('completedEvent') outputEvent1 = new EventEmitter<string>();
+'''
 # What is safe navigation operator
-# Is any special configuration required for Angular9
+'''safe navigation operator(?)(or known as Elvis Operator) is used to guard against null and undefined values in property paths when you are not aware whether a path exists or not. i.e. It returns value of the object path if it exists, else it returns the null value.'''
+# Is any special configuration required for Angular9 - "angularCompilerOptions": {    "enableIvy": true  }
 # What are type safe TestBed API changes in Angular9
+'''
+TestBed.get(ChangeDetectorRef) // returns any. It is deprecated now.
+TestBed.inject(ChangeDetectorRef) // returns ChangeDetectorRef'''
 # Is mandatory to pass static flag for ViewChild
-# What are the list of template expression operators
-# What is the precedence between pipe and ternary operators
+'''
+@ViewChild(ChildDirective) child: ChildDirective; // Angular9 usage
+@ViewChild(ChildDirective, { static: false }) child: ChildDirective; //Angular8 usage'''
+# What are the list of template expression operators - Pipe operator, Safe navigation operator, Non-null assertion operator
+# What is the precedence between pipe and ternary operators - pipe operator has a higher precedence than the ternary operator 
 # What is an entry component
+'''component that Angular loads imperatively(i.e, not referencing it in the template) by type. Due to this behavior, they can’t be found by the Angular compiler during compilation.'''
 # What is a bootstrapped component
+'''entry component that Angular loads into the DOM during the bootstrap process or application launch time. Generally, this bootstrapped or root component is named as AppComponent in your root module using bootstrap property'''
 # How do you manually bootstrap an application
-# Is it necessary for bootstrapped component to be entry component
-# What is a routed entry component
-# Why is not necessary to use entryComponents array every time
-# Do I still need to use entryComponents array in Angular9
-# Is it all components generated in production build
+'''
+class AppModule implements DoBootstrap {
+  ngDoBootstrap(appRef: ApplicationRef) {
+    appRef.bootstrap(AppComponent); // bootstrapped entry component need to be passed
+  }
+}'''
+# Is it necessary for bootstrapped component to be entry component - Yes
+# What is a routed entry component - The components referenced in router configuration are called as routed entry components. 
+# Why is not necessary to use entryComponents array every time - Because angular adds components from both @NgModule.bootstrap and route definitions to entry components automatically.
+# Do I still need to use entryComponents array in Angular9 - No
+# Is it all components generated in production build - No, only the entry components and template components appears in production builds.
 # What is Angular compiler
+''' used to convert the application code into JavaScript code. It reads the template markup, combines it with the corresponding component class code, and emits component factories which creates JavaScript representation of the component along with elements of @Component metadata.'''
 # What is the role of ngModule metadata in compilation process
+''' used to tell the Angular compiler what components to be compiled for this module and how to link this module with other modules.'''
 # How does angular finds components, directives and pipes
+'''Angular compiler finds a component or directive in a template when it can match the selector of that component or directive in that template. Whereas it finds a pipe if the pipe's name appears within the pipe syntax of the template HTML.'''
 # Give few examples for NgModules
+'''
+- Angular libraries such as FormsModule, HttpClientModule, and RouterModule are NgModules.
+- Many third-party libraries such as Material Design, Ionic, and AngularFire2 are NgModules.'''
 # What are feature modules
-# What are the imported modules in CLI generated feature modules
+'''NgModules, which are used for the purpose of organizing code.'''
+# What are the imported modules in CLI generated feature modules - NgModule, CommonModule
 # What are the differences between ngmodule and javascript module
-# What are the possible errors with declarations
-# What are the steps to use declaration elements
-# What happens if browserModule used in feature module
-# What are the types of feature modules
+# | Angular NgModule                                                   | JavaScript Module                                  |
+# |--------------------------------------------------------------------|----------------------------------------------------|
+# | NgModule                                                           | JavaScript module                                  |
+# | NgModule bounds declarable classes only                            | There is no restriction on classes                 |
+# | List the module's classes in declarations array only               | Can define all member classes in one giant file    |
+# | It only exports the declarable classes it owns or imports          | It can export any classes                          |
+# | Extend the entire application with services via providers array    | Can't extend the application with services         |
+
+# What are the possible errors with declarations - If you use a component without declaring it and If you try to declare the same class in more than one module
+# What are the steps to use declaration elements - Create the element, Import it into the appropriate module., Declare it in the @NgModule declarations array.
+# What happens if browserModule used in feature module - error telling you to use CommonModule
+# What are the types of feature modules - Domain, Routed, Routing, Service, Widget
 # What is a provider
+'''an instruction to the Dependency Injection system on how to obtain a value for a dependency(aka services created)'''
 # What is the recommendation for provider scope
-# How do you restrict provider scope to a module
-# How do you provide a singleton service
+'''You should always provide your service in the root injector unless there is a case where you want the service to be available only if you import a particular @NgModule.'''
+# How do you restrict provider scope to a module - Using providedIn in service, Declare provider for the service in module
+# How do you provide a singleton service - Set the providedIn property of the @Injectable() to "root", Include the service in root module or in a module that is only imported by root module. 
 # What are the different ways to remove duplicate service registration
-# How does forRoot method helpful to avoid duplicate router instances
-# What is a shared module
-# Can I share services using modules
-# How do you get current direction for locales
-# What is ngcc
+'''
+- Use the providedIn syntax instead of registering the service in the module.
+- Separate your services into their own module.
+- Define forRoot() and forChild() methods in the module.'''
+# How does forRoot method helpful to avoid duplicate router instances - If the RouterModule module didn’t have forRoot() static method then each feature module would instantiate a new Router instance, which leads to broken application due to duplicate instances. 
+# What is a shared module - module in which you put commonly used directives, pipes, and components into one module that is shared(import it) throughout the application.
+# Can I share services using modules - No, it is not recommended to share services by importing module.
+# How do you get current direction for locales - getLocaleDirection can be used to get the current direction in your app. This method is useful to support Right to Left locales for your Internationalization based applications.
+# What is ngcc 
+''' ngcc(Angular Compatibility Compiler) is a tool which upgrades node_module compiled with non-ivy ngc into ivy compliant format. The postinstall script from package.json will make sure your node_modules will be compatible with the Ivy renderer'''
 # What classes should not be added to declarations
+'''
+- A class which is already declared in any another module.
+- Directives imported from another module.
+- Module classes.
+- Service classes.
+- Non-Angular classes and objects, such as strings, numbers, functions, entity models, configurations, business logic, and helper classes.'''
 # What is ngzone
-# What is NoopZone
+''' which creates a zone named angular to automatically trigger change detection when the following conditions are satisfied.
+- When a sync or async function is executed.
+- When there is no microTask scheduled.'''
+# ❌ What is NoopZone
+'''You can also use Angular without Zone but the change detection need to be implemented on your own and noop zone need to be configured in bootstrap process. '''
 # How do you create displayBlock components
-# What are the possible data change scenarios for change detection
+'''By default, Angular CLI creates components in an inline displayed mode(i.e, display:inline). But it is possible to create components with display: block style using displayBlock option,
+ng generate component my-component --displayBlock'''
+# What are the possible data update scenarios for change detection - Component initialization, Event listener, HTTP Data Request, Macro tasks setTimeout() or setInterval(), Micro tasks Promises, Async operations like Web sockets and Canvas
 # What is a zone context
-# What are the lifecycle hooks of a zone
+'''Execution Context is an abstract concept that holds information about the environment within the current code being executed. A zone provides an execution context that persists across asynchronous operations is called as zone context. '''
+# What are the lifecycle hooks of a zone - onScheduleTask, onInvokeTask, onHasTask, onInvoke
 # Which are the methods of NgZone used to control change detection
+'''run() method that allows you to execute a function inside the angular zone. This function is used to execute third party APIs which are not handled by Zone and trigger change detection automatically at the correct time Whereas runOutsideAngular() method is used when you don't want to trigger change detection.'''
 # How do you change the settings of zonejs
-# How do you trigger an animation
+'''You can change the settings of zone by configuring them in a separate file and import it just after zonejs import.'''
+# How do you trigger an animation - trigger() function for animation 
 # How do you configure injectors with providers at different levels
-# Is it mandatory to use injectable on every service class
+'''
+- In the @Injectable() decorator for the service itself
+- In the @NgModule() decorator for an NgModule
+- In the @Component() decorator for a component'''
+#  ❌Is it mandatory to use injectable on every service class - No
 # What is an optional dependency
-# What are the types of injector hierarchies
+'''optional dependency is a parameter decorator to be used on constructor parameters, which marks the parameter as being an optional dependency. Due to this, the DI framework provides null if the dependency is not found. '''
+# What are the types of injector hierarchies - ModuleInjector hierarchy and ElementInjector` hierarchy
 # What are reactive forms
+'''model-driven approach for creating forms in a reactive style(form inputs changes over time). These are built around observable streams, where form inputs and values are provided as streams of input values.'''
 # What are dynamic forms
+'''pattern in which we build a form dynamically based on metadata that describes a business object model.'''
 # What are template driven forms
+'''model-driven forms where you write the logic, validations, controls etc, in the template part of the code using directives. They are suitable for simple scenarios and uses two-way binding with [(ngModel)] syntax.'''
 # What are the differences between reactive forms and template driven forms
-# What are the different ways to group form controls
-# How do you update specific properties of a form model
+'''
+Form model setup: In reactive, Created(FormControl instance) in component explicitly where in TDF Created by directives
+Data updates: RF are async and TDF are sync
+Form custom validation: RF Defined as Functions while in TDF Defined as Directives
+Testing: RF No interaction with change detection cycle while in TDF Need knowledge of the change detection process
+Mutability: RF are immutable while in TDF are mutable
+Scalability: RF are more scalable than TDF'''
+# What are the different ways to group form controls - FormGroup, FormArray, FormControl
+# How do you update specific properties of a form model - patchValue() method to update specific properties defined in the form model.
 # What is the purpose of FormBuilder
-# How do you verify the model changes in forms
+'''syntactic sugar for easily creating instances of a FormControl, FormGroup, or FormArray. This is helpful to reduce the amount of boilerplate needed to build complex reactive forms. It is available as an injectable helper class of the @angular/forms package.'''
+# How do you verify the model changes in forms - add a getter property(let's say, diagnostic) inside component to return a JSON representation of the model during the development. 
 # What are the state CSS classes provided by ngModel
-# How do you reset the form
+'''
+| Form Control State   | If True     | If False      |
+|----------------------|-------------|----------------|
+| Visited              | ng-touched  | ng-untouched   |
+| Value has changed    | ng-dirty    | ng-pristine    |
+| Value is valid       | ng-valid    | ng-invalid     |'''
+# How do you reset the form - this.myform.reset();
 # What are the types of validator functions
-# Can you give an example of built-in validators
+'''
+- Sync validators: These are the synchronous functions which take a control instance and immediately return either a set of validation errors or null.
+- Async validators: These are the asynchronous functions which take a control instance and return a Promise or Observable that later emits a set of validation errors or null.'''
+# Can you give an example of built-in validators - required and minlength
 # How do you optimize the performance of async validators
-# How to set ngFor and ngIf on the same element
+'''
+TDF - <input [(ngModel)]="name" [ngModelOptions]="{updateOn: 'blur'}">
+RF - name = new FormControl('', {updateOn: 'blur'});'''
+# How to set ngFor and ngIf on the same element - either ng-container or ng-template
 # What is host property in css
-# How do you get the current route
-# What is Component Test Harnesses
+''':host pseudo-class selector is used to target styles in the element that hosts the component. Since the host element is in a parent component's template, you can't reach the host element from inside the component by other means. '''
+# How do you get the current route - this.router.url
+# ❌ What is Component Test Harnesses
+'''component harness is a testing API around an Angular directive or component to make tests simpler by hiding implementation details from test suites. This can be shared between unit tests, integration tests, and end-to-end tests. The idea for component harnesses comes from the PageObject pattern commonly used for integration testing.'''
 # What is the benefit of Automatic Inlining of Fonts
-# What is content projection
-# What is ng-content and its purpose
+'''During compile time, Angular CLI will download and inline the fonts that your application is using. This performance update speed up the first contentful paint(FCP) and this feature is enabled by default in apps built with version 11.'''
+# What is content projection -  pattern in which you insert, or project, the content you want to use inside another component.
+# What is ng-content and its purpose - used to insert the content dynamically inside the component that helps to increase component reusability.
 # What is standalone component
-# How to create a standalone component uing CLI command
+'''''A standalone component is a component that doesn't require a module to be imported. It is a standalone component if it has no dependencies on other components, directives, or pipes.'''
+# How to create a standalone component uing CLI command - ng generate component component-name --standalone
 # How to create a standalone component manually
+'''
+@Component({
+  standalone: true,
+  ...
+})'''
 # What is hydration 
+''' process that restores the server side rendered application on the client. This includes things like reusing the server rendered DOM structures, persisting the application state, transferring application data that was retrieved already by the server, and other processes.'''
 # What are Angular Signals
+'''wrapper around a value that can notify interested consumers when that value changes. Signals can contain any value, from simple primitives to complex data structures.'''
 # Explain Angular Signals with an example
 # What are the Route Parameters Could you explain each of them
+'''Route parameters are used to pass dynamic values in the URL of a route. They allow you to define variable segments in the route path, which can be accessed and used by components and services. Path parameters are represented by a colon (":") followed by the parameter name.
+Path parameters - { path: 'users/:id', component: UserComponent }
+Query parameters - { path: 'search', component: SearchComponent }
+Optional parameters - { path: 'products/:id/:category?', component: ProductComponent }'''
 
 
 

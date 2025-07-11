@@ -998,15 +998,172 @@ A hardware-based solution offering advanced load balancing, security, and traffi
 - policies
 - replacement policies
 
-
-
-
-
-
 # region 9 API GATEWAYS
 # region --------------
 - how api are designed
 - asynchronous APIs
+
+
+
+System Design 
+    HLD
+    LLD
+    HLD vs LLD
+    Serverless vs Serverful
+    what are threads
+    what are processes
+    Multithreading vs multiprocessing vs multitasking
+    what are pages 
+    How does internet works
+
+Scaling
+    Vertical Scaling
+    Horizontal Scaling
+
+Databases
+    SQL / Relational Databases
+    NoSQL / Non-Relational Databases
+    In memory databases
+    Data Replication
+    Sharding
+
+Consistency vs Availability
+    Consistency
+    Availability
+    Partition Tolerance
+    CAP Theorem
+
+Cache 
+    What is cache (Redis, Memcached)
+    write policies - write back, through and around
+    Cache Eviction Policies - LRU, LFU, FIFO, Random, segmented LRU
+    CDN
+
+Network
+    TCP vs UDP
+    http (1/2/3) vs https
+    What are sockets
+    WebRTC and Video streaming
+
+Load Balancers
+    load balancing algo - for stateless and stateful
+    Consistent Hashing
+    Proxy and Reverse Proxy
+    Rate Limiting
+
+Message Queues
+    Asynchronous processing - kafka, rabbitMQ
+    Pub-Sub model
+
+Monoliths vs Microservices
+    what are microservices
+    single point of failure
+    Avoiding cascading failures
+    Containerization
+    migrating to microservices
+
+Monitoring and logging
+    logging events and metrices
+    Anomily detection
+
+Security
+    Token for auth
+    SSo and Auth
+access control lists and rule engine 
+Encryptions
+
+
+System design Trade offs
+    Push vs pull architecture
+consistency and availability
+SQL vs NoSQL
+memory and latency
+throughput and latency
+accuracy and latency
+
+
+
+Requirements
+    Functional 
+    Non-Functional
+
+
+
+LLD
+oops
+SOLID principles 
+
+Design patterns - creational, behavioural, structural
+
+Concurrency and thread safety
+thread safe injection
+locking mechanish
+producer consumer 
+race condition and synchronoization
+
+UML Diagram
+
+APIs
+API design
+req/res object model
+versioning and extensibility
+Clean code principles - DRY, SRP etc
+Avaing God classes 
+
+Common LLD problems
+design atic-tac toe 
+design a stepwise app
+design a parking lot
+design a elevator system with multiple lifts 
+design a notification systems
+design a Food delivery app
+design a movie ticket app
+design a url shortner 
+design a logging framework 
+design a rate limiter
+
+
+
+
+Introduction 
+What is System Design?
+High Level Design 
+Low Level Design 
+Detailed discussion on HLD
+Basic Fundamentals 
+Databases 
+Consistency & Availability 
+Cache
+Networking 
+Load Balancers
+Message Queues 
+Monoliths vs. Microservices 
+Monitoring and Logging 
+Security 
+System Design Tradeoffs
+Netflix (an example of HLD) 
+Detailed discussion on LLD
+OOPS Concepts 
+Design Patterns 
+Concurrency and thread safety 
+UML Diagrams
+APIs 
+Common LLD Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1516,25 +1673,34 @@ But it can introduce performance overhead due to abstractions or service boundar
 # region 12 PRACTICE PROBLEMS
 # region --------------------
 # NOTIFICATION SYSTEM
-
+'''
 https://www.youtube.com/watch?v=1E3oeYkJ1P8
 
 Questions - 
 types of notifications we want to send
 Email Notifications, SMS Notifications, Device based Notification (ios, android) 
-
+'''
 # URL SHORTNER SYSTEM
+'''
 https://www.youtube.com/watch?v=Y-BO_4XNw8c
 https://www.youtube.com/watch?v=JQDHz72OA3c
 https://www.youtube.com/watch?v=16d35un5a9Q
 https://www.youtube.com/watch?v=AVztRY77xxA
 https://www.youtube.com/watch?v=Cg3XIqs_-4c
 https://www.youtube.com/watch?v=HxjOFsyAl3w
-
-live straming app
+'''
+youtube
+twitter
+whataapp 
+uber
+amazon 
+google drive
+netflix 
 instagram
+zoom
+booking.com/airbnb
+live straming app
 tinder
-whatsapp
 tiktok
 system design of an online coding judge - part 1
 system design of an online coding judge - part 2
